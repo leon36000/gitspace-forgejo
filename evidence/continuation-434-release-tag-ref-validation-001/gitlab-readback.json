@@ -1,0 +1,23 @@
+{
+  "project_id": 4,
+  "project_path": "root/gitspace-forgejo",
+  "visibility": "private",
+  "branch": "codex/pc6-transfer-work-2026-10-28",
+  "default_branch_modified": false,
+  "commit_sha": "81e19752607e5a1d24cdd99d73ce475fe6869c65",
+  "previous_head": "0a8774aa9405e6cc2f827c253f066b7c0984b9ee",
+  "uploaded_paths": 24,
+  "uploaded_bytes": 4292410,
+  "new_paths": 18,
+  "updated_paths": 6,
+  "readback_blob_and_mode_matches": 24,
+  "readback_missing_or_divergent": 0,
+  "remote_tree_blob_count": 360,
+  "known_secret_pattern_matches": 0,
+  "pipeline": {
+    "id": 167,
+    "commit_sha": "81e19752607e5a1d24cdd99d73ce475fe6869c65",
+    "status_at_last_readback": "pending",
+    "observed_at": "2026-10-28T17:52:43-04:00"
+  }
+}

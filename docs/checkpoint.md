@@ -6,7 +6,9 @@ Le readback API acceptait `tag_name=feature/../outside` et construisait quand m�
 
 Les vérifications passent : test ciblé 1/1, suite `webhook_reconcile_contract` 102/102, suite `forgejo_merge_readiness` 10/10, `cargo fmt --all -- --check`, `git diff --check`, et concordance du corpus de sept cas avec `git check-ref-format`. Reçu reproductible : [CONTINUATION-434](../evidence/continuation-434-release-tag-ref-validation-001/local-run.md); matrice refus actualisée.
 
-Limite : les réponses API sont des fixtures locales; aucun Forgejo live, LLM/AgentOS ou benchmark. Le delta CONTINUATION-434 est encore local; la branche GitLab PC4 était à `0a8774aa9405e6cc2f827c253f066b7c0984b9ee` après transfert 003, avec les pipelines 164/165 en attente ou en cours au dernier contrôle. Suite : synchroniser ce code et ses reçus sur la branche de travail PC4, lire le résultat CI final, puis continuer un lot distinct.
+Le code, la matrice et les reçus sont synchronisés dans le commit PC4 `81e19752607e5a1d24cdd99d73ce475fe6869c65` sur la branche de travail. Les 24 chemins et modes ont été relus identiques; le scan ciblé n’a trouvé aucun motif de secret connu. Pipeline 167 pour le SHA était `pending` au dernier relevé; le pipeline 164 précédent est `success`, tandis que le 165 restait `running` avec les trois scanners réussis et le fallback en attente. Voir le reçu pour les heures et limites. La branche par défaut protégée n’a pas changé.
+
+Limites : les réponses API sont des fixtures locales; aucun Forgejo live, LLM/AgentOS ou benchmark. Le shell demeure sur PC6, sans résolution du nom tailnet PC4; la collaboration distante s’effectue par l’API GitLab et ses pipelines, pas par un terminal PC4. Suite : surveiller le pipeline 167 jusqu’à son état final puis poursuivre un lot distinct, sans répéter les parcours déjà prouvés.
 
 ## GITLAB-PC4-TRANSFER-003 — synchronisation des lots 432/433 — 28 octobre 2026
 

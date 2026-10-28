@@ -6,7 +6,8 @@ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  evidence/conti
 9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa  evidence/continuation-434-release-tag-ref-validation-001/focused-green.exit
 48a7a81c08ac2ee0db7064bf57234f792c0f8109afcae70526ce27faeef0f06a  evidence/continuation-434-release-tag-ref-validation-001/focused-green.log
 517896a6d2d9a0185a34946b6aa2ac7db0058c231b972808c647477560edac96  evidence/continuation-434-release-tag-ref-validation-001/git-refname-corpus.json
-f5861f602487c0a71813dbe08d70185ea368aee7a27362b8293424b303770462  evidence/continuation-434-release-tag-ref-validation-001/local-run.md
+29c0fefcd427311a87f0a8839d66819b93608ae12b06c1f047a97f4c257f56ed  evidence/continuation-434-release-tag-ref-validation-001/gitlab-readback.json
+20b014aaa928c295d39e951a737fc8a9a457b0432bfecbff2ead13949ad89c8d  evidence/continuation-434-release-tag-ref-validation-001/local-run.md
 9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa  evidence/continuation-434-release-tag-ref-validation-001/reconcile-suite.exit
 c42d337345d74b936e8ba6e0fa28c261f2c196a3a39e36bfc6dc8e10f5ab1456  evidence/continuation-434-release-tag-ref-validation-001/reconcile-suite.log
 66d68e3cd6a0b0b1aeef4c296604f74cfe36bc581554911668b08684a0c8c78f  evidence/continuation-434-release-tag-ref-validation-001/red-failing-test.log

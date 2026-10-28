@@ -16,4 +16,12 @@ Résultats locaux : le test rouge échoue parce que l’ancien code retourne `Ok
 
 ## Limites
 
-Les réponses de l’API Forgejo sont des fixtures locales; aucun Forgejo live n’émet de ref invalide dans ce test. Le corpus couvre sept noms, pas toutes les versions/forks, les règles de chaque client HTTP/proxy ou une conformité exhaustive de la grammaire Unicode. Ce lot ne démontre ni LLM/AgentOS, ni fusion contrôlée, ni gain comparatif. Il demeure sur le worktree PC6 jusqu’à son readback GitLab.
+Les réponses de l’API Forgejo sont des fixtures locales; aucun Forgejo live n’émet de ref invalide dans ce test. Le corpus couvre sept noms, pas toutes les versions/forks, les règles de chaque client HTTP/proxy ou une conformité exhaustive de la grammaire Unicode. Ce lot ne démontre ni LLM/AgentOS, ni fusion contrôlée, ni gain comparatif.
+
+## Synchronisation GitLab PC4
+
+Le code, la matrice et les reçus ont été synchronisés par le connecteur GitLab déjà authentifié dans le commit `81e19752607e5a1d24cdd99d73ce475fe6869c65` sur `root/gitspace-forgejo`, branche `codex/pc6-transfer-work-2026-10-28`. Le commit ajoute 18 fichiers de reçu et met à jour 6 fichiers, soit 24 chemins et 4 292 410 octets. Le readback récursif du tree vérifie les 24 Git blob IDs et modes (24/24, aucun absent ni divergent); le tree contient 360 blobs. Le scan des motifs de secrets connus a retourné zéro correspondance. Les détails structurés sont dans [gitlab-readback.json](gitlab-readback.json).
+
+Le pipeline 167, sur ce SHA, était `pending` au dernier contrôle (`2026-10-28 17:52:43 -04:00`); scanners et fallback n’avaient pas encore de verdict. Pipeline 164 est `success`; le pipeline 165 du commit de documentation antérieur restait `running`, avec `gitleaks`, `semgrep` et `trivy` réussis, mais le fallback encore `pending`. Aucun résultat de ces commits ne vaut validation complète tant que le job requis ne termine pas.
+
+Le worktree et l’exécution restent sur PC6; le shell ne résout pas le nom tailnet PC4. Le dépôt privé GitLab est la branche distante de collaboration, accessible ici par API connectée et CI; il ne s’agit pas d’un terminal sur PC4. La branche par défaut protégée demeure inchangée. Aucun courriel n’a été ouvert et aucun identifiant n’a été copié dans le dépôt.
