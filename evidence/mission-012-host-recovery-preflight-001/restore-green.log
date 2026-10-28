@@ -1,0 +1,27 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+error[E0425]: cannot find value `FIXED_SOURCE` in this scope
+    --> src/bin/../mission_012_host.rs:2952:42
+     |
+2952 |         let after_source_sha256 = sha256(FIXED_SOURCE.as_bytes());
+     |                                          ^^^^^^^^^^^^ not found in this scope
+
+error[E0425]: cannot find value `FIXED_SOURCE` in this scope
+    --> src/bin/../mission_012_host.rs:2953:34
+     |
+2953 |         write_source(&candidate, FIXED_SOURCE).unwrap();
+     |                                  ^^^^^^^^^^^^ not found in this scope
+
+error[E0425]: cannot find value `FIXED_SOURCE` in this scope
+    --> src/bin/../mission_012_host.rs:2980:28
+     |
+2980 |         let after = sha256(FIXED_SOURCE.as_bytes());
+     |                            ^^^^^^^^^^^^ not found in this scope
+
+error[E0425]: cannot find value `FIXED_SOURCE` in this scope
+    --> src/bin/../mission_012_host.rs:2992:34
+     |
+2992 |         write_source(&candidate, FIXED_SOURCE).unwrap();
+     |                                  ^^^^^^^^^^^^ not found in this scope
+
+For more information about this error, try `rustc --explain E0425`.
+error: could not compile `agent-forge-core` (bin "mission-012-mcp-host" test) due to 4 previous errors

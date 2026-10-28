@@ -1,0 +1,45 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+error[E0425]: cannot find value `FIXED_SOURCE` in this scope
+    --> src/bin/../mission_012_host.rs:2828:42
+     |
+2828 |         let after_source_sha256 = sha256(FIXED_SOURCE.as_bytes());
+     |                                          ^^^^^^^^^^^^ not found in this scope
+
+error[E0425]: cannot find value `FIXED_SOURCE` in this scope
+    --> src/bin/../mission_012_host.rs:2829:34
+     |
+2829 |         write_source(&candidate, FIXED_SOURCE).unwrap();
+     |                                  ^^^^^^^^^^^^ not found in this scope
+
+error[E0425]: cannot find value `FIXED_SOURCE` in this scope
+    --> src/bin/../mission_012_host.rs:2856:28
+     |
+2856 |         let after = sha256(FIXED_SOURCE.as_bytes());
+     |                            ^^^^^^^^^^^^ not found in this scope
+
+error[E0425]: cannot find value `FIXED_SOURCE` in this scope
+    --> src/bin/../mission_012_host.rs:2868:34
+     |
+2868 |         write_source(&candidate, FIXED_SOURCE).unwrap();
+     |                                  ^^^^^^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function `restore_candidate_for_workspace_write_replay` in this scope
+    --> src/bin/../mission_012_host.rs:2832:13
+     |
+2832 |             restore_candidate_for_workspace_write_replay(
+     |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function `restore_candidate_for_workspace_write_replay` in this scope
+    --> src/bin/../mission_012_host.rs:2858:33
+     |
+2858 |         let third_state_error = restore_candidate_for_workspace_write_replay(
+     |                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function `restore_candidate_for_workspace_write_replay` in this scope
+    --> src/bin/../mission_012_host.rs:2870:30
+     |
+2870 |         let manifest_error = restore_candidate_for_workspace_write_replay(
+     |                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ not found in this scope
+
+For more information about this error, try `rustc --explain E0425`.
+error: could not compile `agent-forge-core` (bin "mission-012-mcp-host" test) due to 7 previous errors

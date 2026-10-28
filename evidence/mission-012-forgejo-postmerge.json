@@ -1,0 +1,71 @@
+{
+  "branch_protection": {
+    "approval_whitelist_enabled": true,
+    "block_outdated_branch": true,
+    "merge_whitelist_enabled": true,
+    "push_allowed": false,
+    "required_approvals": 1,
+    "required_statuses": [
+      "agent-forge/independent-acceptance"
+    ],
+    "status_checks_enabled": true
+  },
+  "git_readback": {
+    "main_commit": "daee8ccccdd286609c1ee1ec06b7fd4ae1d32bf9",
+    "main_tree": "6950b9418a8973764d945c7df4ed9c3da2079439",
+    "reviewed_candidate_commit": "1b6d81bf72214b1acc9735dc51eb35d233d54375",
+    "reviewed_candidate_tree": "6950b9418a8973764d945c7df4ed9c3da2079439",
+    "trees_match": true
+  },
+  "issue": {
+    "number": 1,
+    "state": "closed",
+    "url": "http://127.0.0.1:3132/forge-admin/mission-012-clamp/issues/1"
+  },
+  "origin": "http://127.0.0.1:3132",
+  "permissions": {
+    "agent-bot": "read",
+    "verifier-bot": "write"
+  },
+  "postmerge_verifier": {
+    "base_exit_code": 101,
+    "candidate_acceptance_pass": true,
+    "candidate_commit": "daee8ccccdd286609c1ee1ec06b7fd4ae1d32bf9",
+    "candidate_exit_code": 0,
+    "changed_paths": [
+      "src/lib.rs"
+    ],
+    "source_commit": "2b230ecda8d57dabbb36eee1399efbe4c8c875ad",
+    "verdict": "pass"
+  },
+  "premerge_recheck": {
+    "approved_commit": "1b6d81bf72214b1acc9735dc51eb35d233d54375",
+    "base_sha": "2b230ecda8d57dabbb36eee1399efbe4c8c875ad",
+    "head_sha": "1b6d81bf72214b1acc9735dc51eb35d233d54375",
+    "issue_state": "open",
+    "policy_bindings_match_base": true,
+    "report_sha256": "7f9fb7194d245e8ddcfc11196a794c23e6e3f762abf609325899e49420dfab6c",
+    "required_approvals": 1,
+    "required_statuses": [
+      "agent-forge/independent-acceptance"
+    ],
+    "reviewer": "verifier-bot",
+    "status": "success",
+    "status_creator": "verifier-bot"
+  },
+  "pull_request": {
+    "additions": 1,
+    "base_sha": "daee8ccccdd286609c1ee1ec06b7fd4ae1d32bf9",
+    "changed_files": 1,
+    "deletions": 1,
+    "head_sha": "1b6d81bf72214b1acc9735dc51eb35d233d54375",
+    "merge_commit_sha": "daee8ccccdd286609c1ee1ec06b7fd4ae1d32bf9",
+    "merged": true,
+    "merged_by": "forge-admin",
+    "number": 4,
+    "state": "closed",
+    "url": "http://127.0.0.1:3132/forge-admin/mission-012-clamp/pulls/4"
+  },
+  "repository": "forge-admin/mission-012-clamp",
+  "schema_version": 1
+}

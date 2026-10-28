@@ -1,0 +1,7 @@
+{
+  "cleanup_failure": null,
+  "error_detail": "invalid host credential did not fail before mission claim state",
+  "error_type": "RuntimeError",
+  "stage": "refuse_invalid_host_credential",
+  "verdict": "failed"
+}

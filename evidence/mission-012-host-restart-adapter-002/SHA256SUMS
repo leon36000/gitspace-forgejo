@@ -1,0 +1,8 @@
+71f50150405bbe38e7d536447f1e97407770beac21355690a64bbc34094e18c8  evidence/mission-012-host-restart-adapter-002/clippy.log
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  evidence/mission-012-host-restart-adapter-002/diff-check.log
+61856728fbe30fb040ae5c62c45971bf20174e3676e0bb5370f7612a6eb87a70  evidence/mission-012-host-restart-adapter-002/format-check.log
+cc2428e652c6025cb12cecc431dcc02dbd7102c0b1aab703c2b6c74c702aa729  evidence/mission-012-host-restart-adapter-002/lifecycle-suite.log
+330121ff72dbc83e91bc452c080384f3eae462ee2d2797f87214ff355c0e3579  evidence/mission-012-host-restart-adapter-002/local-run.md
+94f8cc0975d52b6a84f4a0c72a9c74241e0aaeb18148b21cf63799f88504854c  evidence/mission-012-host-restart-adapter-002/sigkill-adapter-e2e.log
+0e0283aaf3de5fefcf6522f225b4001456420e8ac5848e540531a7fe7012aa45  evidence/mission-012-host-restart-adapter-002/source-sha256.txt
+33c1af9e90a80ca4efad9882a35ec37caf391c7eaf6d657452c99e52dd8c49df  evidence/mission-012-host-restart-adapter-002/toolchain.txt

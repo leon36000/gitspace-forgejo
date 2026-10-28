@@ -1,0 +1,28 @@
+{
+  "acceptance_sha256": "5d4727542ea32f61aa4500754556fcfd1f39b59b4131ede257cb736fab231dc2",
+  "base": {
+    "exit_code": 101,
+    "expected_failure": true,
+    "output_sha256": "ae122bf7149bf9cdb48de0bbb655b6b6910273ed7a129c27f15290bf2fa2dd08"
+  },
+  "candidate": {
+    "acceptance_pass": true,
+    "exit_code": 0,
+    "output_sha256": "8899c8ac1ac8c3dd50ce1343f0edd79ba06e45bf79bfcac8730f3441e4adf4e3"
+  },
+  "candidate_commit": "cd13dcd974f4157dd95601c808642720aa52eab4",
+  "candidate_source_sha256": "173304ad7d32aabc1e8e1ee41eabda3398a8690798e68f906bcebc73cbcd6d15",
+  "candidate_tree_matches_merge_tree": true,
+  "host_receipt_sha256_verified": "a057095d4213031f40a17818eb0772616e4860fe4c5ed8297bf7ed36a30905f1",
+  "limitation": "This verification ran after merge. It independently rechecks the exact merged bytes and does not retroactively make the original pre-merge test-output parser resistant to arbitrary candidates. The hardened runner pins this task's exact source and acceptance hashes for future runs.",
+  "merge_commit": "5b5bd6ae9ae896d502728bea29e76b86a56deaf9",
+  "merge_parents": [
+    "e217ae7aed7ffc4faa1954b2e3c8b5d50c58893c",
+    "cd13dcd974f4157dd95601c808642720aa52eab4"
+  ],
+  "model_and_cost_provenance": "Claude CLI model, effort, and cost remain values reported by the local run summary; the host receipt and candidate bytes were independently hash-checked",
+  "pre_merge_gate": false,
+  "sandbox": "Bubblewrap mount/PID/network namespaces, commit snapshot read-only, fresh in-memory Cargo target, no host home or credentials, offline locked Cargo",
+  "schema_version": 1,
+  "verdict": "pass_retrospective"
+}

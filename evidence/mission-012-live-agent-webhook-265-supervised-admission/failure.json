@@ -1,0 +1,7 @@
+{
+  "cleanup_failure": null,
+  "error_detail": "module 'run_forgejo_live_webhook_reconcile_e2e' has no attribute 'write_private'",
+  "error_type": "AttributeError",
+  "stage": "start_receiver_and_create_issue_hook",
+  "verdict": "failed"
+}

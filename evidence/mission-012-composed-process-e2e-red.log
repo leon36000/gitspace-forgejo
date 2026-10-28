@@ -1,0 +1,74 @@
+$ /home/pc6/.cargo/bin/cargo test --offline --locked --test forgejo_mission_delivery_process_e2e --no-run
+   Compiling version_check v0.9.5
+   Compiling proc-macro2 v1.0.107
+   Compiling typenum v1.20.0
+   Compiling unicode-ident v1.0.26
+   Compiling quote v1.0.47
+   Compiling libc v0.2.190
+   Compiling serde_core v1.0.228
+   Compiling subtle v2.6.1
+   Compiling zmij v1.0.23
+   Compiling serde_json v1.0.150
+   Compiling serde v1.0.228
+   Compiling itoa v1.0.18
+   Compiling memchr v2.8.3
+   Compiling cfg-if v1.0.5
+   Compiling hex v0.4.3
+   Compiling generic-array v0.14.7
+   Compiling syn v2.0.117
+   Compiling block-buffer v0.10.4
+   Compiling crypto-common v0.1.7
+   Compiling digest v0.10.7
+   Compiling hmac v0.12.1
+   Compiling cpufeatures v0.2.17
+   Compiling sha2 v0.10.9
+   Compiling serde_derive v1.0.228
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 3.90s
+  Executable tests/forgejo_mission_delivery_process_e2e.rs (/tmp/forgejo-mission-delivery-e2e-s55dol41/target/debug/deps/forgejo_mission_delivery_process_e2e-b4b936c5c7cb8e50)
+$ /home/pc6/.cargo/bin/cargo test --offline --locked --test forgejo_mission_delivery_process --no-run
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.26s
+  Executable tests/forgejo_mission_delivery_process.rs (/tmp/forgejo-mission-delivery-e2e-s55dol41/target/debug/deps/forgejo_mission_delivery_process-e3f068f8296e9210)
+$ /usr/bin/bwrap --die-with-parent --unshare-net --ro-bind / / --dev-bind /dev /dev --proc /proc --tmpfs /tmp --ro-bind /tmp/forgejo-mission-delivery-e2e-s55dol41/target /tmp/forgejo-mission-delivery-e2e-s55dol41/target --bind /tmp/forgejo-mission-delivery-e2e-s55dol41/runtime-0 /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/.runtime --clearenv --setenv PATH /usr/bin:/bin --setenv HOME /tmp --setenv TMPDIR /tmp --setenv RUST_TEST_THREADS 1 --setenv MISSION_E2E_RUST_SYSROOT /home/pc6/.rustup/toolchains/1.95.0-aarch64-unknown-linux-gnu --setenv MISSION_E2E_RUST_BIN_DIR /home/pc6/.cargo/bin --chdir /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace /tmp/forgejo-mission-delivery-e2e-s55dol41/target/debug/deps/forgejo_mission_delivery_process_e2e-b4b936c5c7cb8e50 actual_mission_cli_admits_signed_webhook_after_closed_refusal_and_reuses_allocation --exact --ignored --nocapture
+
+running 1 test
+test actual_mission_cli_admits_signed_webhook_after_closed_refusal_and_reuses_allocation ... process-e2e: closed refusal=mission_issue_closed; corrected admission=claimed; duplicate retry and new delivery reused allocation=admission-41 generation=1; inbox deliveries=2; fixture HTTP requests=31
+ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 1 filtered out; finished in 0.24s
+
+$ /usr/bin/bwrap --die-with-parent --unshare-net --ro-bind / / --dev-bind /dev /dev --proc /proc --tmpfs /tmp --ro-bind /tmp/forgejo-mission-delivery-e2e-s55dol41/target /tmp/forgejo-mission-delivery-e2e-s55dol41/target --bind /tmp/forgejo-mission-delivery-e2e-s55dol41/runtime-1 /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/.runtime --clearenv --setenv PATH /usr/bin:/bin --setenv HOME /tmp --setenv TMPDIR /tmp --setenv RUST_TEST_THREADS 1 --setenv MISSION_E2E_RUST_SYSROOT /home/pc6/.rustup/toolchains/1.95.0-aarch64-unknown-linux-gnu --setenv MISSION_E2E_RUST_BIN_DIR /home/pc6/.cargo/bin --chdir /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace /tmp/forgejo-mission-delivery-e2e-s55dol41/target/debug/deps/forgejo_mission_delivery_process-e3f068f8296e9210 launched_cli_refuses_an_unknown_delivery_without_creating_runtime_state --exact --ignored --nocapture
+
+running 1 test
+test launched_cli_refuses_an_unknown_delivery_without_creating_runtime_state ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 2 filtered out; finished in 0.00s
+
+$ /usr/bin/bwrap --die-with-parent --unshare-net --ro-bind / / --dev-bind /dev /dev --proc /proc --tmpfs /tmp --ro-bind /tmp/forgejo-mission-delivery-e2e-s55dol41/target /tmp/forgejo-mission-delivery-e2e-s55dol41/target --bind /tmp/forgejo-mission-delivery-e2e-s55dol41/runtime-2 /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/.runtime --clearenv --setenv PATH /usr/bin:/bin --setenv HOME /tmp --setenv TMPDIR /tmp --setenv RUST_TEST_THREADS 1 --setenv MISSION_E2E_RUST_SYSROOT /home/pc6/.rustup/toolchains/1.95.0-aarch64-unknown-linux-gnu --setenv MISSION_E2E_RUST_BIN_DIR /home/pc6/.cargo/bin --chdir /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace /tmp/forgejo-mission-delivery-e2e-s55dol41/target/debug/deps/forgejo_mission_delivery_process_e2e-b4b936c5c7cb8e50 mission_012_signed_request_context_red_green_independent_verification_and_sandbox_merge --exact --ignored --nocapture
+
+running 1 test
+test mission_012_signed_request_context_red_green_independent_verification_and_sandbox_merge ... 
+thread 'mission_012_signed_request_context_red_green_independent_verification_and_sandbox_merge' (1281015) panicked at tests/forgejo_mission_delivery_process_e2e.rs:1057:5:
+admission response: {"error":{"action":"provide valid commit-pinned sources inside the read capability set","code":"context_source_invalid_or_not_readable","details":{},"retryable":false},"schema_version":2,"verdict":"inconclusive"}
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+FAILED
+
+failures:
+
+failures:
+    mission_012_signed_request_context_red_green_independent_verification_and_sandbox_merge
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 1 filtered out; finished in 0.10s
+
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/scripts/run_forgejo_mission_delivery_process_e2e.py", line 174, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/scripts/run_forgejo_mission_delivery_process_e2e.py", line 158, in main
+    run(
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/scripts/run_forgejo_mission_delivery_process_e2e.py", line 33, in run
+    subprocess.run(command, cwd=cwd, env=env, check=True)
+  File "/usr/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/usr/bin/bwrap', '--die-with-parent', '--unshare-net', '--ro-bind', '/', '/', '--dev-bind', '/dev', '/dev', '--proc', '/proc', '--tmpfs', '/tmp', '--ro-bind', '/tmp/forgejo-mission-delivery-e2e-s55dol41/target', '/tmp/forgejo-mission-delivery-e2e-s55dol41/target', '--bind', '/tmp/forgejo-mission-delivery-e2e-s55dol41/runtime-2', '/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/.runtime', '--clearenv', '--setenv', 'PATH', '/usr/bin:/bin', '--setenv', 'HOME', '/tmp', '--setenv', 'TMPDIR', '/tmp', '--setenv', 'RUST_TEST_THREADS', '1', '--setenv', 'MISSION_E2E_RUST_SYSROOT', '/home/pc6/.rustup/toolchains/1.95.0-aarch64-unknown-linux-gnu', '--setenv', 'MISSION_E2E_RUST_BIN_DIR', '/home/pc6/.cargo/bin', '--chdir', '/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace', '/tmp/forgejo-mission-delivery-e2e-s55dol41/target/debug/deps/forgejo_mission_delivery_process_e2e-b4b936c5c7cb8e50', 'mission_012_signed_request_context_red_green_independent_verification_and_sandbox_merge', '--exact', '--ignored', '--nocapture']' returned non-zero exit status 101.

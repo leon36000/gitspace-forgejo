@@ -1,0 +1,13 @@
+{
+  "active_after_run": null,
+  "api_hook_id": null,
+  "configuration_matches_expected": false,
+  "content_type": null,
+  "deactivation_readback_confirmed": null,
+  "events": null,
+  "events_readback_valid": false,
+  "hook_id": null,
+  "secret_value_recorded": false,
+  "target": null,
+  "type": null
+}

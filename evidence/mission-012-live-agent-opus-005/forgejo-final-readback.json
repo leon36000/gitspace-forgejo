@@ -1,0 +1,46 @@
+{
+  "branch_protection": {
+    "apply_to_admins": true,
+    "approvals_whitelist_username": [
+      "verifier-bot"
+    ],
+    "block_on_outdated_branch": true,
+    "branch_name": "main",
+    "dismiss_stale_approvals": true,
+    "enable_approvals_whitelist": true,
+    "enable_merge_whitelist": true,
+    "enable_status_check": false,
+    "merge_whitelist_usernames": [
+      "forge-admin"
+    ],
+    "required_approvals": 1,
+    "rule_name": "main"
+  },
+  "issue_state": "closed",
+  "main_sha": "5b5bd6ae9ae896d502728bea29e76b86a56deaf9",
+  "main_source_sha256": "173304ad7d32aabc1e8e1ee41eabda3398a8690798e68f906bcebc73cbcd6d15",
+  "pull_request": {
+    "base_sha": "5b5bd6ae9ae896d502728bea29e76b86a56deaf9",
+    "head_sha": "cd13dcd974f4157dd95601c808642720aa52eab4",
+    "merge_commit_sha": "5b5bd6ae9ae896d502728bea29e76b86a56deaf9",
+    "merged": true,
+    "number": 2,
+    "state": "closed"
+  },
+  "read_only": true,
+  "repository_private": true,
+  "review": {
+    "body": "Independent sandbox verifier passed for requirement 3a3c444075c9 and head cd13dcd974f4157dd95601c808642720aa52eab4.",
+    "commit_id": "cd13dcd974f4157dd95601c808642720aa52eab4",
+    "dismissed": false,
+    "id": 1,
+    "official": true,
+    "reviewer_id": 2,
+    "reviewer_login": "verifier-bot",
+    "stale": false,
+    "state": "APPROVED"
+  },
+  "review_count": 1,
+  "review_total_count": 1,
+  "schema_version": 1
+}

@@ -1,0 +1,19 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.52s
+     Running unittests src/bin/forgejo-mission-local.rs (target/debug/deps/forgejo_mission_local-07e6661870a4625d)
+
+running 1 test
+
+thread 'tests::mission_012_context_extracts_and_cites_the_pinned_clamp_function' (1266745) panicked at src/bin/forgejo-mission-local.rs:2133:10:
+called `Result::unwrap()` on an `Err` value: AgentRuntimeErrorV1 { code: "mission_context_source_missing", retryable: false, action: "refresh the source map for a protected commit containing the duration parser", details: Object {"path": String("src/lib.rs")} }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test tests::mission_012_context_extracts_and_cites_the_pinned_clamp_function ... FAILED
+
+failures:
+
+failures:
+    tests::mission_012_context_extracts_and_cites_the_pinned_clamp_function
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 26 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `--bin forgejo-mission-local`

@@ -1,0 +1,43 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+error[E0599]: no method named `workspace_write_recovery_preflight` found for struct `MissionExecutionJournalV1` in the current scope
+    --> tests/mission_execution_journal_contract.rs:1582:10
+     |
+1581 |       let pre_state = journal
+     |  _____________________-
+1582 | |         .workspace_write_recovery_preflight(
+     | |         -^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ method not found in `MissionExecutionJournalV1`
+     | |_________|
+     |
+
+error[E0599]: no method named `workspace_write_recovery_preflight` found for struct `MissionExecutionJournalV1` in the current scope
+    --> tests/mission_execution_journal_contract.rs:1596:10
+     |
+1595 |       let post_state = journal
+     |  ______________________-
+1596 | |         .workspace_write_recovery_preflight(
+     | |         -^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ method not found in `MissionExecutionJournalV1`
+     | |_________|
+     |
+
+error[E0599]: no method named `workspace_write_recovery_preflight` found for struct `MissionExecutionJournalV1` in the current scope
+    --> tests/mission_execution_journal_contract.rs:1609:10
+     |
+1608 |       let changed_base = journal
+     |  ________________________-
+1609 | |         .workspace_write_recovery_preflight(
+     | |         -^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ method not found in `MissionExecutionJournalV1`
+     | |_________|
+     |
+
+error[E0599]: no method named `workspace_write_recovery_preflight` found for struct `MissionExecutionJournalV1` in the current scope
+    --> tests/mission_execution_journal_contract.rs:1621:10
+     |
+1620 |       let third_state = journal
+     |  _______________________-
+1621 | |         .workspace_write_recovery_preflight(
+     | |         -^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ method not found in `MissionExecutionJournalV1`
+     | |_________|
+     |
+
+For more information about this error, try `rustc --explain E0599`.
+error: could not compile `agent-forge-core` (test "mission_execution_journal_contract") due to 4 previous errors
