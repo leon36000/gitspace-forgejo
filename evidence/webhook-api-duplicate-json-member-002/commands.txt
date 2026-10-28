@@ -1,0 +1,16 @@
+# Worktree: .runtime/webhook-005-workspace, HEAD f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+# Exact red: exit 101, old mission API JSON parser accepted duplicate protected=false/true.
+cargo test --offline --locked --bin forgejo-mission-local branch_api_rejects_duplicate_protected_field_before_admission -- --nocapture
+# Exact green: exit 0.
+cargo test --offline --locked --bin forgejo-mission-local branch_api_rejects_duplicate_protected_field_before_admission -- --nocapture
+# Exact red: exit 101, old typed review deserializer ignored duplicate unknown extension keys.
+cargo test --offline --locked --test forgejo_merge_approval review_json_page_rejects_duplicate_unknown_members -- --nocapture
+# Exact green: exit 0.
+cargo test --offline --locked --test forgejo_merge_approval review_json_page_rejects_duplicate_unknown_members -- --nocapture
+# Final integrated suite: exit 0, 492 passed, 0 failed, 55 ignored across 34 test groups.
+cargo test --offline --locked --all-targets -- --test-threads=1
+# Final checks: exit 0.
+cargo fmt --all -- --check
+git diff --check
+cargo clippy --offline --locked --lib -- -D warnings -A clippy::too_many_arguments -A clippy::collapsible_if
+python3 scripts/verify_cargo_license_state.py

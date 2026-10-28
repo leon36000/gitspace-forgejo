@@ -1,0 +1,39 @@
+Invalid exact-name filter attempt (zero tests executed; not evidence):
+cargo test --offline --locked --bin forgejo-reconcile-local local_adapter_rejects_success_response_with_duplicate_json_member -- --exact --nocapture
+
+Red test, which exposed last-key-wins parsing:
+cargo test --offline --locked --bin forgejo-reconcile-local local_adapter_rejects_success_response_with_duplicate_json_member -- --nocapture
+
+Corrected focused filter (the earlier --exact attempt ran zero tests):
+cargo test --offline --locked --bin forgejo-reconcile-local local_adapter_rejects_success_response_with_duplicate_json_member -- --nocapture
+
+Focused green:
+cargo test --offline --locked --bin forgejo-reconcile-local local_adapter_rejects_success_response_with_duplicate_json_member -- --nocapture
+
+Webhook parser regressions:
+cargo test --offline --locked --test webhook_contract signed_payload_with_duplicate_json_member -- --nocapture
+
+Actual receiver process regression:
+cargo test --offline --locked --test webhook_receiver_process_e2e actual_receiver_rejects_signed_duplicate_json_members_before_append -- --exact --nocapture
+
+Complete workspace verification:
+cargo test --offline --locked --all-targets -- --test-threads=1
+
+Formatting and whitespace:
+cargo fmt --all -- --check
+rustfmt --edition 2024 --check src/strict_json.rs src/webhook.rs src/bin/forgejo-reconcile-local.rs
+git diff --check
+
+Clippy:
+cargo clippy --offline --locked --lib -- -D warnings -A clippy::too_many_arguments -A clippy::collapsible_if
+cargo clippy --offline --locked --all-targets -- -D warnings
+
+The output and exit statuses are stored in the files beside this document.
+
+Postmerge readback refuses a duplicated critical flag:
+cargo test --offline --locked --bin forgejo-reconcile-local postmerge_readback_rejects_duplicate_merged_flag_before_followup_reads -- --nocapture
+
+Cargo metadata and unselected-license guard:
+cargo metadata --locked --offline --no-deps --format-version 1
+python3 scripts/verify_cargo_license_state.py
+(cd scripts && python3 -m unittest test_cargo_license_state.py)

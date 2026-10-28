@@ -1,0 +1,8 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.12s
+     Running unittests src/bin/forgejo-reconcile-local.rs (target/debug/deps/forgejo_reconcile_local-3e9fc5f7734f2ac5)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 111 filtered out; finished in 0.00s
+

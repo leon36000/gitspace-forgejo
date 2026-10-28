@@ -1,0 +1,53 @@
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:847:
+         .expect("wait for actual reconciliation CLI");
+     let (request, authorized) = fixture.join().expect("unauthorized API fixture completed");
+ 
+-    assert!(!authorized, "fixture unexpectedly authorized the invalid token");
++    assert!(
++        !authorized,
++        "fixture unexpectedly authorized the invalid token"
++    );
+     assert!(request.lines().any(|line| {
+         line.split_once(':').is_some_and(|(name, value)| {
+             name.eq_ignore_ascii_case("authorization") && value.trim() == format!("token {TOKEN}")
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:888:
+     .expect("serialize stale synthetic pull request webhook payload");
+ 
+     let (mut receiver, address) = start_ready_receiver(&secret, &journal_path);
+-    let (status, accepted) = send(
+-        address,
+-        &request_event("cli-pr-23", "pull_request", &body),
+-    );
++    let (status, accepted) = send(address, &request_event("cli-pr-23", "pull_request", &body));
+     assert_eq!(status, 202);
+     assert_eq!(accepted["accepted"], true);
+     assert_eq!(accepted["duplicate"], false);
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:927:
+         String::from_utf8_lossy(&output.stderr)
+     );
+     assert!(
+-        requests[0].starts_with(
+-            "GET /api/v1/repos/forge-admin/agent-forge-core/pulls/23 HTTP/1.1\r\n"
+-        ),
++        requests[0]
++            .starts_with("GET /api/v1/repos/forge-admin/agent-forge-core/pulls/23 HTTP/1.1\r\n"),
+         "unexpected request path: {requests:?}"
+     );
+     assert!(
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:953:
+         value["canonical_state"]["html_url"],
+         "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/23"
+     );
+-    assert_ne!(value["canonical_state"]["head_sha"], "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+-    assert_ne!(value["canonical_state"]["base_sha"], "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb");
++    assert_ne!(
++        value["canonical_state"]["head_sha"],
++        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
++    );
++    assert_ne!(
++        value["canonical_state"]["base_sha"],
++        "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
++    );
+ }
+ 
+ #[test]

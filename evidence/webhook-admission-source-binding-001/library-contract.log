@@ -1,0 +1,8 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.01s
+     Running tests/webhook_mission_admission_contract.rs (target/debug/deps/webhook_mission_admission_contract-970f84c8f68c75fe)
+
+running 1 test
+test webhook_source_receipt_revalidates_exact_event_without_changing_stable_handoff ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 12 filtered out; finished in 0.08s
+
