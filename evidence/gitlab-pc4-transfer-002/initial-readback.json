@@ -1,0 +1,40 @@
+{
+  "project": "root/gitspace-forgejo",
+  "branch": "codex/pc6-transfer-work-2026-10-28",
+  "content_sync_head": "047d66ec07e678b74093b7b0a187ae224dcfb919",
+  "tree_entries": 255,
+  "blobs": 234,
+  "exact_blob_mode_checks": 82,
+  "missing": 0,
+  "mismatched": 0,
+  "core_local_paths": 134,
+  "core_paths_pre_checkpoint_update": 133,
+  "core_mismatch": [
+    "docs/checkpoint.md"
+  ],
+  "evidence_bundle": {
+    "files": 14887,
+    "uncompressed_bytes": 60571312,
+    "tar_gz_bytes": 12979847,
+    "base64_characters": 17306464,
+    "parts": 68,
+    "archive_sha256": "e9b0c75d2228bac0aa68221250f35e5677e5f30b7dc2809ad18b06ce49a4705c"
+  },
+  "targeted_scan": {
+    "text_files": 15022,
+    "bytes": 71599153,
+    "high_confidence_matches": 0,
+    "complete_secret_absence_proven": false
+  },
+  "pipeline_at_content_sync": {
+    "id": 150,
+    "status": "pending",
+    "sha": "047d66ec07e678b74093b7b0a187ae224dcfb919",
+    "jobs": [
+      "pc4_gitleaks",
+      "pc4_semgrep",
+      "pc4_trivy",
+      "pc4_ci_fallback"
+    ]
+  }
+}

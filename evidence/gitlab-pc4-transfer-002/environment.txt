@@ -1,0 +1,10 @@
+Date: 2026-10-28, America/Montreal
+Exécution: Codex PC6, Linux aarch64, Python 3.12.3
+Worktree: /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace
+Branche locale: local/WEBHOOK-005-canonical-links
+HEAD local conservé: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+GitLab PC4 MCP: 19.5.1, révision 449ed2875c2
+Projet distant: root/gitspace-forgejo, ID 4, visibilité private
+Branche distante de travail: codex/pc6-transfer-work-2026-10-28
+Branche par défaut: codex/pc6-transfer-2026-10-28 (protégée, inchangée)
+Accès GitLab obtenu via connecteur MCP existant; aucun courriel, mot de passe ou jeton local n’a été lu

@@ -1,0 +1,8 @@
+git status --short --branch
+git rev-parse HEAD
+GitLab PC4 MCP: get_mcp_server_version, get_project, list_branches, list_repository_tree(recursive=true, pagination), get_commit
+GitLab PC4 MCP: add_commit(encoding=text) sur codex/pc6-transfer-work-2026-10-28; aucun appel de merge
+GitLab PC4 MCP: list_pipelines et get_pipeline pour lire les jobs déclenchés automatiquement
+Audit local ciblé des chemins Git non ignorés; motifs de secrets définis par evidence/continuation-425-gitlab-connector-preflight-001/audit_transfer_candidates.py
+Archive: lecture UTF-8 des preuves, construction tar/gzip déterministe, découpe Base64 256000 caractères, reconstruction locale et vérification SHA-256 de tous les membres
+Readback: IDs de blob Git et modes depuis l’arbre récursif GitLab comparés aux objets Git calculés depuis les fichiers locaux
