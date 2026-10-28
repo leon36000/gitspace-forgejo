@@ -1,0 +1,5 @@
+$ git add tests/protected_interaction.rs
+exit=0
+--- stdout ---
+
+--- stderr ---

@@ -1,0 +1,21 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.44s
+     Running unittests src/bin/mission-012-mcp-host.rs (target/debug/deps/mission_012_mcp_host-3e32cf331dafa499)
+
+running 1 test
+
+thread 'host::tests::sandbox_blocks_nested_user_namespace_creation' (486722) panicked at src/bin/../mission_012_host.rs:2387:9:
+assertion `left == right` failed: nested user namespaces remain available
+  left: "allowed"
+ right: "blocked"
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test host::tests::sandbox_blocks_nested_user_namespace_creation ... FAILED
+
+failures:
+
+failures:
+    host::tests::sandbox_blocks_nested_user_namespace_creation
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 16 filtered out; finished in 0.04s
+
+error: test failed, to rerun pass `--bin mission-012-mcp-host`

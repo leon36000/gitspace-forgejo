@@ -1,0 +1,5 @@
+$ git add src/lib.rs tests/exclusive_lower.rs
+exit=0
+--- stdout ---
+
+--- stderr ---

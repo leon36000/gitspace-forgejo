@@ -1,0 +1,6 @@
+$ git init --initial-branch=main
+exit=0
+--- stdout ---
+Initialized empty Git repository in /tmp/semantic-clean-merge-n5f8lx0e/.git/
+
+--- stderr ---

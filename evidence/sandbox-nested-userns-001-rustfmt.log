@@ -1,0 +1,2 @@
+command: rustfmt --edition 2024 --check src/mission_012_host.rs
+exit_code: 0

@@ -1,0 +1,5 @@
+$ git config user.name Canary
+exit=0
+--- stdout ---
+
+--- stderr ---

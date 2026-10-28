@@ -1,0 +1,6 @@
+$ git merge-tree --write-tree --name-only HEAD exclusive-lower
+exit=0
+--- stdout ---
+06174e7f56840a7ab8126ce947d66ab986b3b33d
+
+--- stderr ---

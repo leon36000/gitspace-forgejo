@@ -1,0 +1,11 @@
+$ git commit -m base
+exit=0
+--- stdout ---
+[main (root-commit) cc870de] base
+ 4 files changed, 44 insertions(+)
+ create mode 100644 Cargo.lock
+ create mode 100644 Cargo.toml
+ create mode 100644 src/lib.rs
+ create mode 100644 tests/placeholder.rs
+
+--- stderr ---

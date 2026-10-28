@@ -1,0 +1,5 @@
+$ cargo generate-lockfile --offline
+exit=0
+--- stdout ---
+
+--- stderr ---

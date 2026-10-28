@@ -1,0 +1,39 @@
+warning: this `if` statement can be collapsed
+    --> src/agent_runtime.rs:1335:17
+     |
+1335 | /                 if let Some(resolved) = resolved.as_ref() {
+1336 | |                     if resolved.resolution.is_terminal() {
+1337 | |                         return Ok(Some(resolved.resolution.clone()));
+1338 | |                     }
+1339 | |                 }
+     | |_________________^
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#collapsible_if
+     = note: `#[warn(clippy::collapsible_if)]` on by default
+help: collapse nested if block
+     |
+1335 ~                 if let Some(resolved) = resolved.as_ref()
+1336 ~                     && resolved.resolution.is_terminal() {
+1337 |                         return Ok(Some(resolved.resolution.clone()));
+1338 ~                     }
+     |
+
+warning: `agent-forge-core` (lib) generated 1 warning (run `cargo clippy --fix --lib -p agent-forge-core -- -A clippy::too_many_arguments -A clippy::bool_assert_comparison -A clippy::manual_div_ceil` to apply 1 suggestion)
+warning: `agent-forge-core` (lib test) generated 1 warning (1 duplicate)
+warning: all variants have the same prefix: `After`
+   --> tests/forgejo_merge_post_crash_recovery_process_e2e.rs:300:1
+    |
+300 | / enum CrashPoint {
+301 | |     AfterForgejoCommitsPost,
+302 | |     AfterDurableIntentBeforePost,
+303 | |     AfterFinalProtectionReadBeforePost,
+304 | | }
+    | |_^
+    |
+    = help: remove the prefixes and use full paths to the variants instead of glob imports
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#enum_variant_names
+    = note: `#[warn(clippy::enum_variant_names)]` on by default
+
+    Checking agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+warning: `agent-forge-core` (test "forgejo_merge_post_crash_recovery_process_e2e") generated 1 warning
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.29s

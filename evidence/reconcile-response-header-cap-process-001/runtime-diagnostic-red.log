@@ -1,0 +1,18 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.01s
+     Running unittests src/bin/forgejo-reconcile-local.rs (target/debug/deps/forgejo_reconcile_local-3e9fc5f7734f2ac5)
+
+running 1 test
+
+thread 'tests::final_merge_state_runtime_error_preserves_oversized_response_details' (1236779) panicked at src/bin/forgejo-reconcile-local.rs:8456:9:
+assertion failed: error.action.contains("reduce the requested resource")
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test tests::final_merge_state_runtime_error_preserves_oversized_response_details ... FAILED
+
+failures:
+
+failures:
+    tests::final_merge_state_runtime_error_preserves_oversized_response_details
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 152 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `--bin forgejo-reconcile-local`

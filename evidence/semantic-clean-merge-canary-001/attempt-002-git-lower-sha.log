@@ -1,0 +1,6 @@
+$ git rev-parse HEAD
+exit=0
+--- stdout ---
+f3a02bed41f31ca7e2dc19b9480c60665311f2ef
+
+--- stderr ---

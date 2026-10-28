@@ -1,0 +1,22 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.01s
+     Running unittests src/bin/mission-012-mcp-host.rs (target/debug/deps/mission_012_mcp_host-3e32cf331dafa499)
+
+running 13 tests
+test host::tests::base_binding_requires_a_full_lowercase_commit_and_a_plain_branch ... ok
+test host::tests::candidate_cannot_forge_libtest_success_with_print_and_process_exit ... ok
+test host::tests::hard_linked_candidate_source_is_refused_without_touching_external_file ... ok
+test host::tests::host_requires_baseline_red_and_fresh_green_and_receipts_refusals ... ok
+test host::tests::independent_pair_verifier_binds_fresh_red_green_to_exact_snapshots ... ok
+test host::tests::independent_pair_verifier_refuses_unapproved_source_even_with_git_binding ... ok
+test host::tests::sandbox_blocks_nested_user_namespace_creation ... ok
+test host::tests::sandbox_mounts_have_finite_sizes ... ok
+test host::tests::sandbox_refuses_overlapping_writable_target_before_mutating_source_tree ... ok
+test host::tests::sandbox_reports_real_red_then_green_on_the_candidate ... ok
+test host::tests::verifier_materializes_a_private_snapshot_and_rejects_changed_source_bytes ... ok
+test host::tests::verifier_scope_enforces_memory_task_and_cpu_limits ... ok
+test host::tests::writable_test_path_aliases_and_model_diff_are_refused ... ok
+
+test result: ok. 13 passed; 0 failed; 0 ignored; 0 measured; 6 filtered out; finished in 6.46s
+
+
+exit_code=0

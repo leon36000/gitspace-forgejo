@@ -1,0 +1,5 @@
+$ git add src/lib.rs tests/exclusive_upper.rs
+exit=0
+--- stdout ---
+
+--- stderr ---

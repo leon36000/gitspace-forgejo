@@ -1,0 +1,6 @@
+$ git switch main
+exit=0
+--- stdout ---
+
+--- stderr ---
+Switched to branch 'main'
