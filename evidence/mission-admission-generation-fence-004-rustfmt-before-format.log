@@ -1,0 +1,12 @@
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/mission_execution_journal_contract.rs:866:
+     );
+     assert_eq!(old_effect.code, "execution_lease_generation_superseded");
+     assert!(!old_effect_ran.get());
+-    assert_eq!(journal.replay().unwrap().len(), events_after_next_allocation);
++    assert_eq!(
++        journal.replay().unwrap().len(),
++        events_after_next_allocation
++    );
+ 
+     journal
+         .claim_allocated(

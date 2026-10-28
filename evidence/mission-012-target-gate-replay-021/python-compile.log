@@ -1,0 +1,2 @@
+Command: PYTHONPYCACHEPREFIX=/tmp/mission012-target-gate-run-021-pycache python3 -m py_compile scripts/run_mission_012_live_target_gate_e2e.py
+Result: exit 0

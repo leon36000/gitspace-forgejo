@@ -1,0 +1,2 @@
+$ cargo build --release --locked --offline
+    Finished `release` profile [optimized] target(s) in 0.02s

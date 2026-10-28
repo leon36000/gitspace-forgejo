@@ -1,0 +1,11 @@
+{
+  "existing_candidate_sha256": "173304ad7d32aabc1e8e1ee41eabda3398a8690798e68f906bcebc73cbcd6d15",
+  "kind": "replay_of_existing_model_candidate",
+  "limitation": "This run tests the Rust merge gate against Forgejo. It is not a new admission, agent execution, or LLM end-to-end run.",
+  "model_label_from_existing_run_declared": "claude-opus-5-5",
+  "new_model_invocation": false,
+  "schema_version": 1,
+  "source_admission_reused": false,
+  "source_run_id_declared": "mission-012-webhook-composed-run-005/live-mcp-006",
+  "source_run_identity_verified": false
+}

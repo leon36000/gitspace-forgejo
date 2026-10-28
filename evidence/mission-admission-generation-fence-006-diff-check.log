@@ -1,0 +1,3 @@
+cwd: /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace
+command: git diff --check
+exit_status: 0

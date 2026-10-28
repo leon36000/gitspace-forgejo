@@ -1,0 +1,53 @@
+{
+  "acceptance_sha256": "5d4727542ea32f61aa4500754556fcfd1f39b59b4131ede257cb736fab231dc2",
+  "base": {
+    "elapsed_ms": 261,
+    "exit_code": 101,
+    "expected_acceptance_failure": true,
+    "output_truncated": false,
+    "stderr": "   Compiling mission012-clamp v0.1.0 (/candidate)\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.22s\n     Running unittests src/lib.rs (/target/debug/deps/mission012_clamp-2ad6061e15f9cebb)\n     Running tests/acceptance.rs (/target/debug/deps/acceptance-26d9de5d3a8f50ef)\nerror: test failed, to rerun pass `--test acceptance`\n",
+    "stdout": "\nrunning 0 tests\n\ntest result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n\nrunning 2 tests\ntest values_inside_the_range_are_unchanged ... ok\ntest values_outside_the_range_clamp_to_the_nearest_boundary ... FAILED\n\nfailures:\n\n---- values_outside_the_range_clamp_to_the_nearest_boundary stdout ----\n\nthread 'values_outside_the_range_clamp_to_the_nearest_boundary' (68) panicked at tests/acceptance.rs:6:5:\nassertion `left == right` failed\n  left: -2\n right: 10\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n\n\nfailures:\n    values_outside_the_range_clamp_to_the_nearest_boundary\n\ntest result: FAILED. 1 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n",
+    "timed_out": false
+  },
+  "base_source_sha256": "de0175e0fc5341a0ff3080f647ee16f4f4c1c45a205fc01ee8ec73899b3f9aa2",
+  "binding": {
+    "active_pointer_sha256": "1ef46ff73666771ada33e5788d63fd3dbcf24798124ba3c599b8ad2f195dcca5",
+    "base_tree_sha256": "c9a43d16ddf73b1b3310a9f79859ccbb6c113101266cbc18cbd88b536d1fd605",
+    "candidate_tree_sha256": "8830f8ae8780e0325c510090287a12c448ecf5d4cbfc7c2c334f4e27aaa4ac82",
+    "git_tree_binding_verified": true,
+    "pinned_snapshots_executed": true,
+    "policy_id": "MISSION-012-CLAMP-001-POLICY",
+    "policy_revision": 4,
+    "policy_sha256": "e23907b5bd6b2c0f342c88ddcfa9f9a9be98065adcd24f9f7299dc796b5739eb",
+    "requirement_id": "MISSION-012-CLAMP-001",
+    "requirement_revision": 1,
+    "requirement_sha256": "3a3c444075c93a3bcfb2bec17d1a2e74ec0051effc2994e6b02ac095eb0dd431",
+    "verifier_id": "verifier-bot"
+  },
+  "candidate": {
+    "acceptance_pass": true,
+    "elapsed_ms": 261,
+    "exit_code": 0,
+    "output_truncated": false,
+    "stderr": "   Compiling mission012-clamp v0.1.0 (/candidate)\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.22s\n     Running unittests src/lib.rs (/target/debug/deps/mission012_clamp-2ad6061e15f9cebb)\n     Running tests/acceptance.rs (/target/debug/deps/acceptance-26d9de5d3a8f50ef)\n   Doc-tests mission012_clamp\n",
+    "stdout": "\nrunning 0 tests\n\ntest result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n\nrunning 2 tests\ntest values_outside_the_range_clamp_to_the_nearest_boundary ... ok\ntest values_inside_the_range_are_unchanged ... ok\n\ntest result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n\nrunning 0 tests\n\ntest result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n",
+    "timed_out": false,
+    "unchanged_during_verification": true
+  },
+  "candidate_commit": "ad06782e3eab4fbcf6587b9e532aa87129aad3db",
+  "candidate_source_sha256": "173304ad7d32aabc1e8e1ee41eabda3398a8690798e68f906bcebc73cbcd6d15",
+  "changed_paths": [
+    "src/lib.rs"
+  ],
+  "command": [
+    "/toolchain/bin/cargo",
+    "test",
+    "--offline",
+    "--locked"
+  ],
+  "environment": "bubblewrap user, mount, PID and network namespaces; pinned base and candidate snapshots read-only; fresh writable Cargo target; host home and credentials absent",
+  "reason": null,
+  "schema_version": 1,
+  "source_commit": "597bc70f2a17ab516fb748b06a5c5e93de555bc7",
+  "verdict": "pass"
+}

@@ -1,0 +1,33 @@
+{
+  "current_candidate_commit": "336f60bd1e2aec353dc81f975171ac8f27604fed",
+  "current_candidate_status_creator": "verifier-bot",
+  "current_candidate_verifier_verdict": "pass",
+  "old_candidate_commit": "1cb38c26b22892909fb0c6007a22101e71d0db84",
+  "result": {
+    "api_version": "forgejo-rest-v1",
+    "error": {
+      "action": "refresh the changed input and rerun independent verification",
+      "code": "stale_candidate",
+      "details": {
+        "binding": "candidate"
+      },
+      "retryable": false
+    },
+    "external_writer_exclusion": "not_provided_by_cooperative_lock",
+    "merge_attempted": false,
+    "merge_authorized": false,
+    "operation": "local_test_merge_authority",
+    "pull_request_number": 2,
+    "schema_version": 1,
+    "target": {
+      "base_branch": "main",
+      "origin": "http://127.0.0.1:3132",
+      "owner": "forge-admin",
+      "repository": "mission-012-clamp",
+      "selector": "mission-012-clamp"
+    },
+    "verdict": "rejected"
+  },
+  "review_binding_candidate": "336f60bd1e2aec353dc81f975171ac8f27604fed",
+  "same_git_tree": true
+}

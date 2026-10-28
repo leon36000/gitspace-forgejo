@@ -1,0 +1,34 @@
+3135111 execve("/tmp/mission012-target-gate-paged021/cargo-target/debug/forgejo-reconcile-local", ["/tmp/mission012-target-gate-paged021/cargo-target/debug/forgejo-reconcile-local", "--merge-local-test", "--target-profile", "mission-012-clamp", "2", "/tmp/mission012-target-gate-paged021/proof-inputs-stale-a/proof-v2.json", "/tmp/mission012-target-gate-paged021/proof-inputs-stale-a/expected.json", "/tmp/mission012-target-gate-paged021/proof-inputs-stale-a/verifier.key", "/tmp/mission012-target-gate-paged021/proof-inputs-stale-a/policy.json", "/tmp/mission012-target-gate-paged021/refusal-no-status/review-base-binding.json", "host-controlled-local-runtime", "4"], 0xffffdba34388 /* 2 vars */) = 0
+3135112 execve("/usr/bin/curl", ["/usr/bin/curl", "-q", "-sS", "--noproxy", "*", "--proto", "=http", "--connect-timeout", "1", "--max-time", "5.000", "--max-filesize", "1048576", "--write-out", "\\n%{http_code}\\n%header{x-total-count}", "--config", "-", "http://127.0.0.1:3132/api/v1/repos/forge-admin/mission-012-clamp/pulls/2"], 0xc3f0a6b546b0 /* 0 vars */) = 0
+3135112 +++ exited with 0 +++
+3135111 --- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=3135112, si_uid=1000, si_status=0, si_utime=0, si_stime=0} ---
+3135113 +++ exited with 0 +++
+3135123 execve("/usr/bin/curl", ["/usr/bin/curl", "-q", "-sS", "--noproxy", "*", "--proto", "=http", "--connect-timeout", "1", "--max-time", "5.000", "--max-filesize", "1048576", "--write-out", "\\n%{http_code}\\n%header{x-total-count}", "--config", "-", "http://127.0.0.1:3132/api/v1/user"], 0xc3f0a6b5d110 /* 0 vars */) = 0
+3135123 +++ exited with 0 +++
+3135124 --- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=3135123, si_uid=1000, si_status=0, si_utime=0, si_stime=0} ---
+3135124 +++ exited with 0 +++
+3135125 execve("/usr/bin/curl", ["/usr/bin/curl", "-q", "-sS", "--noproxy", "*", "--proto", "=http", "--connect-timeout", "1", "--max-time", "5.000", "--max-filesize", "1048576", "--write-out", "\\n%{http_code}\\n%header{x-total-count}", "--config", "-", "http://127.0.0.1:3132/api/v1/repos/forge-admin/mission-012-clamp/contents/policy/active.json?ref=597bc70f2a17ab516fb748b06a5c5e93de555bc7"], 0xc3f0a6b5e300 /* 0 vars */) = 0
+3135125 +++ exited with 0 +++
+3135111 --- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=3135125, si_uid=1000, si_status=0, si_utime=0, si_stime=0} ---
+3135126 +++ exited with 0 +++
+3135145 execve("/usr/bin/curl", ["/usr/bin/curl", "-q", "-sS", "--noproxy", "*", "--proto", "=http", "--connect-timeout", "1", "--max-time", "5.000", "--max-filesize", "1048576", "--write-out", "\\n%{http_code}\\n%header{x-total-count}", "--config", "-", "http://127.0.0.1:3132/api/v1/repos/forge-admin/mission-012-clamp/contents/policy/MISSION-012-CLAMP-001-v4.json?ref=597bc70f2a17ab516fb748b06a5c5e93de555bc7"], 0xc3f0a6b5e300 /* 0 vars */) = 0
+3135145 +++ exited with 0 +++
+3135111 --- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=3135145, si_uid=1000, si_status=0, si_utime=0, si_stime=0} ---
+3135146 +++ exited with 0 +++
+3135164 execve("/usr/bin/curl", ["/usr/bin/curl", "-q", "-sS", "--noproxy", "*", "--proto", "=http", "--connect-timeout", "1", "--max-time", "5.000", "--max-filesize", "1048576", "--write-out", "\\n%{http_code}\\n%header{x-total-count}", "--config", "-", "http://127.0.0.1:3132/api/v1/repos/forge-admin/mission-012-clamp/contents/requirements/MISSION-012-CLAMP-001.json?ref=597bc70f2a17ab516fb748b06a5c5e93de555bc7"], 0xc3f0a6b5e1f0 /* 0 vars */) = 0
+3135164 +++ exited with 0 +++
+3135111 --- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=3135164, si_uid=1000, si_status=0, si_utime=0, si_stime=0} ---
+3135165 +++ exited with 0 +++
+3135183 execve("/usr/bin/curl", ["/usr/bin/curl", "-q", "-sS", "--noproxy", "*", "--proto", "=http", "--connect-timeout", "1", "--max-time", "5.000", "--max-filesize", "1048576", "--write-out", "\\n%{http_code}\\n%header{x-total-count}", "--config", "-", "http://127.0.0.1:3132/api/v1/users/verifier-bot"], 0xc3f0a6b5e260 /* 0 vars */) = 0
+3135183 +++ exited with 0 +++
+3135111 --- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=3135183, si_uid=1000, si_status=0, si_utime=0, si_stime=0} ---
+3135184 +++ exited with 0 +++
+3135203 execve("/usr/bin/curl", ["/usr/bin/curl", "-q", "-sS", "--noproxy", "*", "--proto", "=http", "--connect-timeout", "1", "--max-time", "5.000", "--max-filesize", "1048576", "--write-out", "\\n%{http_code}\\n%header{x-total-count}", "--config", "-", "http://127.0.0.1:3132/api/v1/repos/forge-admin/mission-012-clamp/issues/1"], 0xc3f0a6b54440 /* 0 vars */) = 0
+3135203 +++ exited with 0 +++
+3135204 --- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=3135203, si_uid=1000, si_status=0, si_utime=0, si_stime=0} ---
+3135204 +++ exited with 0 +++
+3135206 execve("/usr/bin/curl", ["/usr/bin/curl", "-q", "-sS", "--noproxy", "*", "--proto", "=http", "--connect-timeout", "1", "--max-time", "5.000", "--max-filesize", "1048576", "--write-out", "\\n%{http_code}\\n%header{x-total-count}", "--config", "-", "http://127.0.0.1:3132/api/v1/repos/forge-admin/mission-012-clamp/commits/1cb38c26b22892909fb0c6007a22101e71d0db84/statuses?limit=50&page=1"], 0xc3f0a6b5e180 /* 0 vars */) = 0
+3135206 +++ exited with 0 +++
+3135111 --- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=3135206, si_uid=1000, si_status=0, si_utime=0, si_stime=0} ---
+3135207 +++ exited with 0 +++
+3135111 +++ exited with 1 +++

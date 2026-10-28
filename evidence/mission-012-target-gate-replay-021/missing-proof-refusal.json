@@ -1,0 +1,6 @@
+{
+  "error": "input must be a readable regular non-symlink file\n",
+  "exit_code": 1,
+  "merge_attempted": false,
+  "pull_request_state": "open"
+}

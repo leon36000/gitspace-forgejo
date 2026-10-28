@@ -1,0 +1,5 @@
+cwd: /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace
+command: cargo build --offline --locked --release
+exit_status: 0
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `release` profile [optimized] target(s) in 0.72s

@@ -1,0 +1,28 @@
+{
+  "candidate_commit": "ad06782e3eab4fbcf6587b9e532aa87129aad3db",
+  "pull_request_state": "open",
+  "result": {
+    "api_version": "forgejo-rest-v1",
+    "error": {
+      "code": "review_approval_missing",
+      "http_status": null,
+      "retryable": false
+    },
+    "external_writer_exclusion": "not_provided_by_cooperative_lock",
+    "merge_attempted": false,
+    "merge_authorized": false,
+    "operation": "local_test_merge_authority",
+    "pull_request_number": 3,
+    "schema_version": 1,
+    "target": {
+      "base_branch": "main",
+      "origin": "http://127.0.0.1:3132",
+      "owner": "forge-admin",
+      "repository": "mission-012-clamp",
+      "selector": "mission-012-clamp"
+    },
+    "verdict": "rejected"
+  },
+  "review_present": false,
+  "status_creator": "verifier-bot"
+}

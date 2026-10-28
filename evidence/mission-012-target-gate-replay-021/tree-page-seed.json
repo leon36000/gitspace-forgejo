@@ -1,0 +1,8 @@
+{
+  "previous_main_commit": "d33e2267c425550ef9b3674ebe369593bcdb9c60",
+  "probe_files_added": 1001,
+  "root_entry_count": 1008,
+  "root_entry_count_source": "git ls-tree --name-only on private Forgejo bare repository commit",
+  "seed_commit": "597bc70f2a17ab516fb748b06a5c5e93de555bc7",
+  "setup_limit": "Local fixture setup updated only the private test repository main ref before branch protection was enabled."
+}
