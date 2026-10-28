@@ -1,0 +1,6 @@
+Worktree HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+
+cargo test --locked --offline --test webhook_reconcile_contract maximal_batch_of_large_review_notifications_stays_within_projected_output_budget -- --exact --nocapture
+cargo fmt --all -- --check
+cargo test --locked --offline --all-targets -- --test-threads=1
+git diff --check

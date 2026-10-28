@@ -1,0 +1,91 @@
+{
+  "barrier": {
+    "claimed": true,
+    "finished": true,
+    "forward": false,
+    "path": "/api/v1/repos/forge-team-org/team-review-readback/issues/comments/3",
+    "reached": true,
+    "released": true
+  },
+  "cli_group_gone": true,
+  "cli_group_sigkill": true,
+  "comment_get_held_then_cancelled_before_upstream": true,
+  "forbidden_post_reached_forgejo": false,
+  "forbidden_route_record": {
+    "barrier": "not_allowlisted",
+    "forwarded": false,
+    "gate": "allowlisted",
+    "method": "POST",
+    "path": "/api/v1/repos/forge-team-org/team-review-readback/issues/comments/3",
+    "reader_credential_match": true,
+    "status": 403
+  },
+  "gate_probe_log_unchanged": true,
+  "gate_refused_unlisted_post": true,
+  "journal_sha256_after_kill": "8aa7c224b7548b72c6d74864cad47c48c158a740217675baa033b9847744b751",
+  "journal_sha256_before": "8aa7c224b7548b72c6d74864cad47c48c158a740217675baa033b9847744b751",
+  "journal_unchanged_after_kill": true,
+  "killed_process": {
+    "credential_exposed": false,
+    "group_gone": true,
+    "pid": 2279749,
+    "process_group": 2279749,
+    "returncode": -9,
+    "signal": 9,
+    "stderr_bytes": 0,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_bytes": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "parent_get_completed_before_interruption": true,
+  "proxy_records": [
+    {
+      "barrier": "none",
+      "forwarded": true,
+      "gate": "allowlisted",
+      "method": "GET",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/pulls/1",
+      "reader_credential_match": true,
+      "status": 200
+    },
+    {
+      "barrier": "cancelled_before_upstream",
+      "forwarded": false,
+      "gate": "allowlisted",
+      "method": "GET",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/issues/comments/3",
+      "reader_credential_match": true,
+      "status": 503
+    }
+  ],
+  "resume": {
+    "inbox_unchanged": true,
+    "resumed_api_get_order": [
+      "/api/v1/repos/forge-team-org/team-review-readback/pulls/1",
+      "/api/v1/repos/forge-team-org/team-review-readback/issues/comments/3"
+    ],
+    "resumed_cli_completed_same_two_delivery_batch": true,
+    "verdict": "current_state_read"
+  },
+  "resume_proxy_records": [
+    {
+      "barrier": "none",
+      "forwarded": true,
+      "gate": "allowlisted",
+      "method": "GET",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/pulls/1",
+      "reader_credential_match": true,
+      "status": 200
+    },
+    {
+      "barrier": "none",
+      "forwarded": true,
+      "gate": "allowlisted",
+      "method": "GET",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/issues/comments/3",
+      "reader_credential_match": true,
+      "status": 200
+    }
+  ],
+  "upstream_get_count_before_restart": 1
+}

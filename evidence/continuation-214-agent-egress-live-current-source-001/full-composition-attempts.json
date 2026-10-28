@@ -1,0 +1,25 @@
+{
+  "head": "f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0",
+  "attempts": [
+    {
+      "kind": "composed_local_adapter_from_host_namespace",
+      "exit_code": 1,
+      "diagnostic": "FAIL-CLOSED: the composed merge supervisor must run outside the host network namespace",
+      "effect": "rejected at preflight before stage execution"
+    },
+    {
+      "kind": "composed_local_adapter_wrong_evidence_path",
+      "exit_code": 1,
+      "diagnostic": "FAIL-CLOSED: evidence directory must use the mission-012-live-agent-webhook-<run> form",
+      "effect": "a source snapshot was written to /tmp/.mission012-cont214-state-001.composition-source-snapshot.zip before this stage validation; state and evidence directories were not created; snapshot retained"
+    },
+    {
+      "kind": "composed_local_adapter_corrected_namespace_and_evidence_path",
+      "exit_code": 1,
+      "stage": "admission",
+      "stage_exit_code": 125,
+      "diagnostic": "agent stage refused: trusted systemd-run/systemctl binaries are unavailable",
+      "effect": "the composed same-host gate did not run; private source snapshot and pipeline log retained in /tmp; no successful end-to-end result is claimed"
+    }
+  ]
+}

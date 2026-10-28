@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "cargo_all_targets": {
+    "command": "cargo test --locked --offline --all-targets -- --test-threads=1",
+    "groups": 36,
+    "passed": 668,
+    "failed": 0,
+    "ignored": 124,
+    "exit_code": 0
+  },
+  "focused_process_e2e": {
+    "scenario": "actual_reconcile_cli_process_routes_pull_request_review_comment_to_pull_request_api",
+    "passed": 1,
+    "failed": 0,
+    "network": "bubblewrap --unshare-net --unshare-pid with loopback fixture",
+    "forgejo_live": false
+  },
+  "python_contract_suites": {
+    "test_forgejo_emitted_webhook_e2e.py": {"passed": 131, "failed": 0},
+    "test_forgejo_live_org_team_reviewer_readback.py": {"passed": 29, "failed": 0},
+    "test_forgejo_webhook_native_replay_e2e.py": {"passed": 30, "failed": 0}
+  },
+  "license_state": {
+    "package": "agent-forge-core",
+    "version": "0.1.0",
+    "license": null,
+    "license_file": null,
+    "publish": [],
+    "decision": "no_license_selected",
+    "redistribution_rights": "not_assessed",
+    "spdx_package_license_declared": "NOASSERTION",
+    "guard_tests_passed": 9
+  },
+  "not_demonstrated": [
+    "Forgejo live instance for this lot",
+    "LLM or AgentOS execution",
+    "approval or merge authorization from the review note",
+    "measured project value or controlled baseline comparison"
+  ]
+}

@@ -1,0 +1,9 @@
+Repository HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+Worktree: /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace
+
+Probe:
+python3 evidence/continuation-218-host-scope-rootless-netns-001/scope_probe.py > evidence/continuation-218-host-scope-rootless-netns-001/scope-probe.json
+
+The probe calls prepare_process_scope/launch_scoped_process from the host identity for one transient, bounded scope. Its child runs only `unshare --user --map-root-user --net` and a Python metadata probe. It records namespaces and cgroup membership, asks the existing helper to prepare `/usr/bin/true` inside the child namespace (expected refusal before any child command is launched), then confirms the host scope is cleanly stopped.
+
+No Forgejo process, candidate code, model, credential, API route, or merge gate is involved.

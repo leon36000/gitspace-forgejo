@@ -1,0 +1,26 @@
+Repository HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+Worktree: /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace
+
+Test-first failure (before the body projection change):
+cargo test --locked --offline --test webhook_reconcile_contract oversized_review_notification_is_utf8_bounded_with_source_fingerprint -- --exact --nocapture
+
+Focused Rust checks:
+cargo test --locked --offline --test webhook_reconcile_contract oversized_review_notification_is_utf8_bounded_with_source_fingerprint -- --exact --nocapture
+cargo test --locked --offline --test forgejo_reconcile_capabilities_e2e actual_cli_discloses_versioned_local_test_capabilities -- --exact --nocapture
+cargo test --locked --offline --test reconcile_config_contract --test webhook_quarantine_cli -- --test-threads=1
+cargo test --locked --offline --test webhook_quarantine_cli real_cli_fails_closed_on_malformed_or_rebound_quarantine_dispositions -- --exact --nocapture
+
+Full Rust validation:
+cargo fmt --all -- --check
+cargo test --locked --offline --all-targets -- --test-threads=1
+git diff --check
+
+Python validation:
+python3 -m unittest discover -s tests -p 'test_forgejo_emitted_webhook_e2e.py'
+python3 -m unittest discover -s tests -p 'test_forgejo_webhook_native_replay_e2e.py'
+python3 -m unittest discover -s tests -p 'test_forgejo_live_org_team_reviewer_readback.py'
+python3 -m py_compile scripts/run_forgejo_live_webhook_reconcile_emitted.py scripts/run_forgejo_live_webhook_native_replay_e2e.py scripts/run_forgejo_live_org_team_reviewer_readback.py scripts/run_forgejo_native_branch_delete_webhook_reconcile.py scripts/run_forgejo_native_push_webhook_reconcile.py
+
+Metadata and policy:
+python3 scripts/verify_cargo_license_state.py
+cargo metadata --locked --offline --no-deps --format-version 1

@@ -1,0 +1,1 @@
+{"local_files": 9, "local_manifest_sha256": "cc783d51722a2d6401c25f92bc1bd64de442148987b2410ea27c759537633843", "prefixes_preserved": true, "project_index_sha256": "a1dc755252ade15d7cb6b035c805fddede60a7b8d3430f42a2d41461cb42a554", "worktree_index_sha256": "7623e59dd80dfb4544164ac81b4e1091711f18f4fc780dcd764c0539d2b60f81"}

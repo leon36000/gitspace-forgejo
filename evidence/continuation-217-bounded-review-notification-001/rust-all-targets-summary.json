@@ -1,0 +1,10 @@
+{
+  "command": "cargo test --locked --offline --all-targets -- --test-threads=1",
+  "failed": 0,
+  "filtered_out": 0,
+  "ignored": 124,
+  "measured": 0,
+  "passed": 669,
+  "process_exit_code": 0,
+  "target_summaries": 36
+}

@@ -1,0 +1,4 @@
+The initial full `sha256sum -c SHA256SUMS` passed for all 9 entries at first index creation.
+Late evidence added `failed-initial-harness-attempt.txt` and `append_late_evidence.py`, and updated `local-run.md` to disclose the initial harness error. The append-only local index therefore keeps the old `local-run.md` digest and appends its current digest; a raw sha256sum -c sees that historical entry as stale.
+
+Final verification uses `python3 verify_append_only_indexes.py`: 11 current local evidence files verified by latest path binding; the local, worktree and project prefixes are preserved; the parent index binds the current worktree index.

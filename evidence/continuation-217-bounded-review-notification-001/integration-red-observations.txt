@@ -1,0 +1,18 @@
+Observed red runs during the schema/body migration; retained here to explain the corrections:
+
+1. Before body truncation was implemented, the focused Rust test
+   `oversized_review_notification_is_utf8_bounded_with_source_fingerprint`
+   failed because the projected body still contained the full source text, rather
+   than the expected UTF-8-safe prefix.
+2. Before the public capability bump was implemented,
+   `actual_cli_discloses_versioned_local_test_capabilities` reported actual
+   schema version 5 where the new contract expected 6.
+3. The first full all-target run after the public output bump found stale test
+   expectations for batch schema 11 in `reconcile_config_contract` and then a
+   conditional assertion in `webhook_quarantine_cli` still expecting single 9 /
+   batch 10. These expectations were corrected; the focused affected suites and
+   the final captured all-target run pass.
+
+These are integration/test failures observed during implementation, not failures
+of the final captured run. The complete successful Rust log is
+`rust-all-targets.log`.

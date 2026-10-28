@@ -1,0 +1,28 @@
+# CONTINUATION-214. Worktree head before/after: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0.
+
+# Prior composed-run attempt from the host network namespace; fail-closed preflight, no stage started:
+python3 scripts/run_mission_012_live_composed_e2e.py --forgejo-binary /tmp/forgejo-17.0.0 --state-dir /tmp/mission012-cont214-state-001 --evidence-dir evidence/continuation-214-current-source-agent-egress-same-host-gate-001 --execution-id live-mcp-214 --allocation-id mission012-same-host-gate-214 --budget-cap-usd 0.20 --expected-host-network-namespace 'net:[4026531833]' --agent-adapter local-test-adapter --sandbox-test-adapter --same-host-gate-barrier
+# Result: FAIL-CLOSED: the composed merge supervisor must run outside the host network namespace.
+
+# Namespace-isolated composed-run attempt (the first command used an invalid evidence-directory name and was rejected; its private source snapshot is retained in /tmp). Correctly named retry:
+/usr/bin/bwrap --unshare-net --ro-bind / / --dev-bind /dev /dev --proc /proc --bind /tmp /tmp --bind /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace --chdir /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace -- /usr/bin/python3 scripts/run_mission_012_live_composed_e2e.py --forgejo-binary /tmp/forgejo-17.0.0 --state-dir /tmp/mission012-cont214-state-002 --evidence-dir /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/mission-012-live-agent-webhook-cont214-egress-001 --execution-id live-mcp-214 --allocation-id mission012-same-host-gate-214 --budget-cap-usd 0.20 --expected-host-network-namespace 'net:[4026531833]' --agent-adapter local-test-adapter --sandbox-test-adapter --same-host-gate-barrier
+# Result: admission stage exit 125; exact diagnostic in /tmp/.mission012-cont214-state-002.pipeline.log: trusted systemd-run/systemctl binaries are unavailable. No complete composition is counted.
+
+# Current-source live Forgejo + Bubblewrap egress run (no model; read-only fixture credential only):
+PYTHONDONTWRITEBYTECODE=1 python3 scripts/run_forgejo_agent_egress_live_e2e.py --forgejo-binary /tmp/forgejo-17.0.0 --state-dir /tmp/forgejo-agent-egress-cont214-state-001 --evidence-dir "$PWD/evidence/continuation-214-agent-egress-live-current-source-001"
+
+# Focused current-source tests:
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -p 'test_mission_012_sandboxed_test_adapter.py' -v
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -p 'test_mission_012_test_agent_adapter.py' -v
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -p 'test_forgejo_agent_egress_live_e2e.py' -v
+PYTHONPYCACHEPREFIX=/tmp/forgejo-cont214-pycache python3 -m py_compile scripts/run_forgejo_agent_egress_live_e2e.py scripts/mission_012_test_agent_adapter.py scripts/mission_012_sandboxed_test_adapter.py tests/test_forgejo_agent_egress_live_e2e.py tests/test_mission_012_test_agent_adapter.py tests/test_mission_012_sandboxed_test_adapter.py
+git diff --check
+
+# Independent result, source and manifest verification after report/checkpoint updates:
+python3 evidence/continuation-214-agent-egress-live-current-source-001/verify_run_result.py
+sha256sum -c evidence/continuation-214-agent-egress-live-current-source-001/source-sha256.txt
+PYTHONPYCACHEPREFIX=/tmp/forgejo-cont214-pycache python3 -m py_compile scripts/run_forgejo_agent_egress_live_e2e.py scripts/run_forgejo_live_pr_merge_e2e.py scripts/mission_012_test_agent_adapter.py scripts/mission_012_sandboxed_test_adapter.py tests/test_forgejo_agent_egress_live_e2e.py tests/test_mission_012_test_agent_adapter.py tests/test_mission_012_sandboxed_test_adapter.py evidence/continuation-214-agent-egress-live-current-source-001/verify_run_result.py
+git diff --check
+python3 evidence/continuation-214-agent-egress-live-current-source-001/append_manifests.py
+python3 evidence/continuation-214-agent-egress-live-current-source-001/verify_append_only_indexes.py
+# L’index local est append-only avec des versions historiques : utiliser le vérificateur latest-entry et ses contrôles de préfixe, pas sha256sum -c sur les anciennes versions.

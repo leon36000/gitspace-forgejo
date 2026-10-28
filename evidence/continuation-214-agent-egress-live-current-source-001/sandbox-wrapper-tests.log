@@ -1,0 +1,14 @@
+test_gate_barrier_paths_are_added_only_to_the_trusted_supervisor_command (test_mission_012_sandboxed_test_adapter.SandboxedAdapterTests.test_gate_barrier_paths_are_added_only_to_the_trusted_supervisor_command) ... ok
+test_live_route_probe_binds_to_the_current_repository_and_pr (test_mission_012_sandboxed_test_adapter.SandboxedAdapterTests.test_live_route_probe_binds_to_the_current_repository_and_pr) ... ok
+test_live_route_probe_rejects_ambiguous_repository_identity (test_mission_012_sandboxed_test_adapter.SandboxedAdapterTests.test_live_route_probe_rejects_ambiguous_repository_identity) ... ok
+test_probe_process_remains_isolated_until_reprobe_and_release (test_mission_012_sandboxed_test_adapter.SandboxedAdapterTests.test_probe_process_remains_isolated_until_reprobe_and_release) ... ok
+test_stdio_adapter_uses_only_trusted_mcp_pipe_and_refuses_host_network_and_file (test_mission_012_sandboxed_test_adapter.SandboxedAdapterTests.test_stdio_adapter_uses_only_trusted_mcp_pipe_and_refuses_host_network_and_file) ... ok
+test_stdio_task_targets_the_requested_live_forgejo_listener (test_mission_012_sandboxed_test_adapter.SandboxedAdapterTests.test_stdio_task_targets_the_requested_live_forgejo_listener) ... ok
+test_supervisor_cleanup_failure_survives_full_mcp_sandbox_path (test_mission_012_sandboxed_test_adapter.SandboxedAdapterTests.test_supervisor_cleanup_failure_survives_full_mcp_sandbox_path) ... ok
+test_wrapper_rejects_non_private_mcp_config_before_spawning_host (test_mission_012_sandboxed_test_adapter.SandboxedAdapterTests.test_wrapper_rejects_non_private_mcp_config_before_spawning_host) ... ok
+test_wrapper_requires_and_preserves_boolean_issue_observation (test_mission_012_sandboxed_test_adapter.SandboxedAdapterTests.test_wrapper_requires_and_preserves_boolean_issue_observation) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.538s
+
+OK

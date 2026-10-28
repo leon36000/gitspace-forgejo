@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-27",
+  "host_prepare": "ok",
+  "adapter_bubblewrap": {
+    "systemd_run_uid": 65534,
+    "systemctl_uid": 65534,
+    "systemd_run_trusted": false,
+    "systemctl_trusted": false,
+    "prepare": "trusted systemd-run/systemctl binaries are unavailable"
+  },
+  "historical_outer_bubblewrap": {
+    "systemd_run_uid": 65534,
+    "systemctl_uid": 65534,
+    "bus_socket_visible": true,
+    "prepare": "trusted systemd-run/systemctl binaries are unavailable",
+    "dbus_contact_attempted": false
+  },
+  "unshare_net": {
+    "result": "failed",
+    "diagnostic": "Operation not permitted"
+  },
+  "user_systemd_private_network_probe": {
+    "unit_kind": "transient service",
+    "exit_code": 0,
+    "runtime_ms": 26,
+    "netns": "net:[4026531833]",
+    "same_as_host_namespace": true,
+    "systemd_run_uid": 65534,
+    "systemctl_uid": 65534,
+    "prepare": "trusted systemd-run/systemctl binaries are unavailable",
+    "collect": true
+  },
+  "gate_or_candidate_started": false,
+  "forgejo_started": false,
+  "llm_called": false,
+  "external_service_called": false
+}

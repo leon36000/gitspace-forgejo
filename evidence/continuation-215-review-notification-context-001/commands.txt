@@ -1,0 +1,12 @@
+cargo test --locked --offline --all-targets -- --test-threads=1
+cargo test --locked --offline --test webhook_reconcile_contract
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_routes_pull_request_review_comment_to_pull_request_api
+python3 -m unittest discover -s tests -p 'test_forgejo_emitted_webhook_e2e.py'
+python3 -m unittest discover -s tests -p 'test_forgejo_live_org_team_reviewer_readback.py'
+python3 -m unittest discover -s tests -p 'test_forgejo_webhook_native_replay_e2e.py'
+python3 -m py_compile scripts/run_forgejo_live_webhook_reconcile_emitted.py scripts/run_forgejo_native_branch_delete_webhook_reconcile.py scripts/run_forgejo_native_push_webhook_reconcile.py scripts/run_forgejo_live_webhook_native_replay_e2e.py scripts/run_forgejo_live_org_team_reviewer_readback.py tests/test_forgejo_emitted_webhook_e2e.py tests/test_forgejo_live_org_team_reviewer_readback.py tests/test_forgejo_webhook_native_replay_e2e.py
+cargo fmt --all -- --check
+git diff --check
+python3 scripts/verify_cargo_license_state.py
+python3 -m unittest discover -s evidence/cargo-license-state-unselected-008/source -p 'test_cargo_license_state.py'
+cargo metadata --locked --offline --format-version 1 --no-deps

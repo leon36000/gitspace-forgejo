@@ -1,0 +1,6 @@
+The first diagnostic harness exited 1 after launch_scoped_process had started the transient host scope:
+
+ValueError: I/O operation on closed file
+Traceback location: subprocess.Popen.communicate() attempted to flush process.stdin, which launch_scoped_process had already closed after the attestation handshake.
+
+The Python exception handler called systemd_process_scope._abort_scope_process(process, scope), which terminates the process group and requests a scope stop. That attempt did not independently record cleanup and is not counted as passing evidence. The corrected scope_probe.py sets process.stdin=None before communicate(); its separate run records cleanup=clean.

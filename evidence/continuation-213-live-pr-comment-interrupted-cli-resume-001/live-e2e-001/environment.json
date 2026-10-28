@@ -1,0 +1,12 @@
+{
+  "forgejo_access_log_mode": "console_info",
+  "forgejo_port": 3131,
+  "interrupt_cli_between_parent_and_comment": true,
+  "local_api_proxy_port": 3130,
+  "platform": "linux",
+  "python": "3.12.3",
+  "receiver_kill_before_reconcile": false,
+  "stage": "read_only_rust_reconciliation",
+  "state_dir": "/tmp/forgejo-team-review-cont213-state-001",
+  "state_dir_mode": "0700"
+}
