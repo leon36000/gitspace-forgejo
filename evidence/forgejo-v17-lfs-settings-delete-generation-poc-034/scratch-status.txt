@@ -1,0 +1,3 @@
+Forgejo HEAD: 0d791421f85ca13a63b665053d81ea765fbbc571
+POC-034 source status: ?? tests/integration/lfs_settings_delete_generation_poc_test.go
+Full scratch status remains dirty from earlier POCs; no production source was edited for this lot.

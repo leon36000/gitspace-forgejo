@@ -1,0 +1,30 @@
+2026/10/25 08:32:20 ...s/storage/storage.go:157:initAttachments() [I] Initialising Attachment storage with type: local
+2026/10/25 08:32:20 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata3305315934/attachments
+2026/10/25 08:32:20 ...s/storage/storage.go:147:initAvatars() [I] Initialising Avatar storage with type: local
+2026/10/25 08:32:20 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata3305315934/avatars
+2026/10/25 08:32:20 ...s/storage/storage.go:174:initRepoAvatars() [I] Initialising Repository Avatar storage with type: local
+2026/10/25 08:32:20 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata3305315934/repo-avatars
+2026/10/25 08:32:20 ...s/storage/storage.go:180:initRepoArchives() [I] Initialising Repository Archive storage with type: local
+2026/10/25 08:32:20 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata3305315934/repo-archive
+2026/10/25 08:32:20 ...s/storage/storage.go:190:initPackages() [I] Initialising Packages storage with type: local
+2026/10/25 08:32:20 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata3305315934/packages
+2026/10/25 08:32:20 ...s/storage/storage.go:201:initActions() [I] Initialising Actions storage with type: local
+2026/10/25 08:32:20 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata3305315934/actions_log
+2026/10/25 08:32:20 ...s/storage/storage.go:205:initActions() [I] Initialising ActionsArtifacts storage with type: local
+2026/10/25 08:32:20 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/go-build1126179941/b001/data/actions_artifacts
+=== RUN   TestRecoverLFSPendingMetaObjectsAfterInterruptedPostReceive
+--- PASS: TestRecoverLFSPendingMetaObjectsAfterInterruptedPostReceive (0.36s)
+=== RUN   TestPOCRecoveryUsesTargetReflogAfterCandidateIsRemovedFromCurrentRef
+--- PASS: TestPOCRecoveryUsesTargetReflogAfterCandidateIsRemovedFromCurrentRef (0.38s)
+=== RUN   TestPOCRecoveryLeavesPendingWhenTargetReflogExpired
+--- PASS: TestPOCRecoveryLeavesPendingWhenTargetReflogExpired (0.31s)
+=== RUN   TestRecoverLFSPendingMetaObjectsDefersMissingCandidate
+--- PASS: TestRecoverLFSPendingMetaObjectsDefersMissingCandidate (0.01s)
+=== RUN   TestRecoverLFSPendingMetaObjectsDoesNotPromoteFromUnrelatedRef
+--- PASS: TestRecoverLFSPendingMetaObjectsDoesNotPromoteFromUnrelatedRef (0.35s)
+=== RUN   TestRecoverLFSPendingMetaObjectsPageIsBoundedAndResumable
+--- PASS: TestRecoverLFSPendingMetaObjectsPageIsBoundedAndResumable (0.22s)
+=== RUN   TestRecoverLFSPendingMetaObjectsCheckpointSurvivesReopenAndRevisitsDeferredRows
+--- PASS: TestRecoverLFSPendingMetaObjectsCheckpointSurvivesReopenAndRevisitsDeferredRows (0.42s)
+PASS
+ok  	forgejo.org/services/pull	2.255s

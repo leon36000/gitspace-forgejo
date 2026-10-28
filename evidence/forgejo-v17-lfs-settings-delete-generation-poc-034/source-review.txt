@@ -1,0 +1,5 @@
+Forgejo v17.0.0 source review at commit 0d791421f85ca13a63b665053d81ea765fbbc571:
+- routers/web/repo/setting/lfs.go, LFSDelete: validates OID; removes repository association; if remaining active/pending association count is zero, calls storage.LFS.Delete with the legacy logical OID path; returns HTTP 500 on storage error; source contains a FIXME about races because the LFS store is not locked.
+- models/git/lfs.go, RemoveLFSMetaObjectByOidFn: deletes this repository's association, counts active plus pending associations, then commits its DB transaction before returning to the route.
+- POC test crosses the actual authenticated web route and those source functions. The SQLite generation mapping, storage resolver and deletion implementation are test-only fixtures; no Forgejo production file was edited for POC-034.
+- Test coverage: successful route mapping/deletion; injected first storage failure then repeated POST. Not covered: cross-repository references, concurrent publisher/delete, crash between object deletion and mapping update, real object-store backends, or deployment.

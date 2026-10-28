@@ -1,0 +1,85 @@
+$ git --version
+git version 2.43.0
+exit=0
+$ git config --global core.logAllRefUpdates true
+exit=0
+$ git config --global gc.reflogExpire 90
+exit=0
+$ git init --bare --template= /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/forgejo-v17-lfs-reflog-witness-poc-065/scratch/server.git
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint: 	git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint: 	git branch -m <name>
+Initialized empty Git repository in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/forgejo-v17-lfs-reflog-witness-poc-065/scratch/server.git/
+exit=0
+$ git init --template= -b main /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/forgejo-v17-lfs-reflog-witness-poc-065/scratch/work
+Initialized empty Git repository in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/forgejo-v17-lfs-reflog-witness-poc-065/scratch/work/.git/
+exit=0
+$ git -C /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/forgejo-v17-lfs-reflog-witness-poc-065/scratch/work config user.name 'Forgejo LFS recovery POC'
+exit=0
+$ git -C /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/forgejo-v17-lfs-reflog-witness-poc-065/scratch/work config user.email poc@example.invalid
+exit=0
+$ git -C /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/forgejo-v17-lfs-reflog-witness-poc-065/scratch/work add payload.txt
+exit=0
+$ git -C /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/forgejo-v17-lfs-reflog-witness-poc-065/scratch/work commit -m base
+[main (root-commit) d5bd7f0] base
+ 1 file changed, 1 insertion(+)
+ create mode 100644 payload.txt
+exit=0
+$ git -C /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/forgejo-v17-lfs-reflog-witness-poc-065/scratch/work rev-parse HEAD
+d5bd7f05d5e350dcba90ef3fceb101f4fb07a21b
+exit=0
+$ git -C /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/forgejo-v17-lfs-reflog-witness-poc-065/scratch/work remote add origin /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/forgejo-v17-lfs-reflog-witness-poc-065/scratch/server.git
+exit=0
+$ git -C /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/forgejo-v17-lfs-reflog-witness-poc-065/scratch/work push origin HEAD:refs/heads/main
+To /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/forgejo-v17-lfs-reflog-witness-poc-065/scratch/server.git
+ * [new branch]      HEAD -> main
+exit=0
+$ git -C /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/forgejo-v17-lfs-reflog-witness-poc-065/scratch/work commit -am candidate
+[main 70276c7] candidate
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+exit=0
+$ git -C /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/forgejo-v17-lfs-reflog-witness-poc-065/scratch/work rev-parse HEAD
+70276c775b35bb4582e75b02fd616fea37af092e
+exit=0
+$ git -C /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/forgejo-v17-lfs-reflog-witness-poc-065/scratch/work push origin HEAD:refs/heads/main
+To /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/forgejo-v17-lfs-reflog-witness-poc-065/scratch/server.git
+   d5bd7f0..70276c7  HEAD -> main
+exit=0
+$ git -C /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/forgejo-v17-lfs-reflog-witness-poc-065/scratch/work reset --hard d5bd7f05d5e350dcba90ef3fceb101f4fb07a21b
+HEAD is now at d5bd7f0 base
+exit=0
+$ git -C /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/forgejo-v17-lfs-reflog-witness-poc-065/scratch/work push --force origin HEAD:refs/heads/main
+To /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/forgejo-v17-lfs-reflog-witness-poc-065/scratch/server.git
+ + 70276c7...d5bd7f0 HEAD -> main (forced update)
+exit=0
+$ git --git-dir /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/forgejo-v17-lfs-reflog-witness-poc-065/scratch/server.git rev-parse refs/heads/main
+d5bd7f05d5e350dcba90ef3fceb101f4fb07a21b
+exit=0
+$ git --git-dir /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/forgejo-v17-lfs-reflog-witness-poc-065/scratch/server.git reflog show --format=%H%x09%gs refs/heads/main
+d5bd7f05d5e350dcba90ef3fceb101f4fb07a21b	push
+70276c775b35bb4582e75b02fd616fea37af092e	push
+d5bd7f05d5e350dcba90ef3fceb101f4fb07a21b	push
+exit=0
+$ git --git-dir /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/forgejo-v17-lfs-reflog-witness-poc-065/scratch/server.git config --show-origin --get core.logAllRefUpdates
+file:/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/forgejo-v17-lfs-reflog-witness-poc-065/scratch/forgejo-internal.gitconfig	true
+exit=0
+$ git --git-dir /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/forgejo-v17-lfs-reflog-witness-poc-065/scratch/server.git config --show-origin --get gc.reflogExpire
+file:/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/forgejo-v17-lfs-reflog-witness-poc-065/scratch/forgejo-internal.gitconfig	90
+exit=0
+$ git --git-dir /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/forgejo-v17-lfs-reflog-witness-poc-065/scratch/server.git cat-file -e '70276c775b35bb4582e75b02fd616fea37af092e^{commit}'
+exit=0
+$ git --git-dir /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/forgejo-v17-lfs-reflog-witness-poc-065/scratch/server.git merge-base --is-ancestor 70276c775b35bb4582e75b02fd616fea37af092e refs/heads/main
+exit=1
+$ git --git-dir /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/forgejo-v17-lfs-reflog-witness-poc-065/scratch/server.git fsck --full --unreachable --no-reflogs
+notice: HEAD points to an unborn branch (master)
+unreachable tree 63326d4ac33ef4ca0438ffc92534e1a70f5cd313
+unreachable blob cb9f9f62ec0b54edbaee63e3042ae92443ac2aa4
+unreachable commit 70276c775b35bb4582e75b02fd616fea37af092e
+exit=0

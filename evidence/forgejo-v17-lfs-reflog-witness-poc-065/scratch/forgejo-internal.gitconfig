@@ -1,0 +1,4 @@
+[core]
+	logAllRefUpdates = true
+[gc]
+	reflogExpire = 90

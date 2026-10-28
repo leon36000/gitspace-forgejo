@@ -1,0 +1,11 @@
+=== RUN   TestPOCSQLiteMappingBindsStreamToResolvedGeneration
+2026/10/24 19:57:12 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCSQLiteMappingBindsStreamToResolvedGeneration2848107638/002/lfs
+    versioned_download_sqlite_poc_test.go:224: 
+        	Error Trace:	/tmp/forgejo-v17-base-cas-poc/services/lfs/versioned_download_sqlite_poc_test.go:224
+        	Error:      	Received unexpected error:
+        	            	no such column: operation_id
+        	Test:       	TestPOCSQLiteMappingBindsStreamToResolvedGeneration
+--- FAIL: TestPOCSQLiteMappingBindsStreamToResolvedGeneration (0.08s)
+FAIL
+FAIL	forgejo.org/services/lfs	0.145s
+FAIL

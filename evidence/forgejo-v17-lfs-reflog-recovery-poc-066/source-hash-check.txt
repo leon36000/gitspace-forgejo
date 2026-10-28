@@ -1,0 +1,4 @@
+modules/setting/git.go: OK
+services/pull/lfs_recovery.go: OK
+services/pull/lfs_recovery_test.go: OK
+tests/integration/git_push_test.go: OK

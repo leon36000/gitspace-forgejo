@@ -1,0 +1,5 @@
+$ /tmp/forgejo-v17-toolchain/go/bin/go test -count=1 -v -timeout=20m -tags sqlite ./services/pull -run ^(TestPOCRecoveryUsesTargetReflogAfterCandidateIsRemovedFromCurrentRef|TestRecoverLFSPendingMetaObjectsAfterInterruptedPostReceive|TestRecoverLFSPendingMetaObjectsDefersMissingCandidate|TestRecoverLFSPendingMetaObjectsDoesNotPromoteFromUnrelatedRef)$
+# forgejo.org/services/pull [forgejo.org/services/pull.test]
+services/pull/lfs_recovery.go:290:25: cannot use 2nd function result (value of interface type error) as "forgejo.org/modules/git".RunStdError value in multiple assignment: error does not implement "forgejo.org/modules/git".RunStdError (missing method Stderr)
+FAIL	forgejo.org/services/pull [build failed]
+FAIL

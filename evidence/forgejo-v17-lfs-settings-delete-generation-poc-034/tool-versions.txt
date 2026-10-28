@@ -1,0 +1,6 @@
+Forgejo tag: v17.0.0
+Forgejo audited commit: 0d791421f85ca13a63b665053d81ea765fbbc571
+Go: go1.27.3 linux/arm64
+XORM: v1.4.1
+SQLite driver: v1.14.52
+Build tags: sqlite sqlite_unlock_notify forgejo_poc_sqlite_generation_route forgejo_poc_sqlite_generation_upload_route

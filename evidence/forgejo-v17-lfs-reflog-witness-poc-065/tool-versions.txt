@@ -1,0 +1,7 @@
+Forgejo source base: v17.0.0, commit 0d791421f85ca13a63b665053d81ea765fbbc571 (scratch modified by prior POCs)
+Go: go1.27.3 linux/arm64
+Git: 2.43.0
+Python: 3.12.3
+Integration database: SQLite; storage: LocalStorage; server: local integration harness
+Direct Git reproduction: GIT_CONFIG_GLOBAL points to the POC config; GIT_CONFIG_NOSYSTEM=1; user HOME untouched
+External model/API: none

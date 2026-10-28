@@ -1,0 +1,7 @@
+python3 evidence/forgejo-v17-lfs-reflog-witness-poc-065/run_reflog_poc.py
+cd /tmp/forgejo-v17-base-cas-poc && GOTOOLCHAIN=local GOPROXY=off /tmp/forgejo-v17-toolchain/go/bin/gofmt -w tests/integration/git_push_test.go
+cd /tmp/forgejo-v17-base-cas-poc && GOTOOLCHAIN=local GOPROXY=off /tmp/forgejo-v17-toolchain/go/bin/go test -count=1 -v -timeout=20m -tags sqlite ./tests/integration -run '^TestPOCForgejoGitRefReflogKeepsAcceptedCandidateAfterRollback$'
+GOTOOLCHAIN=local GOPROXY=off /tmp/forgejo-v17-toolchain/go/bin/gofmt -d /tmp/forgejo-v17-base-cas-poc/tests/integration/git_push_test.go
+git -C /tmp/forgejo-v17-base-cas-poc diff --check
+git -C /tmp/forgejo-v17-base-cas-poc show 0d791421f85ca13a63b665053d81ea765fbbc571:modules/setting/git.go
+git -C /tmp/forgejo-v17-base-cas-poc grep -n -E "syncBranchLock|pullWorkingPool|repoWorkingPool" 0d791421f85ca13a63b665053d81ea765fbbc571 -- services/repository services/pull

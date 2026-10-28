@@ -1,0 +1,6 @@
+Forgejo source baseline: v17.0.0 / 0d791421f85ca13a63b665053d81ea765fbbc571
+Go: go1.27.3 linux/arm64
+Git: 2.43.0
+Build tag: sqlite
+Repository: /tmp/forgejo-v17-base-cas-poc (isolated scratch)
+Test database: Forgejo integration harness SQLite

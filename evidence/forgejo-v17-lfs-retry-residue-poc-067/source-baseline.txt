@@ -1,0 +1,6 @@
+Forgejo upstream tag: v17.0.0
+Upstream baseline commit: 0d791421f85ca13a63b665053d81ea765fbbc571
+Scratch path: /tmp/forgejo-v17-base-cas-poc
+Scratch HEAD: 0d791421f85ca13a63b665053d81ea765fbbc571 (detached; modifications from earlier local POCs remain)
+New source change for this POC: test-only addition in tests/integration/git_push_test.go.
+No Forgejo source change, copy, publication, or deployment was made by POC-067.

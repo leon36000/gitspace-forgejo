@@ -1,0 +1,6 @@
+go version go1.27.3 linux/arm64
+git version 2.43.0
+SQLite integration configuration: tests/sqlite.ini, -tags sqlite
+OS/architecture: Linux aarch64
+Forgejo upstream baseline: v17.0.0, commit 0d791421f85ca13a63b665053d81ea765fbbc571
+Scratch HEAD remains the upstream baseline; uncommitted scratch POCs are present and source hashes identify touched files.

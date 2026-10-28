@@ -1,0 +1,7 @@
+Working directory for Forgejo commands: /tmp/forgejo-v17-base-cas-poc
+
+GOTOOLCHAIN=local GOPROXY=off /tmp/forgejo-v17-toolchain/go/bin/go test -count=1 -v -timeout=20m -tags sqlite ./tests/integration -run '^TestPOCGenericFileLFSRetryAfterPolicyRefusalLeavesFirstStagePending$' > /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/forgejo-v17-lfs-retry-residue-poc-067/integrated-e2e.log 2>&1
+The command above was first run with the same redirection and exited 1 because the test incorrectly required a nil recovery error. Its output was copied to initial-assumption-failure.log before the final run overwrote integrated-e2e.log; the copied exit code is 1. The final run exited 0.
+/tmp/forgejo-v17-toolchain/go/bin/gofmt -d tests/integration/git_push_test.go
+git diff --check -- tests/integration/git_push_test.go
+The test invokes git cat-file -e <first-rejected-candidate>^{commit} and asserts that the absent object returns an error.

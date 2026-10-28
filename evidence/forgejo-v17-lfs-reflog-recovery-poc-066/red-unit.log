@@ -1,0 +1,26 @@
+$ /tmp/forgejo-v17-toolchain/go/bin/go test -count=1 -v -timeout=20m -tags sqlite ./services/pull -run ^TestPOCRecoveryUsesTargetReflogAfterCandidateIsRemovedFromCurrentRef$
+2026/10/25 08:25:03 ...s/storage/storage.go:157:initAttachments() [I] Initialising Attachment storage with type: local
+2026/10/25 08:25:03 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata1519895226/attachments
+2026/10/25 08:25:03 ...s/storage/storage.go:147:initAvatars() [I] Initialising Avatar storage with type: local
+2026/10/25 08:25:03 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata1519895226/avatars
+2026/10/25 08:25:03 ...s/storage/storage.go:174:initRepoAvatars() [I] Initialising Repository Avatar storage with type: local
+2026/10/25 08:25:03 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata1519895226/repo-avatars
+2026/10/25 08:25:03 ...s/storage/storage.go:180:initRepoArchives() [I] Initialising Repository Archive storage with type: local
+2026/10/25 08:25:03 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata1519895226/repo-archive
+2026/10/25 08:25:03 ...s/storage/storage.go:190:initPackages() [I] Initialising Packages storage with type: local
+2026/10/25 08:25:03 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata1519895226/packages
+2026/10/25 08:25:03 ...s/storage/storage.go:201:initActions() [I] Initialising Actions storage with type: local
+2026/10/25 08:25:03 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata1519895226/actions_log
+2026/10/25 08:25:03 ...s/storage/storage.go:205:initActions() [I] Initialising ActionsArtifacts storage with type: local
+2026/10/25 08:25:03 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/go-build947901555/b001/data/actions_artifacts
+=== RUN   TestPOCRecoveryUsesTargetReflogAfterCandidateIsRemovedFromCurrentRef
+    lfs_recovery_test.go:130: 
+        	Error Trace:	/tmp/forgejo-v17-base-cas-poc/services/pull/lfs_recovery_test.go:130
+        	Error:      	Not equal: 
+        	            	expected: 1
+        	            	actual  : 0
+        	Test:       	TestPOCRecoveryUsesTargetReflogAfterCandidateIsRemovedFromCurrentRef
+--- FAIL: TestPOCRecoveryUsesTargetReflogAfterCandidateIsRemovedFromCurrentRef (0.34s)
+FAIL
+FAIL	forgejo.org/services/pull	0.530s
+FAIL

@@ -1,0 +1,11 @@
+=== RUN   TestPOCStreamedDownloadUsesResolvedGenerationAndHonorsRange
+2026/10/24 19:57:28 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCStreamedDownloadUsesResolvedGenerationAndHonorsRange363050552/001/lfs
+--- PASS: TestPOCStreamedDownloadUsesResolvedGenerationAndHonorsRange (0.00s)
+=== RUN   TestPOCStreamedDownloadRejectsMissingAndStaleVersions
+2026/10/24 19:57:28 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCStreamedDownloadRejectsMissingAndStaleVersions171644657/001/lfs
+--- PASS: TestPOCStreamedDownloadRejectsMissingAndStaleVersions (0.00s)
+=== RUN   TestPOCSQLiteMappingBindsStreamToResolvedGeneration
+2026/10/24 19:57:28 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCSQLiteMappingBindsStreamToResolvedGeneration4221699578/002/lfs
+--- PASS: TestPOCSQLiteMappingBindsStreamToResolvedGeneration (0.10s)
+PASS
+ok  	forgejo.org/services/lfs	0.163s

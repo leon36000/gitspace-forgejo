@@ -1,0 +1,9 @@
+git_version=git version 2.43.0
+base_commit=d5bd7f05d5e350dcba90ef3fceb101f4fb07a21b
+candidate_commit=70276c775b35bb4582e75b02fd616fea37af092e
+current_ref_commit=d5bd7f05d5e350dcba90ef3fceb101f4fb07a21b
+candidate_is_current_ancestor=false
+candidate_present_in_branch_reflog=true
+candidate_object_still_readable=true
+forgejo_global_reflog_settings=core.logAllRefUpdates=true,gc.reflogExpire=90 days
+ancestor_probe_output=''

@@ -1,0 +1,5 @@
+global_lines=4240
+valid_hash_lines=4239
+malformed_historical_lines=1
+missing=0
+mismatches=267

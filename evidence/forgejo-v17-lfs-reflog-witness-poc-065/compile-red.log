@@ -1,0 +1,5 @@
+Initial harness compile only; test body did not execute. Exit 1.
+tests/integration/git_push_test.go:319:89: cannot use string(ref) (value of type string) as modules/git/internal.CmdArg value in argument to git.NewCommand
+tests/integration/git_push_test.go:328:72: cannot use "--contains=" + candidateCommit (value of type string) as modules/git/internal.CmdArg value in argument to git.NewCommand
+tests/integration/git_push_test.go:328:126: cannot use string(ref) (value of type string) as modules/git/internal.CmdArg value in argument to git.NewCommand
+Root cause: dynamically sourced string values were placed in the trusted variadic arguments. Corrected with AddDynamicArguments and AddOptionValues.

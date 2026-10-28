@@ -1,0 +1,67 @@
+2026/10/24 20:39:03 ...s/storage/storage.go:157:initAttachments() [I] Initialising Attachment storage with type: local
+2026/10/24 20:39:03 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata459804156/attachments
+2026/10/24 20:39:03 ...s/storage/storage.go:147:initAvatars() [I] Initialising Avatar storage with type: local
+2026/10/24 20:39:03 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata459804156/avatars
+2026/10/24 20:39:03 ...s/storage/storage.go:174:initRepoAvatars() [I] Initialising Repository Avatar storage with type: local
+2026/10/24 20:39:03 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata459804156/repo-avatars
+2026/10/24 20:39:03 ...s/storage/storage.go:180:initRepoArchives() [I] Initialising Repository Archive storage with type: local
+2026/10/24 20:39:03 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata459804156/repo-archive
+2026/10/24 20:39:03 ...s/storage/storage.go:190:initPackages() [I] Initialising Packages storage with type: local
+2026/10/24 20:39:03 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata459804156/packages
+2026/10/24 20:39:03 ...s/storage/storage.go:201:initActions() [I] Initialising Actions storage with type: local
+2026/10/24 20:39:03 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata459804156/actions_log
+2026/10/24 20:39:03 ...s/storage/storage.go:205:initActions() [I] Initialising ActionsArtifacts storage with type: local
+2026/10/24 20:39:03 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/go-build3225106689/b001/data/actions_artifacts
+=== RUN   TestPOCRecoverableGenerationMappingAndDelayedDelete
+2026/10/24 20:39:03 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCRecoverableGenerationMappingAndDelayedDelete3070022749/001/lfs
+--- PASS: TestPOCRecoverableGenerationMappingAndDelayedDelete (0.02s)
+=== RUN   TestPOCConcurrentGenerationReservationsUseConfiguredSQLiteTransactions
+--- PASS: TestPOCConcurrentGenerationReservationsUseConfiguredSQLiteTransactions (0.01s)
+=== RUN   TestPOCFileBackedMultiprocessReservations
+--- PASS: TestPOCFileBackedMultiprocessReservations (0.98s)
+=== RUN   TestPOCBoundedRetryAfterConfiguredSQLiteLock
+    lfs_generation_mapping_poc_test.go:644: lock-release worker: 2026/10/24 20:39:04 ...s/storage/storage.go:157:initAttachments() [I] Initialising Attachment storage with type: local
+        2026/10/24 20:39:04 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata3232615902/attachments
+        2026/10/24 20:39:04 ...s/storage/storage.go:147:initAvatars() [I] Initialising Avatar storage with type: local
+        2026/10/24 20:39:04 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata3232615902/avatars
+        2026/10/24 20:39:04 ...s/storage/storage.go:174:initRepoAvatars() [I] Initialising Repository Avatar storage with type: local
+        2026/10/24 20:39:04 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata3232615902/repo-avatars
+        2026/10/24 20:39:04 ...s/storage/storage.go:180:initRepoArchives() [I] Initialising Repository Archive storage with type: local
+        2026/10/24 20:39:04 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata3232615902/repo-archive
+        2026/10/24 20:39:04 ...s/storage/storage.go:190:initPackages() [I] Initialising Packages storage with type: local
+        2026/10/24 20:39:04 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata3232615902/packages
+        2026/10/24 20:39:04 ...s/storage/storage.go:201:initActions() [I] Initialising Actions storage with type: local
+        2026/10/24 20:39:04 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata3232615902/actions_log
+        2026/10/24 20:39:04 ...s/storage/storage.go:205:initActions() [I] Initialising ActionsArtifacts storage with type: local
+        2026/10/24 20:39:04 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/go-build3225106689/b001/data/actions_artifacts
+        [xorm] [info]  2026/10/24 20:39:04.742525 PING DATABASE sqlite3
+        reserved operation=bounded-retry-operation generation=1 attempts=2 key=generation/db8dab4d9066202095d8430310c9040a01c9dd862efd76e23196c5829335fa16/1/bounded-retry-operation
+        PASS
+--- PASS: TestPOCBoundedRetryAfterConfiguredSQLiteLock (1.06s)
+=== RUN   TestPOCConfiguredSQLiteBusyTimeoutSurfacesSingleAttemptFailure
+    lfs_generation_mapping_poc_test.go:706: single-attempt failure captured: 2026/10/24 20:39:05 ...s/storage/storage.go:157:initAttachments() [I] Initialising Attachment storage with type: local
+        2026/10/24 20:39:05 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata4214446991/attachments
+        2026/10/24 20:39:05 ...s/storage/storage.go:147:initAvatars() [I] Initialising Avatar storage with type: local
+        2026/10/24 20:39:05 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata4214446991/avatars
+        2026/10/24 20:39:05 ...s/storage/storage.go:174:initRepoAvatars() [I] Initialising Repository Avatar storage with type: local
+        2026/10/24 20:39:05 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata4214446991/repo-avatars
+        2026/10/24 20:39:05 ...s/storage/storage.go:180:initRepoArchives() [I] Initialising Repository Archive storage with type: local
+        2026/10/24 20:39:05 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata4214446991/repo-archive
+        2026/10/24 20:39:05 ...s/storage/storage.go:190:initPackages() [I] Initialising Packages storage with type: local
+        2026/10/24 20:39:05 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata4214446991/packages
+        2026/10/24 20:39:05 ...s/storage/storage.go:201:initActions() [I] Initialising Actions storage with type: local
+        2026/10/24 20:39:05 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata4214446991/actions_log
+        2026/10/24 20:39:05 ...s/storage/storage.go:205:initActions() [I] Initialising ActionsArtifacts storage with type: local
+        2026/10/24 20:39:05 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/go-build3225106689/b001/data/actions_artifacts
+        [xorm] [info]  2026/10/24 20:39:05.785769 PING DATABASE sqlite3
+        --- FAIL: TestPOCFileBackedMultiprocessReservations (0.51s)
+            lfs_generation_mapping_poc_test.go:468: begin reservation: database is locked
+        FAIL
+--- PASS: TestPOCConfiguredSQLiteBusyTimeoutSurfacesSingleAttemptFailure (0.97s)
+=== RUN   TestPOCConfiguredSQLiteStageRecoversAndPromotesAcrossProcesses
+2026/10/24 20:39:06 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCConfiguredSQLiteStageRecoversAndPromotesAcrossProcesses2716369148/001/objects
+2026/10/24 20:39:06 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCConfiguredSQLiteStageRecoversAndPromotesAcrossProcesses2716369148/001/objects
+2026/10/24 20:39:07 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCConfiguredSQLiteStageRecoversAndPromotesAcrossProcesses2716369148/001/objects
+--- PASS: TestPOCConfiguredSQLiteStageRecoversAndPromotesAcrossProcesses (0.50s)
+PASS
+ok  	forgejo.org/models/git	3.724s

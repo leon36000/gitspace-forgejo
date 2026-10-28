@@ -1,0 +1,10 @@
+tests/integration/git_push_test.go: OK
+services/repository/files/update.go: OK
+models/git/lfs.go: OK
+services/pull/lfs_recovery.go: OK
+services/pull/lfs_recovery_test.go: OK
+routers/private/hook_pre_receive.go: OK
+routers/private/hook_post_receive.go: OK
+tests/integration/api_repo_file_helpers.go: OK
+models/repo/repo_unit.go: OK
+services/pull/merge_manual.go: OK
