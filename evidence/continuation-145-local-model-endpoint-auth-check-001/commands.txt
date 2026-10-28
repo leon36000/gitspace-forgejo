@@ -1,0 +1,9 @@
+Process identity (name only): pgrep -x llama-server; read /proc/<pid>/comm and executable basename only; no argv, environment, terminal or logs read.
+Bound listener: ss -ltnp; inspect only the listener row for the identified llama-server process.
+Health endpoint: curl --max-time 3 --silent --show-error --write-out '\nHTTP %{http_code}\n' http://127.0.0.1:18881/health
+Model catalog without credential: curl --max-time 3 --silent --show-error --write-out '\nHTTP %{http_code}\n' http://127.0.0.1:18881/v1/models
+Runtime interface search: rg -n 'impl AgentRuntimeV1|AgentOS|Forge Code|ollama|llama-server' src tests Cargo.toml Cargo.lock
+Known local model command paths: Python shutil.which for ollama, llama-server, llamafile, vllm.
+Cargo metadata state: cargo metadata --locked --offline --no-deps --format-version 1
+Append-only evidence: python3 evidence/continuation-145-local-model-endpoint-auth-check-001/append_manifests.py
+Recheck evidence: python3 evidence/continuation-145-local-model-endpoint-auth-check-001/verify_append_only_indexes.py

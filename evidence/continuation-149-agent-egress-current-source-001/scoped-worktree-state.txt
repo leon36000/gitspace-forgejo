@@ -1,0 +1,5 @@
+HEAD is in toolchain-and-head.txt.
+Relevant source status at verification:
+?? scripts/mission_012_test_agent_adapter.py
+?? scripts/run_forgejo_agent_egress_live_e2e.py
+?? scripts/run_forgejo_live_pr_merge_e2e.py

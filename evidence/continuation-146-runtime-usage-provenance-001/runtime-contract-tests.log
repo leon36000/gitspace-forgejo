@@ -1,0 +1,19 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.34s
+     Running tests/agent_runtime_contract.rs (target/debug/deps/agent_runtime_contract-6eab092b75d50757)
+
+running 11 tests
+test request_validation_binds_the_requirements_document_to_its_hash ... ok
+test request_validation_rejects_invalid_or_unlinked_context_citations ... ok
+test fixture_runtime_rejects_context_from_another_base_before_tool_use ... ok
+test request_validation_rejects_nonportable_or_non_normalized_paths ... ok
+test claim_of_superseded_generation_is_rejected ... ok
+test replay_of_claimed_generation_remains_idempotent_after_newer_allocation ... ok
+test superseded_generation_replay_after_reopen_is_idempotent_but_cannot_be_leased ... ok
+test result_from_an_earlier_generation_is_rejected_when_mission_id_is_stable ... ok
+test fixture_runtime_consumes_context_calls_tools_and_runs_generated_code_idempotently ... ok
+test runtime_claimed_zero_usage_is_not_a_host_usage_receipt ... ok
+test fixture_tool_port_denies_unlisted_tools_and_enforces_call_budget ... ok
+
+test result: ok. 11 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.22s
+

@@ -1,0 +1,7 @@
+f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+local/WEBHOOK-005-canonical-links
+ M docs/architecture.md
+ M docs/checkpoint.md
+?? docs/refusal-evidence-matrix.md
+?? src/agent_runtime.rs
+?? tests/agent_runtime_contract.rs

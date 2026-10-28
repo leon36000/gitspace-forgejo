@@ -1,0 +1,15 @@
+HEAD is recorded in toolchain-and-head.txt.
+Scoped git status:
+ M Cargo.toml
+ M src/webhook/http.rs
+ M src/webhook/reconcile.rs
+ M tests/webhook_http_contract.rs
+ M tests/webhook_reconcile_contract.rs
+?? tests/webhook_receiver_process_e2e.rs
+
+Scoped diff numstat:
+11	0	Cargo.toml
+267	13	src/webhook/http.rs
+1415	87	src/webhook/reconcile.rs
+57	2	tests/webhook_http_contract.rs
+1966	26	tests/webhook_reconcile_contract.rs

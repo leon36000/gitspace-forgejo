@@ -1,0 +1,41 @@
+{
+  "test_first_red": {
+    "exit_status": 1,
+    "expected_missing_field": "retry_after_disposition",
+    "selected_tests": 1,
+    "passed": 0,
+    "failed": 1,
+    "filtered": 119
+  },
+  "isolated_process_green": {
+    "exit_status": 0,
+    "runner": "python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_disables_retry_for_duplicate_retry_after_headers",
+    "bubblewrap_network_and_pid_namespaces": true,
+    "passed": 1,
+    "failed": 0,
+    "filtered": 119
+  },
+  "reconcile_cli_unit_tests": {
+    "exit_status": 0,
+    "passed": 151,
+    "failed": 0,
+    "ignored": 0
+  },
+  "all_targets": {
+    "exit_status": 0,
+    "targets_with_results": 36,
+    "passed": 629,
+    "failed": 0,
+    "ignored": 111
+  },
+  "cargo_fmt_check_exit_status": 0,
+  "git_diff_check_exit_status": 0,
+  "cargo_metadata_offline_exit_status": 0,
+  "cargo_license_guard_exit_status": 0,
+  "license": null,
+  "license_file": null,
+  "publish": [],
+  "license_decision": "no_license_selected",
+  "redistribution_rights": "not_assessed",
+  "spdx_package_license_declared": "NOASSERTION"
+}

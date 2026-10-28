@@ -1,0 +1,5 @@
+HEAD=f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+branch=local/WEBHOOK-005-canonical-links
+listener=127.0.0.1:18881
+runtime=llama-server
+request_scope=read-only loopback health and model-catalog endpoints; no inference

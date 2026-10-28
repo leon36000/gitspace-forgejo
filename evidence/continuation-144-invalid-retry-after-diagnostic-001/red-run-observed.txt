@@ -1,0 +1,2 @@
+Command: python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_disables_retry_for_duplicate_retry_after_headers
+Observed test-first result: exit status 1; one selected test failed at tests/webhook_receiver_process_e2e.rs:11672 because `left: Null` did not equal `right: "invalid_or_ambiguous"`; 0 passed, 1 failed, 119 filtered out. The runner failure was the intended missing structured diagnostic, not a build or fixture setup error.

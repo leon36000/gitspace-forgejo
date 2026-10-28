@@ -1,0 +1,4 @@
+cargo_targets=36
+passed=630
+failed=0
+ignored=111

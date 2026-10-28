@@ -1,0 +1,3 @@
+Python 3.12.3
+curl 8.5.0 (aarch64-unknown-linux-gnu)
+ss utility available from iproute2 (exact package version not collected)

@@ -1,0 +1,23 @@
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/src/webhook/reconcile.rs:77:
+     Forbidden,
+     NotFound,
+     InvalidCredential,
+-    BatchCacheBudgetExceeded { maximum_cached_json_bytes: usize },
++    BatchCacheBudgetExceeded {
++        maximum_cached_json_bytes: usize,
++    },
+     InconsistentPagination,
+     HttpStatus(u16),
+-    HttpStatusWithRetryAfter { status: u16, retry_after_ms: u64 },
++    HttpStatusWithRetryAfter {
++        status: u16,
++        retry_after_ms: u64,
++    },
+     /// The response status is retained, but Retry-After cannot safely guide a retry.
+-    HttpStatusWithInvalidRetryAfter { status: u16 },
++    HttpStatusWithInvalidRetryAfter {
++        status: u16,
++    },
+     InvalidResponse,
+ }
+ 

@@ -1,0 +1,12 @@
+{
+  "listener_process": "llama-server",
+  "listener_address": "127.0.0.1:18881",
+  "health_http_status": 200,
+  "model_catalog_http_status": 401,
+  "model_catalog_error_type": "authentication_error",
+  "model_catalog_message": "Invalid API Key",
+  "agent_runtime_implementations": ["FixtureRuntime"],
+  "credential_read_or_searched": false,
+  "inference_invoked": false,
+  "external_service_or_project_data_used": false
+}

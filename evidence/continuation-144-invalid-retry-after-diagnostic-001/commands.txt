@@ -1,0 +1,11 @@
+Base HEAD inspected: git rev-parse HEAD
+RED (expected failing assertion): python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_disables_retry_for_duplicate_retry_after_headers
+GREEN isolated process test: python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_disables_retry_for_duplicate_retry_after_headers
+Focused binary tests: cargo test --offline --locked --bin forgejo-reconcile-local
+Full non-ignored target suite: cargo test --offline --locked --all-targets --quiet
+Formatting: cargo fmt --all -- --check
+Whitespace: git diff --check
+Cargo metadata: cargo metadata --locked --offline --no-deps
+Cargo license state: python3 scripts/verify_cargo_license_state.py
+Evidence index: python3 evidence/continuation-144-invalid-retry-after-diagnostic-001/append_manifests.py
+Evidence recheck: python3 evidence/continuation-144-invalid-retry-after-diagnostic-001/verify_append_only_indexes.py

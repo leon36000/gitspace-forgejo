@@ -1,0 +1,9 @@
+{
+  "adapter_probe_sha256": "4db93c675405ebac30e172ed4a43da1d5921b8d121fc32207dcce9c814f879e6",
+  "bubblewrap_version": "bubblewrap 0.9.0",
+  "driver_sha256": "4419363ea582ddaa9f56f0f42331f9c9d26cb978e80616d761b1bc831ba8cb48",
+  "forgejo_binary_sha256": "e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7",
+  "head_commit": "f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0",
+  "python_version": "3.12.3",
+  "sandbox_network_policy": "Bubblewrap --unshare-net and --unshare-pid; adapter probe only; no credentials mounted"
+}

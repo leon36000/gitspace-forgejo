@@ -1,0 +1,5 @@
+ M Cargo.toml
+ M docs/checkpoint.md
+?? evidence/continuation-145-local-model-endpoint-auth-check-001/
+?? src/bin/mission-012-verify-local.rs
+?? tests/agent_runtime_contract.rs

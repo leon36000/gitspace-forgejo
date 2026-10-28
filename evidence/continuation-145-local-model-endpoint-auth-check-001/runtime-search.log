@@ -1,0 +1,2 @@
+src/bin/mission-012-verify-local.rs:21:            "usage: mission-012-ollama-local --verify-pair BASE_DIR CANDIDATE_DIR NEW_PRIVATE_TARGET_DIR TRUSTED_GIT_REPOSITORY BASE_COMMIT_SHA CANDIDATE_COMMIT_SHA REQUIREMENT_SHA256 POLICY_SHA256"
+tests/agent_runtime_contract.rs:50:impl AgentRuntimeV1 for FixtureRuntime {
