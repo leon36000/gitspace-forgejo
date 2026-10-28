@@ -1,0 +1,14 @@
+$ python3 tests/test_mission_012_test_agent_adapter.py
+F
+======================================================================
+FAIL: test_nonzero_supervisor_cleanup_status_becomes_adapter_error_after_verification (__main__.Mission012TestAgentAdapterTests.test_nonzero_supervisor_cleanup_status_becomes_adapter_error_after_verification)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/test_mission_012_test_agent_adapter.py", line 97, in test_nonzero_supervisor_cleanup_status_becomes_adapter_error_after_verification
+    self.assertIn("verifier-scope cleanup", event["error"])
+AssertionError: 'verifier-scope cleanup' not found in 'MCP supervisor exited with status 76'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (failures=1)

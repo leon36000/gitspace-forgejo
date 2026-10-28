@@ -1,0 +1,3 @@
+Read-only command lookup for: ollama, llama-server, llama-cli, lmstudio, lms, opencode, aider, goose.
+No executable path was returned for any of these names in this environment.
+This is a bounded PATH lookup, not proof that no model service exists by another name or on another endpoint.

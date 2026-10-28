@@ -1,0 +1,11 @@
+Source officielle examinée dans le scratch local (aucun code copié):
+- dépôt: /tmp/forgejo-v17-base-cas-poc
+- HEAD du scratch: 0d791421f85ca13a63b665053d81ea765fbbc571
+- commit examiné: 0d791421f85ca13a63b665053d81ea765fbbc571
+- fichier: modules/structs/hook.go
+- blob: 9c7f1deed1c38eeb435ab976bb8429c5458c7f2b
+- symboles: CreatePayload::{Sha, Ref, RefType}; DeletePayload::{Ref, RefType}
+- contrat observé: ref_type est un champ JSON string `ref_type` dans les deux payloads; create ajoute le SHA string `sha`.
+- git diff --quiet <commit> -- modules/structs/hook.go: code de symbole inchangé (exit 0).
+
+Portée: ce contrôle ne scanne pas tout Forgejo et ne démontre pas qu'une livraison réelle a été émise par le serveur. Les tests de ce lot utilisent le receiver réel et des payloads HMAC de fixture.

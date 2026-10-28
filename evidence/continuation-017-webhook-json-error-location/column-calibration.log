@@ -1,0 +1,21 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 2.42s
+     Running tests/webhook_receiver_process_e2e.rs (target/debug/deps/webhook_receiver_process_e2e-6caa738f5453f442)
+
+running 1 test
+
+thread 'actual_receiver_reports_line_and_column_for_signed_malformed_json_before_append' (1301335) panicked at tests/webhook_receiver_process_e2e.rs:926:5:
+assertion `left == right` failed
+  left: Number(25)
+ right: 26
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test actual_receiver_reports_line_and_column_for_signed_malformed_json_before_append ... FAILED
+
+failures:
+
+failures:
+    actual_receiver_reports_line_and_column_for_signed_malformed_json_before_append
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 78 filtered out; finished in 0.06s
+
+error: test failed, to rerun pass `--test webhook_receiver_process_e2e`

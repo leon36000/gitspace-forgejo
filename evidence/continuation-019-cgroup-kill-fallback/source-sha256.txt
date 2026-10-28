@@ -1,0 +1,2 @@
+6975c28c0aadda7e113e3ed2c2c095fe8a7c25eff01951601638363f2bc4b517  scripts/mission_012_mcp_supervisor.py
+2ec1d91402242594a0a26307ff81a3ef95be25688ccc2aa9c84d8e8c715be8a0  tests/test_mission_012_mcp_supervisor.py

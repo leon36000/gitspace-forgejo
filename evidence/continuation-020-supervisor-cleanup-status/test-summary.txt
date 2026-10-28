@@ -1,0 +1,5 @@
+red-before-fix: 1 failure, old supervisor returned 75 for injected verifier kill-request failure
+python supervisor suite: 15 passed, 0 failed
+sandbox stdio adapter focused test: 1 passed, 0 failed
+Rust live MCP cancellation focused test: 1 passed, 0 failed
+rust all-target suite: not rerun in this slice; preceding CONTINUATION-019 recorded 550 passed, 0 failed, 76 ignored

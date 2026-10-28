@@ -1,0 +1,14 @@
+$ python3 tests/test_mission_012_mcp_supervisor.py -k supervisor_uses_distinct_status
+F
+======================================================================
+FAIL: test_supervisor_uses_distinct_status_when_verifier_cleanup_is_unconfirmed (__main__.Mission012McpSupervisorTests.test_supervisor_uses_distinct_status_when_verifier_cleanup_is_unconfirmed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "tests/test_mission_012_mcp_supervisor.py", line 452, in test_supervisor_uses_distinct_status_when_verifier_cleanup_is_unconfirmed
+    self.assertEqual(process.returncode, 76, stderr.decode(errors="replace"))
+AssertionError: 75 != 76 :
+
+----------------------------------------------------------------------
+Ran 1 test in 0.336s
+
+FAILED (failures=1)

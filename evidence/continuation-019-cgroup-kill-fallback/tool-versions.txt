@@ -1,0 +1,7 @@
+Worktree HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+Working tree: pre-existing modifications preserved; no commit created.
+rustc 1.95.0 (59807616e 2026-04-14)
+cargo 1.95.0 (f2d3ce0bd 2026-03-21)
+Python 3.12.3
+systemd 255 (255.4-1ubuntu8.18), default-hierarchy=unified
+Linux 7.0.0-1019-nvidia, aarch64

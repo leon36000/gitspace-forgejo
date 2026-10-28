@@ -1,0 +1,3 @@
+cargo test --locked --offline --all-targets
+groups=34 passed=539 failed=0 ignored=76
+exit_code=0
