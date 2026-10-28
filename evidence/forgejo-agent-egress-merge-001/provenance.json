@@ -1,0 +1,9 @@
+{
+  "branch": "local/WEBHOOK-005-canonical-links",
+  "examined_head": "f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0",
+  "external_services_used": false,
+  "forgejo_state_dir": "/tmp/forgejo-merge-egress-concurrent-001",
+  "forgejo_state_retained": true,
+  "model_used": false,
+  "production_modified": false
+}

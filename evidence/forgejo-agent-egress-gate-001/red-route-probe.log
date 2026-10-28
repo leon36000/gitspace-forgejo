@@ -1,0 +1,14 @@
+E
+======================================================================
+ERROR: test_live_route_probe_binds_to_the_current_repository_and_pr (tests.test_mission_012_sandboxed_test_adapter.SandboxedAdapterTests.test_live_route_probe_binds_to_the_current_repository_and_pr)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/test_mission_012_sandboxed_test_adapter.py", line 87, in test_live_route_probe_binds_to_the_current_repository_and_pr
+    probes = agent_adapter.forgejo_route_probe_specs(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'mission_012_test_agent_adapter' has no attribute 'forgejo_route_probe_specs'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)

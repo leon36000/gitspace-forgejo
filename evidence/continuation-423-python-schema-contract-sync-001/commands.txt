@@ -1,0 +1,29 @@
+Red, before correction:
+python3 tests/test_forgejo_emitted_webhook_e2e.py OrdinaryIssueCommentReconciliationTests.test_accepts_a_stale_created_delivery_with_the_latest_canonical_body BranchRefBatchReconciliationValidationTests.test_accepts_native_create_and_delete_as_one_current_branch_read PullRequestBatchReconciliationValidationTests.test_accepts_ordered_deliveries_bound_to_one_current_pr_read PushReconciliationBatchTests.test_accepts_old_and_current_notifications_after_one_shared_read
+python3 tests/test_forgejo_emitted_webhook_e2e.py ReconciliationSchemaContractTests
+
+Green representative set:
+python3 tests/test_forgejo_emitted_webhook_e2e.py ReconciliationSchemaContractTests OrdinaryIssueCommentReconciliationTests.test_accepts_a_stale_created_delivery_with_the_latest_canonical_body BranchRefBatchReconciliationValidationTests.test_accepts_native_create_and_delete_as_one_current_branch_read PullRequestBatchReconciliationValidationTests.test_accepts_ordered_deliveries_bound_to_one_current_pr_read PushReconciliationBatchTests.test_accepts_old_and_current_notifications_after_one_shared_read
+
+Relevant Python suites:
+python3 tests/test_forgejo_emitted_webhook_e2e.py
+python3 tests/test_forgejo_webhook_native_replay_e2e.py
+python3 tests/test_forgejo_live_org_team_reviewer_readback.py
+
+Rust producer contract:
+cargo test --offline --locked --test forgejo_reconcile_capabilities_e2e actual_cli_discloses_versioned_local_test_capabilities -- --exact --test-threads=1
+
+Cargo licensing:
+python3 -m unittest scripts.test_cargo_license_state
+python3 scripts/verify_cargo_license_state.py
+cargo metadata --locked --offline --no-deps --format-version 1
+
+Static checks:
+Python ast.parse for five modified runner files and tests/test_forgejo_emitted_webhook_e2e.py
+git diff --check
+Python regex scan for remaining get("schema_version") != 18/22 comparisons across scripts/*.py
+
+Evidence integrity:
+python3 evidence/continuation-423-python-schema-contract-sync-001/append_manifests.py
+python3 evidence/continuation-423-python-schema-contract-sync-001/verify_append_only_indexes.py
+(cd evidence/continuation-423-python-schema-contract-sync-001 && sha256sum -c SHA256SUMS)

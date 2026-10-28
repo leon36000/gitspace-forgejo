@@ -1,0 +1,1 @@
+PASS: local SHA256SUMS verifies 3 evidence files recursively

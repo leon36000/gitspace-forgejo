@@ -1,0 +1,17 @@
+RED 1 — before adding parse_live_release_delivery_record:
+Command: python3 tests/test_forgejo_emitted_webhook_e2e.py ParseLiveReleaseDeliveryRecordTests
+Observed: 1 failure; setUp reports “Forgejo-emitted release journal parser is missing”.
+
+RED 2 — before bounding the ID to Rust u64:
+Command: python3 tests/test_forgejo_emitted_webhook_e2e.py ParseLiveReleaseDeliveryRecordTests.test_rejects_release_ids_outside_the_receiver_u64_contract
+Observed: 1 failure; “ValueError not raised” for release ID 2^64.
+
+RED 3 — before registering the release selector:
+Command: python3 tests/test_forgejo_emitted_webhook_e2e.py ReleaseWebhookBindingTests
+Observed: 1 error; effective_hook_events rejects selector “release” as unsupported.
+
+RED 4 — after registering the selector but before binding Forgejo task type release:
+Command: python3 tests/test_forgejo_emitted_webhook_e2e.py ReleaseWebhookBindingTests
+Observed: 1 error; validate_hook_task_bindings reports that the Forgejo delivery task does not match its receiver journal event.
+
+The error-message regex for RED 2 was corrected to match the actual validation layer (invalid expected Release identity/action); no production behavior was changed for that assertion correction.

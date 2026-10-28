@@ -1,0 +1,89 @@
+{
+  "branch_sha_after": "55615f7f7e116edcf9c9da38090c457bd76dcd6a",
+  "branch_sha_before": "55615f7f7e116edcf9c9da38090c457bd76dcd6a",
+  "cleanup": {
+    "forgejo_exited": true,
+    "listener_absent": true,
+    "returncode": 0
+  },
+  "credential_visible": false,
+  "forgejo": {
+    "binary_sha256": "e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7",
+    "listener": "127.0.0.1:3130",
+    "version": "forgejo version 17.0.0+gitea-1.22.0 (release name 17.0.0) built with GNU Make 4.4.1, go1.26.9 : bindata, timetzdata, sqlite, sqlite_unlock_notify"
+  },
+  "limitations": [
+    "The sandbox child invoked the existing local-test-adapter route probe only; no model was called.",
+    "The trusted control was a read-only API call, not a merge-authority operation.",
+    "The isolated Forgejo server and sandbox used the same host UID; this is not multi-tenant isolation."
+  ],
+  "network_connected": false,
+  "network_namespaces": {
+    "host": "net:[4026531833]",
+    "sandbox": "net:[4026535871]"
+  },
+  "positive_controls": [
+    {
+      "method": "GET",
+      "name": "health",
+      "path": "/api/healthz",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "name": "api_repository",
+      "path": "/api/v1/repos/forge-admin/mission-012-clamp",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "name": "web_repository",
+      "path": "/forge-admin/mission-012-clamp",
+      "status": 200
+    }
+  ],
+  "routes": [
+    {
+      "host_status": 404,
+      "method": "GET",
+      "name": "api",
+      "path": "/api/v1/repos/forge-admin/mission-012-clamp/pulls/1",
+      "sandbox_blocked": true,
+      "sandbox_errno": 111,
+      "sandbox_error_type": "ConnectionRefusedError",
+      "sandbox_status": null,
+      "sandbox_target_port": 3130
+    },
+    {
+      "host_status": 404,
+      "method": "GET",
+      "name": "web",
+      "path": "/forge-admin/mission-012-clamp/pulls/1",
+      "sandbox_blocked": true,
+      "sandbox_errno": 111,
+      "sandbox_error_type": "ConnectionRefusedError",
+      "sandbox_status": null,
+      "sandbox_target_port": 3130
+    },
+    {
+      "host_status": 401,
+      "method": "POST",
+      "name": "git_receive_pack",
+      "path": "/forge-admin/mission-012-clamp.git/git-receive-pack",
+      "sandbox_blocked": true,
+      "sandbox_errno": 111,
+      "sandbox_error_type": "ConnectionRefusedError",
+      "sandbox_status": null,
+      "sandbox_target_port": 3130
+    }
+  ],
+  "schema_version": 1,
+  "trusted_read_control": {
+    "authorized": true,
+    "credential_passed_to_sandbox": false,
+    "credential_scope": "read:user,read:repository",
+    "route": "GET /api/v1/repos/forge-admin/mission-012-clamp/branches/main",
+    "status": 200
+  },
+  "verdict": "passed"
+}

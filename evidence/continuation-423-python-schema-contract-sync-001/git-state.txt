@@ -1,0 +1,10 @@
+branch=local/WEBHOOK-005-canonical-links
+HEAD=f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+ M docs/checkpoint.md
+?? evidence/continuation-423-python-schema-contract-sync-001/
+?? scripts/run_forgejo_live_org_team_reviewer_readback.py
+?? scripts/run_forgejo_live_webhook_native_replay_e2e.py
+?? scripts/run_forgejo_live_webhook_reconcile_emitted.py
+?? scripts/run_forgejo_native_branch_delete_webhook_reconcile.py
+?? scripts/run_forgejo_native_push_webhook_reconcile.py
+?? tests/test_forgejo_emitted_webhook_e2e.py

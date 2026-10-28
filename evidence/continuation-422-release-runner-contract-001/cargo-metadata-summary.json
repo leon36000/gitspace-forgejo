@@ -1,0 +1,13 @@
+{
+  "agent_forge_licensing_metadata": {
+    "decision": "no_license_selected",
+    "redistribution_rights": "not_assessed",
+    "spdx_package_license_declared": "NOASSERTION"
+  },
+  "license": null,
+  "license_file": null,
+  "metadata_resolution": "cargo metadata --locked --offline --no-deps --format-version 1",
+  "name": "agent-forge-core",
+  "publish": [],
+  "version": "0.1.0"
+}

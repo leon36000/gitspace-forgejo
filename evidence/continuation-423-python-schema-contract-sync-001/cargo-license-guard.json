@@ -1,0 +1,5 @@
+{
+  "exit_code": 0,
+  "stderr": "",
+  "stdout": "{\n  \"license\": null,\n  \"license_decision\": \"no_license_selected\",\n  \"license_file\": null,\n  \"package\": \"agent-forge-core\",\n  \"publish\": [],\n  \"redistribution_rights\": \"not_assessed\",\n  \"spdx_package_license_declared\": \"NOASSERTION\",\n  \"status\": \"metadata_policy_verified\"\n}"
+}

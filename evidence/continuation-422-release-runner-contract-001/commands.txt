@@ -1,0 +1,27 @@
+Focused runner contracts:
+python3 tests/test_forgejo_emitted_webhook_e2e.py ParseLiveReleaseDeliveryRecordTests ReleaseWebhookBindingTests HookReadbackTests PushWebhookBindingTests
+
+Cargo license metadata:
+python3 -m unittest scripts.test_cargo_license_state
+python3 scripts/verify_cargo_license_state.py
+cargo metadata --locked --offline --no-deps --format-version 1
+
+Full runner test-module diagnostic:
+python3 tests/test_forgejo_emitted_webhook_e2e.py
+The summarized receipt records test IDs and exception/assertion lines only; fixture bodies are omitted.
+
+Syntax and tracked-diff whitespace:
+Python ast.parse for scripts/run_forgejo_live_webhook_reconcile_emitted.py and tests/test_forgejo_emitted_webhook_e2e.py
+git diff --check
+
+Environment capture:
+python 3.12.3; cargo 1.95.0; rustc 1.95.0; Linux aarch64
+forgejo and go were not found in PATH
+
+Source identity:
+sha256sum scripts/run_forgejo_live_webhook_reconcile_emitted.py tests/test_forgejo_emitted_webhook_e2e.py docs/checkpoint.md docs/refusal-evidence-matrix.md
+
+Evidence integrity:
+python3 evidence/continuation-422-release-runner-contract-001/append_manifests.py
+python3 evidence/continuation-422-release-runner-contract-001/verify_append_only_indexes.py
+(cd evidence/continuation-422-release-runner-contract-001 && sha256sum -c SHA256SUMS)

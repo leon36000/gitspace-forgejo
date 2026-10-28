@@ -1,0 +1,4 @@
+CONTINUATION-421 local evidence hashes: PASS
+worktree and project append-only prefixes: PASS
+current architecture/checkpoint/plan/matrix hashes linked: PASS
+local_evidence_files=9

@@ -1,0 +1,10 @@
+test_live_route_probe_binds_to_the_current_repository_and_pr (tests.test_mission_012_sandboxed_test_adapter.SandboxedAdapterTests.test_live_route_probe_binds_to_the_current_repository_and_pr) ... ok
+test_live_route_probe_rejects_ambiguous_repository_identity (tests.test_mission_012_sandboxed_test_adapter.SandboxedAdapterTests.test_live_route_probe_rejects_ambiguous_repository_identity) ... ok
+test_probe_process_remains_isolated_until_reprobe_and_release (tests.test_mission_012_sandboxed_test_adapter.SandboxedAdapterTests.test_probe_process_remains_isolated_until_reprobe_and_release) ... ok
+test_stdio_adapter_uses_only_trusted_mcp_pipe_and_refuses_host_network_and_file (tests.test_mission_012_sandboxed_test_adapter.SandboxedAdapterTests.test_stdio_adapter_uses_only_trusted_mcp_pipe_and_refuses_host_network_and_file) ... ok
+test_wrapper_rejects_non_private_mcp_config_before_spawning_host (tests.test_mission_012_sandboxed_test_adapter.SandboxedAdapterTests.test_wrapper_rejects_non_private_mcp_config_before_spawning_host) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.219s
+
+OK

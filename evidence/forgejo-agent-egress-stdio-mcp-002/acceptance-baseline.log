@@ -1,0 +1,1 @@
+baseline: cargo test exit 101; assertion left=-2, right=10
