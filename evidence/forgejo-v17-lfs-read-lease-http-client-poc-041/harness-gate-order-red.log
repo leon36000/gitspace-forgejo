@@ -1,0 +1,86 @@
+Environment variable $PROJECT_CONF not set, use default: tests/sqlite.ini
+2026/10/24 23:02:32 ...s/storage/storage.go:157:initAttachments() [I] Initialising Attachment storage with type: local
+2026/10/24 23:02:32 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/attachments
+2026/10/24 23:02:32 ...s/storage/storage.go:147:initAvatars() [I] Initialising Avatar storage with type: local
+2026/10/24 23:02:32 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/avatars
+2026/10/24 23:02:32 ...s/storage/storage.go:174:initRepoAvatars() [I] Initialising Repository Avatar storage with type: local
+2026/10/24 23:02:32 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/repo-avatars
+2026/10/24 23:02:32 ...s/storage/storage.go:168:initLFS() [I] Initialising LFS storage with type: local
+2026/10/24 23:02:32 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/lfs
+2026/10/24 23:02:32 ...s/storage/storage.go:180:initRepoArchives() [I] Initialising Repository Archive storage with type: local
+2026/10/24 23:02:32 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/repo-archive
+2026/10/24 23:02:32 ...s/storage/storage.go:190:initPackages() [I] Initialising Packages storage with type: local
+2026/10/24 23:02:32 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/packages
+2026/10/24 23:02:32 ...s/storage/storage.go:201:initActions() [I] Initialising Actions storage with type: local
+2026/10/24 23:02:32 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/actions_log
+2026/10/24 23:02:32 ...s/storage/storage.go:205:initActions() [I] Initialising ActionsArtifacts storage with type: local
+2026/10/24 23:02:32 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/actions_artifacts
+2026/10/24 23:02:32 modules/git/git.go:122:checkInit() [W] git module has been initialized already, duplicate init may work but it's better to fix it
+2026/10/24 23:02:32 routers/init.go:109:InitWebInstalled() [I] Git version: 2.43.0 (home: /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/home)
+??? [TestLogger] 2026/10/24 23:02:32 ...s/storage/storage.go:157:initAttachments() [I] Initialising Attachment storage with type: local
+??? [TestLogger] 2026/10/24 23:02:32 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/attachments
+??? [TestLogger] 2026/10/24 23:02:32 ...s/storage/storage.go:147:initAvatars() [I] Initialising Avatar storage with type: local
+??? [TestLogger] 2026/10/24 23:02:32 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/avatars
+??? [TestLogger] 2026/10/24 23:02:32 ...s/storage/storage.go:174:initRepoAvatars() [I] Initialising Repository Avatar storage with type: local
+??? [TestLogger] 2026/10/24 23:02:32 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/repo-avatars
+??? [TestLogger] 2026/10/24 23:02:32 ...s/storage/storage.go:168:initLFS() [I] Initialising LFS storage with type: local
+??? [TestLogger] 2026/10/24 23:02:32 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/lfs
+??? [TestLogger] 2026/10/24 23:02:32 ...s/storage/storage.go:180:initRepoArchives() [I] Initialising Repository Archive storage with type: local
+??? [TestLogger] 2026/10/24 23:02:32 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/repo-archive
+??? [TestLogger] 2026/10/24 23:02:32 ...s/storage/storage.go:190:initPackages() [I] Initialising Packages storage with type: local
+??? [TestLogger] 2026/10/24 23:02:32 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/packages
+??? [TestLogger] 2026/10/24 23:02:32 ...s/storage/storage.go:201:initActions() [I] Initialising Actions storage with type: local
+??? [TestLogger] 2026/10/24 23:02:32 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/actions_log
+??? [TestLogger] 2026/10/24 23:02:32 ...s/storage/storage.go:205:initActions() [I] Initialising ActionsArtifacts storage with type: local
+??? [TestLogger] 2026/10/24 23:02:32 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/actions_artifacts
+??? [TestLogger] 2026/10/24 23:02:32 routers/init.go:129:InitWebInstalled() [I] SQLite3 support is enabled
+??? [TestLogger] 2026/10/24 23:02:32 routers/common/db.go:23:InitDBEngine() [I] Beginning ORM engine initialization.
+??? [TestLogger] 2026/10/24 23:02:32 routers/common/db.go:30:InitDBEngine() [I] ORM engine initialization attempt #1/10...
+??? [TestLogger] 2026/10/24 23:02:34 routers/init.go:135:InitWebInstalled() [I] ORM engine initialization successful!
+??? [TestLogger] 2026/10/24 23:02:34 ...er/issues/indexer.go:80:func1() [I] PID 2248404: Initializing Issue Indexer: bleve
+??? [TestLogger] 2026/10/24 23:02:34 ...exer/code/indexer.go:169:func3() [I] PID: 2248404 Initializing Repository Indexer at: /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/indexers/repos.bleve
+??? [TestLogger] 2026/10/24 23:02:34 routers/init.go:84:syncAppConfForGit() [I] AppPath changed from '' to '/tmp/go-build4070243493/b001/integration.test'
+??? [TestLogger] 2026/10/24 23:02:34 routers/init.go:89:syncAppConfForGit() [I] CustomConf changed from '' to '/tmp/forgejo-v17-base-cas-poc/tests/sqlite.ini'
+??? [TestLogger] 2026/10/24 23:02:34 ...xer/stats/indexer.go:41:populateRepoIndexer() [I] Populating the repo stats indexer with existing repositories
+??? [TestLogger] 2026/10/24 23:02:34 modules/ssh/ssh.go:345:Listen() [I] Adding SSH host key: /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/ssh/gitea.rsa
+??? [TestLogger] 2026/10/24 23:02:34 modules/ssh/init.go:30:Init() [I] SSH server started on localhost:2203. Cipher list ([chacha20-poly1305@openssh.com aes128-ctr aes192-ctr aes256-ctr aes128-gcm@openssh.com aes256-gcm@openssh.com]), key exchange algorithms ([mlkem768x25519-sha256 curve25519-sha256 ecdh-sha2-nistp256 ecdh-sha2-nistp384 ecdh-sha2-nistp521 diffie-hellman-group14-sha256 diffie-hellman-group14-sha1]), MACs ([hmac-sha2-256-etm@openssh.com hmac-sha2-256 hmac-sha1])
+??? [TestLogger] 2026/10/24 23:02:34 ...s/graceful/server.go:50:NewServer() [I] Starting new SSH server: tcp:localhost:2203 on PID: 2248404
+=== TestPOCSQLiteRouteRealHTTPClientDetectsLostLeaseAsUnexpectedEOF (tests/test_utils.go:370)
++++ TestPOCSQLiteRouteRealHTTPClientDetectsLostLeaseAsUnexpectedEOF is a slow test (took 14.467025024s)
+testlogger.go:recordError() FATAL ERROR: log.Error has been called: // TestPOCSQLiteRouteRealHTTPClientDetectsLostLeaseAsUnexpectedEOF
+	"2026/10/24 23:02:34 ...s/webhook/deliver.go:239:populateWebhookSendingQueue() [E] Unable to populate webhook queue as FindUndeliveredHookTaskIDs failed: context canceled",
+// TestPOCSQLiteRouteRealHTTPClientDetectsLostLeaseAsUnexpectedEOF
+	"2026/10/24 23:02:34 models/git/branch.go:283:RemoveOldDeletedBranches() [E] DeletedBranchesCleanup: context canceled",
+// TestPOCSQLiteRouteRealHTTPClientDetectsLostLeaseAsUnexpectedEOF
+	"2026/10/24 23:02:34 ...rvices/cron/tasks.go:131:func2() [E] CreateNotice: context canceled",
+// TestPOCSQLiteRouteRealHTTPClientDetectsLostLeaseAsUnexpectedEOF
+	"2026/10/24 23:02:34 ...migrations/update.go:26:UpdateMigrationPosterID() [E] updateMigrationPosterIDByGitService failed: context canceled",
+// TestPOCSQLiteRouteRealHTTPClientDetectsLostLeaseAsUnexpectedEOF
+	"2026/10/24 23:02:34 ...rvices/cron/tasks.go:131:func2() [E] CreateNotice: context canceled",
+// TestPOCSQLiteRouteRealHTTPClientDetectsLostLeaseAsUnexpectedEOF
+	"2026/10/24 23:02:34 ...rvices/cron/tasks.go:131:func2() [E] CreateNotice: context canceled",
+// TestPOCSQLiteRouteRealHTTPClientDetectsLostLeaseAsUnexpectedEOF
+	"2026/10/24 23:02:48 ...rvices/lfs/server.go:298:streamVersionedContent() [E] Error whilst copying LFS OID[3ef9ecd7d8a9ac640fce673bf436b23653e8c3931f519b65f2eedd00133af523] to the response after 16384 bytes. Error: renew LFS read lease: POC SQLite LFS read lease lost",
+=== TestPOCSQLiteRouteRenewalPreventsClaimAtOldExpiry (tests/test_utils.go:370)
+=== TestPOCSQLiteRouteStopsWhenExpiredLeaseWasClaimedByGC (tests/test_utils.go:370)
+testlogger.go:recordError() FATAL ERROR: log.Error has been called: // TestPOCSQLiteRouteStopsWhenExpiredLeaseWasClaimedByGC
+	"2026/10/24 23:02:59 ...rvices/lfs/server.go:298:streamVersionedContent() [E] Error whilst copying LFS OID[9cc696b86fe4603fe21f49b2d479bed781c4f64c6a975482f4c665f726d3288a] to the response after 4 bytes. Error: renew LFS read lease: POC SQLite LFS read lease lost",
+=== TestPOCSQLiteRouteRealHTTPClientDetectsLostLeaseAsUnexpectedEOF (tests/test_utils.go:370)
++++ TestPOCSQLiteRouteRealHTTPClientDetectsLostLeaseAsUnexpectedEOF is a slow test (took 31.95979576s)
+testlogger.go:recordError() FATAL ERROR: log.Error has been called: // TestPOCSQLiteRouteRealHTTPClientDetectsLostLeaseAsUnexpectedEOF
+	"2026/10/24 23:03:25 ...rvices/lfs/server.go:298:streamVersionedContent() [E] Error whilst copying LFS OID[3ef9ecd7d8a9ac640fce673bf436b23653e8c3931f519b65f2eedd00133af523] to the response after 16384 bytes. Error: renew LFS read lease: context deadline exceeded",
+--- FAIL: TestPOCSQLiteRouteRealHTTPClientDetectsLostLeaseAsUnexpectedEOF (32.07s)
+    testlogger.go:408: 2026/10/24 23:03:01 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/gitea-lfs-meta
+    testlogger.go:408: 2026/10/24 23:03:14 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/login for test-mock:12345, 303 See Other in 33.5ms @ auth/auth.go:208(auth.SignInPost)
+    testlogger.go:408: 2026/10/24 23:03:15 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user2/repo1/settings/lfs/delete/3ef9ecd7d8a9ac640fce673bf436b23653e8c3931f519b65f2eedd00133af523 for test-mock:12345, 303 See Other in 32.8ms @ setting/lfs.go:354(setting.LFSDelete)
+    testlogger.go:408: 2026/10/24 23:03:18 ...eb/routing/logger.go:75:func1() [W] router: slow      GET /user2/repo1.git/info/lfs/objects/3ef9ecd7d8a9ac640fce673bf436b23653e8c3931f519b65f2eedd00133af523/name for 127.0.0.1:43966, elapsed 3618.4ms @ lfs/server.go:303(lfs.DownloadHandler)
+    testlogger.go:408: 2026/10/24 23:03:25 ...rvices/lfs/server.go:298:streamVersionedContent() [E] Error whilst copying LFS OID[3ef9ecd7d8a9ac640fce673bf436b23653e8c3931f519b65f2eedd00133af523] to the response after 16384 bytes. Error: renew LFS read lease: context deadline exceeded
+    testlogger.go:408: 2026/10/24 23:03:28 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user2/repo1.git/info/lfs/objects/3ef9ecd7d8a9ac640fce673bf436b23653e8c3931f519b65f2eedd00133af523/name for 127.0.0.1:43966, 200 OK in 13510.0ms @ lfs/server.go:303(lfs.DownloadHandler)
+    lfs_read_lease_http_client_poc_test.go:165: the late renewal did not reject the GC-claimed generation
+=== TestPOCSQLiteRouteRenewalPreventsClaimAtOldExpiry (tests/test_utils.go:370)
+=== TestPOCSQLiteRouteStopsWhenExpiredLeaseWasClaimedByGC (tests/test_utils.go:370)
+testlogger.go:recordError() FATAL ERROR: log.Error has been called: // TestPOCSQLiteRouteStopsWhenExpiredLeaseWasClaimedByGC
+	"2026/10/24 23:03:47 ...rvices/lfs/server.go:298:streamVersionedContent() [E] Error whilst copying LFS OID[9cc696b86fe4603fe21f49b2d479bed781c4f64c6a975482f4c665f726d3288a] to the response after 4 bytes. Error: renew LFS read lease: POC SQLite LFS read lease lost",
+FAIL
+FAIL	forgejo.org/tests/integration	76.469s
+FAIL

@@ -1,0 +1,17 @@
+date=2026-10-24
+source=Forgejo official tag v17.0.0
+official_commit=0d791421f85ca13a63b665053d81ea765fbbc571
+scratch_path=/tmp/forgejo-v17-base-cas-poc
+scratch_HEAD=0d791421f85ca13a63b665053d81ea765fbbc571
+scratch_ref=detached
+scratch_worktree_dirty=true
+go_binary=/tmp/forgejo-v17-toolchain/go/bin/go
+go_version=go1.27.3 linux/arm64
+go_env=GOOS=linux GOARCH=arm64 CGO_ENABLED=1 GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off
+build_tags=sqlite,sqlite_unlock_notify,forgejo_poc_sqlite_generation_route,forgejo_poc_lfs_read_lease_stream
+integration_config=tests/sqlite.ini
+storage_backend=Forgejo LocalStorage integration fixture
+lease_database=SQLite file; route and GC adapters use separate XORM engines on the same DSN
+http_transport=httptest.Server loopback; net/http client with DisableCompression=true
+llm=not used
+external_services=none; Go module proxy and checksum DB disabled

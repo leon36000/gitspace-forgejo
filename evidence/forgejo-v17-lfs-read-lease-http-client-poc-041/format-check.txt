@@ -1,0 +1,10 @@
+command=/tmp/forgejo-v17-toolchain/go/bin/gofmt -d tests/integration/lfs_read_lease_http_client_poc_test.go tests/integration/lfs_read_lease_sqlite_route_poc_test.go
+exit=0
+stdout=<empty>
+stderr=<empty>
+command=git diff --check
+exit=0
+stdout=<empty>
+stderr=<empty>
+trailing_whitespace=tests/integration/lfs_read_lease_http_client_poc_test.go:none
+trailing_whitespace=tests/integration/lfs_read_lease_sqlite_route_poc_test.go:none

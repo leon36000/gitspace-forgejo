@@ -1,0 +1,5 @@
+Global manifest verification for POC-054 evidence.
+
+Expected final state after the local manifest and current checkpoint hash are appended: 3,209 lines, 3,208 valid SHA-256 rows, 3,121 distinct paths, and one preserved historical malformed placeholder. Validation uses the newest valid row per path to distinguish intentionally retained historical hashes from current mismatches. The final read-back must show zero missing paths and zero current hash divergences. The local POC-054 manifest covers 12 evidence artifacts; the global manifest also hashes that local manifest.
+
+The verifier was run after finalizing all POC-054 files and the current checkpoint hash. Its check is read-only and does not alter either manifest.

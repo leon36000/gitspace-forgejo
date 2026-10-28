@@ -1,0 +1,5 @@
+# forgejo.org/services/pull [forgejo.org/services/pull.test]
+services/pull/lfs_recovery_test.go:191:16: undefined: RecoverLFSPendingMetaObjectsPage
+services/pull/lfs_recovery_test.go:205:17: undefined: RecoverLFSPendingMetaObjectsPage
+FAIL	forgejo.org/services/pull [build failed]
+FAIL

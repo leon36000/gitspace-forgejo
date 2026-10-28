@@ -1,0 +1,6 @@
+Forgejo upstream base commit: 0d791421f85ca13a63b665053d81ea765fbbc571
+Scratch: /tmp/forgejo-v17-base-cas-poc (dirty; hashes identify tested bytes)
+44aff68df44a9c8e60ee73a642ed743deb432445528e29195d21ae6275f2dc2e  /tmp/forgejo-v17-base-cas-poc/models/git/lfs.go
+f94cdc56bb9351ad78eece6d9f84c7da21be1d9a034de1119e43c18487a8ce2e  /tmp/forgejo-v17-base-cas-poc/models/git/lfs_test.go
+144f24d16dfa582b6ecbbda5cd0f5615bcfdffc7a64812a7a632f785a401994a  /tmp/forgejo-v17-base-cas-poc/services/pull/lfs_recovery.go
+2e45a74c2dde2740f8d63b6e717afd8c40540f869addf7e662a5ea6fc3add78a  /tmp/forgejo-v17-base-cas-poc/services/pull/lfs_recovery_test.go

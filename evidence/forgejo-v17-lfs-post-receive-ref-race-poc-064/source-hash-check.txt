@@ -1,0 +1,8 @@
+tests/integration/git_push_test.go: OK
+routers/private/hook_post_receive.go: OK
+services/pull/lfs_recovery.go: OK
+models/git/lfs.go: OK
+services/repository/files/update.go: OK
+services/lfs/server.go: OK
+go.mod: OK
+go.sum: OK

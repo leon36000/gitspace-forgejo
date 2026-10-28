@@ -1,0 +1,155 @@
+Environment variable $PROJECT_CONF not set, use default: tests/sqlite.ini
+2026/10/25 12:04:54 ...s/storage/storage.go:157:initAttachments() [I] Initialising Attachment storage with type: local
+2026/10/25 12:04:54 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/attachments
+2026/10/25 12:04:54 ...s/storage/storage.go:147:initAvatars() [I] Initialising Avatar storage with type: local
+2026/10/25 12:04:54 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/avatars
+2026/10/25 12:04:54 ...s/storage/storage.go:174:initRepoAvatars() [I] Initialising Repository Avatar storage with type: local
+2026/10/25 12:04:54 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/repo-avatars
+2026/10/25 12:04:54 ...s/storage/storage.go:168:initLFS() [I] Initialising LFS storage with type: local
+2026/10/25 12:04:54 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/lfs
+2026/10/25 12:04:54 ...s/storage/storage.go:180:initRepoArchives() [I] Initialising Repository Archive storage with type: local
+2026/10/25 12:04:54 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/repo-archive
+2026/10/25 12:04:54 ...s/storage/storage.go:190:initPackages() [I] Initialising Packages storage with type: local
+2026/10/25 12:04:54 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/packages
+2026/10/25 12:04:54 ...s/storage/storage.go:201:initActions() [I] Initialising Actions storage with type: local
+2026/10/25 12:04:54 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/actions_log
+2026/10/25 12:04:54 ...s/storage/storage.go:205:initActions() [I] Initialising ActionsArtifacts storage with type: local
+2026/10/25 12:04:54 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/actions_artifacts
+2026/10/25 12:04:54 modules/git/git.go:122:checkInit() [W] git module has been initialized already, duplicate init may work but it's better to fix it
+2026/10/25 12:04:54 routers/init.go:109:InitWebInstalled() [I] Git version: 2.43.0 (home: /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/home)
+??? [TestLogger] 2026/10/25 12:04:54 ...s/storage/storage.go:157:initAttachments() [I] Initialising Attachment storage with type: local
+??? [TestLogger] 2026/10/25 12:04:54 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/attachments
+??? [TestLogger] 2026/10/25 12:04:54 ...s/storage/storage.go:147:initAvatars() [I] Initialising Avatar storage with type: local
+??? [TestLogger] 2026/10/25 12:04:54 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/avatars
+??? [TestLogger] 2026/10/25 12:04:54 ...s/storage/storage.go:174:initRepoAvatars() [I] Initialising Repository Avatar storage with type: local
+??? [TestLogger] 2026/10/25 12:04:54 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/repo-avatars
+??? [TestLogger] 2026/10/25 12:04:54 ...s/storage/storage.go:168:initLFS() [I] Initialising LFS storage with type: local
+??? [TestLogger] 2026/10/25 12:04:54 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/lfs
+??? [TestLogger] 2026/10/25 12:04:54 ...s/storage/storage.go:180:initRepoArchives() [I] Initialising Repository Archive storage with type: local
+??? [TestLogger] 2026/10/25 12:04:54 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/repo-archive
+??? [TestLogger] 2026/10/25 12:04:54 ...s/storage/storage.go:190:initPackages() [I] Initialising Packages storage with type: local
+??? [TestLogger] 2026/10/25 12:04:54 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/packages
+??? [TestLogger] 2026/10/25 12:04:54 ...s/storage/storage.go:201:initActions() [I] Initialising Actions storage with type: local
+??? [TestLogger] 2026/10/25 12:04:54 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/actions_log
+??? [TestLogger] 2026/10/25 12:04:54 ...s/storage/storage.go:205:initActions() [I] Initialising ActionsArtifacts storage with type: local
+??? [TestLogger] 2026/10/25 12:04:54 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/actions_artifacts
+??? [TestLogger] 2026/10/25 12:04:54 routers/init.go:129:InitWebInstalled() [I] SQLite3 support is enabled
+??? [TestLogger] 2026/10/25 12:04:54 routers/common/db.go:23:InitDBEngine() [I] Beginning ORM engine initialization.
+??? [TestLogger] 2026/10/25 12:04:54 routers/common/db.go:30:InitDBEngine() [I] ORM engine initialization attempt #1/10...
+??? [TestLogger] 2026/10/25 12:04:54 routers/init.go:135:InitWebInstalled() [I] ORM engine initialization successful!
+??? [TestLogger] 2026/10/25 12:04:54 ...er/issues/indexer.go:80:func1() [I] PID 2517817: Initializing Issue Indexer: bleve
+??? [TestLogger] 2026/10/25 12:04:54 ...exer/code/indexer.go:169:func3() [I] PID: 2517817 Initializing Repository Indexer at: /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/indexers/repos.bleve
+??? [TestLogger] 2026/10/25 12:04:54 routers/init.go:84:syncAppConfForGit() [I] AppPath changed from '' to '/tmp/go-build3996883767/b001/integration.test'
+??? [TestLogger] 2026/10/25 12:04:54 routers/init.go:89:syncAppConfForGit() [I] CustomConf changed from '' to '/tmp/forgejo-v17-base-cas-poc/tests/sqlite.ini'
+??? [TestLogger] 2026/10/25 12:04:54 ...xer/stats/indexer.go:41:populateRepoIndexer() [I] Populating the repo stats indexer with existing repositories
+??? [TestLogger] 2026/10/25 12:04:54 modules/ssh/ssh.go:345:Listen() [I] Adding SSH host key: /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/ssh/gitea.rsa
+??? [TestLogger] 2026/10/25 12:04:54 modules/ssh/init.go:30:Init() [I] SSH server started on localhost:2203. Cipher list ([chacha20-poly1305@openssh.com aes128-ctr aes192-ctr aes256-ctr aes128-gcm@openssh.com aes256-gcm@openssh.com]), key exchange algorithms ([mlkem768x25519-sha256 curve25519-sha256 ecdh-sha2-nistp256 ecdh-sha2-nistp384 ecdh-sha2-nistp521 diffie-hellman-group14-sha256 diffie-hellman-group14-sha1]), MACs ([hmac-sha2-256-etm@openssh.com hmac-sha2-256 hmac-sha1])
+??? [TestLogger] 2026/10/25 12:04:54 ...s/graceful/server.go:50:NewServer() [I] Starting new SSH server: tcp:localhost:2203 on PID: 2517817
+??? [TestLogger] 2026/10/25 12:04:54 ...er/issues/indexer.go:160:func2() [I] Issue Indexer Initialization took 24.394984ms
+??? [TestLogger] 2026/10/25 12:04:54 ...exer/code/indexer.go:265:func4() [I] Repository Indexer Initialization took 26.462489ms
+??? [TestLogger] 2026/10/25 12:04:54 ...exer/code/indexer.go:291:populateRepoIndexer() [I] Populating the repo indexer with existing repositories
+??? [TestLogger] 2026/10/25 12:04:54 ...er/cleanup_sha256.go:27:CleanupSHA256() [I] Start to cleanup dangling images with a sha256:* version
+??? [TestLogger] 2026/10/25 12:04:54 ...er/cleanup_sha256.go:106:cleanupSHA256() [I] Nothing to cleanup
+??? [TestLogger] 2026/10/25 12:04:54 ...er/cleanup_sha256.go:29:CleanupSHA256() [I] Finished to cleanup dangling images with a sha256:* version
+??? [TestLogger] 2026/10/25 12:04:54 ...xer/stats/indexer.go:87:populateRepoIndexer() [I] Done (re)populating the repo stats indexer with existing repositories
+=== RUN   TestPOCGenericFileLFSWriterLeavesPendingWhenTargetRefMovesBeforeAcknowledgement
+=== TestPOCGenericFileLFSWriterLeavesPendingWhenTargetRefMovesBeforeAcknowledgement (tests/integration/git_helper_for_declarative_test.go:67)
+    test_utils.go:276: PrepareTestEnv:Process "Cron: Clean-up deleted branches" cancelled
+    test_utils.go:276: PrepareTestEnv:Process "Cron: Update migration poster IDs" cancelled
+    test_utils.go:276: PrepareTestEnv:Process "Cron: Cancel abandoned actions jobs" cancelled
+    testlogger.go:408: 2026/10/25 12:04:54 ...migrations/update.go:26:UpdateMigrationPosterID() [E] updateMigrationPosterIDByGitService failed: context canceled
+    testlogger.go:408: 2026/10/25 12:04:54 ...migrations/update.go:21:UpdateMigrationPosterID() [W] UpdateMigrationPosterID aborted before forgejo
+    testlogger.go:408: 2026/10/25 12:04:54 ...rvices/cron/tasks.go:131:func2() [E] CreateNotice: context canceled
+    testlogger.go:408: 2026/10/25 12:04:54 ...tions/clear_tasks.go:85:CancelAbandonedJobs() [W] find abandoned tasks: context canceled
+    testlogger.go:408: 2026/10/25 12:04:54 ...rvices/cron/tasks.go:131:func2() [E] CreateNotice: context canceled
+    test_utils.go:302: PrepareTestEnv: all processes cancelled within 18.60423ms
+    testlogger.go:408: 2026/10/25 12:04:54 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/gitea-lfs-meta
+    testlogger.go:408: 2026/10/25 12:04:54 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/pre-receive/user2/repo1 for 127.0.0.1:0, 200 OK in 1.4ms @ private/hook_pre_receive.go:206(private.HookPreReceive)
+    testlogger.go:408: 2026/10/25 12:04:55 ...odels/user/avatar.go:59:GenerateRandomAvatar() [I] New random avatar created: 2
+    testlogger.go:408: 2026/10/25 12:04:55 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/post-receive/user2/repo1 for 127.0.0.1:0, 200 OK in 203.0ms @ private/hook_post_receive.go:49(private.HookPostReceive)
+    testlogger.go:408: 2026/10/25 12:04:55 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/pre-receive/user2/repo1 for 127.0.0.1:0, 200 OK in 0.7ms @ private/hook_pre_receive.go:206(private.HookPreReceive)
+    testlogger.go:408: 2026/10/25 12:04:55 ...exer/code/indexer.go:343:populateRepoIndexer() [I] Done (re)populating the repo indexer with existing repositories
+    testlogger.go:408: 2026/10/25 12:04:55 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/post-receive/user2/repo1 for 127.0.0.1:0, 200 OK in 156.6ms @ private/hook_post_receive.go:49(private.HookPostReceive)
+    testlogger.go:408: 2026/10/25 12:04:55 ...rvices/lfs/server.go:614:getAuthenticatedMeta() [E] Unable to get LFS OID[613edbb39828b82966cd6144eb68629de429281689c914aa1ae8a91c29c84a06] Error: LFS Meta object does not exist
+    testlogger.go:408: 2026/10/25 12:04:55 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user2/repo1.git/info/lfs/objects/613edbb39828b82966cd6144eb68629de429281689c914aa1ae8a91c29c84a06/raced.bin for test-mock:12345, 404 Not Found in 1.0ms @ lfs/server.go:307(lfs.DownloadHandler)
+testlogger.go:recordError() FATAL ERROR: log.Error has been called: // TestPOCGenericFileLFSWriterLeavesPendingWhenTargetRefMovesBeforeAcknowledgement
+	"2026/10/25 12:04:54 ...migrations/update.go:26:UpdateMigrationPosterID() [E] updateMigrationPosterIDByGitService failed: context canceled",
+// TestPOCGenericFileLFSWriterLeavesPendingWhenTargetRefMovesBeforeAcknowledgement
+	"2026/10/25 12:04:54 ...rvices/cron/tasks.go:131:func2() [E] CreateNotice: context canceled",
+// TestPOCGenericFileLFSWriterLeavesPendingWhenTargetRefMovesBeforeAcknowledgement
+	"2026/10/25 12:04:54 ...rvices/cron/tasks.go:131:func2() [E] CreateNotice: context canceled",
+// TestPOCGenericFileLFSWriterLeavesPendingWhenTargetRefMovesBeforeAcknowledgement
+	"2026/10/25 12:04:55 ...rvices/lfs/server.go:614:getAuthenticatedMeta() [E] Unable to get LFS OID[613edbb39828b82966cd6144eb68629de429281689c914aa1ae8a91c29c84a06] Error: LFS Meta object does not exist",
+--- PASS: TestPOCGenericFileLFSWriterLeavesPendingWhenTargetRefMovesBeforeAcknowledgement (1.05s)
+=== RUN   TestPOCGenericFileLFSRecoveryUsesTargetReflogAfterRefMovesBack
+=== TestPOCGenericFileLFSRecoveryUsesTargetReflogAfterRefMovesBack (tests/integration/git_helper_for_declarative_test.go:67)
+    testlogger.go:408: 2026/10/25 12:04:55 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/gitea-lfs-meta
+    testlogger.go:408: 2026/10/25 12:04:55 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/pre-receive/user2/repo1 for 127.0.0.1:0, 200 OK in 0.7ms @ private/hook_pre_receive.go:206(private.HookPreReceive)
+    testlogger.go:408: 2026/10/25 12:04:56 ...odels/user/avatar.go:59:GenerateRandomAvatar() [I] New random avatar created: 2
+    testlogger.go:408: 2026/10/25 12:04:56 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/post-receive/user2/repo1 for 127.0.0.1:0, 200 OK in 126.9ms @ private/hook_post_receive.go:49(private.HookPostReceive)
+    testlogger.go:408: 2026/10/25 12:04:56 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/pre-receive/user2/repo1 for 127.0.0.1:0, 200 OK in 1.4ms @ private/hook_pre_receive.go:206(private.HookPreReceive)
+    testlogger.go:408: 2026/10/25 12:04:56 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/post-receive/user2/repo1 for 127.0.0.1:0, 200 OK in 129.3ms @ private/hook_post_receive.go:49(private.HookPostReceive)
+    testlogger.go:408: 2026/10/25 12:04:56 ...rvices/lfs/server.go:614:getAuthenticatedMeta() [E] Unable to get LFS OID[008e30c1961689502cc4fbb5b6b0c0708adef694b68919d5782b49a88efb7162] Error: LFS Meta object does not exist
+    testlogger.go:408: 2026/10/25 12:04:56 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user2/repo1.git/info/lfs/objects/008e30c1961689502cc4fbb5b6b0c0708adef694b68919d5782b49a88efb7162/recovered.bin for test-mock:12345, 404 Not Found in 0.9ms @ lfs/server.go:307(lfs.DownloadHandler)
+    testlogger.go:408: 2026/10/25 12:04:56 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user2/repo1.git/info/lfs/objects/008e30c1961689502cc4fbb5b6b0c0708adef694b68919d5782b49a88efb7162/recovered.bin for test-mock:12345, 200 OK in 0.5ms @ lfs/server.go:307(lfs.DownloadHandler)
+testlogger.go:recordError() FATAL ERROR: log.Error has been called: // TestPOCGenericFileLFSRecoveryUsesTargetReflogAfterRefMovesBack
+	"2026/10/25 12:04:56 ...rvices/lfs/server.go:614:getAuthenticatedMeta() [E] Unable to get LFS OID[008e30c1961689502cc4fbb5b6b0c0708adef694b68919d5782b49a88efb7162] Error: LFS Meta object does not exist",
+--- PASS: TestPOCGenericFileLFSRecoveryUsesTargetReflogAfterRefMovesBack (0.91s)
+=== RUN   TestPOCGenericFileLFSAPI201IsReturnedAfterPromotion
+=== TestPOCGenericFileLFSAPI201IsReturnedAfterPromotion (tests/integration/git_helper_for_declarative_test.go:67)
+    testlogger.go:408: 2026/10/25 12:04:56 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/gitea-lfs-meta
+    testlogger.go:408: 2026/10/25 12:04:56 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/pre-receive/user2/repo1 for 127.0.0.1:0, 200 OK in 0.7ms @ private/hook_pre_receive.go:206(private.HookPreReceive)
+    testlogger.go:408: 2026/10/25 12:04:56 ...odels/user/avatar.go:59:GenerateRandomAvatar() [I] New random avatar created: 2
+    testlogger.go:408: 2026/10/25 12:04:56 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/post-receive/user2/repo1 for 127.0.0.1:0, 200 OK in 114.9ms @ private/hook_post_receive.go:49(private.HookPostReceive)
+    testlogger.go:408: 2026/10/25 12:04:57 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/login for test-mock:12345, 303 See Other in 12.5ms @ auth/auth.go:208(auth.SignInPost)
+    testlogger.go:408: 2026/10/25 12:04:57 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/settings/applications/tokens/new for test-mock:12345, 303 See Other in 7.2ms @ setting/access_token.go:220(setting.AccessTokenCreatePost)
+    testlogger.go:408: 2026/10/25 12:04:57 ...s/setting/setting.go:65:initialAppDocsVer() [W] Doclinks will fallback to version 'latest' due to err: Malformed version: dev
+    testlogger.go:408: 2026/10/25 12:04:57 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user/settings/applications for test-mock:12345, 200 OK in 3.1ms @ setting/applications.go:24(setting.Applications)
+    testlogger.go:408: 2026/10/25 12:04:57 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/pre-receive/user2/repo1 for 127.0.0.1:0, 200 OK in 0.7ms @ private/hook_pre_receive.go:206(private.HookPreReceive)
+    testlogger.go:408: 2026/10/25 12:04:57 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/post-receive/user2/repo1 for 127.0.0.1:0, 200 OK in 127.4ms @ private/hook_post_receive.go:49(private.HookPostReceive)
+    testlogger.go:408: 2026/10/25 12:04:57 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/v1/repos/user2/repo1/contents/lfs-api-ack/ack.bin for test-mock:12345, 201 Created in 340.1ms @ repo/file.go:550(repo.CreateFile)
+    testlogger.go:408: 2026/10/25 12:04:57 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user2/repo1.git/info/lfs/objects/60ede341e7896bec3a6a94dc8c9ae2acd9de2bae6137304960a1175852029ab3/ack.bin for test-mock:12345, 200 OK in 1.1ms @ lfs/server.go:307(lfs.DownloadHandler)
+--- PASS: TestPOCGenericFileLFSAPI201IsReturnedAfterPromotion (0.87s)
+=== RUN   TestPOCGenericFileLFSAPI201CanFollowAStaleHookObservation
+=== TestPOCGenericFileLFSAPI201CanFollowAStaleHookObservation (tests/integration/git_helper_for_declarative_test.go:67)
+    testlogger.go:408: 2026/10/25 12:04:57 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/gitea-lfs-meta
+    testlogger.go:408: 2026/10/25 12:04:57 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/pre-receive/user2/repo1 for 127.0.0.1:0, 200 OK in 1.2ms @ private/hook_pre_receive.go:206(private.HookPreReceive)
+    testlogger.go:408: 2026/10/25 12:04:57 ...odels/user/avatar.go:59:GenerateRandomAvatar() [I] New random avatar created: 2
+    testlogger.go:408: 2026/10/25 12:04:57 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/post-receive/user2/repo1 for 127.0.0.1:0, 200 OK in 130.0ms @ private/hook_post_receive.go:49(private.HookPostReceive)
+    testlogger.go:408: 2026/10/25 12:04:57 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/login for test-mock:12345, 303 See Other in 13.6ms @ auth/auth.go:208(auth.SignInPost)
+    testlogger.go:408: 2026/10/25 12:04:57 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/settings/applications/tokens/new for test-mock:12345, 303 See Other in 9.0ms @ setting/access_token.go:220(setting.AccessTokenCreatePost)
+    testlogger.go:408: 2026/10/25 12:04:57 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user/settings/applications for test-mock:12345, 200 OK in 3.1ms @ setting/applications.go:24(setting.Applications)
+    testlogger.go:408: 2026/10/25 12:04:58 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/pre-receive/user2/repo1 for 127.0.0.1:0, 200 OK in 1.3ms @ private/hook_pre_receive.go:206(private.HookPreReceive)
+    testlogger.go:408: 2026/10/25 12:04:58 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/post-receive/user2/repo1 for 127.0.0.1:0, 200 OK in 118.1ms @ private/hook_post_receive.go:49(private.HookPostReceive)
+    testlogger.go:408: 2026/10/25 12:04:58 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/v1/repos/user2/repo1/contents/lfs-api-race/raced.bin for test-mock:12345, 201 Created in 320.5ms @ repo/file.go:550(repo.CreateFile)
+    lfs_api_ack_order_poc_test.go:150: candidate=680796da2f670e0bedb48e4c14fcc04402f384b1 current_ref=8290084d8d95a6bf778a5f82ffc9c04ce49da678 api_status=201 active_lfs=true
+--- PASS: TestPOCGenericFileLFSAPI201CanFollowAStaleHookObservation (0.89s)
+=== RUN   TestPOCGenericFileLFSAPIErrorLeavesRecoverablePendingOperation
+=== TestPOCGenericFileLFSAPIErrorLeavesRecoverablePendingOperation (tests/integration/git_helper_for_declarative_test.go:67)
+    testlogger.go:408: 2026/10/25 12:04:58 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/gitea-lfs-meta
+    testlogger.go:408: 2026/10/25 12:04:58 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/pre-receive/user2/repo1 for 127.0.0.1:0, 200 OK in 0.7ms @ private/hook_pre_receive.go:206(private.HookPreReceive)
+    testlogger.go:408: 2026/10/25 12:04:58 ...odels/user/avatar.go:59:GenerateRandomAvatar() [I] New random avatar created: 2
+    testlogger.go:408: 2026/10/25 12:04:58 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/post-receive/user2/repo1 for 127.0.0.1:0, 200 OK in 123.6ms @ private/hook_post_receive.go:49(private.HookPostReceive)
+    testlogger.go:408: 2026/10/25 12:04:58 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/login for test-mock:12345, 303 See Other in 13.8ms @ auth/auth.go:208(auth.SignInPost)
+    testlogger.go:408: 2026/10/25 12:04:58 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/settings/applications/tokens/new for test-mock:12345, 303 See Other in 9.0ms @ setting/access_token.go:220(setting.AccessTokenCreatePost)
+    testlogger.go:408: 2026/10/25 12:04:58 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user/settings/applications for test-mock:12345, 200 OK in 2.8ms @ setting/applications.go:24(setting.Applications)
+    testlogger.go:408: 2026/10/25 12:04:58 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/pre-receive/user2/repo1 for 127.0.0.1:0, 200 OK in 0.7ms @ private/hook_pre_receive.go:206(private.HookPreReceive)
+    testlogger.go:408: 2026/10/25 12:04:59 models/git/lfs.go:203:NewLFSMetaObject() [E] [Error SQL Query] INSERT INTO `lfs_meta_object` (`oid`,`size`,`repository_id`,`created_unix`,`updated_unix`) VALUES (?,?,?,?,?) [cef42fd14f2af7c68dac158052b64d66118ee173f12a36f67ae27e96ef85140e 36 1 1792944299 1792944299] - poc forced LFS metadata insert failure
+    testlogger.go:408: 2026/10/25 12:04:59 ...hook_post_receive.go:200:HookPostReceive() [E] Git ref refs/heads/master now points to b5d3f2dbf4df5555dac6c66faf3b5df4a5463593 but generic LFS operation pr-0-repo-1-refs/heads/master-b5d3f2dbf4df5555dac6c66faf3b5df4a5463593 could not be promoted and needs recovery: poc forced LFS metadata insert failure
+    testlogger.go:408: 2026/10/25 12:04:59 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/post-receive/user2/repo1 for 127.0.0.1:0, 200 OK in 107.7ms @ private/hook_post_receive.go:49(private.HookPostReceive)
+    testlogger.go:408: 2026/10/25 12:04:59 .../api/v1/repo/file.go:789:handleCreateOrUpdateFileError() [E] UpdateFile: commit b5d3f2dbf4df5555dac6c66faf3b5df4a5463593 was accepted but LFS metadata remains pending; retry recovery for operation pr-0-repo-1-refs/heads/master-b5d3f2dbf4df5555dac6c66faf3b5df4a5463593
+    testlogger.go:408: 2026/10/25 12:04:59 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/v1/repos/user2/repo1/contents/lfs-api-recovery/recover.bin for test-mock:12345, 500 Internal Server Error in 343.5ms @ repo/file.go:550(repo.CreateFile)
+    testlogger.go:408: 2026/10/25 12:04:59 ...rvices/lfs/server.go:614:getAuthenticatedMeta() [E] Unable to get LFS OID[cef42fd14f2af7c68dac158052b64d66118ee173f12a36f67ae27e96ef85140e] Error: LFS Meta object does not exist
+    testlogger.go:408: 2026/10/25 12:04:59 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user2/repo1.git/info/lfs/objects/cef42fd14f2af7c68dac158052b64d66118ee173f12a36f67ae27e96ef85140e/recover.bin for test-mock:12345, 404 Not Found in 0.8ms @ lfs/server.go:307(lfs.DownloadHandler)
+    testlogger.go:408: 2026/10/25 12:04:59 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user2/repo1.git/info/lfs/objects/cef42fd14f2af7c68dac158052b64d66118ee173f12a36f67ae27e96ef85140e/recover.bin for test-mock:12345, 200 OK in 0.8ms @ lfs/server.go:307(lfs.DownloadHandler)
+testlogger.go:recordError() FATAL ERROR: log.Error has been called: // TestPOCGenericFileLFSAPIErrorLeavesRecoverablePendingOperation
+	"2026/10/25 12:04:59 models/git/lfs.go:203:NewLFSMetaObject() [E] [Error SQL Query] INSERT INTO `lfs_meta_object` (`oid`,`size`,`repository_id`,`created_unix`,`updated_unix`) VALUES (?,?,?,?,?) [cef42fd14f2af7c68dac158052b64d66118ee173f12a36f67ae27e96ef85140e 36 1 1792944299 1792944299] - poc forced LFS metadata insert failure",
+// TestPOCGenericFileLFSAPIErrorLeavesRecoverablePendingOperation
+	"2026/10/25 12:04:59 ...hook_post_receive.go:200:HookPostReceive() [E] Git ref refs/heads/master now points to b5d3f2dbf4df5555dac6c66faf3b5df4a5463593 but generic LFS operation pr-0-repo-1-refs/heads/master-b5d3f2dbf4df5555dac6c66faf3b5df4a5463593 could not be promoted and needs recovery: poc forced LFS metadata insert failure",
+// TestPOCGenericFileLFSAPIErrorLeavesRecoverablePendingOperation
+	"2026/10/25 12:04:59 .../api/v1/repo/file.go:789:handleCreateOrUpdateFileError() [E] UpdateFile: commit b5d3f2dbf4df5555dac6c66faf3b5df4a5463593 was accepted but LFS metadata remains pending; retry recovery for operation pr-0-repo-1-refs/heads/master-b5d3f2dbf4df5555dac6c66faf3b5df4a5463593",
+// TestPOCGenericFileLFSAPIErrorLeavesRecoverablePendingOperation
+	"2026/10/25 12:04:59 ...rvices/lfs/server.go:614:getAuthenticatedMeta() [E] Unable to get LFS OID[cef42fd14f2af7c68dac158052b64d66118ee173f12a36f67ae27e96ef85140e] Error: LFS Meta object does not exist",
+--- PASS: TestPOCGenericFileLFSAPIErrorLeavesRecoverablePendingOperation (0.95s)
+PASS
+ok  	forgejo.org/tests/integration	5.104s

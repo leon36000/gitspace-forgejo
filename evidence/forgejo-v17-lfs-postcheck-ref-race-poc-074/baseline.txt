@@ -1,0 +1,6 @@
+Forgejo tag: v17.0.0
+Official source commit: 0d791421f85ca13a63b665053d81ea765fbbc571
+Scratch: /tmp/forgejo-v17-base-cas-poc
+Scratch HEAD: 0d791421f85ca13a63b665053d81ea765fbbc571
+Scratch status: heavily modified by prior, non-adopted CAS/LFS POCs and this test-only seam; do not treat as a clean upstream checkout.
+Product worktree HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0

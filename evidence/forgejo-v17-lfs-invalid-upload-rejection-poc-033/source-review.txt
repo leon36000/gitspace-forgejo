@@ -1,0 +1,5 @@
+Forgejo official HEAD: 0d791421f85ca13a63b665053d81ea765fbbc571
+The actual UploadHandler body was compared with this HEAD in POC-031 and matched byte-for-byte.
+UploadHandler SHA-256 from that comparison: d1da3740e3ebbb9e0b6eca03c7ff7257925abb096308f5080d0cf14b9c058986
+POC-033 exercises the registered integration route and real ContentStore hashingReader; reservation/rejection state transitions and object cleanup are test-only adapter code.
+The final tagged test source is saved as scratch-test-source.go and covered by this folder's SHA256SUMS.

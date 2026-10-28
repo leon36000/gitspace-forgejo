@@ -1,0 +1,8 @@
+product_head=f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+product_branch=local/WEBHOOK-005-canonical-links
+forgejo_scratch_head=0d791421f85ca13a63b665053d81ea765fbbc571
+forgejo_scratch_version=v17.0.0
+go=go version go1.27.3 linux/arm64
+platform=Linux aarch64
+network=GOPROXY=off GOSUMDB=off
+execution_local=2026-10-24 22:10 America/Montreal (logs)

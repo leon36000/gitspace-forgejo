@@ -1,0 +1,15 @@
+Pre-fix red observation; captured from the focused test before adding the immutable operation model.
+
+Command:
+GOTOOLCHAIN=local GOPROXY=off /tmp/forgejo-v17-toolchain/go/bin/go test -count=1 -v -timeout=20m -tags sqlite ./models/git -run '^TestLFSPendingMetaOperationIdentityIsImmutableAcrossPointers$'
+
+Observed excerpt:
+=== RUN   TestLFSPendingMetaOperationIdentityIsImmutableAcrossPointers
+    lfs_test.go:238:
+        Error Trace: /tmp/forgejo-v17-base-cas-poc/models/git/lfs_test.go:238
+        Error: An error is expected but got nil.
+        Test: TestLFSPendingMetaOperationIdentityIsImmutableAcrossPointers
+--- FAIL: TestLFSPendingMetaOperationIdentityIsImmutableAcrossPointers (0.01s)
+FAIL
+FAIL forgejo.org/models/git 0.221s
+FAIL

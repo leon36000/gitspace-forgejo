@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-25",
+  "source": {
+    "project": "Forgejo",
+    "version": "v17.0.0",
+    "upstream_base_commit": "0d791421f85ca13a63b665053d81ea765fbbc571",
+    "scratch_worktree_dirty": true
+  },
+  "toolchain": {
+    "go": "go1.27.3",
+    "goos": "linux",
+    "goarch": "arm64",
+    "cgo_enabled": true,
+    "database_tag": "sqlite"
+  },
+  "results": [
+    {"scope": "services/pull selected recovery tests", "passed": 4, "failed": 0},
+    {"scope": "services/pull full package", "status": "passed"},
+    {"scope": "models/git full package", "status": "passed"},
+    {"scope": "by-ID concurrent promotion under race detector", "workers_per_run": 16, "runs": 10, "status": "passed"}
+  ],
+  "not_demonstrated": [
+    "durable cursor or process restart recovery",
+    "production scheduler or production caller",
+    "operation consistency across page boundaries",
+    "PostgreSQL, MySQL, multi-host behavior, or remote object storage",
+    "all LFS writers and routes",
+    "retention and cleanup",
+    "LLM execution or controlled value comparison"
+  ]
+}

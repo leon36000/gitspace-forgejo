@@ -1,0 +1,4 @@
+Repository: /tmp/forgejo-v17-base-cas-poc
+Tag: v17.0.0
+HEAD: 0d791421f85ca13a63b665053d81ea765fbbc571
+Note: The working tree already contained unrelated experimental and uncommitted changes; HEAD alone does not identify the tested source. File-level hashes are in source-hashes.txt.

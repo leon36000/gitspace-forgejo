@@ -1,0 +1,15 @@
+Base source : Forgejo v17.0.0, commit 0d791421f85ca13a63b665053d81ea765fbbc571.
+
+Final integration run (exit 0):
+GOTOOLCHAIN=local GOPROXY=off /tmp/forgejo-v17-toolchain/go/bin/go test -count=1 -v -timeout=20m -tags sqlite,forgejo_poc_lfs_ack_order ./tests/integration -run '^(TestPOCGenericFileLFSWriterLeavesPendingWhenTargetRefMovesBeforeAcknowledgement|TestPOCGenericFileLFSRecoveryUsesTargetReflogAfterRefMovesBack|TestPOCGenericFileLFSAPI201IsReturnedAfterPromotion|TestPOCGenericFileLFSAPI201CanFollowAStaleHookObservation|TestPOCGenericFileLFSAPIErrorLeavesRecoverablePendingOperation)$'
+
+Formatting (exit 0; empty diff):
+/tmp/forgejo-v17-toolchain/go/bin/gofmt -d routers/private/hook_post_receive.go tests/integration/lfs_api_ack_order_poc_test.go
+
+Whitespace check (exit 0; empty output):
+git diff --check
+
+Source scan, targeted:
+rg -n '"update-ref"|\.Push\(|gitrepo\.(CreateBranch|DeleteBranch|UpdateBranch)|DeleteBranch\(' routers services modules --glob '*.go'
+rg -n 'assertExpectedBaseCommitID|RequireExpectedBaseCommitID' routers/private/hook_pre_receive.go routers/api/v1/repo/branch.go routers/web/repo/branch.go
+rg -l '"update-ref"|SetReference\(|RemoveReference\(|DeleteBranch\(|RenameBranch\(|git\.Push\(|t\.Push\(' routers services modules --glob '*.go' --glob '!**/*_test.go' | sort -u | wc -l

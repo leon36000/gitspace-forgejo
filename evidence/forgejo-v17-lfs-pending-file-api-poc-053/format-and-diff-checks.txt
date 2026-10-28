@@ -1,0 +1,5 @@
+Command: /tmp/forgejo-v17-toolchain/go/bin/gofmt -d services/repository/files/update.go routers/private/hook_post_receive.go tests/integration/git_push_test.go
+Result: no output; files are gofmt-clean.
+
+Command: git diff --check -- services/repository/files/update.go routers/private/hook_post_receive.go tests/integration/git_push_test.go
+Result: exit status 0.

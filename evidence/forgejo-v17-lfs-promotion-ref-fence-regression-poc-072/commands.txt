@@ -1,0 +1,1 @@
+GOTOOLCHAIN=local GOPROXY=off /tmp/forgejo-v17-toolchain/go/bin/go test -count=1 -v -timeout=20m -tags sqlite ./tests/integration -run '^TestPOCGenericFileLFSRecoveryDefersUntilTargetRefReachesCandidate$'

@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-25",
+  "source": {
+    "project": "Forgejo",
+    "version": "v17.0.0",
+    "upstream_base_commit": "0d791421f85ca13a63b665053d81ea765fbbc571",
+    "scratch_worktree_dirty": true
+  },
+  "toolchain": {"go": "go1.27.3", "goos": "linux", "goarch": "arm64", "cgo_enabled": true, "database_tag": "sqlite"},
+  "results": [
+    {"scope": "operation identity focused test", "passed": 1, "failed": 0},
+    {"scope": "pending recovery focused service tests", "passed": 4, "failed": 0},
+    {"scope": "services/pull full package", "status": "passed"},
+    {"scope": "models/git full package", "status": "passed"},
+    {"scope": "conflicting concurrent staging", "concurrent_calls": 2, "runs": 10, "race_detector": true, "status": "passed"},
+    {"scope": "by-ID concurrent promotion", "concurrent_calls_per_run": 16, "runs": 10, "race_detector": true, "status": "passed"}
+  ],
+  "not_demonstrated": [
+    "existing-database migration or pending-row backfill",
+    "multi-process or multi-host concurrency",
+    "PostgreSQL or MySQL behavior",
+    "durable cursor, worker, fairness, reset, retention, or cleanup",
+    "atomicity between Git ref check and database promotion",
+    "all Forgejo LFS writers and routes",
+    "LLM execution or controlled value comparison"
+  ]
+}

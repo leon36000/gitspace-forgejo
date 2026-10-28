@@ -1,0 +1,6 @@
+=== RUN   TestPOCExpiredReadLeaseCanBeReclaimedAfterProcessRestart
+2026/10/24 22:10:37 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCExpiredReadLeaseCanBeReclaimedAfterProcessRestart2710254258/001/objects
+2026/10/24 22:10:37 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCExpiredReadLeaseCanBeReclaimedAfterProcessRestart2710254258/001/objects
+--- PASS: TestPOCExpiredReadLeaseCanBeReclaimedAfterProcessRestart (0.99s)
+PASS
+ok  	forgejo.org/services/lfs	1.065s

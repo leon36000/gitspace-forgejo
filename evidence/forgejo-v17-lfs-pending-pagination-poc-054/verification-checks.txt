@@ -1,0 +1,8 @@
+PASS: GOTOOLCHAIN=local GOPROXY=off go test -count=1 -v -timeout=20m -tags sqlite ./services/pull -run '^TestRecoverLFSPendingMetaObjects(AfterInterruptedPostReceive|DefersMissingCandidate|DoesNotPromoteFromUnrelatedRef|PageIsBoundedAndResumable)$' — 4 selected tests pass; see green-final.log.
+PASS: GOTOOLCHAIN=local GOPROXY=off go test -count=1 -timeout=20m -tags sqlite ./services/pull — package pass; see services-pull.log.
+PASS: GOTOOLCHAIN=local GOPROXY=off go test -count=1 -timeout=20m -tags sqlite ./models/git — package pass after the by-ID concurrency test; see models-git-final.log.
+PASS: GOTOOLCHAIN=local GOPROXY=off go test -race -count=1 -timeout=20m -tags sqlite ./models/git -run '^TestConcurrentLFSPendingPromotionByIDIsIdempotent$' — pass; see promote-by-id-race.log.
+PASS: Same race test with -count=10 — pass; see promote-by-id-race-repeat.log.
+PASS: gofmt -d models/git/lfs.go models/git/lfs_test.go services/pull/lfs_recovery.go services/pull/lfs_recovery_test.go — no output.
+PASS: git diff --check -- models/git/lfs.go models/git/lfs_test.go — exit 0. The untracked service files are not covered by this Git diff command.
+RED TDD observation: before implementation, the selected new API tests failed to compile because RecoverLFSPendingMetaObjectsPage was undefined; see red.log.

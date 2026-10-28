@@ -1,0 +1,12 @@
+RED PHASE — excerpt from the first run with RenewLFSReadLease still a no-op; this is a captured failure excerpt, not the full integration log. Exit status: 1.
+
+Command:
+GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off /tmp/forgejo-v17-toolchain/go/bin/go test -tags 'sqlite sqlite_unlock_notify forgejo_poc_sqlite_generation_route forgejo_poc_lfs_read_lease_stream' ./tests/integration -run '^TestPOCSQLiteRouteRenewalPreventsClaimAtOldExpiry$' -count=1 -v
+
+Observed assertion:
+Error:       Should be false
+Messages:    renewed lease must prevent GC at the former expiry on a separate SQLite connection
+--- FAIL: TestPOCSQLiteRouteRenewalPreventsClaimAtOldExpiry
+FAIL forgejo.org/tests/integration
+
+The no-op renewal left expires_at_ms at the old deadline, so the independent GC connection claimed the retired generation. The later green implementation writes the expiry only if both the lease and generation state still permit renewal.

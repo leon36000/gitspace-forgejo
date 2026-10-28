@@ -1,0 +1,10 @@
+PASS: focused operation-identity model test — 1 test; model-identity-focused.log.
+PASS: four focused pending recovery tests, including a shared operation split across pages — service-focused.log.
+PASS: full ./services/pull package under -tags sqlite — services-pull.log.
+PASS: full ./models/git package after all tests were added — models-git-final.log.
+PASS: two concurrent conflicting StageLFSMetaObject calls under SQLite file, -race -count=10 — stage-identity-race-repeat.log.
+PASS: 16 concurrent PromoteLFSPendingMetaObjectByID calls, -race -count=10 — promote-by-id-race-repeat.log.
+PASS: gofmt -d on the four examined files — no output.
+PASS: targeted trailing-whitespace scan of the four examined files — no trailing whitespace.
+PASS: git diff --check for tracked models/git/lfs.go and models/git/lfs_test.go.
+RED before fix: StageLFSMetaObject accepted a second OID for the same OperationKey with a different TargetRef; see operation-identity-red.log.

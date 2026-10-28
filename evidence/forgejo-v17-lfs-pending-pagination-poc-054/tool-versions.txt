@@ -1,0 +1,10 @@
+Date: 2026-10-25
+Forgejo official source line: v17.0.0
+Upstream base commit: 0d791421f85ca13a63b665053d81ea765fbbc571
+Go: go1.27.3 linux/arm64
+GOOS/GOARCH/CGO_ENABLED: linux/arm64/1
+Git: 2.43.0
+Host: Linux 7.0.0-1019-nvidia aarch64
+Build/test tag: sqlite
+Environment: GOTOOLCHAIN=local GOPROXY=off
+Scratch worktree was dirty; exact tested bytes are bound by source-hashes.txt.

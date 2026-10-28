@@ -1,0 +1,18 @@
+Go toolchain: go version go1.27.3 linux/arm64
+Environment: GOTOOLCHAIN=local GOPROXY=off GOFLAGS=-mod=readonly
+
+Command:
+go test -tags sqlite ./models/git -run '^TestConcurrentLFSPendingPromotionIsIdempotent$' -count=1 -v
+Observed result: PASS; TestConcurrentLFSPendingPromotionIsIdempotent (0.06s); ok forgejo.org/models/git 0.469s
+
+Command:
+go test -tags sqlite ./models/git -run '^TestConcurrentLFSPendingPromotionIsIdempotent$' -count=25
+Observed result: PASS; ok forgejo.org/models/git 2.177s
+
+Command:
+go test -race -tags sqlite ./models/git -run '^TestConcurrentLFSPendingPromotionIsIdempotent$' -count=1
+Observed result: PASS; ok forgejo.org/models/git 1.891s
+
+Command:
+go test -tags sqlite ./models/git -count=1
+Observed result: PASS; ok forgejo.org/models/git 0.763s

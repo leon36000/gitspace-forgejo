@@ -1,0 +1,7 @@
+date=2026-10-25
+go=go1.27.3 linux/arm64
+git=2.43.0
+database=SQLite integration tag
+module_proxy=off (GOPROXY=off)
+go_toolchain=local (GOTOOLCHAIN=local)
+Forgejo source base=0d791421f85ca13a63b665053d81ea765fbbc571

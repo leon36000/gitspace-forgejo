@@ -1,0 +1,33 @@
+Source scan:
+rg -l '"update-ref"|SetReference\(|RemoveReference\(|DeleteBranch\(|RenameBranch\(|git\.Push\(|t\.Push\(' routers services modules --glob '*.go' --glob '!**/*_test.go' | sort -u
+
+The broad candidate scan returns 22 source files:
+routers/api/v1/repo/branch.go
+routers/web/repo/branch.go
+routers/web/repo/pull.go
+routers/web/repo/setting/protected_branch.go
+services/issue/issue.go
+services/migrations/dump.go
+services/migrations/gitea_uploader.go
+services/mirror/mirror_push.go
+services/packages/cargo/index.go
+services/pull/merge_prepare.go
+services/pull/pull.go
+services/repository/branch.go
+services/repository/files/cherry_pick.go
+services/repository/files/patch.go
+services/repository/files/temp_repo.go
+services/repository/files/update.go
+services/repository/files/upload.go
+services/repository/sync_fork.go
+services/wiki/wiki.go
+modules/git/fetch.go
+modules/git/repo_branch.go
+modules/git/repo_commit.go
+
+Classification:
+- API and Web branch handlers call direct branch rename/delete helpers; the receive hook does not mediate those mutations.
+- Generic file, upload, patch, cherry-pick, branch-create, wiki, package-index, mirror and fork-sync pushes use Git push call paths; each still needs a source-specific check for hook context and target ref.
+- PR-head refs are set/removed directly in pull and issue services.
+- merge_prepare updates a staging clone; migration dump updates export refs; those are matches but do not automatically imply mutation of the canonical target branch.
+- This is a broad lexical candidate set, not 22 confirmed live target-branch writers and not exhaustive of indirect calls, extensions or dynamically assembled Git commands.

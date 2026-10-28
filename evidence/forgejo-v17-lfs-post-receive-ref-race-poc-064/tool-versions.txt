@@ -1,0 +1,8 @@
+Scratch: /tmp/forgejo-v17-base-cas-poc
+Forgejo official base: v17.0.0, commit 0d791421f85ca13a63b665053d81ea765fbbc571 (modified scratch)
+Go: go1.27.3 linux/arm64 (/tmp/forgejo-v17-toolchain/go/bin/go)
+Git: 2.43.0
+Test database: SQLite integration fixture
+Build tag: sqlite
+Integration server: local test harness; HTTP/SSH bound to loopback
+External model/API: none
