@@ -1,0 +1,3 @@
+project_evidence_files_verified=12
+local_indexes_and_current_document_hashes_verified=true
+project_worktree_index_hash_current=true

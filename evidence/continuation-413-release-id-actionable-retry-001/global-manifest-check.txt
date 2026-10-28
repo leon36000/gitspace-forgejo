@@ -1,0 +1,2 @@
+project_evidence_files_verified=14
+current_docs_and_worktree_index_verified=true

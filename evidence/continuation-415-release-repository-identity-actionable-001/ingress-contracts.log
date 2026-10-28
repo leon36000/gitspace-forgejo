@@ -1,0 +1,55 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+     Running tests/webhook_contract.rs (/dev/shm/forgejo-continuation-415-cargo-target/debug/deps/webhook_contract-4749aee905191710)
+
+running 10 tests
+test concurrent_retries_append_exactly_once ... ok
+test consistent_repository_identity_metadata_is_accepted ... ok
+test identical_delivery_is_duplicate_after_journal_reopen ... ok
+test invalid_signature_is_rejected_without_journal_side_effect ... ok
+test late_older_notification_is_appended_and_does_not_rewrite_history ... ok
+test same_delivery_id_with_changed_payload_is_conflict ... ok
+test signed_issue_payload_with_non_object_review_member_is_rejected_without_journal_side_effect ... ok
+test signed_payload_with_duplicate_json_member_is_rejected_without_journal_side_effect ... ok
+test signed_payload_with_escaped_duplicate_json_member_is_rejected_without_journal_side_effect ... ok
+test signed_repository_identity_conflicts_are_rejected_without_journal_side_effect ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.06s
+
+     Running tests/webhook_handler_contract.rs (/dev/shm/forgejo-continuation-415-cargo-target/debug/deps/webhook_handler_contract-3f813c02b258e567)
+
+running 30 tests
+test body_over_limit_is_rejected_by_parser_before_allocation ... ok
+test capabilities_publish_machine_readable_contracts_for_every_supported_event ... ok
+test concurrent_changed_payloads_with_one_delivery_id_accept_once_and_conflict_once ... ok
+test forgejo_branch_create_refuses_tags_and_malformed_bindings_without_journaling ... ok
+test forgejo_branch_delete_refuses_tags_and_malformed_bindings_without_journaling ... ok
+test forgejo_review_type_value_is_not_mistaken_for_an_http_event_header ... ok
+test forgejo_v17_approved_review_event_is_accepted_and_bound_to_its_pull_request ... ok
+test forgejo_v17_branch_create_delivery_is_bound_to_its_branch ... ok
+test forgejo_v17_branch_delete_delivery_is_bound_to_its_branch ... ok
+test forgejo_v17_internal_pull_request_sync_task_name_is_not_a_wire_event_header ... ok
+test forgejo_v17_issue_comment_wire_event_binds_issue_and_pull_request_comments ... ok
+test forgejo_v17_pull_request_comment_event_requires_a_review_payload ... ok
+test forgejo_v17_pull_request_event_accepts_null_review_pointer ... ok
+test forgejo_v17_review_subtypes_are_journaled_as_pull_request_notifications ... ok
+test forgejo_v17_synchronized_pull_request_event_is_accepted_under_pull_request_header ... ok
+test forgejo_v17_workflow_job_delivery_is_admitted_as_a_distinct_resource ... ok
+test forgejo_v17_workflow_run_delivery_is_admitted_and_bound_to_the_run ... ok
+test invalid_signature_is_unauthorized_and_not_journaled ... ok
+test issue_comment_refuses_inconsistent_issue_pull_request_bindings ... ok
+test issues_ingestion_requires_a_supported_forgejo_action_without_journaling_invalid_payloads ... ok
+test pull_request_event_with_non_null_review_member_is_rejected_before_journaling ... ok
+test pull_request_ingestion_requires_supported_forgejo_v17_actions_without_journaling_invalid_payloads ... ok
+test review_notifications_require_the_reviewed_action_before_journaling ... ok
+test unsigned_delete_header_cannot_reclassify_a_signed_create_payload ... ok
+test unsigned_event_header_substitution_is_refused_when_payload_shape_disagrees ... ok
+test unsupported_event_is_rejected_without_journal_side_effect ... ok
+test valid_delivery_is_accepted_and_identical_retry_is_idempotent ... ok
+test workflow_job_header_status_and_parent_run_binding_are_checked_before_append ... ok
+test workflow_run_status_mismatch_refusal_points_to_event_contract ... ok
+test wrong_path_method_and_content_type_are_rejected ... ok
+
+test result: ok. 30 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.25s
+
+
+ingress_contracts_exit=0

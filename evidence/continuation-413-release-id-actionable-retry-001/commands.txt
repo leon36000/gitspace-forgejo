@@ -1,0 +1,23 @@
+Test processus rouge (a échoué sur l’action générique) :
+PYTHONDONTWRITEBYTECODE=1 python3 - <<'PY' > evidence/continuation-413-release-id-actionable-retry-001/process-red.log 2>&1
+import sys
+import tempfile
+original = tempfile.TemporaryDirectory
+def use_tmpfs(*args, **kwargs):
+    kwargs['dir'] = '/dev/shm'
+    return original(*args, **kwargs)
+tempfile.TemporaryDirectory = use_tmpfs
+sys.path.insert(0, 'scripts')
+import run_webhook_reconcile_cli_e2e as runner
+sys.argv = ['run_webhook_reconcile_cli_e2e.py', '--scenario', 'actual_receiver_rejects_zero_release_id_then_accepts_same_id_retry']
+raise SystemExit(runner.main())
+PY
+
+Après ajout du conseil `release.id` et correction de l’assertion `delivery_id` : même commande vers process-test.log.
+
+Checks finaux :
+cargo fmt --all -- --check
+git diff --check
+python3 scripts/verify_cargo_license_state.py
+cargo metadata --offline --locked --no-deps --format-version 1
+AST parse de scripts/run_webhook_reconcile_cli_e2e.py avec Python ast.parse.

@@ -1,0 +1,37 @@
+Précondition vérifiée : branche `local/WEBHOOK-005-canonical-links`, HEAD `f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0`; travail strictement local. Le test processus utilise `run_webhook_reconcile_cli_e2e.py` avec `tempfile.TemporaryDirectory` redirigé vers `/dev/shm`, compile offline/locked, puis exécute les deux noms sous Bubblewrap.
+
+Scénarios processus finaux :
+
+```text
+actual_receiver_rejects_missing_and_malformed_release_repository_identity_then_accepts_same_delivery
+actual_receiver_rejects_missing_and_malformed_workflow_repository_full_name_with_nested_field_path
+```
+
+Contrats ciblés :
+
+```sh
+TMPDIR=/tmp CARGO_TARGET_DIR=/dev/shm/forgejo-continuation-415-cargo-target CARGO_NET_OFFLINE=true cargo test --offline --locked --test webhook_contract --test webhook_handler_contract --test webhook_reconcile_contract --test webhook_http_contract -- --test-threads=1
+```
+
+Suite complète, après `cargo build --offline --locked --bins` pour les tests qui lancent un binaire et après correction du chemin tmpfs dans le helper de quarantaine :
+
+```sh
+TMPDIR=/tmp CARGO_TARGET_DIR=/dev/shm/forgejo-continuation-415-cargo-target CARGO_NET_OFFLINE=true cargo test --offline --locked --all-targets -- --test-threads=1
+```
+
+Test de quarantaine qui a mis en évidence le masquage du binaire par `/dev` dans le namespace Bubblewrap :
+
+```sh
+TMPDIR=/tmp CARGO_TARGET_DIR=/dev/shm/forgejo-continuation-415-cargo-target CARGO_NET_OFFLINE=true cargo test --offline --locked --test webhook_quarantine_cli -- --test-threads=1
+```
+
+Contrôles finaux :
+
+```sh
+cargo fmt --all -- --check
+git diff --check
+python3 scripts/verify_cargo_license_state.py
+cargo metadata --offline --locked --no-deps --format-version 1
+```
+
+Le dossier conserve aussi les sorties rouges sur copies de code pré-correctif, les deux échecs initiaux du test all-targets liés au chemin de binaire, le succès final, le résumé Cargo, l’environnement, les métadonnées Cargo et les empreintes source.

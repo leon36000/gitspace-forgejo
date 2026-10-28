@@ -1,0 +1,26 @@
+Test exact (runner Python, compile hors ligne, exécution bwrap --unshare-net --unshare-pid) :
+PYTHONDONTWRITEBYTECODE=1 python3 - <<'PY' > evidence/continuation-411-release-unauthorized-readback-001/process-test.log 2>&1
+import sys
+import tempfile
+original = tempfile.TemporaryDirectory
+def use_tmpfs(*args, **kwargs):
+    kwargs['dir'] = '/dev/shm'
+    return original(*args, **kwargs)
+tempfile.TemporaryDirectory = use_tmpfs
+sys.path.insert(0, 'scripts')
+import run_webhook_reconcile_cli_e2e as runner
+sys.argv = ['run_webhook_reconcile_cli_e2e.py', '--scenario', 'actual_reconcile_cli_process_keeps_release_unauthorized_read_inconclusive_without_projection']
+raise SystemExit(runner.main())
+PY
+
+Checks :
+cargo fmt --all -- --check
+git diff --check
+python3 scripts/verify_cargo_license_state.py
+cargo metadata --offline --locked --no-deps --format-version 1
+AST parse de scripts/run_webhook_reconcile_cli_e2e.py avec Python ast.parse.
+
+Préflight GitLab, anonyme et en lecture seule :
+getent ahostsv4 pc4.tail0c55ff.ts.net
+GIT_TERMINAL_PROMPT=0 timeout 8s git -c credential.helper= -c core.askPass= -c http.lowSpeedLimit=1 -c http.lowSpeedTime=4 ls-remote https://pc4.tail0c55ff.ts.net/root/gitspace-forgejo.git
+Résultat : résolution DNS absente; ls-remote code 128, « Could not resolve host ». Aucun helper d’identifiants ni prompt.

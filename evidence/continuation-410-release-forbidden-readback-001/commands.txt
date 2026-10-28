@@ -1,0 +1,8 @@
+PYTHONDONTWRITEBYTECODE=1 python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_keeps_release_forbidden_read_inconclusive_without_projection (runner temp dir on /dev/shm)
+cargo fmt --all
+cargo fmt --all -- --check
+git diff --check
+PYTHONDONTWRITEBYTECODE=1 python3 scripts/verify_cargo_license_state.py
+cargo metadata --offline --locked --no-deps --format-version 1
+PYTHONDONTWRITEBYTECODE=1 Python AST/trailing-whitespace check for the runner and relevant source files
+No network or external services used.

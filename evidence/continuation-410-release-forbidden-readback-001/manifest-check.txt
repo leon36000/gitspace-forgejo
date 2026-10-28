@@ -1,0 +1,15 @@
+append_manifests.py: OK
+cargo-license-guard.json: OK
+cargo-metadata-license-summary.json: OK
+commands.txt: OK
+diff-check.log: OK
+environment.txt: OK
+local-run.md: OK
+manifest-prefix-before.json: OK
+process-test.log: OK
+rustfmt.log: OK
+source-hashes.sha256: OK
+source-style-check.log: OK
+tests/webhook_receiver_process_e2e.rs: OK
+scripts/run_webhook_reconcile_cli_e2e.py: OK
+src/bin/forgejo-reconcile-local.rs: OK

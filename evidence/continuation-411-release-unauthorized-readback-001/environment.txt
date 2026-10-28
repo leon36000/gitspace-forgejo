@@ -1,0 +1,6 @@
+date_utc=2026-10-28T16:59:00Z
+platform=Linux-7.0.0-1019-nvidia-aarch64-with-glibc2.39
+rustc=rustc 1.95.0 (59807616e 2026-04-14); binary: rustc; commit-hash: 59807616e1fa2540724bfbac14d7976d7e4a3860; commit-date: 2026-04-14; host: aarch64-unknown-linux-gnu; release: 1.95.0; LLVM version: 22.1.2
+cargo=cargo 1.95.0 (f2d3ce0bd 2026-03-21)
+bubblewrap=bubblewrap 0.9.0
+target=webhook_receiver_process_e2e; exact ignored scenario executed by isolated runner

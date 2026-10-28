@@ -1,0 +1,23 @@
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:8252:
+ 
+     let (mut receiver, address, signing_key) =
+         start_ready_attested_receiver(&secret, &journal_path);
+-    let (status, accepted) = send(
+-        address,
+-        &request_event(DELIVERY_ID, "release", &event_body),
+-    );
++    let (status, accepted) = send(address, &request_event(DELIVERY_ID, "release", &event_body));
+     assert_eq!(
+         status, 202,
+         "valid release deletion notification should be durably admitted: {accepted}"
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:8292:
+         .stdin(Stdio::null())
+         .output()
+         .expect("run reconciliation CLI for a deleted notification with a current Release");
+-    let requests = fixture.join().expect("current Release API fixture completed");
++    let requests = fixture
++        .join()
++        .expect("current Release API fixture completed");
+ 
+     assert!(
+         output.status.success(),

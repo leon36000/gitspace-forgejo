@@ -1,0 +1,21 @@
+Test processus ciblé (compile offline/locked, bwrap --unshare-net --unshare-pid) :
+PYTHONDONTWRITEBYTECODE=1 python3 - <<'PY' > evidence/continuation-414-foreign-release-scope-001/process-test.log 2>&1
+import sys
+import tempfile
+original = tempfile.TemporaryDirectory
+def use_tmpfs(*args, **kwargs):
+    kwargs['dir'] = '/dev/shm'
+    return original(*args, **kwargs)
+tempfile.TemporaryDirectory = use_tmpfs
+sys.path.insert(0, 'scripts')
+import run_webhook_reconcile_cli_e2e as runner
+sys.argv = ['run_webhook_reconcile_cli_e2e.py', '--scenario', 'actual_reconcile_cli_process_refuses_foreign_release_before_credential_or_api']
+raise SystemExit(runner.main())
+PY
+
+Checks :
+cargo fmt --all -- --check
+git diff --check
+python3 scripts/verify_cargo_license_state.py
+cargo metadata --offline --locked --no-deps --format-version 1
+AST parse de scripts/run_webhook_reconcile_cli_e2e.py avec Python ast.parse.
