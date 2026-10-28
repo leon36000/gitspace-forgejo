@@ -1,0 +1,4 @@
+212658 connect(5, {sa_family=AF_INET, sin_port=htons(3130), sin_addr=inet_addr("127.0.0.1")}, 16) = -1 EINPROGRESS (Operation now in progress)
+212659 --- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=212658, si_uid=1000, si_status=0, si_utime=0, si_stime=1 /* 0.01 s */} ---
+212679 connect(5, {sa_family=AF_INET, sin_port=htons(3130), sin_addr=inet_addr("127.0.0.1")}, 16) = -1 EINPROGRESS (Operation now in progress)
+212655 --- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=212679, si_uid=1000, si_status=0, si_utime=0, si_stime=0} ---

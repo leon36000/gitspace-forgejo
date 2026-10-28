@@ -1,0 +1,27 @@
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:8366:
+     fixture_finished
+         .send(())
+         .expect("signal CLI completion to authenticated fixture");
+-    let requests = fixture
+-        .join()
+-        .expect("configured PR API fixture completed");
++    let requests = fixture.join().expect("configured PR API fixture completed");
+     let mut remaining = Vec::new();
+     credential_reader
+         .read_to_end(&mut remaining)
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:8376:
+ 
+     assert!(!timed_out, "foreign-first batch exceeded its deadline");
+     assert_eq!(output.status.code(), Some(1));
+-    assert_eq!(requests.len(), 1, "only the configured PR may reach the API");
++    assert_eq!(
++        requests.len(),
++        1,
++        "only the configured PR may reach the API"
++    );
+     let (request, authorized) = &requests[0];
+-    assert!(*authorized, "configured PR request uses the host credential");
++    assert!(
++        *authorized,
++        "configured PR request uses the host credential"
++    );

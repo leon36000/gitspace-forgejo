@@ -1,0 +1,83 @@
+usage: run_forgejo_live_webhook_reconcile_emitted.py [-h] --forgejo-binary
+                                                     FORGEJO_BINARY
+                                                     [--repo-root REPO_ROOT]
+                                                     --state-dir STATE_DIR
+                                                     --evidence-dir
+                                                     EVIDENCE_DIR
+                                                     [--ordinary-issue-comment]
+                                                     [--edit-ordinary-issue-comment]
+                                                     [--delete-ordinary-issue-comment]
+                                                     [--merge-pull-request]
+                                                     [--reopen-pull-request]
+                                                     [--edit-pull-request-title]
+                                                     [--synchronize-pull-request]
+                                                     [--fork-pull-request]
+                                                     [--request-changes-review]
+                                                     [--approve-review]
+                                                     [--request-review]
+                                                     [--remove-review-request]
+                                                     [--pull-request-review-comment]
+                                                     [--delete-pull-request-comment]
+                                                     [--revoke-pull-request-comment-reader-before-reconcile]
+                                                     [--batch-pull-request-events]
+                                                     [--observe-batch-network]
+
+Run Forgejo-emitted issue and pull-request webhooks through the receiver.
+
+options:
+  -h, --help            show this help message and exit
+  --forgejo-binary FORGEJO_BINARY
+  --repo-root REPO_ROOT
+  --state-dir STATE_DIR
+  --evidence-dir EVIDENCE_DIR
+  --ordinary-issue-comment
+                        create one comment on the disposable ordinary issue
+                        and reconcile Forgejo's emitted issue_comment event
+  --edit-ordinary-issue-comment
+                        edit the created ordinary issue comment and reconcile
+                        its native issue_comment/edited event
+  --delete-ordinary-issue-comment
+                        delete the created ordinary issue comment and
+                        reconcile its native issue_comment/deleted event
+  --merge-pull-request  merge the disposable local PR instead of closing it
+                        unmerged and reconcile its native close event
+  --reopen-pull-request
+                        close and reopen the disposable PR before its final
+                        close, reconciling both native transitions
+  --edit-pull-request-title
+                        edit the disposable PR title and reconcile Forgejo's
+                        native pull_request/edited event
+  --synchronize-pull-request
+                        push a second candidate commit and reconcile Forgejo's
+                        native pull_request_sync event
+  --fork-pull-request   create a private contributor fork with read-only
+                        target access and reconcile its native pull-request
+                        event
+  --request-changes-review
+                        create a separate non-admin PR author and reconcile
+                        Forgejo's native rejected-review event
+  --approve-review      create a separate non-admin PR author and reconcile
+                        Forgejo's native approved-review event
+  --request-review      request review from the scoped read-only collaborator
+                        and reconcile Forgejo's native review_requested event
+  --remove-review-request
+                        request and then remove the scoped read-only
+                        collaborator's review request, reconciling both native
+                        events
+  --pull-request-review-comment
+                        create an inline PR review comment and reconcile
+                        Forgejo's native review-comment event
+  --delete-pull-request-comment
+                        delete the disposable PR conversation comment and
+                        verify stale-created versus deleted reconciliation
+  --revoke-pull-request-comment-reader-before-reconcile
+                        after deleting the PR comment and reconciling other
+                        events, revoke reader access and require both comment
+                        events to stay inconclusive when the PR parent is
+                        unreadable
+  --batch-pull-request-events
+                        reconcile all emitted pull-request deliveries in one
+                        CLI batch and one current-state read
+  --observe-batch-network
+                        trace connect syscalls during the PR batch; require at
+                        least one and reject non-fixture destinations

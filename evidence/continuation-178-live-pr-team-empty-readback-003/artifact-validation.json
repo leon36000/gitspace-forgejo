@@ -1,0 +1,20 @@
+{
+  "all_webhook_tasks_http_202": true,
+  "batch_current_state_rows": 4,
+  "cleanup_failure": null,
+  "duplicate_replay_preserved_journal": true,
+  "forgejo": {
+    "binary_sha256": "e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7",
+    "version": "forgejo version 17.0.0+gitea-1.22.0 (release name 17.0.0) built with GNU Make 4.4.1, go1.26.9 : bindata, timetzdata, sqlite, sqlite_unlock_notify"
+  },
+  "forgejo_webhook_tasks": 8,
+  "listeners_absent_after_cleanup": true,
+  "merged": false,
+  "network_connect_attempts": 2,
+  "network_target": "127.0.0.1:3130",
+  "pull_request_final_state": "closed",
+  "review_request_http_status": 201,
+  "reviewer_login": "forge-reader",
+  "reviewer_teams": [],
+  "verdict": "passed"
+}

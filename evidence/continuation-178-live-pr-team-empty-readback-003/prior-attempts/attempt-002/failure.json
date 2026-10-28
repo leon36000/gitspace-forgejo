@@ -1,0 +1,7 @@
+{
+  "cleanup_failure": null,
+  "error_message": "batch reconciliation did not use exactly one loopback connection",
+  "error_type": "ValueError",
+  "stage": "reconcile_issue_and_pull_request_events",
+  "verdict": "failed"
+}

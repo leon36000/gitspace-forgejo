@@ -1,0 +1,14 @@
+{
+  "dependency_count": 6,
+  "license": null,
+  "license_file": null,
+  "licensing": {
+    "decision": "no_license_selected",
+    "redistribution_rights": "not_assessed",
+    "spdx_package_license_declared": "NOASSERTION"
+  },
+  "name": "agent-forge-core",
+  "publish": [],
+  "target_count": 36,
+  "version": "0.1.0"
+}

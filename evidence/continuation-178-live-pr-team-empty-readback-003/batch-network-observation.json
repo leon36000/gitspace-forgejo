@@ -1,0 +1,14 @@
+{
+  "argv_traced": false,
+  "connect_results": [
+    "-1 EINPROGRESS (Operation now in progress)",
+    "-1 EINPROGRESS (Operation now in progress)"
+  ],
+  "network_connect_attempts": 2,
+  "observer": "strace syscall trace restricted to connect",
+  "request_headers_or_bodies_traced": false,
+  "strace_binary_sha256": "33b3ea325915f1213dc477d80e0f0b2b09ffeff5e81d98b25a35320fbcbcaf42",
+  "strace_version": "strace -- version 6.8",
+  "target": "127.0.0.1:3130",
+  "unix_domain_connect_attempts_ignored": 0
+}

@@ -1,0 +1,10 @@
+Date: 2026-10-26
+Architecture: aarch64 (Linux)
+Rust: rustc 1.95.0 (59807616e 2026-04-14)
+Cargo: cargo 1.95.0 (f2d3ce0bd 2026-03-21)
+Python: 3.12.3
+Bubblewrap: 0.9.0
+Isolation: --unshare-net --unshare-pid --new-session; source staged read-only; environment cleared; temporary filesystem isolated
+Test service: deterministic loopback HTTP fixture on 127.0.0.1:3130; no Forgejo server started
+Git base HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0 (pre-existing dirty worktree preserved)
+LLM/AgentOS/Forge Code runtime: not used
