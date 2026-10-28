@@ -1,0 +1,56 @@
+{
+  "canonical_state": {
+    "assignees": null,
+    "base_sha": "54f80bdd24e49e424b4d0f0964a6d30045563fd0",
+    "comment": null,
+    "draft": false,
+    "head_sha": "c48d81251f27df711f3012fec7a4dbdbf9697ac7",
+    "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/2",
+    "labels": {
+      "freshness": "current_api_read",
+      "items": [],
+      "source": "current_forgejo_resource_api",
+      "trust": "untrusted_user_content"
+    },
+    "merge_commit_sha": null,
+    "merged": false,
+    "milestone": {
+      "freshness": "current_api_read",
+      "observation": "unassigned",
+      "source": "current_forgejo_resource_api",
+      "trust": "untrusted_user_content",
+      "value": null
+    },
+    "parent_workflow_run": null,
+    "requested_reviewers": [],
+    "requested_reviewers_teams": [],
+    "state": "closed",
+    "updated_at": "2026-10-28T08:09:03-04:00",
+    "work_item_content": {
+      "body": "Verify that the live receiver journals and reconciles PR transitions.",
+      "source": "current_forgejo_pull_request_api",
+      "title": "Exercise emitted pull-request webhooks",
+      "trust": "untrusted_user_content"
+    }
+  },
+  "delivery_id": "3af50324-5b56-41f8-9acd-eee6d4724866",
+  "journal_source": {
+    "event_sha256": "f2df1c1a7adf634b5d4e1976fd37383efbec00ae6eb4b2f1598b3b37093b135f",
+    "receiver_attestation": {
+      "algorithm": "ed25519",
+      "key_id_sha256": "d22ccf014e539b00154388cc7148c39bbe36ae67063701dcc826796548865f78",
+      "signature_included": false,
+      "status": "verified",
+      "verification_scope": "receiver_signature_only"
+    },
+    "sequence": 5
+  },
+  "resource": {
+    "kind": "pull_request",
+    "number": 2,
+    "owner": "forge-admin",
+    "repository": "agent-forge-core"
+  },
+  "review_notification": null,
+  "verdict": "current_state_read"
+}

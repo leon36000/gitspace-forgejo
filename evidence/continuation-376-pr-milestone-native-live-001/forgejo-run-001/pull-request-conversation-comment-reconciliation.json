@@ -1,0 +1,63 @@
+{
+  "canonical_state": {
+    "assignees": null,
+    "base_sha": "54f80bdd24e49e424b4d0f0964a6d30045563fd0",
+    "comment": {
+      "body": "Local Forgejo webhook adapter reconciliation fixture comment.",
+      "body_trust": "untrusted_user_content",
+      "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/2#issuecomment-4",
+      "id": 4,
+      "state": "present",
+      "updated_at": "2026-10-28T08:09:02-04:00"
+    },
+    "draft": false,
+    "head_sha": "c48d81251f27df711f3012fec7a4dbdbf9697ac7",
+    "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/2",
+    "labels": {
+      "freshness": "current_api_read",
+      "items": [],
+      "source": "current_forgejo_resource_api",
+      "trust": "untrusted_user_content"
+    },
+    "merge_commit_sha": null,
+    "merged": false,
+    "milestone": {
+      "freshness": "current_api_read",
+      "observation": "unassigned",
+      "source": "current_forgejo_resource_api",
+      "trust": "untrusted_user_content",
+      "value": null
+    },
+    "parent_workflow_run": null,
+    "requested_reviewers": [],
+    "requested_reviewers_teams": [],
+    "state": "closed",
+    "updated_at": "2026-10-28T08:09:03-04:00",
+    "work_item_content": {
+      "body": "Verify that the live receiver journals and reconciles PR transitions.",
+      "source": "current_forgejo_pull_request_api",
+      "title": "Exercise emitted pull-request webhooks",
+      "trust": "untrusted_user_content"
+    }
+  },
+  "delivery_id": "ae4ece97-475b-4261-85b1-8f1ce0326d2f",
+  "journal_source": {
+    "event_sha256": "d0aa30ae981684e9db40d066314dd9cddf56b2fea57f0387c2492881ee3dee29",
+    "receiver_attestation": {
+      "algorithm": "ed25519",
+      "key_id_sha256": "d22ccf014e539b00154388cc7148c39bbe36ae67063701dcc826796548865f78",
+      "signature_included": false,
+      "status": "verified",
+      "verification_scope": "receiver_signature_only"
+    },
+    "sequence": 6
+  },
+  "resource": {
+    "kind": "pull_request",
+    "number": 2,
+    "owner": "forge-admin",
+    "repository": "agent-forge-core"
+  },
+  "review_notification": null,
+  "verdict": "current_state_read"
+}

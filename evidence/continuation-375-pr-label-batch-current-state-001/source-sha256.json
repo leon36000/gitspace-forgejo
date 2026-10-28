@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "worktree_head": "f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0",
+  "forgejo_source_commit": "0d791421f85ca13a63b665053d81ea765fbbc571",
+  "files": [
+    {
+      "path": "tests/webhook_receiver_process_e2e.rs",
+      "sha256": "0024cae18bc05ee94f03bcea1b257f2294628f192657826f36c8a5c9868c6508",
+      "role": "New isolated receiver/journal/CLI PR label scenarios"
+    },
+    {
+      "path": "scripts/run_webhook_reconcile_cli_e2e.py",
+      "sha256": "92318dda1c58d2eb61c74db72356fc655bf97de6d841e5e9577264d867597cea",
+      "role": "Dedicated Bubblewrap runner allowlist"
+    },
+    {
+      "path": "src/webhook/reconcile.rs",
+      "sha256": "3976e27bd581a34921c00799166edf0395aa2168cf3b130a7c146f339bd481bf",
+      "role": "Current API label projection implementation exercised by the process tests"
+    },
+    {
+      "path": "src/webhook.rs",
+      "sha256": "eeef64dbf1165f093efab2c484d9df6f6fbf20c5c5b21f55fdec812987658c41",
+      "role": "Versioned webhook action contract, including pull_request label_updated"
+    },
+    {
+      "path": "scripts/verify_cargo_license_state.py",
+      "sha256": "c6d4ec8736a1d25f17f692ee0f59fcb9882faf3c35966bac974484c1d2f3bb35",
+      "role": "Cargo license metadata policy guard"
+    },
+    {
+      "path": "Cargo.toml",
+      "sha256": "a2c1182d6e5cc272c50fb0ad5f16d210befcd452527d29e4dde6cd6b05206d09",
+      "role": "Package metadata remains license-unset and publication-disabled"
+    },
+    {
+      "path": "/tmp/forgejo-v17-base-cas-poc/services/webhook/notifier.go",
+      "sha256": "a67cca36f92104efe0feabf0c62e668e7543b979e5a7440e713ce93dd490004f",
+      "role": "Forgejo v17.0.0 upstream emitter shape; working file matches the recorded clean HEAD for this path"
+    },
+    {
+      "path": "/tmp/forgejo-v17-base-cas-poc/modules/structs/pull.go",
+      "sha256": "1472f689d9e80da512cc8edafa5d647daafccdf060dfba0d4a74d3be5cfe06e3",
+      "role": "Forgejo v17.0.0 PullRequest.Labels field; working file matches the recorded clean HEAD for this path"
+    }
+  ]
+}

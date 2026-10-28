@@ -1,0 +1,11 @@
+cargo test --offline --locked --bin forgejo-mission-local tests::requirement_tree -- --nocapture
+# result: 4 passed, 0 failed
+
+cargo test --offline --locked --bin forgejo-mission-local
+# result: 48 passed, 0 failed, 0 ignored
+
+cargo fmt --all -- --check
+# exit status: 0
+
+git diff --check
+# exit status: 0

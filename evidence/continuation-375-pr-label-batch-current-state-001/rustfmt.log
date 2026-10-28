@@ -1,0 +1,25 @@
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:4993:
+         String::from_utf8_lossy(&output.stdout),
+         String::from_utf8_lossy(&output.stderr)
+     );
+-    assert_eq!(requests.len(), 1, "same-PR deliveries share one current-state GET");
++    assert_eq!(
++        requests.len(),
++        1,
++        "same-PR deliveries share one current-state GET"
++    );
+     assert!(requests[0].starts_with(&format!(
+         "GET /api/v1/repos/{OWNER}/{REPOSITORY}/pulls/{NUMBER} HTTP/1.1\r\n"
+     )));
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:5024:
+         "freshness": "current_api_read",
+         "trust": "untrusted_user_content"
+     });
+-    for (result, delivery_id) in results
+-        .iter()
+-        .zip([FIRST_DELIVERY_ID, SECOND_DELIVERY_ID])
+-    {
++    for (result, delivery_id) in results.iter().zip([FIRST_DELIVERY_ID, SECOND_DELIVERY_ID]) {
+         assert_eq!(result["verdict"], "current_state_read");
+         assert_eq!(result["delivery_id"], delivery_id);
+         assert_eq!(result["resource"]["kind"], "pull_request");

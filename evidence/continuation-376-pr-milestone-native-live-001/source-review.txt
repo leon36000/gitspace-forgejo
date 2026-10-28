@@ -1,0 +1,3 @@
+Upstream reference: Forgejo official v17.0.0 source at 0d791421f85ca13a63b665053d81ea765fbbc571.
+Read-only symbol review: services/webhook/notifier.go::IssueChangeMilestone branches on issue.IsPull and constructs PullRequestPayload with the native milestone action; modules/structs/pull.go::PullRequest serializes the milestone field.
+These are source-shape references only. The runtime behavioral evidence is the local disposable Forgejo binary recorded in environment.txt; its exact source commit is not established by its version string. No Forgejo code is copied.

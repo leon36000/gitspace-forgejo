@@ -1,0 +1,12 @@
+{
+  "branch": "local/WEBHOOK-005-canonical-links",
+  "cargo": "cargo 1.95.0 (f2d3ce0bd 2026-03-21)",
+  "head": "f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0",
+  "machine": "aarch64",
+  "platform": "Linux-7.0.0-1019-nvidia-aarch64-with-glibc2.39",
+  "rustc": "rustc 1.95.0 (59807616e 2026-04-14)",
+  "source_file": "src/bin/forgejo-mission-local.rs",
+  "source_sha256": "906841ff50e4ae9a035912aeadc9b274c4e6efaf211201efc68723ddc4ad9316",
+  "staged_paths_at_capture": 0,
+  "working_tree": "dirty; no pre-existing paths were staged or overwritten by this lot"
+}

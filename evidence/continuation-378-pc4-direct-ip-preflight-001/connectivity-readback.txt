@@ -1,0 +1,16 @@
+Probe 1: tailscale status --json (JSON parsed locally; only the PC4 peer status and Tailscale IPs were printed)
+
+    pc4_peer_online=True addresses=100.76.101.48,fd7a:115c:a1e0::e22e:6531
+
+Probe 2: unauthenticated HTTPS GET with DNS override for the same host/SNI
+
+    curl --resolve pc4.tail0c55ff.ts.net:443:100.76.101.48 --max-time 6 https://pc4.tail0c55ff.ts.net/users/sign_in
+
+Observed filtered readback:
+
+    direct_ip=100.76.101.48 exit=7 http_status=000 remote_ip= tls_verify=0
+    curl: (7) Failed to connect to pc4.tail0c55ff.ts.net port 443 after 3123 ms: Couldn't connect to server
+    direct_ip=fd7a:115c:a1e0::e22e:6531 exit=7 http_status=000 remote_ip= tls_verify=0
+    curl: (7) Failed to connect to pc4.tail0c55ff.ts.net port 443 after 0 ms: Couldn't connect to server
+
+No credential was supplied. The probe did not reach HTTP/TLS and did not read the GitLab repository.

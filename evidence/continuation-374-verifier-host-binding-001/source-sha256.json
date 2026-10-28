@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "base_commit": "f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0",
+  "files": [
+    {
+      "path": "src/mission_012_host.rs",
+      "sha256": "fbb2c09e13f2cbadefaa80e6cc4d2e151c471e30e412cae42aab55bfddfdf533",
+      "role": "Verifier implementation, pinned digests and verification command"
+    },
+    {
+      "path": "src/bin/mission-012-verify-local.rs",
+      "sha256": "95e6d92529a4b558ed1bc9912db8c2a2806a8673e7c461345128ebebdb5e4fc1",
+      "role": "Verifier CLI interface and argument refusal"
+    },
+    {
+      "path": "tests/forgejo_mission_delivery_process_e2e.rs",
+      "sha256": "dfce24e8d41524e59f9ace11ed9bf63ca39857167838b3aafd68b7a3ea2b449a",
+      "role": "Verifier process and policy tamper tests"
+    },
+    {
+      "path": "scripts/run_forgejo_mission_delivery_process_e2e.py",
+      "sha256": "d67e2171326bfa4e17581b6594a69e653ea478802321884ef091f4c77e47b59a",
+      "role": "Isolated process test runner allowlist"
+    },
+    {
+      "path": "tests/fixtures/mission-012/requirements/MISSION-012-CLAMP-001.json",
+      "sha256": "3a3c444075c93a3bcfb2bec17d1a2e74ec0051effc2994e6b02ac095eb0dd431",
+      "role": "Protected requirement fixture"
+    },
+    {
+      "path": "tests/fixtures/mission-012/policy/active.json",
+      "sha256": "1ef46ff73666771ada33e5788d63fd3dbcf24798124ba3c599b8ad2f195dcca5",
+      "role": "Active policy pointer fixture"
+    },
+    {
+      "path": "tests/fixtures/mission-012/policy/MISSION-012-CLAMP-001-v4.json",
+      "sha256": "e23907b5bd6b2c0f342c88ddcfa9f9a9be98065adcd24f9f7299dc796b5739eb",
+      "role": "Pinned verifier policy fixture"
+    }
+  ]
+}

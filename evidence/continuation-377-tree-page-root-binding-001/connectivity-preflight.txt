@@ -1,0 +1,10 @@
+The configured remote name is `pc4-gitlab`; its credential-free URL is the user-supplied self-managed project URL. The only network request in this lot was unauthenticated:
+
+    curl -sS --max-time 8 -o /dev/null -w 'http_status=%{http_code} remote_ip=%{remote_ip} tls_verify=%{ssl_verify_result}\n' https://pc4.tail0c55ff.ts.net/users/sign_in
+
+Observed result:
+
+    curl: (6) Could not resolve host: pc4.tail0c55ff.ts.net
+    http_status=000 remote_ip= tls_verify=0
+
+No login, API call, `git ls-remote`, reference read, fetch, commit or push occurred. The email credential was not sent. This result establishes only a local DNS failure for this request; it does not establish GitLab service health, authorization or remote repository contents.

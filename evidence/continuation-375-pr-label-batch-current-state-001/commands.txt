@@ -1,0 +1,10 @@
+# CONTINUATION-375, commands executed from the worktree
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_projects_current_pull_request_labels_for_batch --scenario actual_reconcile_cli_process_refuses_malformed_current_pull_request_labels
+cargo test --offline --locked --test webhook_reconcile_contract -- --test-threads=1
+cargo test --offline --locked --test webhook_reconcile_pipeline -- --test-threads=1
+cargo fmt --all -- --check
+python3 -m py_compile scripts/run_webhook_reconcile_cli_e2e.py
+git diff --check
+python3 scripts/test_cargo_license_state.py
+python3 scripts/verify_cargo_license_state.py
+cargo metadata --locked --offline --format-version 1 --no-deps

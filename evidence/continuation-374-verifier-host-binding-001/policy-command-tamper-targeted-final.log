@@ -1,0 +1,9 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.56s
+     Running unittests src/bin/mission-012-verify-local.rs (target/debug/deps/mission_012_verify_local-a85b290d5933a5a1)
+
+running 1 test
+test host::tests::verifier_rejects_a_candidate_policy_that_names_another_command ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 20 filtered out; finished in 0.56s
+

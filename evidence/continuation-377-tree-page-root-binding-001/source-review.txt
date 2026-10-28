@@ -1,0 +1,23 @@
+Forgejo source reviewed locally; no source copied into the product.
+
+Repository scratch: /tmp/forgejo-v17-base-cas-poc
+Official upstream revision: 0d791421f85ca13a63b665053d81ea765fbbc571
+Path: modules/structs/repo_tree.go
+Blob at the reviewed revision: 86b221e1feb0c110c66b1f4df40e3c33aa54b8fa
+SHA-256 of the file bytes at that revision: afcf0270d4b6325b29674089c096696503c4ca91e0ad93ce2fa4c53042264ed0
+
+Relevant schema declaration at the reviewed revision:
+
+    type GitTreeResponse struct {
+        SHA       string     `json:"sha"`
+        URL       string     `json:"url"`
+        Entries   []GitEntry `json:"tree"`
+        Truncated bool       `json:"truncated"`
+    }
+
+Command used:
+
+    git -C /tmp/forgejo-v17-base-cas-poc rev-parse HEAD:modules/structs/repo_tree.go
+    git -C /tmp/forgejo-v17-base-cas-poc show HEAD:modules/structs/repo_tree.go
+
+The scratch reports the expected clean status for this file. This confirms the upstream response field, not the integrity of any particular API response or a live server behavior.
