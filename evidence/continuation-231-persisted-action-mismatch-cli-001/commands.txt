@@ -1,0 +1,5 @@
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_refuses_persisted_incompatible_workflow_action_before_api_read
+cargo fmt --all -- --check
+git diff --check
+
+The Python runner compiles the bounded source stage with Cargo offline, then runs the exact ignored test under Bubblewrap with --unshare-net and --unshare-pid. See isolated-cli-process.log for the complete command and result.

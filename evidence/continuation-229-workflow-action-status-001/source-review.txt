@@ -1,0 +1,14 @@
+Forgejo source review — read-only
+Official Forgejo version source checked: v17.0.0, commit 0d791421f85ca13a63b665053d81ea765fbbc571 in /tmp/forgejo-v17-base-cas-poc.
+git diff --quiet <commit> -- audited files: exit 0; all listed files unchanged relative to commit.
+
+Evidence mapping:
+- models/actions/status.go:48-70 defines DoneStatuses as success, failure, cancelled and skipped; PendingStatuses includes waiting, running and blocked; IsDone uses DoneStatuses.
+- services/actions/run.go:456-460 routes non-done runs to WorkflowRunStatusChanged and done runs to WorkflowRunCompleted.
+- services/actions/job.go:106-110 applies the same branch to jobs.
+- services/webhook/notifier.go:894-912 emits new_run_attempt on its separate path; lines 926-949 serialize status_changed; lines 955-984 serialize completed.
+- services/webhook/notifier.go:989-1009 emits new_job_attempt; lines 1023-1054 serialize job_status_changed; lines 1059-1090 serialize job_completed.
+- services/webhook/notifier.go:1147-1186 maps each of the seven supported run/job statuses to a workflow_run_* or workflow_job_* event.
+- modules/structs/hook.go:518-545 defines the action wire values; modules/webhook/type.go:44-51 defines event names.
+
+Inference explicitly limited to this audited source version: the notifier dispatch supports enforcing action/status classes in the local event contract. It does not prove all releases or an actual server execution.

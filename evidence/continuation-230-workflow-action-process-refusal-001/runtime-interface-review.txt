@@ -1,0 +1,8 @@
+Read-only interface recheck — 2026-10-27
+
+Current files inspected:
+- src/agent_runtime.rs:4635-4644 declares the versioned AgentRuntimeV1 trait; it does not start an agent or provide model/tool hosting.
+- rg over src tests scripts found the only `impl AgentRuntimeV1` in tests/agent_runtime_contract.rs:51, `FixtureRuntime`.
+- README.md:7 describes the fixture as deterministic and without an LLM, and states that there is no production agent adapter; MISSION-012's local-test-adapter is not an AgentRuntimeV1 production adapter and does not invoke a model.
+
+Conclusion for this slice: no usable local AgentOS/Hermes or authorized model interface was found in the inspected code. Do not add a second orchestrator or claim model integration. The deterministic fixture remains test-only.

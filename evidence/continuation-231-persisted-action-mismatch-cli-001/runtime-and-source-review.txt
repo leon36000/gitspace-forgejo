@@ -1,0 +1,9 @@
+Current source slice:
+- tests/webhook_receiver_process_e2e.rs::actual_reconcile_cli_process_refuses_persisted_incompatible_workflow_action_before_api_read
+- scripts/run_webhook_reconcile_cli_e2e.py TEST_NAMES includes the exact scenario.
+- The test starts the actual receiver, admits one signed valid workflow-run event, stops it, mutates only persisted payload.action, recomputes the journal row hash, verifies replay, then launches the actual CLI with an API listener reserved at 127.0.0.1:3130.
+
+Boundary interpretation:
+- The sandbox removes network namespace sharing and PID namespace sharing; the CLI makes zero connections to the reserved fixture.
+- Hash-chain validity is not source authenticity, HMAC re-verification or software correctness.
+- Existing AgentRuntimeV1/AgentOS and Cargo license recheck are in CONTINUATION-230 and remain unchanged by this test-only slice.

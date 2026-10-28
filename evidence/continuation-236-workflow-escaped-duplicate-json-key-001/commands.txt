@@ -1,0 +1,8 @@
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_refuses_escape_equivalent_duplicate_workflow_status_before_projection
+cargo fmt --all
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_refuses_escape_equivalent_duplicate_workflow_status_before_projection
+cargo fmt --all -- --check > evidence/continuation-236-workflow-escaped-duplicate-json-key-001/rustfmt.log 2>&1
+git diff --check > evidence/continuation-236-workflow-escaped-duplicate-json-key-001/diff-check.log 2>&1
+python3 -m py_compile scripts/run_webhook_reconcile_cli_e2e.py > evidence/continuation-236-workflow-escaped-duplicate-json-key-001/pycompile.log 2>&1
+cargo metadata --locked --offline --no-deps --format-version 1
+python3 scripts/verify_cargo_license_state.py > evidence/continuation-236-workflow-escaped-duplicate-json-key-001/cargo-license-guard.log 2>&1

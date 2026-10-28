@@ -1,0 +1,6 @@
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_refuses_persisted_incompatible_workflow_job_action_before_api_read
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_refuses_persisted_incompatible_workflow_action_before_api_read
+cargo fmt --all -- --check
+git diff --check
+
+The runner compiles bounded Cargo inputs offline and executes the exact ignored test under Bubblewrap with --unshare-net and --unshare-pid. isolated-cli-job.log records the initial malformed-fixture attempt; isolated-cli-job-green.log is the corrected pass.
