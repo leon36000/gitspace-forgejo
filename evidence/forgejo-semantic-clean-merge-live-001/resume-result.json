@@ -1,0 +1,20 @@
+{
+  "base_commit": "9cd64c9063feceaec6b0545133ff9ebc3f5c5b6d",
+  "continued_existing_run": true,
+  "corrected_candidate": "1c3d7f0a0c014a9fa88e2009f6cab35eaa96a68c",
+  "corrected_gate_verdict": "merged",
+  "initial_failing_candidate": "988543381714e06aefb6aa4788997b83cd8a3299",
+  "issue_closed": true,
+  "limitations": [
+    "Fixture verifier/local-test-adapter only; no LLM, AgentOS, conventional CI, or productivity benchmark.",
+    "The initial runner stopped after its assertion expected the wrong public error code; the retained gate result was a valid `verification_failed` refusal with no merge attempt.",
+    "The test does not exclude external Forgejo writers or multi-tenant/kernel attacks."
+  ],
+  "llm_invoked": false,
+  "local_fixture_only": true,
+  "merge_commit": "42f48189560607ec2c391e50526f5e5560cfb524",
+  "postmerge_acceptance": "passed",
+  "pull_request_number": 5,
+  "schema_version": 1,
+  "stale_proof_retested": false
+}

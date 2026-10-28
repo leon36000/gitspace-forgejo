@@ -1,0 +1,42 @@
+{
+  "forgejo_async_check_transition_observed": true,
+  "observations": [
+    {
+      "base_sha": "847ce424bce4bac6c3af5c094830144bc4ef5d8f",
+      "elapsed_ms": 17,
+      "head_sha": "968679a65ee22482bb1ebe800628ac096af13a4d",
+      "mergeable": true
+    },
+    {
+      "base_sha": "847ce424bce4bac6c3af5c094830144bc4ef5d8f",
+      "elapsed_ms": 291,
+      "head_sha": "968679a65ee22482bb1ebe800628ac096af13a4d",
+      "mergeable": false
+    },
+    {
+      "base_sha": "847ce424bce4bac6c3af5c094830144bc4ef5d8f",
+      "elapsed_ms": 563,
+      "head_sha": "968679a65ee22482bb1ebe800628ac096af13a4d",
+      "mergeable": false
+    },
+    {
+      "base_sha": "847ce424bce4bac6c3af5c094830144bc4ef5d8f",
+      "elapsed_ms": 833,
+      "head_sha": "968679a65ee22482bb1ebe800628ac096af13a4d",
+      "mergeable": true
+    },
+    {
+      "base_sha": "847ce424bce4bac6c3af5c094830144bc4ef5d8f",
+      "elapsed_ms": 1107,
+      "head_sha": "968679a65ee22482bb1ebe800628ac096af13a4d",
+      "mergeable": true
+    },
+    {
+      "base_sha": "847ce424bce4bac6c3af5c094830144bc4ef5d8f",
+      "elapsed_ms": 1378,
+      "head_sha": "968679a65ee22482bb1ebe800628ac096af13a4d",
+      "mergeable": true
+    }
+  ],
+  "stable_final_mergeable": true
+}

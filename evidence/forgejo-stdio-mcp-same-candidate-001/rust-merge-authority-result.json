@@ -1,0 +1,28 @@
+{
+  "api_version": "forgejo-rest-v1",
+  "external_writer_exclusion": "not_provided_by_cooperative_lock",
+  "http_status": 200,
+  "issue_state": "closed",
+  "main_head_sha": "32f1a8cc3a821f02e7b8e82412e652ba9589e34b",
+  "merge_attempted": true,
+  "merge_authorized": true,
+  "merge_commit_base_parent_sha": "847ce424bce4bac6c3af5c094830144bc4ef5d8f",
+  "merge_commit_head_parent_sha": "968679a65ee22482bb1ebe800628ac096af13a4d",
+  "merge_commit_sha": "32f1a8cc3a821f02e7b8e82412e652ba9589e34b",
+  "merge_commit_tree_entries_sha256": "d29f5d9ccbefd7af427dea6afcb1a39cd2780193f4114ed5e836725341a4994b",
+  "operation": "local_test_merge_authority",
+  "postmerge_base_sha": "32f1a8cc3a821f02e7b8e82412e652ba9589e34b",
+  "pull_request_number": 2,
+  "reviewed_candidate_tree_entries_sha256": "d29f5d9ccbefd7af427dea6afcb1a39cd2780193f4114ed5e836725341a4994b",
+  "schema_version": 1,
+  "submitted_head_sha": "968679a65ee22482bb1ebe800628ac096af13a4d",
+  "target": {
+    "base_branch": "main",
+    "origin": "http://127.0.0.1:3130",
+    "owner": "forge-admin",
+    "repository": "agent-forge-core",
+    "selector": "merge-014-agent-forge-core"
+  },
+  "validated_base_sha": "847ce424bce4bac6c3af5c094830144bc4ef5d8f",
+  "verdict": "merged"
+}

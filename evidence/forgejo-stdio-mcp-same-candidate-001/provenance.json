@@ -1,0 +1,39 @@
+{
+  "agent_runtime": "local-test-adapter over stdio MCP; no model called",
+  "branch": "local/WEBHOOK-005-canonical-links",
+  "candidate_commit": "968679a65ee22482bb1ebe800628ac096af13a4d",
+  "date": "2026-10-26",
+  "dirty_worktree_preexisting": true,
+  "forgejo": {
+    "binary_path": "/tmp/forgejo-17.0.0",
+    "binary_sha256": "e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7",
+    "official_source_commit_previously_audited": "0d791421f85ca13a63b665053d81ea765fbbc571",
+    "version": "forgejo version 17.0.0+gitea-1.22.0 (release name 17.0.0) built with GNU Make 4.4.1, go1.26.9 : bindata, timetzdata, sqlite, sqlite_unlock_notify"
+  },
+  "git_head": "f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0",
+  "llm_invoked": false,
+  "local_external_effects": {
+    "external_services": false,
+    "model_cost": false,
+    "production": false,
+    "publication": false
+  },
+  "merge_commit": "32f1a8cc3a821f02e7b8e82412e652ba9589e34b",
+  "run_command": "python3 scripts/run_forgejo_live_pr_merge_e2e.py --forgejo-binary /tmp/forgejo-17.0.0 --state-dir /tmp/forgejo-mcp-same-source-003 --non-admin-merger --stdio-mcp-egress-during-merge",
+  "run_exit_code": 0,
+  "run_state_dir": "/tmp/forgejo-mcp-same-source-003",
+  "schema_version": 1,
+  "source_files": {
+    "scripts/mission_012_egress_barrier_mcp_host.py": "ad3afa3cddb734453fe116befc0cec0dce80ba8465b267064bda225e0096cc05",
+    "scripts/mission_012_sandboxed_test_adapter.py": "589c5fce4d1cdb2bf210b494c9e653b6ac191a9db5162d4c1006b3d112515058",
+    "scripts/mission_012_test_agent_adapter.py": "0d881495d78f8578815a591fe23bab1c80824072125b3871e596b292494b038a",
+    "scripts/run_forgejo_live_pr_merge_e2e.py": "d27f667c1316a8c5ed378baef596639892340de5628b9799cef04ca33289b589",
+    "scripts/run_mission_012_stdio_mcp_egress_gate_e2e.py": "e44a9238e2eb62c3982b249fa04ff339ad0688740f6ff899cca09c21d5bfd9ac",
+    "tests/test_forgejo_live_pr_merge_e2e.py": "4e71ce082d73e19a1640896975cdc8a7c89395ae1182fda843c67a4ff9e54ab3",
+    "tests/test_mission_012_egress_barrier_mcp_host.py": "4649bb61f56f624d6545cb2987bc6e958419e0436ce0e219c22f4ebf0358b7d1",
+    "tests/test_mission_012_sandboxed_test_adapter.py": "d33cd5e1c4b477a0430a459e90971406ebf537fb0d3fb033058d7955cff8b116",
+    "tests/test_mission_012_test_agent_adapter.py": "adc4fa6966a4dbcbf114b26b6bd00d5975fe36f1f84429a0678015e8e508557b"
+  },
+  "source_sha256": "78cc4a0a2cafa1d15b62adc8782af05445e1708268d618bf970de3b2340d407a",
+  "worktree": "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace"
+}

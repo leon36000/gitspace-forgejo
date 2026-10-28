@@ -1,0 +1,22 @@
+{
+  "base_branch_sha": "5a20ae42f425d329c847c6448c1e7ad28f3d54cb",
+  "branch_head_sha": "3d67b1a6d98a732a63d27867a52e8afc20c63776",
+  "client_error": {
+    "action": "repair the merge conflict, then create a fresh verification for the updated base",
+    "code": "not_mergeable",
+    "details": {},
+    "retryable": false
+  },
+  "expected_base_sha": "5a20ae42f425d329c847c6448c1e7ad28f3d54cb",
+  "expected_head_sha": "3d67b1a6d98a732a63d27867a52e8afc20c63776",
+  "pull_request": {
+    "base_sha": "5a20ae42f425d329c847c6448c1e7ad28f3d54cb",
+    "head_sha": "3d67b1a6d98a732a63d27867a52e8afc20c63776",
+    "mergeable": false,
+    "mergeable_state": null,
+    "merged": false,
+    "number": 2,
+    "state": "open",
+    "updated_at": "2026-10-26T08:00:07-04:00"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "base_commit": "9cd64c9063feceaec6b0545133ff9ebc3f5c5b6d",
+  "candidate_commit": "1c3d7f0a0c014a9fa88e2009f6cab35eaa96a68c",
+  "mergeability_observations": [
+    {
+      "base_sha": "9cd64c9063feceaec6b0545133ff9ebc3f5c5b6d",
+      "elapsed_ms": 19,
+      "head_sha": "1c3d7f0a0c014a9fa88e2009f6cab35eaa96a68c",
+      "mergeable": true
+    },
+    {
+      "base_sha": "9cd64c9063feceaec6b0545133ff9ebc3f5c5b6d",
+      "elapsed_ms": 288,
+      "head_sha": "1c3d7f0a0c014a9fa88e2009f6cab35eaa96a68c",
+      "mergeable": false
+    },
+    {
+      "base_sha": "9cd64c9063feceaec6b0545133ff9ebc3f5c5b6d",
+      "elapsed_ms": 555,
+      "head_sha": "1c3d7f0a0c014a9fa88e2009f6cab35eaa96a68c",
+      "mergeable": false
+    },
+    {
+      "base_sha": "9cd64c9063feceaec6b0545133ff9ebc3f5c5b6d",
+      "elapsed_ms": 822,
+      "head_sha": "1c3d7f0a0c014a9fa88e2009f6cab35eaa96a68c",
+      "mergeable": false
+    },
+    {
+      "base_sha": "9cd64c9063feceaec6b0545133ff9ebc3f5c5b6d",
+      "elapsed_ms": 1093,
+      "head_sha": "1c3d7f0a0c014a9fa88e2009f6cab35eaa96a68c",
+      "mergeable": true
+    },
+    {
+      "base_sha": "9cd64c9063feceaec6b0545133ff9ebc3f5c5b6d",
+      "elapsed_ms": 1364,
+      "head_sha": "1c3d7f0a0c014a9fa88e2009f6cab35eaa96a68c",
+      "mergeable": true
+    },
+    {
+      "base_sha": "9cd64c9063feceaec6b0545133ff9ebc3f5c5b6d",
+      "elapsed_ms": 1636,
+      "head_sha": "1c3d7f0a0c014a9fa88e2009f6cab35eaa96a68c",
+      "mergeable": true
+    }
+  ],
+  "mergeable": true,
+  "protected_acceptance_exit_code": 0,
+  "source_sha256": "d323c44f07071b577f03390a91471ee7c02801ef55a1d341108a898604435966"
+}

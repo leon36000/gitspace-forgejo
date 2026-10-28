@@ -1,0 +1,39 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.25s
+     Running unittests src/bin/forgejo-reconcile-local.rs (target/debug/deps/forgejo_reconcile_local-3e9fc5f7734f2ac5)
+
+running 6 tests
+test tests::commit_status_snapshot_keeps_forgejo_success_consultative ... ok
+test tests::commit_status_snapshot_marks_truncated_page_inconclusive_and_rejects_wrong_scope ... ok
+test tests::commit_status_snapshot_reads_all_bounded_pages_without_claiming_atomicity ... FAILED
+test tests::commit_status_snapshot_rejects_total_count_drift_between_pages ... FAILED
+test tests::commit_status_snapshot_uses_the_exact_sha_scoped_read_route ... ok
+test tests::reconciliation_policy_allows_only_exact_commit_status_snapshot_route ... FAILED
+
+failures:
+
+---- tests::commit_status_snapshot_reads_all_bounded_pages_without_claiming_atomicity stdout ----
+
+thread 'tests::commit_status_snapshot_reads_all_bounded_pages_without_claiming_atomicity' (2283255) panicked at src/bin/forgejo-reconcile-local.rs:8790:9:
+assertion failed: complete
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+---- tests::commit_status_snapshot_rejects_total_count_drift_between_pages stdout ----
+
+thread 'tests::commit_status_snapshot_rejects_total_count_drift_between_pages' (2283259) panicked at src/bin/forgejo-reconcile-local.rs:8865:51:
+called `Result::unwrap_err()` on an `Ok` value: (Object {"commit_sha": String("bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"), "current_pr_head_checked": Bool(false), "evidence_scope": String("forgejo_reported_contexts_only"), "forgejo_reported_combined_state": String("success"), "independent_verification": Bool(false), "merge_authorizing": Bool(false), "observation": String("inconclusive"), "repository": String("forge-admin/agent-forge-core"), "schema_version": String("forgejo-commit-status-snapshot-v1"), "status_count": Number(50), "statuses": Array [Object {"context": String("ci/0"), "status": String("success")}, Object {"context": String("ci/1"), "status": String("success")}, Object {"context": String("ci/2"), "status": String("success")}, Object {"context": String("ci/3"), "status": String("success")}, Object {"context": String("ci/4"), "status": String("success")}, Object {"context": String("ci/5"), "status": String("success")}, Object {"context": String("ci/6"), "status": String("success")}, Object {"context": String("ci/7"), "status": String("success")}, Object {"context": String("ci/8"), "status": String("success")}, Object {"context": String("ci/9"), "status": String("success")}, Object {"context": String("ci/10"), "status": String("success")}, Object {"context": String("ci/11"), "status": String("success")}, Object {"context": String("ci/12"), "status": String("success")}, Object {"context": String("ci/13"), "status": String("success")}, Object {"context": String("ci/14"), "status": String("success")}, Object {"context": String("ci/15"), "status": String("success")}, Object {"context": String("ci/16"), "status": String("success")}, Object {"context": String("ci/17"), "status": String("success")}, Object {"context": String("ci/18"), "status": String("success")}, Object {"context": String("ci/19"), "status": String("success")}, Object {"context": String("ci/20"), "status": String("success")}, Object {"context": String("ci/21"), "status": String("success")}, Object {"context": String("ci/22"), "status": String("success")}, Object {"context": String("ci/23"), "status": String("success")}, Object {"context": String("ci/24"), "status": String("success")}, Object {"context": String("ci/25"), "status": String("success")}, Object {"context": String("ci/26"), "status": String("success")}, Object {"context": String("ci/27"), "status": String("success")}, Object {"context": String("ci/28"), "status": String("success")}, Object {"context": String("ci/29"), "status": String("success")}, Object {"context": String("ci/30"), "status": String("success")}, Object {"context": String("ci/31"), "status": String("success")}, Object {"context": String("ci/32"), "status": String("success")}, Object {"context": String("ci/33"), "status": String("success")}, Object {"context": String("ci/34"), "status": String("success")}, Object {"context": String("ci/35"), "status": String("success")}, Object {"context": String("ci/36"), "status": String("success")}, Object {"context": String("ci/37"), "status": String("success")}, Object {"context": String("ci/38"), "status": String("success")}, Object {"context": String("ci/39"), "status": String("success")}, Object {"context": String("ci/40"), "status": String("success")}, Object {"context": String("ci/41"), "status": String("success")}, Object {"context": String("ci/42"), "status": String("success")}, Object {"context": String("ci/43"), "status": String("success")}, Object {"context": String("ci/44"), "status": String("success")}, Object {"context": String("ci/45"), "status": String("success")}, Object {"context": String("ci/46"), "status": String("success")}, Object {"context": String("ci/47"), "status": String("success")}, Object {"context": String("ci/48"), "status": String("success")}, Object {"context": String("ci/49"), "status": String("success")}], "total_count": Number(51)}, false)
+
+---- tests::reconciliation_policy_allows_only_exact_commit_status_snapshot_route stdout ----
+
+thread 'tests::reconciliation_policy_allows_only_exact_commit_status_snapshot_route' (2283267) panicked at src/bin/forgejo-reconcile-local.rs:8487:9:
+assertion failed: api.reconciliation_request_is_allowed(&second_page, "GET", None)
+
+
+failures:
+    tests::commit_status_snapshot_reads_all_bounded_pages_without_claiming_atomicity
+    tests::commit_status_snapshot_rejects_total_count_drift_between_pages
+    tests::reconciliation_policy_allows_only_exact_commit_status_snapshot_route
+
+test result: FAILED. 3 passed; 3 failed; 0 ignored; 0 measured; 126 filtered out; finished in 0.03s
+
+error: test failed, to rerun pass `--bin forgejo-reconcile-local`

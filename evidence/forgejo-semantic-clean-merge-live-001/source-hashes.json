@@ -1,0 +1,15 @@
+{
+  "evidence/forgejo-semantic-clean-merge-live-001/acceptance/acceptance-lower.rs": "91377b22c8f435aae430c122dcf223c949322c66c4da7793f27903d7b82a39ba",
+  "evidence/forgejo-semantic-clean-merge-live-001/acceptance/acceptance-protected.rs": "df97316bd0ffd8cb8f121c7d166e6f8260471a938799e215086a0b992453e602",
+  "evidence/forgejo-semantic-clean-merge-live-001/acceptance/acceptance-upper.rs": "a062120e69e8a9e9d99efb3f19cfce9a948462d0f12a179861ccf7b11b76045e",
+  "evidence/forgejo-semantic-clean-merge-live-001/source/combined-before-correction.rs": "2d721ecf06742dc6a2cb22f9cef1d4ced57cf643b7555df29809ffe1f26930fb",
+  "evidence/forgejo-semantic-clean-merge-live-001/source/corrected.rs": "d323c44f07071b577f03390a91471ee7c02801ef55a1d341108a898604435966",
+  "evidence/forgejo-semantic-clean-merge-live-001/source/lower-branch.rs": "b8028d2c8cf3c56a2ddc5c313cf4228618e174b82f31e1e5374ada9d9d489b07",
+  "evidence/forgejo-semantic-clean-merge-live-001/source/postmerge-readback.rs": "d323c44f07071b577f03390a91471ee7c02801ef55a1d341108a898604435966",
+  "evidence/forgejo-semantic-clean-merge-live-001/source/upper-branch.rs": "4ea2040b74905277fda57eac3ffa8dc8a8f21432f1e2924af2656cdfd6c0cac5",
+  "scripts/resume_forgejo_semantic_clean_merge.py": "4b1227acfa37eb3b29ad7de4faa10daa1d149493716ced6c4543c2195f49244e",
+  "scripts/run_forgejo_live_pr_merge_e2e.py": "6962ebf99df448b59cf68cbc2b92007ba0399bccb5f7ee166d5c1c95061c0332",
+  "scripts/semantic_merge_canary.py": "47296f7bb2c7ca28d174c53f6737720ecf05f116f4c011bddd8c0ed59e40358f",
+  "tests/test_forgejo_live_pr_merge_e2e.py": "60b4081ab7558b7f5afa2471ad3f07cbac6b841de2e37ba3f8727b2266646584",
+  "tests/test_semantic_merge_canary.py": "b7de40fe011e4ec15927dc2e95e924cfe66c48088bed59012337dbb688c77411"
+}

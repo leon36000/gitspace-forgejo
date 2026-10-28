@@ -1,0 +1,122 @@
+{
+  "agent": "deterministic local test adapter; no LLM configured or invoked",
+  "authority": "Rust CLI carries the merge request; local test profile only",
+  "base_commit": "847ce424bce4bac6c3af5c094830144bc4ef5d8f",
+  "branch_protection": {
+    "apply_to_admins": true,
+    "approvals_whitelist_username": [
+      "forge-reviewer"
+    ],
+    "block_on_outdated_branch": true,
+    "branch_name": "main",
+    "dismiss_stale_approvals": true,
+    "enable_approvals_whitelist": true,
+    "enable_merge_whitelist": true,
+    "merge_whitelist_usernames": [
+      "forge-merger"
+    ],
+    "required_approvals": 1,
+    "rule_name": "main",
+    "unprotected_file_patterns": ""
+  },
+  "candidate_commit": "968679a65ee22482bb1ebe800628ac096af13a4d",
+  "candidate_sha256": "78cc4a0a2cafa1d15b62adc8782af05445e1708268d618bf970de3b2340d407a",
+  "changed_paths": [
+    "src/lib.rs"
+  ],
+  "external_writers_excluded": false,
+  "false_executor_status_refused": true,
+  "forgejo_binary_sha256": "e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7",
+  "forgejo_listener_pid": 3862768,
+  "forgejo_version": "17.0.0+gitea-1.22.0",
+  "fresh_premerge_verdict": "proof_current",
+  "green_acceptance": "9 passed; 0 failed",
+  "issue_number": 1,
+  "issue_state_after_merge": "closed",
+  "main_head_after_merge": "32f1a8cc3a821f02e7b8e82412e652ba9589e34b",
+  "merge_actor_is_admin": false,
+  "merge_actor_login": "forge-merger",
+  "merge_authority": "host-invoked Rust local-test command; no LLM",
+  "merge_commit_sha": "32f1a8cc3a821f02e7b8e82412e652ba9589e34b",
+  "merge_http_status": 200,
+  "merged": true,
+  "no_review_merge_refusal_http_status": 405,
+  "no_review_merge_refusal_reason": "not allowed to merge [reason: Does not have enough approvals]",
+  "no_review_rust_gate_merge_attempted": false,
+  "no_review_rust_gate_refused": true,
+  "non_admin_merge_account_tested": true,
+  "non_whitelisted_admin_merge_refusal_http_status": 405,
+  "non_whitelisted_admin_merge_refusal_reason": "User not allowed to merge PR",
+  "non_whitelisted_merge_refusal_http_status": 405,
+  "non_whitelisted_merge_refusal_reason": "User not allowed to merge PR",
+  "non_whitelisted_reviewer_rust_gate_error_code": "branch_protection_does_not_match_local_gate_policy",
+  "non_whitelisted_reviewer_rust_gate_failed_closed": true,
+  "non_whitelisted_reviewer_rust_gate_merge_attempted": false,
+  "non_whitelisted_reviewer_rust_gate_verdict": "rejected",
+  "origin": "http://127.0.0.1:3130",
+  "policy_reader_is_admin": false,
+  "policy_reader_login": "forge-policy-reader",
+  "policy_reader_readonly_scope_refusal_http_status": 403,
+  "policy_reader_repo_admin": true,
+  "policy_sha256": "bfa4222a96cd14a471b500ba7dc9350a20fe825968fa9903594666e7bb20ea30",
+  "postmerge_behavior": {
+    "acceptance_exit_code": 0,
+    "failed_tests": 0,
+    "passed_tests": 9,
+    "tested_source_sha256": "78cc4a0a2cafa1d15b62adc8782af05445e1708268d618bf970de3b2340d407a",
+    "worker_sha256": "94347097f1c48eb26b881b494475284b2c9b924281f1b50571641a0ddaff4dd6"
+  },
+  "pull_request_number": 2,
+  "red_acceptance": {
+    "exit_code": 1,
+    "failed_tests": [
+      "below_min_returns_min",
+      "above_max_returns_max",
+      "singleton_interval_clamps",
+      "i32_min_clamps",
+      "i32_max_clamps"
+    ],
+    "passing_tests": [
+      "in_range_is_preserved",
+      "equal_lower_bound_is_preserved",
+      "equal_upper_bound_is_preserved",
+      "negative_interval_clamps"
+    ]
+  },
+  "requirement_sha256": "878086cb92e6ee91331204e51ecacb4900448537620ba6e108f8db8cca984af6",
+  "review_id": 1,
+  "reviewer_id": 2,
+  "reviewer_login": "forge-reviewer",
+  "sandbox_egress_during_merge": false,
+  "schema_version": 1,
+  "stale_candidate_verdict": "stale_candidate",
+  "stdio_mcp_egress_during_merge": true,
+  "stdio_mcp_gate_barrier": {
+    "child_process_alive_during_gate_read": true,
+    "reached_on": "tools/call:mission_context after corrected acceptance",
+    "released_after_gate_operation": true,
+    "released_after_gate_read": false
+  },
+  "stdio_mcp_source_binding": {
+    "forgejo_candidate_commit": "968679a65ee22482bb1ebe800628ac096af13a4d",
+    "forgejo_candidate_source_sha256": "78cc4a0a2cafa1d15b62adc8782af05445e1708268d618bf970de3b2340d407a",
+    "llm_invoked": false,
+    "mcp_source_sha256": "78cc4a0a2cafa1d15b62adc8782af05445e1708268d618bf970de3b2340d407a",
+    "merge_commit_sha": "32f1a8cc3a821f02e7b8e82412e652ba9589e34b",
+    "merged_source_sha256": "78cc4a0a2cafa1d15b62adc8782af05445e1708268d618bf970de3b2340d407a",
+    "producer": "same stdio-MCP process using the explicitly named local-test-adapter",
+    "pull_request_head_after_restore": "968679a65ee22482bb1ebe800628ac096af13a4d",
+    "same_process_alive_during_gate": true,
+    "same_process_released_after_merge_operation": true
+  },
+  "stdio_mcp_task_acceptance": {
+    "baseline_actionable_failure": true,
+    "baseline_exit_code": 101,
+    "baseline_log_sha256": "520fa17028e0394effef1e9b3fc47191b7a80e05ae6afff5b181434be159220a",
+    "corrected_acceptance_pass": true,
+    "corrected_exit_code": 0,
+    "corrected_log_sha256": "6d4a64a82ebb860e4f60750513f0521df784e3299eabe41511f6f9c1a27ad261",
+    "verification": "actual cargo test --offline --locked in the trusted MCP host"
+  },
+  "worker_sha256": "94347097f1c48eb26b881b494475284b2c9b924281f1b50571641a0ddaff4dd6"
+}

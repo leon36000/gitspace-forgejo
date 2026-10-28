@@ -1,0 +1,1 @@
+Requirement revision 1: exclusive lower bound on adjacent values keeps the upper value admissible; the combined adjacent interval with both bounds exclusive is empty and must return EmptyRange.

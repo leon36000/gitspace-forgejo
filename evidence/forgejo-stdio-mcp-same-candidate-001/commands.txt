@@ -1,0 +1,5 @@
+python3 scripts/run_forgejo_live_pr_merge_e2e.py --forgejo-binary /tmp/forgejo-17.0.0 --state-dir /tmp/forgejo-mcp-same-source-003 --non-admin-merger --stdio-mcp-egress-during-merge
+python3 -m py_compile scripts/mission_012_test_agent_adapter.py scripts/mission_012_egress_barrier_mcp_host.py scripts/run_mission_012_stdio_mcp_egress_gate_e2e.py scripts/run_forgejo_live_pr_merge_e2e.py tests/test_forgejo_live_pr_merge_e2e.py tests/test_mission_012_test_agent_adapter.py tests/test_mission_012_sandboxed_test_adapter.py
+python3 -m unittest -v tests.test_forgejo_live_pr_merge_e2e tests.test_mission_012_test_agent_adapter tests.test_mission_012_egress_barrier_mcp_host tests.test_mission_012_sandboxed_test_adapter
+python3 -m unittest discover -s tests -p 'test_*.py' -v
+git diff --check

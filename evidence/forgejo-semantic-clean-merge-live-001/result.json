@@ -1,0 +1,52 @@
+{
+  "combined_branch_checks": {
+    "lower": "passed",
+    "upper": "passed"
+  },
+  "common_fixture_commit": "f2a9e5675a4e3c45c6a5a6682db7b6b885f272f5",
+  "correction": {
+    "candidate_commit": "1c3d7f0a0c014a9fa88e2009f6cab35eaa96a68c",
+    "gate_verdict": "merged",
+    "issue_closed": true,
+    "merge_commit": "42f48189560607ec2c391e50526f5e5560cfb524",
+    "postmerge_acceptance": "passed",
+    "protected_acceptance_exit_code": 0,
+    "source_sha256": "d323c44f07071b577f03390a91471ee7c02801ef55a1d341108a898604435966"
+  },
+  "forgejo_binary_sha256": "e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7",
+  "forgejo_version": "17.0.0+gitea-1.22.0",
+  "individual_branch_checks": {
+    "lower": "passed",
+    "upper": "passed"
+  },
+  "limitations": [
+    "Fixture verifier/local-test-adapter only; no LLM, AgentOS, conventional CI, or productivity benchmark.",
+    "The initial runner stopped after its assertion expected the wrong public error code; the retained gate result was a valid `verification_failed` refusal with no merge attempt.",
+    "The test does not exclude external Forgejo writers or multi-tenant/kernel attacks."
+  ],
+  "llm_invoked": false,
+  "local_fixture_only": true,
+  "lower_preupdate_commit": "8736177e5387303a06ee01caae5b2394be9ed573",
+  "preview_base_commit": "9cd64c9063feceaec6b0545133ff9ebc3f5c5b6d",
+  "preview_candidate_commit": "988543381714e06aefb6aa4788997b83cd8a3299",
+  "preview_source_sha256": "2d721ecf06742dc6a2cb22f9cef1d4ced57cf643b7555df29809ffe1f26930fb",
+  "protected_failure": {
+    "actionable_marker": "min > max",
+    "exit_code": 101,
+    "gate_error_code": "verification_failed",
+    "gate_verdict": "rejected",
+    "merge_attempted": false,
+    "pull_request_number": 5
+  },
+  "run_recovery": {
+    "continuation_exit": 0,
+    "first_live_runner_exit": 1,
+    "first_stop_reason": "runner expected a non-public error label; live gate returned verification_failed and merge_attempted=false",
+    "note": "existing local state was resumed without repeating acceptance or resetting Forgejo",
+    "second_attempt_note": "the stale-proof assertion used a failing proof, which cannot establish stale-binding precedence; no product defect was inferred"
+  },
+  "schema_version": 1,
+  "source_exactly_matches_branch_union": true,
+  "upper_branch_commit": "6683fc1d2cbe1a7376fc9af9682d6c15cf607308",
+  "upper_merge_commit": "9cd64c9063feceaec6b0545133ff9ebc3f5c5b6d"
+}

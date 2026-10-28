@@ -1,0 +1,10 @@
+below_min_returns_min ... ok
+above_max_returns_max ... ok
+in_range_is_preserved ... ok
+equal_lower_bound_is_preserved ... ok
+equal_upper_bound_is_preserved ... ok
+singleton_interval_clamps ... ok
+negative_interval_clamps ... ok
+i32_min_clamps ... ok
+i32_max_clamps ... ok
+9 passed; 0 failed

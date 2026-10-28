@@ -1,0 +1,11 @@
+{
+  "branch_protection_read": true,
+  "is_admin": false,
+  "login": "forge-policy-reader",
+  "repo_permission_admin": true,
+  "token_scopes": [
+    "read:user",
+    "read:repository"
+  ],
+  "write_refusal_http_status": 403
+}

@@ -1,0 +1,22 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.28s
+     Running unittests src/bin/forgejo-reconcile-local.rs (target/debug/deps/forgejo_reconcile_local-3e9fc5f7734f2ac5)
+
+running 1 test
+test tests::commit_status_snapshot_rejects_duplicate_contexts_in_a_page ... FAILED
+
+failures:
+
+---- tests::commit_status_snapshot_rejects_duplicate_contexts_in_a_page stdout ----
+
+thread 'tests::commit_status_snapshot_rejects_duplicate_contexts_in_a_page' (2314693) panicked at src/bin/forgejo-reconcile-local.rs:8770:10:
+called `Result::unwrap_err()` on an `Ok` value: (Object {"commit_sha": String("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"), "current_pr_head_checked": Bool(false), "evidence_scope": String("forgejo_reported_contexts_only"), "forgejo_reported_combined_state": String("success"), "forgejo_reported_page_states": Array [String("success")], "independent_verification": Bool(false), "merge_authorizing": Bool(false), "observation": String("complete"), "pages_read": Number(1), "pagination_complete": Bool(true), "repository": String("forge-admin/agent-forge-core"), "schema_version": String("forgejo-commit-status-snapshot-v1"), "snapshot_consistency": String("single_response"), "status_count": Number(2), "statuses": Array [Object {"context": String("ci/test"), "status": String("success")}, Object {"context": String("ci/test"), "status": String("success")}], "total_count": Number(2)}, true)
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    tests::commit_status_snapshot_rejects_duplicate_contexts_in_a_page
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 133 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `--bin forgejo-reconcile-local`

@@ -1,0 +1,1 @@
+Requirement revision 1: exclusive upper bound on adjacent values keeps the lower value admissible.

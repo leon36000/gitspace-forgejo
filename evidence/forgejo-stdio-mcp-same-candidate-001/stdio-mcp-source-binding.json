@@ -1,0 +1,12 @@
+{
+  "forgejo_candidate_commit": "968679a65ee22482bb1ebe800628ac096af13a4d",
+  "forgejo_candidate_source_sha256": "78cc4a0a2cafa1d15b62adc8782af05445e1708268d618bf970de3b2340d407a",
+  "llm_invoked": false,
+  "mcp_source_sha256": "78cc4a0a2cafa1d15b62adc8782af05445e1708268d618bf970de3b2340d407a",
+  "merge_commit_sha": "32f1a8cc3a821f02e7b8e82412e652ba9589e34b",
+  "merged_source_sha256": "78cc4a0a2cafa1d15b62adc8782af05445e1708268d618bf970de3b2340d407a",
+  "producer": "same stdio-MCP process using the explicitly named local-test-adapter",
+  "pull_request_head_after_restore": "968679a65ee22482bb1ebe800628ac096af13a4d",
+  "same_process_alive_during_gate": true,
+  "same_process_released_after_merge_operation": true
+}

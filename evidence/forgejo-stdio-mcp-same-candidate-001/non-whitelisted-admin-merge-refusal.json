@@ -1,0 +1,11 @@
+{
+  "forgejo_reason": "User not allowed to merge PR",
+  "http_status": 405,
+  "merge_actor_is_admin": true,
+  "merge_actor_login": "forge-admin",
+  "merge_whitelist_usernames": [
+    "forge-merger"
+  ],
+  "merged_after_refusal": false,
+  "pull_request_state_after_refusal": "open"
+}
