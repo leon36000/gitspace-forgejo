@@ -1,0 +1,26 @@
+Mutation: bypass the protected-source issue-open recheck after HTTP reconciliation.
+Expected: the integration assertion rejects admission with mission_issue_closed.
+Observed cargo exit: 101.
+Source restored SHA-256: 45ec1f6344ba26d0ca769b499b713613ddce28cc7450c85c935f52e67995e3e2
+
+
+running 1 test
+test tests::receiver_process_journal_reconciles_through_local_http_adapter ... FAILED
+
+failures:
+
+failures:
+    tests::receiver_process_journal_reconciles_through_local_http_adapter
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 28 filtered out; finished in 0.17s
+
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.64s
+     Running unittests src/bin/forgejo-reconcile-local.rs (/tmp/webhook-mission-admission-003/debug/deps/forgejo_reconcile_local-3e9fc5f7734f2ac5)
+
+thread 'tests::receiver_process_journal_reconciles_through_local_http_adapter' (435088) panicked at src/bin/forgejo-reconcile-local.rs:2269:9:
+assertion failed: matches!(stale_admission,
+    Err(WebhookMissionAdmissionErrorV1::Admission(error)) if error.code ==
+    "mission_issue_closed")
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: test failed, to rerun pass `--bin forgejo-reconcile-local`

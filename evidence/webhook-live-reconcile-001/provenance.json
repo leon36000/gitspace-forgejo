@@ -1,0 +1,15 @@
+{
+  "forgejo_binary_sha256": "e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7",
+  "head_commit": "f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0",
+  "private_state_dir": "/tmp/forgejo-live-webhook-reconcile-001-20261024-01",
+  "private_state_dir_is_not_in_evidence": true,
+  "source_sha256": {
+    "Cargo.lock": "bf599559dd11ff21ecc4754aa8a693966b4a9ca401153d7d7caa1f18d8995fcc",
+    "Cargo.toml": "5244b83d82e6af0504a5f62c951e4779ab672fc429ea93c88c4e4393906bae0c",
+    "scripts/run_forgejo_live_webhook_reconcile_e2e.py": "efb06464aa69b90e132c7bd162adfcc3bf085839f35cfe9a812078cb034a25c2",
+    "src/bin/forgejo-reconcile-local.rs": "ed013d15df054d9810f15050e79bae741531280b1a30336f4cf47641774ddf5c",
+    "src/bin/forgejo-webhook-local.rs": "633a202aae210a6305bd1a6b10301e0c537a6a34bd5733efcf5c6c6a554ef8cb",
+    "src/webhook.rs": "0d4c9103725d451bf040c3d63257a15123f954620f3cc1f39eeaa6e1e5330721",
+    "src/webhook/http.rs": "6e71578ff95908bb0325ebb0f9dcd8d475abf2cf554ba531e58a837d14fcdbb0"
+  }
+}

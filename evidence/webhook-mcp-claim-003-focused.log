@@ -1,0 +1,16 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.49s
+     Running tests/mission_012_mcp_lifecycle.rs (target/debug/deps/mission_012_mcp_lifecycle-8222febbc3dbb2d9)
+
+running 8 tests
+test mcp_host_refuses_capabilities_outside_the_pinned_profile ... ok
+test mcp_host_refuses_unknown_fields_inside_the_claimed_request ... ok
+test mcp_host_refuses_an_existing_or_symlinked_receipt_file_before_leasing ... ok
+test mcp_host_refuses_a_request_that_does_not_match_the_durable_claim ... ok
+test mcp_host_refuses_a_claim_after_a_new_generation_supersedes_it ... ok
+test mcp_host_refuses_unknown_fields_nested_deep_inside_the_claimed_request ... ok
+test complete_stdio_mcp_lifecycle_runs_red_write_green_shutdown_refusal_and_exit ... ok
+test mcp_host_refuses_tool_calls_after_the_claimed_lease_expires ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.63s
+

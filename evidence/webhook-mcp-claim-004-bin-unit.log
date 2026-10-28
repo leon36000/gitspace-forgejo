@@ -1,0 +1,22 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.01s
+     Running unittests src/bin/mission-012-mcp-host.rs (target/debug/deps/mission_012_mcp_host-3e32cf331dafa499)
+
+running 15 tests
+test tests::exposes_only_three_exact_model_tools_and_denies_unknown_capabilities ... ok
+test tests::finalization_reports_failure_when_its_receipt_cannot_be_written ... ok
+test host::tests::writable_test_path_aliases_and_model_diff_are_refused ... ok
+test tests::mcp_line_reader_rejects_malformed_json_rpc_and_accepts_one_frame ... ok
+test tests::mcp_protocol_negotiation_is_versioned_and_rejects_unknown_versions ... ok
+test tests::receipt_write_failures_stop_the_host_for_calls_and_budget_refusals ... ok
+test host::tests::verifier_materializes_a_private_snapshot_and_rejects_changed_source_bytes ... ok
+test tests::mcp_call_is_receipted_and_still_uses_the_host_path_allowlist ... ok
+test host::tests::sandbox_refuses_overlapping_writable_target_before_mutating_source_tree ... ok
+test host::tests::hard_linked_candidate_source_is_refused_without_touching_external_file ... ok
+test host::tests::independent_pair_verifier_refuses_unapproved_source_even_with_git_binding ... ok
+test host::tests::candidate_cannot_forge_libtest_success_with_print_and_process_exit ... ok
+test host::tests::host_requires_baseline_red_and_fresh_green_and_receipts_refusals ... ok
+test host::tests::sandbox_reports_real_red_then_green_on_the_candidate ... ok
+test host::tests::independent_pair_verifier_binds_fresh_red_green_to_exact_snapshots ... ok
+
+test result: ok. 15 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.19s
+

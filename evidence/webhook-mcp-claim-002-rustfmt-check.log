@@ -1,0 +1,68 @@
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/src/bin/mission-012-mcp-host.rs:130:
+ 
+ /// Read the host config without following a final symlink or blocking on a
+ /// FIFO, then require a private, single-link regular file owned by this uid.
+-fn read_host_config(path: &Path) ->Result<HostConfigV1, &'static str> {
++fn read_host_config(path: &Path) -> Result<HostConfigV1, &'static str> {
+     let file = OpenOptions::new()
+         .read(true)
+         .custom_flags(libc::O_NOFOLLOW | libc::O_NONBLOCK | libc::O_CLOEXEC)
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/src/bin/mission-012-mcp-host.rs:275:
+         let started = Instant::now();
+         let input_sha256 = sha256(&serde_json::to_vec(&input).unwrap_or_default());
+         if let Some(error) = self.lease_lost.clone() {
+-            self.receipts.push(Self::refusal_receipt(tool_id, input_sha256, started, &error));
++            self.receipts.push(Self::refusal_receipt(
++                tool_id,
++                input_sha256,
++                started,
++                &error,
++            ));
+             return Err(error);
+         }
+         let Self {
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/src/bin/mission-012-mcp-host.rs:288:
+             ..
+         } = self;
+         let mut inner_ran = false;
+-        let result = journal.with_valid_lease(
+-            scope,
+-            *issue_number,
+-            lease,
+-            holder_id,
+-            unix_now_ms,
+-            || {
++        let result =
++            journal.with_valid_lease(scope, *issue_number, lease, holder_id, unix_now_ms, || {
+                 inner_ran = true;
+                 inner.invoke(tool_id, input)
+-            },
+-        );
++            });
+         if !inner_ran {
+             // The lease check itself denied the call; the inner host recorded
+             // nothing, so keep an independent refusal receipt. Retryable
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/src/bin/mission-012-mcp-host.rs:307:
+             if !error.retryable {
+                 self.lease_lost = Some(error.clone());
+             }
+-            self.receipts.push(Self::refusal_receipt(tool_id, input_sha256, started, &error));
++            self.receipts.push(Self::refusal_receipt(
++                tool_id,
++                input_sha256,
++                started,
++                &error,
++            ));
+             return Err(error);
+         }
+         let mut receipt = self.inner.receipts().last().cloned().unwrap_or_else(|| {
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/src/bin/mission-012-mcp-host.rs:599:
+             return std::process::ExitCode::from(74);
+         }
+         if is_shutdown {
+-            shutdown_finalization = Some(finalize_host(&mut tool_host, &mut receipt_file, &binding));
++            shutdown_finalization =
++                Some(finalize_host(&mut tool_host, &mut receipt_file, &binding));
+         }
+     }
+ }

@@ -1,0 +1,100 @@
+{
+  "forgejo": {
+    "binary_sha256": "e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7",
+    "listener": "127.0.0.1:3130",
+    "version": "forgejo version 17.0.0+gitea-1.22.0 (release name 17.0.0) built with GNU Make 4.4.1, go1.26.9 : bindata, timetzdata, sqlite, sqlite_unlock_notify"
+  },
+  "invalid_credential": {
+    "credential_material_recorded": false,
+    "exit_status": 1,
+    "result": {
+      "api_version": "forgejo-rest-v1",
+      "delivery_id": "live-stale-issue-41",
+      "error": {
+        "action": "inspect the local Forgejo API response and its permission configuration",
+        "code": "upstream_unauthorized",
+        "details": {
+          "upstream": "forgejo"
+        },
+        "retryable": false
+      },
+      "schema_version": 2,
+      "upstream_read_attempts": 1,
+      "verdict": "inconclusive"
+    }
+  },
+  "issue_number": 1,
+  "limitations": [
+    "No LLM or AgentOS execution was used.",
+    "The webhook delivery was synthesized locally; Forgejo-to-receiver delivery was not tested.",
+    "This validates one isolated local Forgejo v17 issue-read path, not production deployment or general value."
+  ],
+  "post_run_issue_state": "open",
+  "reconciliation": {
+    "api_version": "forgejo-rest-v1",
+    "canonical_state": {
+      "base_sha": null,
+      "head_sha": null,
+      "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/issues/1",
+      "merged": null,
+      "state": "open",
+      "updated_at": "2026-10-24T00:28:22-04:00"
+    },
+    "delivery_id": "live-stale-issue-41",
+    "resource": {
+      "kind": "issue",
+      "number": 1,
+      "owner": "forge-admin",
+      "repository": "agent-forge-core"
+    },
+    "schema_version": 2,
+    "upstream_read_attempts": 1,
+    "verdict": "current_state_read"
+  },
+  "repository": {
+    "api_reader": {
+      "is_admin": false,
+      "login": "forge-reader",
+      "repo_permission_admin": false,
+      "repo_permission_pull": true,
+      "repo_permission_push": false,
+      "requested_token_scopes": [
+        "read:user",
+        "read:repository",
+        "read:issue"
+      ]
+    },
+    "full_name": "forge-admin/agent-forge-core",
+    "private": true
+  },
+  "schema_version": 1,
+  "source_head_commit": "f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0",
+  "verdict": "passed",
+  "webhook": {
+    "delivery_id": "live-stale-issue-41",
+    "duplicate_delivery": {
+      "body": {
+        "accepted": true,
+        "delivery_id": "live-stale-issue-41",
+        "duplicate": true,
+        "reconcile_required": true,
+        "schema_version": 1,
+        "sequence": 1
+      },
+      "http_status": 202
+    },
+    "first_delivery": {
+      "body": {
+        "accepted": true,
+        "delivery_id": "live-stale-issue-41",
+        "duplicate": false,
+        "reconcile_required": true,
+        "schema_version": 1,
+        "sequence": 1
+      },
+      "http_status": 202
+    },
+    "payload_origin": "synthetic local signed webhook; Forgejo sender was not configured",
+    "payload_state": "closed"
+  }
+}

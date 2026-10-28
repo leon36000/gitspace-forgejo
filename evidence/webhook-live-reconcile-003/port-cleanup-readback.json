@@ -1,0 +1,26 @@
+{
+  "all_expected_ports_clear": true,
+  "all_stopped": true,
+  "forgejo": {
+    "expected_address": "127.0.0.1:3130",
+    "listener_addresses_after_stop": [],
+    "listener_checked": true,
+    "stop": {
+      "returncode": 0,
+      "started": true,
+      "stop_action": "terminate",
+      "stopped": true
+    }
+  },
+  "receiver": {
+    "expected_address": "127.0.0.1:39197",
+    "listener_addresses_after_stop": [],
+    "listener_checked": true,
+    "stop": {
+      "returncode": 0,
+      "started": true,
+      "stop_action": "terminate",
+      "stopped": true
+    }
+  }
+}
