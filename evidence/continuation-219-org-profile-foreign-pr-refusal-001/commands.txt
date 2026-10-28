@@ -1,0 +1,10 @@
+# Focused test (fixed loopback endpoint 127.0.0.1:3130; run serially)
+cargo test --locked --offline --test webhook_receiver_process_e2e actual_reconcile_cli_process_org_profile_refuses_foreign_pr_before_credential_or_api -- --exact --ignored --test-threads=1 --nocapture
+
+# Target suite
+cargo test --locked --offline --test webhook_receiver_process_e2e -- --test-threads=1
+
+# Final source/metadata checks
+cargo fmt --all -- --check
+git diff --check
+python3 scripts/verify_cargo_license_state.py

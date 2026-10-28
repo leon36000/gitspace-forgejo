@@ -1,0 +1,3 @@
+$ (cd evidence/mission-012-live-agent-webhook-continuation-223-resume-scope && sha256sum -c SHA256SUMS)
+exit_code=0
+supervised-private-netns-observation.json: OK

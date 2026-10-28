@@ -1,0 +1,27 @@
+# Commands — CONTINUATION-223
+
+Failed run (preserved as `mission-012-live-agent-webhook-continuation-223-resume-scope`):
+
+```sh
+python3 scripts/run_mission_012_supervised_private_netns_e2e.py \
+  --state-dir /tmp/mission012-cont223-resume-scope-state \
+  --forgejo-binary /tmp/forgejo-17.0.0 \
+  --evidence-dir "$PWD/evidence/mission-012-live-agent-webhook-continuation-223-resume-scope" \
+  --execution-id live-mcp-223 \
+  --allocation-id mission012-continuation-223 \
+  --test-host-restart
+```
+
+Successful rerun:
+
+```sh
+python3 scripts/run_mission_012_supervised_private_netns_e2e.py \
+  --state-dir /tmp/mission012-cont223b-resume-scope-state \
+  --forgejo-binary /tmp/forgejo-17.0.0 \
+  --evidence-dir "$PWD/evidence/mission-012-live-agent-webhook-continuation-223b-resume-scope" \
+  --execution-id live-mcp-224 \
+  --allocation-id mission012-continuation-223b \
+  --test-host-restart
+```
+
+Focused tests and source checks are in the `.log` files in this folder. The prior CONT-221 success-path run was not repeated.

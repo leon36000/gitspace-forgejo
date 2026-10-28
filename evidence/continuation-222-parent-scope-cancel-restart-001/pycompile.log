@@ -1,0 +1,2 @@
+$ python3 -m py_compile scripts/systemd_process_scope.py scripts/run_mission_012_live_composed_e2e.py scripts/run_mission_012_live_mcp_agent_e2e.py scripts/run_mission_012_supervised_private_netns_e2e.py
+exit_code=0

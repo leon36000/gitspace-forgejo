@@ -1,0 +1,17 @@
+{
+  "bootstrap_receipt_present": true,
+  "exit_code": 0,
+  "host_network_namespace": "net:[4026531833]",
+  "outer_scope_cgroup_path": "/user.slice/user-1000.slice/user@1000.service/app.slice/run-mission012-stage-4068160-dcf8c9575ca2ee19.scope",
+  "outer_scope_unit": "run-mission012-stage-4068160-dcf8c9575ca2ee19.scope",
+  "private_bwrap_network_namespace_requested": true,
+  "raw_process_output_saved": false,
+  "schema_version": 1,
+  "scope_cleanup": "clean",
+  "scope_created_before_private_namespace": true,
+  "stderr_bytes": 0,
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_bytes": 30029,
+  "stdout_sha256": "d77f1b5911cc39e08653a70a14c1d7872e88c80f37bf584ab0c5a759e3c8627b",
+  "timed_out": false
+}

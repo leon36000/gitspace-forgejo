@@ -1,0 +1,3 @@
+Command: python3 -m unittest discover -s tests -p 'test_mission_012_live_composed_e2e.py'
+Observed output: 14 tests; 10.484 seconds; OK.
+This is the existing composed-runner unit module; its direct host systemd scope lifecycle tests ran on this host.

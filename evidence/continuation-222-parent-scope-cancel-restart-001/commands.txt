@@ -1,0 +1,12 @@
+# Commands used in CONTINUATION-222
+
+```sh
+python3 -m unittest tests.test_mission_012_live_composed_e2e.Mission012LiveComposedTests.test_attested_parent_scope_cancellation_cleans_then_fresh_scope_restarts_stage -v
+python3 -m unittest discover -s tests -p 'test_mission_012_live_composed_e2e.py'
+python3 -m unittest discover -s tests -p 'test_mission_012_live_mcp_agent_e2e.py'
+python3 -m py_compile scripts/systemd_process_scope.py scripts/run_mission_012_live_composed_e2e.py scripts/run_mission_012_live_mcp_agent_e2e.py scripts/run_mission_012_supervised_private_netns_e2e.py
+git diff --check
+python3 scripts/verify_cargo_license_state.py
+```
+
+The initial full composeur-suite output is kept in `composed-tests.log` and the clean rerun in `composed-tests-green.log`; no previous full MISSION-012 Forgejo run was repeated in this lot.

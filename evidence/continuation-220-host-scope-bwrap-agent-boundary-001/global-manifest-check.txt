@@ -1,0 +1,1 @@
+PASS: project-level evidence/SHA256SUMS latest entry binds the current worktree evidence/SHA256SUMS.

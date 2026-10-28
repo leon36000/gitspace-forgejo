@@ -1,0 +1,2 @@
+python3 evidence/continuation-220-host-scope-bwrap-agent-boundary-001/verify_append_only_indexes.py
+PASS: 14 evidence files verified; local, worktree, and project prefixes preserved.

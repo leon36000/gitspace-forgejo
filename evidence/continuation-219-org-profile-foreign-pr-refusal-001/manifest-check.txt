@@ -1,0 +1,2 @@
+python3 evidence/continuation-219-org-profile-foreign-pr-refusal-001/verify_append_only_indexes.py
+PASS: 13 evidence files verified; local, worktree, and project prefixes preserved.

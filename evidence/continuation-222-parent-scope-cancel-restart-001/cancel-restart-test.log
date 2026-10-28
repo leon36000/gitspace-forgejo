@@ -1,0 +1,6 @@
+test_attested_parent_scope_cancellation_cleans_then_fresh_scope_restarts_stage (tests.test_mission_012_live_composed_e2e.Mission012LiveComposedTests.test_attested_parent_scope_cancellation_cleans_then_fresh_scope_restarts_stage) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.640s
+
+OK

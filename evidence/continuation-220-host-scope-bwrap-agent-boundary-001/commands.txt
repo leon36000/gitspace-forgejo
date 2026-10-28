@@ -1,0 +1,12 @@
+# Compile the probe and current scope launcher
+python3 -m py_compile scripts/systemd_process_scope.py evidence/continuation-220-host-scope-bwrap-agent-boundary-001/scope_bwrap_probe.py
+
+# One local host-scope + Bubblewrap boundary probe
+python3 evidence/continuation-220-host-scope-bwrap-agent-boundary-001/scope_bwrap_probe.py
+
+# Existing composed-runner unit tests after making descriptor closure explicit
+python3 -m unittest discover -s tests -p 'test_mission_012_live_composed_e2e.py'
+
+# Metadata and whitespace checks
+python3 scripts/verify_cargo_license_state.py
+git diff --check

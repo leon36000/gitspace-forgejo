@@ -1,0 +1,28 @@
+# Commands recorded for CONTINUATION-221
+
+Successful full run (from the worktree root):
+
+```sh
+python3 scripts/run_mission_012_supervised_private_netns_e2e.py \
+  --state-dir /tmp/mission012-cont221b-scope-state \
+  --forgejo-binary /tmp/forgejo-17.0.0 \
+  --evidence-dir "$PWD/evidence/mission-012-live-agent-webhook-continuation-221b-scope" \
+  --execution-id live-mcp-222 \
+  --allocation-id mission012-continuation-221b
+```
+
+Focused tests and checks:
+
+```sh
+python3 -m py_compile scripts/systemd_process_scope.py \
+  scripts/run_mission_012_live_composed_e2e.py \
+  scripts/run_mission_012_live_mcp_agent_e2e.py \
+  scripts/run_mission_012_supervised_private_netns_e2e.py
+python3 -m unittest discover -s tests -p 'test_mission_012_live_composed_e2e.py'
+python3 -m unittest discover -s tests -p 'test_mission_012_live_mcp_agent_e2e.py'
+git diff --check
+python3 scripts/verify_cargo_license_state.py
+(cd evidence/mission-012-live-agent-webhook-continuation-221b-scope && sha256sum -c SHA256SUMS)
+```
+
+The preceding run used the same runner and Forgejo binary, with the separate disposable state directory `/tmp/mission012-cont221-scope-state` and evidence directory `evidence/mission-012-live-agent-webhook-continuation-221-scope`. Its observed fail-closed result is preserved in that directory; the full shell command transcript was not archived, so no unverified execution/allocation identifiers are asserted here.

@@ -1,0 +1,10 @@
+git rev-parse HEAD
+f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+python3 --version
+Python 3.12.3
+systemctl --version
+systemd 255 (255.4-1ubuntu8.18)
+/usr/bin/bwrap --version
+bubblewrap 0.9.0
+uname -a
+Linux gx10-e526 7.0.0-1019-nvidia #19~24.04.2-Ubuntu SMP PREEMPT_DYNAMIC Sun Sep  6 18:35:11 UTC 2 aarch64 aarch64 aarch64 GNU/Linux
