@@ -1,0 +1,7 @@
+Observed test-first failure before the HTTP error-action implementation. This is a concise transcription of the command result, not a full stdout capture.
+
+Command:
+cargo test --locked --offline --test webhook_reconcile_pipeline rejected_issue_action_can_retry_same_delivery_then_reconciles_current_api_state -- --exact
+
+Exit: 101
+Failure: `error.action` did not contain `redeliver with the same delivery ID` for the signed missing-action refusal. The payload was already rejected and not journaled; the missing behavior was the sender-facing recovery instruction.

@@ -1,0 +1,8 @@
+cd /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace
+python3 scripts/run_forgejo_mission_delivery_process_e2e.py --only actual_mission_cli_rejects_stale_context_then_resumes_same_allocation_after_base_advance
+cargo test --locked --offline --all-targets
+cargo fmt --all -- --check
+rustfmt --edition 2024 --check src/mission_admission.rs tests/forgejo_mission_delivery_process_e2e.rs
+python3 -c 'from pathlib import Path; compile(Path("scripts/run_forgejo_mission_delivery_process_e2e.py").read_text(), "scripts/run_forgejo_mission_delivery_process_e2e.py", "exec")'
+python3 scripts/verify_cargo_license_state.py
+git diff --check

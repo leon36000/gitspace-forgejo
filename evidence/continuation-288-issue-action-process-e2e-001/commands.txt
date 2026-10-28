@@ -1,0 +1,12 @@
+# Worktree: .runtime/webhook-005-workspace; base commit identified by git rev-parse HEAD
+rustfmt --edition 2024 --check tests/forgejo_merge_post_crash_recovery_process_e2e.rs
+rustfmt --edition 2024 tests/forgejo_merge_post_crash_recovery_process_e2e.rs
+rustfmt --edition 2024 --check tests/forgejo_merge_post_crash_recovery_process_e2e.rs
+python3 -m py_compile scripts/run_forgejo_mission_delivery_process_e2e.py
+python3 scripts/run_forgejo_mission_delivery_process_e2e.py --only signed_webhook_reconciliation_preserves_the_merge_cli_readback_sha  # first run exposed stale fixture; see diagnostic logs
+python3 scripts/run_forgejo_mission_delivery_process_e2e.py --only signed_webhook_reconciliation_preserves_the_merge_cli_readback_sha  # diagnosed supervisor_capability_missing before any API request
+python3 scripts/run_forgejo_mission_delivery_process_e2e.py --only signed_webhook_reconciliation_preserves_the_merge_cli_readback_sha  # pass after synthetic capability is issued by the test harness
+python3 scripts/run_forgejo_mission_delivery_process_e2e.py --only corrected_issue_action_retries_same_delivery_then_reconciles_through_real_processes --only signed_webhook_reconciliation_preserves_the_merge_cli_readback_sha  # final exact pair, both pass
+cargo test --locked --offline --all-targets
+git diff --check
+cargo fmt --all -- --check

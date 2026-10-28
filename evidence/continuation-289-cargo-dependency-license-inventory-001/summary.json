@@ -1,0 +1,40 @@
+{
+  "captured_at_utc": "2026-10-27T21:54:22.813889+00:00",
+  "cargo_lock_sha256": "459fef3749a42c989521901dcde61cb26e12ed4206c5d722e149426c2d3a5439",
+  "cargo_toml_sha256": "a2c1182d6e5cc272c50fb0ad5f16d210befcd452527d29e4dde6cd6b05206d09",
+  "cargo_version": "cargo 1.95.0 (f2d3ce0bd 2026-03-21)",
+  "command": [
+    "cargo",
+    "metadata",
+    "--locked",
+    "--offline",
+    "--format-version",
+    "1"
+  ],
+  "interpretation": "Cargo package metadata as exposed by the locked offline resolution; raw license strings are preserved verbatim and were not SPDX-validated. This is not a legal opinion, full license-text audit, compatibility determination, or redistribution authorization.",
+  "package_count_in_metadata": 40,
+  "packages_without_license_or_license_file_declaration": [
+    {
+      "name": "agent-forge-core",
+      "source": "path",
+      "version": "0.1.0"
+    }
+  ],
+  "raw_declared_license_expression_counts": {
+    "(MIT OR Apache-2.0) AND Unicode-3.0": 1,
+    "Apache-2.0 OR MIT": 3,
+    "BSD-3-Clause": 3,
+    "MIT": 2,
+    "MIT OR Apache-2.0": 26,
+    "MIT OR Apache-2.0 OR BSD-1-Clause": 1,
+    "MIT/Apache-2.0": 2,
+    "UNDECLARED": 1,
+    "Unlicense OR MIT": 1
+  },
+  "rustc_version": "rustc 1.95.0 (59807616e 2026-04-14)",
+  "source_kind_counts": {
+    "path": 1,
+    "registry": 39
+  },
+  "workspace_member_count": 1
+}

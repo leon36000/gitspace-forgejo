@@ -1,0 +1,17 @@
+# TDD red before changing the HTTP error action:
+cargo test --locked --offline --test webhook_reconcile_pipeline rejected_issue_action_can_retry_same_delivery_then_reconciles_current_api_state -- --exact
+
+# Fresh verification after the error action was made actionable:
+cargo test --locked --offline --test webhook_reconcile_pipeline rejected_issue_action_can_retry_same_delivery_then_reconciles_current_api_state -- --exact
+cargo test --locked --offline --test webhook_reconcile_pipeline
+cargo test --locked --offline --all-targets
+cargo fmt --all -- --check
+git diff --check
+
+# Cargo metadata remains explicitly unlicensed and non-publishable:
+cargo metadata --offline --locked --no-deps --format-version=1
+python3 scripts/verify_cargo_license_state.py
+python3 -m unittest discover -s scripts -p 'test_cargo_license_state.py'
+
+# Append-only evidence and source hashes:
+python3 evidence/continuation-287-issue-action-correction-reconcile-001/append_manifests.py

@@ -1,0 +1,8 @@
+# All commands executed from the product worktree root, offline where applicable.
+python3 evidence/continuation-289-cargo-dependency-license-inventory-001/generate_inventory.py
+python3 evidence/continuation-289-cargo-dependency-license-inventory-001/verify_registry_sources.py
+cargo metadata --locked --offline --format-version 1  # invoked by generate_inventory.py and verify_registry_sources.py
+cargo --version
+rustc --version
+python3 --version
+sha256sum Cargo.toml Cargo.lock

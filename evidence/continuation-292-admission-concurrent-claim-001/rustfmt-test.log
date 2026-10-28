@@ -1,0 +1,82 @@
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/forgejo_mission_delivery_process_e2e.rs:1305:
+     let initial_fixture_paths = fixture.paths();
+ 
+     assert_eq!(unlock_status, 0, "release mission journal lock");
+-    assert_eq!(source_reads, 2, "both CLIs must reach context before unlock: {initial_fixture_paths:?}");
++    assert_eq!(
++        source_reads, 2,
++        "both CLIs must reach context before unlock: {initial_fixture_paths:?}"
++    );
+     assert!(receiver_status.success() || receiver_status.signal() == Some(libc::SIGTERM));
+     let (first_status, first_response) = first_result.expect("first admission process completes");
+-    let (second_status, second_response) = second_result.expect("second admission process completes");
++    let (second_status, second_response) =
++        second_result.expect("second admission process completes");
+     let attempts = [
+         ("mission-concurrent-41-a", first_status, &first_response),
+         ("mission-concurrent-41-b", second_status, &second_response),
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/forgejo_mission_delivery_process_e2e.rs:1317:
+     let mut retry_delivery_ids = Vec::new();
+     for (delivery_id, status, response) in attempts {
+         if response["error"]["code"] == "execution_mission_busy" {
+-            assert_eq!(status, Some(1), "busy admission refuses with code 1: {response}");
++            assert_eq!(
++                status,
++                Some(1),
++                "busy admission refuses with code 1: {response}"
++            );
+             assert_eq!(response["error"]["retryable"], true);
+             assert_eq!(
+                 response["error"]["action"],
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/forgejo_mission_delivery_process_e2e.rs:1325:
+             );
+             retry_delivery_ids.push(delivery_id);
+         } else {
+-            assert_eq!(status, Some(0), "non-contention admission succeeds: {response}");
++            assert_eq!(
++                status,
++                Some(0),
++                "non-contention admission succeeds: {response}"
++            );
+             responses.push(response.clone());
+         }
+     }
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/forgejo_mission_delivery_process_e2e.rs:1332:
+     for delivery_id in retry_delivery_ids.iter().copied() {
+         let (retry_status, retry_response) =
+             mission_cli(delivery_id, &requirement_sha256, &host_admission_file);
+-        assert_eq!(retry_status, Some(0), "retry after lock release: {retry_response}");
++        assert_eq!(
++            retry_status,
++            Some(0),
++            "retry after lock release: {retry_response}"
++        );
+         assert!(matches!(
+             retry_response["verdict"].as_str(),
+             Some("claimed" | "already_claimed")
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/forgejo_mission_delivery_process_e2e.rs:1349:
+         2 + retry_delivery_ids.len(),
+         "each original process and any directed retry must read the current source: {fixture_paths:?}"
+     );
+-    assert_eq!(responses.len(), 2, "each delivery has one final admission result");
+     assert_eq!(
++        responses.len(),
++        2,
++        "each delivery has one final admission result"
++    );
++    assert_eq!(
+         responses
+             .iter()
+             .filter(|response| response["verdict"] == "claimed")
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/forgejo_mission_delivery_process_e2e.rs:1395:
+     assert_eq!(mission_events[0].kind, "mission_generation_allocated_v1");
+     assert_eq!(mission_events[1].kind, "mission_execution_claim_v1");
+     assert_eq!(EventJournal::open(&inbox).replay().unwrap().len(), 2);
+-    println!("process-e2e: two signed deliveries and concurrent real admission CLIs read the same context; retryable contention refusals={}; one stable generation and one claim remain with matching handoff", retry_delivery_ids.len());
++    println!(
++        "process-e2e: two signed deliveries and concurrent real admission CLIs read the same context; retryable contention refusals={}; one stable generation and one claim remain with matching handoff",
++        retry_delivery_ids.len()
++    );
+ }
+ 
+ #[test]

@@ -1,0 +1,139 @@
+evidence.git_head=f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+evidence.source_tree_sha256=aac0620f5062a6ee41f96ee116e8c6be7ef51934e7aa86f0b141c61083b9899c
+evidence.cargo_lock_sha256=459fef3749a42c989521901dcde61cb26e12ed4206c5d722e149426c2d3a5439
+evidence.runner_sha256=6e690975438a79892d573aa58688271a47cd6e7967d6bea24599c3126f948ecc
+evidence.registry_stage_sha256=1f73c6a919948c0af44acac0604f8bf4f6ff4888379605e02d3976f1baea6451
+evidence.rustc=rustc 1.95.0 (59807616e 2026-04-14)
+evidence.cargo=cargo 1.95.0 (f2d3ce0bd 2026-03-21)
+evidence.bwrap=bubblewrap 0.9.0
+evidence.platform=Linux-7.0.0-1019-nvidia-aarch64-with-glibc2.39
+$ /usr/bin/bwrap --die-with-parent --unshare-net --unshare-pid --new-session --ro-bind /usr /usr --dir /etc --ro-bind /etc/alternatives /etc/alternatives --symlink usr/lib /lib --symlink usr/bin /bin --size 67108864 --tmpfs /home --dir /workspace --ro-bind /tmp/forgejo-mission-delivery-e2e-uxw6suii/source /workspace --dir /toolchain --ro-bind /home/pc6/.rustup/toolchains/1.95.0-aarch64-unknown-linux-gnu /toolchain --dev /dev --proc /proc --size 134217728 --tmpfs /tmp --dir /tmp/cargo-home --size 1073741824 --tmpfs /build --dir /build/target --size 67108864 --tmpfs /workspace/.runtime --chmod 0700 /workspace/.runtime --clearenv --setenv PATH /toolchain/bin:/usr/bin:/bin --setenv HOME /tmp --setenv TMPDIR /tmp --setenv CARGO_HOME /tmp/cargo-home --setenv CARGO_TARGET_DIR /build/target --setenv CARGO_NET_OFFLINE true --setenv CARGO_BUILD_JOBS 2 --setenv RUSTC /toolchain/bin/rustc --setenv RUST_TEST_THREADS 1 --setenv MISSION_E2E_RUST_SYSROOT /toolchain --setenv MISSION_E2E_RUST_BIN_DIR /toolchain/bin --setenv MISSION_E2E_MASKED_HOME /home/pc6 --chdir /workspace --dir /bootstrap --ro-bind /tmp/forgejo-mission-delivery-e2e-uxw6suii/cargo-registry /bootstrap/registry --size 134217728 --tmpfs /artifacts /usr/bin/prlimit --cpu=240 --as=4294967296 --nproc=384 --nofile=128 --fsize=67108864 -- /usr/bin/python3 -c 'import glob, json, os, shutil, subprocess, sys
+tests = json.loads(sys.argv[1])
+bins = json.loads(sys.argv[2])
+artifacts = json.loads(sys.argv[3])
+os.makedirs("/tmp/cargo-home/registry", exist_ok=True)
+shutil.copytree("/bootstrap/registry/index", "/tmp/cargo-home/registry/index")
+shutil.copytree("/bootstrap/registry/cache", "/tmp/cargo-home/registry/cache")
+def run_cargo(name):
+    process = subprocess.Popen([
+        "/toolchain/bin/cargo", "test", "--offline", "--locked",
+        "--test", name, "--no-run"
+    ], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    output = bytearray()
+    while chunk := process.stdout.read(65536):
+        output.extend(chunk)
+        if len(output) > 65536:
+            del output[:-65536]
+    status = process.wait()
+    if output:
+        sys.stderr.buffer.write(output)
+        sys.stderr.buffer.flush()
+    if status:
+        raise SystemExit(status)
+for name in tests:
+    run_cargo(name)
+exports = []
+total = 0
+for name in tests:
+    paths = [
+        path for path in glob.glob(f"/build/target/debug/deps/{name}-*")
+        if os.path.isfile(path) and os.access(path, os.X_OK)
+    ]
+    if len(paths) != 1:
+        raise SystemExit(f"expected one test executable for {name}, got {paths!r}")
+    size = os.path.getsize(paths[0])
+    if size > 67108864:
+        raise SystemExit(f"test executable exceeds per-file artifact limit: {name}")
+    exports.append((name, paths[0], size))
+    total += size
+for name in bins:
+    path = f"/build/target/debug/{name}"
+    if not os.path.isfile(path) or not os.access(path, os.X_OK):
+        raise SystemExit(f"Cargo binary target missing or not executable: {name}")
+    size = os.path.getsize(path)
+    if size > 67108864:
+        raise SystemExit(f"binary target exceeds per-file artifact limit: {name}")
+    exports.append((name, path, size))
+    total += size
+if total > 134217728:
+    raise SystemExit("total exported test and binary artifacts exceed 128 MiB")
+for name, path, _size in exports:
+    shutil.copyfile(path, f"/artifacts/{name}")
+for name in artifacts:
+    path = f"/artifacts/{name}"
+    size = os.path.getsize(path)
+    sys.stdout.buffer.write(f"ARTIFACT {name} {size}\n".encode())
+    with open(path, "rb") as source:
+        shutil.copyfileobj(source, sys.stdout.buffer)
+    sys.stdout.buffer.flush()
+' '["forgejo_mission_delivery_process_e2e"]' '["forgejo-mission-local", "forgejo-webhook-local", "mission-012-mcp-host", "mission-012-verify-local"]' '["forgejo_mission_delivery_process_e2e", "forgejo-mission-local", "forgejo-webhook-local", "mission-012-mcp-host", "mission-012-verify-local"]'
+   Compiling typenum v1.20.0
+   Compiling version_check v0.9.5
+   Compiling generic-array v0.14.7
+   Compiling libc v0.2.190
+   Compiling hybrid-array v0.4.15
+   Compiling proc-macro2 v1.0.107
+   Compiling semver v1.0.28
+   Compiling quote v1.0.47
+   Compiling subtle v2.6.1
+   Compiling unicode-ident v1.0.26
+   Compiling rustc_version v0.4.1
+   Compiling crypto-common v0.2.2
+   Compiling block-buffer v0.12.1
+   Compiling cfg-if v1.0.5
+   Compiling serde_core v1.0.228
+   Compiling digest v0.11.3
+   Compiling curve25519-dalek v5.0.0
+   Compiling crypto-common v0.1.7
+   Compiling block-buffer v0.10.4
+   Compiling zmij v1.0.23
+   Compiling digest v0.10.7
+   Compiling syn v2.0.117
+   Compiling cpufeatures v0.3.1
+   Compiling serde v1.0.228
+   Compiling zeroize v1.9.1
+   Compiling serde_json v1.0.150
+   Compiling signature v3.0.0
+   Compiling ed25519 v3.0.0
+   Compiling serde_derive v1.0.228
+   Compiling sha2 v0.11.0
+   Compiling cpufeatures v0.2.17
+   Compiling itoa v1.0.18
+   Compiling memchr v2.8.3
+   Compiling sha2 v0.10.9
+   Compiling ed25519-dalek v3.0.0
+   Compiling hmac v0.12.1
+   Compiling hex v0.4.3
+   Compiling agent-forge-core v0.1.0 (/workspace)
+error[E0382]: borrow of moved value: `first_response`
+    --> tests/forgejo_mission_delivery_process_e2e.rs:1390:9
+     |
+1311 |     let (first_status, first_response) = first_result.expect("first admission process completes");
+     |                        -------------- move occurs because `first_response` has type `Value`, which does not implement the `Copy` trait
+...
+1314 |         ("mission-concurrent-41-a", first_status, first_response),
+     |                                                   -------------- value moved here
+...
+1390 |         first_response["host_admission"]
+     |         ^^^^^^^^^^^^^^ value borrowed here after move
+     |
+help: consider cloning the value if the performance cost is acceptable
+     |
+1314 |         ("mission-concurrent-41-a", first_status, first_response.clone()),
+     |                                                                 ++++++++
+
+For more information about this error, try `rustc --explain E0382`.
+error: could not compile `agent-forge-core` (test "forgejo_mission_delivery_process_e2e") due to 1 previous error
+warning: build failed, waiting for other jobs to finish...
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/scripts/run_forgejo_mission_delivery_process_e2e.py", line 904, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/scripts/run_forgejo_mission_delivery_process_e2e.py", line 875, in main
+    binaries = compile_targets(
+               ^^^^^^^^^^^^^^^^
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/scripts/run_forgejo_mission_delivery_process_e2e.py", line 659, in compile_targets
+    run_artifact_build(command, cwd=REPO, artifacts=artifacts)
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/scripts/run_forgejo_mission_delivery_process_e2e.py", line 716, in run_artifact_build
+    raise subprocess.CalledProcessError(status, command)
+subprocess.CalledProcessError: Command '['/usr/bin/bwrap', '--die-with-parent', '--unshare-net', '--unshare-pid', '--new-session', '--ro-bind', '/usr', '/usr', '--dir', '/etc', '--ro-bind', '/etc/alternatives', '/etc/alternatives', '--symlink', 'usr/lib', '/lib', '--symlink', 'usr/bin', '/bin', '--size', '67108864', '--tmpfs', '/home', '--dir', '/workspace', '--ro-bind', '/tmp/forgejo-mission-delivery-e2e-uxw6suii/source', '/workspace', '--dir', '/toolchain', '--ro-bind', '/home/pc6/.rustup/toolchains/1.95.0-aarch64-unknown-linux-gnu', '/toolchain', '--dev', '/dev', '--proc', '/proc', '--size', '134217728', '--tmpfs', '/tmp', '--dir', '/tmp/cargo-home', '--size', '1073741824', '--tmpfs', '/build', '--dir', '/build/target', '--size', '67108864', '--tmpfs', '/workspace/.runtime', '--chmod', '0700', '/workspace/.runtime', '--clearenv', '--setenv', 'PATH', '/toolchain/bin:/usr/bin:/bin', '--setenv', 'HOME', '/tmp', '--setenv', 'TMPDIR', '/tmp', '--setenv', 'CARGO_HOME', '/tmp/cargo-home', '--setenv', 'CARGO_TARGET_DIR', '/build/target', '--setenv', 'CARGO_NET_OFFLINE', 'true', '--setenv', 'CARGO_BUILD_JOBS', '2', '--setenv', 'RUSTC', '/toolchain/bin/rustc', '--setenv', 'RUST_TEST_THREADS', '1', '--setenv', 'MISSION_E2E_RUST_SYSROOT', '/toolchain', '--setenv', 'MISSION_E2E_RUST_BIN_DIR', '/toolchain/bin', '--setenv', 'MISSION_E2E_MASKED_HOME', '/home/pc6', '--chdir', '/workspace', '--dir', '/bootstrap', '--ro-bind', '/tmp/forgejo-mission-delivery-e2e-uxw6suii/cargo-registry', '/bootstrap/registry', '--size', '134217728', '--tmpfs', '/artifacts', '/usr/bin/prlimit', '--cpu=240', '--as=4294967296', '--nproc=384', '--nofile=128', '--fsize=67108864', '--', '/usr/bin/python3', '-c', 'import glob, json, os, shutil, subprocess, sys\ntests = json.loads(sys.argv[1])\nbins = json.loads(sys.argv[2])\nartifacts = json.loads(sys.argv[3])\nos.makedirs("/tmp/cargo-home/registry", exist_ok=True)\nshutil.copytree("/bootstrap/registry/index", "/tmp/cargo-home/registry/index")\nshutil.copytree("/bootstrap/registry/cache", "/tmp/cargo-home/registry/cache")\ndef run_cargo(name):\n    process = subprocess.Popen([\n        "/toolchain/bin/cargo", "test", "--offline", "--locked",\n        "--test", name, "--no-run"\n    ], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)\n    output = bytearray()\n    while chunk := process.stdout.read(65536):\n        output.extend(chunk)\n        if len(output) > 65536:\n            del output[:-65536]\n    status = process.wait()\n    if output:\n        sys.stderr.buffer.write(output)\n        sys.stderr.buffer.flush()\n    if status:\n        raise SystemExit(status)\nfor name in tests:\n    run_cargo(name)\nexports = []\ntotal = 0\nfor name in tests:\n    paths = [\n        path for path in glob.glob(f"/build/target/debug/deps/{name}-*")\n        if os.path.isfile(path) and os.access(path, os.X_OK)\n    ]\n    if len(paths) != 1:\n        raise SystemExit(f"expected one test executable for {name}, got {paths!r}")\n    size = os.path.getsize(paths[0])\n    if size > 67108864:\n        raise SystemExit(f"test executable exceeds per-file artifact limit: {name}")\n    exports.append((name, paths[0], size))\n    total += size\nfor name in bins:\n    path = f"/build/target/debug/{name}"\n    if not os.path.isfile(path) or not os.access(path, os.X_OK):\n        raise SystemExit(f"Cargo binary target missing or not executable: {name}")\n    size = os.path.getsize(path)\n    if size > 67108864:\n        raise SystemExit(f"binary target exceeds per-file artifact limit: {name}")\n    exports.append((name, path, size))\n    total += size\nif total > 134217728:\n    raise SystemExit("total exported test and binary artifacts exceed 128 MiB")\nfor name, path, _size in exports:\n    shutil.copyfile(path, f"/artifacts/{name}")\nfor name in artifacts:\n    path = f"/artifacts/{name}"\n    size = os.path.getsize(path)\n    sys.stdout.buffer.write(f"ARTIFACT {name} {size}\\n".encode())\n    with open(path, "rb") as source:\n        shutil.copyfileobj(source, sys.stdout.buffer)\n    sys.stdout.buffer.flush()\n', '["forgejo_mission_delivery_process_e2e"]', '["forgejo-mission-local", "forgejo-webhook-local", "mission-012-mcp-host", "mission-012-verify-local"]', '["forgejo_mission_delivery_process_e2e", "forgejo-mission-local", "forgejo-webhook-local", "mission-012-mcp-host", "mission-012-verify-local"]']' returned non-zero exit status 101.
