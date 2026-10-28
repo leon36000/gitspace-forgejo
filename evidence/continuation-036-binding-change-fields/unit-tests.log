@@ -1,0 +1,13 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.30s
+     Running unittests src/bin/forgejo-reconcile-local.rs (target/debug/deps/forgejo_reconcile_local-3e9fc5f7734f2ac5)
+
+running 5 tests
+test tests::pull_request_status_snapshot_binds_statuses_to_a_rechecked_head ... ok
+test tests::pull_request_status_snapshot_explains_absent_status_evidence ... ok
+test tests::pull_request_status_snapshot_explains_incomplete_status_pages ... ok
+test tests::pull_request_status_snapshot_refuses_to_claim_a_head_that_changed_mid_read ... ok
+test tests::pull_request_status_snapshot_reports_base_sha_drift_with_stable_head ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 134 filtered out; finished in 0.19s
+

@@ -1,0 +1,3 @@
+PASS: current append-only hashes match 27 product paths
+PASS: current parent append-only hashes match 27 paths
+Appended changed hashes: product=24, parent=24; prior prefixes preserved.

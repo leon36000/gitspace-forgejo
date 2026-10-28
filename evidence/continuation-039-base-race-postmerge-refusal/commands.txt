@@ -1,0 +1,10 @@
+$ python3 scripts/run_forgejo_mission_delivery_process_e2e.py --only external_base_advance_during_merge_post_is_fail_closed_but_still_mutates_branch
+# Red phase: the test temporarily required the fixture not to merge; it failed because the merge endpoint applied the request on the advanced base.
+
+$ python3 scripts/run_forgejo_mission_delivery_process_e2e.py --only external_base_advance_during_merge_post_is_fail_closed_but_still_mutates_branch --only killed_cli_after_forgejo_merge_recovers_readback_only_and_serializes_duplicate_retries
+# Final characterization and related recovery regression; both pass under the isolated runner.
+
+$ rustfmt --edition 2024 --check tests/forgejo_merge_post_crash_recovery_process_e2e.rs
+$ python3 -m py_compile scripts/run_forgejo_mission_delivery_process_e2e.py
+$ git diff --check
+$ sha256sum Cargo.toml Cargo.lock src/bin/forgejo-reconcile-local.rs tests/forgejo_merge_post_crash_recovery_process_e2e.rs scripts/run_forgejo_mission_delivery_process_e2e.py docs/checkpoint.md ../../docs/checkpoint.md > evidence/continuation-039-base-race-postmerge-refusal/source-sha256.txt

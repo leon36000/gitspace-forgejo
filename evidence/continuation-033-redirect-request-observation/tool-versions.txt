@@ -1,0 +1,5 @@
+rustc 1.95.0 (59807616 2026-04-14)
+cargo 1.95.0 (f2d3ce0bd 2026-03-21)
+bubblewrap 0.9.0
+Python 3.12.3
+Linux aarch64 (from uname; see local-run invocation)

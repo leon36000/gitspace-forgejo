@@ -1,0 +1,18 @@
+# Commandes de vérification — CONTINUATION-036
+
+Toutes les commandes ont été exécutées depuis la racine du worktree. Les commandes `cargo` étaient verrouillées et hors ligne.
+
+```sh
+cargo test --locked --offline --bin forgejo-reconcile-local tests::pull_request_status_snapshot_ -- --test-threads=1
+cargo test --locked --offline --test forgejo_reconcile_capabilities_e2e --no-run
+cargo test --locked --offline --test forgejo_reconcile_capabilities_e2e actual_cli_discloses_versioned_local_test_capabilities -- --exact --test-threads=1
+bwrap --unshare-net --unshare-pid --new-session --ro-bind / / --tmpfs /tmp --dev /dev --proc /proc --chdir "$PWD" --setenv HOME /tmp --setenv TMPDIR /tmp --setenv PATH /usr/bin:/bin ./target/debug/deps/forgejo_reconcile_capabilities_e2e-79e71d1241083922 actual_cli_binds_status_snapshot_to_pr_head_and_refuses_head_drift --exact --ignored --nocapture --test-threads=1
+cargo test --locked --offline --test forgejo_reconcile_capabilities_e2e -- --test-threads=1
+cargo clippy --locked --offline --bin forgejo-reconcile-local -- -D warnings -A clippy::too_many_arguments -A clippy::collapsible_if -A clippy::explicit_auto_deref -A clippy::if_same_then_else
+cargo clippy --locked --offline --bin forgejo-reconcile-local -- -D warnings
+cargo fmt --all -- --check
+git diff --check
+python3 scripts/verify_cargo_license_state.py
+```
+
+Le test processus est `#[ignore]` dans la suite ordinaire car il réserve le port loopback fixe 3130; l’invocation Bubblewrap explicite est la preuve de son exécution dans ce lot.

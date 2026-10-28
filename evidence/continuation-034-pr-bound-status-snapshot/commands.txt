@@ -1,0 +1,16 @@
+Workspace: /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace
+HEAD before and during this tranche: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+
+cargo fmt --all                                                   PASS
+cargo fmt --all -- --check                                        PASS
+cargo test --locked --offline --bin forgejo-reconcile-local pull_request_status_snapshot_ -- --test-threads=1  PASS, 2/2
+cargo test --locked --offline --test forgejo_reconcile_capabilities_e2e actual_cli_discloses_versioned_local_test_capabilities -- --exact --test-threads=1  PASS, 1/1
+cargo test --locked --offline --test forgejo_reconcile_capabilities_e2e --no-run  PASS
+bwrap --unshare-net --unshare-pid --new-session --ro-bind / / --tmpfs /tmp --dev /dev --proc /proc --chdir /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace --setenv HOME /tmp --setenv TMPDIR /tmp --setenv PATH /usr/bin:/bin ./target/debug/deps/forgejo_reconcile_capabilities_e2e-79e71d1241083922 actual_cli_binds_status_snapshot_to_pr_head_and_refuses_head_drift --exact --ignored --nocapture --test-threads=1  PASS, 1/1
+cargo test --locked --offline --test forgejo_reconcile_capabilities_e2e -- --test-threads=1  PASS, 3 passed, 2 ignored
+cargo clippy --locked --offline --bin forgejo-reconcile-local -- -D warnings  FAIL, 12 alerts in untouched-by-this-slice modules; see clippy.log
+cargo clippy --locked --offline --bin forgejo-reconcile-local -- -D warnings -A clippy::too_many_arguments -A clippy::collapsible_if -A clippy::explicit_auto_deref -A clippy::if_same_then_else  PASS with explicit baseline allowances
+git diff --check                                                   PASS
+python3 scripts/verify_cargo_license_state.py                     PASS; no license selected
+
+The process test binds only the fixed loopback port inside an unshared network namespace. No host service, live Forgejo, production, model API, external service, or credential was used.

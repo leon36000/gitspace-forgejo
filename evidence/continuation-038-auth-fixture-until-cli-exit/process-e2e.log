@@ -1,0 +1,9 @@
+$ bwrap --die-with-parent --unshare-net --ro-bind / / --dev-bind /dev /dev --proc /proc --tmpfs /tmp --clearenv --setenv PATH /usr/bin:/bin --setenv HOME /tmp --setenv TMPDIR /tmp --setenv RUST_TEST_THREADS 1 --chdir /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/target/debug/deps/webhook_receiver_process_e2e-6caa738f5453f442 actual_reconcile_cli_process_uses_host_credential_fd_for_receiver_journal --exact --ignored --nocapture
+
+running 1 test
+test actual_reconcile_cli_process_uses_host_credential_fd_for_receiver_journal ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 84 filtered out; finished in 0.07s
+
+
+EXIT=0

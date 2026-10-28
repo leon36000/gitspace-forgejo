@@ -1,0 +1,17 @@
+cargo test --locked --offline --test webhook_receiver_process_e2e actual_reconcile_cli_process_does_not_follow_redirect_with_host_credential --no-run
+# exit 0; construit le binaire de test ciblé
+
+bwrap --die-with-parent --unshare-net --unshare-pid --new-session --ro-bind / / --tmpfs /tmp --dev /dev --proc /proc --chdir /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace --setenv HOME /tmp --setenv TMPDIR /tmp --setenv PATH /usr/bin:/bin target/debug/deps/webhook_receiver_process_e2e-6caa738f5453f442 actual_reconcile_cli_process_does_not_follow_redirect_with_host_credential --exact --ignored --nocapture --test-threads=1
+# exit 0; sortie dans focused-process.log
+
+cargo clippy --locked --offline --test webhook_receiver_process_e2e -- -D warnings -A clippy::too_many_arguments -A clippy::collapsible_if -A clippy::explicit_auto_deref -A clippy::if_same_then_else -A clippy::type_complexity
+# exit 0; sortie dans clippy.log
+
+cargo fmt --all -- --check
+# exit 0; sortie vide dans rustfmt.log
+
+git diff --check
+# exit 0; sortie vide dans diff-check.log
+
+python3 scripts/verify_cargo_license_state.py
+# exit 0; état JSON dans cargo-license-state.json

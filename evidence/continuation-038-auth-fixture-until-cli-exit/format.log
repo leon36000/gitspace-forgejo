@@ -1,0 +1,18 @@
+$ cargo fmt --all -- --check\nDiff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:3149:
+     fixture_finished
+         .send(())
+         .expect("signal that the reconciliation CLI has exited");
+-    let requests = fixture
+-        .join()
+-        .expect("authenticated API fixture completed");
++    let requests = fixture.join().expect("authenticated API fixture completed");
+ 
+-    assert!(!timed_out, "actual reconciliation CLI exceeded its deadline");
++    assert!(
++        !timed_out,
++        "actual reconciliation CLI exceeded its deadline"
++    );
+     assert_eq!(requests.len(), 1, "only one API request is allowed");
+     let (request, authorized) = &requests[0];
+     assert!(*authorized, "fixture rejected host Authorization header");
+\nEXIT=1\n
