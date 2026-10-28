@@ -1,0 +1,17 @@
+{
+  "api_version": "forgejo-rest-v1",
+  "external_writer_exclusion": "not_provided_by_cooperative_lock",
+  "http_status": 200,
+  "issue_state": "closed",
+  "main_head_sha": "5ac6d2eb34a3380151ad6dd5bbeaa847e57a0aed",
+  "merge_attempted": true,
+  "merge_authorized": true,
+  "merge_commit_sha": "5ac6d2eb34a3380151ad6dd5bbeaa847e57a0aed",
+  "operation": "local_test_merge_authority",
+  "postmerge_base_sha": "5ac6d2eb34a3380151ad6dd5bbeaa847e57a0aed",
+  "pull_request_number": 2,
+  "schema_version": 1,
+  "submitted_head_sha": "085268060ab866e8847b36212dd7550bfdb6cb64",
+  "validated_base_sha": "f8ff44ac107bafc166098fa8e1ce3089db2a46fc",
+  "verdict": "merged"
+}

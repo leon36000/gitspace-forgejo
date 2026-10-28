@@ -1,0 +1,15 @@
+{
+  "bubblewrap_version": "bubblewrap 0.9.0",
+  "build_policy": "Bubblewrap no-network namespace, --offline --locked, isolated staged inputs",
+  "forgejo_client_sha256": "bc832423da1abc4562305a749561438585048d2fb387796f06782b8348e783a2",
+  "gate_sha256": "b1f09afa914d2dcb70c186987017f27d027a1dfc59228450a21fea4ca9a27975",
+  "process_harness_sha256": "67137cff9664745bbe8ec794b2d24d0c66debb8802409edda7178f007511df2b",
+  "runner_sha256": "0de6171e59b70b5397309da0791f61e87659f2471b9021d121b6a3707b0f4f4f",
+  "schema_version": 1,
+  "staged_registry_tree_sha256": "a5ea9d0f4ab9d3e50cc22b0b22e0c5b93274462e61193b074e0a2173e5e46e30",
+  "staged_source_tree_sha256": "7e598d9e5ca54749fa31460500966f7232b709be0c72ce59de0bea4968c70908",
+  "toolchain_versions": {
+    "cargo": "cargo 1.95.0 (f2d3ce0bd 2026-03-21)",
+    "rustc": "rustc 1.95.0 (59807616e 2026-04-14)"
+  }
+}

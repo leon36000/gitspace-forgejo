@@ -1,0 +1,32 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.56s
+     Running tests/mission_012_mcp_lifecycle.rs (target/debug/deps/mission_012_mcp_lifecycle-8222febbc3dbb2d9)
+
+running 24 tests
+test child_stdout_larger_than_pipe_capacity_is_drained_and_captured ... ok
+test mcp_host_refuses_a_handoff_with_a_base_commit_not_matching_its_request ... ok
+test mcp_host_refuses_a_version_1_config_without_a_trusted_repository ... ok
+test mcp_host_refuses_an_existing_or_symlinked_receipt_file_before_leasing ... ok
+test mcp_host_refuses_capabilities_outside_the_pinned_profile ... ok
+test admission_handoff_is_versioned_and_host_config_has_no_copied_claim_fields ... ok
+test mcp_host_refuses_an_admitted_commit_missing_from_the_trusted_repository ... ok
+test mcp_host_refuses_a_stale_admitted_commit_after_the_protected_branch_advances ... ok
+test mcp_host_refuses_unknown_fields_inside_the_claimed_request ... ok
+test mcp_host_refuses_a_trusted_repository_inside_the_workspace ... ok
+test child_that_does_not_read_stdin_is_killed_at_the_input_deadline ... ok
+test mcp_host_refuses_unknown_fields_nested_deep_inside_the_claimed_request ... ok
+test mcp_host_refuses_journal_or_receipt_paths_inside_the_workspace ... ok
+test mcp_host_refuses_base_and_candidate_left_at_an_older_tree ... ok
+test mcp_host_refuses_a_base_dir_that_is_not_the_admitted_git_tree ... ok
+test mcp_host_refuses_a_request_that_does_not_match_the_durable_claim ... ok
+test mcp_host_refuses_an_admitted_request_without_its_durable_claim ... ok
+test mcp_host_refuses_a_claim_after_a_new_generation_supersedes_it ... ok
+test mcp_host_exits_and_records_an_abort_when_stdin_cannot_be_read ... ok
+test mcp_host_exits_and_records_an_abort_on_an_oversized_frame ... ok
+test mcp_host_persists_a_tool_budget_refusal_and_stops ... ok
+test mcp_host_refuses_an_unready_candidate_without_burning_the_lease ... ok
+test complete_stdio_mcp_lifecycle_runs_red_write_green_shutdown_refusal_and_exit ... ok
+test mcp_host_refuses_tool_calls_after_the_claimed_lease_expires ... ok
+
+test result: ok. 24 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.42s
+

@@ -1,0 +1,9 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+error[E0425]: cannot find function `finalize_merge_post_readback` in this scope
+    --> src/bin/forgejo-reconcile-local.rs:3669:13
+     |
+3669 |             finalize_merge_post_readback(23, validated_base_sha, head_sha, outcome);
+     |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ not found in this scope
+
+For more information about this error, try `rustc --explain E0425`.
+error: could not compile `agent-forge-core` (bin "forgejo-reconcile-local" test) due to 1 previous error

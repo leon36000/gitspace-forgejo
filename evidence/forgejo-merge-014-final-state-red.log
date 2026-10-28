@@ -1,0 +1,16 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+error[E0425]: cannot find function `validate_final_merge_state` in this scope
+    --> src/bin/forgejo-reconcile-local.rs:3605:13
+     |
+3605 |             validate_final_merge_state(&api, &expected),
+     |             ^^^^^^^^^^^^^^^^^^^^^^^^^^ not found in this scope
+
+error[E0433]: cannot find type `FinalMergeStateError` in this scope
+    --> src/bin/forgejo-reconcile-local.rs:3606:17
+     |
+3606 |             Err(FinalMergeStateError::StaleBase)
+     |                 ^^^^^^^^^^^^^^^^^^^^ use of undeclared type `FinalMergeStateError`
+
+Some errors have detailed explanations: E0425, E0433.
+For more information about an error, try `rustc --explain E0425`.
+error: could not compile `agent-forge-core` (bin "forgejo-reconcile-local" test) due to 2 previous errors

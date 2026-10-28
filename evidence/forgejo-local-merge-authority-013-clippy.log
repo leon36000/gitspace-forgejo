@@ -1,0 +1,157 @@
+    Checking agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+warning: this function has too many arguments (10/7)
+   --> src/agent_runtime.rs:210:5
+    |
+210 | /     pub fn acquire_lease(
+211 | |         &self,
+212 | |         scope: &BaseBranchScope,
+213 | |         issue_number: u64,
+...   |
+220 | |         request: &AgentExecutionRequestV1,
+221 | |     ) -> Result<MissionExecutionLeaseV1, AgentRuntimeErrorV1> {
+    | |_____________________________________________________________^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#too_many_arguments
+    = note: `#[warn(clippy::too_many_arguments)]` on by default
+
+warning: this function has too many arguments (9/7)
+   --> src/forgejo.rs:825:1
+    |
+825 | / pub fn evaluate_merge_readiness(
+826 | |     branch_scope: &BaseBranchScope,
+827 | |     current: &PullRequestSnapshotV1,
+828 | |     reviews: &PullRequestReviewsSnapshotV1,
+...   |
+834 | |     current_policy_bytes: &[u8],
+835 | | ) -> Result<MergeReadinessDecisionV1, MergeReadinessError> {
+    | |__________________________________________________________^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#too_many_arguments
+
+warning: this function has too many arguments (10/7)
+   --> src/mission_admission.rs:255:1
+    |
+255 | / pub fn admit_reconciled_issue_v2(
+256 | |     event: &JournaledWebhookEventV1,
+257 | |     reconciliation_source: &impl ForgejoCurrentState,
+258 | |     scope: &BaseBranchScope,
+...   |
+265 | |     journal: &MissionExecutionJournalV1,
+266 | | ) -> Result<WebhookMissionAdmissionReceiptV1, WebhookMissionAdmissionErrorV1> {
+    | |_____________________________________________________________________________^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#too_many_arguments
+
+warning: this function has too many arguments (8/7)
+   --> src/mission_admission.rs:353:1
+    |
+353 | / fn admit_and_claim_mission_v2_with_expected_hash(
+354 | |     scope: &BaseBranchScope,
+355 | |     binding: &MissionAdmissionBindingV2,
+356 | |     source: &dyn MissionAdmissionSourceV1,
+...   |
+361 | |     expected_requirement_sha256: Option<&str>,
+362 | | ) -> Result<MissionAdmissionReceiptV2, AgentRuntimeErrorV1> {
+    | |___________________________________________________________^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#too_many_arguments
+
+warning: this function has too many arguments (10/7)
+   --> src/mission_admission.rs:432:1
+    |
+432 | / fn prepare_admission(
+433 | |     scope: &BaseBranchScope,
+434 | |     issue_number: u64,
+435 | |     requirement_id: &str,
+...   |
+442 | |     allocate_generation: impl FnOnce(&str) -> Result<GenerationChoice, AgentRuntimeErrorV1>,
+443 | | ) -> Result<PreparedAdmission, AgentRuntimeErrorV1> {
+    | |___________________________________________________^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#too_many_arguments
+
+warning: this function has too many arguments (8/7)
+   --> src/lib.rs:975:5
+    |
+975 | /     fn append_locked(
+976 | |         &self,
+977 | |         events: &[JournalEvent],
+978 | |         idempotency_key: &str,
+...   |
+983 | |         maximum_bytes: Option<u64>,
+984 | |     ) -> Result<AppendResult, JournalError> {
+    | |___________________________________________^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#too_many_arguments
+
+warning: used `assert_eq!` with a literal bool
+    --> src/lib.rs:1460:9
+     |
+1460 | /         assert_eq!(
+1461 | |             events
+1462 | |                 .iter()
+1463 | |                 .map(|e| &e.previous_hash)
+...    |
+1467 | |             true
+1468 | |         );
+     | |_________^
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#bool_assert_comparison
+     = note: `#[warn(clippy::bool_assert_comparison)]` on by default
+help: replace it with `assert!(..)`
+     |
+1460 ~         assert!(
+1461 |             events
+ ...
+1465 |                 .zip(events.iter().map(|e| &e.hash))
+1466 ~                 .all(|(a, b)| a == b)
+     |
+
+warning: `agent-forge-core` (lib test) generated 7 warnings (run `cargo clippy --fix --lib -p agent-forge-core --tests -- ` to apply 1 suggestion)
+warning: `agent-forge-core` (lib) generated 6 warnings (6 duplicates)
+warning: this function has too many arguments (9/7)
+    --> src/bin/../mission_012_host.rs:1709:1
+     |
+1709 | / pub fn verify_pair(
+1710 | |     base_dir: &Path,
+1711 | |     candidate_dir: &Path,
+1712 | |     target_root: &Path,
+...    |
+1718 | |     policy_sha256: &str,
+1719 | | ) -> Result<Value, AgentRuntimeErrorV1> {
+     | |_______________________________________^
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#too_many_arguments
+     = note: `#[warn(clippy::too_many_arguments)]` on by default
+
+warning: manually reimplementing `div_ceil`
+   --> src/bin/forgejo-mission-local.rs:979:28
+    |
+979 |     let estimated_tokens = ((text.len() + 3) / 4) as u64;
+    |                            ^^^^^^^^^^^^^^^^^^^^^^ help: consider using `.div_ceil()`: `text.len().div_ceil(4)`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#manual_div_ceil
+    = note: `#[warn(clippy::manual_div_ceil)]` on by default
+
+warning: this function has too many arguments (8/7)
+    --> src/bin/forgejo-mission-local.rs:1743:1
+     |
+1743 | / fn admit_delivery(
+1744 | |     inbox: &EventJournal,
+1745 | |     delivery: &DeliverySelection,
+1746 | |     profile_id: &str,
+...    |
+1751 | |     open_journal: impl FnOnce() -> Result<MissionExecutionJournalV1, AgentRuntimeErrorV1>,
+1752 | | ) -> Result<Value, AgentRuntimeErrorV1> {
+     | |_______________________________________^
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#too_many_arguments
+     = note: `#[warn(clippy::too_many_arguments)]` on by default
+
+warning: `agent-forge-core` (bin "mission-012-mcp-host") generated 1 warning
+warning: `agent-forge-core` (bin "forgejo-mission-local") generated 2 warnings (run `cargo clippy --fix --bin "forgejo-mission-local" -p agent-forge-core -- ` to apply 1 suggestion)
+warning: `agent-forge-core` (bin "mission-012-mcp-host" test) generated 1 warning (1 duplicate)
+warning: `agent-forge-core` (bin "mission-012-verify-local") generated 1 warning (1 duplicate)
+warning: `agent-forge-core` (bin "mission-012-verify-local" test) generated 1 warning (1 duplicate)
+warning: `agent-forge-core` (bin "forgejo-mission-local" test) generated 2 warnings (2 duplicates)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 2.06s
