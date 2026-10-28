@@ -1,0 +1,6 @@
+command=cargo test --offline --locked --all-targets -- --test-threads=1
+groups=38
+passed=740
+failed=0
+ignored=169
+exit_code=0

@@ -1,0 +1,48 @@
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/mission_execution_journal_contract.rs:722:
+         );
+         thread::sleep(Duration::from_millis(10));
+     }
+-    assert_eq!(std::fs::read_to_string(&ready_path).unwrap(), "generation=1\n");
++    assert_eq!(
++        std::fs::read_to_string(&ready_path).unwrap(),
++        "generation=1\n"
++    );
+ 
+     let events_before_termination = EventJournal::open(&path).replay().unwrap();
+     assert_eq!(events_before_termination.len(), 1);
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/mission_execution_journal_contract.rs:729:
+-    assert_eq!(events_before_termination[0].kind, "mission_generation_allocated_v1");
++    assert_eq!(
++        events_before_termination[0].kind,
++        "mission_generation_allocated_v1"
++    );
+ 
+     child.0.kill().unwrap();
+     let status = child.0.wait().unwrap();
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/mission_execution_journal_contract.rs:757:
+     ));
+     let events_after_claim = reopened.replay().unwrap();
+     assert_eq!(events_after_claim.len(), 2);
+-    assert_eq!(events_after_claim[0].kind, "mission_generation_allocated_v1");
++    assert_eq!(
++        events_after_claim[0].kind,
++        "mission_generation_allocated_v1"
++    );
+     assert_eq!(events_after_claim[1].kind, "mission_execution_claim_v1");
+ 
+     assert!(matches!(
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/mission_execution_journal_contract.rs:770:
+         ),
+         Ok(ExecutionClaimResultV1::AlreadyClaimed(_))
+     ));
+-    assert_eq!(MissionExecutionJournalV1::open(&path).replay().unwrap().len(), 2);
++    assert_eq!(
++        MissionExecutionJournalV1::open(&path)
++            .replay()
++            .unwrap()
++            .len(),
++        2
++    );
+ }
+ 
+ #[test]

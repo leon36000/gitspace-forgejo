@@ -1,0 +1,9 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.45s
+     Running tests/mission_admission_contract.rs (target/debug/deps/mission_admission_contract-5c6b290004bd3cb2)
+
+running 1 test
+test failed_context_validation_leaves_no_reservation_and_can_retry_fresh ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 18 filtered out; finished in 0.00s
+
