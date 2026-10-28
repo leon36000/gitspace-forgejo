@@ -1,0 +1,14 @@
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_handler_contract.rs:48:
+ fn capabilities_publish_machine_readable_contracts_for_every_supported_event() {
+     let path = temp_journal();
+     let journal = EventJournal::open(&path);
+-    let request = parse_http_request(
+-        b"GET /forgejo/capabilities HTTP/1.1\r\nHost: 127.0.0.1\r\n\r\n",
+-    )
+-    .unwrap();
++    let request =
++        parse_http_request(b"GET /forgejo/capabilities HTTP/1.1\r\nHost: 127.0.0.1\r\n\r\n")
++            .unwrap();
+ 
+     let response = handle_webhook_request(&request, b"test-secret", &journal);
+ 

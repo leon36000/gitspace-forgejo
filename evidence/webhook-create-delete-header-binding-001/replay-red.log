@@ -1,0 +1,26 @@
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on artifact directory
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.88s
+     Running tests/webhook_reconcile_contract.rs (target/debug/deps/webhook_reconcile_contract-1e83f04d6aace668)
+
+running 1 test
+test replayed_delete_event_rejects_create_only_sha_before_api_calls ... FAILED
+
+failures:
+
+---- replayed_delete_event_rejects_create_only_sha_before_api_calls stdout ----
+
+thread 'replayed_delete_event_rejects_create_only_sha_before_api_calls' (2699543) panicked at tests/webhook_reconcile_contract.rs:359:5:
+assertion `left == right` failed
+  left: Ok(ReconciledState { delivery_id: "fixture-branch-create-1", resource: ResourceRef { kind: Branch, owner: "forge-admin", repository: "agent-forge-core", id: Branch("feature/agent-proof") }, state: "present", updated_at: "2026-10-25T19:00:00Z", html_url: "http://127.0.0.1:3130/forge-admin/agent-forge-core/src/branch/feature%2Fagent-proof", head_sha: Some("cccccccccccccccccccccccccccccccccccccccc"), base_sha: None, merged: None, merge_commit_sha: None })
+ right: Err(UnexpectedEventPayloadField("sha"))
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    replayed_delete_event_rejects_create_only_sha_before_api_calls
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 38 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `--test webhook_reconcile_contract`

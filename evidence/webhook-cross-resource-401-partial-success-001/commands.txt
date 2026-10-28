@@ -1,0 +1,15 @@
+Worktree: /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace
+Runner: scripts/run_webhook_reconcile_cli_e2e.py
+Scenario: actual_reconcile_cli_process_preserves_successful_issue_when_pull_read_latches_401
+
+Run:
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_preserves_successful_issue_when_pull_read_latches_401
+
+Other checks:
+cargo fmt --all -- --check
+python3 -m py_compile scripts/run_webhook_reconcile_cli_e2e.py
+git diff --check
+python3 scripts/verify_cargo_license_state.py
+python3 scripts/test_cargo_license_state.py
+
+The process runner copies the source into a temporary tree and compiles offline, then runs the receiver, reconciliation CLI, and HTTP fixture inside Bubblewrap with --unshare-net --unshare-pid. The API is a loopback fixture; webhook payloads, token, and 401 body marker are synthetic. No Forgejo production instance, model, private data, or external service is used.

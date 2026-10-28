@@ -1,0 +1,7 @@
+ollama: absent
+llama-server: absent
+lmstudio: absent
+opencode: absent
+aider: absent
+goose: absent
+claude: present

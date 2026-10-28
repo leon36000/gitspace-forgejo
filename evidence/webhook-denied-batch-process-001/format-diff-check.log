@@ -1,0 +1,8 @@
+$ cargo fmt --all -- --check
+exit_code=0
+
+$ python3 -m py_compile scripts/run_webhook_reconcile_cli_e2e.py
+exit_code=0
+
+$ git diff --check
+exit_code=0

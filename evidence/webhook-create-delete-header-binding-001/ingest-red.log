@@ -1,0 +1,25 @@
+    Blocking waiting for file lock on package cache
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.46s
+     Running tests/webhook_handler_contract.rs (target/debug/deps/webhook_handler_contract-627b310cb6f343c9)
+
+running 1 test
+test unsigned_delete_header_cannot_reclassify_a_signed_create_payload ... FAILED
+
+failures:
+
+---- unsigned_delete_header_cannot_reclassify_a_signed_create_payload stdout ----
+
+thread 'unsigned_delete_header_cannot_reclassify_a_signed_create_payload' (2699452) panicked at tests/webhook_handler_contract.rs:463:5:
+assertion `left == right` failed
+  left: 202
+ right: 400
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    unsigned_delete_header_cannot_reclassify_a_signed_create_payload
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 20 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `--test webhook_handler_contract`
