@@ -1,0 +1,17 @@
+.F.................
+======================================================================
+FAIL: test_admission_evidence_requires_private_complete_manifest_and_result_match (__main__.Mission012LiveCompositionTests.test_admission_evidence_requires_private_complete_manifest_and_result_match)
+----------------------------------------------------------------------
+RuntimeError: admission provenance receipt has unsafe file metadata
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/test_mission_012_live_composed_e2e.py", line 384, in test_admission_evidence_requires_private_complete_manifest_and_result_match
+    with self.assertRaisesRegex(RuntimeError, "incomplete"):
+AssertionError: "incomplete" does not match "admission provenance receipt has unsafe file metadata"
+
+----------------------------------------------------------------------
+Ran 19 tests in 1.996s
+
+FAILED (failures=1)

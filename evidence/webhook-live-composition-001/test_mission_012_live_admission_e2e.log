@@ -1,0 +1,11 @@
+test_build_snapshot_does_not_write_through_replaced_destination_directory (tests.test_mission_012_live_admission_e2e.Mission012SignedWebhookTests.test_build_snapshot_does_not_write_through_replaced_destination_directory) ... ok
+test_build_snapshot_excludes_runtime_and_only_copies_build_inputs (tests.test_mission_012_live_admission_e2e.Mission012SignedWebhookTests.test_build_snapshot_excludes_runtime_and_only_copies_build_inputs) ... ok
+test_build_snapshot_rejects_source_mutated_after_an_earlier_file_was_copied (tests.test_mission_012_live_admission_e2e.Mission012SignedWebhookTests.test_build_snapshot_rejects_source_mutated_after_an_earlier_file_was_copied) ... ok
+test_build_snapshot_rejects_symlink_and_hardlinked_inputs (tests.test_mission_012_live_admission_e2e.Mission012SignedWebhookTests.test_build_snapshot_rejects_symlink_and_hardlinked_inputs) ... ok
+test_request_binds_exact_delivery_id_and_issue_event (tests.test_mission_012_live_admission_e2e.Mission012SignedWebhookTests.test_request_binds_exact_delivery_id_and_issue_event) ... ok
+test_request_signature_covers_exact_body_bytes (tests.test_mission_012_live_admission_e2e.Mission012SignedWebhookTests.test_request_signature_covers_exact_body_bytes) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.004s
+
+OK

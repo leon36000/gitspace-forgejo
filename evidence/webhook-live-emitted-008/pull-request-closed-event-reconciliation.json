@@ -1,0 +1,21 @@
+{
+  "api_version": "forgejo-rest-v1",
+  "canonical_state": {
+    "base_sha": "8c61222bd235bfb2e8f1dcf55b876b7a975c89a6",
+    "head_sha": "82d316bc4dbd9f3568f6e50ea82658bd2109e4bf",
+    "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/2",
+    "merged": false,
+    "state": "closed",
+    "updated_at": "2026-10-24T02:57:31-04:00"
+  },
+  "delivery_id": "dc2a891c-9757-439e-a030-35737bda0e2e",
+  "resource": {
+    "kind": "pull_request",
+    "number": 2,
+    "owner": "forge-admin",
+    "repository": "agent-forge-core"
+  },
+  "schema_version": 2,
+  "upstream_read_attempts": 1,
+  "verdict": "current_state_read"
+}

@@ -1,0 +1,13 @@
+test_reports_inactive_only_when_forgejo_readback_confirmed_deactivation (test_forgejo_emitted_webhook_e2e.HookReadbackTests.test_reports_inactive_only_when_forgejo_readback_confirmed_deactivation) ... ok
+test_matches_mixed_forgejo_task_types_to_receiver_events (test_forgejo_emitted_webhook_e2e.HookTaskBindingTests.test_matches_mixed_forgejo_task_types_to_receiver_events) ... ok
+test_extracts_one_expected_issues_delivery_from_receiver_journal (test_forgejo_emitted_webhook_e2e.ParseLiveDeliveryRecordTests.test_extracts_one_expected_issues_delivery_from_receiver_journal) ... ok
+test_rejects_delivery_for_another_repository (test_forgejo_emitted_webhook_e2e.ParseLiveDeliveryRecordTests.test_rejects_delivery_for_another_repository) ... ok
+test_rejects_boolean_issue_number_even_when_expected_number_is_one (test_forgejo_emitted_webhook_e2e.ParseLiveIssueNumberTests.test_rejects_boolean_issue_number_even_when_expected_number_is_one) ... ok
+test_extracts_expected_pull_request_transition_and_sha_bindings (test_forgejo_emitted_webhook_e2e.ParseLivePullRequestDeliveryRecordTests.test_extracts_expected_pull_request_transition_and_sha_bindings) ... ok
+test_rejects_invalid_pull_request_sha_in_emitted_payload (test_forgejo_emitted_webhook_e2e.ParseLivePullRequestDeliveryRecordTests.test_rejects_invalid_pull_request_sha_in_emitted_payload) ... ok
+test_app_ini_allowlist_is_appended_without_replacing_private_file (test_forgejo_emitted_webhook_e2e.PrivateAppConfigTests.test_app_ini_allowlist_is_appended_without_replacing_private_file) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.011s
+
+OK

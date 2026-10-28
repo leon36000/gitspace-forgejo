@@ -1,0 +1,13 @@
+.........F..........
+======================================================================
+FAIL: test_missing_cli_cost_is_rejected_before_pull_request (__main__.Mission012LiveCompositionTests.test_missing_cli_cost_is_rejected_before_pull_request)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/test_mission_012_live_composed_e2e.py", line 632, in test_missing_cli_cost_is_rejected_before_pull_request
+    with self.assertRaisesRegex(RuntimeError, "omitted its reported cost"):
+AssertionError: RuntimeError not raised
+
+----------------------------------------------------------------------
+Ran 20 tests in 2.006s
+
+FAILED (failures=1)

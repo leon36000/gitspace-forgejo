@@ -1,0 +1,18 @@
+[
+  {
+    "action": "opened",
+    "delivery_id": "534acc62-42b0-43b3-83aa-20ceb84164cf",
+    "event": "issues",
+    "issue_number": 1,
+    "payload_state": "open",
+    "sequence": 1
+  },
+  {
+    "action": "closed",
+    "delivery_id": "af028965-ebf1-4ada-a8ab-c7f64a122012",
+    "event": "issues",
+    "issue_number": 1,
+    "payload_state": "closed",
+    "sequence": 2
+  }
+]

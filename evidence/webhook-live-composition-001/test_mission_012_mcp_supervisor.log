@@ -1,0 +1,15 @@
+test_claude_output_capture_enforces_one_combined_byte_budget (tests.test_mission_012_mcp_supervisor.Mission012McpSupervisorTests.test_claude_output_capture_enforces_one_combined_byte_budget) ... ok
+test_claude_timeout_after_pipe_eof_kills_descendants (tests.test_mission_012_mcp_supervisor.Mission012McpSupervisorTests.test_claude_timeout_after_pipe_eof_kills_descendants) ... ok
+test_eof_closes_host_input_and_forwards_finalization (tests.test_mission_012_mcp_supervisor.Mission012McpSupervisorTests.test_eof_closes_host_input_and_forwards_finalization) ... ok
+test_host_runs_outside_supervisor_process_group (tests.test_mission_012_mcp_supervisor.Mission012McpSupervisorTests.test_host_runs_outside_supervisor_process_group) ... ok
+test_oversized_host_output_is_truncated_before_excess_bytes (tests.test_mission_012_mcp_supervisor.Mission012McpSupervisorTests.test_oversized_host_output_is_truncated_before_excess_bytes) ... ok
+test_parent_cancellation_allows_mcp_host_to_finalize (tests.test_mission_012_mcp_supervisor.Mission012McpSupervisorTests.test_parent_cancellation_allows_mcp_host_to_finalize) ... ok
+test_parent_sigterm_cleans_up_separate_claude_process_group (tests.test_mission_012_mcp_supervisor.Mission012McpSupervisorTests.test_parent_sigterm_cleans_up_separate_claude_process_group) ... ok
+test_sigterm_after_eof_bounds_wait_for_silent_host (tests.test_mission_012_mcp_supervisor.Mission012McpSupervisorTests.test_sigterm_after_eof_bounds_wait_for_silent_host) ... ok
+test_sigterm_arriving_as_cleanup_starts_does_not_skip_group_termination (tests.test_mission_012_mcp_supervisor.Mission012McpSupervisorTests.test_sigterm_arriving_as_cleanup_starts_does_not_skip_group_termination) ... ok
+test_sigterm_closes_host_input_and_allows_final_receipt (tests.test_mission_012_mcp_supervisor.Mission012McpSupervisorTests.test_sigterm_closes_host_input_and_allows_final_receipt) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 18.456s
+
+OK

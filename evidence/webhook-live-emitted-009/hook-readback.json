@@ -1,0 +1,14 @@
+{
+  "active_after_run": false,
+  "api_hook_id": 1,
+  "configuration_matches_expected": false,
+  "content_type": "json",
+  "deactivation_readback_confirmed": true,
+  "events": [
+    "push"
+  ],
+  "hook_id": 1,
+  "secret_value_recorded": false,
+  "target": "http://127.0.0.1:43399/forgejo/webhook",
+  "type": "gitea"
+}

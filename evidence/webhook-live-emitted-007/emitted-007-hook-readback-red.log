@@ -1,0 +1,14 @@
+test_reports_inactive_only_when_forgejo_readback_confirmed_deactivation (test_forgejo_emitted_webhook_e2e.HookReadbackTests.test_reports_inactive_only_when_forgejo_readback_confirmed_deactivation) ... FAIL
+
+======================================================================
+FAIL: test_reports_inactive_only_when_forgejo_readback_confirmed_deactivation (test_forgejo_emitted_webhook_e2e.HookReadbackTests.test_reports_inactive_only_when_forgejo_readback_confirmed_deactivation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/test_forgejo_emitted_webhook_e2e.py", line 169, in test_reports_inactive_only_when_forgejo_readback_confirmed_deactivation
+    self.assertTrue(callable(builder), "Forgejo hook readback serializer is missing")
+AssertionError: False is not true : Forgejo hook readback serializer is missing
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (failures=1)
