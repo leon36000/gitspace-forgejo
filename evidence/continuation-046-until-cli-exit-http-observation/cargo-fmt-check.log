@@ -1,0 +1,3 @@
+$ cargo fmt --all -- --check
+(no output)
+exit=0

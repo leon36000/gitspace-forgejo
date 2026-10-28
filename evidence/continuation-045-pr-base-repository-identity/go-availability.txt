@@ -1,0 +1,1 @@
+go unavailable in PATH; command -v go returned no path. No Go toolchain was installed and no upstream Forgejo tests were run.

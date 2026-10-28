@@ -1,0 +1,1 @@
+Fresh post-documentation verification passes: rustfmt, Python byte-compilation, whitespace check, Cargo metadata license readback and 9 license-guard tests. See adjacent logs.

@@ -1,0 +1,8 @@
+# Executed from the product worktree on 2026-10-26
+cargo test --locked --offline --test webhook_receiver_process_e2e actual_receiver_rejects_conflicting_forgejo_and_gitea_event_aliases_before_append -- --exact --test-threads=1
+cargo test --locked --offline --test webhook_receiver_process_e2e actual_receiver_accepts_gitea_compatibility_headers_without_forgejo_aliases -- --exact --test-threads=1
+cargo fmt --all -- --check
+git diff --check
+rustc --version
+cargo --version
+go version

@@ -1,0 +1,18 @@
+# Executed from the product worktree on 2026-10-26
+cargo test --locked --offline --test webhook_reconcile_contract current_issue_repository_metadata_must_match_the_requested_resource -- --exact --test-threads=1  # two pre-fix red runs captured in unit-red.log and unit-empty-red.log
+cargo test --locked --offline --test webhook_reconcile_contract -- --test-threads=1
+cargo test --locked --offline --test webhook_reconcile_pipeline -- --test-threads=1
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_refuses_issue_repository_metadata_mismatch
+cargo test --locked --offline --all-targets -- --test-threads=1
+cargo fmt --all -- --check
+git diff --check
+python3 scripts/test_cargo_license_state.py
+python3 scripts/verify_cargo_license_state.py
+cargo metadata --locked --offline --no-deps --format-version 1
+rustc --version
+cargo --version
+go version
+git -C /tmp/forgejo-v17-base-cas-poc rev-parse HEAD
+git -C /tmp/forgejo-v17-base-cas-poc diff --quiet HEAD -- modules/structs/issue.go
+git -C /tmp/forgejo-v17-base-cas-poc show HEAD:modules/structs/issue.go | sha256sum
+sha256sum Cargo.toml docs/checkpoint.md docs/source-inventory.md src/webhook/reconcile.rs tests/webhook_reconcile_contract.rs tests/webhook_receiver_process_e2e.rs scripts/run_webhook_reconcile_cli_e2e.py

@@ -1,0 +1,16 @@
+# TDD red: the quiet-window fixture closes before a delayed request.
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario scripted_http_fixture_stays_open_until_explicitly_stopped
+# Expected exit 1 before the helper change: delayed second connection was not accepted.
+# Green: observe until the owning CLI/test signals completion.
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario scripted_http_fixture_stays_open_until_explicitly_stopped
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_reports_actionable_upstream_401_without_leaking_credential
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_preserves_out_of_scope_refusal_after_401
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_stops_batch_reads_after_401_and_resumes_with_rotated_credential
+cargo test --locked --offline --test webhook_receiver_process_e2e -- --test-threads=1
+python3 scripts/test_cargo_license_state.py
+python3 scripts/verify_cargo_license_state.py
+cargo metadata --locked --offline --no-deps --format-version 1
+rustfmt --edition 2024 tests/webhook_receiver_process_e2e.rs
+cargo fmt --all -- --check
+python3 -m py_compile scripts/run_webhook_reconcile_cli_e2e.py
+git diff --check

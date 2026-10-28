@@ -1,0 +1,6 @@
+Forgejo v17.0.0 source used for this contract review:
+- Exact commit: 0d791421f85ca13a63b665053d81ea765fbbc571
+- File/symbols: modules/structs/pull.go; structs.PullRequest.Base, PullRequest.Head, PRBranchInfo.Repository
+- Exact tracked-file comparison: git diff --quiet HEAD -- modules/structs/pull.go -> exit 0
+- Blob SHA-256: 1472f689d9e80da512cc8edafa5d647daafccdf060dfba0d4a74d3be5cfe06e3
+- Scope caveat: scratch checkout has unrelated local modifications; only this source file was confirmed unchanged against the exact HEAD.

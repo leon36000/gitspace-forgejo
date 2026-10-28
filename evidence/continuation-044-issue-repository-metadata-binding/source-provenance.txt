@@ -1,0 +1,6 @@
+Forgejo reference source:
+- Scratch HEAD: 0d791421f85ca13a63b665053d81ea765fbbc571
+- File and symbol: modules/structs/issue.go; structs.Issue.Repo and structs.RepositoryMeta
+- Exact tracked file comparison: git diff --quiet HEAD -- modules/structs/issue.go -> exit 0
+- Blob SHA-256: e6cb7890f1d7045b2423465d1e452b6f91c4d71c746957aefc9bade286d10006
+- Scope caveat: scratch checkout is globally modified by unrelated Forgejo POCs; only this source file was confirmed unchanged against the exact HEAD.

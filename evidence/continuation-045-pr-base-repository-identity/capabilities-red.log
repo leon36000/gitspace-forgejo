@@ -1,0 +1,23 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+     Running unittests src/bin/forgejo-reconcile-local.rs (target/debug/deps/forgejo_reconcile_local-3e9fc5f7734f2ac5)
+
+running 1 test
+test tests::capabilities_list_exact_merge_target_profiles ... FAILED
+
+failures:
+
+---- tests::capabilities_list_exact_merge_target_profiles stdout ----
+
+thread 'tests::capabilities_list_exact_merge_target_profiles' (2929349) panicked at src/bin/forgejo-reconcile-local.rs:13928:9:
+assertion `left == right` failed
+  left: Null
+ right: Object {"issue_repository": Object {"accepted_identity_fields": Array [String("full_name"), String("name"), String("owner")], "field": String("repository"), "missing_or_null": String("allowed_as_partial_api_response"), "when_object_present": String("require_at_least_one_identity_field_and_validate_every_supplied_value")}, "pull_request_base_repository": Object {"accepted_identity_fields": Array [String("full_name"), String("name"), String("owner.login")], "field": String("base.repo"), "missing_or_null": String("allowed_as_partial_api_response"), "when_object_present": String("require_at_least_one_identity_field_and_validate_every_supplied_value")}, "pull_request_head_repository": Object {"foreign_forks_allowed": Bool(true), "target_repository_must_match": Bool(false)}}
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    tests::capabilities_list_exact_merge_target_profiles
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 138 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `--bin forgejo-reconcile-local`

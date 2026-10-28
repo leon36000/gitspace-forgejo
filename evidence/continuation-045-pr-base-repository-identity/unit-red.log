@@ -1,0 +1,2 @@
+Command: cargo test --locked --offline --test webhook_reconcile_contract pull_request_current_base_repository_is_bound_while_foreign_head_is_allowed -- --exact --test-threads=1
+Observed before the implementation change: exit 101; the new "base repository object without identity" case returned Ok(ReconciledState { ... }) but expected Err(InvalidCurrentStateField("base.repo")). The test process reported 0 passed, 1 failed, 39 filtered out.

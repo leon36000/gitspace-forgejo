@@ -1,0 +1,14 @@
+# Observed direct Cargo output before the production change; the conflicting metadata case failed as expected.
+$ cargo test --locked --offline --test webhook_reconcile_contract current_issue_repository_metadata_must_match_the_requested_resource -- --exact --test-threads=1
+running 1 test
+test current_issue_repository_metadata_must_match_the_requested_resource ... FAILED
+
+thread 'current_issue_repository_metadata_must_match_the_requested_resource' panicked at tests/webhook_reconcile_contract.rs:1126:27:
+assertion `left == right` failed: foreign full name
+left: Ok(ReconciledState { delivery_id: "fixture-delivery-1", resource: ResourceRef { kind: Issue, owner: "forge-admin", repository: "agent-forge-core", id: Number(11) }, state: "open", updated_at: "2026-10-21T15:30:00-04:00", html_url: "http://127.0.0.1:3130/forge-admin/agent-forge-core/issues/11", head_sha: None, base_sha: None, merged: None, merge_commit_sha: None })
+right: Err(ResourceMismatch)
+
+failures:
+    current_issue_repository_metadata_must_match_the_requested_resource
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 39 filtered out
