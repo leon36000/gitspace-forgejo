@@ -1,0 +1,10 @@
+Focused process runs after the implementation change:
+
+actual_reconcile_cli_process_stops_batch_reads_after_401_and_resumes_with_rotated_credential: 1 passed; 0 failed; 45 filtered out.
+actual_reconcile_cli_process_reports_actionable_upstream_401_without_leaking_credential: 1 passed; 0 failed; 45 filtered out.
+actual_reconcile_cli_process_continues_mixed_batch_after_forbidden_resource: 1 passed; 0 failed; 45 filtered out.
+
+Full local suite:
+
+Command: cargo test --offline --locked --all-targets -- --test-threads=1
+Exit code: 0; 34 test groups; 480 passed; 0 failed; 52 ignored.

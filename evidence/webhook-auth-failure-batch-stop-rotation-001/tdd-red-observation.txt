@@ -1,0 +1,10 @@
+Extrait de la sortie du run témoin avant l’ajout du latch d’autorisation :
+
+thread 'actual_reconcile_cli_process_stops_batch_reads_after_401_and_resumes_with_rotated_credential' panicked:
+assertion `left == right` failed: a terminal 401 for the configured repository must stop sibling API reads
+  left: 2
+ right: 1
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 45 filtered out
+
+L’échec a lieu après compilation et dans l’assertion du nombre de GET : la fixture observe deux lectures amont avec le même token, une pour chaque issue distincte. Ce n’est pas un échec d’environnement ou de compilation.

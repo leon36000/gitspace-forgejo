@@ -1,0 +1,24 @@
+New branch-404 cache process scenario:
+python3 -B scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_negative_caches_missing_branch_across_deliveries
+
+Previously ignored process cases repaired and verified:
+python3 -B scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_denied_batch_does_not_read_host_credential_fd
+python3 -B scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_accepts_complete_request_before_client_half_close
+
+Full reconcile CLI process matrix (44 named scenarios):
+python3 -B scripts/run_webhook_reconcile_cli_e2e.py
+
+Full Rust suite:
+cargo test --offline --locked --all-targets -- --test-threads=1
+
+Formatting and local diff checks:
+cargo fmt --all
+cargo fmt --all -- --check
+git diff --check
+
+Cargo license guard:
+python3 scripts/verify_cargo_license_state.py
+python3 -B -m unittest -v scripts.test_cargo_license_state
+
+Runner syntax:
+python3 -B -c 'import ast, pathlib; ast.parse(pathlib.Path("scripts/run_webhook_reconcile_cli_e2e.py").read_text())'

@@ -1,0 +1,19 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 3.70s
+     Running tests/webhook_receiver_process_e2e.rs (target/debug/deps/webhook_receiver_process_e2e-43260e4b23bba0f6)
+
+running 1 test
+
+thread 'abrupt_receiver_crash_after_durable_append_before_ack_replays_idempotently' (85452) panicked at tests/webhook_receiver_process_e2e.rs:491:5:
+receiver must crash after durable append and before any HTTP acknowledgement; read=Ok(253) response="HTTP/1.1 202 Accepted\r\nContent-Type: application/json\r\nContent-Length: 131\r\nCache-Control: no-store\r\nConnection: close\r\n\r\n{\"accepted\":true,\"delivery_id\":\"crash-after-append-41\",\"duplicate\":false,\"reconcile_required\":true,\"schema_version\":1,\"sequence\":1}"
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test abrupt_receiver_crash_after_durable_append_before_ack_replays_idempotently ... FAILED
+
+failures:
+
+failures:
+    abrupt_receiver_crash_after_durable_append_before_ack_replays_idempotently
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 92 filtered out; finished in 0.04s
+
+error: test failed, to rerun pass `--test webhook_receiver_process_e2e`

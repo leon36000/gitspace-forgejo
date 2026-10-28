@@ -1,0 +1,9 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.68s
+     Running unittests src/bin/forgejo-mission-local.rs (target/debug/deps/forgejo_mission_local-07e6661870a4625d)
+
+running 1 test
+test tests::branch_api_rejects_duplicate_protected_field_before_admission ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 29 filtered out; finished in 0.00s
+

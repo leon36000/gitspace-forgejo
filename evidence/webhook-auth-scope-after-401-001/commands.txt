@@ -1,0 +1,5 @@
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_preserves_out_of_scope_refusal_after_401
+python3 scripts/verify_cargo_license_state.py
+cargo metadata --offline --locked --format-version 1 --no-deps | python3 -c 'import json,sys; d=json.load(sys.stdin); p=next(p for p in d["packages"] if p["name"]=="agent-forge-core"); print(json.dumps({"name":p["name"],"version":p["version"],"license":p["license"],"license_file":p["license_file"],"publish":p["publish"]},sort_keys=True))'
+cargo fmt --all -- --check
+git diff --check

@@ -1,0 +1,19 @@
+Red, avant l’implémentation du failpoint (échec attendu : réponse 202 observée au lieu d’un crash injecté) :
+cargo test --locked --offline --features test-crash-injection --test webhook_receiver_process_e2e abrupt_receiver_crash_after_durable_append_before_ack_replays_idempotently -- --exact --nocapture
+
+Test vert ciblé :
+cargo test --locked --offline --features test-crash-injection --test webhook_receiver_process_e2e abrupt_receiver_crash_after_durable_append_before_ack_replays_idempotently -- --exact --nocapture
+
+Cible complète du receiver :
+cargo test --locked --offline --features test-crash-injection --test webhook_receiver_process_e2e -- --test-threads=1
+
+Build release sans failpoint :
+cargo build --locked --offline --release --bin forgejo-webhook-local
+
+Refus attendu du failpoint en release :
+cargo check --locked --offline --release --features test-crash-injection --bin forgejo-webhook-local
+
+Vérifications :
+cargo fmt --all -- --check
+git diff --check
+python3 scripts/verify_cargo_license_state.py

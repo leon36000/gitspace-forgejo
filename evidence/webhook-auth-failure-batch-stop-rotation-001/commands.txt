@@ -1,0 +1,13 @@
+# Le run rouge précède le latch; la sortie est résumée dans tdd-red-observation.txt.
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_stops_batch_reads_after_401_and_resumes_with_rotated_credential
+
+# Scénario vert puis protections voisines sous le runner Bubblewrap.
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_stops_batch_reads_after_401_and_resumes_with_rotated_credential
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_reports_actionable_upstream_401_without_leaking_credential
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_continues_mixed_batch_after_forbidden_resource
+
+cargo test --offline --locked --all-targets -- --test-threads=1
+cargo fmt --all -- --check
+git diff --check
+python3 scripts/verify_cargo_license_state.py
+cargo metadata --offline --locked --no-deps --format-version 1

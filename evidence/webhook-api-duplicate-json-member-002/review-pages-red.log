@@ -1,0 +1,21 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.44s
+     Running tests/forgejo_merge_approval.rs (target/debug/deps/forgejo_merge_approval-c955ced9fc722b76)
+
+running 1 test
+
+thread 'review_json_page_rejects_duplicate_unknown_members' (2154091) panicked at tests/forgejo_merge_approval.rs:478:5:
+assertion `left == right` failed
+  left: Ok(PullRequestReviewsSnapshotV1 { scope: PullRequestReviewScopeV1 { origin: "https://forgejo.example", owner: "acme", repository: "project", pull_request_number: 23 }, total_count: 1, reviews: [PullRequestReviewV1 { id: 7, user: None, state: "", commit_id: "", pull_request_url: "https://forgejo.example/acme/project/pulls/23", stale: false, official: true, dismissed: false }] })
+ right: Err(InvalidReviewResponse)
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test review_json_page_rejects_duplicate_unknown_members ... FAILED
+
+failures:
+
+failures:
+    review_json_page_rejects_duplicate_unknown_members
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 32 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `--test forgejo_merge_approval`

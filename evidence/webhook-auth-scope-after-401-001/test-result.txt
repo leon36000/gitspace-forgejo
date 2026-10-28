@@ -1,0 +1,4 @@
+Runner: scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_preserves_out_of_scope_refusal_after_401
+Résultat observé : 1 passed; 0 failed; 0 ignored; 46 filtered out; durée 0.33 s.
+Isolement : runner du dépôt avec Bubblewrap, namespaces réseau et processus isolés; fixture HTTP loopback synthétique.
+Le test Cargo est marqué ignored hors du runner d’isolement.

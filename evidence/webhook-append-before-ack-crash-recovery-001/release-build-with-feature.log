@@ -1,0 +1,8 @@
+    Checking agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+error: test-crash-injection is restricted to debug builds
+  --> src/bin/forgejo-webhook-local.rs:24:1
+   |
+24 | compile_error!("test-crash-injection is restricted to debug builds");
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: could not compile `agent-forge-core` (bin "forgejo-webhook-local") due to 1 previous error
