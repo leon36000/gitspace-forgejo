@@ -1,0 +1,13 @@
+Test-first failures observed before the corresponding guards were added:
+
+test_36_pairs_with_wrong_task_replicate_shape_are_not_complete:
+  expected complete_but_design_mismatch_not_confirmatory
+  observed complete_not_confirmatory
+
+test_rejects_duplicate_task_replicate_under_different_pair_ids:
+  AssertionError: ValueError not raised
+
+test_refuses_windows_style_evidence_path_traversal:
+  AssertionError: ValueError not raised
+
+The final focused run after the guards and commit/proof binding changes is recorded in benchmark-tests.log.

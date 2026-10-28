@@ -1,0 +1,6 @@
+python3 -B tests/test_benchmark_trial_report.py
+python3 -B tests/test_latest_sha256_manifest.py
+python3 -B -m py_compile scripts/benchmark_trial_report.py tests/test_benchmark_trial_report.py
+git diff --check
+python3 -B scripts/verify_latest_sha256_manifest.py evidence/SHA256SUMS
+sha256sum -c SHA256SUMS  # cwd=evidence/continuation-430-benchmark-trial-report-001

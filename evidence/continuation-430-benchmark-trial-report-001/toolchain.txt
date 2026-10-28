@@ -1,0 +1,9 @@
+Worktree base: /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace
+Local branch: local/WEBHOOK-005-canonical-links
+Git HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0 (pre-existing dirty worktree)
+Python: 3.12.3
+Git: 2.43.0
+Kernel/architecture: Linux 7.0.0-1019-nvidia aarch64
+GNU coreutils sha256sum: 9.4
+Rust/Cargo tests: not run; this slice changes only the Python benchmark receipt calculator, its tests, and documentation.
+LLM calls / benchmark trials: 0 / 0; no model cost or token usage was measured.
