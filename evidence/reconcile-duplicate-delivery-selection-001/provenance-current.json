@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "head": "f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0",
+  "branch": "local/WEBHOOK-005-canonical-links",
+  "cargo": "cargo 1.95.0 (f2d3ce0bd 2026-03-21)",
+  "rustc": "rustc 1.95.0 (59807616e 2026-04-14)",
+  "commands": [
+    "PYTHONDONTWRITEBYTECODE=1 python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_refuses_duplicate_delivery_selection_before_credential_read (guard removed; expected red)",
+    "PYTHONDONTWRITEBYTECODE=1 python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_refuses_duplicate_delivery_selection_before_credential_read (guard restored; green)",
+    "cargo test --offline --locked --all-targets -- --test-threads=1",
+    "cargo fmt --all -- --check",
+    "git diff --check"
+  ],
+  "external_services_used": false,
+  "model_invoked": false,
+  "new_spend": false,
+  "production_changed": false,
+  "process_test_sandbox": "Bubblewrap --unshare-net; the process test sends a synthetic token through a private pipe and verifies it remains unread",
+  "all_targets_summary": {
+    "groups": 34,
+    "passed": 526,
+    "failed": 0,
+    "ignored": 65
+  },
+  "source_sha256": {
+    "Cargo.toml": "0d7c833bce0634836404871cfe51b82ac00288bc0fb1b6e04c206b61340bae0a",
+    "Cargo.lock": "bf599559dd11ff21ecc4754aa8a693966b4a9ca401153d7d7caa1f18d8995fcc",
+    "src/bin/forgejo-reconcile-local.rs": "19805b59eff99045c38455d369b7160af20a9467189e8e4029cb3f6f7ffa2b69",
+    "tests/webhook_receiver_process_e2e.rs": "0e52cab9fbce19e678c21182467d21a2e53f8eb9cb5508530de7103d6163d900",
+    "scripts/run_webhook_reconcile_cli_e2e.py": "3e3e7820561532db64c6f24e027bad6b664b10270cc0b4a0eadc93d31c3be344",
+    "docs/checkpoint.md": "912d7b67b77eb0048425d54c071d47b89a6bb5abe310137a558f7061734dc990",
+    "docs/implementation-plan.md": "1e40046c35a29b950d90cd43ce2631e85b3914a4c70b64173e1fa2a887c4b84d",
+    "evidence/reconcile-duplicate-delivery-selection-001/local-run.md": "db4a7eb43e3134876ded4f2df2bc5001775356b612ce6adff67cd762f2c3ee01"
+  }
+}

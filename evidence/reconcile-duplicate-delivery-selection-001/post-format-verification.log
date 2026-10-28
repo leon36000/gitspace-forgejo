@@ -1,0 +1,5 @@
+$ cargo fmt --all -- --check
+exit_status=0
+
+$ git diff --check
+exit_status=0

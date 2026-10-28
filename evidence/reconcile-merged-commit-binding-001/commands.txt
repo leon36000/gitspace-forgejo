@@ -1,0 +1,18 @@
+# Test-first failures observed before the implementation was corrected
+cargo test --offline --locked --test webhook_reconcile_contract merged_pull_request_without_merge_commit_sha_is_not_canonical -- --exact
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_refuses_merged_pull_request_without_merge_commit_sha
+
+# Final tests and verification on the working tree
+cargo test --offline --locked --test webhook_reconcile_contract
+cargo test --offline --locked --test webhook_reconcile_contract merged_pull_request_with_malformed_merge_commit_sha_is_not_canonical -- --exact
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_refuses_merged_pull_request_without_merge_commit_sha
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_reads_pull_request_current_state_from_private_http_fixture
+cargo test --offline --locked --all-targets -- --test-threads=1
+cargo build --release --locked --offline
+cargo fmt --all -- --check
+git diff --check
+cargo metadata --locked --offline --format-version 1 --no-deps
+
+# Forgejo v17 source provenance
+# Inspected in /tmp/forgejo-v17-base-cas-poc at 0d791421f85ca13a63b665053d81ea765fbbc571
+# git -C /tmp/forgejo-v17-base-cas-poc diff --quiet HEAD -- modules/structs/pull.go services/convert/pull.go models/issues/pull.go

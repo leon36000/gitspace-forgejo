@@ -1,0 +1,25 @@
+{
+  "branch": "local/WEBHOOK-005-canonical-links",
+  "cargo": "cargo 1.95.0 (f2d3ce0bd 2026-03-21)",
+  "commands": [
+    "cargo test --offline --locked --bin forgejo-reconcile-local duplicate_delivery_selection_is_refused_before_host_credential_read -- --nocapture",
+    "cargo test --offline --locked --bin forgejo-reconcile-local batch_cache_budget_is_enforced_across_signed_journal_and_loopback_http -- --nocapture",
+    "cargo test --offline --locked --all-targets -- --test-threads=1",
+    "python3 scripts/verify_cargo_license_state.py",
+    "python3 -m unittest scripts.test_cargo_license_state",
+    "cargo fmt --all -- --check",
+    "git diff --check"
+  ],
+  "external_services_used": false,
+  "head": "f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0",
+  "model_invoked": false,
+  "new_spend": false,
+  "production_changed": false,
+  "rustc": "rustc 1.95.0 (59807616e 2026-04-14)",
+  "schema_version": 1,
+  "source_sha256": {
+    "Cargo.lock": "bf599559dd11ff21ecc4754aa8a693966b4a9ca401153d7d7caa1f18d8995fcc",
+    "Cargo.toml": "0d7c833bce0634836404871cfe51b82ac00288bc0fb1b6e04c206b61340bae0a",
+    "src/bin/forgejo-reconcile-local.rs": "a18b7cce8bde7176fb65e02803119c95238290c861b5086f6bc3b2175cdb5aba"
+  }
+}

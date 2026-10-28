@@ -1,0 +1,123 @@
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/src/webhook/reconcile.rs:111:
+ 
+     let (head_sha, base_sha, merged, merge_commit_sha) =
+         if resource.kind == ResourceKind::PullRequest {
+-        let merged = current
+-            .get("merged")
+-            .and_then(Value::as_bool)
+-            .ok_or(ReconcileError::InvalidCurrentStateField("merged"))?;
+-        if merged && state != "closed" {
+-            return Err(ReconcileError::InvalidCurrentStateField(
+-                "merged_state_consistency",
+-            ));
+-        }
+-        let sha = current
+-            .get("head")
+-            .and_then(|head| head.get("sha"))
+-            .and_then(Value::as_str)
+-            .filter(|sha| valid_commit_sha(sha))
+-            .ok_or(ReconcileError::InvalidCurrentStateField("head.sha"))?;
+-        let base_sha = current
+-            .get("base")
+-            .and_then(|base| base.get("sha"))
+-            .and_then(Value::as_str)
+-            .filter(|sha| valid_commit_sha(sha))
+-            .ok_or(ReconcileError::InvalidCurrentStateField("base.sha"))?;
+-        let merge_commit_sha = if merged {
+-            Some(
+-                current
+-                    .get("merge_commit_sha")
+-                    .and_then(Value::as_str)
+-                    .filter(|sha| valid_commit_sha(sha))
+-                    .ok_or(ReconcileError::InvalidCurrentStateField(
+-                        "merge_commit_sha",
+-                    ))?
+-                    .to_owned(),
++            let merged = current
++                .get("merged")
++                .and_then(Value::as_bool)
++                .ok_or(ReconcileError::InvalidCurrentStateField("merged"))?;
++            if merged && state != "closed" {
++                return Err(ReconcileError::InvalidCurrentStateField(
++                    "merged_state_consistency",
++                ));
++            }
++            let sha = current
++                .get("head")
++                .and_then(|head| head.get("sha"))
++                .and_then(Value::as_str)
++                .filter(|sha| valid_commit_sha(sha))
++                .ok_or(ReconcileError::InvalidCurrentStateField("head.sha"))?;
++            let base_sha = current
++                .get("base")
++                .and_then(|base| base.get("sha"))
++                .and_then(Value::as_str)
++                .filter(|sha| valid_commit_sha(sha))
++                .ok_or(ReconcileError::InvalidCurrentStateField("base.sha"))?;
++            let merge_commit_sha = if merged {
++                Some(
++                    current
++                        .get("merge_commit_sha")
++                        .and_then(Value::as_str)
++                        .filter(|sha| valid_commit_sha(sha))
++                        .ok_or(ReconcileError::InvalidCurrentStateField("merge_commit_sha"))?
++                        .to_owned(),
++                )
++            } else {
++                match current.get("merge_commit_sha") {
++                    None | Some(Value::Null) => None,
++                    Some(_) => {
++                        return Err(ReconcileError::InvalidCurrentStateField("merge_commit_sha"));
++                    }
++                }
++            };
++            (
++                Some(sha.to_owned()),
++                Some(base_sha.to_owned()),
++                Some(merged),
++                merge_commit_sha,
+             )
+         } else {
+-            match current.get("merge_commit_sha") {
+-                None | Some(Value::Null) => None,
+-                Some(_) => {
+-                    return Err(ReconcileError::InvalidCurrentStateField(
+-                        "merge_commit_sha",
+-                    ));
+-                }
+-            }
+-        };
+-        (
+-            Some(sha.to_owned()),
+-            Some(base_sha.to_owned()),
+-            Some(merged),
+-            merge_commit_sha,
+-        )
+-    } else {
+             (None, None, None, None)
+         };
+ 
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:3031:
+     .expect("serialize stale synthetic pull request webhook payload");
+ 
+     let (mut receiver, address) = start_ready_receiver(&secret, &journal_path);
+-    let (status, accepted) = send(
+-        address,
+-        &request_event(DELIVERY_ID, "pull_request", &body),
+-    );
++    let (status, accepted) = send(address, &request_event(DELIVERY_ID, "pull_request", &body));
+     assert_eq!(status, 202);
+     assert_eq!(accepted["accepted"], true);
+     assert!(stop_receiver(&mut receiver).success());
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:3061:
+         .expect("run the actual reconciliation CLI process");
+     let requests = fixture.join().expect("pull request API fixture completed");
+ 
+-    assert!(!output.status.success(), "merge state without a result commit is inconclusive");
++    assert!(
++        !output.status.success(),
++        "merge state without a result commit is inconclusive"
++    );
+     assert_eq!(requests.len(), 1);
+     assert!(requests[0].starts_with(&format!(
+         "GET /api/v1/repos/{OWNER}/{REPOSITORY}/pulls/{NUMBER} HTTP/1.1\r\n"
