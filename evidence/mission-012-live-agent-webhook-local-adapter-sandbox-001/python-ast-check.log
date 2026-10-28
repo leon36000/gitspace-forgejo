@@ -1,0 +1,7 @@
+AST_OK scripts/mission_012_sandboxed_test_adapter.py
+AST_OK scripts/mission_012_test_agent_adapter.py
+AST_OK scripts/run_mission_012_live_mcp_agent_e2e.py
+AST_OK scripts/run_mission_012_live_composed_e2e.py
+AST_OK tests/test_mission_012_live_mcp_agent_e2e.py
+AST_OK tests/test_mission_012_sandboxed_test_adapter.py
+AST_OK tests/test_mission_012_live_agent_pr_e2e.py

@@ -1,0 +1,10 @@
+Worktree: /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace
+Base HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+
+Full isolated composition:
+python3 scripts/run_mission_012_live_composed_e2e.py --state-dir /tmp/mission012-composed-adapter-sandbox-001 --forgejo-binary /tmp/forgejo-17.0.0 --evidence-dir /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/mission-012-live-agent-webhook-local-adapter-sandbox-001 --execution-id live-mcp-101 --allocation-id mission012-webhook-live-sandbox-001 --budget-cap-usd 0.01 --agent-adapter local-test-adapter --sandbox-test-adapter
+
+Focused command and boundary tests:
+python3 -m unittest -v tests.test_mission_012_live_mcp_agent_e2e tests.test_mission_012_sandboxed_test_adapter tests.test_mission_012_live_agent_pr_e2e.Mission012LiveAgentDriverTests.test_composed_sandbox_adapter_is_explicit_and_local_only
+
+The full composition command exited 0 and wrote composed-run.json. The focused tests exited 0 (8 tests). The initial attempted run using a relative --evidence-dir failed the runner's absolute-path preflight before creating the state directory; the successful command above uses the required absolute path.

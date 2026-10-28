@@ -1,0 +1,17 @@
+# MISSION-012-AGENT-EGRESS-009 — probes API, Web et Git sous sandbox
+
+Date : 25 octobre 2026. Worktree local très modifié, HEAD examiné `f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0`; le snapshot de composition conserve les sources effectivement utilisées. L'instance Forgejo locale est v17.0.0+gitea-1.22.0, binaire SHA-256 `e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7`. Python 3.12.3, Bubblewrap 0.9.0, Rust/Cargo 1.95.0, Linux AArch64.
+
+## Résultat
+
+Le contrat du sandbox d’adaptateur tente trois requêtes HTTP directes vers un listener hôte loopback : API (`GET /api/v1/repos/.../pulls/1`), Web (`GET /forge-admin/.../pulls/1`) et Git (`POST /forge-admin/....git/git-receive-pack`). Sous `bwrap --unshare-net`, les trois connexions échouent. Le superviseur vérifie indépendamment son listener et observe zéro connexion acceptée. Le fichier de sonde privé contenant uniquement `SYNTHETIC-CREDENTIAL-CANARY-ONLY` n’est pas lisible depuis l’adaptateur. Les processus hôte/adaptateur utilisent `close_fds=True` sans `pass_fds`.
+
+La composition locale complète passe aussi avec `local-test-adapter`, `sandbox_test_adapter=true`, sans invoquer de modèle (`reported_cost_usd=0`). Forgejo émet trois notifications d’une PR (ouverte, revue approuvée, fermée); le gate refuse une tentative avant revue (HTTP 405), le vérificateur indépendant réussit sur le candidat, le gate fusionne ensuite (HTTP 200), et le readback confirme PR fermée, issue fermée et commit de fusion `bfd25efe0ef3b0e8cc5f4e5474e993632464cb46`. Le candidat est `5adabf2afb6dabfc90ab8092947fd9d0431d0f1e`, PR #2. Le processus d’agent fixture a d’abord obtenu un échec actionnable du critère de clamp (valeurs attendue `10`, observée `-2`), a modifié `src/lib.rs`, puis les deux tests d’acceptation ont réussi.
+
+Les observations sérialisées sont dans `composed-stage-summaries.json`, `composed-run.json`, `independent-verifier.json`, `pre-review-merge-refusal.json`, `rust-merge-authority-result.json`, `forgejo-result.json` et `pr-webhook-reconciliation.json`. La commande ciblée du test processus et `py_compile` passent; les métadonnées Cargo restent `license=null`, `license_file=null`, `publish=[]`, `no_license_selected`, droits `not_assessed`, sans attribution de licence. Le garde de licence repasse 7/7.
+
+## Portée et limites
+
+Les chemins sont des sondes représentatives adressées au listener synthétique local, pas des requêtes reçues par les routes d’une instance Forgejo depuis le sandbox. Le résultat vérifie l’isolation réseau Bubblewrap de cet adaptateur déterministe sur cet hôte et la séparation de ses descripteurs; il ne prouve pas la résistance à un noyau compromis, à un processus hostile du même UID, ni à toute forme d’évasion. Le credential sonde est synthétique : aucun credential réel de fusion n’a été monté ni testé. Le parcours utilise `local-test-adapter`, pas Claude, AgentOS ou un fournisseur d’agent; le succès du gate local ne valide pas la sécurité d’un déploiement multi-tenant. Le verrou de merge ne fournit toujours pas d’exclusion des writers externes Forgejo. Aucun benchmark comparatif n’est réalisé.
+
+Ce lot modifie le harnais local et ses assertions, pas Forgejo ni le noyau Rust de production. Les premières validations rouges sont visibles dans l’historique de commandes de ce fil; la sortie finale ciblée est archivée séparément. Les commandes, versions, sources et empreintes sont dans ce dossier.

@@ -1,0 +1,13 @@
+test_claude_command_remains_explicitly_bounded_and_tool_scoped (tests.test_mission_012_live_mcp_agent_e2e.AgentCommandTests.test_claude_command_remains_explicitly_bounded_and_tool_scoped) ... ok
+test_explicit_sandbox_option_routes_only_the_test_adapter_through_bwrap (tests.test_mission_012_live_mcp_agent_e2e.AgentCommandTests.test_explicit_sandbox_option_routes_only_the_test_adapter_through_bwrap) ... ok
+test_local_adapter_command_never_resolves_claude (tests.test_mission_012_live_mcp_agent_e2e.AgentCommandTests.test_local_adapter_command_never_resolves_claude) ... ok
+test_restart_fixture_can_capture_only_its_local_host_diagnostics (tests.test_mission_012_live_mcp_agent_e2e.AgentCommandTests.test_restart_fixture_can_capture_only_its_local_host_diagnostics) ... ok
+test_sandbox_option_is_rejected_for_model_adapter (tests.test_mission_012_live_mcp_agent_e2e.AgentCommandTests.test_sandbox_option_is_rejected_for_model_adapter) ... ok
+test_stdio_adapter_uses_only_trusted_mcp_pipe_and_refuses_host_network_and_file (tests.test_mission_012_sandboxed_test_adapter.SandboxedAdapterTests.test_stdio_adapter_uses_only_trusted_mcp_pipe_and_refuses_host_network_and_file) ... ok
+test_wrapper_rejects_non_private_mcp_config_before_spawning_host (tests.test_mission_012_sandboxed_test_adapter.SandboxedAdapterTests.test_wrapper_rejects_non_private_mcp_config_before_spawning_host) ... ok
+test_composed_sandbox_adapter_is_explicit_and_local_only (tests.test_mission_012_live_agent_pr_e2e.Mission012LiveAgentDriverTests.test_composed_sandbox_adapter_is_explicit_and_local_only) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.179s
+
+OK

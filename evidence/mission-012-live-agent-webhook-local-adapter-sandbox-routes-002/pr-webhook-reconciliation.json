@@ -1,0 +1,148 @@
+{
+  "all_notifications_reconciled_to_current_state": true,
+  "approved_review_delivery_id": "518d8615-364e-4085-93af-653ecd8b5d87",
+  "approved_review_notification": {
+    "action": "reviewed",
+    "base_sha": "798dc07ab2c8876a8f5f7da80fa8611a83856a34",
+    "event": "pull_request_approved",
+    "head_sha": "410bec8ee4721ed88a1f4b0504d6781cd1ff0c40",
+    "payload_merged": false,
+    "payload_state": "open",
+    "pull_request_number": 2,
+    "review_type": "pull_request_review_approved"
+  },
+  "approved_review_sequence": 2,
+  "candidate_commit": "410bec8ee4721ed88a1f4b0504d6781cd1ff0c40",
+  "canonical_state": {
+    "base_sha": "fb8238da1e82509c644a994a91c412b324ccba38",
+    "head_sha": "410bec8ee4721ed88a1f4b0504d6781cd1ff0c40",
+    "merged": true,
+    "state": "closed"
+  },
+  "cleanup": {
+    "cleanup_failure": null,
+    "hook_deactivated": true,
+    "receiver_listener_absent": true,
+    "receiver_listener_addresses_after_stop": [],
+    "receiver_stop": {
+      "returncode": 0,
+      "started": true,
+      "stop_action": "terminate",
+      "stopped": true
+    },
+    "receiver_stopped": true,
+    "started": true
+  },
+  "closed_delivery_id": "e8055bf8-8b31-433c-9541-b603fc1db1f5",
+  "closed_payload": {
+    "base_sha": "fb8238da1e82509c644a994a91c412b324ccba38",
+    "head_sha": "410bec8ee4721ed88a1f4b0504d6781cd1ff0c40",
+    "merged": true,
+    "state": "closed"
+  },
+  "closed_sequence": 3,
+  "event_count": 3,
+  "forgejo_task_count": 3,
+  "hook_id": 2,
+  "hook_readback": {
+    "active_after_run": false,
+    "api_hook_id": 2,
+    "configuration_matches_expected": true,
+    "content_type": "json",
+    "deactivation_readback_confirmed": true,
+    "events": [
+      "pull_request",
+      "pull_request_assign",
+      "pull_request_label",
+      "pull_request_milestone",
+      "pull_request_comment",
+      "pull_request_review_approved",
+      "pull_request_review_rejected",
+      "pull_request_review_comment",
+      "pull_request_sync",
+      "pull_request_review_request"
+    ],
+    "events_readback_valid": true,
+    "hook_id": 2,
+    "secret_value_recorded": false,
+    "target": "http://127.0.0.1:46459/forgejo/webhook",
+    "type": "gitea"
+  },
+  "merge_commit": "fb8238da1e82509c644a994a91c412b324ccba38",
+  "opened_delivery_id": "b35d74e5-ed24-4405-93dd-4e56cb00b838",
+  "opened_payload": {
+    "base_sha": "798dc07ab2c8876a8f5f7da80fa8611a83856a34",
+    "head_sha": "410bec8ee4721ed88a1f4b0504d6781cd1ff0c40",
+    "merged": false,
+    "state": "open"
+  },
+  "opened_sequence": 1,
+  "pull_request_number": 2,
+  "receiver_binary_sha256": "e87781840c8224a3b1b98fef5f7ef3dee62303dce5d34ab65d5b8207509e3d93",
+  "reconciled_delivery_ids": [
+    "b35d74e5-ed24-4405-93dd-4e56cb00b838",
+    "518d8615-364e-4085-93af-653ecd8b5d87",
+    "e8055bf8-8b31-433c-9541-b603fc1db1f5"
+  ],
+  "reconciliation_receipts": [
+    {
+      "canonical_state": {
+        "base_sha": "fb8238da1e82509c644a994a91c412b324ccba38",
+        "head_sha": "410bec8ee4721ed88a1f4b0504d6781cd1ff0c40",
+        "merged": true,
+        "state": "closed"
+      },
+      "delivery_id": "b35d74e5-ed24-4405-93dd-4e56cb00b838",
+      "exit_code": 0,
+      "resource": {
+        "kind": "pull_request",
+        "number": 2,
+        "owner": "forge-admin",
+        "repository": "mission-012-clamp"
+      },
+      "upstream_read_attempts": 1,
+      "verdict": "current_state_read"
+    },
+    {
+      "canonical_state": {
+        "base_sha": "fb8238da1e82509c644a994a91c412b324ccba38",
+        "head_sha": "410bec8ee4721ed88a1f4b0504d6781cd1ff0c40",
+        "merged": true,
+        "state": "closed"
+      },
+      "delivery_id": "518d8615-364e-4085-93af-653ecd8b5d87",
+      "exit_code": 0,
+      "resource": {
+        "kind": "pull_request",
+        "number": 2,
+        "owner": "forge-admin",
+        "repository": "mission-012-clamp"
+      },
+      "upstream_read_attempts": 1,
+      "verdict": "current_state_read"
+    },
+    {
+      "canonical_state": {
+        "base_sha": "fb8238da1e82509c644a994a91c412b324ccba38",
+        "head_sha": "410bec8ee4721ed88a1f4b0504d6781cd1ff0c40",
+        "merged": true,
+        "state": "closed"
+      },
+      "delivery_id": "e8055bf8-8b31-433c-9541-b603fc1db1f5",
+      "exit_code": 0,
+      "resource": {
+        "kind": "pull_request",
+        "number": 2,
+        "owner": "forge-admin",
+        "repository": "mission-012-clamp"
+      },
+      "upstream_read_attempts": 1,
+      "verdict": "current_state_read"
+    }
+  ],
+  "review_notification_is_approval_proof": false,
+  "schema_version": 4,
+  "status": "verified_current_merged_pr",
+  "successful_http_202_count": 3,
+  "target_profile": "mission-012-clamp"
+}

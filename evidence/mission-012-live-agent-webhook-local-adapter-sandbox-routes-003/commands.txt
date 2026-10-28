@@ -1,0 +1,11 @@
+Worktree: /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace
+Examined HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+External services: none
+Model: not invoked; explicit local-test-adapter only
+
+python3 -m unittest discover -s tests -p 'test_mission_012_sandboxed_test_adapter.py' -v
+python3 -m py_compile scripts/mission_012_test_agent_adapter.py scripts/mission_012_sandboxed_test_adapter.py scripts/run_mission_012_live_mcp_agent_e2e.py
+python3 scripts/run_mission_012_live_composed_e2e.py --state-dir /tmp/mission012-process-isolation-003 --forgejo-binary /tmp/forgejo-17.0.0 --evidence-dir "$PWD/evidence/mission-012-live-agent-webhook-local-adapter-sandbox-routes-003" --execution-id live-mcp-101 --allocation-id mission012-sandbox-routes-003 --budget-cap-usd 0.01 --agent-adapter local-test-adapter --sandbox-test-adapter
+python3 scripts/verify_cargo_license_state.py
+python3 -m unittest discover -s scripts -p 'test_cargo_license_state.py' -v
+git diff --check
