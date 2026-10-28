@@ -1,0 +1,5 @@
+{
+  "command": "cargo metadata --offline --locked --format-version 1",
+  "license": null,
+  "package": "agent-forge-core"
+}

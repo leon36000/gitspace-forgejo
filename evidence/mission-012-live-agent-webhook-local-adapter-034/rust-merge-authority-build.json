@@ -1,0 +1,34 @@
+{
+  "binary_sha256": {
+    "forgejo-reconcile-local": "1d3a6643730bea18077d234c02e71e136f10209e29ed634e2230c609d7230446",
+    "gate": "5f75b2b638a017898c0f5372e401e0e2798e84bf72e26b3002bd27c6669296dc"
+  },
+  "build_command": [
+    "/home/pc6/.rustup/toolchains/1.95.0-aarch64-unknown-linux-gnu/bin/cargo",
+    "build",
+    "--offline",
+    "--locked",
+    "--manifest-path",
+    "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/Cargo.toml",
+    "--target-dir",
+    "/tmp/mission012-composed-adapter-034/rust-merge-gate-target",
+    "--bin",
+    "gate",
+    "--bin",
+    "forgejo-reconcile-local"
+  ],
+  "build_exit_code": 0,
+  "build_log_sha256": "8f8621bdf1fc92fc1240ac147908983a060f728b5bd39cd8a8835b21c0654d5a",
+  "cargo_home": "/home/pc6/.cargo",
+  "cargo_toolchain": "/home/pc6/.rustup/toolchains/1.95.0-aarch64-unknown-linux-gnu/bin/cargo",
+  "offline_locked": true,
+  "rustc_toolchain": "/home/pc6/.rustup/toolchains/1.95.0-aarch64-unknown-linux-gnu/bin/rustc",
+  "source_sha256": {
+    "Cargo.lock": "bf599559dd11ff21ecc4754aa8a693966b4a9ca401153d7d7caa1f18d8995fcc",
+    "Cargo.toml": "5244b83d82e6af0504a5f62c951e4779ab672fc429ea93c88c4e4393906bae0c",
+    "src/bin/forgejo-reconcile-local.rs": "c523d2e763bd156b076f7246ef213f1bfd13c14dc115cde4de2f1a2fa695611a",
+    "src/bin/gate.rs": "4366abaa55d4d5d539b10d48a3706afbf37702c9dd199466545963dbdc9d116d",
+    "src/forgejo.rs": "4838b7aa13fbaf30320989efd957affba3f3f71aa5849b13db1d3b2d2c343bab",
+    "src/lib.rs": "cf6d087738102455e0b407974b5630089d850529beb1874fb180282a503e962c"
+  }
+}
