@@ -1,0 +1,7 @@
+mcp__GitLab_PC4__list_repository_tree(project_id=root/gitspace-forgejo, ref=codex/pc6-transfer-work-2026-10-28, paths=docs, scripts, tests, evidence/continuation-430-benchmark-trial-report-001)
+mcp__GitLab_PC4__list_repository_tree(project_id=root/gitspace-forgejo, ref=d72f6077369853bb84256c45b455a856fe7a89a8, same selected paths)
+Local: git hash-object for each of the 16 selected files; compared to the GitLab tree blob id and mode.
+mcp__GitLab_PC4__get_repository_file(project_id=root/gitspace-forgejo, path=evidence/SHA256SUMS, ref=d72f6077369853bb84256c45b455a856fe7a89a8, paginated 2,000-line windows across 18,452 lines)
+mcp__GitLab_PC4__add_commit(branch=codex/pc6-transfer-work-2026-10-28, update evidence/SHA256SUMS by appending the two current document SHA-256 records)
+mcp__GitLab_PC4__get_repository_file(project_id=root/gitspace-forgejo, path=evidence/SHA256SUMS, ref=c4a3a353c4e41ce756459045aa6fff0e711a8657, offset=18,451, limit=3)
+Local: python3 -B scripts/verify_latest_sha256_manifest.py evidence/SHA256SUMS --root .

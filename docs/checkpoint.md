@@ -1,5 +1,13 @@
 # Checkpoint — 28 octobre 2026
 
+## CONTINUATION-431 — readback et réconciliation du manifeste PC4 — 28 octobre 2026
+
+Le readback GitLab du commit `d72f6077369853bb84256c45b455a856fe7a89a8` a retrouvé les 16 blobs du lot CONTINUATION-430 avec les mêmes identifiants Git que les fichiers locaux. Le scan du manifeste SHA-256 distant a trouvé des empreintes courantes pour les 14 fichiers de code et de reçu, mais des empreintes anciennes pour `docs/architecture.md` et `docs/checkpoint.md`. Le commit PC4 `c4a3a353c4e41ce756459045aa6fff0e711a8657` ajoute leurs empreintes actuelles à la fin du manifeste distant, sans réécriture d’historique; le readback a confirmé ces deux lignes.
+
+Le vérificateur local du manifeste global passe avec 13 500 chemins uniques sur 18 511 enregistrements valides et zéro chemin absent, divergent, non haché ou dangereux. Cette vérification locale et le readback de ces 16 fichiers n’établissent pas le transfert intégral du worktree. Le pipeline 162 lié à `c4a3a353…` était encore pending au dernier relevé; le résultat doit être relu pour le nouveau commit de documentation. Aucun benchmark comparatif ni appel LLM n’a été exécuté.
+
+Reçu du contrôle : [CONTINUATION-431](../evidence/continuation-431-pc4-manifest-reconcile/local-run.md). La branche par défaut n’a pas été modifiée.
+
 ## CONTINUATION-430 — préflight des reçus de comparaison — 28 octobre 2026
 
 Le préflight local `scripts/benchmark_trial_report.py` lit des reçus de benchmark JSONL versionnés et refuse les champs manquants/inattendus, paires incomplètes, contrôles communs divergents, ordre identique, répétition de tâche dupliquée sous un autre `pair_id`, tâche qui change de commit/demande/oracle entre répétitions, runtime instable dans un bras, modèle/budget incohérent, coût absent, empreinte mal formée et chemin de provenance non portable ou traversant. `pre_merge` doit lier le candidat au commit de base; après fusion, `post_merge` doit lier un second verdict au commit fusionné. Les étiquettes de runtime et de vérificateur doivent différer, sans que leur identité soit authentifiée. Le plan de 36 paires n’est reconnu que pour 12 tâches distinctes avec exactement trois répétitions chacune; l’ordre doit aussi être équilibré. Les essais échoués, non fusionnés ou dont la vérification post-fusion échoue/inconclut restent dans les effectifs; les fusions sans succès pré-fusion et les changements de base sont signalés séparément. Le rapport reste descriptif.
