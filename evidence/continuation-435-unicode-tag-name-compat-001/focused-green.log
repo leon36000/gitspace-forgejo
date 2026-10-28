@@ -1,1 +1,9 @@
-ICAgQ29tcGlsaW5nIGFnZW50LWZvcmdlLWNvcmUgdjAuMS4wICgvaG9tZS9wYzYvRG9jdW1lbnRzL0NvZGV4LzIwMjYtMTAtMjEtbWlzc2lvbi1jb25zdHJ1aXJlLXVuZS1mb3JnZS1jb24tdWUvLnJ1bnRpbWUvd2ViaG9vay0wMDUtd29ya3NwYWNlKQogICAgRmluaXNoZWQgYHRlc3RgIHByb2ZpbGUgW3Vub3B0aW1pemVkICsgZGVidWdpbmZvXSB0YXJnZXQocykgaW4gMS44M3MKICAgICBSdW5uaW5nIHRlc3RzL3dlYmhvb2tfcmVjb25jaWxlX2NvbnRyYWN0LnJzICh0YXJnZXQvZGVidWcvZGVwcy93ZWJob29rX3JlY29uY2lsZV9jb250cmFjdC0zY2U2ZjkzN2Q1ZmIwYzhlKQoKcnVubmluZyAxIHRlc3QKdGVzdCByZWxlYXNlX2FjY2VwdHNfZ2l0X3ZhbGlkX3VuaWNvZGVfd2hpdGVzcGFjZV9pbl9jdXJyZW50X3RhZ19uYW1lIC4uLiBvawoKdGVzdCByZXN1bHQ6IG9rLiAxIHBhc3NlZDsgMCBmYWlsZWQ7IDAgaWdub3JlZDsgMCBtZWFzdXJlZDsgMTAyIGZpbHRlcmVkIG91dDsgZmluaXNoZWQgaW4gMC4wMHMKCg==
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.83s
+     Running tests/webhook_reconcile_contract.rs (target/debug/deps/webhook_reconcile_contract-3ce6f937d5fb0c8e)
+
+running 1 test
+test release_accepts_git_valid_unicode_whitespace_in_current_tag_name ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 102 filtered out; finished in 0.00s
+

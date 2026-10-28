@@ -1,1 +1,30 @@
-ewogICJhY3RpdmVfYWZ0ZXJfcnVuIjogZmFsc2UsCiAgImFwaV9ob29rX2lkIjogMSwKICAiY29uZmlndXJhdGlvbl9tYXRjaGVzX2V4cGVjdGVkIjogdHJ1ZSwKICAiY29udGVudF90eXBlIjogImpzb24iLAogICJkZWFjdGl2YXRpb25fcmVhZGJhY2tfY29uZmlybWVkIjogdHJ1ZSwKICAiZXZlbnRzIjogWwogICAgImlzc3VlcyIsCiAgICAiaXNzdWVfYXNzaWduIiwKICAgICJpc3N1ZV9sYWJlbCIsCiAgICAiaXNzdWVfbWlsZXN0b25lIiwKICAgICJpc3N1ZV9jb21tZW50IiwKICAgICJwdWxsX3JlcXVlc3QiLAogICAgInB1bGxfcmVxdWVzdF9hc3NpZ24iLAogICAgInB1bGxfcmVxdWVzdF9sYWJlbCIsCiAgICAicHVsbF9yZXF1ZXN0X21pbGVzdG9uZSIsCiAgICAicHVsbF9yZXF1ZXN0X2NvbW1lbnQiLAogICAgInB1bGxfcmVxdWVzdF9yZXZpZXdfYXBwcm92ZWQiLAogICAgInB1bGxfcmVxdWVzdF9yZXZpZXdfcmVqZWN0ZWQiLAogICAgInB1bGxfcmVxdWVzdF9yZXZpZXdfY29tbWVudCIsCiAgICAicHVsbF9yZXF1ZXN0X3N5bmMiLAogICAgInJlbGVhc2UiLAogICAgInB1bGxfcmVxdWVzdF9yZXZpZXdfcmVxdWVzdCIKICBdLAogICJldmVudHNfcmVhZGJhY2tfdmFsaWQiOiB0cnVlLAogICJob29rX2lkIjogMSwKICAic2VjcmV0X3ZhbHVlX3JlY29yZGVkIjogZmFsc2UsCiAgInRhcmdldCI6ICJodHRwOi8vMTI3LjAuMC4xOjQzNjIzL2Zvcmdlam8vd2ViaG9vayIsCiAgInR5cGUiOiAiZ2l0ZWEiCn0K
+{
+  "active_after_run": false,
+  "api_hook_id": 1,
+  "configuration_matches_expected": true,
+  "content_type": "json",
+  "deactivation_readback_confirmed": true,
+  "events": [
+    "issues",
+    "issue_assign",
+    "issue_label",
+    "issue_milestone",
+    "issue_comment",
+    "pull_request",
+    "pull_request_assign",
+    "pull_request_label",
+    "pull_request_milestone",
+    "pull_request_comment",
+    "pull_request_review_approved",
+    "pull_request_review_rejected",
+    "pull_request_review_comment",
+    "pull_request_sync",
+    "release",
+    "pull_request_review_request"
+  ],
+  "events_readback_valid": true,
+  "hook_id": 1,
+  "secret_value_recorded": false,
+  "target": "http://127.0.0.1:43623/forgejo/webhook",
+  "type": "gitea"
+}

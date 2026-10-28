@@ -1,1 +1,53 @@
-ewogICJjbGVhbnVwX2ZhaWx1cmUiOiBudWxsLAogICJleHBlY3RlZF90Y3BfbGlzdGVuZXJzX2Fic2VudCI6IHRydWUsCiAgImZvcmdlam8iOiB7CiAgICAiZXhwZWN0ZWRfYWRkcmVzcyI6ICIxMjcuMC4wLjE6MzEzMCIsCiAgICAibGlzdGVuZXJfYWRkcmVzc2VzX2FmdGVyX3N0b3AiOiBbXSwKICAgICJsaXN0ZW5lcl9jaGVja2VkIjogdHJ1ZSwKICAgICJzdG9wIjogewogICAgICAicmV0dXJuY29kZSI6IDAsCiAgICAgICJzdGFydGVkIjogdHJ1ZSwKICAgICAgInN0b3BfYWN0aW9uIjogInRlcm1pbmF0ZSIsCiAgICAgICJzdG9wcGVkIjogdHJ1ZQogICAgfQogIH0sCiAgImhvb2tfZGlzYWJsZWRfYmVmb3JlX3NlcnZlcl9zdG9wIjogdHJ1ZSwKICAicmVjZWl2ZXIiOiB7CiAgICAiZXhwZWN0ZWRfYWRkcmVzcyI6ICIxMjcuMC4wLjE6NDM2MjMiLAogICAgImxpc3RlbmVyX2FkZHJlc3Nlc19hZnRlcl9zdG9wIjogW10sCiAgICAibGlzdGVuZXJfY2hlY2tlZCI6IHRydWUsCiAgICAic3RvcCI6IHsKICAgICAgInJldHVybmNvZGUiOiAwLAogICAgICAic3RhcnRlZCI6IHRydWUsCiAgICAgICJzdG9wX2FjdGlvbiI6ICJ0ZXJtaW5hdGUiLAogICAgICAic3RvcHBlZCI6IHRydWUKICAgIH0sCiAgICAic3RvcHMiOiBbCiAgICAgIHsKICAgICAgICAibGlzdGVuZXJfYWRkcmVzc2VzX2FmdGVyX3N0b3AiOiBbXSwKICAgICAgICAibGlzdGVuZXJfY2hlY2tlZCI6IHRydWUsCiAgICAgICAgInBoYXNlIjogInNpZ2tpbGxfYmVmb3JlX2R1cGxpY2F0ZV9yZWRlbGl2ZXJ5IiwKICAgICAgICAic3RvcCI6IHsKICAgICAgICAgICJyZXR1cm5jb2RlIjogLTksCiAgICAgICAgICAic3RhcnRlZCI6IHRydWUsCiAgICAgICAgICAic3RvcF9hY3Rpb24iOiAic2lna2lsbCIsCiAgICAgICAgICAic3RvcF9zaWduYWwiOiAiU0lHS0lMTCIsCiAgICAgICAgICAic3RvcHBlZCI6IHRydWUKICAgICAgICB9CiAgICAgIH0sCiAgICAgIHsKICAgICAgICAibGlzdGVuZXJfYWRkcmVzc2VzX2FmdGVyX3N0b3AiOiBbXSwKICAgICAgICAibGlzdGVuZXJfY2hlY2tlZCI6IHRydWUsCiAgICAgICAgInBoYXNlIjogImZpbmFsX2NsZWFudXAiLAogICAgICAgICJzdG9wIjogewogICAgICAgICAgInJldHVybmNvZGUiOiAwLAogICAgICAgICAgInN0YXJ0ZWQiOiB0cnVlLAogICAgICAgICAgInN0b3BfYWN0aW9uIjogInRlcm1pbmF0ZSIsCiAgICAgICAgICAic3RvcHBlZCI6IHRydWUKICAgICAgICB9CiAgICAgIH0KICAgIF0KICB9LAogICJ0cmFja2VkX3Byb2Nlc3Nlc19leGl0ZWQiOiB0cnVlCn0K
+{
+  "cleanup_failure": null,
+  "expected_tcp_listeners_absent": true,
+  "forgejo": {
+    "expected_address": "127.0.0.1:3130",
+    "listener_addresses_after_stop": [],
+    "listener_checked": true,
+    "stop": {
+      "returncode": 0,
+      "started": true,
+      "stop_action": "terminate",
+      "stopped": true
+    }
+  },
+  "hook_disabled_before_server_stop": true,
+  "receiver": {
+    "expected_address": "127.0.0.1:43623",
+    "listener_addresses_after_stop": [],
+    "listener_checked": true,
+    "stop": {
+      "returncode": 0,
+      "started": true,
+      "stop_action": "terminate",
+      "stopped": true
+    },
+    "stops": [
+      {
+        "listener_addresses_after_stop": [],
+        "listener_checked": true,
+        "phase": "sigkill_before_duplicate_redelivery",
+        "stop": {
+          "returncode": -9,
+          "started": true,
+          "stop_action": "sigkill",
+          "stop_signal": "SIGKILL",
+          "stopped": true
+        }
+      },
+      {
+        "listener_addresses_after_stop": [],
+        "listener_checked": true,
+        "phase": "final_cleanup",
+        "stop": {
+          "returncode": 0,
+          "started": true,
+          "stop_action": "terminate",
+          "stopped": true
+        }
+      }
+    ]
+  },
+  "tracked_processes_exited": true
+}

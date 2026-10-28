@@ -1,1 +1,8 @@
-ICAgIEZpbmlzaGVkIGB0ZXN0YCBwcm9maWxlIFt1bm9wdGltaXplZCArIGRlYnVnaW5mb10gdGFyZ2V0KHMpIGluIDAuMDJzCiAgICAgUnVubmluZyB1bml0dGVzdHMgc3JjL2Jpbi9mb3JnZWpvLXJlY29uY2lsZS1sb2NhbC5ycyAodGFyZ2V0L2RlYnVnL2RlcHMvZm9yZ2Vqb19yZWNvbmNpbGVfbG9jYWwtMWNhYmY0M2UzYTE2YzE4ZSkKCnJ1bm5pbmcgMSB0ZXN0CnRlc3QgdGVzdHM6OnJlY29uY2lsaWF0aW9uX3BvbGljeV9hbGxvd3Nfb25seV9jYW5vbmljYWxfZW5jb2RlZF9icmFuY2hfc2VnbWVudHMgLi4uIG9rCgp0ZXN0IHJlc3VsdDogb2suIDEgcGFzc2VkOyAwIGZhaWxlZDsgMCBpZ25vcmVkOyAwIG1lYXN1cmVkOyAxNjUgZmlsdGVyZWQgb3V0OyBmaW5pc2hlZCBpbiAwLjAwcwoK
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+     Running unittests src/bin/forgejo-reconcile-local.rs (target/debug/deps/forgejo_reconcile_local-1cabf43e3a16c18e)
+
+running 1 test
+test tests::reconciliation_policy_allows_only_canonical_encoded_branch_segments ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 165 filtered out; finished in 0.00s
+

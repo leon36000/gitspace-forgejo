@@ -1,1 +1,7 @@
-ewogICJib2R5IjogIkxvY2FsIEZvcmdlam8gd2ViaG9vayBhZGFwdGVyIHJlY29uY2lsaWF0aW9uIGZpeHR1cmUgY29tbWVudC4iLAogICJodG1sX3VybCI6ICJodHRwOi8vMTI3LjAuMC4xOjMxMzAvZm9yZ2UtYWRtaW4vYWdlbnQtZm9yZ2UtY29yZS9wdWxscy8yI2lzc3VlY29tbWVudC02IiwKICAiaWQiOiA2LAogICJwdWxsX3JlcXVlc3RfdXJsIjogImh0dHA6Ly8xMjcuMC4wLjE6MzEzMC9mb3JnZS1hZG1pbi9hZ2VudC1mb3JnZS1jb3JlL3B1bGxzLzIiLAogICJ1cGRhdGVkX2F0IjogIjIwMjYtMTAtMjhUMTY6NTY6NTgtMDQ6MDAiCn0K
+{
+  "body": "Local Forgejo webhook adapter reconciliation fixture comment.",
+  "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/2#issuecomment-6",
+  "id": 6,
+  "pull_request_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/2",
+  "updated_at": "2026-10-28T16:56:58-04:00"
+}

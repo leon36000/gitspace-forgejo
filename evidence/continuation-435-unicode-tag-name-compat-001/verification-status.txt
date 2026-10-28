@@ -1,1 +1,9 @@
-cmVkIGZvY3VzZWQgdGVzdDogZXhpdCAxMDEgKGV4cGVjdGVkOyBkZWZlY3QgcmVwcm9kdWNlZCkKZm9jdXNlZCBncmVlbiB0ZXN0OiBleGl0IDAsIDEgcGFzc2VkCndlYmhvb2tfcmVjb25jaWxlX2NvbnRyYWN0OiBleGl0IDAsIDEwMyBwYXNzZWQsIDAgZmFpbGVkCmFsbCB0YXJnZXRzOiBleGl0IDAsIDM4IGdyb3VwcywgNzYzIHBhc3NlZCwgMCBmYWlsZWQsIDIwMCBpZ25vcmVkCnJ1c3RmbXQgY2hlY2s6IGV4aXQgMApnaXQgZGlmZiBjaGVjazogZXhpdCAwCnNvdXJjZSB3aGl0ZXNwYWNlIHNjYW46IGV4aXQgMApDYXJnbyBtZXRhZGF0YSBwb2xpY3kgdmVyaWZpZXI6IGV4aXQgMApDYXJnbyBsaWNlbnNlIHBvbGljeSB0ZXN0czogZXhpdCAwLCAxMiBwYXNzZWQK
+red focused test: exit 101 (expected; defect reproduced)
+focused green test: exit 0, 1 passed
+webhook_reconcile_contract: exit 0, 103 passed, 0 failed
+all targets: exit 0, 38 groups, 763 passed, 0 failed, 200 ignored
+rustfmt check: exit 0
+git diff check: exit 0
+source whitespace scan: exit 0
+Cargo metadata policy verifier: exit 0
+Cargo license policy tests: exit 0, 12 passed

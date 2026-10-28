@@ -1,1 +1,10 @@
-ewogICJsaWNlbnNlIjogbnVsbCwKICAibGljZW5zZV9kZWNpc2lvbiI6ICJub19saWNlbnNlX3NlbGVjdGVkIiwKICAibGljZW5zZV9maWxlIjogbnVsbCwKICAicGFja2FnZSI6ICJhZ2VudC1mb3JnZS1jb3JlIiwKICAicHVibGlzaCI6IFtdLAogICJyZWRpc3RyaWJ1dGlvbl9yaWdodHMiOiAibm90X2Fzc2Vzc2VkIiwKICAic3BkeF9wYWNrYWdlX2xpY2Vuc2VfZGVjbGFyZWQiOiAiTk9BU1NFUlRJT04iLAogICJzdGF0dXMiOiAibWV0YWRhdGFfcG9saWN5X3ZlcmlmaWVkIgp9Cg==
+{
+  "license": null,
+  "license_decision": "no_license_selected",
+  "license_file": null,
+  "package": "agent-forge-core",
+  "publish": [],
+  "redistribution_rights": "not_assessed",
+  "spdx_package_license_declared": "NOASSERTION",
+  "status": "metadata_policy_verified"
+}

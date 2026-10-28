@@ -1,1 +1,8 @@
-ICAgQ29tcGlsaW5nIGFnZW50LWZvcmdlLWNvcmUgdjAuMS4wICgvaG9tZS9wYzYvRG9jdW1lbnRzL0NvZGV4LzIwMjYtMTAtMjEtbWlzc2lvbi1jb25zdHJ1aXJlLXVuZS1mb3JnZS1jb24tdWUvLnJ1bnRpbWUvd2ViaG9vay0wMDUtd29ya3NwYWNlKQogICAgRmluaXNoZWQgYHRlc3RgIHByb2ZpbGUgW3Vub3B0aW1pemVkICsgZGVidWdpbmZvXSB0YXJnZXQocykgaW4gMS44NHMKICAgICBSdW5uaW5nIHVuaXR0ZXN0cyBzcmMvYmluL2Zvcmdlam8tcmVjb25jaWxlLWxvY2FsLnJzICh0YXJnZXQvZGVidWcvZGVwcy9mb3JnZWpvX3JlY29uY2lsZV9sb2NhbC0xY2FiZjQzZTNhMTZjMThlKQoKcnVubmluZyAwIHRlc3RzCgp0ZXN0IHJlc3VsdDogb2suIDAgcGFzc2VkOyAwIGZhaWxlZDsgMCBpZ25vcmVkOyAwIG1lYXN1cmVkOyAxNjUgZmlsdGVyZWQgb3V0OyBmaW5pc2hlZCBpbiAwLjAwcwoK
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.84s
+     Running unittests src/bin/forgejo-reconcile-local.rs (target/debug/deps/forgejo_reconcile_local-1cabf43e3a16c18e)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 165 filtered out; finished in 0.00s
+

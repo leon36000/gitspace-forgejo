@@ -1,1 +1,12 @@
-ewogICJnbG9iYWwiOiB7CiAgICAiYnl0ZXMiOiAyNDI2MjE2LAogICAgInBhdGgiOiAiZXZpZGVuY2UvU0hBMjU2U1VNUyIsCiAgICAic2hhMjU2IjogImZlN2Y1OGI3MTIxZjQ0MThmMGM5YjY2YzY0YzFlZjJlOWUzYWRhYzVhNTE2OTkyMGYyOWExYmU0ZjgzMDE5ZTAiCiAgfSwKICAibG9jYWwiOiB7CiAgICAiYnl0ZXMiOiAxOTYwLAogICAgInBhdGgiOiAiZXZpZGVuY2UvY29udGludWF0aW9uLTQyOS1mb3JnZWpvLXJlbGVhc2UtbGFiZWwtY29tcG9zaXRpb24tMDAxL1NIQTI1NlNVTVMiLAogICAgInNoYTI1NiI6ICJmZTk2NTQxNDhhNjlhMTczOTZjYTFhYTE0YmViZGViMTVhYmY5NGYyM2I1Njg2ODgxNWU0ZWYyYzkxY2E5MWQyIgogIH0KfQo=
+{
+  "global": {
+    "bytes": 2426216,
+    "path": "evidence/SHA256SUMS",
+    "sha256": "fe7f58b7121f4418f0c9b66c64c1ef2e9e3adac5a5169920f29a1be4f83019e0"
+  },
+  "local": {
+    "bytes": 1960,
+    "path": "evidence/continuation-429-forgejo-release-label-composition-001/SHA256SUMS",
+    "sha256": "fe9654148a69a17396ca1aa14bebdeb15abf94f23b56868815e4ef2c91ca91d2"
+  }
+}

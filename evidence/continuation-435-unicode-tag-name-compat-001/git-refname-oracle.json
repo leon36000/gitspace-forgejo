@@ -1,1 +1,177 @@
-ewogICJnaXRfdmVyc2lvbiI6ICJnaXQgdmVyc2lvbiAyLjQzLjAiLAogICJjYXNlcyI6IFsKICAgIHsKICAgICAgImxhYmVsIjogImxlYWRpbmctbmJzcCIsCiAgICAgICJ0YWciOiAiwqByZWxlYXNlL3YxLjAiLAogICAgICAidW5pY29kZV9jb2RlcG9pbnRzIjogWwogICAgICAgICJVKzAwQTAiLAogICAgICAgICJVKzAwNzIiLAogICAgICAgICJVKzAwNjUiLAogICAgICAgICJVKzAwNkMiLAogICAgICAgICJVKzAwNjUiLAogICAgICAgICJVKzAwNjEiLAogICAgICAgICJVKzAwNzMiLAogICAgICAgICJVKzAwNjUiLAogICAgICAgICJVKzAwMkYiLAogICAgICAgICJVKzAwNzYiLAogICAgICAgICJVKzAwMzEiLAogICAgICAgICJVKzAwMkUiLAogICAgICAgICJVKzAwMzAiCiAgICAgIF0sCiAgICAgICJnaXRfY2hlY2tfcmVmX2Zvcm1hdF9hY2NlcHRzIjogdHJ1ZSwKICAgICAgImFwcGxpY2F0aW9uX3BvbGljeSI6ICJtYXRjaF9naXRfcmVzdWx0IgogICAgfSwKICAgIHsKICAgICAgImxhYmVsIjogImVtLXNwYWNlIiwKICAgICAgInRhZyI6ICJyZWxlYXNl4oCDY2FuZGlkYXRlIiwKICAgICAgInVuaWNvZGVfY29kZXBvaW50cyI6IFsKICAgICAgICAiVSswMDcyIiwKICAgICAgICAiVSswMDY1IiwKICAgICAgICAiVSswMDZDIiwKICAgICAgICAiVSswMDY1IiwKICAgICAgICAiVSswMDYxIiwKICAgICAgICAiVSswMDczIiwKICAgICAgICAiVSswMDY1IiwKICAgICAgICAiVSsyMDAzIiwKICAgICAgICAiVSswMDYzIiwKICAgICAgICAiVSswMDYxIiwKICAgICAgICAiVSswMDZFIiwKICAgICAgICAiVSswMDY0IiwKICAgICAgICAiVSswMDY5IiwKICAgICAgICAiVSswMDY0IiwKICAgICAgICAiVSswMDYxIiwKICAgICAgICAiVSswMDc0IiwKICAgICAgICAiVSswMDY1IgogICAgICBdLAogICAgICAiZ2l0X2NoZWNrX3JlZl9mb3JtYXRfYWNjZXB0cyI6IHRydWUsCiAgICAgICJhcHBsaWNhdGlvbl9wb2xpY3kiOiAibWF0Y2hfZ2l0X3Jlc3VsdCIKICAgIH0sCiAgICB7CiAgICAgICJsYWJlbCI6ICJsaW5lLXNlcGFyYXRvciIsCiAgICAgICJ0YWciOiAicmVsZWFzZS/igKhjYW5kaWRhdGUiLAogICAgICAidW5pY29kZV9jb2RlcG9pbnRzIjogWwogICAgICAgICJVKzAwNzIiLAogICAgICAgICJVKzAwNjUiLAogICAgICAgICJVKzAwNkMiLAogICAgICAgICJVKzAwNjUiLAogICAgICAgICJVKzAwNjEiLAogICAgICAgICJVKzAwNzMiLAogICAgICAgICJVKzAwNjUiLAogICAgICAgICJVKzAwMkYiLAogICAgICAgICJVKzIwMjgiLAogICAgICAgICJVKzAwNjMiLAogICAgICAgICJVKzAwNjEiLAogICAgICAgICJVKzAwNkUiLAogICAgICAgICJVKzAwNjQiLAogICAgICAgICJVKzAwNjkiLAogICAgICAgICJVKzAwNjQiLAogICAgICAgICJVKzAwNjEiLAogICAgICAgICJVKzAwNzQiLAogICAgICAgICJVKzAwNjUiCiAgICAgIF0sCiAgICAgICJnaXRfY2hlY2tfcmVmX2Zvcm1hdF9hY2NlcHRzIjogdHJ1ZSwKICAgICAgImFwcGxpY2F0aW9uX3BvbGljeSI6ICJtYXRjaF9naXRfcmVzdWx0IgogICAgfSwKICAgIHsKICAgICAgImxhYmVsIjogInRyYXZlcnNhbCIsCiAgICAgICJ0YWciOiAiZmVhdHVyZS8uLi9vdXRzaWRlIiwKICAgICAgInVuaWNvZGVfY29kZXBvaW50cyI6IFsKICAgICAgICAiVSswMDY2IiwKICAgICAgICAiVSswMDY1IiwKICAgICAgICAiVSswMDYxIiwKICAgICAgICAiVSswMDc0IiwKICAgICAgICAiVSswMDc1IiwKICAgICAgICAiVSswMDcyIiwKICAgICAgICAiVSswMDY1IiwKICAgICAgICAiVSswMDJGIiwKICAgICAgICAiVSswMDJFIiwKICAgICAgICAiVSswMDJFIiwKICAgICAgICAiVSswMDJGIiwKICAgICAgICAiVSswMDZGIiwKICAgICAgICAiVSswMDc1IiwKICAgICAgICAiVSswMDc0IiwKICAgICAgICAiVSswMDczIiwKICAgICAgICAiVSswMDY5IiwKICAgICAgICAiVSswMDY0IiwKICAgICAgICAiVSswMDY1IgogICAgICBdLAogICAgICAiZ2l0X2NoZWNrX3JlZl9mb3JtYXRfYWNjZXB0cyI6IGZhbHNlLAogICAgICAiYXBwbGljYXRpb25fcG9saWN5IjogIm1hdGNoX2dpdF9yZXN1bHQiCiAgICB9LAogICAgewogICAgICAibGFiZWwiOiAiZG90LXNlZ21lbnQiLAogICAgICAidGFnIjogImZlYXR1cmUvLi9vdXRzaWRlIiwKICAgICAgInVuaWNvZGVfY29kZXBvaW50cyI6IFsKICAgICAgICAiVSswMDY2IiwKICAgICAgICAiVSswMDY1IiwKICAgICAgICAiVSswMDYxIiwKICAgICAgICAiVSswMDc0IiwKICAgICAgICAiVSswMDc1IiwKICAgICAgICAiVSswMDcyIiwKICAgICAgICAiVSswMDY1IiwKICAgICAgICAiVSswMDJGIiwKICAgICAgICAiVSswMDJFIiwKICAgICAgICAiVSswMDJGIiwKICAgICAgICAiVSswMDZGIiwKICAgICAgICAiVSswMDc1IiwKICAgICAgICAiVSswMDc0IiwKICAgICAgICAiVSswMDczIiwKICAgICAgICAiVSswMDY5IiwKICAgICAgICAiVSswMDY0IiwKICAgICAgICAiVSswMDY1IgogICAgICBdLAogICAgICAiZ2l0X2NoZWNrX3JlZl9mb3JtYXRfYWNjZXB0cyI6IGZhbHNlLAogICAgICAiYXBwbGljYXRpb25fcG9saWN5IjogIm1hdGNoX2dpdF9yZXN1bHQiCiAgICB9LAogICAgewogICAgICAibGFiZWwiOiAiZG91YmxlLXNsYXNoIiwKICAgICAgInRhZyI6ICJmZWF0dXJlLy9vdXRzaWRlIiwKICAgICAgInVuaWNvZGVfY29kZXBvaW50cyI6IFsKICAgICAgICAiVSswMDY2IiwKICAgICAgICAiVSswMDY1IiwKICAgICAgICAiVSswMDYxIiwKICAgICAgICAiVSswMDc0IiwKICAgICAgICAiVSswMDc1IiwKICAgICAgICAiVSswMDcyIiwKICAgICAgICAiVSswMDY1IiwKICAgICAgICAiVSswMDJGIiwKICAgICAgICAiVSswMDJGIiwKICAgICAgICAiVSswMDZGIiwKICAgICAgICAiVSswMDc1IiwKICAgICAgICAiVSswMDc0IiwKICAgICAgICAiVSswMDczIiwKICAgICAgICAiVSswMDY5IiwKICAgICAgICAiVSswMDY0IiwKICAgICAgICAiVSswMDY1IgogICAgICBdLAogICAgICAiZ2l0X2NoZWNrX3JlZl9mb3JtYXRfYWNjZXB0cyI6IGZhbHNlLAogICAgICAiYXBwbGljYXRpb25fcG9saWN5IjogIm1hdGNoX2dpdF9yZXN1bHQiCiAgICB9LAogICAgewogICAgICAibGFiZWwiOiAiYzEtY29udHJvbC1wb2xpY3kiLAogICAgICAidGFnIjogInJlbGVhc2XChWNhbmRpZGF0ZSIsCiAgICAgICJ1bmljb2RlX2NvZGVwb2ludHMiOiBbCiAgICAgICAgIlUrMDA3MiIsCiAgICAgICAgIlUrMDA2NSIsCiAgICAgICAgIlUrMDA2QyIsCiAgICAgICAgIlUrMDA2NSIsCiAgICAgICAgIlUrMDA2MSIsCiAgICAgICAgIlUrMDA3MyIsCiAgICAgICAgIlUrMDA2NSIsCiAgICAgICAgIlUrMDA4NSIsCiAgICAgICAgIlUrMDA2MyIsCiAgICAgICAgIlUrMDA2MSIsCiAgICAgICAgIlUrMDA2RSIsCiAgICAgICAgIlUrMDA2NCIsCiAgICAgICAgIlUrMDA2OSIsCiAgICAgICAgIlUrMDA2NCIsCiAgICAgICAgIlUrMDA2MSIsCiAgICAgICAgIlUrMDA3NCIsCiAgICAgICAgIlUrMDA2NSIKICAgICAgXSwKICAgICAgImdpdF9jaGVja19yZWZfZm9ybWF0X2FjY2VwdHMiOiB0cnVlLAogICAgICAiYXBwbGljYXRpb25fcG9saWN5IjogInJlamVjdF91bmljb2RlX2NvbnRyb2wiCiAgICB9CiAgXQp9Cg==
+{
+  "git_version": "git version 2.43.0",
+  "cases": [
+    {
+      "label": "leading-nbsp",
+      "tag": " release/v1.0",
+      "unicode_codepoints": [
+        "U+00A0",
+        "U+0072",
+        "U+0065",
+        "U+006C",
+        "U+0065",
+        "U+0061",
+        "U+0073",
+        "U+0065",
+        "U+002F",
+        "U+0076",
+        "U+0031",
+        "U+002E",
+        "U+0030"
+      ],
+      "git_check_ref_format_accepts": true,
+      "application_policy": "match_git_result"
+    },
+    {
+      "label": "em-space",
+      "tag": "release candidate",
+      "unicode_codepoints": [
+        "U+0072",
+        "U+0065",
+        "U+006C",
+        "U+0065",
+        "U+0061",
+        "U+0073",
+        "U+0065",
+        "U+2003",
+        "U+0063",
+        "U+0061",
+        "U+006E",
+        "U+0064",
+        "U+0069",
+        "U+0064",
+        "U+0061",
+        "U+0074",
+        "U+0065"
+      ],
+      "git_check_ref_format_accepts": true,
+      "application_policy": "match_git_result"
+    },
+    {
+      "label": "line-separator",
+      "tag": "release/ candidate",
+      "unicode_codepoints": [
+        "U+0072",
+        "U+0065",
+        "U+006C",
+        "U+0065",
+        "U+0061",
+        "U+0073",
+        "U+0065",
+        "U+002F",
+        "U+2028",
+        "U+0063",
+        "U+0061",
+        "U+006E",
+        "U+0064",
+        "U+0069",
+        "U+0064",
+        "U+0061",
+        "U+0074",
+        "U+0065"
+      ],
+      "git_check_ref_format_accepts": true,
+      "application_policy": "match_git_result"
+    },
+    {
+      "label": "traversal",
+      "tag": "feature/../outside",
+      "unicode_codepoints": [
+        "U+0066",
+        "U+0065",
+        "U+0061",
+        "U+0074",
+        "U+0075",
+        "U+0072",
+        "U+0065",
+        "U+002F",
+        "U+002E",
+        "U+002E",
+        "U+002F",
+        "U+006F",
+        "U+0075",
+        "U+0074",
+        "U+0073",
+        "U+0069",
+        "U+0064",
+        "U+0065"
+      ],
+      "git_check_ref_format_accepts": false,
+      "application_policy": "match_git_result"
+    },
+    {
+      "label": "dot-segment",
+      "tag": "feature/./outside",
+      "unicode_codepoints": [
+        "U+0066",
+        "U+0065",
+        "U+0061",
+        "U+0074",
+        "U+0075",
+        "U+0072",
+        "U+0065",
+        "U+002F",
+        "U+002E",
+        "U+002F",
+        "U+006F",
+        "U+0075",
+        "U+0074",
+        "U+0073",
+        "U+0069",
+        "U+0064",
+        "U+0065"
+      ],
+      "git_check_ref_format_accepts": false,
+      "application_policy": "match_git_result"
+    },
+    {
+      "label": "double-slash",
+      "tag": "feature//outside",
+      "unicode_codepoints": [
+        "U+0066",
+        "U+0065",
+        "U+0061",
+        "U+0074",
+        "U+0075",
+        "U+0072",
+        "U+0065",
+        "U+002F",
+        "U+002F",
+        "U+006F",
+        "U+0075",
+        "U+0074",
+        "U+0073",
+        "U+0069",
+        "U+0064",
+        "U+0065"
+      ],
+      "git_check_ref_format_accepts": false,
+      "application_policy": "match_git_result"
+    },
+    {
+      "label": "c1-control-policy",
+      "tag": "releasecandidate",
+      "unicode_codepoints": [
+        "U+0072",
+        "U+0065",
+        "U+006C",
+        "U+0065",
+        "U+0061",
+        "U+0073",
+        "U+0065",
+        "U+0085",
+        "U+0063",
+        "U+0061",
+        "U+006E",
+        "U+0064",
+        "U+0069",
+        "U+0064",
+        "U+0061",
+        "U+0074",
+        "U+0065"
+      ],
+      "git_check_ref_format_accepts": true,
+      "application_policy": "reject_unicode_control"
+    }
+  ]
+}

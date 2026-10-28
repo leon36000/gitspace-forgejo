@@ -1,1 +1,14 @@
-MS4gYGdpdCAtLXZlcnNpb25gCjIuIGBnaXQgY2hlY2stcmVmLWZvcm1hdCByZWZzL3RhZ3MvPHRhZz5gIGZvciB0aGUgZXhhY3QgY2FzZXMgaW4gYGdpdC1yZWZuYW1lLW9yYWNsZS5qc29uYAozLiBgY2FyZ28gdGVzdCAtLW9mZmxpbmUgLS1sb2NrZWQgLS10ZXN0IHdlYmhvb2tfcmVjb25jaWxlX2NvbnRyYWN0IHJlbGVhc2VfYWNjZXB0c19naXRfdmFsaWRfdW5pY29kZV93aGl0ZXNwYWNlX2luX2N1cnJlbnRfdGFnX25hbWUgLS0gLS1leGFjdCAtLW5vY2FwdHVyZWAgYmVmb3JlIHRoZSBmaXggKGV4cGVjdGVkIHJlZCwgZXhpdCAxMDEpCjQuIFNhbWUgZm9jdXNlZCBDYXJnbyB0ZXN0IGFmdGVyIHRoZSBmaXggKGdyZWVuLCBleGl0IDApCjUuIGBjYXJnbyB0ZXN0IC0tb2ZmbGluZSAtLWxvY2tlZCAtLXRlc3Qgd2ViaG9va19yZWNvbmNpbGVfY29udHJhY3RgICgxMDMgcGFzc2VkKQo2LiBgY2FyZ28gdGVzdCAtLW9mZmxpbmUgLS1sb2NrZWQgLS1hbGwtdGFyZ2V0cyAtLSAtLXRlc3QtdGhyZWFkcz0xYCAoMzggZ3JvdXBzOyA3NjMgcGFzc2VkLCAwIGZhaWxlZCwgMjAwIGlnbm9yZWQpCjcuIGBjYXJnbyBmbXQgLS1hbGwgLS0gLS1jaGVja2AgKGV4aXQgMCkKOC4gYGdpdCBkaWZmIC0tY2hlY2tgIChleGl0IDApCjkuIFB5dGhvbiBzb3VyY2Ugd2hpdGVzcGFjZSBzY2FuIGZvciBgc3JjL2Zvcmdlam8ucnNgIGFuZCBgdGVzdHMvd2ViaG9va19yZWNvbmNpbGVfY29udHJhY3QucnNgIChleGl0IDApCjEwLiBgY2FyZ28gbWV0YWRhdGEgLS1sb2NrZWQgLS1vZmZsaW5lIC0tZm9ybWF0LXZlcnNpb24gMSAtLW5vLWRlcHNgCjExLiBgcHl0aG9uMyBzY3JpcHRzL3ZlcmlmeV9jYXJnb19saWNlbnNlX3N0YXRlLnB5YCAoZXhpdCAwKQoxMi4gYHB5dGhvbjMgc2NyaXB0cy90ZXN0X2NhcmdvX2xpY2Vuc2Vfc3RhdGUucHlgICgxMiBwYXNzZWQpCgpUaGUgQ2FyZ28gY2hlY2tzIHdlcmUgb2ZmbGluZS4gTm8gbW9kZWwgcHJvdmlkZXIsIEdpdExhYiBBUEksIG9yIG90aGVyIGV4dGVybmFsIHNlcnZpY2Ugd2FzIGNhbGxlZCBpbiB0aGlzIGxvdC4K
+1. `git --version`
+2. `git check-ref-format refs/tags/<tag>` for the exact cases in `git-refname-oracle.json`
+3. `cargo test --offline --locked --test webhook_reconcile_contract release_accepts_git_valid_unicode_whitespace_in_current_tag_name -- --exact --nocapture` before the fix (expected red, exit 101)
+4. Same focused Cargo test after the fix (green, exit 0)
+5. `cargo test --offline --locked --test webhook_reconcile_contract` (103 passed)
+6. `cargo test --offline --locked --all-targets -- --test-threads=1` (38 groups; 763 passed, 0 failed, 200 ignored)
+7. `cargo fmt --all -- --check` (exit 0)
+8. `git diff --check` (exit 0)
+9. Python source whitespace scan for `src/forgejo.rs` and `tests/webhook_reconcile_contract.rs` (exit 0)
+10. `cargo metadata --locked --offline --format-version 1 --no-deps`
+11. `python3 scripts/verify_cargo_license_state.py` (exit 0)
+12. `python3 scripts/test_cargo_license_state.py` (12 passed)
+
+The Cargo checks were offline. No model provider, GitLab API, or other external service was called in this lot.

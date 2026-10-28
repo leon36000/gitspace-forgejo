@@ -1,1 +1,29 @@
-ewogICJnaXRfdmVyc2lvbiI6ICJnaXQgdmVyc2lvbiAyLjQzLjAiLAogICJjYXNlcyI6IFsKICAgIHsKICAgICAgImJyYW5jaCI6ICItcmVsZWFzZS12MSIsCiAgICAgICJhY2NlcHRlZCI6IHRydWUKICAgIH0sCiAgICB7CiAgICAgICJicmFuY2giOiAiZmVhdHVyZS9hZ2VudC1wcm9vZiIsCiAgICAgICJhY2NlcHRlZCI6IHRydWUKICAgIH0sCiAgICB7CiAgICAgICJicmFuY2giOiAiZmVhdHVyZS8uLi9vdXRzaWRlIiwKICAgICAgImFjY2VwdGVkIjogZmFsc2UKICAgIH0sCiAgICB7CiAgICAgICJicmFuY2giOiAiZmVhdHVyZS8vb3V0c2lkZSIsCiAgICAgICJhY2NlcHRlZCI6IGZhbHNlCiAgICB9LAogICAgewogICAgICAiYnJhbmNoIjogImZlYXR1cmUvLmhpZGRlbiIsCiAgICAgICJhY2NlcHRlZCI6IGZhbHNlCiAgICB9LAogICAgewogICAgICAiYnJhbmNoIjogImZlYXR1cmUvcmVsZWFzZS5sb2NrIiwKICAgICAgImFjY2VwdGVkIjogZmFsc2UKICAgIH0KICBdCn0K
+{
+  "git_version": "git version 2.43.0",
+  "cases": [
+    {
+      "branch": "-release-v1",
+      "accepted": true
+    },
+    {
+      "branch": "feature/agent-proof",
+      "accepted": true
+    },
+    {
+      "branch": "feature/../outside",
+      "accepted": false
+    },
+    {
+      "branch": "feature//outside",
+      "accepted": false
+    },
+    {
+      "branch": "feature/.hidden",
+      "accepted": false
+    },
+    {
+      "branch": "feature/release.lock",
+      "accepted": false
+    }
+  ]
+}

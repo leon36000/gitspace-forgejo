@@ -1,1 +1,176 @@
-WwogIHsKICAgICJhcGlfdmVyc2lvbiI6ICJmb3JnZWpvLXJlc3QtdjEiLAogICAgImNhbm9uaWNhbF9zdGF0ZSI6IHsKICAgICAgImFzc2lnbmVlcyI6IHsKICAgICAgICAiZnJlc2huZXNzIjogImN1cnJlbnRfYXBpX3JlYWQiLAogICAgICAgICJpdGVtcyI6IFtdLAogICAgICAgICJzb3VyY2UiOiAiY3VycmVudF9mb3JnZWpvX3Jlc291cmNlX2FwaSIsCiAgICAgICAgInRydXN0IjogInVudHJ1c3RlZF9mb3JnZWpvX2lkZW50aXR5IgogICAgICB9LAogICAgICAiYmFzZV9zaGEiOiBudWxsLAogICAgICAiY29tbWVudCI6IG51bGwsCiAgICAgICJkcmFmdCI6IG51bGwsCiAgICAgICJoZWFkX3NoYSI6IG51bGwsCiAgICAgICJodG1sX3VybCI6ICJodHRwOi8vMTI3LjAuMC4xOjMxMzAvZm9yZ2UtYWRtaW4vYWdlbnQtZm9yZ2UtY29yZS9pc3N1ZXMvMSIsCiAgICAgICJsYWJlbHMiOiB7CiAgICAgICAgImZyZXNobmVzcyI6ICJjdXJyZW50X2FwaV9yZWFkIiwKICAgICAgICAiaXRlbXMiOiBbXSwKICAgICAgICAic291cmNlIjogImN1cnJlbnRfZm9yZ2Vqb19yZXNvdXJjZV9hcGkiLAogICAgICAgICJ0cnVzdCI6ICJ1bnRydXN0ZWRfdXNlcl9jb250ZW50IgogICAgICB9LAogICAgICAibWVyZ2VfY29tbWl0X3NoYSI6IG51bGwsCiAgICAgICJtZXJnZWQiOiBudWxsLAogICAgICAibWlsZXN0b25lIjogewogICAgICAgICJmcmVzaG5lc3MiOiAiY3VycmVudF9hcGlfcmVhZCIsCiAgICAgICAgIm9ic2VydmF0aW9uIjogInVuYXNzaWduZWQiLAogICAgICAgICJzb3VyY2UiOiAiY3VycmVudF9mb3JnZWpvX3Jlc291cmNlX2FwaSIsCiAgICAgICAgInRydXN0IjogInVudHJ1c3RlZF91c2VyX2NvbnRlbnQiLAogICAgICAgICJ2YWx1ZSI6IG51bGwKICAgICAgfSwKICAgICAgInBhcmVudF93b3JrZmxvd19ydW4iOiBudWxsLAogICAgICAicmVsZWFzZSI6IG51bGwsCiAgICAgICJyZXF1ZXN0ZWRfcmV2aWV3ZXJzIjogbnVsbCwKICAgICAgInJlcXVlc3RlZF9yZXZpZXdlcnNfdGVhbXMiOiBudWxsLAogICAgICAic3RhdGUiOiAiY2xvc2VkIiwKICAgICAgInVwZGF0ZWRfYXQiOiAiMjAyNi0xMC0yOFQxNjo1Njo1NS0wNDowMCIsCiAgICAgICJ3b3JrX2l0ZW1fY29udGVudCI6IHsKICAgICAgICAiYm9keSI6ICJFZGl0aW5nIGEgY2xvc2VkIGlzc3VlIGVtaXRzIGEgbm90aWZpY2F0aW9uOyByZWNvbmNpbGUgZnJvbSBGb3JnZWpvJ3MgY3VycmVudCBBUEkgc3RhdGUuIiwKICAgICAgICAic291cmNlIjogImN1cnJlbnRfZm9yZ2Vqb19pc3N1ZV9hcGkiLAogICAgICAgICJ0aXRsZSI6ICJGb3JnZWpvLWVtaXR0ZWQgcmVjb25jaWxpYXRpb24gKGVkaXRlZCkiLAogICAgICAgICJ0cnVzdCI6ICJ1bnRydXN0ZWRfdXNlcl9jb250ZW50IgogICAgICB9CiAgICB9LAogICAgImRlbGl2ZXJ5X2lkIjogIjA4N2JjZjhlLTM4YWEtNDc5Yy05NDI4LTE1ZjM5NGIwNzIzZSIsCiAgICAiam91cm5hbF9zb3VyY2UiOiB7CiAgICAgICJldmVudF9zaGEyNTYiOiAiOWRkYjc1ODI3OGNjOWUwNzZlY2JmNjRiOTI5MTk1YWJkOGFiMGE2ZDUxMzAxYTZmMTdkMThjMmFlMzkxMGI0OCIsCiAgICAgICJyZWNlaXZlcl9hdHRlc3RhdGlvbiI6IHsKICAgICAgICAiYWxnb3JpdGhtIjogImVkMjU1MTkiLAogICAgICAgICJrZXlfaWRfc2hhMjU2IjogIjA3NzZhNmY0NzNjOWY5NjVhMGFjNWE2Mzg0OGI2Y2E0MTU4NDY0N2YxMjI1YWRjNDkzNjZkNmVhYTk1MTBlMzkiLAogICAgICAgICJzaWduYXR1cmVfaW5jbHVkZWQiOiBmYWxzZSwKICAgICAgICAic3RhdHVzIjogInZlcmlmaWVkIiwKICAgICAgICAidmVyaWZpY2F0aW9uX3Njb3BlIjogInJlY2VpdmVyX3NpZ25hdHVyZV9vbmx5IgogICAgICB9LAogICAgICAic2VxdWVuY2UiOiA1CiAgICB9LAogICAgInJlc291cmNlIjogewogICAgICAia2luZCI6ICJpc3N1ZSIsCiAgICAgICJudW1iZXIiOiAxLAogICAgICAib3duZXIiOiAiZm9yZ2UtYWRtaW4iLAogICAgICAicmVwb3NpdG9yeSI6ICJhZ2VudC1mb3JnZS1jb3JlIgogICAgfSwKICAgICJzY2hlbWFfdmVyc2lvbiI6IDE5LAogICAgInNvdXJjZV9ldmVudF9wcm92ZW5hbmNlX2NvbnRyYWN0IjogewogICAgICAiYmF0Y2hfZXJyb3Jfc291cmNlX29ic2VydmF0aW9uIjogInNlbGVjdGVkX2V2ZW50X3NvdXJjZXMgYmluZHMgc2VsZWN0ZWQgZGVsaXZlcnkgSURzIHRvIGpvdXJuYWwgcm93cyBmb3Igc3RydWN0dXJlZCBiYXRjaCByZWZ1c2FscyBhZnRlciBzb3VyY2Ugc2VsZWN0aW9uLCBpbmNsdWRpbmcgaG9zdCBjcmVkZW50aWFsLXBpcGUgcmVhZCBmYWlsdXJlcywgd2hlbiBwZXItZGVsaXZlcnkgcmVzdWx0cyBhcmUgb21pdHRlZCIsCiAgICAgICJjdXJyZW50X3N0YXRlX3JlYWRfbWVhbnMiOiAiY2Fub25pY2FsX2FwaV9yZWFkX29ubHkiLAogICAgICAiam91cm5hbF9oYXNoX2NoYWluX2F1dGhlbnRpY2F0ZXNfbG9jYWxfd3JpdGVyIjogZmFsc2UsCiAgICAgICJqb3VybmFsX3JlcGxheV9jb250cmFjdCI6ICJ2YWxpZGF0ZXNfaGFzaF9jaGFpbl9hbmRfZW52ZWxvcGU7IG9wdGlvbmFsX3JlY2VpdmVyX2F0dGVzdGF0aW9uX3JlcXVpcmVzX2V4dGVybmFsX3RydXN0X3BvbGljeSIsCiAgICAgICJwZXJfZGVsaXZlcnlfYXR0ZXN0YXRpb25fb2JzZXJ2YXRpb24iOiAiam91cm5hbF9zb3VyY2UucmVjZWl2ZXJfYXR0ZXN0YXRpb24uc3RhdHVzIHJlcG9ydHMgb25seSByZWNlaXZlciBzaWduYXR1cmUgdmVyaWZpY2F0aW9uIHVuZGVyIHRoZSBzdXBwbGllZCBleHRlcm5hbCBrZXkgcG9saWN5IiwKICAgICAgInBlcl9kZWxpdmVyeV9pbmdlc3Rpb25fYXR0ZXN0YXRpb25fcGVyc2lzdGVkIjogIm9wdGlvbmFsX2VkMjU1MTlfcmVjZWl2ZXJfc2lnbmF0dXJlIiwKICAgICAgInBlcl9kZWxpdmVyeV9qb3VybmFsX2lkZW50aXR5IjogWwogICAgICAgICJqb3VybmFsX3NvdXJjZS5zZXF1ZW5jZSIsCiAgICAgICAgImpvdXJuYWxfc291cmNlLmV2ZW50X3NoYTI1NiIKICAgICAgXSwKICAgICAgInJhd19zaWduYXR1cmVfcGVyc2lzdGVkIjogZmFsc2UsCiAgICAgICJyZWNlaXZlcl9hdHRlc3RhdGlvbl92ZXJpZmljYXRpb24iOiAicmVxdWlyZXNfZXh0ZXJuYWxfdHJ1c3RlZF9rZXlfcG9saWN5OyByZXF1aXJlZF9iZWZvcmVfY3JlZGVudGlhbF9mb3JfaW5fc2NvcGVfZGVsaXZlcnkiLAogICAgICAicmVjZWl2ZXJfaG1hY19jaGVjayI6ICJwZXJmb3JtZWRfYmVmb3JlX2FwcGVuZF9ieV9jdXJyZW50X2luZ2VzdF9wYXRoIiwKICAgICAgInJlcGxheV9obWFjX3ZlcmlmaWNhdGlvbiI6ICJub3RfcGVyZm9ybWVkIiwKICAgICAgInNpZ25hdHVyZV92ZXJpZmljYXRpb25fZG9lc19ub3RfZXN0YWJsaXNoIjogWwogICAgICAgICJ1cHN0cmVhbV90cnV0aCIsCiAgICAgICAgInNvZnR3YXJlX2NvcnJlY3RuZXNzIiwKICAgICAgICAibG9jYWxfd3JpdGVyX2F1dGhlbnRpY2l0eSIKICAgICAgXSwKICAgICAgInNvdXJjZV9hdXRoZW50aWNpdHlfY2xhaW1fZm9yX3NlbGVjdGVkX2RlbGl2ZXJ5IjogIm5vdF9tYWRlIiwKICAgICAgInRydXN0ZWRfYm91bmRhcnkiOiAibG9jYWxfZmlsZXN5c3RlbV93cml0ZXIiCiAgICB9LAogICAgInVwc3RyZWFtX3JlYWRfYXR0ZW1wdHMiOiAxLAogICAgInZlcmRpY3QiOiAiY3VycmVudF9zdGF0ZV9yZWFkIgogIH0sCiAgewogICAgImFwaV92ZXJzaW9uIjogImZvcmdlam8tcmVzdC12MSIsCiAgICAiY2Fub25pY2FsX3N0YXRlIjogewogICAgICAiYXNzaWduZWVzIjogewogICAgICAgICJmcmVzaG5lc3MiOiAiY3VycmVudF9hcGlfcmVhZCIsCiAgICAgICAgIml0ZW1zIjogW10sCiAgICAgICAgInNvdXJjZSI6ICJjdXJyZW50X2Zvcmdlam9fcmVzb3VyY2VfYXBpIiwKICAgICAgICAidHJ1c3QiOiAidW50cnVzdGVkX2Zvcmdlam9faWRlbnRpdHkiCiAgICAgIH0sCiAgICAgICJiYXNlX3NoYSI6IG51bGwsCiAgICAgICJjb21tZW50IjogbnVsbCwKICAgICAgImRyYWZ0IjogbnVsbCwKICAgICAgImhlYWRfc2hhIjogbnVsbCwKICAgICAgImh0bWxfdXJsIjogImh0dHA6Ly8xMjcuMC4wLjE6MzEzMC9mb3JnZS1hZG1pbi9hZ2VudC1mb3JnZS1jb3JlL2lzc3Vlcy8xIiwKICAgICAgImxhYmVscyI6IHsKICAgICAgICAiZnJlc2huZXNzIjogImN1cnJlbnRfYXBpX3JlYWQiLAogICAgICAgICJpdGVtcyI6IFtdLAogICAgICAgICJzb3VyY2UiOiAiY3VycmVudF9mb3JnZWpvX3Jlc291cmNlX2FwaSIsCiAgICAgICAgInRydXN0IjogInVudHJ1c3RlZF91c2VyX2NvbnRlbnQiCiAgICAgIH0sCiAgICAgICJtZXJnZV9jb21taXRfc2hhIjogbnVsbCwKICAgICAgIm1lcmdlZCI6IG51bGwsCiAgICAgICJtaWxlc3RvbmUiOiB7CiAgICAgICAgImZyZXNobmVzcyI6ICJjdXJyZW50X2FwaV9yZWFkIiwKICAgICAgICAib2JzZXJ2YXRpb24iOiAidW5hc3NpZ25lZCIsCiAgICAgICAgInNvdXJjZSI6ICJjdXJyZW50X2Zvcmdlam9fcmVzb3VyY2VfYXBpIiwKICAgICAgICAidHJ1c3QiOiAidW50cnVzdGVkX3VzZXJfY29udGVudCIsCiAgICAgICAgInZhbHVlIjogbnVsbAogICAgICB9LAogICAgICAicGFyZW50X3dvcmtmbG93X3J1biI6IG51bGwsCiAgICAgICJyZWxlYXNlIjogbnVsbCwKICAgICAgInJlcXVlc3RlZF9yZXZpZXdlcnMiOiBudWxsLAogICAgICAicmVxdWVzdGVkX3Jldmlld2Vyc190ZWFtcyI6IG51bGwsCiAgICAgICJzdGF0ZSI6ICJjbG9zZWQiLAogICAgICAidXBkYXRlZF9hdCI6ICIyMDI2LTEwLTI4VDE2OjU2OjU1LTA0OjAwIiwKICAgICAgIndvcmtfaXRlbV9jb250ZW50IjogewogICAgICAgICJib2R5IjogIkVkaXRpbmcgYSBjbG9zZWQgaXNzdWUgZW1pdHMgYSBub3RpZmljYXRpb247IHJlY29uY2lsZSBmcm9tIEZvcmdlam8ncyBjdXJyZW50IEFQSSBzdGF0ZS4iLAogICAgICAgICJzb3VyY2UiOiAiY3VycmVudF9mb3JnZWpvX2lzc3VlX2FwaSIsCiAgICAgICAgInRpdGxlIjogIkZvcmdlam8tZW1pdHRlZCByZWNvbmNpbGlhdGlvbiAoZWRpdGVkKSIsCiAgICAgICAgInRydXN0IjogInVudHJ1c3RlZF91c2VyX2NvbnRlbnQiCiAgICAgIH0KICAgIH0sCiAgICAiZGVsaXZlcnlfaWQiOiAiMjhkOWM1MDQtNmZiYS00OWVmLWFhMTItNzVmZGZmNjJiNGZkIiwKICAgICJqb3VybmFsX3NvdXJjZSI6IHsKICAgICAgImV2ZW50X3NoYTI1NiI6ICI2NzEzYWZkM2RiMWY4NjkwZGE0YmZlMGJkNDI4MzMwOGUxYTdjZjNkZjkwODY0Mzk2Yjk5YzljYTdmMDA4MzZlIiwKICAgICAgInJlY2VpdmVyX2F0dGVzdGF0aW9uIjogewogICAgICAgICJhbGdvcml0aG0iOiAiZWQyNTUxOSIsCiAgICAgICAgImtleV9pZF9zaGEyNTYiOiAiMDc3NmE2ZjQ3M2M5Zjk2NWEwYWM1YTYzODQ4YjZjYTQxNTg0NjQ3ZjEyMjVhZGM0OTM2NmQ2ZWFhOTUxMGUzOSIsCiAgICAgICAgInNpZ25hdHVyZV9pbmNsdWRlZCI6IGZhbHNlLAogICAgICAgICJzdGF0dXMiOiAidmVyaWZpZWQiLAogICAgICAgICJ2ZXJpZmljYXRpb25fc2NvcGUiOiAicmVjZWl2ZXJfc2lnbmF0dXJlX29ubHkiCiAgICAgIH0sCiAgICAgICJzZXF1ZW5jZSI6IDYKICAgIH0sCiAgICAicmVzb3VyY2UiOiB7CiAgICAgICJraW5kIjogImlzc3VlIiwKICAgICAgIm51bWJlciI6IDEsCiAgICAgICJvd25lciI6ICJmb3JnZS1hZG1pbiIsCiAgICAgICJyZXBvc2l0b3J5IjogImFnZW50LWZvcmdlLWNvcmUiCiAgICB9LAogICAgInNjaGVtYV92ZXJzaW9uIjogMTksCiAgICAic291cmNlX2V2ZW50X3Byb3ZlbmFuY2VfY29udHJhY3QiOiB7CiAgICAgICJiYXRjaF9lcnJvcl9zb3VyY2Vfb2JzZXJ2YXRpb24iOiAic2VsZWN0ZWRfZXZlbnRfc291cmNlcyBiaW5kcyBzZWxlY3RlZCBkZWxpdmVyeSBJRHMgdG8gam91cm5hbCByb3dzIGZvciBzdHJ1Y3R1cmVkIGJhdGNoIHJlZnVzYWxzIGFmdGVyIHNvdXJjZSBzZWxlY3Rpb24sIGluY2x1ZGluZyBob3N0IGNyZWRlbnRpYWwtcGlwZSByZWFkIGZhaWx1cmVzLCB3aGVuIHBlci1kZWxpdmVyeSByZXN1bHRzIGFyZSBvbWl0dGVkIiwKICAgICAgImN1cnJlbnRfc3RhdGVfcmVhZF9tZWFucyI6ICJjYW5vbmljYWxfYXBpX3JlYWRfb25seSIsCiAgICAgICJqb3VybmFsX2hhc2hfY2hhaW5fYXV0aGVudGljYXRlc19sb2NhbF93cml0ZXIiOiBmYWxzZSwKICAgICAgImpvdXJuYWxfcmVwbGF5X2NvbnRyYWN0IjogInZhbGlkYXRlc19oYXNoX2NoYWluX2FuZF9lbnZlbG9wZTsgb3B0aW9uYWxfcmVjZWl2ZXJfYXR0ZXN0YXRpb25fcmVxdWlyZXNfZXh0ZXJuYWxfdHJ1c3RfcG9saWN5IiwKICAgICAgInBlcl9kZWxpdmVyeV9hdHRlc3RhdGlvbl9vYnNlcnZhdGlvbiI6ICJqb3VybmFsX3NvdXJjZS5yZWNlaXZlcl9hdHRlc3RhdGlvbi5zdGF0dXMgcmVwb3J0cyBvbmx5IHJlY2VpdmVyIHNpZ25hdHVyZSB2ZXJpZmljYXRpb24gdW5kZXIgdGhlIHN1cHBsaWVkIGV4dGVybmFsIGtleSBwb2xpY3kiLAogICAgICAicGVyX2RlbGl2ZXJ5X2luZ2VzdGlvbl9hdHRlc3RhdGlvbl9wZXJzaXN0ZWQiOiAib3B0aW9uYWxfZWQyNTUxOV9yZWNlaXZlcl9zaWduYXR1cmUiLAogICAgICAicGVyX2RlbGl2ZXJ5X2pvdXJuYWxfaWRlbnRpdHkiOiBbCiAgICAgICAgImpvdXJuYWxfc291cmNlLnNlcXVlbmNlIiwKICAgICAgICAiam91cm5hbF9zb3VyY2UuZXZlbnRfc2hhMjU2IgogICAgICBdLAogICAgICAicmF3X3NpZ25hdHVyZV9wZXJzaXN0ZWQiOiBmYWxzZSwKICAgICAgInJlY2VpdmVyX2F0dGVzdGF0aW9uX3ZlcmlmaWNhdGlvbiI6ICJyZXF1aXJlc19leHRlcm5hbF90cnVzdGVkX2tleV9wb2xpY3k7IHJlcXVpcmVkX2JlZm9yZV9jcmVkZW50aWFsX2Zvcl9pbl9zY29wZV9kZWxpdmVyeSIsCiAgICAgICJyZWNlaXZlcl9obWFjX2NoZWNrIjogInBlcmZvcm1lZF9iZWZvcmVfYXBwZW5kX2J5X2N1cnJlbnRfaW5nZXN0X3BhdGgiLAogICAgICAicmVwbGF5X2htYWNfdmVyaWZpY2F0aW9uIjogIm5vdF9wZXJmb3JtZWQiLAogICAgICAic2lnbmF0dXJlX3ZlcmlmaWNhdGlvbl9kb2VzX25vdF9lc3RhYmxpc2giOiBbCiAgICAgICAgInVwc3RyZWFtX3RydXRoIiwKICAgICAgICAic29mdHdhcmVfY29ycmVjdG5lc3MiLAogICAgICAgICJsb2NhbF93cml0ZXJfYXV0aGVudGljaXR5IgogICAgICBdLAogICAgICAic291cmNlX2F1dGhlbnRpY2l0eV9jbGFpbV9mb3Jfc2VsZWN0ZWRfZGVsaXZlcnkiOiAibm90X21hZGUiLAogICAgICAidHJ1c3RlZF9ib3VuZGFyeSI6ICJsb2NhbF9maWxlc3lzdGVtX3dyaXRlciIKICAgIH0sCiAgICAidXBzdHJlYW1fcmVhZF9hdHRlbXB0cyI6IDEsCiAgICAidmVyZGljdCI6ICJjdXJyZW50X3N0YXRlX3JlYWQiCiAgfQpdCg==
+[
+  {
+    "api_version": "forgejo-rest-v1",
+    "canonical_state": {
+      "assignees": {
+        "freshness": "current_api_read",
+        "items": [],
+        "source": "current_forgejo_resource_api",
+        "trust": "untrusted_forgejo_identity"
+      },
+      "base_sha": null,
+      "comment": null,
+      "draft": null,
+      "head_sha": null,
+      "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/issues/1",
+      "labels": {
+        "freshness": "current_api_read",
+        "items": [],
+        "source": "current_forgejo_resource_api",
+        "trust": "untrusted_user_content"
+      },
+      "merge_commit_sha": null,
+      "merged": null,
+      "milestone": {
+        "freshness": "current_api_read",
+        "observation": "unassigned",
+        "source": "current_forgejo_resource_api",
+        "trust": "untrusted_user_content",
+        "value": null
+      },
+      "parent_workflow_run": null,
+      "release": null,
+      "requested_reviewers": null,
+      "requested_reviewers_teams": null,
+      "state": "closed",
+      "updated_at": "2026-10-28T16:56:55-04:00",
+      "work_item_content": {
+        "body": "Editing a closed issue emits a notification; reconcile from Forgejo's current API state.",
+        "source": "current_forgejo_issue_api",
+        "title": "Forgejo-emitted reconciliation (edited)",
+        "trust": "untrusted_user_content"
+      }
+    },
+    "delivery_id": "087bcf8e-38aa-479c-9428-15f394b0723e",
+    "journal_source": {
+      "event_sha256": "9ddb758278cc9e076ecbf64b929195abd8ab0a6d51301a6f17d18c2ae3910b48",
+      "receiver_attestation": {
+        "algorithm": "ed25519",
+        "key_id_sha256": "0776a6f473c9f965a0ac5a63848b6ca41584647f1225adc49366d6eaa9510e39",
+        "signature_included": false,
+        "status": "verified",
+        "verification_scope": "receiver_signature_only"
+      },
+      "sequence": 5
+    },
+    "resource": {
+      "kind": "issue",
+      "number": 1,
+      "owner": "forge-admin",
+      "repository": "agent-forge-core"
+    },
+    "schema_version": 19,
+    "source_event_provenance_contract": {
+      "batch_error_source_observation": "selected_event_sources binds selected delivery IDs to journal rows for structured batch refusals after source selection, including host credential-pipe read failures, when per-delivery results are omitted",
+      "current_state_read_means": "canonical_api_read_only",
+      "journal_hash_chain_authenticates_local_writer": false,
+      "journal_replay_contract": "validates_hash_chain_and_envelope; optional_receiver_attestation_requires_external_trust_policy",
+      "per_delivery_attestation_observation": "journal_source.receiver_attestation.status reports only receiver signature verification under the supplied external key policy",
+      "per_delivery_ingestion_attestation_persisted": "optional_ed25519_receiver_signature",
+      "per_delivery_journal_identity": [
+        "journal_source.sequence",
+        "journal_source.event_sha256"
+      ],
+      "raw_signature_persisted": false,
+      "receiver_attestation_verification": "requires_external_trusted_key_policy; required_before_credential_for_in_scope_delivery",
+      "receiver_hmac_check": "performed_before_append_by_current_ingest_path",
+      "replay_hmac_verification": "not_performed",
+      "signature_verification_does_not_establish": [
+        "upstream_truth",
+        "software_correctness",
+        "local_writer_authenticity"
+      ],
+      "source_authenticity_claim_for_selected_delivery": "not_made",
+      "trusted_boundary": "local_filesystem_writer"
+    },
+    "upstream_read_attempts": 1,
+    "verdict": "current_state_read"
+  },
+  {
+    "api_version": "forgejo-rest-v1",
+    "canonical_state": {
+      "assignees": {
+        "freshness": "current_api_read",
+        "items": [],
+        "source": "current_forgejo_resource_api",
+        "trust": "untrusted_forgejo_identity"
+      },
+      "base_sha": null,
+      "comment": null,
+      "draft": null,
+      "head_sha": null,
+      "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/issues/1",
+      "labels": {
+        "freshness": "current_api_read",
+        "items": [],
+        "source": "current_forgejo_resource_api",
+        "trust": "untrusted_user_content"
+      },
+      "merge_commit_sha": null,
+      "merged": null,
+      "milestone": {
+        "freshness": "current_api_read",
+        "observation": "unassigned",
+        "source": "current_forgejo_resource_api",
+        "trust": "untrusted_user_content",
+        "value": null
+      },
+      "parent_workflow_run": null,
+      "release": null,
+      "requested_reviewers": null,
+      "requested_reviewers_teams": null,
+      "state": "closed",
+      "updated_at": "2026-10-28T16:56:55-04:00",
+      "work_item_content": {
+        "body": "Editing a closed issue emits a notification; reconcile from Forgejo's current API state.",
+        "source": "current_forgejo_issue_api",
+        "title": "Forgejo-emitted reconciliation (edited)",
+        "trust": "untrusted_user_content"
+      }
+    },
+    "delivery_id": "28d9c504-6fba-49ef-aa12-75fdff62b4fd",
+    "journal_source": {
+      "event_sha256": "6713afd3db1f8690da4bfe0bd4283308e1a7cf3df90864396b99c9ca7f00836e",
+      "receiver_attestation": {
+        "algorithm": "ed25519",
+        "key_id_sha256": "0776a6f473c9f965a0ac5a63848b6ca41584647f1225adc49366d6eaa9510e39",
+        "signature_included": false,
+        "status": "verified",
+        "verification_scope": "receiver_signature_only"
+      },
+      "sequence": 6
+    },
+    "resource": {
+      "kind": "issue",
+      "number": 1,
+      "owner": "forge-admin",
+      "repository": "agent-forge-core"
+    },
+    "schema_version": 19,
+    "source_event_provenance_contract": {
+      "batch_error_source_observation": "selected_event_sources binds selected delivery IDs to journal rows for structured batch refusals after source selection, including host credential-pipe read failures, when per-delivery results are omitted",
+      "current_state_read_means": "canonical_api_read_only",
+      "journal_hash_chain_authenticates_local_writer": false,
+      "journal_replay_contract": "validates_hash_chain_and_envelope; optional_receiver_attestation_requires_external_trust_policy",
+      "per_delivery_attestation_observation": "journal_source.receiver_attestation.status reports only receiver signature verification under the supplied external key policy",
+      "per_delivery_ingestion_attestation_persisted": "optional_ed25519_receiver_signature",
+      "per_delivery_journal_identity": [
+        "journal_source.sequence",
+        "journal_source.event_sha256"
+      ],
+      "raw_signature_persisted": false,
+      "receiver_attestation_verification": "requires_external_trusted_key_policy; required_before_credential_for_in_scope_delivery",
+      "receiver_hmac_check": "performed_before_append_by_current_ingest_path",
+      "replay_hmac_verification": "not_performed",
+      "signature_verification_does_not_establish": [
+        "upstream_truth",
+        "software_correctness",
+        "local_writer_authenticity"
+      ],
+      "source_authenticity_claim_for_selected_delivery": "not_made",
+      "trusted_boundary": "local_filesystem_writer"
+    },
+    "upstream_read_attempts": 1,
+    "verdict": "current_state_read"
+  }
+]

@@ -1,1 +1,12 @@
-ewogICJpc19hZG1pbiI6IGZhbHNlLAogICJsb2dpbiI6ICJmb3JnZS1yZWFkZXIiLAogICJyZXBvX3Blcm1pc3Npb25fYWRtaW4iOiBmYWxzZSwKICAicmVwb19wZXJtaXNzaW9uX3B1bGwiOiB0cnVlLAogICJyZXBvX3Blcm1pc3Npb25fcHVzaCI6IGZhbHNlLAogICJyZXF1ZXN0ZWRfdG9rZW5fc2NvcGVzIjogWwogICAgInJlYWQ6dXNlciIsCiAgICAicmVhZDpyZXBvc2l0b3J5IiwKICAgICJyZWFkOmlzc3VlIgogIF0KfQo=
+{
+  "is_admin": false,
+  "login": "forge-reader",
+  "repo_permission_admin": false,
+  "repo_permission_pull": true,
+  "repo_permission_push": false,
+  "requested_token_scopes": [
+    "read:user",
+    "read:repository",
+    "read:issue"
+  ]
+}
