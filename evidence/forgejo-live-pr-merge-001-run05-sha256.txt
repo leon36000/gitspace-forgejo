@@ -1,0 +1,17 @@
+f098e490dbe30adf89c3a4b22cb758fdc95bb51ce13ca9a93a6bbd4be60b53f2  evidence/forgejo-live-pr-merge-001-run05-branch-protection.json
+814699b8ccb7f6b9244434835412ffdd15c82d633514e416d4bf00d3c5662f66  evidence/forgejo-live-pr-merge-001-run05-changed-files-at-creation.json
+814699b8ccb7f6b9244434835412ffdd15c82d633514e416d4bf00d3c5662f66  evidence/forgejo-live-pr-merge-001-run05-changed-files-before-merge.json
+efd2ca68153976a638a9db27566d853d33306c55ea5406ebfa5170a6e8d1636e  evidence/forgejo-live-pr-merge-001-run05-fake-success-verifier.log
+755e6d54a1b39ee922aee4732407d83df827e6668846d2b1428db0b1a9ed29d0  evidence/forgejo-live-pr-merge-001-run05-final-premerge-preflight.json
+6a5432c13b0a4f341ff335adc0ad78eef3824e07aa76c37b9693d2c4a5dadafc  evidence/forgejo-live-pr-merge-001-run05-final-verifier.log
+6a5432c13b0a4f341ff335adc0ad78eef3824e07aa76c37b9693d2c4a5dadafc  evidence/forgejo-live-pr-merge-001-run05-green-verifier.log
+9a74be943884c16479ab0cf59c808cac5d833de7cac21fb163cb64339aa2715f  evidence/forgejo-live-pr-merge-001-run05-merge-response.json
+7804b5f8db742e32960de272561ecefcc44a1a24158e5720831d2cefd306b628  evidence/forgejo-live-pr-merge-001-run05-no-review-refusal.json
+2466a684b31991f169d55c8565182a650d6bce4a8325b7e3842bc8e32b10ee4f  evidence/forgejo-live-pr-merge-001-run05-non-whitelisted-refusal.json
+6404ecba59c809ddf86e55c5c8f34a1116f7d682cee359e7acb53f010cdca49c  evidence/forgejo-live-pr-merge-001-run05-postmerge-readback.json
+db75d7d821add7dfb6e7bee45b025d628d227130b678be7faf4cad3e4eccb1c2  evidence/forgejo-live-pr-merge-001-run05-premerge-readback.json
+07d51a4303f31976c359374d4e9a70aa08aaca43cfcafe41fad9512ea227c615  evidence/forgejo-live-pr-merge-001-run05-red-verifier.log
+d058c4cade0a1bb37c2196ee39f328a172e9dfd9381cfa015ed88a77117771e7  evidence/forgejo-live-pr-merge-001-run05-result.json
+cb5b677837b7b7a5efd35162ec087a3ded561d96d51bb5898b5a0691ccbdd145  evidence/forgejo-live-pr-merge-001-run05-review-binding.json
+f184c3cb9d2178f5ecb84ccd0ee64cee856ac42d640efcd9faf84ef2fff166bf  evidence/forgejo-live-pr-merge-001-run05-stale-preflight.json
+190e556b3dd1bba0fd91eb6452628d3cfbb46c01b6d4e8ccfa82cf0eaf279855  evidence/forgejo-live-pr-merge-001-run05-trusted-build-provenance.json

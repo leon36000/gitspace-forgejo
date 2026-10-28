@@ -1,0 +1,10 @@
+below_min_returns_min ... FAILED (exit=0, expected=0, output=b'')
+above_max_returns_max ... FAILED (exit=0, expected=7, output=b'')
+in_range_is_preserved ... FAILED (exit=0, expected=4, output=b'')
+equal_lower_bound_is_preserved ... FAILED (exit=0, expected=-7, output=b'')
+equal_upper_bound_is_preserved ... FAILED (exit=0, expected=7, output=b'')
+singleton_interval_clamps ... FAILED (exit=0, expected=5, output=b'')
+negative_interval_clamps ... FAILED (exit=0, expected=-4, output=b'')
+i32_min_clamps ... FAILED (exit=0, expected=-7, output=b'')
+i32_max_clamps ... FAILED (exit=0, expected=7, output=b'')
+0 passed; 9 failed

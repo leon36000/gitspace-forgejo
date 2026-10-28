@@ -1,0 +1,4 @@
+below_min_returns_min ... FAILED (exit=0, expected=0, output=b'')
+above_max_returns_max ... FAILED (exit=0, expected=7, output=b'')
+in_range_is_preserved ... FAILED (exit=0, expected=4, output=b'')
+0 passed; 3 failed

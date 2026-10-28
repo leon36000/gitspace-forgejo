@@ -1,0 +1,10 @@
+{
+  "api_version": "forgejo-rest-v1",
+  "merge_attempted": false,
+  "merge_authorized": false,
+  "operation": "read_only_merge_preflight",
+  "pull_request_number": 2,
+  "schema_version": 1,
+  "upstream_read_attempts": 1,
+  "verdict": "proof_current"
+}

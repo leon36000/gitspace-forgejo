@@ -1,0 +1,4 @@
+below_min_returns_min ... ok
+above_max_returns_max ... ok
+in_range_is_preserved ... ok
+3 passed; 0 failed

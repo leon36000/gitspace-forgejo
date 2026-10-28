@@ -1,0 +1,52 @@
+{
+  "agent": "deterministic local test adapter; no LLM configured or invoked",
+  "authority": "Python local integration-test driver; not a production merge authority",
+  "base_commit": "12908cff37a2ed352e1437c3912610fc6091808a",
+  "branch_protection": {
+    "apply_to_admins": true,
+    "approvals_whitelist_username": [
+      "forge-reviewer"
+    ],
+    "block_on_outdated_branch": true,
+    "branch_name": "main",
+    "dismiss_stale_approvals": true,
+    "enable_approvals_whitelist": true,
+    "enable_merge_whitelist": true,
+    "merge_whitelist_usernames": [
+      "forge-admin"
+    ],
+    "required_approvals": 1,
+    "rule_name": "main"
+  },
+  "candidate_commit": "4d1ecb950734b8f9c4513eaed4cec132bd9b1acd",
+  "candidate_sha256": "d2d3ae071c330a25aa59fba851ef59d51c3bf6da63138953e87c96b2b6274c45",
+  "false_executor_status_refused": true,
+  "forgejo_version": "17.0.0+gitea-1.22.0",
+  "fresh_premerge_verdict": "proof_current",
+  "green_acceptance": "3 passed; 0 failed",
+  "issue_number": 1,
+  "issue_state_after_merge": "closed",
+  "main_head_after_merge": "685b43485bd02cb2ca9a31620d40dadbc0662bad",
+  "merge_commit_sha": "685b43485bd02cb2ca9a31620d40dadbc0662bad",
+  "merge_http_status": 200,
+  "merged": true,
+  "no_review_merge_refusal_http_status": 405,
+  "non_whitelisted_merge_refusal_http_status": 405,
+  "origin": "http://127.0.0.1:3130",
+  "policy_sha256": "aa5afa352c990c6de4c188ac7dc63fa01f2ff66a095c1ca41c784c5f74e4ce34",
+  "pull_request_number": 2,
+  "red_acceptance": {
+    "exit_code": 1,
+    "failed_tests": [
+      "below_min_returns_min",
+      "above_max_returns_max"
+    ],
+    "passing_test": "in_range_is_preserved"
+  },
+  "requirement_sha256": "878086cb92e6ee91331204e51ecacb4900448537620ba6e108f8db8cca984af6",
+  "review_id": 1,
+  "reviewer_id": 2,
+  "reviewer_login": "forge-reviewer",
+  "schema_version": 1,
+  "stale_candidate_verdict": "stale_candidate"
+}

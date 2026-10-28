@@ -1,0 +1,19 @@
+{
+  "issue": {
+    "number": 1,
+    "state": "closed"
+  },
+  "main_head": "253fef53bdfbfbf5c3d8458b3822cda4688323b8",
+  "pull_request": {
+    "base_ref": "main",
+    "base_sha": "253fef53bdfbfbf5c3d8458b3822cda4688323b8",
+    "changed_files": 1,
+    "head_sha": "b4a6d6788b466ac913a003c58323d9b6dd9245b5",
+    "merge_commit_sha": "253fef53bdfbfbf5c3d8458b3822cda4688323b8",
+    "merged": true,
+    "number": 2,
+    "state": "closed"
+  },
+  "source_sha256": "d2d3ae071c330a25aa59fba851ef59d51c3bf6da63138953e87c96b2b6274c45",
+  "tested_source_sha256": "d2d3ae071c330a25aa59fba851ef59d51c3bf6da63138953e87c96b2b6274c45"
+}

@@ -1,0 +1,68 @@
+{
+  "agent": "deterministic local test adapter; no LLM configured or invoked",
+  "authority": "Python local integration-test driver; not a production merge authority",
+  "base_commit": "68295e6eb6fd0c3ed3be02afc7a22e5afb3e466c",
+  "branch_protection": {
+    "apply_to_admins": true,
+    "approvals_whitelist_username": [
+      "forge-reviewer"
+    ],
+    "block_on_outdated_branch": true,
+    "branch_name": "main",
+    "dismiss_stale_approvals": true,
+    "enable_approvals_whitelist": true,
+    "enable_merge_whitelist": true,
+    "merge_whitelist_usernames": [
+      "forge-admin"
+    ],
+    "required_approvals": 1,
+    "rule_name": "main"
+  },
+  "candidate_commit": "2fc1d800473ed828ad152f04cfd0cb250faf7807",
+  "candidate_sha256": "d2d3ae071c330a25aa59fba851ef59d51c3bf6da63138953e87c96b2b6274c45",
+  "changed_paths": [
+    "src/lib.rs"
+  ],
+  "false_executor_status_refused": true,
+  "forgejo_binary_sha256": "e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7",
+  "forgejo_listener_pid": 1646310,
+  "forgejo_version": "17.0.0+gitea-1.22.0",
+  "fresh_premerge_verdict": "proof_current",
+  "green_acceptance": "9 passed; 0 failed",
+  "issue_number": 1,
+  "issue_state_after_merge": "closed",
+  "main_head_after_merge": "920b269411db19fbc4369abae1fdc9c678cf0738",
+  "merge_commit_sha": "920b269411db19fbc4369abae1fdc9c678cf0738",
+  "merge_http_status": 200,
+  "merged": true,
+  "no_review_merge_refusal_http_status": 405,
+  "no_review_merge_refusal_reason": "not allowed to merge [reason: Does not have enough approvals]",
+  "non_whitelisted_merge_refusal_http_status": 405,
+  "non_whitelisted_merge_refusal_reason": "User not allowed to merge PR",
+  "origin": "http://127.0.0.1:3130",
+  "policy_sha256": "aa5afa352c990c6de4c188ac7dc63fa01f2ff66a095c1ca41c784c5f74e4ce34",
+  "pull_request_number": 2,
+  "red_acceptance": {
+    "exit_code": 1,
+    "failed_tests": [
+      "below_min_returns_min",
+      "above_max_returns_max",
+      "singleton_interval_clamps",
+      "i32_min_clamps",
+      "i32_max_clamps"
+    ],
+    "passing_tests": [
+      "in_range_is_preserved",
+      "equal_lower_bound_is_preserved",
+      "equal_upper_bound_is_preserved",
+      "negative_interval_clamps"
+    ]
+  },
+  "requirement_sha256": "878086cb92e6ee91331204e51ecacb4900448537620ba6e108f8db8cca984af6",
+  "review_id": 1,
+  "reviewer_id": 2,
+  "reviewer_login": "forge-reviewer",
+  "schema_version": 1,
+  "stale_candidate_verdict": "stale_candidate",
+  "worker_sha256": "94347097f1c48eb26b881b494475284b2c9b924281f1b50571641a0ddaff4dd6"
+}

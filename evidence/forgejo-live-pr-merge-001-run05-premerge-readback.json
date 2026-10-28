@@ -1,0 +1,39 @@
+{
+  "branch_protection": {
+    "apply_to_admins": true,
+    "approvals_whitelist_username": [
+      "forge-reviewer"
+    ],
+    "block_on_outdated_branch": true,
+    "branch_name": "main",
+    "dismiss_stale_approvals": true,
+    "enable_approvals_whitelist": true,
+    "enable_merge_whitelist": true,
+    "merge_whitelist_usernames": [
+      "forge-admin"
+    ],
+    "required_approvals": 1,
+    "rule_name": "main"
+  },
+  "pull_request": {
+    "base_ref": "main",
+    "base_sha": "8ca7abbb7ff315f39478af72b4f3860e5c110b6d",
+    "changed_files": 1,
+    "head_ref": "agent/clamp",
+    "head_sha": "b4a6d6788b466ac913a003c58323d9b6dd9245b5",
+    "mergeable": true,
+    "merged": false,
+    "number": 2,
+    "state": "open"
+  },
+  "review": {
+    "commit_id": "b4a6d6788b466ac913a003c58323d9b6dd9245b5",
+    "dismissed": false,
+    "official": true,
+    "reviewer_id": 2,
+    "reviewer_login": "forge-reviewer",
+    "stale": false,
+    "state": "APPROVED"
+  },
+  "review_count": 1
+}
