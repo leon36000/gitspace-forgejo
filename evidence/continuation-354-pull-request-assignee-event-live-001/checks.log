@@ -1,0 +1,10 @@
+python_unittest: exit=0
+----------------------------------------------------------------------
+Ran 154 tests in 1.467s
+
+OK
+python_ast: exit=0
+python_ast=ok
+cli_help: exit=0
+flag_present=True
+git_diff_check: exit=0

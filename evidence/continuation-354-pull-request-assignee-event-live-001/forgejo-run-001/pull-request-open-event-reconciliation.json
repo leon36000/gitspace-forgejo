@@ -1,0 +1,74 @@
+{
+  "api_version": "forgejo-rest-v1",
+  "canonical_state": {
+    "assignees": null,
+    "base_sha": "a66b08f53bc32cabd17bc6223f39df4fe086e1bb",
+    "comment": null,
+    "draft": false,
+    "head_sha": "8b70700625348e1549bfbcdcba19e817887df882",
+    "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/2",
+    "labels": {
+      "freshness": "current_api_read",
+      "items": [],
+      "source": "current_forgejo_resource_api",
+      "trust": "untrusted_user_content"
+    },
+    "merge_commit_sha": null,
+    "merged": false,
+    "parent_workflow_run": null,
+    "requested_reviewers": [],
+    "requested_reviewers_teams": [],
+    "state": "closed",
+    "updated_at": "2026-10-28T04:24:09-04:00",
+    "work_item_content": {
+      "body": "Verify that the live receiver journals and reconciles PR transitions.",
+      "source": "current_forgejo_pull_request_api",
+      "title": "Exercise emitted pull-request webhooks",
+      "trust": "untrusted_user_content"
+    }
+  },
+  "delivery_id": "a909a0c0-77f8-438d-806a-d6ee9b6dfaf7",
+  "journal_source": {
+    "event_sha256": "1ab8c51921c1efbf8b70679a8d5bd2e00d558b6d5b12425795d06b5c93cb2ca1",
+    "receiver_attestation": {
+      "algorithm": "ed25519",
+      "key_id_sha256": "aa5b0a48114923734c77338dfd8dd0d6dcd45288e5f94ae643e22265a475a1b0",
+      "signature_included": false,
+      "status": "verified",
+      "verification_scope": "receiver_signature_only"
+    },
+    "sequence": 5
+  },
+  "resource": {
+    "kind": "pull_request",
+    "number": 2,
+    "owner": "forge-admin",
+    "repository": "agent-forge-core"
+  },
+  "schema_version": 17,
+  "source_event_provenance_contract": {
+    "batch_error_source_observation": "selected_event_sources binds selected delivery IDs to journal rows for structured batch refusals after source selection, including host credential-pipe read failures, when per-delivery results are omitted",
+    "current_state_read_means": "canonical_api_read_only",
+    "journal_hash_chain_authenticates_local_writer": false,
+    "journal_replay_contract": "validates_hash_chain_and_envelope; optional_receiver_attestation_requires_external_trust_policy",
+    "per_delivery_attestation_observation": "journal_source.receiver_attestation.status reports only receiver signature verification under the supplied external key policy",
+    "per_delivery_ingestion_attestation_persisted": "optional_ed25519_receiver_signature",
+    "per_delivery_journal_identity": [
+      "journal_source.sequence",
+      "journal_source.event_sha256"
+    ],
+    "raw_signature_persisted": false,
+    "receiver_attestation_verification": "requires_external_trusted_key_policy; required_before_credential_for_in_scope_delivery",
+    "receiver_hmac_check": "performed_before_append_by_current_ingest_path",
+    "replay_hmac_verification": "not_performed",
+    "signature_verification_does_not_establish": [
+      "upstream_truth",
+      "software_correctness",
+      "local_writer_authenticity"
+    ],
+    "source_authenticity_claim_for_selected_delivery": "not_made",
+    "trusted_boundary": "local_filesystem_writer"
+  },
+  "upstream_read_attempts": 1,
+  "verdict": "current_state_read"
+}

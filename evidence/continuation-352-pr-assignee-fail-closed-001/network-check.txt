@@ -1,0 +1,12 @@
+Observed 2026-10-28 from PC6; no credentials used.
+
+Target: https://pc4.tail0c55ff.ts.net/root/gitspace-forgejo.git
+Tailscale: peer pc4 online; one ping returned successfully.
+MagicDNS lookup: no such host.
+TCP 22: timeout.
+TCP 80: timeout.
+TCP 443: timeout.
+TCP 8443: timeout.
+HTTPS request to 443 with the expected hostname/SNI resolved directly to the online Tailscale peer: timeout after 3 seconds; HTTP status 000.
+
+No GitLab repository refs were read. No HTTP authentication, password change, Git commit or push was attempted. The configured origin remains the local Forgejo test service.

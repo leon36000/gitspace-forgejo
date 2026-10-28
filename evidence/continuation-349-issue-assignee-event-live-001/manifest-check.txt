@@ -1,0 +1,8 @@
+{
+  "final_worktree_manifest_digest_bound": true,
+  "local_files_verified": 34,
+  "project_entries_appended": 46,
+  "project_prefix_preserved": true,
+  "worktree_entries_appended": 45,
+  "worktree_prefix_preserved": true
+}

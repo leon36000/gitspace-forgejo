@@ -1,0 +1,7 @@
+{
+  "cleanup_failure": null,
+  "error_message": "Forgejo issue API did not confirm clearing all assignees",
+  "error_type": "RuntimeError",
+  "stage": "deliver_issue_unassigned_event",
+  "verdict": "failed"
+}

@@ -1,0 +1,17 @@
+cargo fmt --all -- --check: PASS
+git diff --check: PASS
+runner AST parse: PASS
+{
+  "license": null,
+  "license_decision": "no_license_selected",
+  "license_file": null,
+  "package": "agent-forge-core",
+  "publish": [],
+  "redistribution_rights": "not_assessed",
+  "spdx_package_license_declared": "NOASSERTION",
+  "status": "metadata_policy_verified"
+}
+----------------------------------------------------------------------
+Ran 12 tests in 0.000s
+
+OK

@@ -1,0 +1,4 @@
+2a7655fdf72a07fd749b736e5cde1c6e0aa4a5119f9e71aeb18630bb5b9b2f42  append_manifests.py
+ea5492dd0da1d4d80b521c2c38bd41884c7993ebaea0559fbc907e2e2be43bef  cargo-all-targets.log
+074d6af6754fd0fcd54efb510ef05c08caae4eae700eb4cbbadbe782fff94baa  local-run.md
+e3fa8f5908892e4a3e846c1eac07f836d5b76a1567a40325744adb4b4bb028e7  manifest-prefix-before.json

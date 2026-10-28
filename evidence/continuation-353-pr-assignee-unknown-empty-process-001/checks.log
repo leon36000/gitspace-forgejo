@@ -1,0 +1,3 @@
+cargo fmt --all -- --check: PASS
+git diff --check: PASS
+runner AST parse: PASS

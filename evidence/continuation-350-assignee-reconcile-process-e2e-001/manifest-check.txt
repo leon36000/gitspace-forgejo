@@ -1,0 +1,5 @@
+worktree_prefix_preserved=true lines_before=16588 lines_after=16603
+project_prefix_preserved=true lines_before=11073 lines_after=11089
+local_evidence_checksums=4/4
+new_evidence_entries_present_in_both_indexes=true
+project_tail_binds_current_worktree_index=true

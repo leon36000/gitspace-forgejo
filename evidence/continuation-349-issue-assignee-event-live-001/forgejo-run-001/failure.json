@@ -1,0 +1,7 @@
+{
+  "cleanup_failure": null,
+  "error_message": "live issue assignees must be a bounded array",
+  "error_type": "ValueError",
+  "stage": "deliver_issue_unassigned_event",
+  "verdict": "failed"
+}
