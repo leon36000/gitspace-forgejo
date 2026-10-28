@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "revision": 1,
+  "verifier_id": "local-independent-verifier-v1",
+  "environment": "bubblewrap-user-pid-network-namespaces; source-read-only; ephemeral-tmp; no-home; offline-cargo",
+  "acceptance_command": ["python3", "/policy/acceptance.py", "/tmp/target/release/agent-forge-core"],
+  "commands": [
+    ["cargo", "build", "--release", "--offline", "--locked", "--manifest-path", "/candidate/Cargo.toml"]
+  ],
+  "protected_criteria": ["/policy/policy.json", "/policy/acceptance.py", "/policy/REQ-001.json"],
+  "timeout_seconds": 90
+}
