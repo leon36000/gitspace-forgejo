@@ -1,0 +1,8 @@
+mcp__GitLab_PC4__get_project(project_id=4) — read-only project check
+mcp__GitLab_PC4__list_branches(id=4) — read-only branch protection/head check
+mcp__GitLab_PC4__list_repository_tree(project_id=4, ref=<commit>, recursive=true) — read-only blob/mode readback
+mcp__GitLab_PC4__add_commit(branch=codex/pc6-transfer-work-2026-10-28) — first Base64-labelled commit, later found incorrect
+mcp__GitLab_PC4__add_commit(encoding=text) — UTF-8 correction commits 62352c4 and 984a938
+mcp__GitLab_PC4__list_commits(ref_name=codex/pc6-transfer-work-2026-10-28) — latest branch commit readback
+mcp__GitLab_PC4__get_pipeline(id=4, pipeline_id=172, include=jobs) — final CI readback
+

@@ -1,0 +1,615 @@
+{
+  "project": {
+    "id": 4,
+    "path_with_namespace": "root/gitspace-forgejo",
+    "visibility": "private"
+  },
+  "branch": "codex/pc6-transfer-work-2026-10-28",
+  "protected_default_branch": "codex/pc6-transfer-2026-10-28",
+  "default_branch_modified": false,
+  "commit_history": {
+    "base": "5521f347a8e3cab461e144fc3c8533fbad049b88",
+    "first_transfer_with_literal_base64": "383ee9b4e36674d9555a7b4426c35ac7a290acd5",
+    "single_file_text_encoding_check": "62352c4bb7f9a872136aab044a4d8d5d7a8aedf2",
+    "final_raw_utf8_correction": "984a938551759226a4275666adb4eed35e3ddc26"
+  },
+  "readback": {
+    "at_commit": "984a938551759226a4275666adb4eed35e3ddc26",
+    "tree_entries": 469,
+    "path_count": 80,
+    "matched": 80,
+    "missing": 0,
+    "divergent": 0,
+    "raw_bytes": 5205980
+  },
+  "pipeline": {
+    "id": 172,
+    "sha": "984a938551759226a4275666adb4eed35e3ddc26",
+    "status": "success",
+    "jobs": [
+      {
+        "id": 610,
+        "name": "pc4_gitleaks",
+        "status": "success"
+      },
+      {
+        "id": 611,
+        "name": "pc4_semgrep",
+        "status": "success"
+      },
+      {
+        "id": 612,
+        "name": "pc4_trivy",
+        "status": "success"
+      },
+      {
+        "id": 613,
+        "name": "pc4_ci_fallback",
+        "status": "success"
+      }
+    ]
+  },
+  "paths": [
+    {
+      "path": "docs/checkpoint.md",
+      "expected_git_blob_id": "68d5fc436698958c716b69c4f4aaf3f0616ae64a",
+      "observed_git_blob_id": "68d5fc436698958c716b69c4f4aaf3f0616ae64a",
+      "mode": "100644",
+      "size_bytes": 1296095
+    },
+    {
+      "path": "evidence/continuation-429-forgejo-release-label-composition-001/cargo-build.log",
+      "expected_git_blob_id": "df3bfb2f8c874ad479e6a4618ed4c3ed12b6dc21",
+      "observed_git_blob_id": "df3bfb2f8c874ad479e6a4618ed4c3ed12b6dc21",
+      "mode": "100644",
+      "size_bytes": 4152
+    },
+    {
+      "path": "evidence/continuation-429-forgejo-release-label-composition-001/cargo-license-state.json",
+      "expected_git_blob_id": "9e8b46c24a0719b9483824a30f0bc3697935f2af",
+      "observed_git_blob_id": "9e8b46c24a0719b9483824a30f0bc3697935f2af",
+      "mode": "100644",
+      "size_bytes": 274
+    },
+    {
+      "path": "evidence/continuation-429-forgejo-release-label-composition-001/cargo-license-tests.log",
+      "expected_git_blob_id": "327f692621e74281707704e630745936389835fa",
+      "observed_git_blob_id": "327f692621e74281707704e630745936389835fa",
+      "mode": "100644",
+      "size_bytes": 111
+    },
+    {
+      "path": "evidence/continuation-429-forgejo-release-label-composition-001/closed-event-reconciliation.json",
+      "expected_git_blob_id": "574f89b819974ca084204ed9d954ca3869a7b623",
+      "observed_git_blob_id": "574f89b819974ca084204ed9d954ca3869a7b623",
+      "mode": "100644",
+      "size_bytes": 3469
+    },
+    {
+      "path": "evidence/continuation-429-forgejo-release-label-composition-001/commands.txt",
+      "expected_git_blob_id": "83a1e468421d86c844f81adfcda4df511e55ec49",
+      "observed_git_blob_id": "83a1e468421d86c844f81adfcda4df511e55ec49",
+      "mode": "100644",
+      "size_bytes": 1137
+    },
+    {
+      "path": "evidence/continuation-429-forgejo-release-label-composition-001/diff-check.log",
+      "expected_git_blob_id": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "observed_git_blob_id": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "size_bytes": 0
+    },
+    {
+      "path": "evidence/continuation-429-forgejo-release-label-composition-001/duplicate-delivery-replay.json",
+      "expected_git_blob_id": "2f8fde52082693a23067fb6bdaa1774984930a46",
+      "observed_git_blob_id": "2f8fde52082693a23067fb6bdaa1774984930a46",
+      "mode": "100644",
+      "size_bytes": 908
+    },
+    {
+      "path": "evidence/continuation-429-forgejo-release-label-composition-001/edited-closed-event-reconciliations.json",
+      "expected_git_blob_id": "b6ad384f3a3e298a96d101db72144366b8224ed5",
+      "observed_git_blob_id": "b6ad384f3a3e298a96d101db72144366b8224ed5",
+      "mode": "100644",
+      "size_bytes": 7291
+    },
+    {
+      "path": "evidence/continuation-429-forgejo-release-label-composition-001/forgejo-hook-tasks.json",
+      "expected_git_blob_id": "e3f3bc016e749e571fde83a47b5e85807bcf294b",
+      "observed_git_blob_id": "e3f3bc016e749e571fde83a47b5e85807bcf294b",
+      "mode": "100644",
+      "size_bytes": 2275
+    },
+    {
+      "path": "evidence/continuation-429-forgejo-release-label-composition-001/hook-readback.json",
+      "expected_git_blob_id": "aac039a239f8f6ef3a19962abba6d6f5996fa11f",
+      "observed_git_blob_id": "aac039a239f8f6ef3a19962abba6d6f5996fa11f",
+      "mode": "100644",
+      "size_bytes": 747
+    },
+    {
+      "path": "evidence/continuation-429-forgejo-release-label-composition-001/invalid-credential-result.json",
+      "expected_git_blob_id": "593c4501fba621c400b38ad94425e0f4a419d1f4",
+      "observed_git_blob_id": "593c4501fba621c400b38ad94425e0f4a419d1f4",
+      "mode": "100644",
+      "size_bytes": 2788
+    },
+    {
+      "path": "evidence/continuation-429-forgejo-release-label-composition-001/local-run.md",
+      "expected_git_blob_id": "c94e87af24a696d6f3c1a8ded0243dcc4b89908e",
+      "observed_git_blob_id": "c94e87af24a696d6f3c1a8ded0243dcc4b89908e",
+      "mode": "100644",
+      "size_bytes": 4007
+    },
+    {
+      "path": "evidence/continuation-429-forgejo-release-label-composition-001/manifest-prefix-before.json",
+      "expected_git_blob_id": "4b7969c92666efbdba069d9d103e36468869ed58",
+      "observed_git_blob_id": "4b7969c92666efbdba069d9d103e36468869ed58",
+      "mode": "100644",
+      "size_bytes": 368
+    },
+    {
+      "path": "evidence/continuation-429-forgejo-release-label-composition-001/open-event-reconciliation.json",
+      "expected_git_blob_id": "e75c9bd7fce6722c4be7cfea495ecde5d0b5a0ec",
+      "observed_git_blob_id": "e75c9bd7fce6722c4be7cfea495ecde5d0b5a0ec",
+      "mode": "100644",
+      "size_bytes": 3469
+    },
+    {
+      "path": "evidence/continuation-429-forgejo-release-label-composition-001/port-cleanup-readback.json",
+      "expected_git_blob_id": "90581c4c7c2d1b03c264c17b3ac4a5059b0c6198",
+      "observed_git_blob_id": "90581c4c7c2d1b03c264c17b3ac4a5059b0c6198",
+      "mode": "100644",
+      "size_bytes": 1293
+    },
+    {
+      "path": "evidence/continuation-429-forgejo-release-label-composition-001/provenance.json",
+      "expected_git_blob_id": "2d73494fe7001333d57a3e60acb65d1b7cd585b1",
+      "observed_git_blob_id": "2d73494fe7001333d57a3e60acb65d1b7cd585b1",
+      "mode": "100644",
+      "size_bytes": 5484
+    },
+    {
+      "path": "evidence/continuation-429-forgejo-release-label-composition-001/pull-request-closed-event-reconciliation.json",
+      "expected_git_blob_id": "46f13b9308097b8ad5c0790ffe979ce378bc8296",
+      "observed_git_blob_id": "46f13b9308097b8ad5c0790ffe979ce378bc8296",
+      "mode": "100644",
+      "size_bytes": 3384
+    },
+    {
+      "path": "evidence/continuation-429-forgejo-release-label-composition-001/pull-request-conversation-comment-live-api-readback.json",
+      "expected_git_blob_id": "7570914b9976658f6650d39e584f7bea7fc1aa2c",
+      "observed_git_blob_id": "7570914b9976658f6650d39e584f7bea7fc1aa2c",
+      "mode": "100644",
+      "size_bytes": 309
+    },
+    {
+      "path": "evidence/continuation-429-forgejo-release-label-composition-001/pull-request-conversation-comment-reconciliation.json",
+      "expected_git_blob_id": "b7bff36da9894b3ffe60e722b5dd462762e4a3ee",
+      "observed_git_blob_id": "b7bff36da9894b3ffe60e722b5dd462762e4a3ee",
+      "mode": "100644",
+      "size_bytes": 3695
+    },
+    {
+      "path": "evidence/continuation-429-forgejo-release-label-composition-001/pull-request-label-change-reconciliation.json",
+      "expected_git_blob_id": "d22dee45080597d2fd0be431a9d137be2576f578",
+      "observed_git_blob_id": "d22dee45080597d2fd0be431a9d137be2576f578",
+      "mode": "100644",
+      "size_bytes": 1210
+    },
+    {
+      "path": "evidence/continuation-429-forgejo-release-label-composition-001/pull-request-open-event-reconciliation.json",
+      "expected_git_blob_id": "bd4f104f5d839d68d5080fd51c424937d53dff57",
+      "observed_git_blob_id": "bd4f104f5d839d68d5080fd51c424937d53dff57",
+      "mode": "100644",
+      "size_bytes": 3383
+    },
+    {
+      "path": "evidence/continuation-429-forgejo-release-label-composition-001/reader-role-readback.json",
+      "expected_git_blob_id": "295846c786469070cb61f3f2b6d964943e51f996",
+      "observed_git_blob_id": "295846c786469070cb61f3f2b6d964943e51f996",
+      "mode": "100644",
+      "size_bytes": 242
+    },
+    {
+      "path": "evidence/continuation-429-forgejo-release-label-composition-001/release-event-reconciliation.json",
+      "expected_git_blob_id": "7ee334ad66064d9d17be28cb34c365958c58be99",
+      "observed_git_blob_id": "7ee334ad66064d9d17be28cb34c365958c58be99",
+      "mode": "100644",
+      "size_bytes": 3488
+    },
+    {
+      "path": "evidence/continuation-429-forgejo-release-label-composition-001/result.json",
+      "expected_git_blob_id": "67565780a6785798b6fba03a041a42204e5ebd24",
+      "observed_git_blob_id": "67565780a6785798b6fba03a041a42204e5ebd24",
+      "mode": "100644",
+      "size_bytes": 77350
+    },
+    {
+      "path": "evidence/continuation-429-forgejo-release-label-composition-001/runner-tests.log",
+      "expected_git_blob_id": "06be0a9b38afc612e292391f3cf5fd587bb1c744",
+      "observed_git_blob_id": "06be0a9b38afc612e292391f3cf5fd587bb1c744",
+      "mode": "100644",
+      "size_bytes": 290
+    },
+    {
+      "path": "evidence/continuation-429-forgejo-release-label-composition-001/source-sha256.txt",
+      "expected_git_blob_id": "3e87bef75874d0c1a5919cf1beb5914e9724c2b6",
+      "observed_git_blob_id": "3e87bef75874d0c1a5919cf1beb5914e9724c2b6",
+      "mode": "100644",
+      "size_bytes": 845
+    },
+    {
+      "path": "evidence/continuation-429-forgejo-release-label-composition-001/toolchain.txt",
+      "expected_git_blob_id": "b8a7c8f9a145748c9567f71078f56023b7dbc9b5",
+      "observed_git_blob_id": "b8a7c8f9a145748c9567f71078f56023b7dbc9b5",
+      "mode": "100644",
+      "size_bytes": 677
+    },
+    {
+      "path": "evidence/continuation-429-forgejo-release-label-composition-001/webhook-events.json",
+      "expected_git_blob_id": "0d8473a58c9ec5a2d3a000dce248d4df9397f121",
+      "observed_git_blob_id": "0d8473a58c9ec5a2d3a000dce248d4df9397f121",
+      "mode": "100644",
+      "size_bytes": 3161
+    },
+    {
+      "path": "evidence/continuation-429-forgejo-release-label-composition-001/work-item-content-readback.json",
+      "expected_git_blob_id": "0491968d2fedb6fc5ea5b0be0813a7477ab3f717",
+      "observed_git_blob_id": "0491968d2fedb6fc5ea5b0be0813a7477ab3f717",
+      "mode": "100644",
+      "size_bytes": 697
+    },
+    {
+      "path": "evidence/continuation-435-unicode-tag-name-compat-001/all-targets.log",
+      "expected_git_blob_id": "5c29ac7047c0abca992e96f96251f1b02edd3454",
+      "observed_git_blob_id": "5c29ac7047c0abca992e96f96251f1b02edd3454",
+      "mode": "100644",
+      "size_bytes": 105416
+    },
+    {
+      "path": "evidence/continuation-435-unicode-tag-name-compat-001/append_global_manifest.py",
+      "expected_git_blob_id": "f6c24f344d623681050f557ed5da395f2cc9dca9",
+      "observed_git_blob_id": "f6c24f344d623681050f557ed5da395f2cc9dca9",
+      "mode": "100644",
+      "size_bytes": 1850
+    },
+    {
+      "path": "evidence/continuation-435-unicode-tag-name-compat-001/cargo-license-metadata.json",
+      "expected_git_blob_id": "9e8b46c24a0719b9483824a30f0bc3697935f2af",
+      "observed_git_blob_id": "9e8b46c24a0719b9483824a30f0bc3697935f2af",
+      "mode": "100644",
+      "size_bytes": 274
+    },
+    {
+      "path": "evidence/continuation-435-unicode-tag-name-compat-001/cargo-license-policy-tests.log",
+      "expected_git_blob_id": "323c51b543d2dd89ef5244d1ab1d1fb0018375ed",
+      "observed_git_blob_id": "323c51b543d2dd89ef5244d1ab1d1fb0018375ed",
+      "mode": "100644",
+      "size_bytes": 111
+    },
+    {
+      "path": "evidence/continuation-435-unicode-tag-name-compat-001/commands.txt",
+      "expected_git_blob_id": "3cfcb1acc9cf64a7040558996102ae3dbef586f3",
+      "observed_git_blob_id": "3cfcb1acc9cf64a7040558996102ae3dbef586f3",
+      "mode": "100644",
+      "size_bytes": 1044
+    },
+    {
+      "path": "evidence/continuation-435-unicode-tag-name-compat-001/diff-check.log",
+      "expected_git_blob_id": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "observed_git_blob_id": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "size_bytes": 0
+    },
+    {
+      "path": "evidence/continuation-435-unicode-tag-name-compat-001/focused-green.log",
+      "expected_git_blob_id": "6a9930af300a6c07cdea66cdd272e32a8dc40bba",
+      "observed_git_blob_id": "6a9930af300a6c07cdea66cdd272e32a8dc40bba",
+      "mode": "100644",
+      "size_bytes": 520
+    },
+    {
+      "path": "evidence/continuation-435-unicode-tag-name-compat-001/git-refname-oracle.json",
+      "expected_git_blob_id": "e6ef307813957c42c72f1c6954f5410e1c4c597b",
+      "observed_git_blob_id": "e6ef307813957c42c72f1c6954f5410e1c4c597b",
+      "mode": "100644",
+      "size_bytes": 3607
+    },
+    {
+      "path": "evidence/continuation-435-unicode-tag-name-compat-001/local-run.md",
+      "expected_git_blob_id": "3c25e36dc6af05e2e8b9d028b054af6da40f0794",
+      "observed_git_blob_id": "3c25e36dc6af05e2e8b9d028b054af6da40f0794",
+      "mode": "100644",
+      "size_bytes": 3068
+    },
+    {
+      "path": "evidence/continuation-435-unicode-tag-name-compat-001/merge-readiness.log",
+      "expected_git_blob_id": "6f3ceda3da4eed4604dad735c11c56b5204c04fb",
+      "observed_git_blob_id": "6f3ceda3da4eed4604dad735c11c56b5204c04fb",
+      "mode": "100644",
+      "size_bytes": 1132
+    },
+    {
+      "path": "evidence/continuation-435-unicode-tag-name-compat-001/reconcile-suite.log",
+      "expected_git_blob_id": "67ef41415d04f4cce9c80e6ed958d4598ae83282",
+      "observed_git_blob_id": "67ef41415d04f4cce9c80e6ed958d4598ae83282",
+      "mode": "100644",
+      "size_bytes": 8213
+    },
+    {
+      "path": "evidence/continuation-435-unicode-tag-name-compat-001/red-failing-test.log",
+      "expected_git_blob_id": "b97854efc8d99da8c0313af0dce008615ed2dfdf",
+      "observed_git_blob_id": "b97854efc8d99da8c0313af0dce008615ed2dfdf",
+      "mode": "100644",
+      "size_bytes": 851
+    },
+    {
+      "path": "evidence/continuation-435-unicode-tag-name-compat-001/red.exit",
+      "expected_git_blob_id": "398050c62c882fa5ebc8d8aaa2e730e70790beeb",
+      "observed_git_blob_id": "398050c62c882fa5ebc8d8aaa2e730e70790beeb",
+      "mode": "100644",
+      "size_bytes": 4
+    },
+    {
+      "path": "evidence/continuation-435-unicode-tag-name-compat-001/runtime-interface-audit.txt",
+      "expected_git_blob_id": "f0bb4ffa5bd761363a805e6359a90f9205938fe9",
+      "observed_git_blob_id": "f0bb4ffa5bd761363a805e6359a90f9205938fe9",
+      "mode": "100644",
+      "size_bytes": 588
+    },
+    {
+      "path": "evidence/continuation-435-unicode-tag-name-compat-001/rustfmt.log",
+      "expected_git_blob_id": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "observed_git_blob_id": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "size_bytes": 0
+    },
+    {
+      "path": "evidence/continuation-435-unicode-tag-name-compat-001/source-sha256.txt",
+      "expected_git_blob_id": "3072f5cef3920fd9492c49ae09c397f954fca28e",
+      "observed_git_blob_id": "3072f5cef3920fd9492c49ae09c397f954fca28e",
+      "mode": "100644",
+      "size_bytes": 422
+    },
+    {
+      "path": "evidence/continuation-435-unicode-tag-name-compat-001/toolchain.txt",
+      "expected_git_blob_id": "6bab267dc456eac7c40f66e2a52daf3132f7a9b9",
+      "observed_git_blob_id": "6bab267dc456eac7c40f66e2a52daf3132f7a9b9",
+      "mode": "100644",
+      "size_bytes": 173
+    },
+    {
+      "path": "evidence/continuation-435-unicode-tag-name-compat-001/verification-status.txt",
+      "expected_git_blob_id": "0bce2bffaed172c8e54f609b02daaf89c6609dbe",
+      "observed_git_blob_id": "0bce2bffaed172c8e54f609b02daaf89c6609dbe",
+      "mode": "100644",
+      "size_bytes": 378
+    },
+    {
+      "path": "evidence/continuation-435-unicode-tag-name-compat-001/whitespace-scan.log",
+      "expected_git_blob_id": "c0bace2a5897b465dba15e2215462241aa549f3a",
+      "observed_git_blob_id": "c0bace2a5897b465dba15e2215462241aa549f3a",
+      "mode": "100644",
+      "size_bytes": 82
+    },
+    {
+      "path": "evidence/continuation-436-leading-dash-branch-ref-001/adapter-green.log",
+      "expected_git_blob_id": "5562c1a021f1aa47c13a32056b55bfa76c22d1a1",
+      "observed_git_blob_id": "5562c1a021f1aa47c13a32056b55bfa76c22d1a1",
+      "mode": "100644",
+      "size_bytes": 394
+    },
+    {
+      "path": "evidence/continuation-436-leading-dash-branch-ref-001/all-targets.log",
+      "expected_git_blob_id": "eeb844d1dbbd2d7495c1f009b8bf7dad3df50a92",
+      "observed_git_blob_id": "eeb844d1dbbd2d7495c1f009b8bf7dad3df50a92",
+      "mode": "100644",
+      "size_bytes": 105579
+    },
+    {
+      "path": "evidence/continuation-436-leading-dash-branch-ref-001/append_global_manifest.py",
+      "expected_git_blob_id": "2165d576a1f39c1afcc57a0f98b447fcb30be8fd",
+      "observed_git_blob_id": "2165d576a1f39c1afcc57a0f98b447fcb30be8fd",
+      "mode": "100644",
+      "size_bytes": 1989
+    },
+    {
+      "path": "evidence/continuation-436-leading-dash-branch-ref-001/cached-diff-check.log",
+      "expected_git_blob_id": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "observed_git_blob_id": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "size_bytes": 0
+    },
+    {
+      "path": "evidence/continuation-436-leading-dash-branch-ref-001/cargo-license-state.json",
+      "expected_git_blob_id": "9e8b46c24a0719b9483824a30f0bc3697935f2af",
+      "observed_git_blob_id": "9e8b46c24a0719b9483824a30f0bc3697935f2af",
+      "mode": "100644",
+      "size_bytes": 274
+    },
+    {
+      "path": "evidence/continuation-436-leading-dash-branch-ref-001/cargo-license-tests.log",
+      "expected_git_blob_id": "323c51b543d2dd89ef5244d1ab1d1fb0018375ed",
+      "observed_git_blob_id": "323c51b543d2dd89ef5244d1ab1d1fb0018375ed",
+      "mode": "100644",
+      "size_bytes": 111
+    },
+    {
+      "path": "evidence/continuation-436-leading-dash-branch-ref-001/cargo-metadata.json",
+      "expected_git_blob_id": "bbd45e430b3e0ce36aa9a2efc7dffd1531a42708",
+      "observed_git_blob_id": "bbd45e430b3e0ce36aa9a2efc7dffd1531a42708",
+      "mode": "100644",
+      "size_bytes": 14259
+    },
+    {
+      "path": "evidence/continuation-436-leading-dash-branch-ref-001/commands.txt",
+      "expected_git_blob_id": "60c2139e1db179b401e1d54b30f3a7f535b1498c",
+      "observed_git_blob_id": "60c2139e1db179b401e1d54b30f3a7f535b1498c",
+      "mode": "100644",
+      "size_bytes": 645
+    },
+    {
+      "path": "evidence/continuation-436-leading-dash-branch-ref-001/diff-check.log",
+      "expected_git_blob_id": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "observed_git_blob_id": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "size_bytes": 0
+    },
+    {
+      "path": "evidence/continuation-436-leading-dash-branch-ref-001/git-refname-oracle.json",
+      "expected_git_blob_id": "3c0a080e04ff3b69db9a0f0f98896f7b268f661c",
+      "observed_git_blob_id": "3c0a080e04ff3b69db9a0f0f98896f7b268f661c",
+      "mode": "100644",
+      "size_bytes": 498
+    },
+    {
+      "path": "evidence/continuation-436-leading-dash-branch-ref-001/local-run.md",
+      "expected_git_blob_id": "15c31f6205ec11782ddeb4242ce6449afb84c6c0",
+      "observed_git_blob_id": "15c31f6205ec11782ddeb4242ce6449afb84c6c0",
+      "mode": "100644",
+      "size_bytes": 3894
+    },
+    {
+      "path": "evidence/continuation-436-leading-dash-branch-ref-001/reconcile-green.log",
+      "expected_git_blob_id": "875579f3872dbd352d672a431e4bf421dab5feff",
+      "observed_git_blob_id": "875579f3872dbd352d672a431e4bf421dab5feff",
+      "mode": "100644",
+      "size_bytes": 375
+    },
+    {
+      "path": "evidence/continuation-436-leading-dash-branch-ref-001/reconcile-red.exit",
+      "expected_git_blob_id": "398050c62c882fa5ebc8d8aaa2e730e70790beeb",
+      "observed_git_blob_id": "398050c62c882fa5ebc8d8aaa2e730e70790beeb",
+      "mode": "100644",
+      "size_bytes": 4
+    },
+    {
+      "path": "evidence/continuation-436-leading-dash-branch-ref-001/reconcile-red.log",
+      "expected_git_blob_id": "6cc21aa113ee99253767b05736f2eaf3c5f267c4",
+      "observed_git_blob_id": "6cc21aa113ee99253767b05736f2eaf3c5f267c4",
+      "mode": "100644",
+      "size_bytes": 989
+    },
+    {
+      "path": "evidence/continuation-436-leading-dash-branch-ref-001/route-policy-green.log",
+      "expected_git_blob_id": "cd9e4ddf07c696ace7021d5704a3425792e70f25",
+      "observed_git_blob_id": "cd9e4ddf07c696ace7021d5704a3425792e70f25",
+      "mode": "100644",
+      "size_bytes": 393
+    },
+    {
+      "path": "evidence/continuation-436-leading-dash-branch-ref-001/route-policy-no-match.exit",
+      "expected_git_blob_id": "573541ac9702dd3969c9bc859d2b91ec1f7e6e56",
+      "observed_git_blob_id": "573541ac9702dd3969c9bc859d2b91ec1f7e6e56",
+      "mode": "100644",
+      "size_bytes": 2
+    },
+    {
+      "path": "evidence/continuation-436-leading-dash-branch-ref-001/route-policy-no-match.log",
+      "expected_git_blob_id": "48bc98421d7f634d72b7fdbc603a432d15e21525",
+      "observed_git_blob_id": "48bc98421d7f634d72b7fdbc603a432d15e21525",
+      "mode": "100644",
+      "size_bytes": 450
+    },
+    {
+      "path": "evidence/continuation-436-leading-dash-branch-ref-001/route-policy-red-correct.exit",
+      "expected_git_blob_id": "398050c62c882fa5ebc8d8aaa2e730e70790beeb",
+      "observed_git_blob_id": "398050c62c882fa5ebc8d8aaa2e730e70790beeb",
+      "mode": "100644",
+      "size_bytes": 4
+    },
+    {
+      "path": "evidence/continuation-436-leading-dash-branch-ref-001/route-policy-red-correct.log",
+      "expected_git_blob_id": "78bb981fa39d0f8001ce3e500948ae4e2998ba64",
+      "observed_git_blob_id": "78bb981fa39d0f8001ce3e500948ae4e2998ba64",
+      "mode": "100644",
+      "size_bytes": 888
+    },
+    {
+      "path": "evidence/continuation-436-leading-dash-branch-ref-001/runtime-interface-audit.txt",
+      "expected_git_blob_id": "727e4b39584a7fb77deb5896f80917e3ba12bc9f",
+      "observed_git_blob_id": "727e4b39584a7fb77deb5896f80917e3ba12bc9f",
+      "mode": "100644",
+      "size_bytes": 1048
+    },
+    {
+      "path": "evidence/continuation-436-leading-dash-branch-ref-001/rustfmt.log",
+      "expected_git_blob_id": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "observed_git_blob_id": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "size_bytes": 0
+    },
+    {
+      "path": "evidence/continuation-436-leading-dash-branch-ref-001/source-sha256.txt",
+      "expected_git_blob_id": "a5c2bf8db4cd6ee975ca9d76fbbe6f4807b9be85",
+      "observed_git_blob_id": "a5c2bf8db4cd6ee975ca9d76fbbe6f4807b9be85",
+      "mode": "100644",
+      "size_bytes": 379
+    },
+    {
+      "path": "evidence/continuation-436-leading-dash-branch-ref-001/toolchain.txt",
+      "expected_git_blob_id": "7b17af368fdad62da8ff0065d77e1e647439cbad",
+      "observed_git_blob_id": "7b17af368fdad62da8ff0065d77e1e647439cbad",
+      "mode": "100644",
+      "size_bytes": 224
+    },
+    {
+      "path": "evidence/continuation-436-leading-dash-branch-ref-001/transfer-secret-scan.json",
+      "expected_git_blob_id": "3bc694eea97bb7153751bed627d1c02958442f82",
+      "observed_git_blob_id": "3bc694eea97bb7153751bed627d1c02958442f82",
+      "mode": "100644",
+      "size_bytes": 264
+    },
+    {
+      "path": "evidence/continuation-436-leading-dash-branch-ref-001/verification-status.txt",
+      "expected_git_blob_id": "b3f5d7df44bc0974f9fdb64b02839656b440d489",
+      "observed_git_blob_id": "b3f5d7df44bc0974f9fdb64b02839656b440d489",
+      "mode": "100644",
+      "size_bytes": 484
+    },
+    {
+      "path": "src/bin/forgejo-reconcile-local.rs",
+      "expected_git_blob_id": "bb3d93949c7b4781e353bef56cc8ad74c4e0421c",
+      "observed_git_blob_id": "bb3d93949c7b4781e353bef56cc8ad74c4e0421c",
+      "mode": "100644",
+      "size_bytes": 707452
+    },
+    {
+      "path": "src/forgejo.rs",
+      "expected_git_blob_id": "71f4d7cfb2647a86c6135ef1d39e6f80b02ee131",
+      "observed_git_blob_id": "71f4d7cfb2647a86c6135ef1d39e6f80b02ee131",
+      "mode": "100644",
+      "size_bytes": 50973
+    },
+    {
+      "path": "src/webhook/reconcile.rs",
+      "expected_git_blob_id": "89b767d87cde1ad1f263b5df6c988f3c99b1102b",
+      "observed_git_blob_id": "89b767d87cde1ad1f263b5df6c988f3c99b1102b",
+      "mode": "100644",
+      "size_bytes": 113343
+    },
+    {
+      "path": "tests/webhook_reconcile_contract.rs",
+      "expected_git_blob_id": "49e80b64688b157c01d354010bed6b4c66a36f40",
+      "observed_git_blob_id": "49e80b64688b157c01d354010bed6b4c66a36f40",
+      "mode": "100644",
+      "size_bytes": 163865
+    },
+    {
+      "path": "evidence/SHA256SUMS",
+      "expected_git_blob_id": "aa76c0c396a1a961ddf46f6cbae26bcdffd54c86",
+      "observed_git_blob_id": "aa76c0c396a1a961ddf46f6cbae26bcdffd54c86",
+      "mode": "100644",
+      "size_bytes": 2473338
+    },
+    {
+      "path": "evidence/continuation-436-leading-dash-branch-ref-001/SHA256SUMS",
+      "expected_git_blob_id": "8560218f57b00fd2acb41331a94810a4cd3b1b80",
+      "observed_git_blob_id": "8560218f57b00fd2acb41331a94810a4cd3b1b80",
+      "mode": "100644",
+      "size_bytes": 3530
+    }
+  ]
+}
+
