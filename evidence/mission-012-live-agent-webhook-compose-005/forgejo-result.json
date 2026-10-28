@@ -1,0 +1,33 @@
+{
+  "approval_commit": "0de80101ec54454bc762823a239fd79f8a21de6d",
+  "authority": "owner API token in this local test driver; not production merge authority",
+  "base_commit": "b8691e537725c8a92435262d338b6f58019a6b28",
+  "candidate_commit": "0de80101ec54454bc762823a239fd79f8a21de6d",
+  "candidate_source_sha256": "173304ad7d32aabc1e8e1ee41eabda3398a8690798e68f906bcebc73cbcd6d15",
+  "changed_paths": [
+    "src/lib.rs"
+  ],
+  "forgejo_binary_sha256": "e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7",
+  "forgejo_version": "17.0.0+gitea-1.22.0",
+  "host_receipt_sha256": "b734768775718b0c917da6904de6bc8a1f22c6fb485e0e423c1b38a3a5275af8",
+  "independent_verdict": "pass",
+  "issue_number": 1,
+  "issue_state_after_merge": "closed",
+  "limitation": "This minimal Forgejo fixture does not version policy/active.json or policy v4, so mission-012-verify-local cannot bind this repository snapshot. The independent verifier instead runs the protected Cargo acceptance suite from the exact PR commit in a separate sandbox; policy SHA is pinned to the host-owned fixture at the recorded project commit.",
+  "main_head_after_merge": "9ea0c2e4d8c2a0deec59e7046bd64b26445fe7e3",
+  "merge_commit": "9ea0c2e4d8c2a0deec59e7046bd64b26445fe7e3",
+  "merge_http_status": 200,
+  "merged": true,
+  "model": "claude-opus-5-5",
+  "model_cost_usd": 0.07454240000000001,
+  "model_effort": "high",
+  "model_usage_provenance": "model, effort, and cost are reported by the local Claude CLI summary and are not independently attested",
+  "non_whitelisted_reviewer_merge_refusal_http": 405,
+  "origin": "http://127.0.0.1:3132",
+  "pre_review_merge_refusal_http": 405,
+  "pull_request_number": 2,
+  "pull_request_state_after_merge": "closed",
+  "repository_private": true,
+  "reviewer": "verifier-bot",
+  "schema_version": 1
+}

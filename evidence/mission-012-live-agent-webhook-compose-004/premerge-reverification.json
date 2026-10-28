@@ -1,0 +1,7 @@
+{
+  "candidate_commit": "8071c247760e0e4228a7eef4372a6205e11b348f",
+  "output_sha256": "737cad115e59f6b00e3d86220910497ab5836aa4049af292d295d0c708b15fd0",
+  "policy_sha256": "e23907b5bd6b2c0f342c88ddcfa9f9a9be98065adcd24f9f7299dc796b5739eb",
+  "requirement_sha256": "3a3c444075c93a3bcfb2bec17d1a2e74ec0051effc2994e6b02ac095eb0dd431",
+  "verdict": "pass"
+}

@@ -1,0 +1,7 @@
+{
+  "cleanup_failure": null,
+  "error_detail": "Forgejo exited during startup (1)",
+  "error_type": "RuntimeError",
+  "stage": "start_forgejo",
+  "verdict": "failed"
+}

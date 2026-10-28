@@ -1,0 +1,10 @@
+Date d’observation : 2026-10-25
+OS/architecture : Linux 7.0.0-1019-nvidia aarch64 GNU/Linux
+Rust : rustc 1.95.0 (59807616e 2026-04-14)
+Cargo : 1.95.0 (f2d3ce0bd 2026-03-21)
+Python : 3.12.3
+Git : 2.43.0
+Bubblewrap : 0.9.0
+systemd : 255 (255.4-1ubuntu8.18)
+Forgejo local : 17.0.0+gitea-1.22.0, Go 1.26.9; binaire de release, SHA-256 e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7
+Rust target : aarch64-unknown-linux-gnu

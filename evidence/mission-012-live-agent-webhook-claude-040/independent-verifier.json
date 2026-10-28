@@ -1,0 +1,30 @@
+{
+  "acceptance_sha256": "5d4727542ea32f61aa4500754556fcfd1f39b59b4131ede257cb736fab231dc2",
+  "base": {
+    "exit_code": 101,
+    "expected_failure": true,
+    "output_sha256": "ae122bf7149bf9cdb48de0bbb655b6b6910273ed7a129c27f15290bf2fa2dd08"
+  },
+  "base_commit": "1e981dcf9bd0e53aa52dc74c87c068c4c19fd2a0",
+  "candidate": {
+    "acceptance_pass": true,
+    "exit_code": 0,
+    "output_sha256": "68daa3c839ea94606b0cf1d5fccf77c13f4b77f212692c9dc8360e047f8167f0"
+  },
+  "candidate_commit": "72f47607fbe7b407831f7520f2f5ffaa3054a3c1",
+  "candidate_source_sha256": "173304ad7d32aabc1e8e1ee41eabda3398a8690798e68f906bcebc73cbcd6d15",
+  "changed_paths": [
+    "src/lib.rs"
+  ],
+  "environment": "Bubblewrap mount/PID/network namespaces; commit snapshot read-only; fresh in-memory Cargo target; host home and credentials absent; offline locked Cargo",
+  "limitation": "This minimal Forgejo fixture does not version policy/active.json or policy v4, so mission-012-verify-local cannot bind this repository snapshot. The independent verifier instead runs the protected Cargo acceptance suite from the exact PR commit in a separate sandbox; policy SHA is pinned to the host-owned fixture at the recorded project commit.",
+  "merge_gate_policy_revision": 4,
+  "merge_gate_policy_sha256": "a9b52c9d3504a633ed5b9e18df6f479ab54912f0d52c20c55b227ccf2fb148fd",
+  "policy_sha256": "e23907b5bd6b2c0f342c88ddcfa9f9a9be98065adcd24f9f7299dc796b5739eb",
+  "requirement_sha256": "3a3c444075c93a3bcfb2bec17d1a2e74ec0051effc2994e6b02ac095eb0dd431",
+  "schema_version": 1,
+  "source": "Forgejo API branch ref fetched into a host-owned trusted Git clone",
+  "toolchain": "/home/pc6/.rustup/toolchains/1.95.0-aarch64-unknown-linux-gnu/bin/cargo test --offline --locked",
+  "verdict": "pass",
+  "verifier_id": "local-isolated-cargo-acceptance-v1"
+}

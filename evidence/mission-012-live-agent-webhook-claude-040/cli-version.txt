@@ -1,0 +1,4 @@
+$ claude --version
+2.1.310 (Claude Code)
+
+Observed immediately before launching composed run 040. This identifies the local CLI reported by its own version command; it does not attest the model selected by the provider.

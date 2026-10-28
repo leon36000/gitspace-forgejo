@@ -1,0 +1,1 @@
+Le préfixe projet lie l’index worktree actuel : {"local_evidence_files_verified": 23, "parent_binds_current_worktree_index": true, "project_prefix_preserved": true, "worktree_prefix_preserved": true}

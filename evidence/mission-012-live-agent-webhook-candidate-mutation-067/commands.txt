@@ -1,0 +1,26 @@
+# Depuis le worktree webhook-005-workspace; le bac à sable et ses données étaient locaux et synthétiques.
+python3 scripts/run_mission_012_live_composed_e2e.py \
+  --state-dir /tmp/mission-012-candidate-mutation-067 \
+  --forgejo-binary /tmp/forgejo-17.0.0 \
+  --evidence-dir evidence/mission-012-live-agent-webhook-candidate-mutation-067 \
+  --execution-id live-mcp-067 \
+  --allocation-id mission012-candidate-mutation-067 \
+  --budget-cap-usd 0.20 \
+  --agent-adapter local-test-adapter \
+  --inject-candidate-mutation-after-verification
+
+# Contrats du runner de PR, après ajout du scénario.
+python3 tests/test_mission_012_live_agent_pr_e2e.py
+
+# Diagnostic du commit muté 832e966d82b2479e72c21457063c1f61bdbbc832.
+# Le snapshot a été extrait par le materializer borné du runner; Cargo a été lancé sous systemd-run + Bubblewrap:
+# --unshare-all --unshare-user --disable-userns --assert-userns-disabled --unshare-pid
+# candidat monté en lecture seule, /target et /tmp temporaires, environnement nettoyé, sans réseau,
+# CARGO_NET_OFFLINE=true, CPU 120s, RAM 1 GiB, tâches 64, puis:
+cargo test --offline --locked
+# Code 101 attendu, vérifié dans mutated-candidate-runner-result.txt; le résultat est un échec d’acceptation, pas un succès.
+
+cargo fmt --all -- --check
+python3 -m py_compile scripts/run_mission_012_live_agent_pr_e2e.py scripts/run_mission_012_live_composed_e2e.py tests/test_mission_012_live_agent_pr_e2e.py
+git diff --check
+python3 scripts/verify_cargo_license_state.py

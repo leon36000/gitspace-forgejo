@@ -1,0 +1,228 @@
+{
+  "acceptance_sha256": "5d4727542ea32f61aa4500754556fcfd1f39b59b4131ede257cb736fab231dc2",
+  "approval_commit": "54d8958b8f32e192f3b94ba7f0ecc649934a84f3",
+  "authority": "forgejo-reconcile-local Rust merge authority; local owner credential passed through a private inherited pipe FD; not production merge authority",
+  "base_commit": "daa375415954de9b34f059345ab682d4fbf90f09",
+  "candidate_commit": "54d8958b8f32e192f3b94ba7f0ecc649934a84f3",
+  "candidate_source_sha256": "173304ad7d32aabc1e8e1ee41eabda3398a8690798e68f906bcebc73cbcd6d15",
+  "changed_paths": [
+    "src/lib.rs"
+  ],
+  "forgejo_binary_sha256": "e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7",
+  "forgejo_version": "17.0.0+gitea-1.22.0",
+  "host_receipt_sha256": "e06b3e774a988d067fc17a564eeaa2bbb335d2788ca9007a16ee48a403110078",
+  "independent_verdict": "pass",
+  "issue_number": 1,
+  "issue_state_after_merge": "closed",
+  "limitation": "This minimal Forgejo fixture does not version policy/active.json or policy v4, so the verifier binds the pinned requirement and policy hashes from the host-owned admission fixture while testing the exact PR commits. CPU accounting is a conservative upper bound derived from the enforced cgroup quota and elapsed wall time, not direct cgroup CPU telemetry.",
+  "main_head_after_merge": "7599dea0f1108142cdf829bd58beb098553487d2",
+  "merge_authority": "forgejo-reconcile-local-rust",
+  "merge_commit": "7599dea0f1108142cdf829bd58beb098553487d2",
+  "merge_gate_binary_sha256": "6a158b9556e92328d80714a6a3738c0cb0bb54c208cb018d89af6f1c98f06565",
+  "merge_gate_policy_sha256": "be5510865d791ceab8de3b2d44fb0dba4056cd3979218094b083ac33a9fce2c0",
+  "merge_gate_proof_sha256": "3b3241c69f9bba142277135b15bbd6510e8d20ef41d903e42f1ec080660f4274",
+  "merge_gate_result_sha256": "639cc6c826b85007e21d73aa2433abd329a01247d09ce005bd7b668edc479994",
+  "merge_http_status": 200,
+  "merge_tree_oid": "518f1e74cfd70f848c882b9937588dadd5710b10",
+  "merged": true,
+  "model": "local-test-adapter",
+  "model_cost_usd": 0.0,
+  "model_effort": "deterministic",
+  "model_usage_provenance": "deterministic local test adapter; no model was invoked; model cost is zero",
+  "non_whitelisted_reviewer_merge_refusal_http": 405,
+  "origin": "http://127.0.0.1:3132",
+  "policy_sha256": "e23907b5bd6b2c0f342c88ddcfa9f9a9be98065adcd24f9f7299dc796b5739eb",
+  "postmerge_verification": {
+    "acceptance_sha256": "5d4727542ea32f61aa4500754556fcfd1f39b59b4131ede257cb736fab231dc2",
+    "base_commit": "daa375415954de9b34f059345ab682d4fbf90f09",
+    "candidate_commit": "54d8958b8f32e192f3b94ba7f0ecc649934a84f3",
+    "candidate_tree_oid": "518f1e74cfd70f848c882b9937588dadd5710b10",
+    "changed_paths_from_base": [
+      "src/lib.rs"
+    ],
+    "command": [
+      "cargo",
+      "test",
+      "--offline",
+      "--locked",
+      "--test",
+      "acceptance"
+    ],
+    "commit": "7599dea0f1108142cdf829bd58beb098553487d2",
+    "elapsed_ms": 218,
+    "environment": "fresh Cargo target and home; read-only merged commit snapshot and toolchain; Bubblewrap network/PID/user namespaces; user namespaces disabled; systemd CPU/memory/task/deadline scope; no host home, gate credential, or network",
+    "exit_code": 0,
+    "limitation": "Post-merge acceptance behavior was tested on the exact materialized merge commit. This remains one deterministic fixture run; it is not an AgentOS/LLM run or a comparative benchmark.",
+    "main_head_after_merge": "7599dea0f1108142cdf829bd58beb098553487d2",
+    "merge_tree_oid": "518f1e74cfd70f848c882b9937588dadd5710b10",
+    "output_bytes": 435,
+    "output_sha256": "7fe21380eff74cea81c33d14a1f506cdc547811bd3dcd3a7337b06bd4bb8a62b",
+    "policy_sha256": "e23907b5bd6b2c0f342c88ddcfa9f9a9be98065adcd24f9f7299dc796b5739eb",
+    "requirement_sha256": "3a3c444075c93a3bcfb2bec17d1a2e74ec0051effc2994e6b02ac095eb0dd431",
+    "schema_version": 1,
+    "source_sha256": "173304ad7d32aabc1e8e1ee41eabda3398a8690798e68f906bcebc73cbcd6d15",
+    "test_summary": "2 passed; 0 failed",
+    "timed_out": false,
+    "verdict": "pass"
+  },
+  "pre_review_merge_refusal_http": 405,
+  "pull_request_number": 2,
+  "pull_request_state_after_merge": "closed",
+  "repository_private": true,
+  "requirement_sha256": "3a3c444075c93a3bcfb2bec17d1a2e74ec0051effc2994e6b02ac095eb0dd431",
+  "reviewer": "verifier-bot",
+  "schema_version": 1,
+  "webhook_reconciliation": {
+    "all_notifications_reconciled_to_current_state": true,
+    "approved_review_delivery_id": "530dc9a2-f39a-4a71-8af3-64b93f53768d",
+    "approved_review_notification": {
+      "action": "reviewed",
+      "base_sha": "daa375415954de9b34f059345ab682d4fbf90f09",
+      "event": "pull_request_approved",
+      "head_sha": "54d8958b8f32e192f3b94ba7f0ecc649934a84f3",
+      "payload_merged": false,
+      "payload_state": "open",
+      "pull_request_number": 2,
+      "review_type": "pull_request_review_approved"
+    },
+    "approved_review_sequence": 2,
+    "candidate_commit": "54d8958b8f32e192f3b94ba7f0ecc649934a84f3",
+    "canonical_state": {
+      "base_sha": "7599dea0f1108142cdf829bd58beb098553487d2",
+      "head_sha": "54d8958b8f32e192f3b94ba7f0ecc649934a84f3",
+      "merge_commit_sha": "7599dea0f1108142cdf829bd58beb098553487d2",
+      "merged": true,
+      "state": "closed"
+    },
+    "cleanup": {
+      "cleanup_failure": null,
+      "hook_deactivated": true,
+      "receiver_listener_absent": true,
+      "receiver_listener_addresses_after_stop": [],
+      "receiver_stop": {
+        "returncode": 0,
+        "started": true,
+        "stop_action": "terminate",
+        "stopped": true
+      },
+      "receiver_stopped": true,
+      "started": true
+    },
+    "closed_delivery_id": "3c2ab05e-8bf6-4102-9e46-85a8c5e4494b",
+    "closed_payload": {
+      "base_sha": "7599dea0f1108142cdf829bd58beb098553487d2",
+      "head_sha": "54d8958b8f32e192f3b94ba7f0ecc649934a84f3",
+      "merge_commit_sha": "7599dea0f1108142cdf829bd58beb098553487d2",
+      "merged": true,
+      "state": "closed"
+    },
+    "closed_sequence": 3,
+    "event_count": 3,
+    "forgejo_task_count": 3,
+    "hook_id": 2,
+    "hook_readback": {
+      "active_after_run": false,
+      "api_hook_id": 2,
+      "configuration_matches_expected": true,
+      "content_type": "json",
+      "deactivation_readback_confirmed": true,
+      "events": [
+        "pull_request",
+        "pull_request_assign",
+        "pull_request_label",
+        "pull_request_milestone",
+        "pull_request_comment",
+        "pull_request_review_approved",
+        "pull_request_review_rejected",
+        "pull_request_review_comment",
+        "pull_request_sync",
+        "pull_request_review_request"
+      ],
+      "events_readback_valid": true,
+      "hook_id": 2,
+      "secret_value_recorded": false,
+      "target": "http://127.0.0.1:43599/forgejo/webhook",
+      "type": "gitea"
+    },
+    "merge_commit": "7599dea0f1108142cdf829bd58beb098553487d2",
+    "opened_delivery_id": "2458a135-0ca0-4c3f-a997-422fed86c2ac",
+    "opened_payload": {
+      "base_sha": "daa375415954de9b34f059345ab682d4fbf90f09",
+      "head_sha": "54d8958b8f32e192f3b94ba7f0ecc649934a84f3",
+      "merged": false,
+      "state": "open"
+    },
+    "opened_sequence": 1,
+    "pull_request_number": 2,
+    "receiver_binary_sha256": "b8a1a764142500f9cdbcaa3e4cc9d69cd93c66714de9d4c71b2c5eb46eff4def",
+    "reconciled_delivery_ids": [
+      "2458a135-0ca0-4c3f-a997-422fed86c2ac",
+      "530dc9a2-f39a-4a71-8af3-64b93f53768d",
+      "3c2ab05e-8bf6-4102-9e46-85a8c5e4494b"
+    ],
+    "reconciliation_receipts": [
+      {
+        "canonical_state": {
+          "base_sha": "7599dea0f1108142cdf829bd58beb098553487d2",
+          "head_sha": "54d8958b8f32e192f3b94ba7f0ecc649934a84f3",
+          "merge_commit_sha": "7599dea0f1108142cdf829bd58beb098553487d2",
+          "merged": true,
+          "state": "closed"
+        },
+        "delivery_id": "2458a135-0ca0-4c3f-a997-422fed86c2ac",
+        "exit_code": 0,
+        "resource": {
+          "kind": "pull_request",
+          "number": 2,
+          "owner": "forge-admin",
+          "repository": "mission-012-clamp"
+        },
+        "upstream_read_attempts": 1,
+        "verdict": "current_state_read"
+      },
+      {
+        "canonical_state": {
+          "base_sha": "7599dea0f1108142cdf829bd58beb098553487d2",
+          "head_sha": "54d8958b8f32e192f3b94ba7f0ecc649934a84f3",
+          "merge_commit_sha": "7599dea0f1108142cdf829bd58beb098553487d2",
+          "merged": true,
+          "state": "closed"
+        },
+        "delivery_id": "530dc9a2-f39a-4a71-8af3-64b93f53768d",
+        "exit_code": 0,
+        "resource": {
+          "kind": "pull_request",
+          "number": 2,
+          "owner": "forge-admin",
+          "repository": "mission-012-clamp"
+        },
+        "upstream_read_attempts": 1,
+        "verdict": "current_state_read"
+      },
+      {
+        "canonical_state": {
+          "base_sha": "7599dea0f1108142cdf829bd58beb098553487d2",
+          "head_sha": "54d8958b8f32e192f3b94ba7f0ecc649934a84f3",
+          "merge_commit_sha": "7599dea0f1108142cdf829bd58beb098553487d2",
+          "merged": true,
+          "state": "closed"
+        },
+        "delivery_id": "3c2ab05e-8bf6-4102-9e46-85a8c5e4494b",
+        "exit_code": 0,
+        "resource": {
+          "kind": "pull_request",
+          "number": 2,
+          "owner": "forge-admin",
+          "repository": "mission-012-clamp"
+        },
+        "upstream_read_attempts": 1,
+        "verdict": "current_state_read"
+      }
+    ],
+    "review_notification_is_approval_proof": false,
+    "schema_version": 5,
+    "status": "verified_current_merged_pr",
+    "successful_http_202_count": 3,
+    "target_profile": "mission-012-clamp"
+  }
+}
