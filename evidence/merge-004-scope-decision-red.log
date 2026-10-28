@@ -1,0 +1,11 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+error[E0609]: no field `scope` on type `MergeApprovalDecisionV1`
+  --> tests/forgejo_merge_approval.rs:93:25
+   |
+93 |     assert_eq!(decision.scope, scope(23));
+   |                         ^^^^^ unknown field
+   |
+   = note: available fields are: `pull_request_number`, `candidate_commit`, `approved_review_ids`, `reviewer_ids`
+
+For more information about this error, try `rustc --explain E0609`.
+error: could not compile `agent-forge-core` (test "forgejo_merge_approval") due to 1 previous error

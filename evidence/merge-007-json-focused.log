@@ -1,0 +1,35 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.37s
+     Running tests/forgejo_merge_approval.rs (/tmp/merge-005-tests/debug/deps/forgejo_merge_approval-c955ced9fc722b76)
+
+running 27 tests
+test complete_forgejo_review_pages_are_collected_in_order ... ok
+test duplicate_review_ids_are_rejected ... ok
+test executor_review_is_not_counted_as_an_independent_approval ... ok
+test incomplete_review_pages_are_inconclusive ... ok
+test legacy_policy_without_an_approval_allowlist_deserializes_but_cannot_authorize ... ok
+test current_official_approval_is_bound_to_the_exact_candidate_and_decision ... ok
+test distinct_current_reviewers_count_once_and_return_in_stable_order ... ok
+test forgejo_api_review_json_keeps_identity_and_freshness_fields ... ok
+test decision_fingerprint_binds_the_complete_review_snapshot_independent_of_order ... ok
+test pages_mixed_across_pull_requests_or_repositories_are_refused ... ok
+test changed_policy_bytes_invalidate_the_previous_binding ... ok
+test missing_freshness_or_dismissal_fields_are_rejected_during_deserialization ... ok
+test review_json_page_errors_distinguish_invalid_json_from_reader_failure ... ok
+test review_json_pages_decode_minimal_fields_with_bounded_reader ... ok
+test review_page_gaps_changed_counts_and_duplicate_records_are_refused ... ok
+test wrong_review_scope_is_rejected_without_reading_its_body ... ok
+test reviews_from_a_different_repository_scope_cannot_authorize ... ok
+test reviewer_must_be_in_the_host_policy_allowlist ... ok
+test versioned_approval_policy_is_parsed_from_the_canonical_policy_field ... ok
+test stale_dismissed_nonofficial_and_wrong_head_approvals_do_not_count ... ok
+test policy_rejects_zero_or_duplicate_reviewer_ids ... ok
+test review_state_and_commit_id_accept_64_bytes_and_refuse_65_before_fingerprinting ... ok
+test overlarge_policy_or_review_snapshot_fails_closed ... ok
+test review_json_page_read_stops_at_one_byte_beyond_page_budget ... ok
+test review_json_page_accepts_exact_page_byte_limit ... ok
+test review_json_pages_accept_exact_cumulative_byte_limit ... ok
+test review_json_pages_share_a_cumulative_byte_budget ... ok
+
+test result: ok. 27 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.26s
+

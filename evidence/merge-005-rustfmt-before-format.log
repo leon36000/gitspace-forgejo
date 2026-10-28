@@ -1,0 +1,48 @@
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/forgejo_merge_approval.rs:103:
+     let second = review(8, 43, "COMMENT", &current, false, true, false);
+     let policy = policy_bytes(1, &[42]);
+ 
+-    let forward = validate(&snapshot(vec![first.clone(), second.clone()]), &current, 9, &policy)
+-        .expect("current approval");
+-    let reverse = validate(&snapshot(vec![second.clone(), first.clone()]), &current, 9, &policy)
+-        .expect("same snapshot in a different API order");
++    let forward = validate(
++        &snapshot(vec![first.clone(), second.clone()]),
++        &current,
++        9,
++        &policy,
++    )
++    .expect("current approval");
++    let reverse = validate(
++        &snapshot(vec![second.clone(), first.clone()]),
++        &current,
++        9,
++        &policy,
++    )
++    .expect("same snapshot in a different API order");
+     let dismissed = validate(
+-        &snapshot(vec![first, review(8, 43, "COMMENT", &current, false, true, true)]),
++        &snapshot(vec![
++            first,
++            review(8, 43, "COMMENT", &current, false, true, true),
++        ]),
+         &current,
+         9,
+         &policy,
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/forgejo_merge_approval.rs:116:
+     .expect("current approval remains sufficient");
+ 
+     assert_eq!(forward.review_snapshot_sha256.len(), 64);
+-    assert_eq!(forward.review_snapshot_sha256, reverse.review_snapshot_sha256);
+-    assert_ne!(forward.review_snapshot_sha256, dismissed.review_snapshot_sha256);
++    assert_eq!(
++        forward.review_snapshot_sha256,
++        reverse.review_snapshot_sha256
++    );
++    assert_ne!(
++        forward.review_snapshot_sha256,
++        dismissed.review_snapshot_sha256
++    );
+ }
+ 
+ #[test]

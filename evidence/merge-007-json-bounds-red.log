@@ -1,0 +1,50 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+error[E0432]: unresolved imports `agent_forge_core::forgejo::MAX_MERGE_APPROVAL_REVIEW_PAGE_BODY_BYTES`, `agent_forge_core::forgejo::MAX_MERGE_APPROVAL_REVIEW_TOTAL_BODY_BYTES`, `agent_forge_core::forgejo::PullRequestReviewPageBodyV1`, `agent_forge_core::forgejo::collect_pull_request_review_json_pages`
+ --> tests/forgejo_merge_approval.rs:4:5
+  |
+4 |     MAX_MERGE_APPROVAL_REVIEW_PAGE_BODY_BYTES, MAX_MERGE_APPROVAL_REVIEW_TOTAL_BODY_BYTES,
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no `MAX_MERGE_APPROVAL_REVIEW_TOTAL_BODY_BYTES` in `forgejo`
+  |     |
+  |     no `MAX_MERGE_APPROVAL_REVIEW_PAGE_BODY_BYTES` in `forgejo`
+5 |     MergeApprovalError, PullRequestReviewPageBodyV1, PullRequestReviewPageV1,
+  |                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^ no `PullRequestReviewPageBodyV1` in `forgejo`
+6 |     PullRequestReviewScopeV1, PullRequestReviewV1, PullRequestReviewsSnapshotV1, ReviewUserV1,
+7 |     collect_pull_request_review_json_pages, collect_pull_request_review_pages,
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no `collect_pull_request_review_json_pages` in `forgejo`
+  |
+help: a similar name exists in the module
+  |
+4 -     MAX_MERGE_APPROVAL_REVIEW_PAGE_BODY_BYTES, MAX_MERGE_APPROVAL_REVIEW_TOTAL_BODY_BYTES,
+4 +     MAX_MERGE_APPROVAL_REVIEW_STATE_BYTES, MAX_MERGE_APPROVAL_REVIEW_TOTAL_BODY_BYTES,
+  |
+help: a similar name exists in the module
+  |
+4 -     MAX_MERGE_APPROVAL_REVIEW_PAGE_BODY_BYTES, MAX_MERGE_APPROVAL_REVIEW_TOTAL_BODY_BYTES,
+4 +     MAX_MERGE_APPROVAL_REVIEW_PAGE_BODY_BYTES, MAX_MERGE_APPROVAL_REVIEW_STATE_BYTES,
+  |
+help: a similar name exists in the module
+  |
+5 -     MergeApprovalError, PullRequestReviewPageBodyV1, PullRequestReviewPageV1,
+5 +     MergeApprovalError, PullRequestReviewPageV1, PullRequestReviewPageV1,
+  |
+help: a similar name exists in the module
+  |
+7 -     collect_pull_request_review_json_pages, collect_pull_request_review_pages,
+7 +     collect_pull_request_review_pages, collect_pull_request_review_pages,
+  |
+
+error[E0599]: no variant or associated item named `ReviewPageBodyTooLarge` found for enum `MergeApprovalError` in the current scope
+   --> tests/forgejo_merge_approval.rs:212:33
+    |
+212 |         Err(MergeApprovalError::ReviewPageBodyTooLarge)
+    |                                 ^^^^^^^^^^^^^^^^^^^^^^ variant or associated item not found in `MergeApprovalError`
+
+error[E0599]: no variant or associated item named `ReviewSnapshotBodyTooLarge` found for enum `MergeApprovalError` in the current scope
+   --> tests/forgejo_merge_approval.rs:234:33
+    |
+234 |         Err(MergeApprovalError::ReviewSnapshotBodyTooLarge)
+    |                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^ variant or associated item not found in `MergeApprovalError`
+
+Some errors have detailed explanations: E0432, E0599.
+For more information about an error, try `rustc --explain E0432`.
+error: could not compile `agent-forge-core` (test "forgejo_merge_approval") due to 3 previous errors

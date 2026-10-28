@@ -1,0 +1,13 @@
+TDD red run captured before adding the implementation field.
+Command: env CARGO_TARGET_DIR=/tmp/merge-005-red cargo test --offline --locked --test forgejo_merge_approval decision_fingerprint_binds_the_complete_review_snapshot_independent_of_order
+Exit status: 101
+
+error[E0609]: no field `review_snapshot_sha256` on type `MergeApprovalDecisionV1`
+   --> tests/forgejo_merge_approval.rs:118:24
+    |
+118 |     assert_eq!(forward.review_snapshot_sha256.len(), 64);
+    |                        ^^^^^^^^^^^^^^^^^^^^^^ unknown field
+    |
+    = note: available fields are: `scope`, `candidate_commit`, `approved_review_ids`, `reviewer_ids`
+
+The same missing-field diagnostic occurred at test lines 119 (twice) and 120 (twice); compilation failed before execution. The test was then satisfied by the implementation in src/forgejo.rs.

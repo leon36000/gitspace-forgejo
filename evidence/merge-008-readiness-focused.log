@@ -1,0 +1,13 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.80s
+     Running tests/forgejo_merge_readiness.rs (/tmp/merge-005-tests/debug/deps/forgejo_merge_readiness-9db8b4d20949688b)
+
+running 5 tests
+test fresh_approval_cannot_make_a_proof_for_an_old_head_ready ... ok
+test readiness_binds_proof_current_pull_request_and_approvals_into_one_decision ... ok
+test approval_for_another_pull_request_cannot_make_current_pr_ready ... ok
+test approval_for_an_old_reviewed_head_is_not_counted ... ok
+test policy_and_passing_proof_must_name_the_same_verifier ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

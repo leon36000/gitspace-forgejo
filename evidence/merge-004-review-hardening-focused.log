@@ -1,0 +1,26 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.06s
+     Running tests/forgejo_merge_approval.rs (/tmp/merge-004-review-target/debug/deps/forgejo_merge_approval-c955ced9fc722b76)
+
+running 18 tests
+test forgejo_api_review_json_keeps_identity_and_freshness_fields ... ok
+test complete_forgejo_review_pages_are_collected_in_order ... ok
+test pages_mixed_across_pull_requests_or_repositories_are_refused ... ok
+test missing_freshness_or_dismissal_fields_are_rejected_during_deserialization ... ok
+test current_official_approval_is_bound_to_the_exact_candidate_and_decision ... ok
+test duplicate_review_ids_are_rejected ... ok
+test distinct_current_reviewers_count_once_and_return_in_stable_order ... ok
+test legacy_policy_without_an_approval_allowlist_deserializes_but_cannot_authorize ... ok
+test changed_policy_bytes_invalidate_the_previous_binding ... ok
+test review_page_gaps_changed_counts_and_duplicate_records_are_refused ... ok
+test executor_review_is_not_counted_as_an_independent_approval ... ok
+test incomplete_review_pages_are_inconclusive ... ok
+test reviews_from_a_different_repository_scope_cannot_authorize ... ok
+test stale_dismissed_nonofficial_and_wrong_head_approvals_do_not_count ... ok
+test reviewer_must_be_in_the_host_policy_allowlist ... ok
+test versioned_approval_policy_is_parsed_from_the_canonical_policy_field ... ok
+test policy_rejects_zero_or_duplicate_reviewer_ids ... ok
+test overlarge_policy_or_review_snapshot_fails_closed ... ok
+
+test result: ok. 18 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+

@@ -1,0 +1,22 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.25s
+     Running tests/forgejo_merge_readiness.rs (/tmp/merge-005-tests/debug/deps/forgejo_merge_readiness-9db8b4d20949688b)
+
+running 1 test
+test policy_and_passing_proof_must_name_the_same_verifier ... FAILED
+
+failures:
+
+---- policy_and_passing_proof_must_name_the_same_verifier stdout ----
+
+thread 'policy_and_passing_proof_must_name_the_same_verifier' (216928) panicked at tests/forgejo_merge_readiness.rs:238:5:
+the policy verifier and passing proof verifier must match
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    policy_and_passing_proof_must_name_the_same_verifier
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 4 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `--test forgejo_merge_readiness`

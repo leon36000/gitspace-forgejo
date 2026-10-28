@@ -1,0 +1,26 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.31s
+     Running tests/forgejo_merge_approval.rs (/tmp/merge-005-tests/debug/deps/forgejo_merge_approval-c955ced9fc722b76)
+
+running 1 test
+test oversized_review_state_and_commit_id_are_refused_before_fingerprinting ... FAILED
+
+failures:
+
+---- oversized_review_state_and_commit_id_are_refused_before_fingerprinting stdout ----
+
+thread 'oversized_review_state_and_commit_id_are_refused_before_fingerprinting' (159266) panicked at tests/forgejo_merge_approval.rs:169:9:
+assertion `left == right` failed
+  left: Ok(MergeApprovalDecisionV1 { scope: PullRequestReviewScopeV1 { origin: "https://forgejo.example", owner: "acme", repository: "project", pull_request_number: 23 }, candidate_commit: "1111111111111111111111111111111111111111", review_snapshot_sha256: "441d86e6a7920b6011cd988ec4716318c6385eef12b3156031f5fa383c7752c0", approved_review_ids: [7], reviewer_ids: [42] })
+ right: Err(InvalidReviewSet)
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    oversized_review_state_and_commit_id_are_refused_before_fingerprinting
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 19 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `--test forgejo_merge_approval`
+
+Observed command exit: 101

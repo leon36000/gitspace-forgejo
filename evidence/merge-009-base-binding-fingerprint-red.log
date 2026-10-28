@@ -1,0 +1,24 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.28s
+     Running tests/forgejo_merge_readiness.rs (/tmp/merge-009-tests/debug/deps/forgejo_merge_readiness-9db8b4d20949688b)
+
+running 1 test
+test base_binding_fingerprint_is_order_independent_and_changes_with_the_base ... FAILED
+
+failures:
+
+---- base_binding_fingerprint_is_order_independent_and_changes_with_the_base stdout ----
+
+thread 'base_binding_fingerprint_is_order_independent_and_changes_with_the_base' (284672) panicked at tests/forgejo_merge_readiness.rs:379:5:
+assertion `left == right` failed
+  left: "405838373b3ee0f03e008bc25b03791f0fc0a54d69880fbe5ba49b12abb0aad7"
+ right: "BASE_BINDING_GOLDEN_HASH"
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    base_binding_fingerprint_is_order_independent_and_changes_with_the_base
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 9 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `--test forgejo_merge_readiness`

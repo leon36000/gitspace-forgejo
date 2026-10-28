@@ -1,0 +1,14 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+error[E0432]: unresolved imports `agent_forge_core::forgejo::MergeReadinessError`, `agent_forge_core::forgejo::MergeReadinessDecisionV1`, `agent_forge_core::forgejo::evaluate_merge_readiness`
+ --> tests/forgejo_merge_readiness.rs:3:68
+  |
+3 |     BaseBranchScope, MergePreflightContextV1, MergePreflightError, MergeReadinessError,
+  |                                                                    ^^^^^^^^^^^^^^^^^^^ no `MergeReadinessError` in `forgejo`
+4 |     MergeApprovalPolicyV1, MergeReadinessDecisionV1, PullRequestReviewScopeV1,
+  |                            ^^^^^^^^^^^^^^^^^^^^^^^^ no `MergeReadinessDecisionV1` in `forgejo`
+5 |     PullRequestReviewV1, PullRequestReviewsSnapshotV1, ReviewUserV1,
+6 |     evaluate_merge_readiness,
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^ no `evaluate_merge_readiness` in `forgejo`
+
+For more information about this error, try `rustc --explain E0432`.
+error: could not compile `agent-forge-core` (test "forgejo_merge_readiness") due to 1 previous error

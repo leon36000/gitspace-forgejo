@@ -1,0 +1,9 @@
+Probe time: 2026-10-22 22:39:05 UTC
+TCP 127.0.0.1:3130: errno=111 Connection refused
+TCP 127.0.0.1:3132: connected
+GET /api/healthz: {"shape": "dict", "status": 200}
+GET /api/v1/version: HTTP 403
+GET /api/v1/repos/forge-admin/agent-forge-core/pulls/18: HTTP 403
+GET /api/v1/repos/forge-admin/agent-forge-core/pulls/18/reviews: HTTP 403
+GET /api/v1/repos/forge-admin/agent-forge-core/branch_protections: HTTP 403
+Authentication: none; Authorization header: none; write requests: none

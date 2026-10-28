@@ -1,0 +1,18 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.28s
+     Running tests/forgejo_merge_readiness.rs (/tmp/merge-009-tests/debug/deps/forgejo_merge_readiness-9db8b4d20949688b)
+
+running 10 tests
+test approval_without_a_trusted_base_binding_is_not_ready ... ok
+test fresh_approval_cannot_make_a_proof_for_an_old_head_ready ... ok
+test duplicate_base_bindings_are_not_ready ... ok
+test policy_and_passing_proof_must_name_the_same_verifier ... ok
+test approval_bound_to_a_different_base_ref_or_commit_is_not_ready ... ok
+test readiness_binds_proof_current_pull_request_and_approvals_into_one_decision ... ok
+test approval_for_another_pull_request_cannot_make_current_pr_ready ... ok
+test approval_for_an_old_reviewed_head_is_not_counted ... ok
+test base_binding_from_another_pull_request_is_not_ready ... ok
+test base_binding_fingerprint_is_order_independent_and_changes_with_the_base ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

@@ -1,0 +1,124 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+error[E0432]: unresolved import `agent_forge_core::forgejo::PullRequestReviewScopeV1`
+ --> tests/forgejo_merge_approval.rs:4:30
+  |
+4 |     PullRequestReviewPageV1, PullRequestReviewScopeV1, PullRequestReviewV1,
+  |                              ^^^^^^^^^^^^^^^^^^^^^^^^ no `PullRequestReviewScopeV1` in `forgejo`
+  |
+help: a similar name exists in the module
+  |
+4 -     PullRequestReviewPageV1, PullRequestReviewScopeV1, PullRequestReviewV1,
+4 +     PullRequestReviewPageV1, PullRequestReviewPageV1, PullRequestReviewV1,
+  |
+
+error[E0560]: struct `PullRequestReviewsSnapshotV1` has no field named `scope`
+  --> tests/forgejo_merge_approval.rs:36:9
+   |
+36 |         scope: scope(23),
+   |         ^^^^^ `PullRequestReviewsSnapshotV1` does not have this field
+   |
+   = note: available fields are: `pull_request_number`
+
+error[E0609]: no field `scope` on type `PullRequestReviewsSnapshotV1`
+   --> tests/forgejo_merge_approval.rs:184:14
+    |
+184 |     snapshot.scope = PullRequestReviewScopeV1::new(
+    |              ^^^^^ unknown field
+    |
+    = note: available fields are: `pull_request_number`, `total_count`, `reviews`
+
+error[E0599]: no variant or associated item named `WrongScope` found for enum `MergeApprovalError` in the current scope
+   --> tests/forgejo_merge_approval.rs:202:33
+    |
+202 |         Err(MergeApprovalError::WrongScope)
+    |                                 ^^^^^^^^^^ variant or associated item not found in `MergeApprovalError`
+
+error[E0560]: struct `PullRequestReviewPageV1` has no field named `scope`
+   --> tests/forgejo_merge_approval.rs:324:17
+    |
+324 |                 scope: scope(23),
+    |                 ^^^^^ `PullRequestReviewPageV1` does not have this field
+    |
+    = note: all struct fields are already assigned
+
+error[E0560]: struct `PullRequestReviewPageV1` has no field named `scope`
+   --> tests/forgejo_merge_approval.rs:330:17
+    |
+330 |                 scope: scope(23),
+    |                 ^^^^^ `PullRequestReviewPageV1` does not have this field
+    |
+    = note: all struct fields are already assigned
+
+error[E0560]: struct `PullRequestReviewPageV1` has no field named `scope`
+   --> tests/forgejo_merge_approval.rs:361:21
+    |
+361 |                     scope: scope(23),
+    |                     ^^^^^ `PullRequestReviewPageV1` does not have this field
+    |
+    = note: all struct fields are already assigned
+
+error[E0560]: struct `PullRequestReviewPageV1` has no field named `scope`
+   --> tests/forgejo_merge_approval.rs:367:21
+    |
+367 |                     scope: scope(23),
+    |                     ^^^^^ `PullRequestReviewPageV1` does not have this field
+    |
+    = note: all struct fields are already assigned
+
+error[E0560]: struct `PullRequestReviewPageV1` has no field named `scope`
+   --> tests/forgejo_merge_approval.rs:381:21
+    |
+381 |                     scope: scope(23),
+    |                     ^^^^^ `PullRequestReviewPageV1` does not have this field
+    |
+    = note: all struct fields are already assigned
+
+error[E0560]: struct `PullRequestReviewPageV1` has no field named `scope`
+   --> tests/forgejo_merge_approval.rs:387:21
+    |
+387 |                     scope: scope(23),
+    |                     ^^^^^ `PullRequestReviewPageV1` does not have this field
+    |
+    = note: all struct fields are already assigned
+
+error[E0560]: struct `PullRequestReviewPageV1` has no field named `scope`
+   --> tests/forgejo_merge_approval.rs:401:21
+    |
+401 |                     scope: scope(23),
+    |                     ^^^^^ `PullRequestReviewPageV1` does not have this field
+    |
+    = note: all struct fields are already assigned
+
+error[E0560]: struct `PullRequestReviewPageV1` has no field named `scope`
+   --> tests/forgejo_merge_approval.rs:407:21
+    |
+407 |                     scope: scope(23),
+    |                     ^^^^^ `PullRequestReviewPageV1` does not have this field
+    |
+    = note: all struct fields are already assigned
+
+error[E0560]: struct `PullRequestReviewPageV1` has no field named `scope`
+   --> tests/forgejo_merge_approval.rs:434:21
+    |
+434 |                     scope: scope(23),
+    |                     ^^^^^ `PullRequestReviewPageV1` does not have this field
+    |
+    = note: all struct fields are already assigned
+
+error[E0560]: struct `PullRequestReviewPageV1` has no field named `scope`
+   --> tests/forgejo_merge_approval.rs:440:21
+    |
+440 |                     scope: other_repository,
+    |                     ^^^^^ `PullRequestReviewPageV1` does not have this field
+    |
+    = note: all struct fields are already assigned
+
+error[E0599]: no variant or associated item named `WrongScope` found for enum `MergeApprovalError` in the current scope
+   --> tests/forgejo_merge_approval.rs:447:33
+    |
+447 |         Err(MergeApprovalError::WrongScope)
+    |                                 ^^^^^^^^^^ variant or associated item not found in `MergeApprovalError`
+
+Some errors have detailed explanations: E0432, E0560, E0599, E0609.
+For more information about an error, try `rustc --explain E0432`.
+error: could not compile `agent-forge-core` (test "forgejo_merge_approval") due to 15 previous errors

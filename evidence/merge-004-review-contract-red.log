@@ -1,0 +1,48 @@
+   Compiling version_check v0.9.5
+   Compiling typenum v1.20.0
+   Compiling proc-macro2 v1.0.107
+   Compiling unicode-ident v1.0.26
+   Compiling quote v1.0.47
+   Compiling serde_core v1.0.228
+   Compiling libc v0.2.190
+   Compiling zmij v1.0.23
+   Compiling subtle v2.6.1
+   Compiling serde_json v1.0.150
+   Compiling serde v1.0.228
+   Compiling itoa v1.0.18
+   Compiling cfg-if v1.0.5
+   Compiling memchr v2.8.3
+   Compiling hex v0.4.3
+   Compiling generic-array v0.14.7
+   Compiling block-buffer v0.10.4
+   Compiling crypto-common v0.1.7
+   Compiling syn v2.0.117
+   Compiling digest v0.10.7
+   Compiling hmac v0.12.1
+   Compiling cpufeatures v0.2.17
+   Compiling sha2 v0.10.9
+   Compiling serde_derive v1.0.228
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+error[E0432]: unresolved imports `agent_forge_core::forgejo::MergeApprovalError`, `agent_forge_core::forgejo::MergeApprovalPolicyV1`, `agent_forge_core::forgejo::PullRequestReviewV1`, `agent_forge_core::forgejo::PullRequestReviewsSnapshotV1`, `agent_forge_core::forgejo::ReviewUserV1`, `agent_forge_core::forgejo::validate_merge_approvals`
+ --> tests/forgejo_merge_approval.rs:2:5
+  |
+2 |     MergeApprovalError, MergeApprovalPolicyV1, PullRequestReviewV1,
+  |     ^^^^^^^^^^^^^^^^^^  ^^^^^^^^^^^^^^^^^^^^^  ^^^^^^^^^^^^^^^^^^^ no `PullRequestReviewV1` in `forgejo`
+  |     |                   |
+  |     |                   no `MergeApprovalPolicyV1` in `forgejo`
+  |     no `MergeApprovalError` in `forgejo`
+3 |     PullRequestReviewsSnapshotV1, ReviewUserV1, validate_merge_approvals,
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^  ^^^^^^^^^^^^  ^^^^^^^^^^^^^^^^^^^^^^^^ no `validate_merge_approvals` in `forgejo`
+  |     |                             |
+  |     |                             no `ReviewUserV1` in `forgejo`
+  |     no `PullRequestReviewsSnapshotV1` in `forgejo`
+  |
+help: a similar name exists in the module
+  |
+3 -     PullRequestReviewsSnapshotV1, ReviewUserV1, validate_merge_approvals,
+3 +     PullRequestSnapshotV1, ReviewUserV1, validate_merge_approvals,
+  |
+
+For more information about this error, try `rustc --explain E0432`.
+error: could not compile `agent-forge-core` (test "forgejo_merge_approval") due to 1 previous error
+warning: build failed, waiting for other jobs to finish...

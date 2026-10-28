@@ -1,0 +1,12 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.82s
+     Running tests/forgejo_merge_approval.rs (/tmp/merge-005-tests/debug/deps/forgejo_merge_approval-c955ced9fc722b76)
+
+running 4 tests
+test forgejo_api_review_json_keeps_identity_and_freshness_fields ... ok
+test review_json_pages_decode_minimal_fields_with_bounded_reader ... ok
+test review_json_page_read_stops_at_one_byte_beyond_page_budget ... ok
+test review_json_pages_share_a_cumulative_byte_budget ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 19 filtered out; finished in 0.23s
+

@@ -1,0 +1,54 @@
+MERGE-009 pre-fix regression reproduction
+Temporary mutation: bypass only the call that validates trusted review/base bindings.
+Target source was restored byte-for-byte after execution.
+src/forgejo.rs SHA-256 before and after: 578553c35d39c4cc657c85146aed356d8cac850003f8513b01ab4f8b809b87da
+Command: cargo test --offline --locked --test forgejo_merge_readiness approval_without_a_trusted_base_binding_is_not_ready -- --exact
+Exit status: 101
+
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+warning: unused variable: `review_base_bindings`
+   --> src/forgejo.rs:807:5
+    |
+807 |     review_base_bindings: &PullRequestReviewBaseBindingsSnapshotV1,
+    |     ^^^^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_review_base_bindings`
+    |
+    = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: struct `CanonicalPullRequestReviewBaseBindingsV1` is never constructed
+   --> src/forgejo.rs:495:8
+    |
+495 | struct CanonicalPullRequestReviewBaseBindingsV1<'a> {
+    |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: function `validate_review_base_bindings` is never used
+   --> src/forgejo.rs:858:4
+    |
+858 | fn validate_review_base_bindings(
+    |    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: `agent-forge-core` (lib) generated 3 warnings (run `cargo fix --lib -p agent-forge-core` to apply 1 suggestion)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.90s
+     Running tests/forgejo_merge_readiness.rs (/tmp/merge-009-tests/debug/deps/forgejo_merge_readiness-9db8b4d20949688b)
+
+running 1 test
+test approval_without_a_trusted_base_binding_is_not_ready ... FAILED
+
+failures:
+
+---- approval_without_a_trusted_base_binding_is_not_ready stdout ----
+
+thread 'approval_without_a_trusted_base_binding_is_not_ready' (273051) panicked at tests/forgejo_merge_readiness.rs:211:5:
+assertion `left == right` failed
+  left: Ok(MergeReadinessDecisionV1 { origin: "https://forgejo.example", owner: "acme", repository: "project", pull_request_number: 23, base_branch: "main", base_commit: "2222222222222222222222222222222222222222", candidate_commit: "1111111111111111111111111111111111111111", requirement_sha256: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", policy_sha256: "dbc19ef339c736905e3923689c9068db07d78f7a83d85c62f54a5d6bdb2edf4b", verifier_id: "independent-verifier", review_snapshot_sha256: "d0defa7cd3fc8bff653014e036cda6bf84760b1bb5d5f836960328b82ad08b83", review_base_bindings_sha256: "0b9597965eab7db3cfd0aa3e181f1e13dd612b91dd3a7bd8f9715045e16a985c", approved_review_ids: [17], reviewer_ids: [42] })
+ right: Err(Approval(MissingReviewBaseBinding))
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    approval_without_a_trusted_base_binding_is_not_ready
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 8 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `--test forgejo_merge_readiness`
