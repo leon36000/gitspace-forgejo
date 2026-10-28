@@ -1,0 +1,7 @@
+Erreurs de développement du harnais, conservées pour distinguer setup et résultat Forgejo :
+
+1. Le premier chemin d’exécutable supposait `agent-forge-lock-holder`; `cargo metadata` a montré que le binaire s’appelle `agent-forge-lock-holder-poc`. Erreur observée : `fork/exec .../agent-forge-lock-holder: no such file or directory`. L’API PATCH n’a pas été appelée dans cet essai.
+
+2. Le premier répertoire de verrou n’avait pas le mode exact 0700 exigé par `BaseBranchMergeLock::prepare_lock_root`. Erreur observée : `UntrustedLockDirectory`. L’API PATCH n’a pas été appelée dans cet essai. Le test fixe désormais explicitement 0700.
+
+3. Une première version du harnais attendait le même canal `Wait` à la fois dans le corps du test et dans `t.Cleanup`; le routeur avait déjà répondu 204, puis le processus de test a dû être interrompu. La cause était le double-read du canal de fin, pas un refus Forgejo. Le harnais a été remplacé par des fichiers ready/release; la dernière exécution est terminée proprement avec code 0 et le résultat est dans `integration-test.log`.

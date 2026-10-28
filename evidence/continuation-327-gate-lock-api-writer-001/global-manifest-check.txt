@@ -1,0 +1,3 @@
+Verified by `verify_append_only_indexes.py`.
+
+{"local_evidence_files_verified": 9, "parent_binds_current_worktree_index": true, "project_prefix_preserved": true, "worktree_prefix_preserved": true}

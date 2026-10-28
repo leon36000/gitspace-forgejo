@@ -1,0 +1,12 @@
+All commands were read-only against /tmp/forgejo-v17-base-cas-poc or the product worktree.
+
+git -C /tmp/forgejo-v17-base-cas-poc rev-parse HEAD
+git -C /tmp/forgejo-v17-base-cas-poc describe --tags --exact-match HEAD
+git -C /tmp/forgejo-v17-base-cas-poc status --short
+git -C /tmp/forgejo-v17-base-cas-poc diff --shortstat HEAD
+git -C /tmp/forgejo-v17-base-cas-poc status --short -- <audited source paths>
+git -C /tmp/forgejo-v17-base-cas-poc rev-parse HEAD:<audited source path>
+git -C /tmp/forgejo-v17-base-cas-poc grep -n -E '<symbol pattern>' HEAD -- <source paths>
+git -C /tmp/forgejo-v17-base-cas-poc show HEAD:<source path>
+
+The bounded git-show ranges and symbol inventory are listed in local-run.md. No Go test, build, server, credential, prompt, or external network request was used in this audit.

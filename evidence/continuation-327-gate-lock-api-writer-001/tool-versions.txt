@@ -1,0 +1,9 @@
+Date d’observation : 2026-10-28T03:30 UTC
+OS/architecture : Linux aarch64
+Forgejo scratch HEAD : 0d791421f85ca13a63b665053d81ea765fbbc571 (tag source v17.0.0)
+Go : go1.27.3 linux/arm64 (`/tmp/forgejo-v17-toolchain/go/bin/go`)
+Rust : rustc 1.95.0 (59807616e 2026-04-14)
+Cargo : cargo 1.95.0 (f2d3ce0bd 2026-03-21)
+Git : 2.43.0
+
+Cargo a compilé `agent-forge-lock-holder-poc` en mode dev, offline, contre le chemin produit local. Le test Go SQLite sélectionné a terminé avec code 0 en 1.575 s selon la sortie standard Go.

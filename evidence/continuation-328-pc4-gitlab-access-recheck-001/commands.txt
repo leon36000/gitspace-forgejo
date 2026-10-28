@@ -1,0 +1,14 @@
+# Read-only / local commands executed for CONTINUATION-328
+getent ahostsv4 pc4.tail0c55ff.ts.net
+curl --max-time 8 -sS -o /dev/null -w 'http=%{http_code} remote_ip=%{remote_ip} tls_verify=%{ssl_verify_result}\n' -I https://pc4.tail0c55ff.ts.net/users/sign_in
+GIT_TERMINAL_PROMPT=0 timeout 12s git ls-remote https://pc4.tail0c55ff.ts.net/root/gitspace-forgejo.git
+tailscale ping --c 1 --timeout 3s pc4
+curl --max-time 6 -sS -o /dev/null -w 'https http=%{http_code} remote_ip=%{remote_ip} tls_verify=%{ssl_verify_result}\n' --resolve pc4.tail0c55ff.ts.net:443:100.76.101.48 -I https://pc4.tail0c55ff.ts.net/users/sign_in
+curl --max-time 6 -sS -o /dev/null -w 'http http=%{http_code} remote_ip=%{remote_ip}\n' --resolve pc4.tail0c55ff.ts.net:80:100.76.101.48 -I http://pc4.tail0c55ff.ts.net/users/sign_in
+timeout 5s bash -c ':</dev/tcp/100.76.101.48/22'
+git remote -v
+cargo test --offline --locked --test forgejo_merge_writer_admission
+cargo test --offline --locked --bin forgejo-reconcile-local merge_cli_refuses_single_writer_profile_without_supervisor_capability_before_credential
+cargo build --offline --locked --bin forgejo-reconcile-local
+target/debug/forgejo-reconcile-local --merge-local-test --target-profile merge-014-agent-forge-core 23 missing-proof.json missing-expected.json missing-key missing-policy.json missing-review-binding.json fixture-gate 999999
+python3 evidence/continuation-327-gate-lock-api-writer-001/verify_append_only_indexes.py

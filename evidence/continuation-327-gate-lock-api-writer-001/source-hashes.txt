@@ -1,0 +1,34 @@
+Produit : /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace
+HEAD produit : f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+Forgejo : /tmp/forgejo-v17-base-cas-poc, HEAD 0d791421f85ca13a63b665053d81ea765fbbc571
+
+SHA-256 des sources produit réellement utilisées par le helper :
+44f63c745e22e4412d049929dc1bcdf28e298c7ceb0d2f7d0ccbb486c00afbac  src/forgejo.rs (untracked au moment du run)
+bdbb2b2ea2fcd3ad342efc23bb3dbf39fcbb532630683447a7aad630fbf1504f  src/bin/forgejo-reconcile-local.rs (modified)
+240aff9a884f00a1d903035e63ef6ae9dcb0fc16ad6c10497f7ac1eb8c092dac  tests/forgejo_merge_lock.rs (untracked au moment du run)
+a2c1182d6e5cc272c50fb0ad5f16d210befcd452527d29e4dde6cd6b05206d09  Cargo.toml (modified)
+459fef3749a42c989521901dcde61cb26e12ed4206c5d722e149426c2d3a5439  Cargo.lock (modified)
+
+SHA-256 des artefacts scratch utilisés :
+9f70b2aec92aeb3d6729907f24e6dd2b8c1cf802b499cf26c628686f8bcf6246  tests/integration/gate_base_lock_api_writer_poc_test.go (untracked scratch-only)
+1c07be4b31e326ddd66b9be84d63848e4729a53ee86250147934cd62cc670011  evidence/agent-forge-lock-holder/Cargo.toml
+f777bcedc50c098cc326b9f19e790189816116f285170bb4fbdb368ffdf7e52d  evidence/agent-forge-lock-holder/src/main.rs
+800d6fdf8e21ead892399e825c89a6c9aa826da01c7b83292905196925733e36  evidence/agent-forge-lock-holder/target/debug/agent-forge-lock-holder-poc
+
+SHA-256 des fichiers Forgejo scratch; `git diff --exit-code HEAD --` a réussi pour chacun :
+1512bc06cc50f19efd178bc1f6f4e849bc559f6240fae608a1265a55be33e02c  modules/testlogger/testlogger.go
+889589a7824613c3e55e4878e6002ef8429e69a1be2e2492dc1c97b3aac55e3a  routers/api/v1/api.go
+0d5d076529bf336cd112b70d5126b8ba9310e25ebcc046023e3b405cae0a635b  routers/api/v1/repo/branch.go
+456f3f5312c99a2303196f374371dc3202908bfaee5a6980403f30e1053778ad  services/repository/branch.go
+d58505ebb556f11608afa5d09b31a0d425ade84c2aeebdf8c1d9f2615b458678  models/git/branch.go
+3ff83fa5ec22ac25400574ee6c32843048d6275fc11fefdb5521fbbf4c179ee6  models/git/protected_branch.go
+
+IDs de blobs correspondants dans le HEAD Forgejo :
+90b8638e10a1a19792e0936ff0e1ceb732e874d4  routers/api/v1/api.go
+d7ab9dcfe9671f0c978bc9ce9d9fde57fb8d018a  routers/api/v1/repo/branch.go
+e2897ccdeeb4ce094931eb64589f380a17a777da  services/repository/branch.go
+a73a0f2a2033f4780c14631c510fc6d63d89f18b  models/git/branch.go
+3eaada2fddbead0c8074e3aa56ccd78c03bc50eb  models/git/protected_branch.go
+b660904ccfdc2c840f3e36396aa130a84e2aea64  modules/testlogger/testlogger.go
+
+La présence de sources produit non suivies est conservée et signalée; ce rapport n’affirme pas qu’elles appartiennent déjà à l’historique Git du produit.

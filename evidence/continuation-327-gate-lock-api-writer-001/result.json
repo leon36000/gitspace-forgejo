@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "test": "TestPOCGateBaseLockDoesNotFenceProtectedBranchRenameAPI",
+  "go_exit_code": 0,
+  "observations": 1,
+  "forgejo": {
+    "version": "17.0.0",
+    "head": "0d791421f85ca13a63b665053d81ea765fbbc571",
+    "storage": "SQLite integration fixture"
+  },
+  "gate_lock": {
+    "implementation": "agent_forge_core::forgejo::BaseBranchMergeLock",
+    "holder": "separate Rust process built from the current product worktree",
+    "held_before_api_request": true,
+    "released_after_readback": true
+  },
+  "actor": {
+    "admin": false,
+    "repository_access": "write collaborator",
+    "branch_protected": true,
+    "can_merge": true,
+    "can_push": false
+  },
+  "forgejo_request": {
+    "method": "PATCH",
+    "path": "/api/v1/repos/user2/repo1/branches/master",
+    "require_expected_base_commit_id": true,
+    "http_status": 204
+  },
+  "readback_while_lock_held": {
+    "old_ref_absent": true,
+    "renamed_ref_keeps_old_oid": true,
+    "protection_rule_moved": true
+  },
+  "scope_limit": "one direct branch-rename route; not a merge test or all-writers audit",
+  "product_forgejo_changes": false,
+  "product_source_changes": false
+}

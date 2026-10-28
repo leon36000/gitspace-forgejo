@@ -1,0 +1,46 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.01s
+     Running tests/reconcile_config_contract.rs (target/debug/deps/reconcile_config_contract-32eefa32f2ddbde2)
+
+running 4 tests
+test batch_with_unknown_delivery_returns_structured_error_before_credential_read ... ok
+test canonical_config_is_loaded_before_the_inbox ... ok
+test config_rejects_other_repositories_versions_and_unknown_credentials ... ok
+test config_cannot_redirect_the_local_adapter ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/reconcile_journal_lock_timeout.rs (target/debug/deps/reconcile_journal_lock_timeout-71df106bcd3e3bc8)
+
+running 3 tests
+test actual_cli_discloses_the_bounded_inbox_lock_wait ... ok
+test actual_cli_retries_when_the_lock_is_released_inside_the_wait_window ... ok
+test actual_cli_returns_journal_busy_before_the_held_lock_is_released ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 5.01s
+
+     Running tests/webhook_quarantine_cli.rs (target/debug/deps/webhook_quarantine_cli-9307333671b09d0c)
+
+running 5 tests
+test real_cli_preserves_an_incomplete_tail_for_an_unresolved_batch_selection ... ok
+test real_cli_preserves_an_incomplete_tail_before_quarantine_validation ... ok
+test real_cli_fails_closed_on_malformed_or_rebound_quarantine_dispositions ... FAILED
+test real_cli_quarantines_only_the_exact_invalid_row_and_never_reports_success ... ok
+test real_cli_refuses_a_torn_batch_when_every_selected_delivery_exists ... ok
+
+failures:
+
+---- real_cli_fails_closed_on_malformed_or_rebound_quarantine_dispositions stdout ----
+
+thread 'real_cli_fails_closed_on_malformed_or_rebound_quarantine_dispositions' (134617) panicked at tests/webhook_quarantine_cli.rs:398:9:
+assertion `left == right` failed: the current single/batch response schema is retained
+  left: Number(15)
+ right: 14
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    real_cli_fails_closed_on_malformed_or_rebound_quarantine_dispositions
+
+test result: FAILED. 4 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+error: test failed, to rerun pass `--test webhook_quarantine_cli`

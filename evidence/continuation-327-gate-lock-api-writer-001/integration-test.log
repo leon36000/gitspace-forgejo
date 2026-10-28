@@ -1,0 +1,96 @@
+Environment variable $PROJECT_CONF not set, use default: tests/sqlite.ini
+2026/10/27 23:30:29 ...s/storage/storage.go:157:initAttachments() [I] Initialising Attachment storage with type: local
+2026/10/27 23:30:29 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/attachments
+2026/10/27 23:30:29 ...s/storage/storage.go:147:initAvatars() [I] Initialising Avatar storage with type: local
+2026/10/27 23:30:29 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/avatars
+2026/10/27 23:30:29 ...s/storage/storage.go:174:initRepoAvatars() [I] Initialising Repository Avatar storage with type: local
+2026/10/27 23:30:29 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/repo-avatars
+2026/10/27 23:30:29 ...s/storage/storage.go:168:initLFS() [I] Initialising LFS storage with type: local
+2026/10/27 23:30:29 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/lfs
+2026/10/27 23:30:29 ...s/storage/storage.go:180:initRepoArchives() [I] Initialising Repository Archive storage with type: local
+2026/10/27 23:30:29 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/repo-archive
+2026/10/27 23:30:29 ...s/storage/storage.go:190:initPackages() [I] Initialising Packages storage with type: local
+2026/10/27 23:30:29 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/packages
+2026/10/27 23:30:29 ...s/storage/storage.go:201:initActions() [I] Initialising Actions storage with type: local
+2026/10/27 23:30:29 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/actions_log
+2026/10/27 23:30:29 ...s/storage/storage.go:205:initActions() [I] Initialising ActionsArtifacts storage with type: local
+2026/10/27 23:30:29 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/actions_artifacts
+2026/10/27 23:30:30 modules/git/git.go:122:checkInit() [W] git module has been initialized already, duplicate init may work but it's better to fix it
+2026/10/27 23:30:30 routers/init.go:109:InitWebInstalled() [I] Git version: 2.43.0 (home: /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/home)
+??? [TestLogger] 2026/10/27 23:30:30 ...s/storage/storage.go:157:initAttachments() [I] Initialising Attachment storage with type: local
+??? [TestLogger] 2026/10/27 23:30:30 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/attachments
+??? [TestLogger] 2026/10/27 23:30:30 ...s/storage/storage.go:147:initAvatars() [I] Initialising Avatar storage with type: local
+??? [TestLogger] 2026/10/27 23:30:30 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/avatars
+??? [TestLogger] 2026/10/27 23:30:30 ...s/storage/storage.go:174:initRepoAvatars() [I] Initialising Repository Avatar storage with type: local
+??? [TestLogger] 2026/10/27 23:30:30 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/repo-avatars
+??? [TestLogger] 2026/10/27 23:30:30 ...s/storage/storage.go:168:initLFS() [I] Initialising LFS storage with type: local
+??? [TestLogger] 2026/10/27 23:30:30 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/lfs
+??? [TestLogger] 2026/10/27 23:30:30 ...s/storage/storage.go:180:initRepoArchives() [I] Initialising Repository Archive storage with type: local
+??? [TestLogger] 2026/10/27 23:30:30 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/repo-archive
+??? [TestLogger] 2026/10/27 23:30:30 ...s/storage/storage.go:190:initPackages() [I] Initialising Packages storage with type: local
+??? [TestLogger] 2026/10/27 23:30:30 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/packages
+??? [TestLogger] 2026/10/27 23:30:30 ...s/storage/storage.go:201:initActions() [I] Initialising Actions storage with type: local
+??? [TestLogger] 2026/10/27 23:30:30 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/actions_log
+??? [TestLogger] 2026/10/27 23:30:30 ...s/storage/storage.go:205:initActions() [I] Initialising ActionsArtifacts storage with type: local
+??? [TestLogger] 2026/10/27 23:30:30 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/actions_artifacts
+??? [TestLogger] 2026/10/27 23:30:30 routers/init.go:129:InitWebInstalled() [I] SQLite3 support is enabled
+??? [TestLogger] 2026/10/27 23:30:30 routers/common/db.go:23:InitDBEngine() [I] Beginning ORM engine initialization.
+??? [TestLogger] 2026/10/27 23:30:30 routers/common/db.go:30:InitDBEngine() [I] ORM engine initialization attempt #1/10...
+??? [TestLogger] 2026/10/27 23:30:30 routers/init.go:135:InitWebInstalled() [I] ORM engine initialization successful!
+??? [TestLogger] 2026/10/27 23:30:30 ...er/issues/indexer.go:80:func1() [I] PID 57995: Initializing Issue Indexer: bleve
+??? [TestLogger] 2026/10/27 23:30:30 ...exer/code/indexer.go:169:func3() [I] PID: 57995 Initializing Repository Indexer at: /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/indexers/repos.bleve
+??? [TestLogger] 2026/10/27 23:30:30 routers/init.go:84:syncAppConfForGit() [I] AppPath changed from '' to '/tmp/go-build1187548845/b001/integration.test'
+??? [TestLogger] 2026/10/27 23:30:30 routers/init.go:89:syncAppConfForGit() [I] CustomConf changed from '' to '/tmp/forgejo-v17-base-cas-poc/tests/sqlite.ini'
+??? [TestLogger] 2026/10/27 23:30:30 ...xer/stats/indexer.go:41:populateRepoIndexer() [I] Populating the repo stats indexer with existing repositories
+??? [TestLogger] 2026/10/27 23:30:30 modules/ssh/ssh.go:345:Listen() [I] Adding SSH host key: /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/ssh/gitea.rsa
+??? [TestLogger] 2026/10/27 23:30:30 modules/ssh/init.go:30:Init() [I] SSH server started on localhost:2203. Cipher list ([chacha20-poly1305@openssh.com aes128-ctr aes192-ctr aes256-ctr aes128-gcm@openssh.com aes256-gcm@openssh.com]), key exchange algorithms ([mlkem768x25519-sha256 curve25519-sha256 ecdh-sha2-nistp256 ecdh-sha2-nistp384 ecdh-sha2-nistp521 diffie-hellman-group14-sha256 diffie-hellman-group14-sha1]), MACs ([hmac-sha2-256-etm@openssh.com hmac-sha2-256 hmac-sha1])
+??? [TestLogger] 2026/10/27 23:30:30 ...s/graceful/server.go:50:NewServer() [I] Starting new SSH server: tcp:localhost:2203 on PID: 57995
+??? [TestLogger] 2026/10/27 23:30:30 ...er/issues/indexer.go:160:func2() [I] Issue Indexer Initialization took 23.788506ms
+??? [TestLogger] 2026/10/27 23:30:30 ...exer/code/indexer.go:265:func4() [I] Repository Indexer Initialization took 27.239899ms
+??? [TestLogger] 2026/10/27 23:30:30 ...exer/code/indexer.go:291:populateRepoIndexer() [I] Populating the repo indexer with existing repositories
+??? [TestLogger] 2026/10/27 23:30:30 ...er/cleanup_sha256.go:27:CleanupSHA256() [I] Start to cleanup dangling images with a sha256:* version
+??? [TestLogger] 2026/10/27 23:30:30 ...er/cleanup_sha256.go:106:cleanupSHA256() [I] Nothing to cleanup
+??? [TestLogger] 2026/10/27 23:30:30 ...er/cleanup_sha256.go:29:CleanupSHA256() [I] Finished to cleanup dangling images with a sha256:* version
+=== RUN   TestPOCGateBaseLockDoesNotFenceProtectedBranchRenameAPI
+=== TestPOCGateBaseLockDoesNotFenceProtectedBranchRenameAPI (tests/integration/git_helper_for_declarative_test.go:67)
+    test_utils.go:276: PrepareTestEnv:Process "Cron: Cancel abandoned actions jobs" cancelled
+    test_utils.go:276: PrepareTestEnv:Process "Cron: Clean up expired packages" cancelled
+    test_utils.go:276: PrepareTestEnv:Process "Cron: Clean-up deleted branches" cancelled
+    test_utils.go:276: PrepareTestEnv:Process "Cron: Transfer actions logs of finished actions jobs from the database to storage" cancelled
+    test_utils.go:276: PrepareTestEnv:Process "Stats.DB Index Repo[42]" cancelled
+    test_utils.go:276: PrepareTestEnv:Process "CodeIndexer batch" cancelled
+    testlogger.go:408: 2026/10/27 23:30:30 models/git/branch.go:283:RemoveOldDeletedBranches() [E] DeletedBranchesCleanup: context canceled
+    testlogger.go:408: 2026/10/27 23:30:30 ...tions/clear_tasks.go:85:CancelAbandonedJobs() [W] find abandoned tasks: context canceled
+    testlogger.go:408: 2026/10/27 23:30:30 ...rvices/cron/tasks.go:131:func2() [E] CreateNotice: context canceled
+    testlogger.go:408: 2026/10/27 23:30:30 ...rvices/cron/tasks.go:131:func2() [E] CreateNotice: context canceled
+    test_utils.go:302: PrepareTestEnv: all processes cancelled within 4.476455ms
+    testlogger.go:408: 2026/10/27 23:30:30 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/gitea-lfs-meta
+    testlogger.go:408: 2026/10/27 23:30:30 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/login for test-mock:12345, 303 See Other in 15.9ms @ auth/auth.go:208(auth.SignInPost)
+    testlogger.go:408: 2026/10/27 23:30:30 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/settings/applications/tokens/new for test-mock:12345, 303 See Other in 9.2ms @ setting/access_token.go:220(setting.AccessTokenCreatePost)
+    testlogger.go:408: 2026/10/27 23:30:30 ...s/setting/setting.go:65:initialAppDocsVer() [W] Doclinks will fallback to version 'latest' due to err: Malformed version: dev
+    testlogger.go:408: 2026/10/27 23:30:30 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user/settings/applications for test-mock:12345, 200 OK in 31.0ms @ setting/applications.go:24(setting.Applications)
+    testlogger.go:408: 2026/10/27 23:30:30 ...odels/user/avatar.go:59:GenerateRandomAvatar() [I] New random avatar created: 59
+    testlogger.go:408: 2026/10/27 23:30:30 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/v1/admin/users for test-mock:12345, 201 Created in 86.2ms @ admin/user.go:55(admin.CreateUser)
+    testlogger.go:408: 2026/10/27 23:30:30 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/login for test-mock:12345, 303 See Other in 16.7ms @ auth/auth.go:208(auth.SignInPost)
+    testlogger.go:408: 2026/10/27 23:30:30 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/settings/applications/tokens/new for test-mock:12345, 303 See Other in 9.2ms @ setting/access_token.go:220(setting.AccessTokenCreatePost)
+    testlogger.go:408: 2026/10/27 23:30:30 ...xer/stats/indexer.go:87:populateRepoIndexer() [I] Done (re)populating the repo stats indexer with existing repositories
+    testlogger.go:408: 2026/10/27 23:30:30 ...odels/user/avatar.go:59:GenerateRandomAvatar() [I] New random avatar created: 2
+    testlogger.go:408: 2026/10/27 23:30:30 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user/settings/applications for test-mock:12345, 200 OK in 42.6ms @ setting/applications.go:24(setting.Applications)
+    testlogger.go:408: 2026/10/27 23:30:30 ...eb/routing/logger.go:109:func1() [I] router: completed PUT /api/v1/repos/user2/repo1/collaborators/forge-lock-merger for test-mock:12345, 204 No Content in 13.4ms @ repo/collaborators.go:133(repo.AddCollaborator)
+    testlogger.go:408: 2026/10/27 23:30:30 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/v1/repos/user2/repo1/branch_protections for test-mock:12345, 201 Created in 13.4ms @ repo/branch.go:544(repo.CreateBranchProtection)
+    testlogger.go:408: 2026/10/27 23:30:30 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/login for test-mock:12345, 303 See Other in 8.6ms @ auth/auth.go:208(auth.SignInPost)
+    testlogger.go:408: 2026/10/27 23:30:30 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/settings/applications/tokens/new for test-mock:12345, 303 See Other in 9.3ms @ setting/access_token.go:220(setting.AccessTokenCreatePost)
+    testlogger.go:408: 2026/10/27 23:30:30 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user/settings/applications for test-mock:12345, 200 OK in 36.9ms @ setting/applications.go:24(setting.Applications)
+    testlogger.go:408: 2026/10/27 23:30:30 ...eb/routing/logger.go:109:func1() [I] router: completed GET /api/v1/repos/user2/repo1/branches/master for test-mock:12345, 200 OK in 27.6ms @ repo/branch.go:30(repo.GetBranch)
+    testlogger.go:408: 2026/10/27 23:30:30 ...eb/routing/logger.go:109:func1() [I] router: completed PATCH /api/v1/repos/user2/repo1/branches/master for test-mock:12345, 204 No Content in 167.3ms @ repo/branch.go:393(repo.UpdateBranch)
+    testlogger.go:408: 2026/10/27 23:30:31 ...eb/routing/logger.go:109:func1() [I] router: completed DELETE /api/v1/admin/users/forge-lock-merger?purge=true for test-mock:12345, 204 No Content in 37.3ms @ admin/user.go:275(admin.DeleteUser)
+    testlogger.go:408: 2026/10/27 23:30:31 ...exer/code/indexer.go:343:populateRepoIndexer() [I] Done (re)populating the repo indexer with existing repositories
+testlogger.go:recordError() FATAL ERROR: log.Error has been called: // TestPOCGateBaseLockDoesNotFenceProtectedBranchRenameAPI
+	"2026/10/27 23:30:30 models/git/branch.go:283:RemoveOldDeletedBranches() [E] DeletedBranchesCleanup: context canceled",
+// TestPOCGateBaseLockDoesNotFenceProtectedBranchRenameAPI
+	"2026/10/27 23:30:30 ...rvices/cron/tasks.go:131:func2() [E] CreateNotice: context canceled",
+// TestPOCGateBaseLockDoesNotFenceProtectedBranchRenameAPI
+	"2026/10/27 23:30:30 ...rvices/cron/tasks.go:131:func2() [E] CreateNotice: context canceled",
+--- PASS: TestPOCGateBaseLockDoesNotFenceProtectedBranchRenameAPI (1.09s)
+PASS
+ok  	forgejo.org/tests/integration	1.575s

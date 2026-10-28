@@ -1,0 +1,26 @@
+Forgejo source commit: 0d791421f85ca13a63b665053d81ea765fbbc571
+Resolved tag: v17.0.0
+All entries are Git blob IDs read at HEAD with git show HEAD:<path>.
+
+90b8638e10a1a19792e0936ff0e1ceb732e874d4  routers/api/v1/api.go
+ca82083db78ba59c03ff8c83fa4036c71f1044a  routers/api/v1/repo/file.go
+d7ab9dcfe9671f0c978bc9ce9d9fde57fb8d018a  routers/api/v1/repo/branch.go
+5d68450f2360ef5161e0c56f190e68859db476f5  routers/api/v1/repo/patch.go
+75499286a0dcf82d5165d7a3cacb8b4bf9e64bd7  routers/web/web.go
+8fe15e7adaece31bc704dce1b0fae45f73309891  routers/web/repo/editor.go
+6a28bd9571654eaa5e17e237f788287074b20790  routers/web/repo/branch.go
+18efbc37c48f5d1353f2bc1c710f58f0c4f9468f  routers/web/repo/setting/protected_branch.go
+0c23ff52703152bdd2f0d0fd6c24b88dcb153dbb  services/repository/files/update.go
+77e4b38037a9b187764263ab4724fcc983d4c785  services/repository/files/upload.go
+35b1fbf002cbdbd4a900b894a0a83b4188051a72  services/repository/files/patch.go
+8db3ffec26153e2e87f726d7f9054ce18b0d1ec3  services/repository/files/temp_repo.go
+e2897ccdeeb4ce094931eb64589f380a17a777da  services/repository/branch.go
+a73a0f2a2033f4780c14631c510fc6d63d89f18b  models/git/branch.go
+32cb3fe0e4da0a0f3a7c56668a44c43a61243533  modules/git/repo_branch.go
+0c603d0c4b0793b1878c37face67c9dd9c0e80e5  routers/private/hook_pre_receive.go
+933960ca203d12b99f6636a33b5b8a20084ad62f  routers/private/hook_post_receive.go
+5f5ce92a1db24123322fd75c574239530d05b5e4  services/pull/merge.go
+9d218006e37c6e558f2ef194654cfb6265435ccb  services/pull/merge_prepare.go
+4e91d47f5c740a8b5b5db3c62b3afd3959953440  services/pull/check.go
+ed780d6ebd69ecdb30cedfc9482ac63ba4bce204  services/pull/merge_manual.go
+21a33a1382167f6376225b26b17dd7d0590c8aa3  services/automerge/automerge.go

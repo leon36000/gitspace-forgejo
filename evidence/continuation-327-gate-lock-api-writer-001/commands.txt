@@ -1,0 +1,10 @@
+Répertoire scratch : /tmp/forgejo-v17-base-cas-poc
+HEAD Forgejo : 0d791421f85ca13a63b665053d81ea765fbbc571
+
+cargo build --offline --manifest-path /tmp/forgejo-v17-base-cas-poc/evidence/agent-forge-lock-holder/Cargo.toml
+cargo fmt --manifest-path /tmp/forgejo-v17-base-cas-poc/evidence/agent-forge-lock-holder/Cargo.toml -- --check
+/tmp/forgejo-v17-toolchain/go/bin/gofmt -d tests/integration/gate_base_lock_api_writer_poc_test.go
+AGENT_FORGE_BASE_LOCK_HELPER=/tmp/forgejo-v17-base-cas-poc/evidence/agent-forge-lock-holder/target/debug/agent-forge-lock-holder-poc GOTOOLCHAIN=local GOPROXY=off /tmp/forgejo-v17-toolchain/go/bin/go test -tags sqlite ./tests/integration -run '^TestPOCGateBaseLockDoesNotFenceProtectedBranchRenameAPI$' -count=1 -v
+git diff --exit-code HEAD -- modules/testlogger/testlogger.go routers/api/v1/api.go routers/api/v1/repo/branch.go services/repository/branch.go models/git/branch.go models/git/protected_branch.go
+
+Le journal brut de la dernière commande est `integration-test.log`; le processus a terminé avec exit code 0.

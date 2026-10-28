@@ -1,0 +1,8 @@
+Forgejo scratch: /tmp/forgejo-v17-base-cas-poc
+HEAD: 0d791421f85ca13a63b665053d81ea765fbbc571
+Tag: v17.0.0 (git describe --tags --exact-match HEAD)
+Tracked scratch diff: 20 files changed, 1709 insertions(+), 85 deletions(-)
+Scratch status entries: 63 total (20 tracked modified, 43 untracked).
+Among paths read in this audit, only routers/api/v1/repo/file.go and services/repository/files/update.go are modified in the scratch; their HEAD blobs, not working files, were read. All other audited source paths have no scratch worktree modification.
+Product HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0 (worktree contains existing local modifications).
+Runtime/test/build: none in this audit. Prior runtime evidence is referenced separately and was not replayed.
