@@ -1,0 +1,8 @@
+$ git commit -m make lower bound exclusive
+exit=0
+--- stdout ---
+[exclusive-lower efe1f7f] make lower bound exclusive
+ 2 files changed, 7 insertions(+), 1 deletion(-)
+ create mode 100644 tests/exclusive_lower.rs
+
+--- stderr ---

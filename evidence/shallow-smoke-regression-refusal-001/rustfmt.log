@@ -1,0 +1,76 @@
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/src/bin/../mission_012_host.rs:2445:
+     use super::*;
+     use agent_forge_core::agent_runtime::{RuntimeBudgetV1, RuntimeCapabilitiesV1};
+     use agent_forge_core::{
+-        ExpectedBinding, GateError, Outcome, ProofEvidence, sign_proof,
++        ExpectedBinding, GateError, Outcome, ProofEvidence,
+         forgejo::{
+-            BaseBranchScope, MergePreflightContextV1, MergePreflightError,
+-            PullRequestSnapshotV1, validate_merge_preflight,
++            BaseBranchScope, MergePreflightContextV1, MergePreflightError, PullRequestSnapshotV1,
++            validate_merge_preflight,
+         },
++        sign_proof,
+     };
+     use std::{
+         fs,
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/src/bin/../mission_012_host.rs:2794:
+         let smoke = run_sandbox_test(&smoke_config, TEST_TIMEOUT).unwrap();
+         let smoke_output = format!("{}\n{}", smoke.stdout, smoke.stderr);
+         assert_eq!(smoke.exit_code, Some(0), "{smoke_output}");
+-        assert!(smoke_output.contains("1 passed; 0 failed"), "{smoke_output}");
++        assert!(
++            smoke_output.contains("1 passed; 0 failed"),
++            "{smoke_output}"
++        );
+ 
+         let mut protected_config = tree.config();
+         protected_config.target_root = tree.0.join("target-protected");
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/src/bin/../mission_012_host.rs:2837:
+                 ]],
+                 artifact_sha256: vec![sha256(protected_output.as_bytes())],
+                 outcome: Outcome::Fail,
+-                detail: "protected acceptance failed: values_inside_the_range_are_unchanged"
+-                    .into(),
++                detail: "protected acceptance failed: values_inside_the_range_are_unchanged".into(),
+             },
+             b"test-only verifier key",
+         )
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/src/bin/../mission_012_host.rs:2445:
+     use super::*;
+     use agent_forge_core::agent_runtime::{RuntimeBudgetV1, RuntimeCapabilitiesV1};
+     use agent_forge_core::{
+-        ExpectedBinding, GateError, Outcome, ProofEvidence, sign_proof,
++        ExpectedBinding, GateError, Outcome, ProofEvidence,
+         forgejo::{
+-            BaseBranchScope, MergePreflightContextV1, MergePreflightError,
+-            PullRequestSnapshotV1, validate_merge_preflight,
++            BaseBranchScope, MergePreflightContextV1, MergePreflightError, PullRequestSnapshotV1,
++            validate_merge_preflight,
+         },
++        sign_proof,
+     };
+     use std::{
+         fs,
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/src/bin/../mission_012_host.rs:2794:
+         let smoke = run_sandbox_test(&smoke_config, TEST_TIMEOUT).unwrap();
+         let smoke_output = format!("{}\n{}", smoke.stdout, smoke.stderr);
+         assert_eq!(smoke.exit_code, Some(0), "{smoke_output}");
+-        assert!(smoke_output.contains("1 passed; 0 failed"), "{smoke_output}");
++        assert!(
++            smoke_output.contains("1 passed; 0 failed"),
++            "{smoke_output}"
++        );
+ 
+         let mut protected_config = tree.config();
+         protected_config.target_root = tree.0.join("target-protected");
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/src/bin/../mission_012_host.rs:2837:
+                 ]],
+                 artifact_sha256: vec![sha256(protected_output.as_bytes())],
+                 outcome: Outcome::Fail,
+-                detail: "protected acceptance failed: values_inside_the_range_are_unchanged"
+-                    .into(),
++                detail: "protected acceptance failed: values_inside_the_range_are_unchanged".into(),
+             },
+             b"test-only verifier key",
+         )

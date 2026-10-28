@@ -1,0 +1,20 @@
+{
+  "result": "pass",
+  "scope": "isolated temporary Rust/Git fixture; no Forgejo or product gate",
+  "base_commit": "cc870de32a13bb39b0b8ba4f7dbaf748a2027609",
+  "lower_change_commit": "9acc0c49944cad8cd9529bb524344048f17fbf1b",
+  "upper_change_commit": "afe6cd74184bc4018506ed9dcd852645f66ddb57",
+  "merge_tree": "06174e7f56840a7ab8126ce947d66ab986b3b33d",
+  "combined_commit": "6743246b854d1a4b21c53e06676163b58dde8cca",
+  "textual_merge": "clean (git merge-tree exit 0; no conflicted paths)",
+  "independent_branch_tests": "both pass",
+  "combined_branch_tests": "both pass before and after correction",
+  "protected_combined_acceptance": "fails before correction with inverted effective interval; passes after explicit EmptyRange guard",
+  "actionable_failure_observed": true,
+  "correction": "check effective_min > effective_max and return EmptyRange before i32::clamp",
+  "limits": [
+    "fixture only",
+    "no Forgejo PR or production merge gate",
+    "no LLM or AgentOS"
+  ]
+}

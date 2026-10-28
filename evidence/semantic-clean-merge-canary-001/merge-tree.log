@@ -1,0 +1,10 @@
+$ git merge-tree --write-tree --name-only HEAD exclusive-lower
+exit=1
+--- stdout ---
+1fb90632627ffa8d21e3e5b1d6c3bf086e9f94c1
+src/lib.rs
+
+Auto-merging src/lib.rs
+CONFLICT (content): Merge conflict in src/lib.rs
+
+--- stderr ---

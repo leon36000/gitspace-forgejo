@@ -1,0 +1,11 @@
+$ cargo test --offline --locked --bin forgejo-reconcile-local forgejo_tree_manifest_accepts_v17_null_tree_only_for_an_empty_root -- --nocapture
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.04s
+     Running unittests src/bin/forgejo-reconcile-local.rs (target/debug/deps/forgejo_reconcile_local-3e9fc5f7734f2ac5)
+
+running 1 test
+test tests::forgejo_tree_manifest_accepts_v17_null_tree_only_for_an_empty_root ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 73 filtered out; finished in 0.01s
+
+
+exit=0

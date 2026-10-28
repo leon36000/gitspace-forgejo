@@ -1,0 +1,6 @@
+$ git switch -c exclusive-upper
+exit=0
+--- stdout ---
+
+--- stderr ---
+Switched to a new branch 'exclusive-upper'

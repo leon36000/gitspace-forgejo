@@ -1,0 +1,19 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.01s
+     Running unittests src/bin/forgejo-reconcile-local.rs (target/debug/deps/forgejo_reconcile_local-3e9fc5f7734f2ac5)
+
+running 1 test
+
+thread 'tests::confirmed_merge_result_includes_matching_candidate_tree_manifest_bindings' (2489427) panicked at src/bin/forgejo-reconcile-local.rs:4700:9:
+assertion failed: candidate_manifest_sha.is_some_and(is_sha256)
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test tests::confirmed_merge_result_includes_matching_candidate_tree_manifest_bindings ... FAILED
+
+failures:
+
+failures:
+    tests::confirmed_merge_result_includes_matching_candidate_tree_manifest_bindings
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 66 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `--bin forgejo-reconcile-local`
+EXPECTED_RED_EXIT_CODE=101

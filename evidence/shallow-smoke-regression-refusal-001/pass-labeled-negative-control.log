@@ -1,0 +1,21 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.45s
+     Running unittests src/bin/mission-012-verify-local.rs (target/debug/deps/mission_012_verify_local-efe680254b98a82f)
+
+running 1 test
+
+thread 'host::tests::shallow_smoke_green_cannot_authorize_candidate_rejected_by_protected_acceptance' (829229) panicked at src/bin/../mission_012_host.rs:2878:9:
+assertion `left == right` failed: a signed refusal based on the protected test result must block merge
+  left: Ok(())
+ right: Err(Proof(OutcomeFailed))
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test host::tests::shallow_smoke_green_cannot_authorize_candidate_rejected_by_protected_acceptance ... FAILED
+
+failures:
+
+failures:
+    host::tests::shallow_smoke_green_cannot_authorize_candidate_rejected_by_protected_acceptance
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 17 filtered out; finished in 0.63s
+
+error: test failed, to rerun pass `--bin mission-012-verify-local`

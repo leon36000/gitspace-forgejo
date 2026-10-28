@@ -1,0 +1,8 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.01s
+     Running unittests src/bin/forgejo-reconcile-local.rs (.runtime/merge-016-target-bound-proof-sandbox/target/debug/deps/forgejo_reconcile_local-b544244bfdef2818)
+
+running 1 test
+test tests::postmerge_tree_mismatch_is_inconclusive_with_valid_merge_parents ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 75 filtered out; finished in 0.00s
+

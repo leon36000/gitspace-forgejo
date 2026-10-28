@@ -1,0 +1,6 @@
+$ git switch -c exclusive-lower
+exit=0
+--- stdout ---
+
+--- stderr ---
+Switched to a new branch 'exclusive-lower'

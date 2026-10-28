@@ -1,0 +1,11 @@
+$ git merge --no-edit exclusive-lower
+exit=0
+--- stdout ---
+Auto-merging src/lib.rs
+Merge made by the 'ort' strategy.
+ src/lib.rs               | 2 +-
+ tests/exclusive_lower.rs | 6 ++++++
+ 2 files changed, 7 insertions(+), 1 deletion(-)
+ create mode 100644 tests/exclusive_lower.rs
+
+--- stderr ---

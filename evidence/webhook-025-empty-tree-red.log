@@ -1,0 +1,22 @@
+$ cargo test --offline --locked --bin forgejo-reconcile-local forgejo_tree_manifest_accepts_v17_null_tree_only_for_an_empty_root -- --nocapture
+   Compiling agent-forge-core v0.1.0 (/tmp/mission012-credential-fd-e2e-Vu4reH)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.02s
+     Running unittests src/bin/forgejo-reconcile-local.rs (target/debug/deps/forgejo_reconcile_local-3e9fc5f7734f2ac5)
+
+running 1 test
+
+thread 'tests::forgejo_tree_manifest_accepts_v17_null_tree_only_for_an_empty_root' (2609949) panicked at src/bin/forgejo-reconcile-local.rs:5329:59:
+called `Result::unwrap()` on an `Err` value: InvalidResponse
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test tests::forgejo_tree_manifest_accepts_v17_null_tree_only_for_an_empty_root ... FAILED
+
+failures:
+
+failures:
+    tests::forgejo_tree_manifest_accepts_v17_null_tree_only_for_an_empty_root
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 73 filtered out; finished in 0.01s
+
+error: test failed, to rerun pass `--bin forgejo-reconcile-local`
+
+exit=101

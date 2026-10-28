@@ -1,0 +1,23 @@
+$ cargo test --offline --locked --test exclusive_lower
+exit=0
+--- stdout ---
+
+running 1 test
+test exclusive_lower_bound_keeps_the_upper_bound_closed ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+--- stderr ---
+   Compiling semantic-merge-canary v0.1.0 (/tmp/semantic-clean-merge-kejgrq4q)
+warning: unused variable: `exclusive_max`
+  --> src/lib.rs:11:5
+   |
+11 |     exclusive_max: bool,
+   |     ^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_exclusive_max`
+   |
+   = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: `semantic-merge-canary` (lib) generated 1 warning (run `cargo fix --lib -p semantic-merge-canary` to apply 1 suggestion)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.23s
+     Running tests/exclusive_lower.rs (target/debug/deps/exclusive_lower-843c011d7c35a325)
