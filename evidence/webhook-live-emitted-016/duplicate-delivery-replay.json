@@ -1,0 +1,18 @@
+{
+  "delivery_id": "f791d297-fe48-4b72-8ff6-b1c1e0ca9d5d",
+  "http_status": 202,
+  "journal_records_after": 6,
+  "journal_records_before": 6,
+  "payload_encoding": "JSON re-serialized from the journaled object; byte-for-byte original request body is not retained",
+  "payload_source": "verified Forgejo-emitted receiver journal envelope",
+  "receiver_restarted_with_same_journal": true,
+  "response": {
+    "accepted": true,
+    "delivery_id": "f791d297-fe48-4b72-8ff6-b1c1e0ca9d5d",
+    "duplicate": true,
+    "reconcile_required": true,
+    "schema_version": 1,
+    "sequence": 1
+  },
+  "sequence": 1
+}

@@ -1,0 +1,2 @@
+trailing-whitespace: clean
+scanned: scripts/run_forgejo_live_webhook_reconcile_emitted.py, scripts/run_forgejo_live_webhook_mission_admission.py, scripts/run_mission_012_live_composed_e2e.py, tests/test_forgejo_emitted_webhook_e2e.py, tests/test_forgejo_live_webhook_mission_admission.py, tests/test_mission_012_live_composed_e2e.py, docs/checkpoint.md, docs/implementation-plan.md, evidence/webhook-live-emitted-012/local-run.md
