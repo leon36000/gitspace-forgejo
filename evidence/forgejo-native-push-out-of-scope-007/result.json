@@ -1,0 +1,30 @@
+{
+  "cleanup": {
+    "cleanup_failure": null,
+    "foreign_hook_disabled": false,
+    "foreign_hook_readback": null,
+    "forgejo": {
+      "listener_addresses_after_stop": [],
+      "stop": {
+        "returncode": 0,
+        "started": true,
+        "stop_action": "terminate",
+        "stopped": true
+      }
+    },
+    "hook_disabled": false,
+    "private_state_dir": "/tmp/forgejo-native-push-out-of-scope-007",
+    "receiver": {
+      "listener_addresses_after_stop": [],
+      "stop": {
+        "returncode": null,
+        "started": false,
+        "stopped": true
+      }
+    }
+  },
+  "failure_type": "RuntimeError",
+  "schema_version": 1,
+  "stage": "provision_private_repository",
+  "verdict": "failed"
+}

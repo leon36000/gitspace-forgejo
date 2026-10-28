@@ -1,0 +1,10 @@
+$ cargo test --locked --offline --bin forgejo-reconcile-local tests::out_of_scope_selected_delivery_is_refused_before_host_credential_read -- --exact --nocapture
+Compiling agent-forge-core v0.1.0
+Finished `test` profile
+running 1 test
+thread 'tests::out_of_scope_selected_delivery_is_refused_before_host_credential_read' panicked:
+assertion `left == right` failed
+  left: String("upstream_forbidden")
+ right: "resource_out_of_scope"
+test result: FAILED. 0 passed; 1 failed; 0 ignored
+exit status: 101

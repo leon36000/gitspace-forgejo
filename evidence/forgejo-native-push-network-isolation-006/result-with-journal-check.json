@@ -1,0 +1,32 @@
+{
+  "credential_preserved": true,
+  "exit_status": 1,
+  "network_isolation": {
+    "host_listener_reachable": true,
+    "host_network_namespace_inode": 4026531833,
+    "journal_unchanged": true,
+    "parent_listener_connections": 0,
+    "sandbox_loopback_probe_connected": false,
+    "sandbox_network_namespace_inode": 4026535871
+  },
+  "requested_delivery_ids": [
+    "b0ef43d2-e5f9-442d-bac9-285658f659b2",
+    "forgejo-push-delivery-absent-004"
+  ],
+  "result": {
+    "api_version": "forgejo-rest-v1",
+    "error": {
+      "action": "confirm that the delivery ID was accepted into the verified inbox before retrying",
+      "code": "delivery_not_found",
+      "details": {
+        "delivery_id": "forgejo-push-delivery-absent-004",
+        "source": "verified_inbox"
+      },
+      "retryable": false
+    },
+    "requested_delivery_count": 2,
+    "schema_version": 5,
+    "upstream_read_attempts": 0,
+    "verdict": "inconclusive"
+  }
+}

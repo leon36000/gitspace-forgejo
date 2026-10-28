@@ -1,0 +1,9 @@
+{
+  "after": "e9705e83258a08925f10de8931bd825877331dc3",
+  "before": "0000000000000000000000000000000000000000",
+  "branch": "agent/native-push-proof",
+  "delivery_id": "39b1b0bc-5571-472a-82f4-515a57dfe919",
+  "event": "push",
+  "ref": "refs/heads/agent/native-push-proof",
+  "sequence": 1
+}

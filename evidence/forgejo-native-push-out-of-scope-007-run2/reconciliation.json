@@ -1,0 +1,63 @@
+{
+  "batch_exit_status": 0,
+  "batch_result": {
+    "api_version": "forgejo-rest-v1",
+    "results": [
+      {
+        "canonical_state": {
+          "base_sha": null,
+          "head_sha": "7b73e7d9ee16e933ca743a49e4b4283f78c259e9",
+          "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/src/branch/agent%2Fnative-push-proof",
+          "merge_commit_sha": null,
+          "merged": null,
+          "state": "present",
+          "updated_at": "2026-10-25T14:41:04-04:00"
+        },
+        "delivery_id": "efca8847-7519-48c3-9415-51a2b027ce45",
+        "resource": {
+          "branch": "agent/native-push-proof",
+          "kind": "branch",
+          "owner": "forge-admin",
+          "repository": "agent-forge-core"
+        },
+        "verdict": "current_state_read"
+      },
+      {
+        "canonical_state": {
+          "base_sha": null,
+          "head_sha": "7b73e7d9ee16e933ca743a49e4b4283f78c259e9",
+          "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/src/branch/agent%2Fnative-push-proof",
+          "merge_commit_sha": null,
+          "merged": null,
+          "state": "present",
+          "updated_at": "2026-10-25T14:41:04-04:00"
+        },
+        "delivery_id": "981bf00e-d8e7-475f-886c-f24fac4ffcc2",
+        "resource": {
+          "branch": "agent/native-push-proof",
+          "kind": "branch",
+          "owner": "forge-admin",
+          "repository": "agent-forge-core"
+        },
+        "verdict": "current_state_read"
+      }
+    ],
+    "schema_version": 5,
+    "upstream_read_attempts": 1,
+    "verdict": "current_state_read"
+  },
+  "credential_consumed": true,
+  "deliveries": [
+    {
+      "canonical_head_sha": "7b73e7d9ee16e933ca743a49e4b4283f78c259e9",
+      "notification_after_sha": "bd18e3abd8101a575dd8abbe434da8405a70949e",
+      "notification_delivery_id": "efca8847-7519-48c3-9415-51a2b027ce45"
+    },
+    {
+      "canonical_head_sha": "7b73e7d9ee16e933ca743a49e4b4283f78c259e9",
+      "notification_after_sha": "7b73e7d9ee16e933ca743a49e4b4283f78c259e9",
+      "notification_delivery_id": "981bf00e-d8e7-475f-886c-f24fac4ffcc2"
+    }
+  ],
+  "journal_unchanged": true
+}

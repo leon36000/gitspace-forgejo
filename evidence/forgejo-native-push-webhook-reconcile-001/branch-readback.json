@@ -1,0 +1,36 @@
+{
+  "commit": {
+    "added": null,
+    "author": {
+      "email": "forgejo-native-push@local.invalid",
+      "name": "Forgejo Native Push E2E",
+      "username": ""
+    },
+    "committer": {
+      "email": "forgejo-native-push@local.invalid",
+      "name": "Forgejo Native Push E2E",
+      "username": ""
+    },
+    "id": "e9705e83258a08925f10de8931bd825877331dc3",
+    "message": "Add native push proof\n",
+    "modified": null,
+    "removed": null,
+    "timestamp": "2026-10-25T14:10:35-04:00",
+    "url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/commit/e9705e83258a08925f10de8931bd825877331dc3",
+    "verification": {
+      "payload": "",
+      "reason": "gpg.error.not_signed_commit",
+      "signature": "",
+      "signer": null,
+      "verified": false
+    }
+  },
+  "effective_branch_protection_name": "",
+  "enable_status_check": false,
+  "name": "agent/native-push-proof",
+  "protected": false,
+  "required_approvals": 0,
+  "status_check_contexts": [],
+  "user_can_merge": false,
+  "user_can_push": false
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "event_type": "push",
+    "is_delivered": true,
+    "is_succeed": true,
+    "response_status": 202,
+    "task_id": 1,
+    "uuid": "39b1b0bc-5571-472a-82f4-515a57dfe919"
+  }
+]
