@@ -1,0 +1,28 @@
+python3 -B tests/test_forgejo_emitted_webhook_e2e.py
+# Résultat: Ran 190 tests in 2.136s; OK.
+git diff --check -- scripts/run_forgejo_live_webhook_reconcile_e2e.py scripts/run_forgejo_live_webhook_reconcile_emitted.py tests/test_forgejo_emitted_webhook_e2e.py
+# Résultat: exit 0.
+# Image locale, extraction du véritable binaire /app/gitea/gitea par un conteneur Docker --network none; --version confirme Forgejo 17.0.0.
+python3 scripts/run_forgejo_live_webhook_reconcile_emitted.py --forgejo-binary <binaire-extrait> --repo-root <worktree> --state-dir /tmp/forgejo-native-release-002-state --evidence-dir evidence/forgejo-native-release-webhook-002 --release-webhook --build-staging-root /dev/shm
+# Résultat: exit 0; result.json verdict=passed; SHA256SUMS vérifié avec sha256sum -c.
+
+python3 -B tests/test_latest_sha256_manifest.py
+# Résultat: Ran 5 tests; OK.
+python3 scripts/verify_latest_sha256_manifest.py evidence/SHA256SUMS
+# Résultat après append des hash courants: vérifie uniquement le dernier hash valide par chemin.
+
+# Audit après le premier append du journal : la vérification latest-record a trouvé 21/22 fichiers car local-run.md venait d'être actualisé; son entrée de somme était devenue périmée.
+python3 scripts/verify_latest_sha256_manifest.py --root evidence/forgejo-native-release-webhook-002 evidence/forgejo-native-release-webhook-002/SHA256SUMS
+# Résultat initial après l'édition du reçu: mismatched_path_count=1 (local-run.md); le contrôle brut sha256sum -c signale également les lignes de commandes historiques supersédées.
+python3 -B tests/test_latest_sha256_manifest.py
+# Résultat: Ran 5 tests; OK.
+python3 -B tests/test_forgejo_emitted_webhook_e2e.py
+# Résultat: Ran 190 tests in 2.183s; OK.
+git diff --check
+# Résultat: exit 0.
+
+# Le premier append de sommes pendant cette correction utilisait des chemins préfixés depuis la racine; le vérificateur a refusé ces chemins absents. Les deux lignes invalides ajoutées dans cette étape ont été retirées; l’historique antérieur est conservé et les sommes ont été ajoutées avec des chemins relatifs au manifeste.
+python3 scripts/verify_latest_sha256_manifest.py --root evidence/forgejo-native-release-webhook-002 evidence/forgejo-native-release-webhook-002/SHA256SUMS
+# Résultat après append correct: passed=true, 22 chemins uniques vérifiés, zéro divergence et zéro absence.
+(cd evidence/forgejo-native-release-webhook-002 && sha256sum -c SHA256SUMS)
+# Résultat attendu avec historique append-only: exit 1 uniquement parce que cinq anciennes sommes de commands.txt ne correspondent plus à sa version courante; la dernière somme de commands.txt et tous les autres chemins sont OK. Le vérificateur latest-record est le contrôle concluant.

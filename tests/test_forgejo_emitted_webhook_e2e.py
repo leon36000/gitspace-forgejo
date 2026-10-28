@@ -574,6 +574,62 @@ class ParseLoopbackConnectTraceTests(unittest.TestCase):
             self.parse_trace(trace, expected_host="127.0.0.1", expected_port=3130)
 
 
+class CargoTmpfsBuildStagingTests(unittest.TestCase):
+    def test_tmpfs_stage_is_private_and_removed_after_build(self) -> None:
+        with tempfile.TemporaryDirectory(prefix="forgejo-stage-test-") as directory:
+            parent = Path(directory)
+            seen: dict[str, object] = {}
+
+            def fake_build(repo, state, evidence_dir, stage_root, host_staging):
+                seen["stage_root"] = stage_root
+                seen["mode"] = stage_root.stat().st_mode & 0o777
+                (stage_root / "staged-marker").write_text("temporary", encoding="utf-8")
+                return state / "receiver", state / "reconcile", {"host_staging": host_staging}
+
+            with (
+                patch.object(driver.helpers, "build_staging_filesystem_type", return_value="tmpfs"),
+                patch.object(driver.helpers, "_build_local_binaries_at_stage", side_effect=fake_build),
+            ):
+                result = driver.helpers.build_local_binaries(
+                    ROOT,
+                    parent / "state",
+                    parent / "evidence",
+                    staging_root=parent,
+                )
+
+            stage_root = seen["stage_root"]
+            self.assertIsInstance(stage_root, Path)
+            self.assertEqual(seen["mode"], 0o700)
+            self.assertFalse(stage_root.exists())
+            self.assertEqual(list(parent.iterdir()), [])
+            self.assertEqual(result[2]["host_staging"]["filesystem_type"], "tmpfs")
+            self.assertTrue(result[2]["host_staging"]["removed_after_build"])
+
+    def test_refuses_a_non_tmpfs_build_staging_root(self) -> None:
+        with tempfile.TemporaryDirectory(prefix="forgejo-stage-test-") as directory:
+            parent = Path(directory)
+            with (
+                patch.object(driver.helpers, "build_staging_filesystem_type", return_value="overlay"),
+                patch.object(driver.helpers, "_build_local_binaries_at_stage") as build,
+                self.assertRaisesRegex(RuntimeError, "must be on tmpfs"),
+            ):
+                driver.helpers.build_local_binaries(
+                    ROOT,
+                    parent / "state",
+                    parent / "evidence",
+                    staging_root=parent,
+                )
+            build.assert_not_called()
+
+    def test_refuses_a_symlink_in_the_staging_root_path(self) -> None:
+        with tempfile.TemporaryDirectory(prefix="forgejo-stage-test-") as directory:
+            parent = Path(directory)
+            link = parent / "link"
+            link.symlink_to(parent, target_is_directory=True)
+            with self.assertRaisesRegex(RuntimeError, "cannot contain symlinks"):
+                driver.helpers.validate_build_staging_root(link)
+
+
 class EmittedWebhookRunnerCliTests(unittest.TestCase):
     def test_disabled_ordinary_issue_comment_does_not_inflate_expected_event_count(self) -> None:
         self.assertEqual(driver.ordinary_issue_comment_delivery_count(False), 0)
@@ -597,6 +653,18 @@ class EmittedWebhookRunnerCliTests(unittest.TestCase):
         self.assertEqual(completed.returncode, 0, completed.stderr)
         self.assertIn("--edit-ordinary-issue-comment", completed.stdout)
         self.assertIn("--delete-ordinary-issue-comment", completed.stdout)
+
+    def test_exposes_tmpfs_build_staging_option(self) -> None:
+        completed = subprocess.run(
+            [sys.executable, str(ROOT / "scripts/run_forgejo_live_webhook_reconcile_emitted.py"), "--help"],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True,
+            timeout=5,
+            check=False,
+        )
+        self.assertEqual(completed.returncode, 0, completed.stderr)
+        self.assertIn("--build-staging-root", completed.stdout)
 
     def test_exposes_the_native_ordinary_issue_comment_scenario(self) -> None:
         completed = subprocess.run(

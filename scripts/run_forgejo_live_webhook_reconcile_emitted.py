@@ -2591,7 +2591,10 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
 
     try:
         receiver_bin, reconcile_bin, build_provenance = helpers.build_local_binaries(
-            repo, state, evidence_dir
+            repo,
+            state,
+            evidence_dir,
+            staging_root=getattr(args, "build_staging_root", None),
         )
         stage = "start_forgejo"
         server = subprocess.Popen(
@@ -3444,12 +3447,17 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
             raise RuntimeError("Forgejo PR API readback did not preserve the expected base/head repositories")
 
         stage = "deliver_opened_pull_request_event"
-        open_pr_record_count = 5 + issue_extra_event_count
+        pull_request_open_record_index = (
+            issue_event_count_after_edits
+            + int(reopen_issue)
+            + int(create_release_webhook)
+        )
+        open_pr_record_count = pull_request_open_record_index + 1
         records_after_open_pr = wait_for_journal_count(journal_path, open_pr_record_count)
         if len(records_after_open_pr) != open_pr_record_count:
             raise RuntimeError("Forgejo delivered an unexpected event before PR close")
         pull_request_open_event = parse_live_pull_request_delivery_record(
-            records_after_open_pr[4 + issue_extra_event_count],
+            records_after_open_pr[pull_request_open_record_index],
             owner=OWNER,
             repository=REPOSITORY,
             pull_request_number=pull_request_number,
@@ -3506,12 +3514,12 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
                 or synchronized_pull_request.get("base", {}).get("sha") != opened_base_sha
             ):
                 raise RuntimeError("Forgejo API readback did not confirm an advanced open PR head")
-            sync_record_count = 6 + issue_extra_event_count
+            sync_record_count = open_pr_record_count + 1
             records_after_sync = wait_for_journal_count(journal_path, sync_record_count)
             if len(records_after_sync) != sync_record_count:
                 raise RuntimeError("Forgejo did not emit exactly one PR synchronization event")
             pull_request_sync_event = parse_live_pull_request_delivery_record(
-                records_after_sync[5 + issue_extra_event_count],
+                records_after_sync[open_pr_record_count],
                 owner=OWNER,
                 repository=REPOSITORY,
                 pull_request_number=pull_request_number,
@@ -3547,7 +3555,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
             f"/repos/{OWNER}/{REPOSITORY}/issues/comments/{pull_request_comment_id}",
         )
         created_comment_record_count = (
-            6 + issue_extra_event_count + int(synchronize_pull_request)
+            open_pr_record_count + int(synchronize_pull_request) + 1
         )
         records_after_pr_comment = wait_for_journal_count(
             journal_path, created_comment_record_count
@@ -7096,6 +7104,10 @@ def main() -> int:
     parser.add_argument("--repo-root", default=str(SCRIPT_DIR.parent))
     parser.add_argument("--state-dir", required=True)
     parser.add_argument("--evidence-dir", required=True)
+    parser.add_argument(
+        "--build-staging-root",
+        help="existing tmpfs directory for temporary source and Cargo registry staging",
+    )
     parser.add_argument(
         "--release-webhook",
         action="store_true",

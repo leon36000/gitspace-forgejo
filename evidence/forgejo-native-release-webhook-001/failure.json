@@ -1,0 +1,7 @@
+{
+  "cleanup_failure": null,
+  "error_message": "journal record is not the expected pull-request event",
+  "error_type": "ValueError",
+  "stage": "deliver_opened_pull_request_event",
+  "verdict": "failed"
+}

@@ -23,6 +23,7 @@ import socket
 import stat
 import subprocess
 import sys
+import tempfile
 import time
 from typing import Any
 from urllib.error import HTTPError, URLError
@@ -387,10 +388,88 @@ def listener_addresses_for_port(port: int) -> list[str]:
     return sorted(set(addresses))
 
 
+def build_staging_filesystem_type(path: Path) -> str:
+    findmnt = shutil.which("findmnt")
+    if findmnt is None:
+        raise RuntimeError("findmnt is required to verify the Cargo staging filesystem")
+    result = subprocess.run(
+        [findmnt, "-n", "-o", "FSTYPE", "--target", str(path)],
+        cwd="/",
+        env={"PATH": "/usr/bin:/bin", "HOME": "/tmp"},
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        text=True,
+        timeout=5,
+        check=False,
+    )
+    if result.returncode != 0 or not result.stdout.strip():
+        raise RuntimeError("could not determine the Cargo staging filesystem type")
+    return result.stdout.strip()
+
+
+def validate_build_staging_root(path: Path | str) -> Path:
+    candidate = Path(path)
+    if not candidate.is_absolute():
+        raise RuntimeError("Cargo build staging root must be an absolute path")
+    current = Path(candidate.anchor)
+    for component in candidate.parts[1:]:
+        current = current / component
+        try:
+            mode = current.lstat().st_mode
+        except OSError as error:
+            raise RuntimeError("Cargo build staging root must already exist") from error
+        if stat.S_ISLNK(mode):
+            raise RuntimeError("Cargo build staging root cannot contain symlinks")
+        if not stat.S_ISDIR(mode):
+            raise RuntimeError("Cargo build staging root must be a directory")
+    resolved = candidate.resolve(strict=True)
+    filesystem_type = build_staging_filesystem_type(resolved)
+    if filesystem_type != "tmpfs":
+        raise RuntimeError("Cargo build staging root must be on tmpfs")
+    return resolved
+
+
 def build_local_binaries(
     repo: Path,
     state: Path,
     evidence_dir: Path,
+    *,
+    staging_root: Path | str | None = None,
+) -> tuple[Path, Path, dict[str, Any]]:
+    """Build trusted local CLIs in a removable tmpfs stage when requested."""
+    if staging_root is None:
+        return _build_local_binaries_at_stage(
+            repo,
+            state,
+            evidence_dir,
+            state,
+            {"filesystem_type": None, "temporary_directory": False},
+        )
+
+    parent = validate_build_staging_root(staging_root)
+    with tempfile.TemporaryDirectory(prefix="forgejo-cargo-stage-", dir=parent) as temporary:
+        stage = Path(temporary)
+        if stat.S_IMODE(stage.stat().st_mode) != 0o700:
+            raise RuntimeError("temporary Cargo build staging directory is not private")
+        result = _build_local_binaries_at_stage(
+            repo,
+            state,
+            evidence_dir,
+            stage,
+            {"filesystem_type": "tmpfs", "temporary_directory": True},
+        )
+    result[2]["host_staging"]["removed_after_build"] = not stage.exists()
+    if not result[2]["host_staging"]["removed_after_build"]:
+        raise RuntimeError("temporary Cargo build staging directory was not removed")
+    return result
+
+
+def _build_local_binaries_at_stage(
+    repo: Path,
+    state: Path,
+    evidence_dir: Path,
+    stage_root: Path,
+    host_staging: dict[str, Any],
 ) -> tuple[Path, Path, dict[str, Any]]:
     """Build trusted local CLIs with host paths hidden and networking disabled."""
     process_e2e = forgejo_helpers.process_e2e
@@ -424,8 +503,8 @@ def build_local_binaries(
     if not (rust_sysroot / "bin/cargo").is_file() or not (rust_sysroot / "bin/rustc").is_file():
         raise RuntimeError("resolved Rust sysroot does not contain direct cargo and rustc binaries")
 
-    source_stage = state / "cargo-source"
-    registry_stage = state / "cargo-registry"
+    source_stage = stage_root / "cargo-source"
+    registry_stage = stage_root / "cargo-registry"
     artifacts_dir = state / "rust-artifacts"
     artifacts_dir.mkdir(mode=0o700)
     process_e2e.copy_source_tree(source_stage)
@@ -545,6 +624,7 @@ for name in names:
         "bubblewrap_sha256": sha256_file(bwrap),
         "staged_source_tree_sha256": process_e2e.sha256_tree(source_stage),
         "staged_registry_tree_sha256": process_e2e.sha256_tree(registry_stage),
+        "host_staging": host_staging,
         "built_executable_sha256": {
             name: sha256_file(path) for name, path in artifacts.items()
         },
