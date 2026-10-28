@@ -1,0 +1,8 @@
+cargo test --offline --locked --bin forgejo-mission-local tests::non_utf8_raw_requirement_through_http_source_refuses_admission_before_claim -- --exact
+cargo test --offline --locked --bin forgejo-mission-local -- --test-threads=1
+cargo test --offline --locked --test mission_admission_contract -- --test-threads=1
+cargo test --offline --locked --test webhook_mission_admission_contract -- --test-threads=1
+cargo test --offline --locked --all-targets -- --test-threads=1
+cargo fmt --all -- --check
+python3 scripts/verify_cargo_license_state.py
+git diff --check

@@ -1,0 +1,12 @@
+{
+  "admitted_delivery_id": "6738efd9-b21e-4f1e-9131-5d4e52dbb512",
+  "failed_delivery_id": "f7a7a7aa-1e33-4f41-94a2-886408e3aa7c",
+  "failed_status": 503,
+  "issue_number": 1,
+  "payload_unchanged": true,
+  "queue_drained": true,
+  "receiver_sequence": 1,
+  "rejected_attempt_journaled": false,
+  "replay_status": 202,
+  "retry_after_seconds": 5
+}

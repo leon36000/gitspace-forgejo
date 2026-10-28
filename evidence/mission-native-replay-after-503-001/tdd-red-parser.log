@@ -1,0 +1,44 @@
+test_receiver_overload_recovery_mode_requires_native_replay (tests.test_forgejo_live_webhook_mission_admission.LiveWebhookMissionAdmissionTests.test_receiver_overload_recovery_mode_requires_native_replay) ... usage: python3 -m unittest [-h] --forgejo-binary FORGEJO_BINARY
+                           [--repo-root REPO_ROOT]
+                           [--source-git-dir SOURCE_GIT_DIR]
+                           [--source-git-work-tree SOURCE_GIT_WORK_TREE]
+                           --state-dir STATE_DIR --evidence-dir EVIDENCE_DIR
+                           [--allocation-id ALLOCATION_ID] [--build-mcp-host]
+                           [--build-test-crash-injection-host]
+                           [--native-replay-admission]
+                           [--native-issue-comment-refusal]
+python3 -m unittest: error: unrecognized arguments: --receiver-overload-first-delivery
+usage: python3 -m unittest [-h] --forgejo-binary FORGEJO_BINARY
+                           [--repo-root REPO_ROOT]
+                           [--source-git-dir SOURCE_GIT_DIR]
+                           [--source-git-work-tree SOURCE_GIT_WORK_TREE]
+                           --state-dir STATE_DIR --evidence-dir EVIDENCE_DIR
+                           [--allocation-id ALLOCATION_ID] [--build-mcp-host]
+                           [--build-test-crash-injection-host]
+                           [--native-replay-admission]
+                           [--native-issue-comment-refusal]
+python3 -m unittest: error: unrecognized arguments: --receiver-overload-first-delivery
+ERROR
+
+======================================================================
+ERROR: test_receiver_overload_recovery_mode_requires_native_replay (tests.test_forgejo_live_webhook_mission_admission.LiveWebhookMissionAdmissionTests.test_receiver_overload_recovery_mode_requires_native_replay)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/test_forgejo_live_webhook_mission_admission.py", line 357, in test_receiver_overload_recovery_mode_requires_native_replay
+    args = self.driver.parse_args([*base, "--native-replay-admission"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/scripts/run_forgejo_live_webhook_mission_admission.py", line 1754, in parse_args
+    return argument_parser().parse_args(argv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/argparse.py", line 1911, in parse_args
+    self.error(msg % ' '.join(argv))
+  File "/usr/lib/python3.12/argparse.py", line 2677, in error
+    self.exit(2, _('%(prog)s: error: %(message)s\n') % args)
+  File "/usr/lib/python3.12/argparse.py", line 2664, in exit
+    _sys.exit(status)
+SystemExit: 2
+
+----------------------------------------------------------------------
+Ran 1 test in 0.015s
+
+FAILED (errors=1)

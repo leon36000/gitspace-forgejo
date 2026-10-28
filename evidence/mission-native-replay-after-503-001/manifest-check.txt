@@ -1,0 +1,195 @@
+$ python3 append_manifests.py
+local manifest is missing or redirected
+
+$ python3 append_manifests.py (after creating the empty local index)
+{"local_entries_appended": 46, "local_files_verified": 46, "project_entries_appended": 50, "project_prefix_preserved": true, "worktree_entries_appended": 49, "worktree_prefix_preserved": true}
+
+$ python3 evidence/mission-native-replay-after-503-001/verify_append_only_indexes.py
+{"local_evidence_files_verified": 46, "parent_binds_current_worktree_index": true, "project_prefix_preserved": true, "worktree_prefix_preserved": true}
+
+$ sha256sum -c SHA256SUMS
+append_manifests.py: OK
+live-run-001/branch-protection-readback.json: OK
+live-run-001/failure.json: OK
+live-run-001/hook-readback.json: OK
+live-run-001/port-cleanup-readback.json: OK
+live-run-001/webhook-proxy-records.json: OK
+live-run-002/admission.json: OK
+live-run-002/automatic-retry-observation.json: OK
+live-run-002/branch-protection-readback.json: OK
+live-run-002/forgejo-task-binding.json: OK
+live-run-002/hook-readback.json: OK
+live-run-002/invalid-credential.json: OK
+live-run-002/native-replay-admission.json: OK
+live-run-002/native-replay-binding.json: OK
+live-run-002/port-cleanup-readback.json: OK
+live-run-002/provenance.json: OK
+live-run-002/receiver-overload-recovery.json: OK
+live-run-002/replay.json: OK
+live-run-002/result.json: OK
+live-run-002/webhook-event.json: OK
+live-run-002/webhook-proxy-records.json: OK
+local-run.md: OK
+manifest-prefix-before.json: OK
+runner-command-002.txt: OK
+runner-exit-code-002.txt: OK
+source-hashes.txt: OK
+tdd-red-parser.log: OK
+tdd-red.log: OK
+verification/cargo-license-state.log: OK
+verification/cargo-metadata-summary.json: OK
+verification/cargo-metadata.log: OK
+verification/current-diff-check.log: OK
+verification/diff-check.log: OK
+verification/failed-run-001-checksums.log: OK
+verification/final-exit-codes.json: OK
+verification/live-run-002-checksums.log: OK
+verification/mission-admission-tests.log: OK
+verification/native-replay-tests.log: OK
+verification/python-compile.log: OK
+verification/runtime-versions.txt: OK
+verification/saved-live-run-binding.log: OK
+verification/successful-run-002-checksums.log: OK
+verification/untracked-whitespace-check.log: OK
+verification/verification-exit-codes.json: OK
+verify_append_only_indexes.py: OK
+verify_live_run.py: OK
+
+$ python3 append_manifests.py (post live-run-003)
+{"local_entries_appended": 28, "local_files_verified": 71, "project_entries_appended": 31, "project_prefix_preserved": true, "worktree_entries_appended": 30, "worktree_prefix_preserved": true}
+
+[local-receipt-manifest] $ sha256sum -c SHA256SUMS
+append_manifests.py: OK
+live-run-001/branch-protection-readback.json: OK
+live-run-001/failure.json: OK
+live-run-001/hook-readback.json: OK
+live-run-001/port-cleanup-readback.json: OK
+live-run-001/webhook-proxy-records.json: OK
+live-run-002/admission.json: OK
+live-run-002/automatic-retry-observation.json: OK
+live-run-002/branch-protection-readback.json: OK
+live-run-002/forgejo-task-binding.json: OK
+live-run-002/hook-readback.json: OK
+live-run-002/invalid-credential.json: OK
+live-run-002/native-replay-admission.json: OK
+live-run-002/native-replay-binding.json: OK
+live-run-002/port-cleanup-readback.json: OK
+live-run-002/provenance.json: OK
+live-run-002/receiver-overload-recovery.json: OK
+live-run-002/replay.json: OK
+live-run-002/result.json: OK
+live-run-002/webhook-event.json: OK
+live-run-002/webhook-proxy-records.json: OK
+local-run.md: FAILED
+manifest-prefix-before.json: OK
+runner-command-002.txt: OK
+runner-exit-code-002.txt: OK
+source-hashes.txt: FAILED
+tdd-red-parser.log: OK
+tdd-red.log: OK
+verification/cargo-license-state.log: OK
+verification/cargo-metadata-summary.json: OK
+verification/cargo-metadata.log: OK
+verification/current-diff-check.log: OK
+verification/diff-check.log: OK
+verification/failed-run-001-checksums.log: OK
+verification/final-exit-codes.json: OK
+verification/live-run-002-checksums.log: OK
+verification/mission-admission-tests.log: OK
+verification/native-replay-tests.log: OK
+verification/python-compile.log: OK
+verification/runtime-versions.txt: OK
+verification/saved-live-run-binding.log: OK
+verification/successful-run-002-checksums.log: OK
+verification/untracked-whitespace-check.log: OK
+verification/verification-exit-codes.json: OK
+verify_append_only_indexes.py: OK
+verify_live_run.py: FAILED
+live-run-003/admission.json: OK
+live-run-003/automatic-retry-observation.json: OK
+live-run-003/branch-protection-readback.json: OK
+live-run-003/forgejo-task-binding.json: OK
+live-run-003/hook-readback.json: OK
+live-run-003/invalid-credential.json: OK
+live-run-003/native-replay-admission.json: OK
+live-run-003/native-replay-binding.json: OK
+live-run-003/port-cleanup-readback.json: OK
+live-run-003/provenance.json: OK
+live-run-003/receiver-overload-recovery.json: OK
+live-run-003/replay.json: OK
+live-run-003/result.json: OK
+live-run-003/webhook-event.json: OK
+live-run-003/webhook-proxy-records.json: OK
+local-run.md: OK
+runner-command-003.txt: OK
+runner-exit-code-003.txt: OK
+runner-output-003.log: OK
+source-hashes.txt: OK
+verification/current-diff-check-002.log: OK
+verification/final-exit-codes-002.json: OK
+verification/live-run-003-checksums.log: OK
+verification/mission-admission-tests-002.log: OK
+verification/python-compile-002.log: OK
+verification/saved-live-run-binding-002.log: OK
+verification/untracked-whitespace-check-002.log: OK
+verify_live_run.py: OK
+sha256sum: WARNING: 3 computed checksums did NOT match
+
+[append-only-index-verification] $ python3 /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/mission-native-replay-after-503-001/verify_append_only_indexes.py
+{"local_evidence_files_verified": 71, "parent_binds_current_worktree_index": true, "project_prefix_preserved": true, "worktree_prefix_preserved": true}
+
+[live-run-003-receipts] $ sha256sum -c SHA256SUMS
+admission.json: OK
+automatic-retry-observation.json: OK
+branch-protection-readback.json: OK
+forgejo-task-binding.json: OK
+hook-readback.json: OK
+invalid-credential.json: OK
+native-replay-admission.json: OK
+native-replay-binding.json: OK
+port-cleanup-readback.json: OK
+provenance.json: OK
+receiver-overload-recovery.json: OK
+replay.json: OK
+result.json: OK
+webhook-event.json: OK
+webhook-proxy-records.json: OK
+
+[source-hashes] $ sha256sum -c evidence/mission-native-replay-after-503-001/source-hashes.txt
+Cargo.toml: OK
+Cargo.lock: OK
+scripts/run_forgejo_live_webhook_mission_admission.py: OK
+scripts/run_forgejo_live_webhook_native_replay_e2e.py: OK
+tests/test_forgejo_live_webhook_mission_admission.py: OK
+tests/test_forgejo_webhook_native_replay_e2e.py: OK
+docs/checkpoint.md: OK
+docs/refusal-evidence-matrix.md: OK
+evidence/mission-native-replay-after-503-001/local-run.md: OK
+evidence/mission-native-replay-after-503-001/live-run-001/failure.json: OK
+evidence/mission-native-replay-after-503-001/live-run-003/result.json: OK
+evidence/mission-native-replay-after-503-001/live-run-003/provenance.json: OK
+evidence/mission-native-replay-after-503-001/live-run-003/receiver-overload-recovery.json: OK
+evidence/mission-native-replay-after-503-001/live-run-003/native-replay-admission.json: OK
+/tmp/forgejo-17.0.0: OK
+
+[saved-live-run-003-binding] $ python3 /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/mission-native-replay-after-503-001/verify_live_run.py
+passed: PASS
+forgejo_503: PASS
+retry_after_five: PASS
+failed_delivery_not_journaled: PASS
+receiver_drained: PASS
+replay_payload_unchanged: PASS
+no_automatic_retry_observed: PASS
+failed_admitted_replay_and_second_replay_have_distinct_ids: PASS
+first_accepted_delivery_is_sequence_one: PASS
+second_accepted_delivery_is_sequence_two: PASS
+same_claim_reused: PASS
+task_statuses_show_one_failure_and_two_accepts: PASS
+no_runtime_executed: PASS
+cleanup_confirmed: PASS
+checks_passed: 14
+
+[git-diff-check] $ git diff --check -- scripts/run_forgejo_live_webhook_mission_admission.py tests/test_forgejo_live_webhook_mission_admission.py docs/checkpoint.md
+
+[whitespace/NUL scan]
+passed

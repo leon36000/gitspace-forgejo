@@ -1,0 +1,13 @@
+{
+  "issue_number": 1,
+  "original_delivery_id": "fa23fccd-bffd-41ea-bd8c-71bced506aed",
+  "payload_semantic_sha256": "dafe9d7958dfcda7e454fa58ebf8e424c9628bd7c17d5e4a336f584f789a0bb5",
+  "payload_sha256": "320c63368e2d183e9d2ed79beb6373e182ddd891d78f96c2497d814bf217121a",
+  "payload_unchanged": true,
+  "received_payload_semantic_sha256": "dafe9d7958dfcda7e454fa58ebf8e424c9628bd7c17d5e4a336f584f789a0bb5",
+  "receiver_sequences": [
+    1,
+    2
+  ],
+  "replay_delivery_id": "21f66b05-60d1-4209-b546-162b270750ca"
+}

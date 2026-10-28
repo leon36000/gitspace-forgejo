@@ -1,0 +1,6 @@
+$ sha256sum -c SHA256SUMS
+branch-protection-readback.json: OK
+failure.json: OK
+hook-readback.json: OK
+port-cleanup-readback.json: OK
+webhook-proxy-records.json: OK

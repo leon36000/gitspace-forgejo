@@ -1,0 +1,16 @@
+$ sha256sum -c SHA256SUMS
+admission.json: OK
+automatic-retry-observation.json: OK
+branch-protection-readback.json: OK
+forgejo-task-binding.json: OK
+hook-readback.json: OK
+invalid-credential.json: OK
+native-replay-admission.json: OK
+native-replay-binding.json: OK
+port-cleanup-readback.json: OK
+provenance.json: OK
+receiver-overload-recovery.json: OK
+replay.json: OK
+result.json: OK
+webhook-event.json: OK
+webhook-proxy-records.json: OK

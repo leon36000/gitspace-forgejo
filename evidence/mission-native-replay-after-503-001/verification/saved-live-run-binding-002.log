@@ -1,0 +1,16 @@
+$ python3 /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/mission-native-replay-after-503-001/verify_live_run.py
+passed: PASS
+forgejo_503: PASS
+retry_after_five: PASS
+failed_delivery_not_journaled: PASS
+receiver_drained: PASS
+replay_payload_unchanged: PASS
+no_automatic_retry_observed: PASS
+failed_admitted_replay_and_second_replay_have_distinct_ids: PASS
+first_accepted_delivery_is_sequence_one: PASS
+second_accepted_delivery_is_sequence_two: PASS
+same_claim_reused: PASS
+task_statuses_show_one_failure_and_two_accepts: PASS
+no_runtime_executed: PASS
+cleanup_confirmed: PASS
+checks_passed: 14

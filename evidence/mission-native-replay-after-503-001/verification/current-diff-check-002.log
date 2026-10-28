@@ -1,0 +1,1 @@
+$ git diff --check -- scripts/run_forgejo_live_webhook_mission_admission.py tests/test_forgejo_live_webhook_mission_admission.py docs/checkpoint.md

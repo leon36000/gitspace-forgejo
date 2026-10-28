@@ -1,0 +1,17 @@
+$ python3 -m unittest discover -s tests -p test_forgejo_live_webhook_mission_admission.py
+.......................usage: python3 -m unittest [-h] --forgejo-binary FORGEJO_BINARY
+                           [--repo-root REPO_ROOT]
+                           [--source-git-dir SOURCE_GIT_DIR]
+                           [--source-git-work-tree SOURCE_GIT_WORK_TREE]
+                           --state-dir STATE_DIR --evidence-dir EVIDENCE_DIR
+                           [--allocation-id ALLOCATION_ID] [--build-mcp-host]
+                           [--build-test-crash-injection-host]
+                           [--native-replay-admission]
+                           [--receiver-overload-first-delivery]
+                           [--native-issue-comment-refusal]
+python3 -m unittest: error: --receiver-overload-first-delivery requires --native-replay-admission
+.........
+----------------------------------------------------------------------
+Ran 32 tests in 0.023s
+
+OK

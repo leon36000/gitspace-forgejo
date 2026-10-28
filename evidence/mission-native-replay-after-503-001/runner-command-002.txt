@@ -1,0 +1,6 @@
+python3 scripts/run_forgejo_live_webhook_mission_admission.py \
+  --forgejo-binary /tmp/forgejo-17.0.0 \
+  --state-dir /tmp/forgejo-mission-native-replay-after-503-002 \
+  --evidence-dir evidence/mission-native-replay-after-503-001/live-run-002 \
+  --native-replay-admission \
+  --receiver-overload-first-delivery

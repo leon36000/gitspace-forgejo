@@ -1,0 +1,15 @@
+test_failed_503_then_native_replay_binds_one_admissible_event (tests.test_forgejo_live_webhook_mission_admission.LiveWebhookMissionAdmissionTests.test_failed_503_then_native_replay_binds_one_admissible_event) ... ERROR
+
+======================================================================
+ERROR: test_failed_503_then_native_replay_binds_one_admissible_event (tests.test_forgejo_live_webhook_mission_admission.LiveWebhookMissionAdmissionTests.test_failed_503_then_native_replay_binds_one_admissible_event)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/test_forgejo_live_webhook_mission_admission.py", line 629, in test_failed_503_then_native_replay_binds_one_admissible_event
+    result = self.driver.validate_overload_replay_admission_binding(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'run_forgejo_live_webhook_mission_admission' has no attribute 'validate_overload_replay_admission_binding'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.014s
+
+FAILED (errors=1)

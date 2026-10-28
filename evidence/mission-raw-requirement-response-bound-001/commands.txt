@@ -1,0 +1,11 @@
+# Red reproducer; expected exit 101 before the fix.
+cargo test --offline --locked --bin forgejo-mission-local oversized_raw_requirement_response_is_non_retryable_invalid_response -- --nocapture
+# Green targeted contract.
+cargo test --offline --locked --bin forgejo-mission-local tests::oversized_raw_requirement_response_is_non_retryable_invalid_response -- --exact
+cargo test --offline --locked --bin forgejo-mission-local -- --test-threads=1
+cargo test --offline --locked --test mission_admission_contract -- --test-threads=1
+cargo test --offline --locked --test webhook_mission_admission_contract -- --test-threads=1
+cargo test --offline --locked --all-targets -- --test-threads=1
+cargo fmt --all -- --check
+python3 scripts/verify_cargo_license_state.py
+git diff --check

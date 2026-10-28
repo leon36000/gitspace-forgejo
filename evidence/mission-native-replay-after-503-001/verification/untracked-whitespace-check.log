@@ -1,0 +1,2 @@
+$ whitespace/NUL scan of scripts/run_forgejo_live_webhook_mission_admission.py, tests/test_forgejo_live_webhook_mission_admission.py, docs/checkpoint.md, docs/refusal-evidence-matrix.md, evidence/mission-native-replay-after-503-001/local-run.md, evidence/mission-native-replay-after-503-001/append_manifests.py, evidence/mission-native-replay-after-503-001/verify_append_only_indexes.py, evidence/mission-native-replay-after-503-001/verify_live_run.py
+passed
