@@ -14,6 +14,10 @@ L’export local inclus dans le projet contient **134 fichiers texte** (sources,
 
 Le readback GitLab final a été vérifié pour les 134 blobs : les identifiants d’objets Git distants concordent avec le hash de blob recalculé depuis chaque fichier local, et les modes `100644`/`100755` concordent. Le premier essai API a stocké littéralement une chaîne Base64 au lieu de la décoder; le readback l’a détecté, et des commits suivants ont corrigé tous les fichiers concernés avec `encoding=text`. L’arbre courant est exact; l’historique contient ces commits de correction.
 
+## Correction du readback du checkpoint
+
+Le premier lot de reçus a remplacé le préfixe du checkpoint et les 21 fichiers de preuve ont été relus avec les blobs attendus. Le hash du checkpoint a divergé : la lecture par fenêtres a révélé que le paragraphe périmé du CONTINUATION-423 était resté dans le reste du fichier. Le commit `986b5633474988907537c638cdfacf7508bd7667` a remplacé les 100 premières lignes distantes par la fenêtre locale courante; le blob Git distant est alors devenu identique au hash local `0e0a1f06df994a87dc5994c0a5d2e4d80bb8569f`. Le reçu `transfer-manifest.sha256` est actualisé après cette correction; il sert à vérifier le lot textuel resynchronisé.
+
 ## Prévol complet des chemins locaux
 
 Le scan frais de l’état après transfert est conservé dans `export-scan.json` : **15 212 chemins**, **15 080 fichiers réguliers**, **2 712 membres ZIP**, aucune archive illisible et **0 correspondance** aux motifs ciblés. Il couvre les chemins suivis et non ignorés du worktree, y compris les archives ZIP et leurs membres. Les formes reconnues comprennent PAT GitLab/GitHub, tokens Runner, clés OpenAI/AWS, PEM privé, identifiants dans URL et Bearer tokens. Ce résultat ne garantit pas l’absence de formats non reconnus. Les contenus `.claude`, caches, checkout Git imbriqué, index de hash et fichier de résultat sont exclus du scan de contenu sans être supprimés. Les chemins ignorés (`.runtime/` inclus), l’environnement, la mémoire des processus et le courriel ne sont pas lus.
