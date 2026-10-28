@@ -1,0 +1,25 @@
+{
+  "acceptance_summary": "2 passed; 0 failed",
+  "base_commit": "847bc304522b87ba99c7f0495077a9954099fbd9",
+  "candidate_commit": "912acf8383344ecc2f0c406ec8ce86b1c3a3af4b",
+  "candidate_source_sha256_from_forgejo_readback": "173304ad7d32aabc1e8e1ee41eabda3398a8690798e68f906bcebc73cbcd6d15",
+  "cargo_binary": "/home/pc6/.rustup/toolchains/1.95.0-aarch64-unknown-linux-gnu/bin/cargo",
+  "cargo_version": "cargo 1.95.0 (f2d3ce0bd 2026-03-21)",
+  "changed_paths_from_base": [
+    "src/lib.rs"
+  ],
+  "checked_out_main_source_sha256": "173304ad7d32aabc1e8e1ee41eabda3398a8690798e68f906bcebc73cbcd6d15",
+  "checkout_head": "8a2fcd8a60f759fb139cfc4dbf6870b959dd2691",
+  "command": "cargo test --offline --locked",
+  "elapsed_ms": 236,
+  "forgejo_main_commit_at_readback": "8a2fcd8a60f759fb139cfc4dbf6870b959dd2691",
+  "merge_commit": "8a2fcd8a60f759fb139cfc4dbf6870b959dd2691",
+  "merge_tree_matches_candidate_tree": true,
+  "network_mode": "Cargo --offline; no model or external service invoked",
+  "schema_version": 1,
+  "source": "new detached checkout of Forgejo bare refs/heads/main after the local merge",
+  "source_matches_approved_candidate": true,
+  "test_exit_status": 0,
+  "test_output_sha256": "7e9c445cf50751459f825352619f7da9440715d8ed4ac272139a161af8a6fac6",
+  "verdict": "pass_postmerge_behavior"
+}

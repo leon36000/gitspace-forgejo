@@ -1,0 +1,188 @@
+{
+  "approval_commit": "6ca9f45e9fde7d58d7a58ef15ff93a03ad9c8b5e",
+  "authority": "forgejo-reconcile-local Rust merge authority; local owner credential passed through a private inherited pipe FD; not production merge authority",
+  "base_commit": "a440f6e997b5b1568cc5a1a73ea599c928d74d83",
+  "candidate_commit": "6ca9f45e9fde7d58d7a58ef15ff93a03ad9c8b5e",
+  "candidate_source_sha256": "173304ad7d32aabc1e8e1ee41eabda3398a8690798e68f906bcebc73cbcd6d15",
+  "changed_paths": [
+    "src/lib.rs"
+  ],
+  "forgejo_binary_sha256": "e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7",
+  "forgejo_version": "17.0.0+gitea-1.22.0",
+  "host_receipt_sha256": "89ce6811f57435928eca1e54371500406733b1247a1515a19f241cebdbd63205",
+  "independent_verdict": "pass",
+  "issue_number": 1,
+  "issue_state_after_merge": "closed",
+  "limitation": "This minimal Forgejo fixture does not version policy/active.json or policy v4, so the verifier binds the pinned requirement and policy hashes from the host-owned admission fixture while testing the exact PR commits. CPU accounting is a conservative upper bound derived from the enforced cgroup quota and elapsed wall time, not direct cgroup CPU telemetry.",
+  "main_head_after_merge": "4ff3108b0a597037b8bd2b0675eb8b362c0ab786",
+  "merge_authority": "forgejo-reconcile-local-rust",
+  "merge_commit": "4ff3108b0a597037b8bd2b0675eb8b362c0ab786",
+  "merge_gate_binary_sha256": "2e4fb192e7031a967cc5ecdf46ac443cb99607f9879bb98409ca545cd88e69f4",
+  "merge_gate_policy_sha256": "be5510865d791ceab8de3b2d44fb0dba4056cd3979218094b083ac33a9fce2c0",
+  "merge_gate_proof_sha256": "2fba13489b3908023a157fad436612415312251e158796028e33f5b71454148f",
+  "merge_gate_result_sha256": "f5aad65d64ee2ad2a688e3283f87763ce8d2721083f9a043d51653a287ebdbbc",
+  "merge_http_status": 200,
+  "merged": true,
+  "model": "local-test-adapter",
+  "model_cost_usd": 0.0,
+  "model_effort": "deterministic",
+  "model_usage_provenance": "deterministic local test adapter; no model was invoked; model cost is zero",
+  "non_whitelisted_reviewer_merge_refusal_http": 405,
+  "origin": "http://127.0.0.1:3132",
+  "policy_sha256": "e23907b5bd6b2c0f342c88ddcfa9f9a9be98065adcd24f9f7299dc796b5739eb",
+  "pre_review_merge_refusal_http": 405,
+  "pull_request_number": 2,
+  "pull_request_state_after_merge": "closed",
+  "repository_private": true,
+  "requirement_sha256": "3a3c444075c93a3bcfb2bec17d1a2e74ec0051effc2994e6b02ac095eb0dd431",
+  "reviewer": "verifier-bot",
+  "schema_version": 1,
+  "webhook_reconciliation": {
+    "all_notifications_reconciled_to_current_state": true,
+    "approved_review_delivery_id": "6c9e3452-879f-44fa-929d-ad9c8ac4c434",
+    "approved_review_notification": {
+      "action": "reviewed",
+      "base_sha": "a440f6e997b5b1568cc5a1a73ea599c928d74d83",
+      "event": "pull_request_approved",
+      "head_sha": "6ca9f45e9fde7d58d7a58ef15ff93a03ad9c8b5e",
+      "payload_merged": false,
+      "payload_state": "open",
+      "pull_request_number": 2,
+      "review_type": "pull_request_review_approved"
+    },
+    "approved_review_sequence": 2,
+    "candidate_commit": "6ca9f45e9fde7d58d7a58ef15ff93a03ad9c8b5e",
+    "canonical_state": {
+      "base_sha": "4ff3108b0a597037b8bd2b0675eb8b362c0ab786",
+      "head_sha": "6ca9f45e9fde7d58d7a58ef15ff93a03ad9c8b5e",
+      "merged": true,
+      "state": "closed"
+    },
+    "cleanup": {
+      "cleanup_failure": null,
+      "hook_deactivated": true,
+      "receiver_listener_absent": true,
+      "receiver_listener_addresses_after_stop": [],
+      "receiver_stop": {
+        "returncode": 0,
+        "started": true,
+        "stop_action": "terminate",
+        "stopped": true
+      },
+      "receiver_stopped": true,
+      "started": true
+    },
+    "closed_delivery_id": "12ccb5d7-02b3-4ae2-b70a-3217a960803d",
+    "closed_payload": {
+      "base_sha": "4ff3108b0a597037b8bd2b0675eb8b362c0ab786",
+      "head_sha": "6ca9f45e9fde7d58d7a58ef15ff93a03ad9c8b5e",
+      "merged": true,
+      "state": "closed"
+    },
+    "closed_sequence": 3,
+    "event_count": 3,
+    "forgejo_task_count": 3,
+    "hook_id": 2,
+    "hook_readback": {
+      "active_after_run": false,
+      "api_hook_id": 2,
+      "configuration_matches_expected": true,
+      "content_type": "json",
+      "deactivation_readback_confirmed": true,
+      "events": [
+        "pull_request",
+        "pull_request_assign",
+        "pull_request_label",
+        "pull_request_milestone",
+        "pull_request_comment",
+        "pull_request_review_approved",
+        "pull_request_review_rejected",
+        "pull_request_review_comment",
+        "pull_request_sync",
+        "pull_request_review_request"
+      ],
+      "events_readback_valid": true,
+      "hook_id": 2,
+      "secret_value_recorded": false,
+      "target": "http://127.0.0.1:49645/forgejo/webhook",
+      "type": "gitea"
+    },
+    "merge_commit": "4ff3108b0a597037b8bd2b0675eb8b362c0ab786",
+    "opened_delivery_id": "2500ccca-9326-4cb3-8a30-fbd09d670df5",
+    "opened_payload": {
+      "base_sha": "a440f6e997b5b1568cc5a1a73ea599c928d74d83",
+      "head_sha": "6ca9f45e9fde7d58d7a58ef15ff93a03ad9c8b5e",
+      "merged": false,
+      "state": "open"
+    },
+    "opened_sequence": 1,
+    "pull_request_number": 2,
+    "receiver_binary_sha256": "44b58340e051aa8a07013c82f4cbcc315104bc2987882c4657fa77b5e5412fee",
+    "reconciled_delivery_ids": [
+      "2500ccca-9326-4cb3-8a30-fbd09d670df5",
+      "6c9e3452-879f-44fa-929d-ad9c8ac4c434",
+      "12ccb5d7-02b3-4ae2-b70a-3217a960803d"
+    ],
+    "reconciliation_receipts": [
+      {
+        "canonical_state": {
+          "base_sha": "4ff3108b0a597037b8bd2b0675eb8b362c0ab786",
+          "head_sha": "6ca9f45e9fde7d58d7a58ef15ff93a03ad9c8b5e",
+          "merged": true,
+          "state": "closed"
+        },
+        "delivery_id": "2500ccca-9326-4cb3-8a30-fbd09d670df5",
+        "exit_code": 0,
+        "resource": {
+          "kind": "pull_request",
+          "number": 2,
+          "owner": "forge-admin",
+          "repository": "mission-012-clamp"
+        },
+        "upstream_read_attempts": 1,
+        "verdict": "current_state_read"
+      },
+      {
+        "canonical_state": {
+          "base_sha": "4ff3108b0a597037b8bd2b0675eb8b362c0ab786",
+          "head_sha": "6ca9f45e9fde7d58d7a58ef15ff93a03ad9c8b5e",
+          "merged": true,
+          "state": "closed"
+        },
+        "delivery_id": "6c9e3452-879f-44fa-929d-ad9c8ac4c434",
+        "exit_code": 0,
+        "resource": {
+          "kind": "pull_request",
+          "number": 2,
+          "owner": "forge-admin",
+          "repository": "mission-012-clamp"
+        },
+        "upstream_read_attempts": 1,
+        "verdict": "current_state_read"
+      },
+      {
+        "canonical_state": {
+          "base_sha": "4ff3108b0a597037b8bd2b0675eb8b362c0ab786",
+          "head_sha": "6ca9f45e9fde7d58d7a58ef15ff93a03ad9c8b5e",
+          "merged": true,
+          "state": "closed"
+        },
+        "delivery_id": "12ccb5d7-02b3-4ae2-b70a-3217a960803d",
+        "exit_code": 0,
+        "resource": {
+          "kind": "pull_request",
+          "number": 2,
+          "owner": "forge-admin",
+          "repository": "mission-012-clamp"
+        },
+        "upstream_read_attempts": 1,
+        "verdict": "current_state_read"
+      }
+    ],
+    "review_notification_is_approval_proof": false,
+    "schema_version": 4,
+    "status": "verified_current_merged_pr",
+    "successful_http_202_count": 3,
+    "target_profile": "mission-012-clamp"
+  }
+}

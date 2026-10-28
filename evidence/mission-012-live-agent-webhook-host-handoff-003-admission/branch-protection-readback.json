@@ -1,0 +1,33 @@
+{
+  "apply_to_admins": true,
+  "approvals_whitelist_teams": [],
+  "approvals_whitelist_username": [
+    "verifier-bot"
+  ],
+  "block_on_official_review_requests": false,
+  "block_on_outdated_branch": true,
+  "block_on_rejected_reviews": false,
+  "branch_name": "main",
+  "created_at": "2026-10-26T18:02:18-04:00",
+  "dismiss_stale_approvals": true,
+  "enable_approvals_whitelist": true,
+  "enable_merge_whitelist": true,
+  "enable_push": false,
+  "enable_push_whitelist": false,
+  "enable_status_check": false,
+  "ignore_stale_approvals": false,
+  "merge_whitelist_teams": [],
+  "merge_whitelist_usernames": [
+    "forge-admin"
+  ],
+  "protected_file_patterns": "",
+  "push_whitelist_deploy_keys": false,
+  "push_whitelist_teams": [],
+  "push_whitelist_usernames": [],
+  "require_signed_commits": false,
+  "required_approvals": 1,
+  "rule_name": "main",
+  "status_check_contexts": null,
+  "unprotected_file_patterns": "",
+  "updated_at": "2026-10-26T18:02:18-04:00"
+}

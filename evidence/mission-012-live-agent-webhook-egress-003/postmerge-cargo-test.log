@@ -1,0 +1,12 @@
+command: /home/pc6/.cargo/bin/rustup test --offline --locked
+working_tree: detached checkout of merged main 8a2fcd8a60f759fb139cfc4dbf6870b959dd2691
+exit_status: 1
+elapsed_ms: 2
+
+error: unexpected argument '--offline' found
+
+  tip: to pass '--offline' as a value, use '-- --offline'
+
+Usage: rustup[EXE] <+toolchain>
+
+For more information, try '--help'.

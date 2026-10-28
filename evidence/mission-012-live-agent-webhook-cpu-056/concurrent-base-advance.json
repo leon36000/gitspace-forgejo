@@ -1,0 +1,13 @@
+{
+  "base_before": "ccac43322a8b89882394f40dac5e08b97523e231",
+  "competing_head": "9a6ac783a9c0892e80f527ecca21b090fae2930e",
+  "competing_pull_request": 3,
+  "main_after": "8e7cc52cc53c1d0e1fe0de68941fb5eaca7566a9",
+  "merge_commit_sha": "8e7cc52cc53c1d0e1fe0de68941fb5eaca7566a9",
+  "merge_http_status": 200,
+  "merged": true,
+  "readme_marker_sha256": "61402e3dd759d739c119aca7ff718940583b88d68ada3fa840f66ac7714a0b4f",
+  "review_id": 2,
+  "reviewer_login": "verifier-bot",
+  "schema_version": 1
+}
