@@ -1,0 +1,1 @@
+PASS: local SHA256SUMS verifies 12 run artifacts

@@ -1,0 +1,7 @@
+cargo test --locked --offline --test webhook_handler_contract unsupported_event_is_rejected_without_journal_side_effect -- --exact --nocapture # red before implementation
+cargo test --locked --offline --test webhook_handler_contract unsupported_event_is_rejected_without_journal_side_effect -- --exact --nocapture # green after implementation
+cargo test --locked --offline --all-targets -- --test-threads=1
+cargo fmt --all -- --check
+git diff --check
+python3 scripts/verify_cargo_license_state.py
+cargo metadata --format-version 1 --locked --offline --no-deps

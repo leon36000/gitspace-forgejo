@@ -1,0 +1,6 @@
+cargo test --locked --offline --test webhook_handler_contract capabilities_publish_machine_readable_contracts_for_every_supported_event -- --exact --nocapture
+cargo test --locked --offline --all-targets -- --test-threads=1
+cargo fmt --all -- --check
+git diff --check
+python3 scripts/verify_cargo_license_state.py
+cargo metadata --format-version 1 --locked --offline --no-deps

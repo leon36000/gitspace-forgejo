@@ -1,0 +1,13 @@
+Command:
+cargo test --locked --offline --test webhook_handler_contract capabilities_publish_machine_readable_contracts_for_every_supported_event -- --exact --nocapture
+Exit status: 101
+
+running 1 test
+thread 'capabilities_publish_machine_readable_contracts_for_every_supported_event' panicked at tests/webhook_handler_contract.rs:64:10:
+the receiver publishes structured event contracts
+test capabilities_publish_machine_readable_contracts_for_every_supported_event ... FAILED
+
+failures:
+    capabilities_publish_machine_readable_contracts_for_every_supported_event
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 19 filtered out

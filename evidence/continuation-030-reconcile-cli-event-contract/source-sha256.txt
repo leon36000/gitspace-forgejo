@@ -1,0 +1,3 @@
+5106b2d848bb543b3855e45ed1945e479decfdc09d041e7b2a39ab48aed05032  src/webhook.rs
+10f8313e0e791e3d27cbe9af0e1515346addc1d9e70da9ec31b3d0cfb5b36ee0  src/bin/forgejo-reconcile-local.rs
+1691a4bf400e25e811702b1de5e2f61673ecc35bdf25dec95195ef2f70da5fa7  tests/forgejo_reconcile_capabilities_e2e.rs

@@ -1,0 +1,6 @@
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_refuses_unknown_future_event_kind_before_api_read
+cargo fmt --all -- --check
+python3 -m py_compile scripts/run_webhook_reconcile_cli_e2e.py
+git diff --check
+python3 scripts/verify_cargo_license_state.py
+cargo metadata --format-version 1 --locked --offline --no-deps
