@@ -1,0 +1,18 @@
+2026/10/25 05:44:19 ...s/storage/storage.go:157:initAttachments() [I] Initialising Attachment storage with type: local
+2026/10/25 05:44:19 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata758619016/attachments
+2026/10/25 05:44:19 ...s/storage/storage.go:147:initAvatars() [I] Initialising Avatar storage with type: local
+2026/10/25 05:44:19 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata758619016/avatars
+2026/10/25 05:44:19 ...s/storage/storage.go:174:initRepoAvatars() [I] Initialising Repository Avatar storage with type: local
+2026/10/25 05:44:19 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata758619016/repo-avatars
+2026/10/25 05:44:19 ...s/storage/storage.go:180:initRepoArchives() [I] Initialising Repository Archive storage with type: local
+2026/10/25 05:44:19 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata758619016/repo-archive
+2026/10/25 05:44:19 ...s/storage/storage.go:190:initPackages() [I] Initialising Packages storage with type: local
+2026/10/25 05:44:19 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata758619016/packages
+2026/10/25 05:44:19 ...s/storage/storage.go:201:initActions() [I] Initialising Actions storage with type: local
+2026/10/25 05:44:19 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata758619016/actions_log
+2026/10/25 05:44:19 ...s/storage/storage.go:205:initActions() [I] Initialising ActionsArtifacts storage with type: local
+2026/10/25 05:44:19 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/go-build3484362125/b001/data/actions_artifacts
+=== RUN   TestRecoverLFSPendingMetaObjectsCheckpointSurvivesReopenAndRevisitsDeferredRows
+--- PASS: TestRecoverLFSPendingMetaObjectsCheckpointSurvivesReopenAndRevisitsDeferredRows (0.43s)
+PASS
+ok  	forgejo.org/services/pull	0.679s

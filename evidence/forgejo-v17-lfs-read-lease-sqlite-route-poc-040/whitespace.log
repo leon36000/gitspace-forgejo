@@ -1,0 +1,3 @@
+gofmt -d: clean for four Go source files.
+Trailing whitespace scan: clean for six hashed source files.
+git diff --check: exit 0 for the two modified tracked source files.

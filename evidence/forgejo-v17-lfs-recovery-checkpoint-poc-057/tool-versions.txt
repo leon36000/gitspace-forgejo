@@ -1,0 +1,7 @@
+go version go1.27.3 linux/arm64
+gofmt: Go 1.27.3 (same toolchain)
+git: 2.43.0
+Forgejo tag: v17.0.0
+Forgejo base commit: 0d791421f85ca13a63b665053d81ea765fbbc571
+Build tag: sqlite
+Go module access: GOPROXY=off, GOTOOLCHAIN=local

@@ -1,0 +1,3 @@
+ok  	forgejo.org/models/forgejo_migrations	11.986s
+ok  	forgejo.org/models/git	1.163s
+ok  	forgejo.org/services/pull	17.238s

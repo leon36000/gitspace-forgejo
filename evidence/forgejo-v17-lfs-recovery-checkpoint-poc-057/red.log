@@ -1,0 +1,10 @@
+# forgejo.org/services/pull [forgejo.org/services/pull.test]
+services/pull/lfs_recovery_test.go:248:17: undefined: git_model.LFSPendingMetaRecoveryCheckpoint
+services/pull/lfs_recovery_test.go:287:16: undefined: RecoverLFSPendingMetaObjectsCheckpointPage
+services/pull/lfs_recovery_test.go:293:44: undefined: git_model.GetLFSPendingMetaRecoveryCheckpoint
+services/pull/lfs_recovery_test.go:309:17: undefined: RecoverLFSPendingMetaObjectsCheckpointPage
+services/pull/lfs_recovery_test.go:315:48: undefined: git_model.GetLFSPendingMetaRecoveryCheckpoint
+services/pull/lfs_recovery_test.go:324:20: undefined: RecoverLFSPendingMetaObjectsCheckpointPage
+services/pull/lfs_recovery_test.go:330:43: undefined: git_model.GetLFSPendingMetaRecoveryCheckpoint
+FAIL	forgejo.org/services/pull [build failed]
+FAIL

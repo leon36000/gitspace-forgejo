@@ -1,0 +1,20 @@
+Source baseline:
+  Forgejo v17.0.0 commit 0d791421f85ca13a63b665053d81ea765fbbc571
+
+Versions:
+  git version 2.43.0
+  go version go1.27.3 linux/arm64
+
+Initial red (before the reflog fallback; expected failure):
+  GOTOOLCHAIN=local GOPROXY=off /tmp/forgejo-v17-toolchain/go/bin/go test -count=1 -v -timeout=20m -tags sqlite ./services/pull -run '^TestPOCRecoveryUsesTargetRefReflogAfterCandidateIsRemovedFromCurrentRef$'
+
+Green service recovery tests:
+  GOTOOLCHAIN=local GOPROXY=off /tmp/forgejo-v17-toolchain/go/bin/go test -count=1 -v -timeout=20m -tags sqlite ./services/pull -run 'TestPOC|TestRecoverLFSPendingMetaObjects'
+
+Green Forgejo integration:
+  GOTOOLCHAIN=local GOPROXY=off /tmp/forgejo-v17-toolchain/go/bin/go test -count=1 -v -timeout=20m -tags sqlite ./tests/integration -run '^TestPOCGenericFileLFSRecoveryUsesTargetReflogAfterRefMovesBack$'
+
+Formatting / whitespace:
+  /tmp/forgejo-v17-toolchain/go/bin/gofmt -d services/pull/lfs_recovery.go services/pull/lfs_recovery_test.go tests/integration/git_push_test.go
+  git diff --check -- tests/integration/git_push_test.go
+  python3 /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/forgejo-v17-lfs-reflog-recovery-poc-066/check_whitespace.py

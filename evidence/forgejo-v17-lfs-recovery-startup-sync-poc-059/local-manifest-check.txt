@@ -1,0 +1,9 @@
+checks-status.txt: OK
+gofmt-diff.log: OK
+initial-import-failure.log: OK
+local-run.md: OK
+scratch-diff-check.log: OK
+scratch-status.txt: OK
+source-hashes.txt: OK
+startup-sync-final.log: OK
+tool-versions.txt: OK

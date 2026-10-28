@@ -1,0 +1,8 @@
+checks-status.txt: OK
+gofmt-diff.log: OK
+local-run.md: OK
+ref-race-final.log: OK
+scratch-diff-check.log: OK
+scratch-status.txt: OK
+source-hashes.txt: OK
+tool-versions.txt: OK

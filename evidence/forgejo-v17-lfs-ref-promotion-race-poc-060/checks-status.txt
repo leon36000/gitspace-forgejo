@@ -1,0 +1,4 @@
+Targeted race reproduction: PASS 1/1, services/pull package passed; this is a reproduction of stale-snapshot promotion, not evidence that the behavior is safe. See ref-race-final.log and local-run.md.
+gofmt -d services/pull/lfs_recovery_ref_race_poc_test.go: PASS, no output; see gofmt-diff.log.
+git diff --check in /tmp/forgejo-v17-base-cas-poc: PASS, exit 0; see scratch-diff-check.log.
+No broad package suite, Forgejo server, production writer, cross-database transaction, multi-host test, or product test was run for POC-060.

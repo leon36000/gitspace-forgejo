@@ -1,0 +1,5 @@
+# forgejo.org/services/pull
+services/pull/lfs_recovery_startup_sync_poc_test.go:14:2: no required module provides package forgejo.org/modules/names; to add it:
+	go get forgejo.org/modules/names
+FAIL	forgejo.org/services/pull [setup failed]
+FAIL

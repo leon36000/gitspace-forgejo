@@ -1,0 +1,19 @@
+2026/10/25 06:02:20 ...s/storage/storage.go:157:initAttachments() [I] Initialising Attachment storage with type: local
+2026/10/25 06:02:20 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata1188607369/attachments
+2026/10/25 06:02:20 ...s/storage/storage.go:147:initAvatars() [I] Initialising Avatar storage with type: local
+2026/10/25 06:02:20 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata1188607369/avatars
+2026/10/25 06:02:20 ...s/storage/storage.go:174:initRepoAvatars() [I] Initialising Repository Avatar storage with type: local
+2026/10/25 06:02:20 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata1188607369/repo-avatars
+2026/10/25 06:02:20 ...s/storage/storage.go:180:initRepoArchives() [I] Initialising Repository Archive storage with type: local
+2026/10/25 06:02:20 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata1188607369/repo-archive
+2026/10/25 06:02:20 ...s/storage/storage.go:190:initPackages() [I] Initialising Packages storage with type: local
+2026/10/25 06:02:20 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata1188607369/packages
+2026/10/25 06:02:20 ...s/storage/storage.go:201:initActions() [I] Initialising Actions storage with type: local
+2026/10/25 06:02:20 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata1188607369/actions_log
+2026/10/25 06:02:20 ...s/storage/storage.go:205:initActions() [I] Initialising ActionsArtifacts storage with type: local
+2026/10/25 06:02:20 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/go-build1105938894/b001/data/actions_artifacts
+=== RUN   TestPOCRecoveryPromotesFromARefSnapshotThatIsStaleBeforeDBPromotion
+    lfs_recovery_ref_race_poc_test.go:143: reproduced stale observation: candidate=bb1e36a43ff0cd5a2a104cd604b1a9895504f748, current_ref=9dd3360640218f4b774f12f10f66c1581b6658e9, promoted=1
+--- PASS: TestPOCRecoveryPromotesFromARefSnapshotThatIsStaleBeforeDBPromotion (1.03s)
+PASS
+ok  	forgejo.org/services/pull	1.604s

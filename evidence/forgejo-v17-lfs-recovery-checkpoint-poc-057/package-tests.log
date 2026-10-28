@@ -1,0 +1,55 @@
+ok  	forgejo.org/models/forgejo_migrations	1.897s
+ok  	forgejo.org/models/git	0.798s
+2026/10/25 05:44:33 ...s/storage/storage.go:157:initAttachments() [I] Initialising Attachment storage with type: local
+2026/10/25 05:44:33 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata768185971/attachments
+2026/10/25 05:44:33 ...s/storage/storage.go:147:initAvatars() [I] Initialising Avatar storage with type: local
+2026/10/25 05:44:33 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata768185971/avatars
+2026/10/25 05:44:33 ...s/storage/storage.go:174:initRepoAvatars() [I] Initialising Repository Avatar storage with type: local
+2026/10/25 05:44:33 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata768185971/repo-avatars
+2026/10/25 05:44:33 ...s/storage/storage.go:180:initRepoArchives() [I] Initialising Repository Archive storage with type: local
+2026/10/25 05:44:33 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata768185971/repo-archive
+2026/10/25 05:44:33 ...s/storage/storage.go:190:initPackages() [I] Initialising Packages storage with type: local
+2026/10/25 05:44:33 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata768185971/packages
+2026/10/25 05:44:33 ...s/storage/storage.go:201:initActions() [I] Initialising Actions storage with type: local
+2026/10/25 05:44:33 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata768185971/actions_log
+2026/10/25 05:44:33 ...s/storage/storage.go:205:initActions() [I] Initialising ActionsArtifacts storage with type: local
+2026/10/25 05:44:33 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/go-build3854135409/b750/data/actions_artifacts
+--- FAIL: TestMergeMergedPR (0.00s)
+    merge_test.go:190: 
+        	Error Trace:	/tmp/forgejo-v17-base-cas-poc/services/pull/merge_test.go:190
+        	Error:      	Received unexpected error:
+        	            	unsupported engine type: *xorm.Session
+        	Test:       	TestMergeMergedPR
+--- FAIL: TestLoadHeadRevision (0.00s)
+    patch_test.go:19: 
+        	Error Trace:	/tmp/forgejo-v17-base-cas-poc/services/pull/patch_test.go:19
+        	Error:      	Received unexpected error:
+        	            	unsupported engine type: *xorm.Session
+        	Test:       	TestLoadHeadRevision
+--- FAIL: TestPullRequest_GetDefaultMergeMessage_InternalTracker (0.00s)
+    pull_test.go:43: 
+        	Error Trace:	/tmp/forgejo-v17-base-cas-poc/services/pull/pull_test.go:43
+        	Error:      	Received unexpected error:
+        	            	unsupported engine type: *xorm.Session
+        	Test:       	TestPullRequest_GetDefaultMergeMessage_InternalTracker
+--- FAIL: TestPullRequest_GetDefaultMergeMessage_ExternalTracker (0.00s)
+    pull_test.go:70: 
+        	Error Trace:	/tmp/forgejo-v17-base-cas-poc/services/pull/pull_test.go:70
+        	Error:      	Received unexpected error:
+        	            	unsupported engine type: *xorm.Session
+        	Test:       	TestPullRequest_GetDefaultMergeMessage_ExternalTracker
+--- FAIL: TestPullRequest_GetDefaultMergeMessage_GlobalTemplate (0.00s)
+    pull_test.go:104: 
+        	Error Trace:	/tmp/forgejo-v17-base-cas-poc/services/pull/pull_test.go:104
+        	Error:      	Received unexpected error:
+        	            	unsupported engine type: *xorm.Session
+        	Test:       	TestPullRequest_GetDefaultMergeMessage_GlobalTemplate
+--- FAIL: TestDismissReview (0.00s)
+    review_test.go:20: 
+        	Error Trace:	/tmp/forgejo-v17-base-cas-poc/services/pull/review_test.go:20
+        	Error:      	Received unexpected error:
+        	            	unsupported engine type: *xorm.Session
+        	Test:       	TestDismissReview
+FAIL
+FAIL	forgejo.org/services/pull	1.403s
+FAIL

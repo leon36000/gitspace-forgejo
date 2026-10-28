@@ -1,0 +1,9 @@
+checks-status.txt: OK
+gofmt-diff.log: OK
+local-run.md: OK
+process-resume-final.log: OK
+red-green.log: OK
+scratch-diff-check.log: OK
+scratch-status.txt: OK
+source-hashes.txt: OK
+tool-versions.txt: OK

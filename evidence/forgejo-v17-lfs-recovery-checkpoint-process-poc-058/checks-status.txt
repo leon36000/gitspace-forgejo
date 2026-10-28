@@ -1,0 +1,5 @@
+Initial process-resume test: FAIL at the harness output assertion `page=2`; process output and SQLite assertions showed the child had completed the page. Root cause and correction are documented in local-run.md.
+Final targeted process-resume test: PASS, 1/1, services/pull package passed; see process-resume-final.log.
+gofmt -d services/pull/lfs_recovery_multiprocess_poc_test.go: PASS, no output; see gofmt-diff.log.
+git diff --check in /tmp/forgejo-v17-base-cas-poc: PASS, exit 0; see scratch-diff-check.log.
+No broad package suite, server startup, SIGKILL test, live Forgejo test, or product test was run for POC-058.

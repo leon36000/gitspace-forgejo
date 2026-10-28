@@ -1,0 +1,16 @@
+checks-status.txt: OK
+gofmt-diff.log: OK
+local-run.md: OK
+package-tests-final.log: OK
+package-tests-serial.log: OK
+package-tests.log: OK
+promotion-concurrency-isolated.log: OK
+promotion-concurrency-repeat.log: OK
+race-test.log: OK
+red.log: OK
+scratch-diff-check.log: OK
+scratch-status.txt: OK
+source-hashes.txt: OK
+targeted-test-final.log: OK
+targeted-test.log: OK
+tool-versions.txt: OK

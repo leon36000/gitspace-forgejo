@@ -1,0 +1,14 @@
+PASS 0 — targeted checkpoint-resume test after implementation
+PASS 0 — targeted checkpoint-resume test under -race
+PASS 0 — serial SQLite package suite: models/forgejo_migrations, models/git, services/pull
+PASS 0 — existing concurrent promotion test, isolated
+PASS 0 — existing concurrent promotion test, -count=10
+PASS 0 — gofmt -d on changed source and test files
+PASS 0 — git diff --check in Forgejo scratch
+PASS 0 — sha256sum -c SHA256SUMS (16 evidence artefacts)
+
+RED expected 1 — before implementation, the new checkpoint test did not compile because the checkpoint model and recovery API were missing.
+FAIL observed — first package run restored *xorm.Session instead of the previous engine; test cleanup was corrected to save db.DefaultContext and its engine.
+FAIL observed once — default-parallel package run hit database is locked in an existing 16-goroutine SQLite promotion test. One isolated run and ten repeats passed; the serial complete package suite passed. Cause not established.
+
+Limits: SQLite only; no server startup, SIGKILL, multi-host test, global worker, or cross-repository fairness.

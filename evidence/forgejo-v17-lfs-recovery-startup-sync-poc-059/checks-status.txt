@@ -1,0 +1,5 @@
+Initial targeted test: FAIL at compilation because the new test imported `names` from the nonexistent module path `forgejo.org/modules/names`; preserved in initial-import-failure.log.
+After correction to `code.forgejo.org/xorm/xorm/names`, the targeted `SyncAllTables` test passes 1/1 and services/pull passes; see startup-sync-final.log.
+gofmt -d services/pull/lfs_recovery_startup_sync_poc_test.go: PASS, no output; see gofmt-diff.log.
+git diff --check in /tmp/forgejo-v17-base-cas-poc: PASS, exit 0; see scratch-diff-check.log.
+No migration dispatcher, full Forgejo startup, SIGKILL test, live Forgejo run, broad package suite, or product test was run for POC-059.

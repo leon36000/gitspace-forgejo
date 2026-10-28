@@ -1,0 +1,76 @@
+HEAD 0d791421f85ca13a63b665053d81ea765fbbc571
+status:
+ M cmd/hook.go
+ M models/git/lfs.go
+ M models/git/lfs_test.go
+ M models/repo/repo_unit.go
+ M modules/private/hook.go
+ M modules/repository/env.go
+ M routers/private/hook_post_receive.go
+ M routers/private/hook_pre_receive.go
+ M services/lfs/server.go
+ M services/pull/lfs.go
+ M services/pull/merge.go
+ M services/pull/merge_manual.go
+ M services/pull/update_rebase.go
+ M services/repository/delete.go
+ M services/repository/delete_test.go
+ M services/repository/files/update.go
+ M services/repository/lfs_test.go
+ M tests/integration/git_push_test.go
+ M tests/integration/pull_merge_test.go
+?? evidence/
+?? models/forgejo_migrations/v17b_lfs_pending_meta_operation_identity.go
+?? models/forgejo_migrations/v17b_lfs_pending_meta_operation_identity_test.go
+?? models/git/lfs_generation_mapping_poc_test.go
+?? models/git/lfs_generation_process_recovery_poc_test.go
+?? modules/lfs/content_store_generation_poc_test.go
+?? modules/storage/local_generation_delete_poc_test.go
+?? modules/storage/minio_version_delete_poc_test.go
+?? services/lfs/read_lease_recovery_poc_test.go
+?? services/lfs/read_lease_stream_poc_test.go
+?? services/lfs/versioned_download_poc_test.go
+?? services/lfs/versioned_download_sqlite_poc_test.go
+?? services/pull/lfs_recovery.go
+?? services/pull/lfs_recovery_multiprocess_poc_test.go
+?? services/pull/lfs_recovery_ref_race_poc_test.go
+?? services/pull/lfs_recovery_startup_sync_poc_test.go
+?? services/pull/lfs_recovery_test.go
+?? services/repository/delete_lfs_active_race_poc_test.go
+?? services/repository/delete_lfs_race_poc_test.go
+?? services/repository/lfs_stale_delete_poc_test.go
+?? tests/integration/branch_expected_base_policy_poc_test.go
+?? tests/integration/lfs_batch_generation_url_poc_test.go
+?? tests/integration/lfs_delete_during_download_generation_poc_test.go
+?? tests/integration/lfs_delete_during_download_unleased_red_poc_test.go
+?? tests/integration/lfs_doctor_generation_path_poc_test.go
+?? tests/integration/lfs_download_generation_route_poc_test.go
+?? tests/integration/lfs_generation_stream_poc_test.go
+?? tests/integration/lfs_read_lease_disconnect_poc_test.go
+?? tests/integration/lfs_read_lease_http_client_poc_test.go
+?? tests/integration/lfs_read_lease_renewal_route_poc_test.go
+?? tests/integration/lfs_read_lease_sqlite_route_poc_test.go
+?? tests/integration/lfs_settings_delete_generation_poc_test.go
+?? tests/integration/lfs_sqlite_generation_route_poc_test.go
+?? tests/integration/lfs_sqlite_generation_upload_route_poc_test.go
+diff stat:
+ cmd/hook.go                          |   3 +
+ models/git/lfs.go                    | 296 +++++++++++++++++++++++++++++++++++
+ models/git/lfs_test.go               | 285 +++++++++++++++++++++++++++++++++
+ models/repo/repo_unit.go             |   1 +
+ modules/private/hook.go              |   1 +
+ modules/repository/env.go            |  52 ++++--
+ routers/private/hook_post_receive.go |  49 ++++++
+ routers/private/hook_pre_receive.go  |  36 +++++
+ services/lfs/server.go               | 265 ++++++++++++++++++++++++++-----
+ services/pull/lfs.go                 |  19 ++-
+ services/pull/merge.go               |  31 +++-
+ services/pull/merge_manual.go        |   5 +-
+ services/pull/update_rebase.go       |  54 ++++++-
+ services/repository/delete.go        |  32 +++-
+ services/repository/delete_test.go   |  52 ++++++
+ services/repository/files/update.go  |  31 ++--
+ services/repository/lfs_test.go      |  84 ++++++++++
+ tests/integration/git_push_test.go   | 172 ++++++++++++++++++++
+ tests/integration/pull_merge_test.go |  22 +++
+ 19 files changed, 1405 insertions(+), 85 deletions(-)

@@ -1,0 +1,7 @@
+=== RUN   TestPOCStreamRenewsLeaseWhileStorageReadIsBlocked
+--- PASS: TestPOCStreamRenewsLeaseWhileStorageReadIsBlocked (0.01s)
+=== RUN   TestPOCRefusedLeaseRenewalClosesTheActiveStream
+2026/10/24 22:26:18 ...rvices/lfs/server.go:298:streamVersionedContent() [E] Error whilst copying LFS OID[aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa] to the response after 0 bytes. Error: renew LFS read lease: POC LFS read lease lost
+--- PASS: TestPOCRefusedLeaseRenewalClosesTheActiveStream (0.01s)
+PASS
+ok  	forgejo.org/services/lfs	0.161s

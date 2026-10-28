@@ -1,0 +1,10 @@
+=== RUN   TestPOCStreamRenewsLeaseWhileStorageReadIsBlocked
+    read_lease_stream_poc_test.go:201: active stream did not renew its lease while its storage read was blocked
+--- FAIL: TestPOCStreamRenewsLeaseWhileStorageReadIsBlocked (0.25s)
+=== RUN   TestPOCRefusedLeaseRenewalClosesTheActiveStream
+    read_lease_stream_poc_test.go:228: stream did not stop after lease renewal was refused
+--- FAIL: TestPOCRefusedLeaseRenewalClosesTheActiveStream (1.25s)
+FAIL
+FAIL	forgejo.org/services/lfs	1.679s
+FAIL
+exit=1
