@@ -1,0 +1,8 @@
+python3 scripts/run_forgejo_live_webhook_reconcile_emitted.py --forgejo-binary /tmp/forgejo-17.0.0 --state-dir /tmp/forgejo-comment-adapter-readback-001 --evidence-dir evidence/forgejo-live-comment-adapter-readback-001 --ordinary-issue-comment --edit-ordinary-issue-comment --delete-ordinary-issue-comment
+python3 -m unittest tests.test_forgejo_emitted_webhook_e2e
+python3 -m py_compile scripts/run_forgejo_live_webhook_reconcile_emitted.py tests/test_forgejo_emitted_webhook_e2e.py
+cargo fmt --all -- --check
+git diff --check
+cargo metadata --offline --locked --no-deps --format-version 1
+python3 scripts/verify_cargo_license_state.py
+python3 -m unittest scripts.test_cargo_license_state

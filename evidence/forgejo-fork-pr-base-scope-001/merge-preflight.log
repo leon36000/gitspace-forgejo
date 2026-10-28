@@ -1,0 +1,21 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.17s
+     Running tests/forgejo_merge_preflight.rs (target/debug/deps/forgejo_merge_preflight-aa5dc3d199c0d2e1)
+
+running 13 tests
+test already_merged_pull_request_is_refused ... ok
+test api_snapshot_parser_binds_target_base_and_allows_fork_head ... ok
+test api_snapshot_parser_rejects_wrong_pull_request_and_html_url ... ok
+test closed_pull_request_is_refused ... ok
+test draft_pull_request_is_refused ... ok
+test fresh_open_pull_request_and_passing_proof_are_ready_for_later_review ... ok
+test missing_or_nonpassing_proof_never_becomes_ready ... ok
+test proof_for_an_old_base_is_refused ... ok
+test proof_for_an_old_candidate_is_refused ... ok
+test unknown_or_negative_mergeability_is_refused ... ok
+test verifier_cannot_also_be_the_execution_identity ... ok
+test wrong_pull_request_number_is_refused ... ok
+test wrong_repository_or_base_branch_are_refused ... ok
+
+test result: ok. 13 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

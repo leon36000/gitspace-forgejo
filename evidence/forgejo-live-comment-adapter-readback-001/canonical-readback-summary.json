@@ -1,0 +1,146 @@
+{
+  "cleanup": {
+    "cleanup_failure": null,
+    "expected_tcp_listeners_absent": true,
+    "forgejo": {
+      "expected_address": "127.0.0.1:3130",
+      "listener_addresses_after_stop": [],
+      "listener_checked": true,
+      "stop": {
+        "returncode": 0,
+        "started": true,
+        "stop_action": "terminate",
+        "stopped": true
+      }
+    },
+    "hook_disabled_before_server_stop": true,
+    "receiver": {
+      "expected_address": "127.0.0.1:46417",
+      "listener_addresses_after_stop": [],
+      "listener_checked": true,
+      "stop": {
+        "returncode": 0,
+        "started": true,
+        "stop_action": "terminate",
+        "stopped": true
+      },
+      "stops": [
+        {
+          "listener_addresses_after_stop": [],
+          "listener_checked": true,
+          "phase": "sigkill_before_duplicate_redelivery",
+          "stop": {
+            "returncode": -9,
+            "started": true,
+            "stop_action": "sigkill",
+            "stop_signal": "SIGKILL",
+            "stopped": true
+          }
+        },
+        {
+          "listener_addresses_after_stop": [],
+          "listener_checked": true,
+          "phase": "final_cleanup",
+          "stop": {
+            "returncode": 0,
+            "started": true,
+            "stop_action": "terminate",
+            "stopped": true
+          }
+        }
+      ]
+    },
+    "tracked_processes_exited": true
+  },
+  "comment_id": 6,
+  "delete_readback": {
+    "comment_id": 6,
+    "http_status": 404,
+    "verdict": "absent"
+  },
+  "forgejo_binary_sha256": "e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7",
+  "forgejo_version": "forgejo version 17.0.0+gitea-1.22.0 (release name 17.0.0) built with GNU Make 4.4.1, go1.26.9 : bindata, timetzdata, sqlite, sqlite_unlock_notify",
+  "issue_number": 1,
+  "limits": [
+    "n=1 disposable local repository",
+    "Forgejo binary build commit is not established",
+    "no model, AgentOS, RAG, or memory integration",
+    "no comparison or general effectiveness claim"
+  ],
+  "scope": "one disposable Forgejo instance on loopback",
+  "status": "verified",
+  "transitions": [
+    {
+      "action": "created",
+      "comment": {
+        "body": "Local ordinary issue-comment webhook integration probe.",
+        "body_trust": "untrusted_user_content",
+        "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/issues/1#issuecomment-6",
+        "id": 6,
+        "state": "present",
+        "updated_at": "2026-10-26T11:03:27-04:00"
+      },
+      "delivery_id": "b8d8674c-09dc-4036-9c6c-013ab8662a7c",
+      "receiver_http_status": 202,
+      "reconcile_exit_status": 0,
+      "resource": {
+        "comment_id": 6,
+        "issue_number": 1,
+        "kind": "issue_comment",
+        "owner": "forge-admin",
+        "repository": "agent-forge-core"
+      },
+      "schema_version": 5,
+      "sequence": 8,
+      "upstream_read_attempts": 2
+    },
+    {
+      "action": "edited",
+      "comment": {
+        "body": "Edited local ordinary issue-comment webhook probe.",
+        "body_trust": "untrusted_user_content",
+        "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/issues/1#issuecomment-6",
+        "id": 6,
+        "state": "present",
+        "updated_at": "2026-10-26T11:03:27-04:00"
+      },
+      "delivery_id": "ede2f24d-48f5-4c09-923a-765065c2a4a1",
+      "receiver_http_status": 202,
+      "reconcile_exit_status": 0,
+      "resource": {
+        "comment_id": 6,
+        "issue_number": 1,
+        "kind": "issue_comment",
+        "owner": "forge-admin",
+        "repository": "agent-forge-core"
+      },
+      "schema_version": 5,
+      "sequence": 9,
+      "upstream_read_attempts": 2
+    },
+    {
+      "action": "deleted",
+      "comment": {
+        "body": null,
+        "body_trust": "untrusted_user_content",
+        "html_url": null,
+        "id": 6,
+        "state": "absent",
+        "updated_at": null
+      },
+      "delivery_id": "8dae7c4e-fa4d-4f64-b585-2846ac77f32c",
+      "receiver_http_status": 202,
+      "reconcile_exit_status": 0,
+      "resource": {
+        "comment_id": 6,
+        "issue_number": 1,
+        "kind": "issue_comment",
+        "owner": "forge-admin",
+        "repository": "agent-forge-core"
+      },
+      "schema_version": 5,
+      "sequence": 10,
+      "upstream_read_attempts": 2
+    }
+  ]
+}

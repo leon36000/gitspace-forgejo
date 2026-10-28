@@ -1,0 +1,3 @@
+sha256sum -c SHA256SUMS
+Résultat après ajout de ce contrôle : 17/17 fichiers OK.
+SHA256SUMS ne s’inclut pas lui-même.

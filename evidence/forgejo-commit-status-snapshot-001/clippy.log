@@ -1,0 +1,45 @@
+    Checking generic-array v0.14.7
+    Checking serde_core v1.0.228
+    Checking libc v0.2.190
+    Checking zmij v1.0.23
+    Checking block-buffer v0.10.4
+    Checking crypto-common v0.1.7
+    Checking digest v0.10.7
+    Checking hmac v0.12.1
+    Checking cpufeatures v0.2.17
+    Checking sha2 v0.10.9
+    Checking serde v1.0.228
+    Checking serde_json v1.0.150
+    Checking agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+error: deref which would be done by auto-deref
+   --> src/webhook/reconcile.rs:431:64
+    |
+431 |         return Err(ReconcileError::UnexpectedEventPayloadField(*field));
+    |                                                                ^^^^^^ help: try: `field`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#explicit_auto_deref
+    = note: `-D clippy::explicit-auto-deref` implied by `-D warnings`
+    = help: to override `-D warnings` add `#[allow(clippy::explicit_auto_deref)]`
+
+error: this `if` has identical blocks
+   --> src/webhook/reconcile.rs:445:47
+    |
+445 |       } else if event_name == super::PUSH_EVENT {
+    |  _______________________________________________^
+446 | |         Some(ResourceKind::Branch)
+447 | |     } else if event_name == super::CREATE_EVENT || event_name == super::DELETE_EVENT {
+    | |_____^
+    |
+note: same as this
+   --> src/webhook/reconcile.rs:447:86
+    |
+447 |       } else if event_name == super::CREATE_EVENT || event_name == super::DELETE_EVENT {
+    |  ______________________________________________________________________________________^
+448 | |         Some(ResourceKind::Branch)
+449 | |     } else if super::SUPPORTED_EVENTS.contains(&event_name) {
+    | |_____^
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#if_same_then_else
+    = note: `-D clippy::if-same-then-else` implied by `-D warnings`
+    = help: to override `-D warnings` add `#[allow(clippy::if_same_then_else)]`
+
+error: could not compile `agent-forge-core` (lib) due to 2 previous errors

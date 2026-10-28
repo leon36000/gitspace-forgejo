@@ -1,0 +1,18 @@
+[
+  {
+    "command": [
+      "python3",
+      "evidence/forgejo-comment-parent-404-process-001/append_manifests.py"
+    ],
+    "output": "{\"local_entries_appended\": 22, \"local_files_verified\": 22, \"old_prefixes_preserved\": true, \"project_entries_appended\": 27, \"worktree_entries_appended\": 26}",
+    "returncode": 0
+  },
+  {
+    "command": [
+      "python3",
+      "evidence/forgejo-comment-parent-404-process-001/verify_append_only_indexes.py"
+    ],
+    "output": "{\"local_files_verified\": 22, \"old_prefixes_preserved\": true, \"project_binds_current_worktree_index\": true}",
+    "returncode": 0
+  }
+]

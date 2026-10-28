@@ -1,0 +1,18 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.01s
+     Running unittests src/bin/forgejo-reconcile-local.rs (target/debug/deps/forgejo_reconcile_local-3e9fc5f7734f2ac5)
+
+running 1 test
+
+thread 'tests::reconciliation_policy_allows_only_exact_commit_status_snapshot_route' (1443861) panicked at src/bin/forgejo-reconcile-local.rs:8154:9:
+assertion failed: api.reconciliation_request_is_allowed(&allowed, "GET", None)
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test tests::reconciliation_policy_allows_only_exact_commit_status_snapshot_route ... FAILED
+
+failures:
+
+failures:
+    tests::reconciliation_policy_allows_only_exact_commit_status_snapshot_route
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 120 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `--bin forgejo-reconcile-local`

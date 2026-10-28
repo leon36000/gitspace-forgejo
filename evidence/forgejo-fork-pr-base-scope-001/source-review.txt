@@ -1,0 +1,21 @@
+Product workspace:
+  worktree: /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace
+  HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+  state before this tranche: heavily modified; src/forgejo.rs and the process test were already untracked. No commit, reset, or overwrite performed.
+  implementation: src/forgejo.rs::PullRequestSnapshotV1::from_forgejo_response
+  parser regression: tests/forgejo_merge_preflight.rs::api_snapshot_parser_binds_target_base_and_allows_fork_head
+  process regression: tests/forgejo_preflight_process_e2e.rs::actual_preflight_cli_accepts_target_base_with_fork_head_without_writes
+  runner: scripts/run_forgejo_preflight_cli_e2e.py
+
+Forgejo source:
+  remote: https://codeberg.org/forgejo/forgejo.git
+  version: v17.0.0
+  commit: 0d791421f85ca13a63b665053d81ea765fbbc571
+  scratch: /tmp/forgejo-v17-base-cas-poc; dirty due independent POCs
+  modules/structs/pull.go blob: 1ce7550e197752d5065283bab01bc7da98dfb901
+  PullRequest.Base and Head are *PRBranchInfo; PRBranchInfo.Repository is *Repository.
+  No Forgejo source was copied or modified in this product change.
+
+Process harness:
+  Bubblewrap 0.9.0, --unshare-net, --unshare-pid, temporary read-only staged Cargo source, offline locked registry, Rust 1.95.0 / Cargo 1.95.0.
+  Endpoint and signed verifier proof are synthetic local fixtures, not live Forgejo or an LLM.

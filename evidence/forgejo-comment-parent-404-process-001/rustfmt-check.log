@@ -1,0 +1,95 @@
+$ cargo fmt --all -- --check
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:8154:
+     .expect("serialize signed Forgejo v17 issue-comment deletion payload");
+ 
+     let (mut receiver, address) = start_ready_receiver(&secret, &journal_path);
+-    let (status, accepted) = send(
+-        address,
+-        &request_event(DELIVERY_ID, "issue_comment", &body),
++    let (status, accepted) = send(address, &request_event(DELIVERY_ID, "issue_comment", &body));
++    assert_eq!(
++        status, 202,
++        "signed deletion delivery should be journaled: {accepted}"
+     );
+-    assert_eq!(status, 202, "signed deletion delivery should be journaled: {accepted}");
+     assert_eq!(accepted["accepted"], true);
+     assert_eq!(accepted["reconcile_required"], true);
+     assert!(stop_receiver(&mut receiver).success());
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:8165:
+-    let journal_before = fs::read(&journal_path).expect("snapshot accepted comment-deletion journal");
++    let journal_before =
++        fs::read(&journal_path).expect("snapshot accepted comment-deletion journal");
+ 
+     // A missing parent is ambiguous (deleted or private); do not query the
+     // comment route and do not interpret its own 404 as canonical absence.
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:8169:
+-    let fixture = start_cli_http_fixture(
+-        404,
+-        json!({"message":NOT_FOUND_BODY}),
+-        1,
+-    );
++    let fixture = start_cli_http_fixture(404, json!({"message":NOT_FOUND_BODY}), 1);
+     let output = Command::new(env!("CARGO_BIN_EXE_forgejo-reconcile-local"))
+         .env_clear()
+         .arg(&journal_path)
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:8183:
+         .expect("parent-issue API 404 fixture completed");
+ 
+     assert_eq!(output.status.code(), Some(1));
+-    assert_eq!(requests.len(), 1, "comment API must not be read after parent 404");
+-    assert!(requests[0].starts_with(
+-        "GET /api/v1/repos/forge-admin/agent-forge-core/issues/24 HTTP/1.1\r\n"
+-    ));
++    assert_eq!(
++        requests.len(),
++        1,
++        "comment API must not be read after parent 404"
++    );
++    assert!(
++        requests[0]
++            .starts_with("GET /api/v1/repos/forge-admin/agent-forge-core/issues/24 HTTP/1.1\r\n")
++    );
+     assert!(!requests[0].contains("/issues/comments/916"));
+-    assert!(requests[0]
+-        .lines()
+-        .all(|line| !line.to_ascii_lowercase().starts_with("authorization:")));
++    assert!(
++        requests[0]
++            .lines()
++            .all(|line| !line.to_ascii_lowercase().starts_with("authorization:"))
++    );
+     assert_eq!(
+         fs::read(&journal_path).expect("re-read comment-deletion journal"),
+         journal_before,
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:8204:
+     );
+     assert!(!transcript.contains(NOT_FOUND_BODY));
+     assert!(!transcript.contains("untrusted deleted comment"));
+-    let value: Value = serde_json::from_slice(&output.stdout)
+-        .expect("parent read refusal is structured JSON");
++    let value: Value =
++        serde_json::from_slice(&output.stdout).expect("parent read refusal is structured JSON");
+     assert_reconcile_schema_version(&value);
+     assert_eq!(value["verdict"], "inconclusive");
+     assert_eq!(value["error"]["code"], "resource_not_found");
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:8212:
+     assert_eq!(value["error"]["retryable"], false);
+     assert_eq!(value["upstream_read_attempts"], 1);
+-    assert_eq!(value["error"]["details"]["resource"]["kind"], "issue_comment");
+-    assert_eq!(value["error"]["details"]["resource"]["issue_number"], ISSUE_NUMBER);
+-    assert_eq!(value["error"]["details"]["resource"]["comment_id"], COMMENT_ID);
++    assert_eq!(
++        value["error"]["details"]["resource"]["kind"],
++        "issue_comment"
++    );
++    assert_eq!(
++        value["error"]["details"]["resource"]["issue_number"],
++        ISSUE_NUMBER
++    );
++    assert_eq!(
++        value["error"]["details"]["resource"]["comment_id"],
++        COMMENT_ID
++    );
+     assert!(value.get("canonical_state").is_none());
+     let action = value["error"]["action"]
+         .as_str()

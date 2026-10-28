@@ -1,0 +1,30 @@
+# Parser contract before implementation change
+cargo test --offline --locked --test forgejo_merge_preflight api_snapshot_parser_binds_target_base_and_allows_fork_head -- --exact --nocapture
+
+# Focused parser contract after implementation change
+cargo test --offline --locked --test forgejo_merge_preflight api_snapshot_parser_binds_target_base_and_allows_fork_head -- --exact --nocapture
+
+# Affected parser contract suite
+cargo test --offline --locked --test forgejo_merge_preflight -- --test-threads=1
+
+# Real read-only CLI process in the local Bubblewrap runner
+python3 scripts/run_forgejo_preflight_cli_e2e.py --scenario actual_preflight_cli_accepts_target_base_with_fork_head_without_writes
+python3 scripts/run_forgejo_preflight_cli_e2e.py --scenario actual_preflight_cli_refuses_foreign_base_repository_without_writes
+
+# Full Rust target suite
+cargo test --offline --locked --all-targets -- --test-threads=1
+
+# Diagnose the one intermittent cancellation/cgroup failure
+cargo test --offline --locked --test mission_012_mcp_lifecycle -- --test-threads=1
+cargo test --offline --locked --test mission_012_mcp_lifecycle mcp_supervisor_cancellation_terminates_the_in_flight_verifier_scope -- --exact --nocapture
+
+# Final checks
+rustfmt --edition 2024 --check src/forgejo.rs tests/forgejo_merge_preflight.rs tests/forgejo_preflight_process_e2e.rs
+git diff --check
+python3 scripts/test_cargo_license_state.py
+python3 scripts/verify_cargo_license_state.py
+
+# Pinned upstream schema
+git -C /tmp/forgejo-v17-base-cas-poc remote get-url origin
+git -C /tmp/forgejo-v17-base-cas-poc rev-parse HEAD
+git -C /tmp/forgejo-v17-base-cas-poc show HEAD:modules/structs/pull.go

@@ -1,0 +1,19 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.28s
+     Running tests/forgejo_merge_preflight.rs (target/debug/deps/forgejo_merge_preflight-aa5dc3d199c0d2e1)
+
+running 1 test
+
+thread 'api_snapshot_parser_binds_target_base_and_allows_fork_head' (599128) panicked at tests/forgejo_merge_preflight.rs:245:6:
+called `Result::unwrap()` on an `Err` value: WrongScope
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test api_snapshot_parser_binds_target_base_and_allows_fork_head ... FAILED
+
+failures:
+
+failures:
+    api_snapshot_parser_binds_target_base_and_allows_fork_head
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 12 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `--test forgejo_merge_preflight`

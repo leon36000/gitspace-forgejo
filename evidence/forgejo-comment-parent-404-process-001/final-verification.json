@@ -1,0 +1,56 @@
+{
+  "cargo_metadata": [
+    {
+      "license": null,
+      "license_file": null,
+      "metadata": {
+        "decision": "no_license_selected",
+        "redistribution_rights": "not_assessed",
+        "spdx_package_license_declared": "NOASSERTION"
+      },
+      "name": "agent-forge-core",
+      "publish": [],
+      "version": "0.1.0"
+    }
+  ],
+  "checks": {
+    "cargo_license_tests": {
+      "assertion": "9 passed",
+      "file": "cargo-license-tests.log"
+    },
+    "cargo_license_verifier": {
+      "assertion": "status=verified",
+      "file": "cargo-license-verifier.log"
+    },
+    "diff_check": {
+      "assertion": "exit 0",
+      "file": "diff-check-final.log"
+    },
+    "process_e2e": {
+      "assertion": "1 passed; 0 failed; 109 filtered",
+      "file": "process-e2e-final.log"
+    },
+    "py_compile": {
+      "assertion": "exit 0",
+      "file": "runner-pycompile.log"
+    },
+    "python_runner_tests": {
+      "assertion": "112 passed",
+      "file": "runner-python-tests.log"
+    },
+    "reconcile_contract": {
+      "assertion": "53 passed; 0 failed",
+      "file": "reconcile-contract.log"
+    },
+    "rustfmt": {
+      "assertion": "exit 0 after formatting only the changed Rust test file",
+      "file": "rustfmt-final-check.log"
+    }
+  },
+  "evidence_scope": "local fixture HTTP at 127.0.0.1:3130; no Forgejo server",
+  "initial_format_check": {
+    "file": "rustfmt-check.log",
+    "result": "failed on formatting in added test; corrected and final workspace format check passed"
+  },
+  "source_hash_file": "source-hashes.txt"
+}

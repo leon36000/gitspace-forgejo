@@ -1,0 +1,51 @@
+{
+  "bubblewrap": {
+    "command": [
+      "bwrap",
+      "--version"
+    ],
+    "output": "bubblewrap 0.9.0",
+    "returncode": 0
+  },
+  "cargo": {
+    "command": [
+      "cargo",
+      "--version"
+    ],
+    "output": "cargo 1.95.0 (f2d3ce0bd 2026-03-21)",
+    "returncode": 0
+  },
+  "git": {
+    "command": [
+      "git",
+      "--version"
+    ],
+    "output": "git version 2.43.0",
+    "returncode": 0
+  },
+  "python": {
+    "command": [
+      "python3",
+      "--version"
+    ],
+    "output": "Python 3.12.3",
+    "returncode": 0
+  },
+  "rustc": {
+    "command": [
+      "rustc",
+      "--version"
+    ],
+    "output": "rustc 1.95.0 (59807616e 2026-04-14)",
+    "returncode": 0
+  },
+  "timestamp": {
+    "command": [
+      "date",
+      "-u",
+      "-Is"
+    ],
+    "output": "2026-10-26T21:23:44+00:00",
+    "returncode": 0
+  }
+}
