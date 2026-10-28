@@ -1,0 +1,3 @@
+# CONTINUATION-187-FULL — pièces d’admission
+
+Pièces produites par le parcours composé décrit dans [son rapport principal](../mission-012-live-agent-webhook-cont187-context-observation/local-run.md). Elles lient l’événement webhook, le readback de l’issue Forgejo et l’admission de version 2. Le DTO indique `source=current_forgejo_issue_api` et `trust=untrusted_user_content`; le texte d’issue brut n’est pas reproduit dans ce rapport. `admission.json`, `result.json`, `provenance.json` et les readbacks sont couverts par le `SHA256SUMS` local. Leur vérification append-only est enregistrée dans `manifest-check.txt` et `global-manifest-check.txt`.

@@ -1,0 +1,2 @@
+Append-only receipt verification: PASS
+{"local_evidence_files_verified": 23}

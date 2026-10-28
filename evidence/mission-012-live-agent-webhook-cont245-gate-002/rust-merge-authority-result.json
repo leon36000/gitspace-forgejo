@@ -1,0 +1,74 @@
+{
+  "api_version": "forgejo-rest-v1",
+  "external_writer_exclusion": "trusted_supervisor_policy_not_independently_verified",
+  "http_status": 200,
+  "issue_state": "closed",
+  "main_head_sha": "ecd6e5fb3c3b8f07c29454815ca1befa8e637664",
+  "merge_attempted": true,
+  "merge_authorized": true,
+  "merge_commit_base_parent_sha": "f7d7f5dabf7a258de8204fa682f8477414de1eac",
+  "merge_commit_head_parent_sha": "087db2429250b3b92e35bc3bf2e9531f75eb14da",
+  "merge_commit_sha": "ecd6e5fb3c3b8f07c29454815ca1befa8e637664",
+  "merge_commit_tree_entries_sha256": "5acd4a07d65b213d48afbf510a23dd1cce043a3faa61212a4e4d61af48792e74",
+  "mission_admission": {
+    "admission_sha256": "021837250ef98fb791f322885826e56e6627acbe6ad296ad22bdf3dd14a192a1",
+    "allocation_id": "mission012-same-host-gate-245",
+    "base_commit": "f7d7f5dabf7a258de8204fa682f8477414de1eac",
+    "execution_generation": 1,
+    "issue_number": 1,
+    "mission_id": "mission-v1-94c26001d4370e63d3637fd5c06ef13f0496424a39a74bf498b7512b7d2b37b5",
+    "request_sha256": "e84c33f42ec6e5bc57440185936466fef0074cfa32a32c43c02423383bcae215",
+    "requirement_sha256": "3a3c444075c93a3bcfb2bec17d1a2e74ec0051effc2994e6b02ac095eb0dd431",
+    "schema_version": 1
+  },
+  "operation": "local_test_merge_authority",
+  "postmerge_base_sha": "ecd6e5fb3c3b8f07c29454815ca1befa8e637664",
+  "pull_request_number": 2,
+  "reviewed_candidate_tree_entries_sha256": "5acd4a07d65b213d48afbf510a23dd1cce043a3faa61212a4e4d61af48792e74",
+  "schema_version": 1,
+  "submitted_head_sha": "087db2429250b3b92e35bc3bf2e9531f75eb14da",
+  "target": {
+    "base_branch": "main",
+    "origin": "http://127.0.0.1:3132",
+    "owner": "forge-admin",
+    "repository": "mission-012-clamp",
+    "selector": "mission-012-clamp"
+  },
+  "validated_base_sha": "f7d7f5dabf7a258de8204fa682f8477414de1eac",
+  "verdict": "merged",
+  "writer_admission": {
+    "expires_at_monotonic_ns": 244094879518424,
+    "forgejo": {
+      "network_namespace": "net:[4026536246]",
+      "pid": 3706505,
+      "pid_namespace": "pid:[4026531836]",
+      "start_time_ticks": 24403181
+    },
+    "gate": {
+      "network_namespace": "net:[4026536246]",
+      "pid": 3707374,
+      "pid_namespace": "pid:[4026531836]",
+      "start_time_ticks": 24403487
+    },
+    "nonce_sha256": "77a255b7e80a5bf52b676fa0d41b13019dab4d794caa1116ba998ea8755ed8b9",
+    "pre_post_revalidated": true,
+    "profile": "local_single_writer_sandbox",
+    "schema_version": 1,
+    "supervisor": {
+      "network_namespace": "net:[4026536246]",
+      "pid": 3705403,
+      "pid_namespace": "pid:[4026531836]",
+      "start_time_ticks": 24402608
+    },
+    "supervisor_policy_independently_verified": false,
+    "supervisor_uid": 1000,
+    "target": {
+      "base_branch": "main",
+      "origin": "http://127.0.0.1:3132",
+      "owner": "forge-admin",
+      "profile_selector": "mission-012-clamp",
+      "pull_request_number": 2,
+      "repository": "mission-012-clamp"
+    }
+  }
+}

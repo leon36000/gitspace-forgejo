@@ -1,0 +1,33 @@
+{
+  "acceptance_sha256": "5d4727542ea32f61aa4500754556fcfd1f39b59b4131ede257cb736fab231dc2",
+  "base_commit": "f7d7f5dabf7a258de8204fa682f8477414de1eac",
+  "candidate_commit": "087db2429250b3b92e35bc3bf2e9531f75eb14da",
+  "candidate_tree_oid": "518f1e74cfd70f848c882b9937588dadd5710b10",
+  "changed_paths_from_base": [
+    "src/lib.rs"
+  ],
+  "command": [
+    "cargo",
+    "test",
+    "--offline",
+    "--locked",
+    "--test",
+    "acceptance"
+  ],
+  "commit": "ecd6e5fb3c3b8f07c29454815ca1befa8e637664",
+  "elapsed_ms": 240,
+  "environment": "fresh Cargo target and home; read-only merged commit snapshot and toolchain; Bubblewrap network/PID/user namespaces; user namespaces disabled; systemd CPU/memory/task/deadline scope; no host home, gate credential, or network",
+  "exit_code": 0,
+  "limitation": "Post-merge acceptance behavior was tested on the exact materialized merge commit. This remains one deterministic fixture run; it is not an AgentOS/LLM run or a comparative benchmark.",
+  "main_head_after_merge": "ecd6e5fb3c3b8f07c29454815ca1befa8e637664",
+  "merge_tree_oid": "518f1e74cfd70f848c882b9937588dadd5710b10",
+  "output_bytes": 435,
+  "output_sha256": "8516841d705f5b24a65813a5729b7d75f38323a09e1d1dd42b3b1fff326626bf",
+  "policy_sha256": "e23907b5bd6b2c0f342c88ddcfa9f9a9be98065adcd24f9f7299dc796b5739eb",
+  "requirement_sha256": "3a3c444075c93a3bcfb2bec17d1a2e74ec0051effc2994e6b02ac095eb0dd431",
+  "schema_version": 1,
+  "source_sha256": "173304ad7d32aabc1e8e1ee41eabda3398a8690798e68f906bcebc73cbcd6d15",
+  "test_summary": "2 passed; 0 failed",
+  "timed_out": false,
+  "verdict": "pass"
+}

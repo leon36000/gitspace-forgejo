@@ -1,0 +1,2 @@
+Global append-only bindings: PASS
+{"parent_binds_current_worktree_index": true, "project_prefix_preserved": true, "worktree_prefix_preserved": true}
