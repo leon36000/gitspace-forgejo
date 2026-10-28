@@ -18625,3 +18625,5 @@ f48cc2eef451307c1959fdfc89ea3e277844077949ddd26a9a358954be506d1a  evidence/conti
 eaf15d26b588d182bbdf98a98f91d4893b05934717ebdc41ef4fb0e43537e968  evidence/continuation-433-release-tag-path-segments-native-001/global-manifest-verify.json
 9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa  evidence/continuation-433-release-tag-path-segments-native-001/global-manifest-verify.exit
 0a71e34ef28d94b09ccc9f6c006def9dc6ed2cb0d727058afe5e1e03ca6f5dd2  evidence/continuation-433-release-tag-path-segments-native-001/SHA256SUMS
+e0fa3f446fb4f1f771172649dd96f951449a78a22cde3bbad000b4a4a4310ae3  evidence/gitlab-pc4-transfer-003/local-run.md
+d096e2e3102096c2e4d31a7331d97615e1333f2909efdc669f9e31f6149ab5e0  docs/checkpoint.md

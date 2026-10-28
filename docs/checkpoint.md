@@ -1,5 +1,13 @@
 # Checkpoint — 28 octobre 2026
 
+## GITLAB-PC4-TRANSFER-003 — synchronisation des lots 432/433 — 28 octobre 2026
+
+Le delta local a été synchronisé sur le projet privé `root/gitspace-forgejo` (ID 4), branche de travail `codex/pc6-transfer-work-2026-10-28`, par l’intégration GitLab connectée. Le commit `cfc7590beeafc54677fc32690c176cf0629fdfac` ajoute 54 fichiers et met à jour 9 fichiers (5 386 209 octets au total), dont les sources/docs modifiés et les reçus CONTINUATION-432/433. Le readback récursif vérifie les 63 Git blob IDs et modes contre les fichiers locaux : 63/63 identiques, 0 absent, 0 divergent. Reçu : [GITLAB-PC4-TRANSFER-003](../evidence/gitlab-pc4-transfer-003/local-run.md).
+
+Le pipeline GitLab 164 pour ce commit était `running` au dernier readback (`2026-10-28 17:46:43 -04:00`); ce n’est pas un résultat CI réussi. Le précédent pipeline 163 était `success`, mais il porte le commit précédent seulement. La branche par défaut protégée et les demandes de fusion restent inchangées. Aucun courriel n’a été ouvert : le connecteur déjà authentifié suffisait, et aucun identifiant n’a été copié dans le dépôt.
+
+Le dépôt PC4 dispose maintenant des sources et des preuves textuelles synchronisées jusque CONTINUATION-433; l’archive texte CONTINUATION-002 contient les preuves historiques transférées précédemment. Les archives binaires ZIP, caches, `.runtime`, `.claude`, la configuration Git locale et les secrets ne sont pas copiés. Les refs/historique Git local ne sont pas transplantés. Le shell Codex reste sur PC6 et ne résout pas le nom tailnet PC4; le travail distant se fait via l’API GitLab connectée et ses pipelines, pas dans un terminal PC4. Suite : relever le résultat du pipeline 164, puis poursuivre les lots sur le worktree préservé et synchroniser chaque lot vérifié sur cette branche, avec readback par empreinte. Le projet reste incomplet.
+
 ## CONTINUATION-433 — URL de tag Release à segments dans le parcours natif — 28 octobre 2026
 
 La correction Rust de CONTINUATION-432 laissait un second encodeur incompatible dans le validateur de composition Python : quote(tag_name, safe="") échappait tout le tag. Le test composition a échoué avant correction pour feature/v1.0 avec « current release URL is not derived from the configured repository and tag ». Le code découpe désormais le tag sur /, quote chaque segment avec le jeu sûr Go $&+:@=, puis réassemble les segments. Les cas feature/v1.0, feature/a+b, feature/a;b et feature/café passent dans ReleaseReconciliationCompositionTests (9/9).
