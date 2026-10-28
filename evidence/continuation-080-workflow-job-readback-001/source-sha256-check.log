@@ -1,0 +1,7 @@
+/tmp/forgejo-v17-base-cas-poc/modules/webhook/type.go: OK
+/tmp/forgejo-v17-base-cas-poc/modules/structs/hook.go: OK
+/tmp/forgejo-v17-base-cas-poc/modules/structs/action.go: OK
+/tmp/forgejo-v17-base-cas-poc/services/webhook/notifier.go: OK
+/tmp/forgejo-v17-base-cas-poc/routers/api/v1/repo/action.go: OK
+/tmp/forgejo-v17-base-cas-poc/services/convert/action.go: OK
+/tmp/forgejo-v17-base-cas-poc/models/actions/run_job.go: OK

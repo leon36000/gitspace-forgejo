@@ -1,0 +1,9 @@
+Transcript excerpt from the initial pre-implementation command:
+
+$ cargo test --offline --locked --test webhook_reconcile_contract workflow_run_success_webhook_uses_current_api_state_and_redacts_event_payload -- --exact --nocapture
+running 1 test
+thread 'workflow_run_success_webhook_uses_current_api_state_and_redacts_event_payload' panicked:
+called `Result::unwrap()` on an `Err` value: UnsupportedEvent
+test workflow_run_success_webhook_uses_current_api_state_and_redacts_event_payload ... FAILED
+
+This was the intended semantic red: the workflow-run event was unsupported before the new adapter contract was implemented.

@@ -1,0 +1,11 @@
+Captured 2026-10-26, UTC
+Product checkout HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+Product branch: local/WEBHOOK-005-canonical-links (dirty worktree)
+Rust compiler: rustc 1.95.0 (59807616e 2026-04-14)
+Cargo: 1.95.0 (f2d3ce0bd 2026-03-21)
+Python: 3.12.3
+Bubblewrap: 0.9.0
+Git: 2.43.0
+Target: linux/aarch64
+Forgejo source: v17.0.0, commit 0d791421f85ca13a63b665053d81ea765fbbc571
+Forgejo source scratch: /tmp/forgejo-v17-base-cas-poc (dirty overall; cited source files unchanged)
