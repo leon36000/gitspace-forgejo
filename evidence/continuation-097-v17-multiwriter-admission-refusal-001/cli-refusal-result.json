@@ -1,0 +1,68 @@
+{
+  "argv": [
+    "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/target/debug/forgejo-reconcile-local",
+    "--merge-local-test",
+    "--target-profile",
+    "merge-014-agent-forge-core",
+    "23",
+    "missing-proof.json",
+    "missing-expected.json",
+    "missing-key",
+    "missing-policy.json",
+    "missing-review-binding.json",
+    "fixture-gate",
+    "999999"
+  ],
+  "returncode": 1,
+  "stdout": {
+    "api_version": "forgejo-rest-v1",
+    "error": {
+      "action": "run the gate only inside a sandbox that excludes every other Forgejo writer, or use a server that requires the verified base commit on every merge path",
+      "code": "server_expected_base_precondition_unavailable",
+      "details": {
+        "merge_post_attempted": false,
+        "server_expected_base_precondition": "not_mandatory_or_unavailable",
+        "writer_admission_profile": "forgejo_v17_multiwriter"
+      },
+      "http_status": null,
+      "retryable": false
+    },
+    "external_writer_exclusion": "not_provided_by_cooperative_lock",
+    "merge_attempted": false,
+    "merge_authorized": false,
+    "operation": "local_test_merge_authority",
+    "pull_request_number": 23,
+    "schema_version": 1,
+    "target": {
+      "base_branch": "main",
+      "origin": "http://127.0.0.1:3130",
+      "owner": "forge-admin",
+      "repository": "agent-forge-core",
+      "selector": "merge-014-agent-forge-core"
+    },
+    "verdict": "inconclusive"
+  },
+  "stderr": "",
+  "assertion": "default multiwriter profile refused before credential descriptor read",
+  "explicit_sandbox_probe": {
+    "argv": [
+      "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/target/debug/forgejo-reconcile-local",
+      "--merge-local-test",
+      "--writer-admission-profile",
+      "local_single_writer_sandbox",
+      "--target-profile",
+      "merge-014-agent-forge-core",
+      "23",
+      "missing-proof.json",
+      "missing-expected.json",
+      "missing-key",
+      "missing-policy.json",
+      "missing-review-binding.json",
+      "fixture-gate",
+      "999999"
+    ],
+    "returncode": 1,
+    "stderr": "cannot secure the host credential descriptor\n",
+    "assertion": "explicit local sandbox selection passed profile admission and reached invalid-FD validation; it does not prove sandbox enforcement"
+  }
+}

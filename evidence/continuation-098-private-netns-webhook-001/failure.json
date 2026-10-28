@@ -1,0 +1,7 @@
+{
+  "cleanup_failure": null,
+  "error_message": "Forgejo did not deliver the expected webhook event to the receiver",
+  "error_type": "RuntimeError",
+  "stage": "deliver_closed_pull_request_event",
+  "verdict": "failed"
+}

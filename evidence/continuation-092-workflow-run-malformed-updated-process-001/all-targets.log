@@ -1,0 +1,208 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.65s
+     Running unittests src/lib.rs (target/debug/deps/agent_forge_core-4f3c0a59eee64024)
+
+running 11 tests
+...........
+test result: ok. 11 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.09s
+
+     Running unittests src/main.rs (target/debug/deps/agent_forge_core-b9742ad16d453f0e)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/forgejo-mission-local.rs (target/debug/deps/forgejo_mission_local-07e6661870a4625d)
+
+running 34 tests
+..................................
+test result: ok. 34 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.07s
+
+     Running unittests src/bin/forgejo-reconcile-local.rs (target/debug/deps/forgejo_reconcile_local-3e9fc5f7734f2ac5)
+
+running 144 tests
+....................................................................................... 87/144
+.........................................................
+test result: ok. 144 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 10.06s
+
+     Running unittests src/bin/forgejo-webhook-local.rs (target/debug/deps/forgejo_webhook_local-56310d649f1759d0)
+
+running 4 tests
+....
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 3.22s
+
+     Running unittests src/bin/gate.rs (target/debug/deps/gate-cdaaa55ea2a0e8dc)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/mission-012-mcp-host.rs (target/debug/deps/mission_012_mcp_host-3e32cf331dafa499)
+
+running 27 tests
+...........................
+test result: ok. 27 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 8.35s
+
+     Running unittests src/bin/mission-012-verify-local.rs (target/debug/deps/mission_012_verify_local-efe680254b98a82f)
+
+running 19 tests
+...................
+test result: ok. 19 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 7.90s
+
+     Running tests/agent_mission_identity_contract.rs (target/debug/deps/agent_mission_identity_contract-490ba25ab9630e44)
+
+running 6 tests
+......
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/agent_runtime_contract.rs (target/debug/deps/agent_runtime_contract-6eab092b75d50757)
+
+running 10 tests
+..........
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.44s
+
+     Running tests/forgejo_merge_approval.rs (target/debug/deps/forgejo_merge_approval-c955ced9fc722b76)
+
+running 33 tests
+.................................
+test result: ok. 33 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.45s
+
+     Running tests/forgejo_merge_lock.rs (target/debug/deps/forgejo_merge_lock-820411f60f76dbc6)
+
+running 6 tests
+......
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running tests/forgejo_merge_post_crash_recovery_process_e2e.rs (target/debug/deps/forgejo_merge_post_crash_recovery_process_e2e-a93ded6c21f8476f)
+
+running 8 tests
+iiiiiiii
+test result: ok. 0 passed; 0 failed; 8 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/forgejo_merge_preflight.rs (target/debug/deps/forgejo_merge_preflight-aa5dc3d199c0d2e1)
+
+running 13 tests
+.............
+test result: ok. 13 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/forgejo_merge_readiness.rs (target/debug/deps/forgejo_merge_readiness-9db8b4d20949688b)
+
+running 10 tests
+..........
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/forgejo_mission_delivery_process.rs (target/debug/deps/forgejo_mission_delivery_process-e3f068f8296e9210)
+
+running 3 tests
+i..
+test result: ok. 2 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/forgejo_mission_delivery_process_e2e.rs (target/debug/deps/forgejo_mission_delivery_process_e2e-b4b936c5c7cb8e50)
+
+running 3 tests
+iii
+test result: ok. 0 passed; 0 failed; 3 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/forgejo_preflight_process_e2e.rs (target/debug/deps/forgejo_preflight_process_e2e-84b0e5d5909ae68e)
+
+running 5 tests
+iiii.
+test result: ok. 1 passed; 0 failed; 4 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/forgejo_reconcile_capabilities_e2e.rs (target/debug/deps/forgejo_reconcile_capabilities_e2e-79e71d1241083922)
+
+running 5 tests
+i.i..
+test result: ok. 3 passed; 0 failed; 2 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests/mission_012_mcp_lifecycle.rs (target/debug/deps/mission_012_mcp_lifecycle-8222febbc3dbb2d9)
+
+running 29 tests
+............................i
+test result: ok. 28 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 31.16s
+
+     Running tests/mission_admission_contract.rs (target/debug/deps/mission_admission_contract-e97ef4e8d91fdc1e)
+
+running 16 tests
+................
+test result: ok. 16 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running tests/mission_execution_journal_contract.rs (target/debug/deps/mission_execution_journal_contract-c0799a5ee06e38e9)
+
+running 68 tests
+..i............................................i....................
+test result: ok. 66 passed; 0 failed; 2 ignored; 0 measured; 0 filtered out; finished in 0.39s
+
+     Running tests/mission_verification_cpu_budget_contract.rs (target/debug/deps/mission_verification_cpu_budget_contract-69682ed1963ac80f)
+
+running 7 tests
+.......
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.06s
+
+     Running tests/reconcile_config_contract.rs (target/debug/deps/reconcile_config_contract-9069dc04dad0536b)
+
+running 4 tests
+....
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/reconcile_journal_lock_timeout.rs (target/debug/deps/reconcile_journal_lock_timeout-b4142bc5746006ba)
+
+running 3 tests
+...
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 5.27s
+
+     Running tests/webhook_contract.rs (target/debug/deps/webhook_contract-3a77ed745bc0a522)
+
+running 10 tests
+..........
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+
+     Running tests/webhook_handler_contract.rs (target/debug/deps/webhook_handler_contract-627b310cb6f343c9)
+
+running 26 tests
+..........................
+test result: ok. 26 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.22s
+
+     Running tests/webhook_http_contract.rs (target/debug/deps/webhook_http_contract-c2471fc0bf34976e)
+
+running 7 tests
+.......
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/webhook_inbox_capacity.rs (target/debug/deps/webhook_inbox_capacity-352b9312506e15ee)
+
+running 6 tests
+......
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/webhook_mission_admission_contract.rs (target/debug/deps/webhook_mission_admission_contract-970f84c8f68c75fe)
+
+running 14 tests
+..............
+test result: ok. 14 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+     Running tests/webhook_receiver_process_e2e.rs (target/debug/deps/webhook_receiver_process_e2e-6caa738f5453f442)
+
+running 105 tests
+........i...............iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii 87/105
+iiiiiiiii..i....ii
+test result: ok. 29 passed; 0 failed; 76 ignored; 0 measured; 0 filtered out; finished in 7.06s
+
+     Running tests/webhook_receiver_storage_security.rs (target/debug/deps/webhook_receiver_storage_security-a64c16bc41b3310b)
+
+running 3 tests
+...
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/webhook_reconcile_contract.rs (target/debug/deps/webhook_reconcile_contract-1e83f04d6aace668)
+
+running 52 tests
+....................................................
+test result: ok. 52 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.23s
+
+     Running tests/webhook_reconcile_pipeline.rs (target/debug/deps/webhook_reconcile_pipeline-059c903bd86c5636)
+
+running 3 tests
+...
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+

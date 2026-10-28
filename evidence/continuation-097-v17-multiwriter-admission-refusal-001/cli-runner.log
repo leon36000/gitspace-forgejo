@@ -1,0 +1,1 @@
+PASS: CLI refused the default multi-writer profile before reading the invalid credential FD

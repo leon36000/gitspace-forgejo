@@ -1,0 +1,2 @@
+Offline locked Rust suite: PASS, 34 test executables, 597 passed, 0 failed, 98 ignored.
+Command: cargo test --offline --locked --all-targets -- --test-threads=1 --quiet
