@@ -1,0 +1,25 @@
+{
+  "acceptance_sha256": "5d4727542ea32f61aa4500754556fcfd1f39b59b4131ede257cb736fab231dc2",
+  "base_commit": "c64d94fbdb488f4f88c14b5d2c29ba3ce34cdb0b",
+  "candidate_commit": "224fa6e0efddea0044d14d863642ef66f912b017",
+  "candidate_source_sha256": "173304ad7d32aabc1e8e1ee41eabda3398a8690798e68f906bcebc73cbcd6d15",
+  "command": "cargo test --offline --locked",
+  "exit_code": 0,
+  "ledger_effect": "not updated; this is retrospective and carries no merge authority",
+  "limitation": "A retrospective behavior check does not replace the pre-merge journaled verifier or establish general task quality.",
+  "main_ref_after_merge": "ee3fd74ad24f715d2aebed86ca0de3ea6c780a18",
+  "merge_commit": "ee3fd74ad24f715d2aebed86ca0de3ea6c780a18",
+  "merge_parents": [
+    "c64d94fbdb488f4f88c14b5d2c29ba3ce34cdb0b",
+    "224fa6e0efddea0044d14d863642ef66f912b017"
+  ],
+  "merge_tree_matches_candidate_tree": true,
+  "output_file": "postmerge-cargo-test.log",
+  "output_sha256": "02f5fcbbf8cba30202f019e8360503c95f6914d7617956f74ae1bf7d1c104186",
+  "sandbox": "systemd resource scope plus Bubblewrap user/mount/PID/network namespaces; read-only exact merged commit snapshot; tmpfs Cargo target; no host home/credentials; offline locked Cargo",
+  "schema_version": 1,
+  "toolchain": "/home/pc6/.rustup/toolchains/1.95.0-aarch64-unknown-linux-gnu/bin/cargo",
+  "verdict": "pass",
+  "verification_kind": "post_merge_retrospective_no_merge_authority",
+  "wall_ms": 371
+}
