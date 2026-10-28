@@ -1,0 +1,17 @@
+Forgejo source review boundary for CONTINUATION-314
+Official-source scratch: /tmp/forgejo-v17-base-cas-poc
+Audited source revision: 0d791421f85ca13a63b665053d81ea765fbbc571 (Forgejo v17.0.0)
+The scratch is dirty due to unrelated prior POCs. The three target source files match the audited HEAD; no Forgejo source is copied or edited by this product change.
+
+Reviewed symbols:
+- services/pull/pull.go::ValidatePullRequest, around lines 375-410. SHA-256 9061cbc4246ad99cef4fec117072aabc9965e6ab7fcc87d4950bc438e402f424; blob 55cdfabbc8725f28d3fd0c70b69eaf1fce684792.
+- services/pull/review.go::DismissApprovalReviews, around lines 442-468. SHA-256 95007aeb8c241ef5e52e85b5346daaa34ba5b924be9cb3e2aa83c43cb0f9d042; blob 4eba1f66163234d6c46637f659b2b37dac7ea613.
+- models/issues/review.go::DismissReview, around lines 574-588. SHA-256 9a249afcc4471ba65e2a79a7eb8cd89e6176e767268c30835a6efaefa0d96845; blob 27b472b2a1c9965b013657e0ed66108b739e50bf.
+
+Observed behavior in disposable Forgejo:
+- With normal stale-approval dismissal enabled, after source PR merge the review readback showed dismissed=true and CLI admission refused it.
+- With dismissal disabled only in the test fixture, the merged source review was stale=true and dismissed=false.
+- The gate admits only an APPROVED, official, non-dismissed review on the exact source head by an allowlisted ID, with requirements bytes equal at merge and current protected branch.
+- An old-head review remains rejected by the commit binding.
+
+Coverage: three source functions and this local flow, not a full audit of Forgejo permissions, every merge/write route, race behavior, upstream tests or license compatibility. Forgejo v17 source was not copied. Product license remains unselected; GitSpace rights remain unknown.

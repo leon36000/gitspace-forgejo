@@ -1,0 +1,24 @@
+Forgejo v17.0.0 source review — CONTINUATION-315
+Official source revision: 0d791421f85ca13a63b665053d81ea765fbbc571
+Scratch: /tmp/forgejo-v17-base-cas-poc (globally dirty; services/pull/merge.go is modified)
+All excerpts were read with git show HEAD:<path>. No Forgejo file was edited in this lot.
+
+Relevant source paths and exact HEAD-content SHA-256:
+- routers/api/v1/repo/pull.go::MergePullRequest (line 864): 10586bae76ce9976cfdd44bec2196bd74216e5555a11eae78ca6d41867023dcb
+- services/pull/check.go::CheckPullMergeable (line 68), CheckPullBranchProtections (line 496): d51ab2040c82c89609368db0ea3f781dfc047d50fda3d3b785e4d4267b420b88
+- services/pull/merge.go::Merge (line 207): 43d724e4bcdcad0d48ca6b04430b18612c1008af86a374afa932b23d83659ac6 (hash is from git show HEAD; working copy is modified)
+- services/pull/merge_prepare.go::createTemporaryRepoForMerge (line 46): bce4ae33fbb4ad939a30332f46b653640f6486ab963e184097ac0c60d9100f1a
+- models/issues/pull.go::HasEnoughApprovals/GetGrantedApprovalsCount (lines 898/906): d49511635b8a69e54389c83477e282f62445744cabd951adb7698f083831584b
+- models/issues/review.go::IsOfficialReviewer (line 259): 9a249afcc4471ba65e2a79a7eb8cd89e6176e767268c30835a6efaefa0d96845
+- services/pull/pull.go::ValidatePullRequest (line 378): 9061cbc4246ad99cef4fec117072aabc9965e6ab7fcc87d4950bc438e402f424
+- services/pull/review.go::DismissApprovalReviews (line 443): 95007aeb8c241ef5e52e85b5346daaa34ba5b924be9cb3e2aa83c43cb0f9d042
+
+Observed call/field rules in the official source:
+1. The API route dispatches general merge, auto merge, and manually merged cases differently. For the normal general route, it calls CheckPullMergeable before pull_service.Merge and forwards ForceMerge as the protection-bypass parameter.
+2. CheckPullMergeable performs branch protection checks inside a DB transaction. CheckPullBranchProtections delegates required approval count to HasEnoughApprovals.
+3. GetGrantedApprovalsCount queries review rows of type approve, official=true, dismissed=false. It also adds stale=false only when IgnoreStaleApprovals is true.
+4. IsOfficialReviewer checks the configured approvals whitelist (or write access when whitelist is disabled); SubmitReview persists the resulting Official flag.
+5. Merge receives expectedHeadCommitID. createTemporaryRepoForMerge compares that exact head against the fetched PR head; the inspected signature carries no expected review-list generation or expected base SHA.
+6. MergeCheckTypeManually returns before the branch-protection check. Auto mode follows a delayed path; full later revalidation was not examined. ForceMerge/admin behavior was not exercised here.
+
+Coverage: eight targeted functions/files, one commit. No Go tests, no full Forgejo audit, no Web/Actions/receive-pack survey, no controlled concurrency experiment and no changed-source build. The call gap indicates a TOCTOU question, not confirmed exploitability. CONT-314 local runs are evidence of the configured path and dismissed-review behavior, not proof of atomic approval authorization.

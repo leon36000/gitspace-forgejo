@@ -1,0 +1,293 @@
+{
+  "admission_mode": "webhook_delivery",
+  "admission_schema_version": 3,
+  "agent_runtime_invoked": false,
+  "allocation_id": "mission012-live-webhook-001",
+  "allocation_replayed": true,
+  "base_commit": "90383900edefdb6b6290e2417626034e3341509d",
+  "claim": "already_claimed",
+  "execution_generation": 1,
+  "execution_request": {
+    "capabilities": {
+      "budget": {
+        "max_output_tokens": 4096,
+        "max_tool_calls": 12,
+        "timeout_ms": 300000
+      },
+      "read_paths": [
+        "Cargo.toml",
+        "Cargo.lock",
+        "requirements/MISSION-012-CLAMP-001.json",
+        "src/lib.rs",
+        "tests/acceptance.rs"
+      ],
+      "tools": [
+        "mission.context",
+        "workspace.read_text",
+        "workspace.write_text",
+        "cargo.test"
+      ],
+      "write_paths": [
+        "src/lib.rs"
+      ]
+    },
+    "context": {
+      "citations": [
+        {
+          "source_index": 0,
+          "text_end_byte": 277,
+          "text_start_byte": 0
+        },
+        {
+          "source_index": 1,
+          "text_end_byte": 564,
+          "text_start_byte": 277
+        }
+      ],
+      "manifest": {
+        "estimated_tokens": 141,
+        "requirement_sha256": "a1b1280052c2c0d605afec66360b563f9817b41b63ec5d62572104da233379b6",
+        "schema_version": 1,
+        "source_commit": "90383900edefdb6b6290e2417626034e3341509d",
+        "sources": [
+          {
+            "file_sha256": "a1b1280052c2c0d605afec66360b563f9817b41b63ec5d62572104da233379b6",
+            "line_end": 1,
+            "line_start": 1,
+            "path": "requirements/MISSION-012-CLAMP-001.json",
+            "provenance": "git:90383900edefdb6b6290e2417626034e3341509d:requirements/MISSION-012-CLAMP-001.json#L1-L1"
+          },
+          {
+            "file_sha256": "de0175e0fc5341a0ff3080f647ee16f4f4c1c45a205fc01ee8ec73899b3f9aa2",
+            "line_end": 9,
+            "line_start": 1,
+            "path": "src/lib.rs",
+            "provenance": "git:90383900edefdb6b6290e2417626034e3341509d:src/lib.rs#L1-L9"
+          }
+        ],
+        "token_budget": 900
+      },
+      "text": "Protected requirement MISSION-012-CLAMP-001 revision 1\nRequest: Correct clamp_to_range so values above maximum return maximum.\nAcceptance criteria:\n- Values below minimum return minimum.\n- Values above maximum return maximum.\n- Values within the inclusive range are unchanged.\nPinned source src/lib.rs lines 1-9:\npub fn clamp_to_range(value: i32, minimum: i32, maximum: i32) -> i32 {\n    if value < minimum {\n        minimum\n    } else if value > maximum {\n        minimum // BUG: values above the range should clamp to maximum.\n    } else {\n        value\n    }\n}\n"
+    },
+    "idempotency_key": "execution-v1-7e944b67de1d668d6a1b57b7af4dfc8b78acf30934aeea454dffc27026469ecb-1",
+    "mission_id": "mission-v1-7e944b67de1d668d6a1b57b7af4dfc8b78acf30934aeea454dffc27026469ecb",
+    "requirement_arbitration": {
+      "approved_review_ids": [
+        1
+      ],
+      "policy_revision": 1,
+      "policy_sha256": "748b8bd55fac7b7952f5a570fa46ae4572522139527343574b967f0d51a66363",
+      "requirements_sha256": "a1b1280052c2c0d605afec66360b563f9817b41b63ec5d62572104da233379b6",
+      "review_snapshot_sha256": "6d4d794c7276b1bf016d73abb1ef62c69c609bc1abcb6770dc748b81f119fe21",
+      "reviewer_ids": [
+        2
+      ],
+      "schema_version": 1,
+      "source_head_sha": "38e9fd1f5cd26ee8296d89e5cd2fdba8f06cfc31",
+      "source_merge_commit_sha": "90383900edefdb6b6290e2417626034e3341509d",
+      "source_pull_request_number": 2
+    },
+    "requirement_sha256": "a1b1280052c2c0d605afec66360b563f9817b41b63ec5d62572104da233379b6",
+    "requirements_json": "{\"acceptance\":[\"Values below minimum return minimum.\",\"Values above maximum return maximum.\",\"Values within the inclusive range are unchanged.\"],\"ambiguities\":[],\"decisions\":[{\"ambiguity\":\"Which branch may the code change touch?\",\"rationale\":\"Keep the small behavioral correction scoped to the faulty function.\",\"resolution\":\"Only src/lib.rs may change for the mission implementation.\"}],\"id\":\"MISSION-012-CLAMP-001\",\"request\":\"Correct clamp_to_range so values above maximum return maximum.\",\"revision\":1,\"schema_version\":3,\"source_issue_number\":1,\"source_pull_request_number\":2}",
+    "schema_version": 2,
+    "untrusted_work_item": {
+      "body": {
+        "kind": "text",
+        "text": "Correct clamp_to_range so values above maximum return maximum. Preserve lower-bound and inclusive in-range behavior. Edit only src/lib.rs and run the protected acceptance tests before and after the fix."
+      },
+      "content_sha256": "639db6d9d3edcc3fb3063afe26dbfece717ef792c16aef4f686062f5b83b2494",
+      "issue_number": 1,
+      "origin": "http://127.0.0.1:3132",
+      "owner": "forge-admin",
+      "repository": "mission-012-clamp",
+      "schema_version": 1,
+      "source": "current_forgejo_issue_api",
+      "source_url": "http://127.0.0.1:3132/api/v1/repos/forge-admin/mission-012-clamp/issues/1",
+      "title": "MISSION-012: clamp upper boundary",
+      "trust": "untrusted_user_content",
+      "updated_at": "2026-10-27T21:35:03-04:00"
+    },
+    "workspace": {
+      "base_commit": "90383900edefdb6b6290e2417626034e3341509d",
+      "id": "mission-012-clamp-issue-1"
+    }
+  },
+  "host_admission": {
+    "allocation": {
+      "allocation_id": "mission012-live-webhook-001",
+      "execution_generation": 1,
+      "mission_id": "mission-v1-7e944b67de1d668d6a1b57b7af4dfc8b78acf30934aeea454dffc27026469ecb",
+      "requirement_sha256": "a1b1280052c2c0d605afec66360b563f9817b41b63ec5d62572104da233379b6",
+      "schema_version": 1
+    },
+    "base_commit": "90383900edefdb6b6290e2417626034e3341509d",
+    "issue_number": 1,
+    "request": {
+      "capabilities": {
+        "budget": {
+          "max_output_tokens": 4096,
+          "max_tool_calls": 12,
+          "timeout_ms": 300000
+        },
+        "read_paths": [
+          "Cargo.toml",
+          "Cargo.lock",
+          "requirements/MISSION-012-CLAMP-001.json",
+          "src/lib.rs",
+          "tests/acceptance.rs"
+        ],
+        "tools": [
+          "mission.context",
+          "workspace.read_text",
+          "workspace.write_text",
+          "cargo.test"
+        ],
+        "write_paths": [
+          "src/lib.rs"
+        ]
+      },
+      "context": {
+        "citations": [
+          {
+            "source_index": 0,
+            "text_end_byte": 277,
+            "text_start_byte": 0
+          },
+          {
+            "source_index": 1,
+            "text_end_byte": 564,
+            "text_start_byte": 277
+          }
+        ],
+        "manifest": {
+          "estimated_tokens": 141,
+          "requirement_sha256": "a1b1280052c2c0d605afec66360b563f9817b41b63ec5d62572104da233379b6",
+          "schema_version": 1,
+          "source_commit": "90383900edefdb6b6290e2417626034e3341509d",
+          "sources": [
+            {
+              "file_sha256": "a1b1280052c2c0d605afec66360b563f9817b41b63ec5d62572104da233379b6",
+              "line_end": 1,
+              "line_start": 1,
+              "path": "requirements/MISSION-012-CLAMP-001.json",
+              "provenance": "git:90383900edefdb6b6290e2417626034e3341509d:requirements/MISSION-012-CLAMP-001.json#L1-L1"
+            },
+            {
+              "file_sha256": "de0175e0fc5341a0ff3080f647ee16f4f4c1c45a205fc01ee8ec73899b3f9aa2",
+              "line_end": 9,
+              "line_start": 1,
+              "path": "src/lib.rs",
+              "provenance": "git:90383900edefdb6b6290e2417626034e3341509d:src/lib.rs#L1-L9"
+            }
+          ],
+          "token_budget": 900
+        },
+        "text": "Protected requirement MISSION-012-CLAMP-001 revision 1\nRequest: Correct clamp_to_range so values above maximum return maximum.\nAcceptance criteria:\n- Values below minimum return minimum.\n- Values above maximum return maximum.\n- Values within the inclusive range are unchanged.\nPinned source src/lib.rs lines 1-9:\npub fn clamp_to_range(value: i32, minimum: i32, maximum: i32) -> i32 {\n    if value < minimum {\n        minimum\n    } else if value > maximum {\n        minimum // BUG: values above the range should clamp to maximum.\n    } else {\n        value\n    }\n}\n"
+      },
+      "idempotency_key": "execution-v1-7e944b67de1d668d6a1b57b7af4dfc8b78acf30934aeea454dffc27026469ecb-1",
+      "mission_id": "mission-v1-7e944b67de1d668d6a1b57b7af4dfc8b78acf30934aeea454dffc27026469ecb",
+      "requirement_arbitration": {
+        "approved_review_ids": [
+          1
+        ],
+        "policy_revision": 1,
+        "policy_sha256": "748b8bd55fac7b7952f5a570fa46ae4572522139527343574b967f0d51a66363",
+        "requirements_sha256": "a1b1280052c2c0d605afec66360b563f9817b41b63ec5d62572104da233379b6",
+        "review_snapshot_sha256": "6d4d794c7276b1bf016d73abb1ef62c69c609bc1abcb6770dc748b81f119fe21",
+        "reviewer_ids": [
+          2
+        ],
+        "schema_version": 1,
+        "source_head_sha": "38e9fd1f5cd26ee8296d89e5cd2fdba8f06cfc31",
+        "source_merge_commit_sha": "90383900edefdb6b6290e2417626034e3341509d",
+        "source_pull_request_number": 2
+      },
+      "requirement_sha256": "a1b1280052c2c0d605afec66360b563f9817b41b63ec5d62572104da233379b6",
+      "requirements_json": "{\"acceptance\":[\"Values below minimum return minimum.\",\"Values above maximum return maximum.\",\"Values within the inclusive range are unchanged.\"],\"ambiguities\":[],\"decisions\":[{\"ambiguity\":\"Which branch may the code change touch?\",\"rationale\":\"Keep the small behavioral correction scoped to the faulty function.\",\"resolution\":\"Only src/lib.rs may change for the mission implementation.\"}],\"id\":\"MISSION-012-CLAMP-001\",\"request\":\"Correct clamp_to_range so values above maximum return maximum.\",\"revision\":1,\"schema_version\":3,\"source_issue_number\":1,\"source_pull_request_number\":2}",
+      "schema_version": 2,
+      "untrusted_work_item": {
+        "body": {
+          "kind": "text",
+          "text": "Correct clamp_to_range so values above maximum return maximum. Preserve lower-bound and inclusive in-range behavior. Edit only src/lib.rs and run the protected acceptance tests before and after the fix."
+        },
+        "content_sha256": "639db6d9d3edcc3fb3063afe26dbfece717ef792c16aef4f686062f5b83b2494",
+        "issue_number": 1,
+        "origin": "http://127.0.0.1:3132",
+        "owner": "forge-admin",
+        "repository": "mission-012-clamp",
+        "schema_version": 1,
+        "source": "current_forgejo_issue_api",
+        "source_url": "http://127.0.0.1:3132/api/v1/repos/forge-admin/mission-012-clamp/issues/1",
+        "title": "MISSION-012: clamp upper boundary",
+        "trust": "untrusted_user_content",
+        "updated_at": "2026-10-27T21:35:03-04:00"
+      },
+      "workspace": {
+        "base_commit": "90383900edefdb6b6290e2417626034e3341509d",
+        "id": "mission-012-clamp-issue-1"
+      }
+    },
+    "requirement_path": "requirements/MISSION-012-CLAMP-001.json",
+    "requirement_sha256": "a1b1280052c2c0d605afec66360b563f9817b41b63ec5d62572104da233379b6",
+    "schema_version": 1,
+    "scope": {
+      "branch": "main",
+      "origin": "http://127.0.0.1:3132",
+      "owner": "forge-admin",
+      "repository": "mission-012-clamp"
+    }
+  },
+  "host_admission_file": "/tmp/continuation-314-v3-source-review-state-003/project/.runtime/host-admission.json",
+  "host_admission_source": {
+    "allocation_id": "mission012-live-webhook-001",
+    "delivery_id": "8d0ad112-3500-42bd-ae19-6d30a5628465",
+    "issue_number": 1,
+    "journal_event_id": "evt-1",
+    "journal_event_sha256": "1e61ca44fcb813d87dee4f74c82e3b1017945fe1a37ee2030a5fed6797cf3336",
+    "journal_kind": "forgejo.webhook.v1.issues",
+    "journal_sequence": 1,
+    "mission_id": "mission-v1-7e944b67de1d668d6a1b57b7af4dfc8b78acf30934aeea454dffc27026469ecb",
+    "requirement_sha256": "a1b1280052c2c0d605afec66360b563f9817b41b63ec5d62572104da233379b6",
+    "schema_version": 1,
+    "scope": {
+      "branch": "main",
+      "origin": "http://127.0.0.1:3132",
+      "owner": "forge-admin",
+      "repository": "mission-012-clamp"
+    }
+  },
+  "host_admission_source_file": "/tmp/continuation-314-v3-source-review-state-003/project/.runtime/mission-host-admission-source-1d7b84f3dfed6f87381ca5a2e67731275ef86f450f464d9a57ca047d8c394715.json",
+  "idempotency_key": "execution-v1-7e944b67de1d668d6a1b57b7af4dfc8b78acf30934aeea454dffc27026469ecb-1",
+  "issue_number": 1,
+  "mission_id": "mission-v1-7e944b67de1d668d6a1b57b7af4dfc8b78acf30934aeea454dffc27026469ecb",
+  "path_protection_readback": "branch protected flag observed; server-side requirements/** rule not independently read",
+  "profile_id": "mission-012-clamp",
+  "requirement_arbitration": {
+    "approved_review_ids": [
+      1
+    ],
+    "policy_revision": 1,
+    "policy_sha256": "748b8bd55fac7b7952f5a570fa46ae4572522139527343574b967f0d51a66363",
+    "requirements_sha256": "a1b1280052c2c0d605afec66360b563f9817b41b63ec5d62572104da233379b6",
+    "review_snapshot_sha256": "6d4d794c7276b1bf016d73abb1ef62c69c609bc1abcb6770dc748b81f119fe21",
+    "reviewer_ids": [
+      2
+    ],
+    "schema_version": 1,
+    "source_head_sha": "38e9fd1f5cd26ee8296d89e5cd2fdba8f06cfc31",
+    "source_merge_commit_sha": "90383900edefdb6b6290e2417626034e3341509d",
+    "source_pull_request_number": 2
+  },
+  "requirement_path": "requirements/MISSION-012-CLAMP-001.json",
+  "requirement_sha256": "a1b1280052c2c0d605afec66360b563f9817b41b63ec5d62572104da233379b6",
+  "sandbox_only": true,
+  "schema_version": 2,
+  "scope": "http://127.0.0.1:3132/forge-admin/mission-012-clamp@main",
+  "verdict": "already_claimed",
+  "webhook": {
+    "delivery_id": "8d0ad112-3500-42bd-ae19-6d30a5628465",
+    "reconciled_state": "open",
+    "reconciled_updated_at": "2026-10-27T21:35:03-04:00",
+    "requirement_sha256_matches_cli_argument": true
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "approved_review_id": 1,
+  "base_branch": "main",
+  "current_main_matches_merge_commit": true,
+  "head_branch": "requirements/mission-012-v3",
+  "merged": true,
+  "policy_file_mode": "0o600",
+  "policy_revision": 1,
+  "policy_sha256": "748b8bd55fac7b7952f5a570fa46ae4572522139527343574b967f0d51a66363",
+  "pull_request_state": "closed",
+  "requirements_bytes_match_source_readback": true,
+  "requirements_sha256": "a1b1280052c2c0d605afec66360b563f9817b41b63ec5d62572104da233379b6",
+  "reviewer_id": 2,
+  "reviewer_login": "verifier-bot",
+  "source_head_sha": "feff85cc9cb42aa14d3416a4d1767d7e6bef7f93",
+  "source_merge_commit_sha": "bf4c3951c732cf1c0dee8c7cb85dea76a2c5fafa",
+  "source_pull_request_number": 2
+}

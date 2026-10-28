@@ -1,0 +1,18 @@
+git -C /tmp/forgejo-v17-base-cas-poc rev-parse HEAD
+git -C /tmp/forgejo-v17-base-cas-poc status --short -- routers/api/v1/repo/pull.go services/pull/check.go services/pull/merge.go services/pull/merge_prepare.go models/issues/pull.go models/issues/review.go services/pull/pull.go services/pull/review.go
+git -C /tmp/forgejo-v17-base-cas-poc show HEAD:routers/api/v1/repo/pull.go | rg -n -C 4 'MergePullRequest'
+git -C /tmp/forgejo-v17-base-cas-poc show HEAD:services/pull/check.go | rg -n -C 4 'CheckPullMergeable|CheckPullBranchProtections'
+git -C /tmp/forgejo-v17-base-cas-poc show HEAD:services/pull/merge.go | rg -n -C 4 'func Merge\('
+git -C /tmp/forgejo-v17-base-cas-poc show HEAD:services/pull/merge_prepare.go | rg -n -C 4 'createTemporaryRepoForMerge'
+git -C /tmp/forgejo-v17-base-cas-poc show HEAD:models/issues/pull.go | rg -n -C 4 'HasEnoughApprovals|GetGrantedApprovalsCount'
+git -C /tmp/forgejo-v17-base-cas-poc show HEAD:models/issues/review.go | rg -n -C 4 'IsOfficialReviewer'
+git -C /tmp/forgejo-v17-base-cas-poc show HEAD:services/pull/pull.go | rg -n -C 4 'ValidatePullRequest'
+git -C /tmp/forgejo-v17-base-cas-poc show HEAD:services/pull/review.go | rg -n -C 4 'DismissApprovalReviews'
+git -C /tmp/forgejo-v17-base-cas-poc show HEAD:routers/api/v1/repo/pull.go | sha256sum
+git -C /tmp/forgejo-v17-base-cas-poc show HEAD:services/pull/check.go | sha256sum
+git -C /tmp/forgejo-v17-base-cas-poc show HEAD:services/pull/merge.go | sha256sum
+git -C /tmp/forgejo-v17-base-cas-poc show HEAD:services/pull/merge_prepare.go | sha256sum
+git -C /tmp/forgejo-v17-base-cas-poc show HEAD:models/issues/pull.go | sha256sum
+git -C /tmp/forgejo-v17-base-cas-poc show HEAD:models/issues/review.go | sha256sum
+git -C /tmp/forgejo-v17-base-cas-poc show HEAD:services/pull/pull.go | sha256sum
+git -C /tmp/forgejo-v17-base-cas-poc show HEAD:services/pull/review.go | sha256sum

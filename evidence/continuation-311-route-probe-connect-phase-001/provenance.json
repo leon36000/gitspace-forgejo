@@ -1,0 +1,25 @@
+{
+  "bubblewrap_version": "bubblewrap 0.9.0",
+  "cargo": "/home/pc6/.rustup/toolchains/1.95.0-aarch64-unknown-linux-gnu/bin/cargo",
+  "cargo_version": "cargo 1.95.0 (f2d3ce0bd 2026-03-21)",
+  "egress_helper_sha256": "fd1703c89dabe52560a402d6a9021c399c7ba75cb998e07496d8fb10bbb94a76",
+  "fixture_hashes": {
+    "fixture-Cargo.lock": "bdb2881b9353515e92fee4f1e8bb5b93499594a9d182ee12e11a92d84857ad92",
+    "fixture-Cargo.toml": "8686fa309d52c8ea431e8e5555b5ea576f6a8962fb792f59e849ec4aa545c035",
+    "fixture-acceptance.rs": "1f8f5b7934914511bb2a9b9821b2ce77946527d72370d5b58199eb56fd0f0669",
+    "fixture-source-final.rs": "6937c269b5a838c3eb28343721f59774b3d9a15bac9da5016d788fa8e0005c04",
+    "fixture-source-initial.rs": "b1540292cbcb881f7830ffaf0ccb053bb3a438fb2a77c59e8c4f9bea14f9e1d1"
+  },
+  "forgejo_binary_sha256": "e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7",
+  "forgejo_helper_sha256": "c7cd2e7eec6b5f315b59c9a75e40b26fffc68c9236004bf4f41c1e8fd06557ba",
+  "head_commit": "f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0",
+  "kernel": "Linux 7.0.0-1019-nvidia aarch64 GNU/Linux",
+  "mcp_host_sha256": "ce3e2153db82e575793e13d014728ab784ccbcdab9883e34800a6529fb496ed8",
+  "python_version": "3.12.3",
+  "runner_sha256": "a02c50f4c9b2e838d8bca21cf15e8340549df4061200a94b0a15960e9614f19d",
+  "rustc": "/home/pc6/.rustup/toolchains/1.95.0-aarch64-unknown-linux-gnu/bin/rustc",
+  "sandbox_boundary": "actual --stdio-mcp task child launched by Bubblewrap --unshare-net/--unshare-pid; trusted gate read held outside child namespace",
+  "sandbox_test_sha256": "4d704dcf77f4af33daf4d4b23d1f56f01edb954d7484910c896db1161f04daee",
+  "sandbox_wrapper_sha256": "8c702c01b0438b934e0a1ebcc5475285ff3997e75d45a985424bde73b2a3e9d6",
+  "task_adapter_sha256": "518d9245888a5bb2f5e3427771e20df6fa3e1b99a374e7925b99bc775f636038"
+}

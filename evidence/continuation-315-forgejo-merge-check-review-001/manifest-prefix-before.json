@@ -1,0 +1,17 @@
+{
+  "evidence/continuation-315-forgejo-merge-check-review-001/SHA256SUMS": {
+    "bytes": 0,
+    "lines": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "evidence/SHA256SUMS": {
+    "bytes": 2076780,
+    "lines": 15835,
+    "sha256": "e2c662465f87af907b301ff4d532012c6db6388e53dbeee08768e61abb4d73bb"
+  },
+  "../../evidence/SHA256SUMS": {
+    "bytes": 1637412,
+    "lines": 10275,
+    "sha256": "b312da0d3c54ebff0c940da184b73ec475f2222498ce3e5410ce3c7983d4e9d5"
+  }
+}

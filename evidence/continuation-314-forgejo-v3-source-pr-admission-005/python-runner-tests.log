@@ -1,0 +1,56 @@
+........................usage: test_forgejo_live_webhook_mission_admission.py [-h] --forgejo-binary
+                                                      FORGEJO_BINARY
+                                                      [--repo-root REPO_ROOT]
+                                                      [--source-git-dir SOURCE_GIT_DIR]
+                                                      [--source-git-work-tree SOURCE_GIT_WORK_TREE]
+                                                      --state-dir STATE_DIR
+                                                      --evidence-dir
+                                                      EVIDENCE_DIR
+                                                      [--allocation-id ALLOCATION_ID]
+                                                      [--build-mcp-host]
+                                                      [--build-test-crash-injection-host]
+                                                      [--native-replay-admission]
+                                                      [--receiver-overload-first-delivery]
+                                                      [--native-issue-comment-refusal]
+                                                      [--native-issue-edit-conflict]
+                                                      [--schema-v3-source-review]
+test_forgejo_live_webhook_mission_admission.py: error: --native-issue-edit-conflict must run without other native replay/refusal modes
+.....usage: test_forgejo_live_webhook_mission_admission.py [-h] --forgejo-binary
+                                                      FORGEJO_BINARY
+                                                      [--repo-root REPO_ROOT]
+                                                      [--source-git-dir SOURCE_GIT_DIR]
+                                                      [--source-git-work-tree SOURCE_GIT_WORK_TREE]
+                                                      --state-dir STATE_DIR
+                                                      --evidence-dir
+                                                      EVIDENCE_DIR
+                                                      [--allocation-id ALLOCATION_ID]
+                                                      [--build-mcp-host]
+                                                      [--build-test-crash-injection-host]
+                                                      [--native-replay-admission]
+                                                      [--receiver-overload-first-delivery]
+                                                      [--native-issue-comment-refusal]
+                                                      [--native-issue-edit-conflict]
+                                                      [--schema-v3-source-review]
+test_forgejo_live_webhook_mission_admission.py: error: --receiver-overload-first-delivery requires --native-replay-admission
+........usage: test_forgejo_live_webhook_mission_admission.py [-h] --forgejo-binary
+                                                      FORGEJO_BINARY
+                                                      [--repo-root REPO_ROOT]
+                                                      [--source-git-dir SOURCE_GIT_DIR]
+                                                      [--source-git-work-tree SOURCE_GIT_WORK_TREE]
+                                                      --state-dir STATE_DIR
+                                                      --evidence-dir
+                                                      EVIDENCE_DIR
+                                                      [--allocation-id ALLOCATION_ID]
+                                                      [--build-mcp-host]
+                                                      [--build-test-crash-injection-host]
+                                                      [--native-replay-admission]
+                                                      [--receiver-overload-first-delivery]
+                                                      [--native-issue-comment-refusal]
+                                                      [--native-issue-edit-conflict]
+                                                      [--schema-v3-source-review]
+test_forgejo_live_webhook_mission_admission.py: error: --schema-v3-source-review must run without other native replay/refusal modes
+......
+----------------------------------------------------------------------
+Ran 43 tests in 0.068s
+
+OK

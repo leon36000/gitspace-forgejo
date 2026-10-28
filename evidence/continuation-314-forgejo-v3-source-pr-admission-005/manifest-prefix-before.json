@@ -1,0 +1,17 @@
+{
+  "evidence/continuation-314-forgejo-v3-source-pr-admission-005/SHA256SUMS": {
+    "bytes": 956,
+    "lines": 11,
+    "sha256": "42eec2b89fc42275270a46a90213ecf894278367c3741b0e1f2dc4a2488a3643"
+  },
+  "evidence/SHA256SUMS": {
+    "bytes": 2072597,
+    "lines": 15804,
+    "sha256": "f794aa463b6d2c61d391b69c66367ee20bd6b7d5508529d18a83e0fcff3d3d20"
+  },
+  "../../evidence/SHA256SUMS": {
+    "bytes": 1632151,
+    "lines": 10243,
+    "sha256": "56ea57e9cc527371a50a884234f36ed2f4f6dabffab91b072b0df14b4b7ee30a"
+  }
+}

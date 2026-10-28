@@ -1,0 +1,237 @@
+0d791421f85ca13a63b665053d81ea765fbbc571
+ M services/pull/merge.go
+859-	}
+860-	ctx.NotFound()
+861-}
+862-
+863:// MergePullRequest merges a PR given an index
+864:func MergePullRequest(ctx *context.APIContext) {
+865:	// swagger:operation POST /repos/{owner}/{repo}/pulls/{index}/merge repository repoMergePullRequest
+866-	// ---
+867-	// summary: Merge a pull request
+868-	// produces:
+869-	// - application/json
+--
+886-	//   required: true
+887-	// - name: body
+888-	//   in: body
+889-	//   schema:
+890:	//     $ref: "#/definitions/MergePullRequestOption"
+891-	// responses:
+892-	//   "200":
+893-	//     "$ref": "#/responses/empty"
+894-	//   "404":
+--
+901-	//     "$ref": "#/responses/quotaExceeded"
+902-	//   "423":
+903-	//     "$ref": "#/responses/repoArchivedError"
+904-
+905:	form := web.GetForm(ctx).(*forms.MergePullRequestForm)
+906-
+907-	pr, err := issues_model.GetPullRequestByIndex(ctx, ctx.Repo().Repository.ID, ctx.ParamsInt64(":index"))
+908-	if err != nil {
+909-		if issues_model.IsErrPullRequestNotExist(err) {
+--
+1358-
+1359-	ctx.Status(http.StatusOK)
+1360-}
+1361-
+1362:// MergePullRequest cancel an auto merge scheduled for a given PullRequest by index
+1363-func CancelScheduledAutoMerge(ctx *context.APIContext) {
+1364-	// swagger:operation DELETE /repos/{owner}/{repo}/pulls/{index}/merge repository repoCancelScheduledAutoMerge
+1365-	// ---
+1366-	// summary: Cancel the scheduled auto merge for the given pull request
+63-	MergeCheckTypeManually                       // Manually Merged button (mark a PR as merged manually)
+64-	MergeCheckTypeAuto                           // Auto Merge (Scheduled Merge) After Checks Succeed
+65-)
+66-
+67:// CheckPullMergeable check if the pull mergeable based on all conditions (branch protection, merge options, ...)
+68:func CheckPullMergeable(stdCtx context.Context, doer *user_model.User, perm *access_model.Permission, pr *issues_model.PullRequest, mergeCheckType MergeCheckType, adminSkipProtectionCheck bool, mergeStyle repo_model.MergeStyle) error {
+69-	return db.WithTx(stdCtx, func(ctx context.Context) error {
+70-		if pr.HasMerged {
+71-			return ErrHasMerged
+72-		}
+--
+101-		if pr.IsChecking() {
+102-			return ErrIsChecking
+103-		}
+104-
+105:		if pb, err := CheckPullBranchProtections(ctx, pr, false); err != nil {
+106-			if !models.IsErrDisallowedToMerge(err) {
+107-				log.Error("Error whilst checking pull branch protection for %-v: %v", pr, err)
+108-				return err
+109-			}
+203-}
+204-
+205-// Merge merges pull request to base repository.
+206-// Caller should check PR is ready to be merged (review and status checks)
+207:func Merge(ctx context.Context, pr *issues_model.PullRequest, doer *user_model.User, baseGitRepo *git.Repository, mergeStyle repo_model.MergeStyle, expectedHeadCommitID, message string, wasAutoMerged bool) error {
+208-	defer pullWorkingPool.Lock(fmt.Sprint(pr.ID))()
+209-
+210-	pr, err := issues_model.GetPullRequestByID(ctx, pr.ID)
+211-	if err != nil {
+42-		Stderr: ctx.errbuf,
+43-	}
+44-}
+45-
+46:func createTemporaryRepoForMerge(ctx context.Context, pr *issues_model.PullRequest, doer *user_model.User, expectedHeadCommitID string) (mergeCtx *mergeContext, cancel context.CancelFunc, err error) {
+47-	// Clone base repo.
+48-	prCtx, cancel, err := createTemporaryRepoForPR(ctx, pr)
+49-	if err != nil {
+50-		log.Error("createTemporaryRepoForPR: %v", err)
+893-	return pr.Status != PullRequestStatusChecking && pr.Status != PullRequestStatusConflict &&
+894-		pr.Status != PullRequestStatusError && !pr.IsWorkInProgress(ctx)
+895-}
+896-
+897:// HasEnoughApprovals returns true if pr has enough granted approvals.
+898:func HasEnoughApprovals(ctx context.Context, protectBranch *git_model.ProtectedBranch, pr *PullRequest) bool {
+899-	if protectBranch.RequiredApprovals == 0 {
+900-		return true
+901-	}
+902:	return GetGrantedApprovalsCount(ctx, protectBranch, pr) >= protectBranch.RequiredApprovals
+903-}
+904-
+905:// GetGrantedApprovalsCount returns the number of granted approvals for pr. A granted approval must be authored by a user in an approval whitelist.
+906:func GetGrantedApprovalsCount(ctx context.Context, protectBranch *git_model.ProtectedBranch, pr *PullRequest) int64 {
+907-	sess := db.GetEngine(ctx).Where("issue_id = ?", pr.IssueID).
+908-		And("type = ?", ReviewTypeApprove).
+909-		And("official = ?", true).
+910-		And("dismissed = ?", false)
+--
+912-		sess = sess.And("stale = ?", false)
+913-	}
+914-	approvals, err := sess.Count(new(Review))
+915-	if err != nil {
+916:		log.Error("GetGrantedApprovalsCount: %v", err)
+917-		return 0
+918-	}
+919-
+920-	return approvals
+254-	CommitID     string
+255-	Stale        bool
+256-}
+257-
+258:// IsOfficialReviewer check if at least one of the provided reviewers can make official reviews in issue (counts towards required approvals)
+259:func IsOfficialReviewer(ctx context.Context, issue *Issue, reviewer *user_model.User) (bool, error) {
+260-	if err := issue.LoadPullRequest(ctx); err != nil {
+261-		return false, err
+262-	}
+263-
+--
+286-
+287-	return false, nil
+288-}
+289-
+290:// IsOfficialReviewerTeam check if reviewer in this team can make official reviews in issue (counts towards required approvals)
+291:func IsOfficialReviewerTeam(ctx context.Context, issue *Issue, team *organization.Team) (bool, error) {
+292-	if err := issue.LoadPullRequest(ctx); err != nil {
+293-		return false, err
+294-	}
+295-	pb, err := git_model.GetFirstMatchProtectedBranchRule(ctx, issue.PullRequest.BaseRepoID, issue.PullRequest.BaseBranch)
+--
+423-			// Only reviewers latest review of type approve and reject shall count as "official", so existing reviews needs to be cleared
+424-			if _, err := db.Exec(ctx, "UPDATE `review` SET official=? WHERE issue_id=? AND reviewer_id=?", false, issue.ID, doer.ID); err != nil {
+425-				return nil, nil, err
+426-			}
+427:			if official, err = IsOfficialReviewer(ctx, issue, doer); err != nil {
+428-				return nil, nil, err
+429-			}
+430-		}
+431-
+--
+453-			// Only reviewers latest review of type approve and reject shall count as "official", so existing reviews needs to be cleared
+454-			if _, err := db.Exec(ctx, "UPDATE `review` SET official=? WHERE issue_id=? AND reviewer_id=?", false, issue.ID, doer.ID); err != nil {
+455-				return nil, nil, err
+456-			}
+457:			if official, err = IsOfficialReviewer(ctx, issue, doer); err != nil {
+458-				return nil, nil, err
+459-			}
+460-			// delete previous review requests from the same user
+461-			reviewCond := builder.Eq{"reviewer_id": doer.ID, "issue_id": issue.ID}
+--
+669-	}
+670-
+671-	// if the reviewer is an official reviewer,
+672-	// remove the official flag in the all previous reviews
+673:	official, err := IsOfficialReviewer(ctx, issue, reviewer)
+674-	if err != nil {
+675-		return nil, err
+676-	} else if official {
+677-		if _, err := sess.Exec("UPDATE `review` SET official=? WHERE issue_id=? AND reviewer_id=?", false, issue.ID, reviewer.ID); err != nil {
+--
+729-	if _, err = db.DeleteByBean(ctx, review); err != nil {
+730-		return nil, err
+731-	}
+732-
+733:	official, err := IsOfficialReviewer(ctx, issue, reviewer)
+734-	if err != nil {
+735-		return nil, err
+736-	} else if official {
+737-		if err := restoreLatestOfficialReview(ctx, issue.ID, reviewer.ID); err != nil {
+--
+787-	if review != nil {
+788-		return nil, nil
+789-	}
+790-
+791:	official, err := IsOfficialReviewerTeam(ctx, issue, reviewer)
+792-	if err != nil {
+793-		return nil, fmt.Errorf("isOfficialReviewerTeam(): %w", err)
+794-	}
+795-
+--
+839-	if _, err = db.DeleteByBean(ctx, review); err != nil {
+840-		return nil, err
+841-	}
+842-
+843:	official, err := IsOfficialReviewerTeam(ctx, issue, reviewer)
+844-	if err != nil {
+845-		return nil, fmt.Errorf("isOfficialReviewerTeam(): %w", err)
+846-	}
+847-
+--
+923-		}
+924-
+925-		permResult = p.CanAccess(perm.AccessModeWrite, unit.TypePullRequests)
+926-		if !permResult {
+927:			if permResult, err = IsOfficialReviewer(ctx, issue, doer); err != nil {
+928-				return false, err
+929-			}
+930-		}
+931-
+339-			log.Error("checkForInvalidation: %v", invalidationErr)
+340-		}
+341-		if err == nil {
+342-			for _, pr := range prs {
+343:				ValidatePullRequest(ctx, pr, newCommitID, oldCommitID, doer)
+344-
+345-				pr.HeadCommitID = newCommitID
+346-				notify_service.PullRequestSynchronized(ctx, doer, pr)
+347-			}
+--
+374-
+375-// Mark old reviews as stale if diff to mergebase has changed.
+376-// Dismiss all approval reviews if protected branch rule item enabled.
+377-// Update commit divergence.
+378:func ValidatePullRequest(ctx context.Context, pr *issues_model.PullRequest, newCommitID, oldCommitID string, doer *user_model.User) {
+379-	objectFormat := git.ObjectFormatFromName(pr.BaseRepo.ObjectFormatName)
+380-	if newCommitID == "" || newCommitID == objectFormat.EmptyObjectID().String() {
+381-		return
+382-	}
+438-
+439-	return review, comm, nil
+440-}
+441-
+442:// DismissApprovalReviews dismiss all approval reviews because of new commits
+443:func DismissApprovalReviews(ctx context.Context, doer *user_model.User, pull *issues_model.PullRequest) error {
+444-	reviews, err := issues_model.FindReviews(ctx, issues_model.FindReviewOptions{
+445-		ListOptions: db.ListOptionsAll,
+446-		IssueID:     pull.IssueID,
+447-		Types:       []issues_model.ReviewType{issues_model.ReviewTypeApprove},
+10586bae76ce9976cfdd44bec2196bd74216e5555a11eae78ca6d41867023dcb  -
+d51ab2040c82c89609368db0ea3f781dfc047d50fda3d3b785e4d4267b420b88  -
+43d724e4bcdcad0d48ca6b04430b18612c1008af86a374afa932b23d83659ac6  -
+bce4ae33fbb4ad939a30332f46b653640f6486ab963e184097ac0c60d9100f1a  -
+d49511635b8a69e54389c83477e282f62445744cabd951adb7698f083831584b  -
+9a249afcc4471ba65e2a79a7eb8cd89e6176e767268c30835a6efaefa0d96845  -
+9061cbc4246ad99cef4fec117072aabc9965e6ab7fcc87d4950bc438e402f424  -
+95007aeb8c241ef5e52e85b5346daaa34ba5b924be9cb3e2aa83c43cb0f9d042  -

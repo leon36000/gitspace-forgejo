@@ -1,0 +1,7 @@
+git HEAD (base examined): f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+rustc: rustc 1.95.0 (59807616e 2026-04-14)
+cargo: cargo 1.95.0 (f2d3ce0bd 2026-03-21)
+bubblewrap: 0.9.0
+platform: Linux 7.0.0-1019-nvidia-aarch64-with-glibc2.39
+Forgejo server used in this lot: none (loopback HTTP fixture only)
+LLM/AgentOS used in this lot: none

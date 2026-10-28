@@ -1,0 +1,13 @@
+exit_code=1
+E
+======================================================================
+ERROR: test_sandbox_route_gate_requires_all_routes_to_fail_at_connect (__main__.AgentCommandTests.test_sandbox_route_gate_requires_all_routes_to_fail_at_connect)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "tests/test_mission_012_live_mcp_agent_e2e.py", line 31, in test_sandbox_route_gate_requires_all_routes_to_fail_at_connect
+    self.assertIsNone(driver.validate_sandbox_route_probe_observations(checks))
+AttributeError: module 'run_mission_012_live_mcp_agent_e2e' has no attribute 'validate_sandbox_route_probe_observations'
+
+Ran 1 test in 0.000s
+
+FAILED (errors=1)

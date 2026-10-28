@@ -1,0 +1,7 @@
+{
+  "cleanup_failure": null,
+  "error_detail": "valid Forgejo issue delivery was not admitted (mission_requirement_arbitration_insufficient)",
+  "error_type": "RuntimeError",
+  "stage": "admit_emitted_issue_delivery",
+  "verdict": "failed"
+}

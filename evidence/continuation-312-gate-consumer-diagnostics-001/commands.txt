@@ -1,0 +1,17 @@
+TDD red, before implementation:
+  python3 tests/test_mission_012_live_mcp_agent_e2e.py AgentCommandTests.test_sandbox_route_gate_requires_all_routes_to_fail_at_connect
+  exit 1: AttributeError, validate_sandbox_route_probe_observations absent (see red-test.log)
+
+TDD green after implementation:
+  python3 tests/test_mission_012_live_mcp_agent_e2e.py AgentCommandTests.test_sandbox_route_gate_requires_all_routes_to_fail_at_connect
+  exit 0, 1 test OK
+
+Final suite:
+  python3 tests/test_mission_012_live_mcp_agent_e2e.py
+  exit 0, 18 tests OK (see green-test.log)
+  python3 -m py_compile scripts/run_mission_012_live_mcp_agent_e2e.py tests/test_mission_012_live_mcp_agent_e2e.py
+  exit 0
+  git diff --check
+  exit 0
+
+No Forgejo e2e, Rust/Cargo command, LLM call or external service was used in CONT-312.

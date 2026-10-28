@@ -1,0 +1,11 @@
+Recorded 2026-10-27 from the local environment:
+rustc 1.95.0 (59807616e 2026-04-14)
+cargo 1.95.0 (f2d3ce0bd 2026-03-21)
+Python 3.12.3
+Bubblewrap 0.9.0
+Linux gx10-e526 7.0.0-1019-nvidia #19~24.04.2-Ubuntu SMP PREEMPT_DYNAMIC Sun Sep 6 18:35:11 UTC 2 aarch64 aarch64 aarch64 GNU/Linux
+Forgejo version 17.0.0+gitea-1.22.0 (release name 17.0.0), built with GNU Make 4.4.1, Go 1.26.9 (bundled assets, timetzdata, sqlite, sqlite_unlock_notify)
+Forgejo binary: /tmp/forgejo-17.0.0
+Forgejo binary SHA-256: e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7
+Forgejo build commit: unknown
+Product worktree HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0 (dirty; 1700+ status entries)

@@ -1,0 +1,21 @@
+Forgejo official source blobs at commit 0d791421f85ca13a63b665053d81ea765fbbc571.
+Each digest is the SHA-256 of `git show HEAD:<path>` output in /tmp/forgejo-v17-base-cas-poc.
+
+10586bae76ce9976cfdd44bec2196bd74216e5555a11eae78ca6d41867023dcb  routers/api/v1/repo/pull.go
+d51ab2040c82c89609368db0ea3f781dfc047d50fda3d3b785e4d4267b420b88  services/pull/check.go
+43d724e4bcdcad0d48ca6b04430b18612c1008af86a374afa932b23d83659ac6  services/pull/merge.go
+bce4ae33fbb4ad939a30332f46b653640f6486ab963e184097ac0c60d9100f1a  services/pull/merge_prepare.go
+d49511635b8a69e54389c83477e282f62445744cabd951adb7698f083831584b  models/issues/pull.go
+9a249afcc4471ba65e2a79a7eb8cd89e6176e767268c30835a6efaefa0d96845  models/issues/review.go
+9061cbc4246ad99cef4fec117072aabc9965e6ab7fcc87d4950bc438e402f424  services/pull/pull.go
+95007aeb8c241ef5e52e85b5346daaa34ba5b924be9cb3e2aa83c43cb0f9d042  services/pull/review.go
+
+Local source/artifact digests as of final static review:
+516e669a69ada890d609e1b54ad162b6b851f6cf3483e583f349f9082c49e8bb  docs/checkpoint.md
+5ba4e6f8e5a499ecdf0bb2413c7f9b40abb98d2fb0804f54e21c14ff6d51faa1  docs/architecture.md
+4048fb80a1f48350d2725421721bfe2a1295b89975d6604cb613dbe0bd22d3ee  docs/source-inventory.md
+ebd08e2f107db960aae3ee44d13f02fe02b15f49c6259f996648675f3b9c28e9  evidence/continuation-315-forgejo-merge-check-review-001/local-run.md
+236551a8740757104bca8989b0799d1bf2d768b38f8798403f19d120ce937216  evidence/continuation-315-forgejo-merge-check-review-001/source-review.txt
+b27cc4bb0dc0c01773f8d0e6b4e8070f33aca175ead2f630a6be50b11bcf57de  evidence/continuation-315-forgejo-merge-check-review-001/commands.txt
+2e2331eacd79df1576275e1e786ad8441f7e97c1a545d1223acd6d8597b64431  evidence/continuation-315-forgejo-merge-check-review-001/tool-versions.txt
+82a0fb36e0db116fbcc2b875cc66e3e39450001c43a86e2980c9f1bab5b0c7ae  evidence/continuation-315-forgejo-merge-check-review-001/source-inspection-output.txt

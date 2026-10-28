@@ -1,0 +1,19 @@
+Preconditions checked:
+  Forgejo binary: /tmp/forgejo-17.0.0 exists, regular file, not symlink.
+  /tmp/forgejo-agent-egress-stdio-mcp-010 did not exist before the run.
+  evidence/continuation-311-route-probe-connect-phase-001 did not exist before the run.
+  TCP connect_ex(127.0.0.1:3130) returned 111 (connection refused) before start.
+
+TDD / focused checks:
+  python3 tests/test_mission_012_sandboxed_test_adapter.py -k route_probe_diagnostics
+  python3 tests/test_forgejo_live_pr_merge_e2e.py ComposedStdioFixtureConsistencyTests
+  python3 tests/test_mission_012_sandboxed_test_adapter.py -k trusted_sandbox_wrapper_rejects
+  python3 tests/test_mission_012_sandboxed_test_adapter.py SandboxedAdapterTests.test_probe_process_remains_isolated_until_reprobe_and_release SandboxedAdapterTests.test_stdio_adapter_uses_only_trusted_mcp_pipe_and_refuses_host_network_and_file
+  python3 tests/test_mission_012_sandboxed_test_adapter.py
+  python3 tests/test_forgejo_live_pr_merge_e2e.py ComposedStdioFixtureConsistencyTests
+  python3 tests/test_forgejo_live_pr_merge_e2e.py
+
+Fresh composed local run:
+  python3 scripts/run_mission_012_stdio_mcp_egress_gate_e2e.py --forgejo-binary /tmp/forgejo-17.0.0 --state-dir /tmp/forgejo-agent-egress-stdio-mcp-010 --evidence-dir evidence/continuation-311-route-probe-connect-phase-001
+
+Recorded final results: sandbox suite 17/17; composed fixture/validator class 3/3; full `test_forgejo_live_pr_merge_e2e.py` file 23/23. The first full-file run exposed one stale exact-dictionary comparison in `test_supervisor_observes_sandboxed_agent_namespaces_from_proc`; after updating the second consumer to validate the new diagnostic field and require `phase=connect`, the final full file passed. The composed Forgejo run passed once; it was not repeated after this separate consumer update. Exact run snapshot hashes and tool versions are in `source-sha256.txt` and `provenance.json`. No Cargo license guard run: no Cargo metadata or Rust source changed.

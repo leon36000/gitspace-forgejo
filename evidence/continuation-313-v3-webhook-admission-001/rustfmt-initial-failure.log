@@ -1,0 +1,51 @@
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/forgejo_mission_delivery_process_e2e.rs:156:
+                         let review_count_header = if path
+                             == format!(
+                                 "/api/v1/repos/{OWNER}/{REPOSITORY}/pulls/77/reviews?page=1&limit=50"
+-                            )
+-                        {
++                            ) {
+                             "X-Total-Count: 1\r\n"
+                         } else {
+                             ""
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/forgejo_mission_delivery_process_e2e.rs:164:
+                         };
+                         let response = format!(
+                             "HTTP/1.1 200 OK\r\nContent-Type: application/json\r\nContent-Length: {}\r\n{}Connection: close\r\n\r\n",
+-                            body.len(), review_count_header
++                            body.len(),
++                            review_count_header
+                         );
+                         stream
+                             .write_all(response.as_bytes())
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/forgejo_mission_delivery_process_e2e.rs:1777:
+     assert_eq!(admission["admission_mode"], "webhook_delivery");
+     assert_eq!(admission["admission_schema_version"], 3);
+     assert_eq!(admission["webhook"]["delivery_id"], "mission-v3-delivery-1");
+-    assert_eq!(admission["requirement_arbitration"]["source_pull_request_number"], 77);
+-    assert_eq!(admission["requirement_arbitration"]["reviewer_ids"], json!([9001]));
+     assert_eq!(
++        admission["requirement_arbitration"]["source_pull_request_number"],
++        77
++    );
++    assert_eq!(
++        admission["requirement_arbitration"]["reviewer_ids"],
++        json!([9001])
++    );
++    assert_eq!(
+         admission["requirement_arbitration"]["requirements_sha256"],
+         requirement_sha256
+     );
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/forgejo_mission_delivery_process_e2e.rs:1794:
+         "v3 webhook admission must read its source pull request"
+     );
+     assert!(
+-        fixture
+-            .paths()
+-            .iter()
+-            .any(|path| path == "/api/v1/repos/forge-admin/agent-forge-core/pulls/77/reviews?page=1&limit=50"),
++        fixture.paths().iter().any(|path| path
++            == "/api/v1/repos/forge-admin/agent-forge-core/pulls/77/reviews?page=1&limit=50"),
+         "v3 webhook admission must read its source reviews"
+     );
+ 
