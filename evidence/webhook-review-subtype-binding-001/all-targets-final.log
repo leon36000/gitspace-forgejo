@@ -1,0 +1,704 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.52s
+     Running unittests src/lib.rs (target/debug/deps/agent_forge_core-4f3c0a59eee64024)
+
+running 11 tests
+test tests::bounded_replay_reads_a_valid_journal_without_write_permission ... ok
+test tests::bounded_tail_repairs_refuse_a_replaced_symlink_path ... ok
+test tests::context_and_mission_state_are_pinned_and_bounded ... ok
+test tests::duration_parser_handles_units_and_errors ... ok
+test tests::journal_deduplicates_replays_and_serializes_concurrent_events ... ok
+test tests::proof_requires_signature_pass_and_all_fresh_hashes ... ok
+test tests::stale_events_cancellation_and_expired_or_forbidden_capabilities_are_denied ... ok
+test tests::target_bound_proof_v2_binds_target_and_evidence_without_changing_v1 ... ok
+test tests::target_bound_v2_mac_covers_each_target_field ... ok
+test tests::target_bound_v2_signer_and_verifier_reject_keys_shorter_than_32_bytes ... ok
+test tests::verifier_preserves_failure_and_inconclusive_outcomes ... ok
+
+test result: ok. 11 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.12s
+
+     Running unittests src/main.rs (target/debug/deps/agent_forge_core-b9742ad16d453f0e)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/forgejo-mission-local.rs (target/debug/deps/forgejo_mission_local-07e6661870a4625d)
+
+running 29 tests
+test tests::branch_snapshot_preserves_the_protection_flag_and_requires_a_full_commit ... ok
+test tests::context_packet_pins_requirement_and_source_bytes_to_one_commit ... ok
+test tests::delivery_admission_refuses_a_missing_delivery_before_any_forgejo_read ... ok
+test tests::delivery_admission_refuses_a_pull_request_event_before_any_forgejo_read ... ok
+test tests::delivery_admission_refuses_a_stale_requirement_digest_before_allocation ... ok
+test tests::delivery_admission_refuses_another_issue_or_repository_before_any_forgejo_read ... ok
+test tests::delivery_admission_resumes_one_allocation_for_duplicate_and_replayed_deliveries ... ok
+test tests::delivery_admission_uses_current_forgejo_state_and_refuses_a_closed_issue ... ok
+test tests::delivery_mode_requires_a_host_pinned_requirement_digest_and_one_safe_delivery ... ok
+test tests::duration_context_extraction_accepts_multiline_signatures_and_ignores_signature_comments ... ok
+test tests::duration_context_extraction_does_not_match_a_prefix_function_name ... ok
+test tests::duration_context_extraction_ignores_a_commented_enum_decoy ... ok
+test tests::duration_context_extraction_ignores_braces_inside_strings_and_comments ... ok
+test tests::duration_context_extraction_ignores_items_inside_macro_token_groups ... ok
+test tests::duration_context_extraction_skips_a_function_declaration_inside_a_block_comment ... ok
+test tests::fixed_inbox_must_already_be_a_private_receiver_journal ... ok
+test tests::host_credential_file_requires_private_regular_file_and_never_echoes_value ... ok
+test tests::host_forgejo_token_is_bounded_and_curl_header_is_stdin_only ... ok
+test tests::issue_snapshot_rejects_a_canonical_url_from_another_repository ... ok
+test tests::issue_snapshot_requires_the_canonical_url_and_supported_state ... ok
+test tests::mission_012_context_extracts_and_cites_the_pinned_clamp_function ... ok
+test tests::mission_arguments_reject_duplicate_host_bindings ... ok
+test tests::mission_arguments_require_a_stable_allocation_id_instead_of_a_generation_number ... ok
+test tests::mission_journal_path_is_anchored_to_the_checkout ... ok
+test tests::mission_profile_selection_binds_the_issue_requirement_and_workspace ... ok
+test tests::requirement_paths_cannot_escape_the_fixed_namespace ... ok
+test tests::requirement_tree_limit_is_reported_as_a_bounded_refusal ... ok
+test tests::requirement_tree_pagination_must_be_complete_and_ordered ... ok
+test tests::requirement_tree_rejects_symlinked_or_nested_requirement_json ... ok
+
+test result: ok. 29 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.07s
+
+     Running unittests src/bin/forgejo-reconcile-local.rs (target/debug/deps/forgejo_reconcile_local-3e9fc5f7734f2ac5)
+
+running 110 tests
+test tests::ambiguous_merge_post_is_resolved_by_readback_without_retry ... ok
+test tests::ambiguous_merge_post_with_unavailable_readback_is_not_retried ... ok
+test tests::batch_cache_budget_failure_is_structured_and_nonretryable ... ok
+test tests::batch_cache_budget_is_enforced_across_signed_journal_and_loopback_http ... ok
+test tests::batch_cache_keeps_issue_and_pull_request_with_same_number_separate_over_http ... ok
+test tests::batch_level_failure_is_structured_and_inconclusive ... ok
+test tests::bounded_command_cleans_up_child_when_reader_thread_cannot_start ... ok
+test tests::bounded_command_is_cancelled_before_the_child_exits_naturally ... ok
+test tests::capabilities_list_exact_merge_target_profiles ... ok
+test tests::cli_profile_wiring_binds_api_scope_and_credential_to_the_same_profile ... ok
+test tests::command_reader_stops_an_unbounded_child_at_the_cap ... ok
+test tests::configured_repository_scopes_final_state_and_post_merge_readback_paths ... ok
+test tests::confirmed_merge_result_includes_matching_candidate_tree_manifest_bindings ... ok
+test tests::curl_timeout_rounds_down_to_whole_milliseconds ... ok
+test tests::default_profile_gate_requests_are_unchanged ... ok
+test tests::denied_batch_is_refused_before_host_credential_read ... ok
+test tests::duplicate_or_trailing_options_after_a_profile_are_refused_with_distinct_messages ... ok
+test tests::each_profile_has_its_own_merge_lock ... ok
+test tests::final_main_read_compares_the_live_branch_head_to_the_bound_base ... ok
+test tests::final_merge_state_refuses_an_advanced_base_without_a_merge_post ... ok
+test tests::forgejo_review_page_adapter_reports_changed_total_as_retryable_inconclusive ... ok
+test tests::forgejo_tree_manifest_accepts_v17_null_tree_only_for_an_empty_root ... ok
+test tests::forgejo_tree_manifest_reads_all_pages_with_v17_truncated_semantics ... ok
+test tests::forgejo_tree_manifest_refuses_a_missing_later_page ... ok
+test tests::gate_request_paths_cannot_mix_repositories_from_two_profiles ... ok
+test tests::gate_wrapper_refuses_a_credential_bound_to_another_origin_before_any_input ... ok
+test tests::gate_wrapper_refuses_an_api_scoped_to_another_profile_before_any_input ... ok
+test tests::host_credential_pipe_read_is_bounded_when_writer_stays_open ... ok
+test tests::host_credential_pipe_retries_when_duplicate_reader_drains_after_poll ... ok
+test tests::host_credential_reader_rejects_named_fifo ... ok
+test tests::host_merge_post_uses_bound_credential_stdin_and_parses_total_count ... ok
+test tests::invalid_host_credential_is_actionable_nonretryable_and_value_free ... ok
+test tests::invalid_snapshot_error_is_not_retryable_success ... ok
+test tests::legacy_v1_proof_is_rejected_before_any_forgejo_request_or_merge ... ok
+test tests::local_adapter_does_not_follow_redirects_with_host_credential ... ok
+test tests::local_adapter_does_not_retry_oversized_http_response ... ok
+test tests::local_adapter_does_not_retry_unauthorized_http_responses ... ok
+test tests::local_adapter_refuses_repositories_outside_the_sandbox_allowlist ... ok
+test tests::local_adapter_rejects_foreign_request_url_before_sending_host_credential ... ok
+test tests::local_adapter_respects_retry_after_when_server_delay_exceeds_remaining_budget ... ok
+test tests::local_adapter_retries_non_utf8_transient_http_body ... ok
+test tests::local_adapter_retries_rate_limit_response_within_the_read_budget ... ok
+test tests::local_adapter_retries_transient_http_failure_then_returns_current_state ... ok
+test tests::local_adapter_shares_one_deadline_across_reads ... ok
+test tests::local_adapter_stops_after_three_transient_http_attempts ... ok
+test tests::local_adapter_uses_host_credential_provider_for_loopback_request ... ok
+test tests::local_merge_gate_rechecks_branch_protection_immediately_before_merge_post ... ok
+test tests::local_merge_gate_refuses_additional_merge_whitelist_users ... ok
+test tests::local_merge_gate_refuses_branch_protection_without_team_whitelist_readback ... ok
+test tests::local_merge_gate_refuses_merge_whitelist_teams ... ok
+test tests::local_merge_gate_refuses_unprotected_file_patterns ... ok
+test tests::local_merge_gate_reports_invalid_final_branch_protection_as_inconclusive ... ok
+test tests::local_merge_gate_requires_unprotected_file_patterns_readback ... ok
+test tests::local_merge_gate_stops_before_merge_post_when_another_user_is_whitelisted ... ok
+test tests::malformed_selected_delivery_is_refused_before_host_credential_read ... ok
+test tests::malformed_target_bound_schema_is_rejected_before_any_forgejo_request ... ok
+test tests::merge_authority_api_refusal_reports_a_bounded_stage ... ok
+test tests::merge_authority_refuses_changed_review_total_before_any_merge_post ... ok
+test tests::merge_cli_without_profile_selection_keeps_the_default_target ... ok
+test tests::merge_commit_must_have_exact_validated_base_and_submitted_head_parents ... ok
+test tests::merge_gate_uses_separate_policy_reader_and_non_admin_merge_credentials ... ok
+test tests::merge_lock_root_is_stable_outside_tmpdir ... ok
+test tests::merge_policy_reader_allows_only_the_exact_branch_protection_get ... ok
+test tests::merge_preflight_keeps_failure_distinct_from_inconclusive ... ok
+test tests::merge_preflight_success_is_read_only_and_not_merge_authority ... ok
+test tests::merge_preflight_unauthorized_error_explains_anonymous_read_contract ... ok
+test tests::merge_readback_refuses_divergent_commit_and_issue_state ... ok
+test tests::merged_readback_rejects_a_different_issue_number_after_fetching_the_issue ... ok
+test tests::merged_readback_rejects_a_different_pull_request_number_before_issue_read ... ok
+test tests::merged_readback_with_tree_mismatch_and_rejected_post_is_inconclusive ... ok
+test tests::mismatched_review_subtype_is_refused_before_host_credential_read ... ok
+test tests::mission_012_policy_v4_is_not_a_merge_gate_policy_document ... ok
+test tests::mission_012_profile_scopes_every_gate_request_to_one_repository ... ok
+test tests::mission_gate_rejects_a_base_that_differs_from_the_admitted_snapshot ... ok
+test tests::mission_gate_rejects_an_admission_digest_not_bound_to_the_host_review ... ok
+test tests::mission_gate_verifies_the_admission_digest_and_exact_durable_claim ... ok
+test tests::mission_merge_cli_requires_admission_and_journal_before_reading_credentials ... ok
+test tests::mixed_batch_reads_host_credential_only_for_in_scope_rows ... ok
+test tests::origin_bound_provider_withholds_token_for_a_different_origin ... ok
+test tests::out_of_scope_selected_delivery_is_refused_before_host_credential_read ... ok
+test tests::oversized_batch_is_rejected_before_host_credential_read ... ok
+test tests::postmerge_missing_tree_manifest_is_inconclusive ... ok
+test tests::postmerge_parent_mismatch_is_inconclusive_after_single_post ... ok
+test tests::postmerge_tree_mismatch_is_inconclusive_with_valid_merge_parents ... ok
+test tests::proof_signed_for_other_profile_is_rejected_before_any_forgejo_request ... ok
+test tests::readback_only_recovery_accepts_exact_merged_state ... ok
+test tests::readback_only_recovery_refuses_an_open_pr ... ok
+test tests::readback_only_recovery_refuses_each_changed_binding ... ok
+test tests::receiver_process_journal_reconciles_through_local_http_adapter ... ok
+test tests::reconcile_invocation_accepts_a_host_pipe_fd_and_fixed_config ... ok
+test tests::reconcile_invocation_accepts_the_mission_012_target_profile ... ok
+test tests::reconcile_invocation_rejects_ambiguous_or_unknown_target_profiles ... ok
+test tests::reconcile_invocation_rejects_duplicate_or_standard_credential_fds ... ok
+test tests::reconciliation_policy_rejects_write_method_and_nested_issue_route_before_network ... ok
+test tests::response_reader_accepts_the_exact_limit ... ok
+test tests::response_reader_stops_after_one_byte_over_the_limit ... ok
+test tests::retry_after_delay_conversion_saturates_without_overflow ... ok
+test tests::retry_after_http_error_exposes_only_a_bounded_structured_delay ... ok
+test tests::retry_after_parser_accepts_delta_seconds_and_http_date_formats ... ok
+test tests::short_verifier_key_is_refused_before_any_forgejo_request ... ok
+test tests::signed_journal_deliveries_reconcile_through_the_local_http_adapter ... ok
+test tests::single_reconciliation_failure_is_structured_and_inconclusive ... ok
+test tests::stale_merge_preflight_is_actionable_and_inconclusive ... ok
+test tests::synthetic_credential_is_not_added_to_curl_arguments_or_environment ... ok
+test tests::target_profile_selector_accepts_only_exact_literals ... ok
+test tests::target_profiles_bind_origin_owner_and_repository_as_one_literal_tuple ... ok
+test tests::token_parser_rejects_empty_oversized_and_header_injection_values ... ok
+test tests::unknown_or_malformed_profile_is_refused_before_credential_or_inputs_are_read ... ok
+test tests::unmerged_pull_request_readback_does_not_require_a_merge_commit ... ok
+test tests::valid_profile_selector_passes_parsing_and_reaches_the_credential_reader ... ok
+
+test result: ok. 110 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 9.43s
+
+     Running unittests src/bin/forgejo-webhook-local.rs (target/debug/deps/forgejo_webhook_local-56310d649f1759d0)
+
+running 4 tests
+test tests::complete_redelivery_after_truncation_is_accepted_once ... ok
+test tests::secret_with_multiple_hard_links_is_rejected ... ok
+test tests::slow_drip_request_hits_total_read_deadline ... ok
+test tests::truncated_half_closed_request_gets_a_retryable_timeout_response ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 3.23s
+
+     Running unittests src/bin/gate.rs (target/debug/deps/gate-cdaaa55ea2a0e8dc)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/mission-012-mcp-host.rs (target/debug/deps/mission_012_mcp_host-3e32cf331dafa499)
+
+running 25 tests
+test host::tests::base_binding_requires_a_full_lowercase_commit_and_a_plain_branch ... ok
+test host::tests::candidate_cannot_forge_libtest_success_with_print_and_process_exit ... ok
+test host::tests::hard_linked_candidate_source_is_refused_without_touching_external_file ... ok
+test host::tests::host_requires_baseline_red_and_fresh_green_and_receipts_refusals ... ok
+test host::tests::independent_pair_verifier_binds_fresh_red_green_to_exact_snapshots ... ok
+test host::tests::independent_pair_verifier_refuses_unapproved_source_even_with_git_binding ... ok
+test host::tests::journaled_writer_refuses_a_candidate_changed_since_its_prestate_read ... ok
+test host::tests::recovery_refuses_a_third_source_hash_or_any_other_candidate_change ... ok
+test host::tests::recovery_restores_only_an_exact_single_source_post_state ... ok
+test host::tests::sandbox_blocks_nested_user_namespace_creation ... ok
+test host::tests::sandbox_mounts_have_finite_sizes ... ok
+test host::tests::sandbox_refuses_overlapping_writable_target_before_mutating_source_tree ... ok
+test host::tests::sandbox_reports_real_red_then_green_on_the_candidate ... ok
+test host::tests::verifier_cpu_reservations_bound_the_policy_timeout_and_observed_wall_time ... ok
+test host::tests::verifier_materializes_a_private_snapshot_and_rejects_changed_source_bytes ... ok
+test host::tests::verifier_scope_applies_cgroup_limits_and_kills_detached_children_at_deadline ... ok
+test host::tests::writable_test_path_aliases_and_model_diff_are_refused ... ok
+test tests::exposes_four_exact_model_tools_and_denies_unknown_capabilities ... ok
+test tests::finalization_reports_failure_when_its_receipt_cannot_be_written ... ok
+test tests::mcp_call_is_receipted_and_still_uses_the_host_path_allowlist ... ok
+test tests::mcp_dispatch_preserves_the_json_rpc_id_for_durable_tool_idempotency ... ok
+test tests::mcp_line_reader_rejects_malformed_json_rpc_and_accepts_one_frame ... ok
+test tests::mcp_protocol_negotiation_is_versioned_and_rejects_unknown_versions ... ok
+test tests::mcp_workspace_write_uses_the_journaled_fenced_writer_and_replays_exactly ... ok
+test tests::receipt_write_failures_stop_the_host_for_calls_and_budget_refusals ... ok
+
+test result: ok. 25 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 7.73s
+
+     Running unittests src/bin/mission-012-verify-local.rs (target/debug/deps/mission_012_verify_local-efe680254b98a82f)
+
+running 17 tests
+test host::tests::base_binding_requires_a_full_lowercase_commit_and_a_plain_branch ... ok
+test host::tests::candidate_cannot_forge_libtest_success_with_print_and_process_exit ... ok
+test host::tests::hard_linked_candidate_source_is_refused_without_touching_external_file ... ok
+test host::tests::host_requires_baseline_red_and_fresh_green_and_receipts_refusals ... ok
+test host::tests::independent_pair_verifier_binds_fresh_red_green_to_exact_snapshots ... ok
+test host::tests::independent_pair_verifier_refuses_unapproved_source_even_with_git_binding ... ok
+test host::tests::journaled_writer_refuses_a_candidate_changed_since_its_prestate_read ... ok
+test host::tests::recovery_refuses_a_third_source_hash_or_any_other_candidate_change ... ok
+test host::tests::recovery_restores_only_an_exact_single_source_post_state ... ok
+test host::tests::sandbox_blocks_nested_user_namespace_creation ... ok
+test host::tests::sandbox_mounts_have_finite_sizes ... ok
+test host::tests::sandbox_refuses_overlapping_writable_target_before_mutating_source_tree ... ok
+test host::tests::sandbox_reports_real_red_then_green_on_the_candidate ... ok
+test host::tests::verifier_cpu_reservations_bound_the_policy_timeout_and_observed_wall_time ... ok
+test host::tests::verifier_materializes_a_private_snapshot_and_rejects_changed_source_bytes ... ok
+test host::tests::verifier_scope_applies_cgroup_limits_and_kills_detached_children_at_deadline ... ok
+test host::tests::writable_test_path_aliases_and_model_diff_are_refused ... ok
+
+test result: ok. 17 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 11.34s
+
+     Running tests/agent_mission_identity_contract.rs (target/debug/deps/agent_mission_identity_contract-490ba25ab9630e44)
+
+running 6 tests
+test changed_requirements_create_a_new_versioned_mission ... ok
+test invalid_requirement_hash_or_zero_identity_values_are_refused ... ok
+test mission_is_scoped_to_repository_and_issue_not_base_branch ... ok
+test new_intentional_execution_generation_keeps_mission_but_changes_idempotency_key ... ok
+test new_webhook_delivery_ids_do_not_change_the_same_mission_identity ... ok
+test normalized_origin_and_hex_case_do_not_create_duplicate_missions ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/agent_runtime_contract.rs (target/debug/deps/agent_runtime_contract-6eab092b75d50757)
+
+running 10 tests
+test claim_of_superseded_generation_is_rejected ... ok
+test fixture_runtime_consumes_context_calls_tools_and_runs_generated_code_idempotently ... ok
+test fixture_runtime_rejects_context_from_another_base_before_tool_use ... ok
+test fixture_tool_port_denies_unlisted_tools_and_enforces_call_budget ... ok
+test replay_of_claimed_generation_remains_idempotent_after_newer_allocation ... ok
+test request_validation_binds_the_requirements_document_to_its_hash ... ok
+test request_validation_rejects_invalid_or_unlinked_context_citations ... ok
+test request_validation_rejects_nonportable_or_non_normalized_paths ... ok
+test result_from_an_earlier_generation_is_rejected_when_mission_id_is_stable ... ok
+test superseded_generation_replay_after_reopen_is_idempotent_but_cannot_be_leased ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.46s
+
+     Running tests/forgejo_merge_approval.rs (target/debug/deps/forgejo_merge_approval-c955ced9fc722b76)
+
+running 32 tests
+test changed_policy_bytes_invalidate_the_previous_binding ... ok
+test complete_forgejo_review_pages_are_collected_in_order ... ok
+test current_official_approval_is_bound_to_the_exact_candidate_and_decision ... ok
+test decision_fingerprint_binds_the_complete_review_snapshot_independent_of_order ... ok
+test direct_snapshot_from_another_pull_request_is_rejected_by_its_url ... ok
+test distinct_current_reviewers_count_once_and_return_in_stable_order ... ok
+test duplicate_review_ids_are_rejected ... ok
+test executor_review_is_not_counted_as_an_independent_approval ... ok
+test forgejo_api_review_json_keeps_identity_and_freshness_fields ... ok
+test incomplete_review_pages_are_inconclusive ... ok
+test legacy_policy_without_an_approval_allowlist_deserializes_but_cannot_authorize ... ok
+test missing_scope_or_freshness_fields_are_rejected_during_deserialization ... ok
+test overlarge_policy_or_review_snapshot_fails_closed ... ok
+test pages_mixed_across_pull_requests_or_repositories_are_refused ... ok
+test policy_rejects_zero_or_duplicate_reviewer_ids ... ok
+test pull_request_scope_rejects_non_path_safe_repository_segments ... ok
+test pull_request_url_preserves_the_forgejo_deployment_prefix ... ok
+test pull_request_url_size_limit_is_enforced_at_both_entries ... ok
+test review_from_another_pull_request_is_rejected_by_its_url ... ok
+test review_json_page_accepts_exact_page_byte_limit ... ok
+test review_json_page_errors_distinguish_invalid_json_from_reader_failure ... ok
+test review_json_page_read_stops_at_one_byte_beyond_page_budget ... ok
+test review_json_pages_accept_exact_cumulative_byte_limit ... ok
+test review_json_pages_decode_minimal_fields_with_bounded_reader ... ok
+test review_json_pages_share_a_cumulative_byte_budget ... ok
+test review_page_gaps_changed_counts_and_duplicate_records_are_refused ... ok
+test review_state_and_commit_id_accept_64_bytes_and_refuse_65_before_fingerprinting ... ok
+test reviewer_must_be_in_the_host_policy_allowlist ... ok
+test reviews_from_a_different_repository_scope_cannot_authorize ... ok
+test stale_dismissed_nonofficial_and_wrong_head_approvals_do_not_count ... ok
+test versioned_approval_policy_is_parsed_from_the_canonical_policy_field ... ok
+test wrong_review_scope_is_rejected_without_reading_its_body ... ok
+
+test result: ok. 32 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.46s
+
+     Running tests/forgejo_merge_lock.rs (target/debug/deps/forgejo_merge_lock-820411f60f76dbc6)
+
+running 6 tests
+test different_base_branches_do_not_share_a_lock ... ok
+test invalid_scope_is_rejected_before_lock_creation ... ok
+test lock_child_waits_for_parent_release ... ok
+test same_base_branch_lock_serializes_across_processes ... ok
+test symbolic_link_lock_directory_is_rejected ... ok
+test symbolic_link_lock_file_is_rejected ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+     Running tests/forgejo_merge_post_crash_recovery_process_e2e.rs (target/debug/deps/forgejo_merge_post_crash_recovery_process_e2e-a93ded6c21f8476f)
+
+running 3 tests
+test killed_cli_after_forgejo_merge_recovers_readback_only_and_serializes_duplicate_retries ... ignored, run only through the bwrap network-isolated process E2E runner
+test killed_cli_after_intent_before_post_keeps_open_pr_unresolved_without_posting ... ignored, run only through the bwrap network-isolated process E2E runner
+test protected_host_input_change_after_final_forgejo_read_refuses_merge_post ... ignored, run only through the bwrap network-isolated process E2E runner
+
+test result: ok. 0 passed; 0 failed; 3 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/forgejo_merge_preflight.rs (target/debug/deps/forgejo_merge_preflight-aa5dc3d199c0d2e1)
+
+running 13 tests
+test already_merged_pull_request_is_refused ... ok
+test api_snapshot_parser_pins_url_and_both_repositories ... ok
+test api_snapshot_parser_rejects_wrong_pull_request_and_html_url ... ok
+test closed_pull_request_is_refused ... ok
+test draft_pull_request_is_refused ... ok
+test fresh_open_pull_request_and_passing_proof_are_ready_for_later_review ... ok
+test missing_or_nonpassing_proof_never_becomes_ready ... ok
+test proof_for_an_old_base_is_refused ... ok
+test proof_for_an_old_candidate_is_refused ... ok
+test unknown_or_negative_mergeability_is_refused ... ok
+test verifier_cannot_also_be_the_execution_identity ... ok
+test wrong_pull_request_number_is_refused ... ok
+test wrong_repository_or_base_branch_are_refused ... ok
+
+test result: ok. 13 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/forgejo_merge_readiness.rs (target/debug/deps/forgejo_merge_readiness-9db8b4d20949688b)
+
+running 10 tests
+test approval_bound_to_a_different_base_ref_or_commit_is_not_ready ... ok
+test approval_for_an_old_reviewed_head_is_not_counted ... ok
+test approval_for_another_pull_request_cannot_make_current_pr_ready ... ok
+test approval_without_a_trusted_base_binding_is_not_ready ... ok
+test base_binding_fingerprint_is_order_independent_and_changes_with_the_base ... ok
+test base_binding_from_another_pull_request_is_not_ready ... ok
+test duplicate_base_bindings_are_not_ready ... ok
+test fresh_approval_cannot_make_a_proof_for_an_old_head_ready ... ok
+test policy_and_passing_proof_must_name_the_same_verifier ... ok
+test readiness_binds_proof_current_pull_request_and_approvals_into_one_decision ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/forgejo_mission_delivery_process.rs (target/debug/deps/forgejo_mission_delivery_process-e3f068f8296e9210)
+
+running 3 tests
+test launched_cli_refuses_an_unknown_delivery_without_creating_runtime_state ... ignored, run via isolated bwrap runner with scratch .runtime
+test launched_cli_refuses_delivery_mode_without_a_digest_or_with_an_unsafe_id ... ok
+test launched_help_documents_delivery_mode_and_the_fixed_inbox ... ok
+
+test result: ok. 2 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/forgejo_mission_delivery_process_e2e.rs (target/debug/deps/forgejo_mission_delivery_process_e2e-b4b936c5c7cb8e50)
+
+running 3 tests
+test actual_mission_cli_admits_signed_webhook_after_closed_refusal_and_reuses_allocation ... ignored, run only through the bwrap network-namespace runner with a scratch .runtime mount
+test actual_mission_cli_uses_private_host_credential_only_for_fixed_forgejo_reads ... ignored, run only through the bwrap network-namespace runner with a scratch .runtime mount
+test mission_012_signed_request_context_red_green_independent_verification_and_sandbox_merge ... ignored, run only through the bwrap network-namespace runner with a scratch .runtime mount
+
+test result: ok. 0 passed; 0 failed; 3 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/forgejo_preflight_process_e2e.rs (target/debug/deps/forgejo_preflight_process_e2e-84b0e5d5909ae68e)
+
+running 3 tests
+test actual_preflight_cli_refuses_stale_head_base_requirements_and_policy_without_writes ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_preflight_cli_reports_anonymous_401_without_claiming_a_credential_was_sent ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test request_header_reader_preserves_a_pipelined_follow_up_request ... ok
+
+test result: ok. 1 passed; 0 failed; 2 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/forgejo_reconcile_capabilities_e2e.rs (target/debug/deps/forgejo_reconcile_capabilities_e2e-79e71d1241083922)
+
+running 3 tests
+test actual_cli_discloses_versioned_local_test_capabilities ... ok
+test capability_discovery_rejects_extra_arguments ... ok
+test preflight_rejects_fifo_input_without_blocking ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/mission_012_mcp_lifecycle.rs (target/debug/deps/mission_012_mcp_lifecycle-8222febbc3dbb2d9)
+
+running 26 tests
+test admission_handoff_is_versioned_and_host_config_has_no_copied_claim_fields ... ok
+test child_stdout_larger_than_pipe_capacity_is_drained_and_captured ... ok
+test child_that_does_not_read_stdin_is_killed_at_the_input_deadline ... ok
+test complete_stdio_mcp_lifecycle_runs_red_write_green_shutdown_refusal_and_exit ... ok
+test mcp_host_exits_and_records_an_abort_on_an_oversized_frame ... ok
+test mcp_host_exits_and_records_an_abort_when_stdin_cannot_be_read ... ok
+test mcp_host_persists_a_tool_budget_refusal_and_stops ... ok
+test mcp_host_refuses_a_base_dir_that_is_not_the_admitted_git_tree ... ok
+test mcp_host_refuses_a_claim_after_a_new_generation_supersedes_it ... ok
+test mcp_host_refuses_a_handoff_with_a_base_commit_not_matching_its_request ... ok
+test mcp_host_refuses_a_request_that_does_not_match_the_durable_claim ... ok
+test mcp_host_refuses_a_stale_admitted_commit_after_the_protected_branch_advances ... ok
+test mcp_host_refuses_a_trusted_repository_inside_the_workspace ... ok
+test mcp_host_refuses_a_version_1_config_without_a_trusted_repository ... ok
+test mcp_host_refuses_an_admitted_commit_missing_from_the_trusted_repository ... ok
+test mcp_host_refuses_an_admitted_request_without_its_durable_claim ... ok
+test mcp_host_refuses_an_existing_or_symlinked_receipt_file_before_leasing ... ok
+test mcp_host_refuses_an_unready_candidate_without_burning_the_lease ... ok
+test mcp_host_refuses_base_and_candidate_left_at_an_older_tree ... ok
+test mcp_host_refuses_capabilities_outside_the_pinned_profile ... ok
+test mcp_host_refuses_journal_or_receipt_paths_inside_the_workspace ... ok
+test mcp_host_refuses_tool_calls_after_the_claimed_lease_expires ... ok
+test mcp_host_refuses_unknown_fields_inside_the_claimed_request ... ok
+test mcp_host_refuses_unknown_fields_nested_deep_inside_the_claimed_request ... ok
+test mcp_host_restarts_from_an_exact_unresolved_workspace_write_intent ... ok
+test webhook_source_handoff_process_rejects_missing_and_stale_receipts_before_mcp ... ignored, run only through the local bwrap process-isolation harness
+
+test result: ok. 25 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 35.49s
+
+     Running tests/mission_admission_contract.rs (target/debug/deps/mission_admission_contract-e97ef4e8d91fdc1e)
+
+running 14 tests
+test admission_refuses_untrusted_or_stale_bindings_before_claiming ... ok
+test changed_protected_requirement_revision_creates_a_distinct_claim_identity ... ok
+test duplicate_delivery_or_fresh_uuid_replay_claims_the_same_semantic_mission_once ... ok
+test duplicate_requirement_binding_is_refused_before_generation_allocation ... ok
+test explicit_host_binding_loads_exact_requirement_from_protected_commit_and_claims_it ... ok
+test failed_context_validation_can_resume_with_the_same_reserved_generation ... ok
+test incomplete_requirement_inventory_is_refused_before_generation_allocation ... ok
+test issue_body_is_not_part_of_the_binding_contract ... ok
+test legacy_and_unbound_requirement_documents_are_not_admitted ... ok
+test malformed_unrelated_requirement_blocks_uniqueness_decision ... ok
+test requirement_issue_binding_is_checked_before_generation_allocation ... ok
+test secondary_v2_requirement_without_issue_binding_blocks_allocation ... ok
+test version_2_admission_allocates_generation_and_recovers_the_same_allocation ... ok
+test version_2_rejects_invalid_allocation_ids_before_reading_the_source ... ok
+
+test result: ok. 14 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running tests/mission_execution_journal_contract.rs (target/debug/deps/mission_execution_journal_contract-c0799a5ee06e38e9)
+
+running 66 tests
+test active_execution_lease_is_exclusive_and_replayable ... ok
+test allocation_replay_validates_later_records_for_the_same_mission ... ok
+test claim_child_waits_for_start_file_then_claims ... ignored, invoked as a subprocess by the concurrent claim contract
+test claim_requires_a_durable_allocation ... ok
+test concurrent_execution_lease_acquisition_has_one_winner ... ok
+test concurrent_generation_allocations_reserve_distinct_monotonic_values ... ok
+test concurrent_processes_admit_only_one_claim_for_the_same_generation ... ok
+test concurrent_retries_of_one_allocation_id_recover_one_generation ... ok
+test concurrent_workspace_writes_cannot_create_overlapping_effect_intents ... ok
+test corrupt_complete_journal_record_blocks_new_execution_claims ... ok
+test direct_claim_cannot_bypass_the_requirement_issue_binding ... ok
+test execute_workspace_write_allows_the_same_content_after_an_intervening_source_state ... ok
+test execute_workspace_write_holds_the_fence_and_replays_with_a_new_rpc_id ... ok
+test execution_lease_cannot_outlive_the_runtime_timeout ... ok
+test execution_lease_requires_a_matching_allocated_claim ... ok
+test existing_merge_intent_recovers_without_creating_a_second_intent ... ok
+test expired_lease_recovers_with_a_higher_fence_and_rejects_the_old_worker ... ok
+test first_claim_is_admitted_and_reopen_is_idempotent ... ok
+test generation_allocation_is_monotonic_and_replayable_after_reopen ... ok
+test generation_allocator_advances_after_an_allocated_claim ... ok
+test generic_journal_api_cannot_append_reserved_mission_transitions ... ok
+test generic_transaction_reentry_into_mission_transition_returns_busy ... ok
+test hard_linked_journal_and_lock_files_are_rejected ... ok
+test host_supplied_new_generation_creates_a_separate_claim ... ok
+test inconclusive_merge_readback_remains_unresolved_until_a_conclusive_readback ... ok
+test invalid_allocation_ids_are_refused_without_changing_the_journal ... ok
+test invalid_hashes_and_generation_are_refused_before_journal_append ... ok
+test lease_rejects_a_requirement_linked_to_another_issue_before_append ... ok
+test lease_retries_share_one_absolute_runtime_deadline ... ok
+test legacy_claim_cannot_consume_a_generation_reserved_by_the_allocator ... ok
+test legacy_inconclusive_resolution_is_nonterminal_even_with_a_persisted_terminal_default ... ok
+test legacy_inconclusive_resolution_requires_readback_before_a_new_attempt ... ok
+test malformed_generation_record_blocks_further_allocation ... ok
+test malformed_lease_record_blocks_further_admission ... ok
+test malformed_legacy_claim_blocks_generation_allocation ... ok
+test malformed_merge_transition_blocks_future_admission ... ok
+test merge_attempt_intent_is_durable_before_effect ... ok
+test merge_authority_can_verify_the_exact_claimed_request ... ok
+test merge_authority_refuses_an_unterminated_journal_without_repairing_it ... ok
+test merge_authority_rejects_a_different_request_for_the_claimed_generation ... ok
+test merge_authority_rejects_a_superseded_claim ... ok
+test merge_effect_holds_mission_lock_against_new_generation_allocation ... ok
+test merge_effect_rejects_a_superseded_claim_without_running_the_effect ... ok
+test merge_preflight_rejection_does_not_create_an_attempt_intent ... ok
+test merge_recovery_without_intent_is_a_no_op ... ok
+test mission_effect_keeps_global_journal_available_and_other_missions_progress ... ok
+test mission_lock_child_holds_until_parent_kills ... ignored, invoked as a subprocess by the mission lock interruption contract
+test mission_lock_is_private_and_released_after_process_interruption ... ok
+test mission_operations_return_busy_without_sampling_clock_while_global_lock_is_held ... ok
+test newer_generation_fences_every_lease_from_older_generations ... ok
+test one_generation_cannot_be_reused_with_changed_request_bytes ... ok
+test rejected_merge_attempt_replays_the_same_host_decision ... ok
+test resolved_merge_attempt_replays_saved_result ... ok
+test same_pr_with_changed_binding_is_rejected ... ok
+test unclassified_journal_io_failure_does_not_claim_it_is_retryable ... ok
+test unresolved_merge_intent_blocks_a_new_execution_generation ... ok
+test unresolved_merge_intent_blocks_another_mission_from_the_same_pull_request ... ok
+test unresolved_merge_intent_is_reused_read_only ... ok
+test unresolved_workspace_write_must_be_replayed_before_a_different_write ... ok
+test workspace_write_intent_precedes_and_binds_the_exact_result ... ok
+test workspace_write_intent_refuses_expired_lease_and_oversized_content ... ok
+test workspace_write_operation_replay_is_idempotent_and_rejects_changed_input ... ok
+test workspace_write_reconciles_a_post_state_under_a_newer_fence ... ok
+test workspace_write_recovery_preflight_requires_the_admitted_base_and_intent_state ... ok
+test workspace_write_result_can_be_completed_only_by_the_current_fence ... ok
+test workspace_write_result_requires_an_intent_and_the_declared_post_state ... ok
+
+test result: ok. 64 passed; 0 failed; 2 ignored; 0 measured; 0 filtered out; finished in 0.43s
+
+     Running tests/mission_verification_cpu_budget_contract.rs (target/debug/deps/mission_verification_cpu_budget_contract-69682ed1963ac80f)
+
+running 7 tests
+test completed_cpu_usage_is_cumulative_across_generations_and_journal_reopen ... ok
+test concurrent_reservations_cannot_exceed_the_shared_mission_budget ... ok
+test current_lease_lookup_replays_and_validates_the_durable_lease ... ok
+test duplicate_operation_id_cannot_replay_a_verification_effect ... ok
+test generic_journal_append_cannot_forge_cpu_accounting_events ... ok
+test ledger_summary_reports_unresolved_reservations_at_full_cost_and_resolved_usage ... ok
+test unresolved_reservation_is_charged_at_its_full_bound_after_restart ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.06s
+
+     Running tests/reconcile_config_contract.rs (target/debug/deps/reconcile_config_contract-9069dc04dad0536b)
+
+running 4 tests
+test batch_with_unknown_delivery_returns_structured_error_before_credential_read ... ok
+test canonical_config_is_loaded_before_the_inbox ... ok
+test config_cannot_redirect_the_local_adapter ... ok
+test config_rejects_other_repositories_versions_and_unknown_credentials ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests/reconcile_journal_lock_timeout.rs (target/debug/deps/reconcile_journal_lock_timeout-b4142bc5746006ba)
+
+running 3 tests
+test actual_cli_discloses_the_bounded_inbox_lock_wait ... ok
+test actual_cli_retries_when_the_lock_is_released_inside_the_wait_window ... ok
+test actual_cli_returns_journal_busy_before_the_held_lock_is_released ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 5.27s
+
+     Running tests/webhook_contract.rs (target/debug/deps/webhook_contract-3a77ed745bc0a522)
+
+running 5 tests
+test concurrent_retries_append_exactly_once ... ok
+test identical_delivery_is_duplicate_after_journal_reopen ... ok
+test invalid_signature_is_rejected_without_journal_side_effect ... ok
+test late_older_notification_is_appended_and_does_not_rewrite_history ... ok
+test same_delivery_id_with_changed_payload_is_conflict ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.09s
+
+     Running tests/webhook_handler_contract.rs (target/debug/deps/webhook_handler_contract-627b310cb6f343c9)
+
+running 7 tests
+test body_over_limit_is_rejected_by_parser_before_allocation ... ok
+test forgejo_v17_approved_review_event_is_accepted_and_bound_to_its_pull_request ... ok
+test forgejo_v17_review_subtypes_are_journaled_as_pull_request_notifications ... ok
+test invalid_signature_is_unauthorized_and_not_journaled ... ok
+test unsupported_event_is_rejected_without_journal_side_effect ... ok
+test valid_delivery_is_accepted_and_identical_retry_is_idempotent ... ok
+test wrong_path_method_and_content_type_are_rejected ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running tests/webhook_http_contract.rs (target/debug/deps/webhook_http_contract-c2471fc0bf34976e)
+
+running 5 tests
+test conflicting_content_length_and_chunked_transfer_are_rejected ... ok
+test duplicate_security_header_is_rejected ... ok
+test mismatched_forgejo_and_gitea_aliases_are_rejected ... ok
+test oversized_and_incomplete_requests_are_distinguished ... ok
+test parser_preserves_body_bytes_and_accepts_matching_forgejo_aliases ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/webhook_inbox_capacity.rs (target/debug/deps/webhook_inbox_capacity-352b9312506e15ee)
+
+running 6 tests
+test capabilities_disclose_the_total_inbox_limit_and_non_truncating_policy ... ok
+test duplicate_at_exact_limit_is_accepted_but_a_new_delivery_is_not_appended ... ok
+test full_inbox_returns_actionable_http_error_without_creating_an_event ... ok
+test receiver_refuses_an_oversized_inbox_before_binding ... ok
+test reconcile_refuses_an_oversized_inbox_without_changing_it ... ok
+test replay_does_not_repair_an_unterminated_tail_past_the_configured_limit ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running tests/webhook_mission_admission_contract.rs (target/debug/deps/webhook_mission_admission_contract-970f84c8f68c75fe)
+
+running 13 tests
+test a_new_delivery_id_for_the_same_issue_reuses_the_host_allocation_and_claim ... ok
+test adapter_with_another_canonical_origin_is_rejected_before_api_read ... ok
+test admission_rechecks_open_issue_after_reconciliation_to_close_the_stale_read_gap ... ok
+test closed_reconciled_issue_is_rejected_before_mission_admission ... ok
+test generic_journal_apis_cannot_forge_webhook_inbox_events ... ok
+test host_binding_for_another_issue_is_rejected_before_admission ... ok
+test issue_from_another_repository_is_rejected_even_when_its_api_url_is_canonical ... ok
+test pull_request_notification_cannot_create_issue_admission ... ok
+test reconciled_open_issue_uses_host_binding_and_ignores_delivery_id_and_payload_state ... ok
+test same_revision_with_changed_requirement_bytes_is_rejected_before_allocation ... ok
+test signed_http_delivery_replays_reconciles_then_admits_and_resumes_idempotently ... ok
+test webhook_event_lookup_refuses_incomplete_tail_without_repairing_inbox ... ok
+test webhook_source_receipt_revalidates_exact_event_without_changing_stable_handoff ... ok
+
+test result: ok. 13 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.11s
+
+     Running tests/webhook_receiver_process_e2e.rs (target/debug/deps/webhook_receiver_process_e2e-6caa738f5453f442)
+
+running 27 tests
+test actual_receiver_process_accepts_retries_recovers_and_reconciles ... ok
+test actual_receiver_process_handles_parallel_delivery_conflict_submissions_across_restart ... ok
+test actual_receiver_rejects_a_signed_body_with_a_mismatched_event_header_before_append ... ok
+test actual_receiver_rejects_review_event_subtype_that_disagrees_with_signed_body ... ok
+test actual_reconcile_cli_process_accepts_complete_request_before_client_half_close ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_bounds_transient_upstream_retries ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_cancels_slow_reads_at_the_shared_budget ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_denied_batch_does_not_read_host_credential_fd ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_does_not_follow_redirect_with_host_credential ... ignored, run inside bwrap --unshare-net; fixtures reserve loopback ports 3130 and 3131
+test actual_reconcile_cli_process_enforces_batch_cache_budget_against_private_http_fixture ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_handles_invalid_and_http_date_retry_after ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_keeps_forbidden_upstream_inconclusive ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_keeps_invalid_host_credential_inconclusive ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_mixed_batch_limits_credential_to_configured_repository ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_preserves_retry_after_for_replayed_batch_deliveries ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_reads_pull_request_current_state_from_private_http_fixture ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_reads_receiver_journal_against_private_http_fixture ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_refuses_open_pull_request_reported_as_merged ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_refuses_partial_selection_before_credential_read ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_reports_actionable_upstream_401_without_leaking_credential ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_reports_deleted_resource_without_aborting_batch ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_respects_retry_after_beyond_read_budget ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_uses_current_state_after_out_of_order_webhooks ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_uses_host_credential_fd_for_receiver_journal ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test interrupted_reconcile_cli_can_resume_from_the_unchanged_journal ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test process_output_deadline_kills_a_cli_process_group ... ok
+test receiver_creates_private_journal_and_restarts_under_umask_022 ... ok
+
+test result: ok. 6 passed; 0 failed; 21 ignored; 0 measured; 0 filtered out; finished in 0.63s
+
+     Running tests/webhook_receiver_storage_security.rs (target/debug/deps/webhook_receiver_storage_security-a64c16bc41b3310b)
+
+running 3 tests
+test receiver_refuses_group_accessible_existing_inbox ... ok
+test receiver_refuses_hard_linked_existing_inbox ... ok
+test receiver_refuses_inbox_directory_accessible_to_other_users ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+     Running tests/webhook_reconcile_contract.rs (target/debug/deps/webhook_reconcile_contract-1e83f04d6aace668)
+
+running 23 tests
+test api_response_for_another_resource_is_rejected ... ok
+test api_response_url_from_another_origin_is_rejected_even_with_matching_path ... ok
+test api_response_with_the_same_number_but_another_repository_is_rejected ... ok
+test approved_review_notification_reconciles_current_pull_request_instead_of_payload_state ... ok
+test batch_reconciliation_caches_unavailable_reads_for_the_same_resource ... ok
+test batch_reconciliation_coalesces_forgejo_replays_with_new_delivery_ids ... ok
+test batch_reconciliation_ignores_out_of_order_notification_state ... ok
+test batch_reconciliation_stops_reads_when_aggregate_cache_budget_is_exhausted ... ok
+test envelope_mismatch_is_rejected_without_api_call ... ok
+test incomplete_api_snapshot_never_becomes_canonical ... ok
+test invalid_or_unrepresentable_forgejo_updated_at_is_rejected ... ok
+test malformed_repository_reference_is_rejected_before_api_call ... ok
+test open_pull_request_cannot_be_reported_as_merged ... ok
+test open_unmerged_pull_request_remains_canonical ... ok
+test oversized_reconciliation_batch_is_rejected_before_api_calls ... ok
+test pull_request_reconciliation_uses_current_merge_and_head ... ok
+test pull_request_with_malformed_current_base_sha_is_not_canonical ... ok
+test pull_request_without_current_base_sha_is_not_canonical ... ok
+test stale_issue_notification_returns_fresh_forgejo_state ... ok
+test unavailable_api_returns_no_canonical_snapshot ... ok
+test unsupported_notification_never_calls_forgejo_api ... ok
+test valid_forgejo_updated_at_accepts_leap_day_fraction_and_offset ... ok
+test zero_resource_number_is_rejected_before_api_call ... ok
+
+test result: ok. 23 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.23s
+
+     Running tests/webhook_reconcile_pipeline.rs (target/debug/deps/webhook_reconcile_pipeline-059c903bd86c5636)
+
+running 1 test
+test signed_webhook_journal_replay_reconciles_stale_payload_to_fixture_state ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+

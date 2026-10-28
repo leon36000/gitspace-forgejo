@@ -1,0 +1,21 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.52s
+     Running tests/webhook_reconcile_contract.rs (target/debug/deps/webhook_reconcile_contract-1e83f04d6aace668)
+
+running 1 test
+
+thread 'review_notification_with_missing_or_wrong_action_is_rejected_before_api_read' (2359822) panicked at tests/webhook_reconcile_contract.rs:1497:9:
+assertion `left == right` failed: replay case 0
+  left: Ok(ReconciledState { delivery_id: "review-action-replay-0", resource: ResourceRef { kind: PullRequest, owner: "forge-admin", repository: "agent-forge-core", id: Number(14) }, state: "open", updated_at: "2026-10-21T15:27:48-04:00", html_url: "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/14", head_sha: Some("e7a0672a04f51c3f430a57780a2de5fb2fdf0958"), base_sha: Some("f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0"), merged: Some(false), merge_commit_sha: None, comment: None })
+ right: Err(InvalidEventPayloadField("action"))
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test review_notification_with_missing_or_wrong_action_is_rejected_before_api_read ... FAILED
+
+failures:
+
+failures:
+    review_notification_with_missing_or_wrong_action_is_rejected_before_api_read
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 55 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `--test webhook_reconcile_contract`

@@ -1,0 +1,9 @@
+cargo test --offline --locked --bin forgejo-reconcile-local invalid_event_payload_field_reports_persisted_journal_recovery_action -- --exact --nocapture
+target/debug/deps/forgejo_reconcile_local-3e9fc5f7734f2ac5 --list | rg invalid_event_payload_field_reports
+cargo test --offline --locked --bin forgejo-reconcile-local tests::invalid_event_payload_field_reports_persisted_journal_recovery_action -- --exact --nocapture
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_refuses_persisted_review_without_action_before_api_read
+cargo fmt --all -- --check
+git diff --check
+python3 -c 'import ast, pathlib; ast.parse(pathlib.Path("scripts/run_webhook_reconcile_cli_e2e.py").read_text()); print("runner AST valid")'
+python3 scripts/verify_cargo_license_state.py
+cargo metadata --offline --locked --no-deps --format-version 1

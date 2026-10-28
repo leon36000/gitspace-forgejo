@@ -1,0 +1,38 @@
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/src/bin/forgejo-reconcile-local.rs:1141:
+     if headers_bytes.len() > MAX_CURL_HEADER_JSON_BYTES {
+         return Err(ApiReadError::InvalidResponse);
+     }
+-    let headers = agent_forge_core::strict_json::parse_value_rejecting_duplicate_members(
+-        headers_bytes,
+-    )
+-    .map_err(|_| ApiReadError::InvalidResponse)?;
++    let headers =
++        agent_forge_core::strict_json::parse_value_rejecting_duplicate_members(headers_bytes)
++            .map_err(|_| ApiReadError::InvalidResponse)?;
+ 
+     let total_count = if status == 200 {
+         single_curl_header_value(&headers, "x-total-count")?
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/src/bin/forgejo-reconcile-local.rs:8602:
+             200,
+             Duration::ZERO,
+             b"[]".to_vec(),
+-            vec![
+-                "X-Total-Count: 1".to_owned(),
+-                "X-Total-Count: 2".to_owned(),
+-            ],
++            vec!["X-Total-Count: 1".to_owned(), "X-Total-Count: 2".to_owned()],
+         )]);
+         let api = api_for_origin(origin);
+ 
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/src/bin/forgejo-reconcile-local.rs:8616:
+             Duration::from_secs(2),
+         );
+ 
+-        assert_eq!(response.map(|response| response.total_count), Err(ApiReadError::InvalidResponse));
++        assert_eq!(
++            response.map(|response| response.total_count),
++            Err(ApiReadError::InvalidResponse)
++        );
+         assert_eq!(server.join().unwrap(), 1);
+     }
+ 

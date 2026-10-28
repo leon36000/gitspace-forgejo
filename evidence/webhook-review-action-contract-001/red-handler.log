@@ -1,0 +1,21 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.56s
+     Running tests/webhook_handler_contract.rs (target/debug/deps/webhook_handler_contract-627b310cb6f343c9)
+
+running 1 test
+
+thread 'review_notifications_require_the_reviewed_action_before_journaling' (2359718) panicked at tests/webhook_handler_contract.rs:1059:13:
+assertion `left == right` failed: pull_request_approved action case 0
+  left: 202
+ right: 400
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test review_notifications_require_the_reviewed_action_before_journaling ... FAILED
+
+failures:
+
+failures:
+    review_notifications_require_the_reviewed_action_before_journaling
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 26 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `--test webhook_handler_contract`

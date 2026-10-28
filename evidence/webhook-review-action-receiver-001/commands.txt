@@ -1,0 +1,11 @@
+git rev-parse HEAD
+git branch --show-current
+git status --short | wc -l
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_receiver_requires_reviewed_action_before_reserving_delivery
+cargo fmt --all -- --check
+git diff --check
+python3 -c 'import ast, pathlib; ast.parse(pathlib.Path("scripts/run_webhook_reconcile_cli_e2e.py").read_text()); print("runner AST valid")'
+rustc --version
+cargo --version
+python3 --version
+/usr/bin/bwrap --version

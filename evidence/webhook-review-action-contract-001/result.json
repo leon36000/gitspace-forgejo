@@ -1,0 +1,28 @@
+{
+  "cargo_license": {
+    "license": null,
+    "license_file": null,
+    "publish": [],
+    "license_decision": "no_license_selected",
+    "redistribution_rights": "not_assessed",
+    "spdx_package_license_declared": "NOASSERTION",
+    "status": "verified"
+  },
+  "change": "require action=reviewed on the three Forgejo pull request review event headers",
+  "limitations": [
+    "synthetic HMAC payloads and in-memory current-state fixture",
+    "no full receiver binary or Forgejo-emitted webhook in this lot",
+    "no LLM, AgentOS, benchmark, tokens, or model cost"
+  ],
+  "red": {
+    "handler": "missing action accepted with HTTP 202",
+    "reconcile": "missing action returned canonical state after a fixture API read"
+  },
+  "status": "verified",
+  "tests": {
+    "webhook_handler_contract": {"passed": 27, "failed": 0},
+    "webhook_reconcile_contract": {"passed": 56, "failed": 0},
+    "webhook_reconcile_pipeline": {"passed": 3, "failed": 0},
+    "cargo_license_policy": {"passed": 9, "failed": 0}
+  }
+}

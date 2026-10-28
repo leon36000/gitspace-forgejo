@@ -1,0 +1,18 @@
+# Worktree: .runtime/webhook-005-workspace, HEAD f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+# Exact red: exit 101; conflicting X-Total-Count values were reduced to Some(1).
+cargo test --offline --locked --bin forgejo-reconcile-local local_adapter_rejects_duplicate_total_count_headers -- --nocapture
+# Exact green after switching curl write-out to bounded header_json: exit 0.
+cargo test --offline --locked --bin forgejo-reconcile-local local_adapter_rejects_duplicate_total_count_headers -- --nocapture
+# Adapter binary suite: exit 0, 113 passed.
+cargo test --offline --locked --bin forgejo-reconcile-local -- --test-threads=1
+# Full final suite: exit 0, 493 passed, 0 failed, 55 ignored, 34 groups.
+cargo test --offline --locked --all-targets -- --test-threads=1
+# Final format and whitespace checks: exit 0.
+cargo fmt --all -- --check
+git diff --check
+# Strict Clippy reports pre-existing errors in adjacent modules; captured separately.
+cargo clippy --offline --locked --bin forgejo-reconcile-local -- -D warnings
+# Target Clippy after allowing the two established baseline lint categories: exit 0.
+cargo clippy --offline --locked --bin forgejo-reconcile-local -- -D warnings -A clippy::too_many_arguments -A clippy::collapsible_if
+# Cargo metadata guard: exit 0; no license selected.
+python3 scripts/verify_cargo_license_state.py

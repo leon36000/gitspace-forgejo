@@ -1,0 +1,12 @@
+Product HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+Product branch: local/WEBHOOK-005-canonical-links
+Worktree porcelain entries: 1462
+Cargo.toml / policy / Rust / tests / docs SHA-256:
+f9144c83c85369f40ecfd2255fdd0915ddb90a4d6c14e1705908febe9bb2b1a3  Cargo.toml
+fd576b1b3abdb056329bca33c48d06557c1fa7d5888993b1373f3317d4628c17  scripts/verify_cargo_license_state.py
+e3c91721ee2f46435e8a0ac11cfd3f9b947c02d328d494e85286b7a0d3b88b1c  src/webhook.rs
+ca1a4a8c6c1088519445b8c54a4eba3c6e956004145ea65e17b8b20fc4e4cb11  src/webhook/reconcile.rs
+7ab1475e7e9f2c9ea72a946582cd019d5440af0e2c4e3bbc181be69354fe253d  tests/webhook_handler_contract.rs
+c33b7147d26251b31cd8b8418d425503b47531b2b661bd6dc466f4eddb0c4926  tests/webhook_reconcile_contract.rs
+5fdb1a22d89366d5fb16eaa77e84ca0774a4fb4afc36c91642ce2db44cd2b297  docs/checkpoint.md
+cebce5087dba6c1bf3265f7b1143e936273429d0ba91e93c6eb4bc9f352772db  docs/refusal-evidence-matrix.md

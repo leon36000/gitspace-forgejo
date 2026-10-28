@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "scenario": "actual_reconcile_cli_process_refuses_persisted_review_without_action_before_api_read",
+  "unit_test": {
+    "name": "tests::invalid_event_payload_field_reports_persisted_journal_recovery_action",
+    "red": "expected failure on prior misleading error action",
+    "green_passed": 1,
+    "green_failed": 0
+  },
+  "process_test": {
+    "name": "actual_reconcile_cli_process_refuses_persisted_review_without_action_before_api_read",
+    "passed": 1,
+    "failed": 0,
+    "filtered": 112,
+    "duration_seconds_reported": 0.06
+  },
+  "assertions": {
+    "verdict": "inconclusive",
+    "error_code": "invalid_envelope",
+    "field_path": "payload.action",
+    "persistence_state": "already_persisted",
+    "upstream_read_attempts": 0,
+    "canonical_state_present": false,
+    "journal_unchanged": true
+  },
+  "isolation": ["bubblewrap", "network namespace", "pid namespace"],
+  "fixture": "synthetic persisted record with recomputed append-only journal hash; not a Forgejo-emitted event",
+  "cargo_license": {
+    "license": null,
+    "license_file": null,
+    "publish": [],
+    "decision": "no_license_selected",
+    "redistribution_rights": "not_assessed",
+    "spdx_package_license_declared": "NOASSERTION"
+  },
+  "trusted_recovery_mechanism_implemented": false
+}

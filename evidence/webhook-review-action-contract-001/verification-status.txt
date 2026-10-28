@@ -1,0 +1,5 @@
+PASS | 86 targeted Rust tests across webhook_handler_contract (27), webhook_reconcile_contract (56), webhook_reconcile_pipeline (3)
+PASS | Cargo license state verification (license=null, license_file=null, publish=[], no_license_selected, not_assessed, NOASSERTION)
+PASS | Cargo license policy unit tests (9/9)
+PASS | cargo fmt --all -- --check
+PASS | git diff --check

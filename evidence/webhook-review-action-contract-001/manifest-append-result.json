@@ -1,0 +1,11 @@
+{
+  "first_append": {
+    "local_entries_appended": 18,
+    "local_files_verified": 18,
+    "worktree_entries_appended": 21,
+    "project_entries_appended": 22,
+    "worktree_prefix_preserved": true,
+    "project_prefix_preserved": true
+  },
+  "note": "The first append precedes this result receipt; the current helper was rerun afterward to bind this file too."
+}
