@@ -1,0 +1,24 @@
+TDD red — before implementation:
+python3 scripts/run_forgejo_mission_delivery_process_e2e.py --only launched_cli_requires_attestation_policy_before_reading_host_credential
+python3 scripts/run_forgejo_mission_delivery_process_e2e.py --only launched_cli_rejects_untrusted_attestation_before_reading_host_credential
+
+Isolated policy checks — green:
+python3 scripts/run_forgejo_mission_delivery_process_e2e.py --only launched_cli_requires_attestation_policy_before_reading_host_credential --only launched_cli_rejects_untrusted_attestation_before_reading_host_credential --only launched_cli_refuses_an_unknown_delivery_without_creating_runtime_state
+
+Signed receiver → mission CLI checks — green:
+python3 scripts/run_forgejo_mission_delivery_process_e2e.py --only actual_mission_cli_admits_signed_webhook_after_closed_refusal_and_reuses_allocation --only actual_mission_cli_refuses_same_revision_requirement_edit_after_signed_delivery
+
+Final checks:
+cargo test --offline --locked --bin forgejo-mission-local
+cargo test --offline --locked --test forgejo_mission_delivery_process
+cargo test --offline --locked --test forgejo_mission_delivery_process_e2e --no-run
+cargo check --offline --locked --all-targets
+cargo fmt --all -- --check
+git diff --check
+python3 -m py_compile scripts/run_forgejo_mission_delivery_process_e2e.py
+
+Append-only evidence indexes:
+python3 evidence/continuation-260-mission-cli-strict-attestation-001/append_manifests.py
+python3 evidence/continuation-260-mission-cli-strict-attestation-001/verify_manifests.py
+python3 evidence/continuation-260-mission-cli-strict-attestation-001/append_refinement_manifests.py
+python3 evidence/continuation-260-mission-cli-strict-attestation-001/verify_manifests.py

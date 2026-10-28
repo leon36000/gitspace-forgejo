@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-27",
+  "timezone": "America/Montreal",
+  "workspace": "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace",
+  "head": "f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0",
+  "forgejo_binary": "/tmp/forgejo-17.0.0",
+  "forgejo_version": "17.0.0+gitea-1.22.0",
+  "forgejo_binary_sha256": "e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7",
+  "runtime_boundary": "local Forgejo and receiver services; loopback; source build isolated by Bubblewrap no-network allowlist; runtime processes run as current user",
+  "state_directory": "/tmp/forgejo-attestation-263-state",
+  "state_directory_mode": "0700; retained, not deleted",
+  "model_or_agent": "none",
+  "external_network_or_service": "none"
+}

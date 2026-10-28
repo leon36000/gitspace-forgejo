@@ -1,0 +1,43 @@
+{
+  "api_version": "forgejo-rest-v1",
+  "canonical_state": {
+    "base_sha": null,
+    "comment": null,
+    "head_sha": null,
+    "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/issues/1",
+    "merge_commit_sha": null,
+    "merged": null,
+    "requested_reviewers": null,
+    "requested_reviewers_teams": null,
+    "state": "open",
+    "updated_at": "2026-10-27T14:11:34-04:00",
+    "work_item_content": {
+      "body": "State is checked against the Forgejo API.",
+      "source": "current_forgejo_issue_api",
+      "title": "Live local reconciliation",
+      "trust": "untrusted_user_content"
+    }
+  },
+  "delivery_id": "live-stale-issue-41",
+  "resource": {
+    "kind": "issue",
+    "number": 1,
+    "owner": "forge-admin",
+    "repository": "agent-forge-core"
+  },
+  "schema_version": 12,
+  "source_event_provenance_contract": {
+    "current_state_read_means": "canonical_api_read_only",
+    "journal_hash_chain_authenticates_local_writer": false,
+    "journal_replay_contract": "validates_hash_chain_and_envelope; optional_receiver_attestation_requires_external_trust_policy",
+    "per_delivery_ingestion_attestation_persisted": "optional_ed25519_receiver_signature",
+    "raw_signature_persisted": false,
+    "receiver_attestation_verification": "requires_external_trusted_key_policy; required_before_credential_for_in_scope_delivery",
+    "receiver_hmac_check": "performed_before_append_by_current_ingest_path",
+    "replay_hmac_verification": "not_performed",
+    "source_authenticity_claim_for_selected_delivery": "not_made",
+    "trusted_boundary": "local_filesystem_writer"
+  },
+  "upstream_read_attempts": 1,
+  "verdict": "current_state_read"
+}

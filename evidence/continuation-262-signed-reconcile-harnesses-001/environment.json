@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-27",
+  "timezone": "America/Montreal",
+  "workspace": "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace",
+  "head": "f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0",
+  "repository_state": "heavily modified; changes are not attributed to HEAD",
+  "platform": "Linux aarch64",
+  "python": "Python 3.12.3",
+  "execution": "five unit tests with subprocess mocked; both runner --help paths; in-memory compilation; no Forgejo or receiver process launched",
+  "model_or_agent": "none",
+  "network_or_external_service": "none"
+}

@@ -1,0 +1,13 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.42s
+     Running tests/forgejo_mission_delivery_process.rs (target/debug/deps/forgejo_mission_delivery_process-37a0eb4673dabbeb)
+
+running 5 tests
+test launched_cli_refuses_an_unknown_delivery_without_creating_runtime_state ... ignored, run via isolated bwrap runner with scratch .runtime
+test launched_cli_rejects_untrusted_attestation_before_reading_host_credential ... ignored, run via isolated bwrap runner with scratch .runtime
+test launched_cli_requires_attestation_policy_before_reading_host_credential ... ignored, run via isolated bwrap runner with scratch .runtime
+test launched_help_documents_delivery_mode_and_the_fixed_inbox ... ok
+test launched_cli_refuses_delivery_mode_without_a_digest_or_with_an_unsafe_id ... ok
+
+test result: ok. 2 passed; 0 failed; 3 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

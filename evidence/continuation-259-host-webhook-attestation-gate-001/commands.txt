@@ -1,0 +1,24 @@
+Worktree: /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace
+Base HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+
+Final successful checks (all run from the worktree root):
+python3 -m py_compile scripts/run_forgejo_mission_delivery_process_e2e.py — exit 0
+cargo test --offline --locked --bin mission-012-mcp-host webhook_host_config_requires_trust_keys_before_opening_admission_or_inbox — exit 0, 1 passed
+cargo test --offline --locked --bin mission-012-mcp-host trusted_webhook_attestation_keys_are_canonical_unique_and_rotation_bounded — exit 0, 1 passed
+cargo test --offline --locked --test webhook_mission_admission_contract webhook_source_receipt_revalidates_exact_event_without_changing_stable_handoff — exit 0, 1 passed
+python3 scripts/run_forgejo_mission_delivery_process_e2e.py --only webhook_source_handoff_process_rejects_missing_and_stale_receipts_before_mcp — exit 0, 1 passed, 30 filtered; Bubblewrap process isolation
+cargo check --offline --locked --all-targets — exit 0
+cargo fmt --all -- --check — exit 0
+git diff --check — exit 0
+
+Retained diagnostic failures (not counted as passes):
+python3 scripts/run_forgejo_mission_delivery_process_e2e.py --only mission_012_signed_request_context_red_green_independent_verification_and_sandbox_merge — initial exit 1 while copying all five binaries; /artifacts tmpfs exhausted before the helper’s aggregate-size check. Fixed by staging only targets referenced by the selected test crate and moving the aggregate check before copies.
+Same selected MISSION-012 command after runner fix — exit 1 during the real `cargo_test`; stderr `Failed to connect to bus: No medium found`. The outer Bubblewrap intentionally does not expose the host user bus; no socket mount was added.
+python3 scripts/run_forgejo_mission_delivery_process_e2e.py --only webhook_source_handoff_process_rejects_missing_and_stale_receipts_before_mcp — first process attempt exit 1 because the wrong-key case inherited the previous nonexistent inbox path. Corrected the test fixture to restore the real inbox, then reran successfully as logged.
+
+Additional fresh checks after documentation updates: cargo fmt and git diff check are repeated in their final logs. No full all-target test suite was repeated in this lot; CONTINUATION-258 records the preceding 682 passed / 140 ignored result, before this host-gate change.
+
+Evidence indexes:
+python3 evidence/continuation-259-host-webhook-attestation-gate-001/append_manifests.py — exit 0; appended initial local evidence rows and both global indexes.
+python3 evidence/continuation-259-host-webhook-attestation-gate-001/append_refinement_manifests.py — exit 0; appended final verification receipt and manifest refinement rows while retaining existing rows.
+python3 evidence/continuation-259-host-webhook-attestation-gate-001/verify_manifests.py — exit 0; 29 local evidence files and 9 source hashes verified; historic blank/malformed rows preserved.

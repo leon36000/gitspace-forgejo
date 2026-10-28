@@ -1,0 +1,15 @@
+{
+  "historical_prefixes_preserved": true,
+  "historical_project_prefix": {
+    "blank_rows": 2,
+    "malformed_rows": 0
+  },
+  "historical_worktree_prefix": {
+    "blank_rows": 6,
+    "malformed_rows": 1
+  },
+  "latest_hashes_verified": true,
+  "local_evidence_entries": 29,
+  "source_files": 9,
+  "status": "verified"
+}

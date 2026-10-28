@@ -1,0 +1,11 @@
+# CONTINUATION-264 reproducible commands (workdir: repository root)
+# The pre-fix emitted-webhook suite returned 1 (16 failures, 20 errors);
+# its raw output was not saved. Root cause: stale Python schema expectations.
+cargo metadata --offline --locked --no-deps --format-version 1
+python3 scripts/verify_cargo_license_state.py
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest -v scripts.test_cargo_license_state
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest tests.test_forgejo_emitted_webhook_e2e -v
+PYTHONDONTWRITEBYTECODE=1 python3 scripts/run_forgejo_live_webhook_reconcile_emitted.py --forgejo-binary /tmp/forgejo-17.0.0 --repo-root /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace --state-dir /tmp/forgejo-attested-emitted-264-state --evidence-dir /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/continuation-264-attested-forgejo-emitted-001 --batch-pull-request-events
+# The runner was invoked by subprocess from a small output-summarizing Python wrapper;
+# its full result is stored in result.json and complete build log in cargo-build.log.
+(cd evidence/continuation-264-attested-forgejo-emitted-001 && sha256sum -c SHA256SUMS)

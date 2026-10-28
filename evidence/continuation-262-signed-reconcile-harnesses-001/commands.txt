@@ -1,0 +1,14 @@
+python3 -m unittest tests/test_forgejo_reconcile_attestation_harness_args.py
+python3 scripts/run_forgejo_live_webhook_reconcile_e2e.py --help
+python3 scripts/run_forgejo_live_webhook_reconcile_emitted.py --help
+python3 - <<'PY'
+from pathlib import Path
+for name in ['scripts/run_forgejo_live_webhook_reconcile_e2e.py', 'scripts/run_forgejo_live_webhook_reconcile_emitted.py', 'scripts/run_forgejo_native_branch_delete_webhook_reconcile.py', 'scripts/run_mission_012_live_agent_pr_e2e.py', 'tests/test_forgejo_reconcile_attestation_harness_args.py']:
+    compile(Path(name).read_text(encoding='utf-8'), name, 'exec')
+PY
+git diff --check
+python3 evidence/continuation-262-signed-reconcile-harnesses-001/append_manifests.py
+python3 evidence/continuation-262-signed-reconcile-harnesses-001/verify_manifests.py
+python3 scripts/run_forgejo_native_branch_delete_webhook_reconcile.py --help
+python3 scripts/run_mission_012_live_agent_pr_e2e.py --help
+python3 evidence/continuation-262-signed-reconcile-harnesses-001/append_refinement_manifests.py

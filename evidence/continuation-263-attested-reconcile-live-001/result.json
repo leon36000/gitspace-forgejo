@@ -1,0 +1,298 @@
+{
+  "forgejo": {
+    "binary_sha256": "e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7",
+    "listener": "127.0.0.1:3130",
+    "version": "forgejo version 17.0.0+gitea-1.22.0 (release name 17.0.0) built with GNU Make 4.4.1, go1.26.9 : bindata, timetzdata, sqlite, sqlite_unlock_notify"
+  },
+  "invalid_credential": {
+    "credential_material_recorded": false,
+    "exit_status": 1,
+    "result": {
+      "api_version": "forgejo-rest-v1",
+      "delivery_id": "live-stale-issue-41",
+      "error": {
+        "action": "verify the host-scoped Forgejo API credential is present, current, and accepted for the configured repository; keep its value outside agent input",
+        "code": "upstream_unauthorized",
+        "details": {
+          "journal_source_hash": "529d937b707916acb0990bb973c8d6f53788fbf7dcefdc817cdafc93008d3861",
+          "journal_source_sequence": 1,
+          "resource": {
+            "kind": "issue",
+            "number": 1,
+            "owner": "forge-admin",
+            "repository": "agent-forge-core"
+          },
+          "upstream": "forgejo"
+        },
+        "retryable": false
+      },
+      "schema_version": 12,
+      "source_event_provenance_contract": {
+        "current_state_read_means": "canonical_api_read_only",
+        "journal_hash_chain_authenticates_local_writer": false,
+        "journal_replay_contract": "validates_hash_chain_and_envelope; optional_receiver_attestation_requires_external_trust_policy",
+        "per_delivery_ingestion_attestation_persisted": "optional_ed25519_receiver_signature",
+        "raw_signature_persisted": false,
+        "receiver_attestation_verification": "requires_external_trusted_key_policy; required_before_credential_for_in_scope_delivery",
+        "receiver_hmac_check": "performed_before_append_by_current_ingest_path",
+        "replay_hmac_verification": "not_performed",
+        "source_authenticity_claim_for_selected_delivery": "not_made",
+        "trusted_boundary": "local_filesystem_writer"
+      },
+      "upstream_read_attempts": 1,
+      "verdict": "inconclusive"
+    }
+  },
+  "issue_number": 1,
+  "limitations": [
+    "No LLM or AgentOS execution was used.",
+    "The webhook delivery was synthesized locally; Forgejo-to-receiver delivery was not tested.",
+    "The Actions API route was read against Forgejo v17 with Actions disabled and a nonexistent run ID; no Actions runner or emitted workflow webhook was used.",
+    "The Actions job API route was read against the same fresh instance with a nonexistent job ID; no Actions runner or emitted workflow-job webhook was used.",
+    "The build ran in a Bubblewrap no-network allowlist; runtime services ran as the current user, so OS privilege isolation and malicious candidate execution were not tested.",
+    "This validates one isolated local Forgejo v17 issue-read path, not production deployment or general value."
+  ],
+  "missing_workflow_job": {
+    "delivery_id": "live-missing-workflow-job-9001",
+    "diagnostic_file": "missing-workflow-job-diagnostic.json",
+    "event": "workflow_job_success",
+    "forgejo_actions_enabled": false,
+    "journal_unchanged_during_reconciliation": true,
+    "missing_job_api_body_before": {
+      "errors": [],
+      "message": "The target couldn't be found.",
+      "url": "http://127.0.0.1:3130/api/swagger"
+    },
+    "missing_job_api_http_status_after": 404,
+    "missing_job_api_http_status_before": 404,
+    "payload_origin": "synthetic local signed webhook; Forgejo sender was not configured",
+    "receiver": {
+      "body": {
+        "accepted": true,
+        "delivery_id": "live-missing-workflow-job-9001",
+        "duplicate": false,
+        "reconcile_required": true,
+        "schema_version": 1,
+        "sequence": 3
+      },
+      "http_status": 202
+    },
+    "reconciliation": {
+      "api_version": "forgejo-rest-v1",
+      "delivery_id": "live-missing-workflow-job-9001",
+      "error": {
+        "action": "verify the workflow job ID and repository access; HTTP 404 does not distinguish an absent job from an inaccessible repository",
+        "code": "resource_not_found",
+        "details": {
+          "journal_source_hash": "b93a4e47adabbe8fabc5badc5aca5f2c34d121bbeff4fec4c8c6e1ac97c8f6cd",
+          "journal_source_sequence": 3,
+          "resource": {
+            "index_in_repo": 42,
+            "job_id": 9001,
+            "kind": "workflow_job",
+            "owner": "forge-admin",
+            "repository": "agent-forge-core",
+            "run_id": 7002
+          },
+          "upstream": "forgejo"
+        },
+        "retryable": false
+      },
+      "schema_version": 12,
+      "source_event_provenance_contract": {
+        "current_state_read_means": "canonical_api_read_only",
+        "journal_hash_chain_authenticates_local_writer": false,
+        "journal_replay_contract": "validates_hash_chain_and_envelope; optional_receiver_attestation_requires_external_trust_policy",
+        "per_delivery_ingestion_attestation_persisted": "optional_ed25519_receiver_signature",
+        "raw_signature_persisted": false,
+        "receiver_attestation_verification": "requires_external_trusted_key_policy; required_before_credential_for_in_scope_delivery",
+        "receiver_hmac_check": "performed_before_append_by_current_ingest_path",
+        "replay_hmac_verification": "not_performed",
+        "source_authenticity_claim_for_selected_delivery": "not_made",
+        "trusted_boundary": "local_filesystem_writer"
+      },
+      "upstream_read_attempts": 1,
+      "verdict": "inconclusive"
+    },
+    "reconciliation_exit_status": 1
+  },
+  "missing_workflow_run": {
+    "delivery_id": "live-missing-workflow-run-7001",
+    "diagnostic_file": "missing-workflow-run-diagnostic.json",
+    "event": "workflow_run_success",
+    "forgejo_actions_enabled": false,
+    "journal_unchanged_during_reconciliation": true,
+    "missing_run_api_body_before": {
+      "errors": [],
+      "message": "The target couldn't be found.",
+      "url": "http://127.0.0.1:3130/api/swagger"
+    },
+    "missing_run_api_http_status_after": 404,
+    "missing_run_api_http_status_before": 404,
+    "payload_origin": "synthetic local signed webhook; Forgejo sender was not configured",
+    "receiver": {
+      "body": {
+        "accepted": true,
+        "delivery_id": "live-missing-workflow-run-7001",
+        "duplicate": false,
+        "reconcile_required": true,
+        "schema_version": 1,
+        "sequence": 2
+      },
+      "http_status": 202
+    },
+    "reconciliation": {
+      "api_version": "forgejo-rest-v1",
+      "delivery_id": "live-missing-workflow-run-7001",
+      "error": {
+        "action": "verify the workflow run ID and repository access; HTTP 404 does not distinguish an absent run from an inaccessible repository",
+        "code": "resource_not_found",
+        "details": {
+          "journal_source_hash": "5df416848f408a77d319caae5791bbf1502ec06a497a81075cf7c0dcf93519f2",
+          "journal_source_sequence": 2,
+          "resource": {
+            "index_in_repo": 41,
+            "kind": "workflow_run",
+            "owner": "forge-admin",
+            "repository": "agent-forge-core",
+            "run_id": 7001
+          },
+          "upstream": "forgejo"
+        },
+        "retryable": false
+      },
+      "schema_version": 12,
+      "source_event_provenance_contract": {
+        "current_state_read_means": "canonical_api_read_only",
+        "journal_hash_chain_authenticates_local_writer": false,
+        "journal_replay_contract": "validates_hash_chain_and_envelope; optional_receiver_attestation_requires_external_trust_policy",
+        "per_delivery_ingestion_attestation_persisted": "optional_ed25519_receiver_signature",
+        "raw_signature_persisted": false,
+        "receiver_attestation_verification": "requires_external_trusted_key_policy; required_before_credential_for_in_scope_delivery",
+        "receiver_hmac_check": "performed_before_append_by_current_ingest_path",
+        "replay_hmac_verification": "not_performed",
+        "source_authenticity_claim_for_selected_delivery": "not_made",
+        "trusted_boundary": "local_filesystem_writer"
+      },
+      "upstream_read_attempts": 1,
+      "verdict": "inconclusive"
+    },
+    "reconciliation_exit_status": 1
+  },
+  "post_run_issue_state": "open",
+  "process_cleanup": {
+    "expected_tcp_listeners_absent": true,
+    "forgejo": {
+      "expected_address": "127.0.0.1:3130",
+      "listener_addresses_after_stop": [],
+      "listener_checked": true,
+      "stop": {
+        "returncode": 0,
+        "started": true,
+        "stop_action": "terminate",
+        "stopped": true
+      }
+    },
+    "receiver": {
+      "expected_address": "127.0.0.1:48527",
+      "listener_addresses_after_stop": [],
+      "listener_checked": true,
+      "stop": {
+        "returncode": 0,
+        "started": true,
+        "stop_action": "terminate",
+        "stopped": true
+      }
+    },
+    "tracked_processes_exited": true
+  },
+  "reconciliation": {
+    "api_version": "forgejo-rest-v1",
+    "canonical_state": {
+      "base_sha": null,
+      "comment": null,
+      "head_sha": null,
+      "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/issues/1",
+      "merge_commit_sha": null,
+      "merged": null,
+      "requested_reviewers": null,
+      "requested_reviewers_teams": null,
+      "state": "open",
+      "updated_at": "2026-10-27T14:11:34-04:00",
+      "work_item_content": {
+        "body": "State is checked against the Forgejo API.",
+        "source": "current_forgejo_issue_api",
+        "title": "Live local reconciliation",
+        "trust": "untrusted_user_content"
+      }
+    },
+    "delivery_id": "live-stale-issue-41",
+    "resource": {
+      "kind": "issue",
+      "number": 1,
+      "owner": "forge-admin",
+      "repository": "agent-forge-core"
+    },
+    "schema_version": 12,
+    "source_event_provenance_contract": {
+      "current_state_read_means": "canonical_api_read_only",
+      "journal_hash_chain_authenticates_local_writer": false,
+      "journal_replay_contract": "validates_hash_chain_and_envelope; optional_receiver_attestation_requires_external_trust_policy",
+      "per_delivery_ingestion_attestation_persisted": "optional_ed25519_receiver_signature",
+      "raw_signature_persisted": false,
+      "receiver_attestation_verification": "requires_external_trusted_key_policy; required_before_credential_for_in_scope_delivery",
+      "receiver_hmac_check": "performed_before_append_by_current_ingest_path",
+      "replay_hmac_verification": "not_performed",
+      "source_authenticity_claim_for_selected_delivery": "not_made",
+      "trusted_boundary": "local_filesystem_writer"
+    },
+    "upstream_read_attempts": 1,
+    "verdict": "current_state_read"
+  },
+  "repository": {
+    "api_reader": {
+      "is_admin": false,
+      "login": "forge-reader",
+      "repo_permission_admin": false,
+      "repo_permission_pull": true,
+      "repo_permission_push": false,
+      "requested_token_scopes": [
+        "read:user",
+        "read:repository",
+        "read:issue"
+      ]
+    },
+    "full_name": "forge-admin/agent-forge-core",
+    "private": true
+  },
+  "schema_version": 1,
+  "source_head_commit": "f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0",
+  "verdict": "passed",
+  "webhook": {
+    "delivery_id": "live-stale-issue-41",
+    "duplicate_delivery": {
+      "body": {
+        "accepted": true,
+        "delivery_id": "live-stale-issue-41",
+        "duplicate": true,
+        "reconcile_required": true,
+        "schema_version": 1,
+        "sequence": 1
+      },
+      "http_status": 202
+    },
+    "first_delivery": {
+      "body": {
+        "accepted": true,
+        "delivery_id": "live-stale-issue-41",
+        "duplicate": false,
+        "reconcile_required": true,
+        "schema_version": 1,
+        "sequence": 1
+      },
+      "http_status": 202
+    },
+    "payload_origin": "synthetic local signed webhook; Forgejo sender was not configured",
+    "payload_state": "closed"
+  }
+}

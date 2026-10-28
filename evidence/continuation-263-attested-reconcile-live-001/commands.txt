@@ -1,0 +1,21 @@
+/tmp/forgejo-17.0.0 --version
+python3 scripts/run_forgejo_live_webhook_reconcile_e2e.py --forgejo-binary /tmp/forgejo-17.0.0 --state-dir /tmp/forgejo-attestation-263-state --evidence-dir evidence/continuation-263-attested-reconcile-live-001
+(cd evidence/continuation-263-attested-reconcile-live-001 && sha256sum -c SHA256SUMS)
+python3 - <<'PY'
+import json
+from pathlib import Path
+from socket import socket
+root=Path('evidence/continuation-263-attested-reconcile-live-001')
+result=json.loads((root/'result.json').read_text())
+assert result['verdict']=='passed'
+assert result['reconciliation']['verdict']=='current_state_read'
+assert result['webhook']['first_delivery']['body']['sequence']==result['webhook']['duplicate_delivery']['body']['sequence']
+assert result['invalid_credential']['result']['error']['code']=='upstream_unauthorized'
+assert result['process_cleanup']['tracked_processes_exited'] is True
+state=Path('/tmp/forgejo-attestation-263-state')
+assert state.is_dir() and state.stat().st_mode & 0o777 == 0o700
+with socket() as probe: assert probe.connect_ex(('127.0.0.1',3130)) != 0
+print('local live run readback and cleanup conditions verified')
+PY
+python3 evidence/continuation-263-attested-reconcile-live-001/append_manifests.py
+python3 evidence/continuation-263-attested-reconcile-live-001/verify_manifests.py

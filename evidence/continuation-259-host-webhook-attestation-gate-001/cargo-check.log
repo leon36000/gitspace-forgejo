@@ -1,0 +1,22 @@
+    Checking agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+error[E0603]: enum import `JournalAttestationError` is private
+   --> src/mission_admission.rs:24:9
+    |
+ 24 |         JournalAttestationError, JournaledWebhookEventV1, WebhookError,
+    |         ^^^^^^^^^^^^^^^^^^^^^^^ private enum import
+    |
+note: the enum import `JournalAttestationError` is defined here...
+   --> src/webhook.rs:2:33
+    |
+  2 |     AppendResult, EventJournal, JournalAttestationError, JournalError, JournalEvent,
+    |                                 ^^^^^^^^^^^^^^^^^^^^^^^
+note: ...and refers to the enum `JournalAttestationError` which is defined here
+   --> src/lib.rs:650:1
+    |
+650 | pub enum JournalAttestationError {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ you could import this directly
+
+For more information about this error, try `rustc --explain E0603`.
+error: could not compile `agent-forge-core` (lib test) due to 1 previous error
+warning: build failed, waiting for other jobs to finish...
+error: could not compile `agent-forge-core` (lib) due to 1 previous error

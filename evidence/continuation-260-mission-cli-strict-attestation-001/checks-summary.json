@@ -1,0 +1,15 @@
+{
+  "status": "passed_targeted_checks",
+  "unit_tests": {"target": "forgejo-mission-local", "passed": 36, "failed": 0, "ignored": 0},
+  "isolated_process_refusals": {"passed": 3, "failed": 0, "cases": ["attestation_policy_missing_before_credential", "untrusted_attestation_before_credential", "unknown_delivery_with_policy"]},
+  "signed_receiver_cli_scenarios": {"passed": 2, "failed": 0, "cases": ["closed_issue_refusal_admission_resume_idempotency", "stale_requirement_digest_refusal"]},
+  "ordinary_process_tests": {"passed": 2, "failed": 0, "ignored": 3},
+  "all_targets_check": "passed",
+  "test_process_compile": "passed",
+  "rustfmt_check": "passed",
+  "git_diff_check": "passed",
+  "runner_py_compile": "passed",
+  "full_suite_run": false,
+  "forgejo_live_run": false,
+  "agent_llm_run": false
+}

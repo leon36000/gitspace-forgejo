@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "strict_host_gate": {
+    "status": "passed",
+    "tests": [
+      {"name": "webhook_host_config_requires_trust_keys_before_opening_admission_or_inbox", "passed": 1, "failed": 0},
+      {"name": "trusted_webhook_attestation_keys_are_canonical_unique_and_rotation_bounded", "passed": 1, "failed": 0},
+      {"name": "webhook_source_receipt_revalidates_exact_event_without_changing_stable_handoff", "passed": 1, "failed": 0},
+      {"name": "webhook_source_handoff_process_rejects_missing_and_stale_receipts_before_mcp", "passed": 1, "failed": 0, "ignored": 0, "filtered": 30, "isolation": "bubblewrap --unshare-net --unshare-pid"}
+    ]
+  },
+  "static_checks": {
+    "cargo_check_offline_locked_all_targets": "passed",
+    "cargo_fmt_check": "passed",
+    "git_diff_check": "passed",
+    "python_py_compile_runner": "passed"
+  },
+  "larger_mission_test": {
+    "status": "inconclusive",
+    "reached": ["actual receiver accepted an attested delivery", "mission admission", "MCP initialization and cited context"],
+    "blocked_at": "host cargo_test: systemd-run --user could not reach a user bus inside outer Bubblewrap",
+    "stderr": "Failed to connect to bus: No medium found",
+    "access_change": "not made; host user bus was not mounted"
+  },
+  "runner_resource_failure": {
+    "status": "fixed",
+    "initial_failure": "exporting an unnecessary binary exhausted the 128 MiB artifact tmpfs before aggregate-size validation",
+    "fix": "derive binaries from selected test source CARGO_BIN_EXE references and preflight aggregate size"
+  },
+  "license_or_dependency_changes": "none",
+  "model_calls": 0,
+  "forgejo_live_calls": 0,
+  "project_complete": false
+}

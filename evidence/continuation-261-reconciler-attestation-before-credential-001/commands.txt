@@ -1,0 +1,37 @@
+# Process isolation scenarios; every scenario below executed under scripts/run_webhook_reconcile_cli_e2e.py / Bubblewrap.
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_requires_trusted_attestation_policy_before_host_credential_read --scenario actual_reconcile_cli_process_refuses_untrusted_attestation_before_host_credential_read --scenario actual_reconcile_cli_process_uses_host_credential_fd_for_receiver_journal --scenario actual_reconcile_cli_process_reads_private_workflow_job_and_parent_run_with_host_credential --scenario actual_reconcile_cli_process_stops_batch_reads_after_401_and_resumes_with_rotated_credential
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_reads_private_workflow_run_with_host_credential_fd --scenario actual_reconcile_cli_process_reports_actionable_upstream_401_without_leaking_credential --scenario actual_reconcile_cli_process_mixed_batch_limits_credential_to_configured_repository --scenario actual_reconcile_cli_process_reads_fork_pull_request_with_host_credential_fd --scenario actual_reconcile_cli_process_refuses_fork_pull_request_with_invalid_host_credential
+
+# Compiler, behavior, API-discovery and local licensing checks.
+cargo check --offline --locked --all-targets
+cargo test --offline --locked --bin forgejo-reconcile-local reconcile_invocation_accepts_bounded_canonical_attestation_keys
+cargo test --offline --locked --bin forgejo-reconcile-local capabilities_list_exact_merge_target_profiles
+cargo test --offline --locked --bin forgejo-reconcile-local signed_journal_deliveries_reconcile_through_the_local_http_adapter
+cargo test --offline --locked --bin forgejo-reconcile-local mixed_reconciliation_batch_keeps_quarantine_inconclusive_and_reads_only_active_delivery
+cargo test --offline --locked --test forgejo_reconcile_capabilities_e2e
+cargo fmt --all -- --check
+git diff --check
+python3 -m py_compile scripts/run_webhook_reconcile_cli_e2e.py
+python3 scripts/verify_cargo_license_state.py
+python3 -m unittest scripts/test_cargo_license_state.py
+
+# Retest after response-schema migration single=12, batch=13, capabilities=11.
+cargo fmt --all -- --check
+cargo check --offline --locked --all-targets
+cargo test --offline --locked --test forgejo_reconcile_capabilities_e2e
+cargo test --offline --locked --test reconcile_config_contract
+cargo test --offline --locked --test webhook_quarantine_cli
+cargo test --offline --locked --test reconcile_journal_lock_timeout
+cargo test --offline --locked --bin forgejo-reconcile-local reconcile_invocation_accepts_bounded_canonical_attestation_keys
+cargo test --offline --locked --bin forgejo-reconcile-local capabilities_list_exact_merge_target_profiles
+cargo test --offline --locked --bin forgejo-reconcile-local signed_journal_deliveries_reconcile_through_the_local_http_adapter
+cargo test --offline --locked --bin forgejo-reconcile-local mixed_reconciliation_batch_keeps_quarantine_inconclusive_and_reads_only_active_delivery
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_requires_trusted_attestation_policy_before_host_credential_read --scenario actual_reconcile_cli_process_refuses_untrusted_attestation_before_host_credential_read --scenario actual_reconcile_cli_process_uses_host_credential_fd_for_receiver_journal
+python3 - <<'PY'
+from pathlib import Path
+for name in ['scripts/run_webhook_reconcile_cli_e2e.py', 'tests/test_forgejo_emitted_webhook_e2e.py', 'tests/test_forgejo_live_org_team_reviewer_readback.py', 'tests/test_forgejo_webhook_native_replay_e2e.py']:
+    compile(Path(name).read_text(encoding='utf-8'), name, 'exec')
+PY
+git diff --check
+python3 evidence/continuation-261-reconciler-attestation-before-credential-001/append_refinement_manifests.py
+python3 evidence/continuation-261-reconciler-attestation-before-credential-001/verify_manifests.py
