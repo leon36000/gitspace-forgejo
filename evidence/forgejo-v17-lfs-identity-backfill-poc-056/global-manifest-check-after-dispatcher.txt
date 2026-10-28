@@ -1,0 +1,9 @@
+Global manifest audit after the POC-056 migration-dispatcher test was added. This file records literal historical-row comparisons and separately evaluates the newest digest for each path. All rows, including old mismatches and the malformed placeholder, are retained.
+
+Before refreshing this revision, the audit found 3,273 rows, 3,272 well-formed entries, 3,221 current matches, 0 missing paths, 51 differing rows across 25 paths, 3,180 distinct paths, and one malformed historical row. The last-digest-per-path view found 3,172 matches, 0 missing, and 8 paths whose new contents had not yet been appended.
+
+After the first current-hash refresh (10 rows), the audit found 3,283 rows, 3,282 valid entries, 3,230 matching rows, 0 missing paths, 52 differing historical rows across 25 paths, 3,181 distinct paths, and the same malformed row: `None  tests/test_mission_012_live_composed_e2e.py`. Every last digest matched: 3,181/3,181, with 0 missing or divergent.
+
+The final report/local-manifest refresh adds two rows. Final audit result after appending them: 3,285 rows, 3,284 valid entries, 3,230 literal row matches, 0 missing paths, 54 historical differing rows across 26 paths, 3,181 distinct paths, and one malformed row preserved verbatim: `None  tests/test_mission_012_live_composed_e2e.py`. By newest digest per path, all 3,181 paths match, with 0 missing and 0 divergent.
+
+The earlier archived audit reported 17 divergent rows across 15 paths under a different earlier state. Its implementation/semantics were not available for exact reconciliation. Older snapshot rows remain intentionally present; current-last-entry validation is the readback for source integrity. No malformed or historical row was deleted, rewritten, or hidden.

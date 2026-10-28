@@ -1,0 +1,3 @@
+command=git diff --no-index --check /dev/null models/git/lfs_generation_mapping_poc_test.go
+exit_code=1
+expected_no_index_diff_exit=1

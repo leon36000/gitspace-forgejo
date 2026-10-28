@@ -1,0 +1,10 @@
+Forgejo v17.0.0 source review at commit 0d791421f85ca13a63b665053d81ea765fbbc571 (all paths under /tmp/forgejo-v17-base-cas-poc):
+
+- `modules/storage/storage.go`: `ObjectStorage` has Open, Save, Stat, Delete, URL, IterateObjects; package global `LFS` is typed only as `ObjectStorage`. `NewStorage` returns the registered factory result directly, and `initLFS` assigns that value to `LFS` without a standard decorator.
+- `modules/storage/local.go`: `LocalStorage` is the stock local implementation of `ObjectStorage`; no generation resolver/opener.
+- `modules/storage/minio.go`: `MinioStorage` is the stock MinIO implementation of `ObjectStorage`; no generation resolver/opener or reader lease.
+- `modules/storage/helper.go`: `DiscardStorage` implements the six legacy methods only.
+- `routers/web/repo/setting/lfs.go`, `LFSDelete`: the route removes the repository LFS association, then calls `storage.LFS.Delete(oidPath)` when no references remain. The baseline route contains the FIXME that the LFS store is not locked.
+- `services/lfs/server.go`: `ResolveLFSGeneration/OpenLFSGeneration` appears only in this scratch's experimental POC-036/037 seam; the v17 baseline route uses `ContentStore` and has no such interface.
+
+No stock decorator/wrapper in `modules/storage` was found in this bounded search. A custom wrapper embedding `ObjectStorage` will hide optional methods unless it explicitly forwards them. None of these findings means production can retain active readers: the only passing reader lease is the POC-037 SQLite fixture.

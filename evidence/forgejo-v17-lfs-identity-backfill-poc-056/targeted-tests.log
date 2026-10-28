@@ -1,0 +1,14 @@
+Environment variable $PROJECT_CONF not set - defaulting to /tmp/forgejo-v17-base-cas-poc/tests/sqlite.ini
+=== RUN   TestBackfillLFSPendingMetaOperationIdentityIsPagedAndIdempotent
+--- PASS: TestBackfillLFSPendingMetaOperationIdentityIsPagedAndIdempotent (0.31s)
+=== RUN   TestBackfillLFSPendingMetaOperationIdentityRefusesConflictsWithinPage
+--- PASS: TestBackfillLFSPendingMetaOperationIdentityRefusesConflictsWithinPage (0.02s)
+=== RUN   TestBackfillLFSPendingMetaOperationIdentityRefusesCrossPageConflictAndCanRetry
+--- PASS: TestBackfillLFSPendingMetaOperationIdentityRefusesCrossPageConflictAndCanRetry (0.32s)
+=== RUN   TestBackfillLFSPendingMetaOperationIdentityHandlesMissingLegacyTable
+--- PASS: TestBackfillLFSPendingMetaOperationIdentityHandlesMissingLegacyTable (0.01s)
+=== RUN   TestBackfillLFSPendingMetaOperationIdentityRunsThroughMigrationDispatcher
+??? [TestLogger] 2026/10/25 05:30:43 ...igrations/migrate.go:207:Migrate() [I] Migration[v17b_lfs_pending_meta_operation_identity]: test pending LFS operation identity backfill through Migrate
+--- PASS: TestBackfillLFSPendingMetaOperationIdentityRunsThroughMigrationDispatcher (0.03s)
+PASS
+ok  	forgejo.org/models/forgejo_migrations	0.818s

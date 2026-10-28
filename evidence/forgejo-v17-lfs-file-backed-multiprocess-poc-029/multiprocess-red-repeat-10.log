@@ -1,0 +1,210 @@
+2026/10/24 20:27:56 ...s/storage/storage.go:157:initAttachments() [I] Initialising Attachment storage with type: local
+2026/10/24 20:27:56 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata1831139759/attachments
+2026/10/24 20:27:56 ...s/storage/storage.go:147:initAvatars() [I] Initialising Avatar storage with type: local
+2026/10/24 20:27:56 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata1831139759/avatars
+2026/10/24 20:27:56 ...s/storage/storage.go:174:initRepoAvatars() [I] Initialising Repository Avatar storage with type: local
+2026/10/24 20:27:56 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata1831139759/repo-avatars
+2026/10/24 20:27:56 ...s/storage/storage.go:180:initRepoArchives() [I] Initialising Repository Archive storage with type: local
+2026/10/24 20:27:56 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata1831139759/repo-archive
+2026/10/24 20:27:56 ...s/storage/storage.go:190:initPackages() [I] Initialising Packages storage with type: local
+2026/10/24 20:27:56 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata1831139759/packages
+2026/10/24 20:27:56 ...s/storage/storage.go:201:initActions() [I] Initialising Actions storage with type: local
+2026/10/24 20:27:56 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata1831139759/actions_log
+2026/10/24 20:27:56 ...s/storage/storage.go:205:initActions() [I] Initialising ActionsArtifacts storage with type: local
+2026/10/24 20:27:56 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/go-build165978171/b001/data/actions_artifacts
+=== RUN   TestPOCFileBackedMultiprocessReservations
+    lfs_generation_mapping_poc_test.go:520: worker multiprocess-distinct-09 failed: exit status 1
+        2026/10/24 20:27:57 ...s/storage/storage.go:157:initAttachments() [I] Initialising Attachment storage with type: local
+        2026/10/24 20:27:57 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata4006887321/attachments
+        2026/10/24 20:27:57 ...s/storage/storage.go:147:initAvatars() [I] Initialising Avatar storage with type: local
+        2026/10/24 20:27:57 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata4006887321/avatars
+        2026/10/24 20:27:57 ...s/storage/storage.go:174:initRepoAvatars() [I] Initialising Repository Avatar storage with type: local
+        2026/10/24 20:27:57 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata4006887321/repo-avatars
+        2026/10/24 20:27:57 ...s/storage/storage.go:180:initRepoArchives() [I] Initialising Repository Archive storage with type: local
+        2026/10/24 20:27:57 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata4006887321/repo-archive
+        2026/10/24 20:27:57 ...s/storage/storage.go:190:initPackages() [I] Initialising Packages storage with type: local
+        2026/10/24 20:27:57 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata4006887321/packages
+        2026/10/24 20:27:57 ...s/storage/storage.go:201:initActions() [I] Initialising Actions storage with type: local
+        2026/10/24 20:27:57 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata4006887321/actions_log
+        2026/10/24 20:27:57 ...s/storage/storage.go:205:initActions() [I] Initialising ActionsArtifacts storage with type: local
+        2026/10/24 20:27:57 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/go-build165978171/b001/data/actions_artifacts
+        [xorm] [info]  2026/10/24 20:27:57.234133 PING DATABASE sqlite3
+        --- FAIL: TestPOCFileBackedMultiprocessReservations (0.54s)
+            lfs_generation_mapping_poc_test.go:445: database is locked
+        FAIL
+--- FAIL: TestPOCFileBackedMultiprocessReservations (0.82s)
+=== RUN   TestPOCFileBackedMultiprocessReservations
+    lfs_generation_mapping_poc_test.go:520: worker multiprocess-distinct-04 failed: exit status 1
+        2026/10/24 20:27:57 ...s/storage/storage.go:157:initAttachments() [I] Initialising Attachment storage with type: local
+        2026/10/24 20:27:57 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata3992317801/attachments
+        2026/10/24 20:27:57 ...s/storage/storage.go:147:initAvatars() [I] Initialising Avatar storage with type: local
+        2026/10/24 20:27:57 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata3992317801/avatars
+        2026/10/24 20:27:57 ...s/storage/storage.go:174:initRepoAvatars() [I] Initialising Repository Avatar storage with type: local
+        2026/10/24 20:27:57 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata3992317801/repo-avatars
+        2026/10/24 20:27:57 ...s/storage/storage.go:180:initRepoArchives() [I] Initialising Repository Archive storage with type: local
+        2026/10/24 20:27:57 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata3992317801/repo-archive
+        2026/10/24 20:27:57 ...s/storage/storage.go:190:initPackages() [I] Initialising Packages storage with type: local
+        2026/10/24 20:27:57 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata3992317801/packages
+        2026/10/24 20:27:57 ...s/storage/storage.go:201:initActions() [I] Initialising Actions storage with type: local
+        2026/10/24 20:27:57 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata3992317801/actions_log
+        2026/10/24 20:27:57 ...s/storage/storage.go:205:initActions() [I] Initialising ActionsArtifacts storage with type: local
+        2026/10/24 20:27:57 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/go-build165978171/b001/data/actions_artifacts
+        [xorm] [info]  2026/10/24 20:27:58.050862 PING DATABASE sqlite3
+        --- FAIL: TestPOCFileBackedMultiprocessReservations (0.52s)
+            lfs_generation_mapping_poc_test.go:445: database is locked
+        FAIL
+--- FAIL: TestPOCFileBackedMultiprocessReservations (0.79s)
+=== RUN   TestPOCFileBackedMultiprocessReservations
+    lfs_generation_mapping_poc_test.go:520: worker multiprocess-distinct-00 failed: exit status 1
+        2026/10/24 20:27:58 ...s/storage/storage.go:157:initAttachments() [I] Initialising Attachment storage with type: local
+        2026/10/24 20:27:58 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata729843391/attachments
+        2026/10/24 20:27:58 ...s/storage/storage.go:147:initAvatars() [I] Initialising Avatar storage with type: local
+        2026/10/24 20:27:58 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata729843391/avatars
+        2026/10/24 20:27:58 ...s/storage/storage.go:174:initRepoAvatars() [I] Initialising Repository Avatar storage with type: local
+        2026/10/24 20:27:58 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata729843391/repo-avatars
+        2026/10/24 20:27:58 ...s/storage/storage.go:180:initRepoArchives() [I] Initialising Repository Archive storage with type: local
+        2026/10/24 20:27:58 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata729843391/repo-archive
+        2026/10/24 20:27:58 ...s/storage/storage.go:190:initPackages() [I] Initialising Packages storage with type: local
+        2026/10/24 20:27:58 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata729843391/packages
+        2026/10/24 20:27:58 ...s/storage/storage.go:201:initActions() [I] Initialising Actions storage with type: local
+        2026/10/24 20:27:58 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata729843391/actions_log
+        2026/10/24 20:27:58 ...s/storage/storage.go:205:initActions() [I] Initialising ActionsArtifacts storage with type: local
+        2026/10/24 20:27:58 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/go-build165978171/b001/data/actions_artifacts
+        [xorm] [info]  2026/10/24 20:27:58.837778 PING DATABASE sqlite3
+        --- FAIL: TestPOCFileBackedMultiprocessReservations (0.53s)
+            lfs_generation_mapping_poc_test.go:445: database is locked
+        FAIL
+--- FAIL: TestPOCFileBackedMultiprocessReservations (0.79s)
+=== RUN   TestPOCFileBackedMultiprocessReservations
+    lfs_generation_mapping_poc_test.go:520: worker multiprocess-distinct-00 failed: exit status 1
+        2026/10/24 20:27:59 ...s/storage/storage.go:157:initAttachments() [I] Initialising Attachment storage with type: local
+        2026/10/24 20:27:59 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata1418134915/attachments
+        2026/10/24 20:27:59 ...s/storage/storage.go:147:initAvatars() [I] Initialising Avatar storage with type: local
+        2026/10/24 20:27:59 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata1418134915/avatars
+        2026/10/24 20:27:59 ...s/storage/storage.go:174:initRepoAvatars() [I] Initialising Repository Avatar storage with type: local
+        2026/10/24 20:27:59 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata1418134915/repo-avatars
+        2026/10/24 20:27:59 ...s/storage/storage.go:180:initRepoArchives() [I] Initialising Repository Archive storage with type: local
+        2026/10/24 20:27:59 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata1418134915/repo-archive
+        2026/10/24 20:27:59 ...s/storage/storage.go:190:initPackages() [I] Initialising Packages storage with type: local
+        2026/10/24 20:27:59 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata1418134915/packages
+        2026/10/24 20:27:59 ...s/storage/storage.go:201:initActions() [I] Initialising Actions storage with type: local
+        2026/10/24 20:27:59 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata1418134915/actions_log
+        2026/10/24 20:27:59 ...s/storage/storage.go:205:initActions() [I] Initialising ActionsArtifacts storage with type: local
+        2026/10/24 20:27:59 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/go-build165978171/b001/data/actions_artifacts
+        [xorm] [info]  2026/10/24 20:27:59.606309 PING DATABASE sqlite3
+        --- FAIL: TestPOCFileBackedMultiprocessReservations (0.54s)
+            lfs_generation_mapping_poc_test.go:445: database is locked
+        FAIL
+--- FAIL: TestPOCFileBackedMultiprocessReservations (0.79s)
+=== RUN   TestPOCFileBackedMultiprocessReservations
+    lfs_generation_mapping_poc_test.go:520: worker multiprocess-distinct-00 failed: exit status 1
+        2026/10/24 20:28:00 ...s/storage/storage.go:157:initAttachments() [I] Initialising Attachment storage with type: local
+        2026/10/24 20:28:00 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata562752572/attachments
+        2026/10/24 20:28:00 ...s/storage/storage.go:147:initAvatars() [I] Initialising Avatar storage with type: local
+        2026/10/24 20:28:00 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata562752572/avatars
+        2026/10/24 20:28:00 ...s/storage/storage.go:174:initRepoAvatars() [I] Initialising Repository Avatar storage with type: local
+        2026/10/24 20:28:00 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata562752572/repo-avatars
+        2026/10/24 20:28:00 ...s/storage/storage.go:180:initRepoArchives() [I] Initialising Repository Archive storage with type: local
+        2026/10/24 20:28:00 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata562752572/repo-archive
+        2026/10/24 20:28:00 ...s/storage/storage.go:190:initPackages() [I] Initialising Packages storage with type: local
+        2026/10/24 20:28:00 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata562752572/packages
+        2026/10/24 20:28:00 ...s/storage/storage.go:201:initActions() [I] Initialising Actions storage with type: local
+        2026/10/24 20:28:00 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata562752572/actions_log
+        2026/10/24 20:28:00 ...s/storage/storage.go:205:initActions() [I] Initialising ActionsArtifacts storage with type: local
+        2026/10/24 20:28:00 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/go-build165978171/b001/data/actions_artifacts
+        [xorm] [info]  2026/10/24 20:28:00.418131 PING DATABASE sqlite3
+        --- FAIL: TestPOCFileBackedMultiprocessReservations (0.52s)
+            lfs_generation_mapping_poc_test.go:445: database is locked
+        FAIL
+--- FAIL: TestPOCFileBackedMultiprocessReservations (0.77s)
+=== RUN   TestPOCFileBackedMultiprocessReservations
+    lfs_generation_mapping_poc_test.go:520: worker multiprocess-distinct-04 failed: exit status 1
+        2026/10/24 20:28:01 ...s/storage/storage.go:157:initAttachments() [I] Initialising Attachment storage with type: local
+        2026/10/24 20:28:01 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata523650821/attachments
+        2026/10/24 20:28:01 ...s/storage/storage.go:147:initAvatars() [I] Initialising Avatar storage with type: local
+        2026/10/24 20:28:01 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata523650821/avatars
+        2026/10/24 20:28:01 ...s/storage/storage.go:174:initRepoAvatars() [I] Initialising Repository Avatar storage with type: local
+        2026/10/24 20:28:01 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata523650821/repo-avatars
+        2026/10/24 20:28:01 ...s/storage/storage.go:180:initRepoArchives() [I] Initialising Repository Archive storage with type: local
+        2026/10/24 20:28:01 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata523650821/repo-archive
+        2026/10/24 20:28:01 ...s/storage/storage.go:190:initPackages() [I] Initialising Packages storage with type: local
+        2026/10/24 20:28:01 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata523650821/packages
+        2026/10/24 20:28:01 ...s/storage/storage.go:201:initActions() [I] Initialising Actions storage with type: local
+        2026/10/24 20:28:01 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata523650821/actions_log
+        2026/10/24 20:28:01 ...s/storage/storage.go:205:initActions() [I] Initialising ActionsArtifacts storage with type: local
+        2026/10/24 20:28:01 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/go-build165978171/b001/data/actions_artifacts
+        [xorm] [info]  2026/10/24 20:28:01.205652 PING DATABASE sqlite3
+        --- FAIL: TestPOCFileBackedMultiprocessReservations (0.54s)
+            lfs_generation_mapping_poc_test.go:445: database is locked
+        FAIL
+--- FAIL: TestPOCFileBackedMultiprocessReservations (0.83s)
+=== RUN   TestPOCFileBackedMultiprocessReservations
+    lfs_generation_mapping_poc_test.go:520: worker multiprocess-distinct-06 failed: exit status 1
+        2026/10/24 20:28:01 ...s/storage/storage.go:157:initAttachments() [I] Initialising Attachment storage with type: local
+        2026/10/24 20:28:01 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata796709586/attachments
+        2026/10/24 20:28:01 ...s/storage/storage.go:147:initAvatars() [I] Initialising Avatar storage with type: local
+        2026/10/24 20:28:01 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata796709586/avatars
+        2026/10/24 20:28:01 ...s/storage/storage.go:174:initRepoAvatars() [I] Initialising Repository Avatar storage with type: local
+        2026/10/24 20:28:01 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata796709586/repo-avatars
+        2026/10/24 20:28:01 ...s/storage/storage.go:180:initRepoArchives() [I] Initialising Repository Archive storage with type: local
+        2026/10/24 20:28:01 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata796709586/repo-archive
+        2026/10/24 20:28:01 ...s/storage/storage.go:190:initPackages() [I] Initialising Packages storage with type: local
+        2026/10/24 20:28:01 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata796709586/packages
+        2026/10/24 20:28:01 ...s/storage/storage.go:201:initActions() [I] Initialising Actions storage with type: local
+        2026/10/24 20:28:01 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata796709586/actions_log
+        2026/10/24 20:28:01 ...s/storage/storage.go:205:initActions() [I] Initialising ActionsArtifacts storage with type: local
+        2026/10/24 20:28:01 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/go-build165978171/b001/data/actions_artifacts
+        [xorm] [info]  2026/10/24 20:28:02.016781 PING DATABASE sqlite3
+        --- FAIL: TestPOCFileBackedMultiprocessReservations (0.53s)
+            lfs_generation_mapping_poc_test.go:445: database is locked
+        FAIL
+--- FAIL: TestPOCFileBackedMultiprocessReservations (0.80s)
+=== RUN   TestPOCFileBackedMultiprocessReservations
+    lfs_generation_mapping_poc_test.go:520: worker multiprocess-distinct-07 failed: exit status 1
+        2026/10/24 20:28:02 ...s/storage/storage.go:157:initAttachments() [I] Initialising Attachment storage with type: local
+        2026/10/24 20:28:02 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata1804613612/attachments
+        2026/10/24 20:28:02 ...s/storage/storage.go:147:initAvatars() [I] Initialising Avatar storage with type: local
+        2026/10/24 20:28:02 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata1804613612/avatars
+        2026/10/24 20:28:02 ...s/storage/storage.go:174:initRepoAvatars() [I] Initialising Repository Avatar storage with type: local
+        2026/10/24 20:28:02 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata1804613612/repo-avatars
+        2026/10/24 20:28:02 ...s/storage/storage.go:180:initRepoArchives() [I] Initialising Repository Archive storage with type: local
+        2026/10/24 20:28:02 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata1804613612/repo-archive
+        2026/10/24 20:28:02 ...s/storage/storage.go:190:initPackages() [I] Initialising Packages storage with type: local
+        2026/10/24 20:28:02 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata1804613612/packages
+        2026/10/24 20:28:02 ...s/storage/storage.go:201:initActions() [I] Initialising Actions storage with type: local
+        2026/10/24 20:28:02 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata1804613612/actions_log
+        2026/10/24 20:28:02 ...s/storage/storage.go:205:initActions() [I] Initialising ActionsArtifacts storage with type: local
+        2026/10/24 20:28:02 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/go-build165978171/b001/data/actions_artifacts
+        [xorm] [info]  2026/10/24 20:28:02.812418 PING DATABASE sqlite3
+        --- FAIL: TestPOCFileBackedMultiprocessReservations (0.54s)
+            lfs_generation_mapping_poc_test.go:445: database is locked
+        FAIL
+--- FAIL: TestPOCFileBackedMultiprocessReservations (0.80s)
+=== RUN   TestPOCFileBackedMultiprocessReservations
+    lfs_generation_mapping_poc_test.go:520: worker multiprocess-distinct-03 failed: exit status 1
+        2026/10/24 20:28:03 ...s/storage/storage.go:157:initAttachments() [I] Initialising Attachment storage with type: local
+        2026/10/24 20:28:03 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata2514013434/attachments
+        2026/10/24 20:28:03 ...s/storage/storage.go:147:initAvatars() [I] Initialising Avatar storage with type: local
+        2026/10/24 20:28:03 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata2514013434/avatars
+        2026/10/24 20:28:03 ...s/storage/storage.go:174:initRepoAvatars() [I] Initialising Repository Avatar storage with type: local
+        2026/10/24 20:28:03 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata2514013434/repo-avatars
+        2026/10/24 20:28:03 ...s/storage/storage.go:180:initRepoArchives() [I] Initialising Repository Archive storage with type: local
+        2026/10/24 20:28:03 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata2514013434/repo-archive
+        2026/10/24 20:28:03 ...s/storage/storage.go:190:initPackages() [I] Initialising Packages storage with type: local
+        2026/10/24 20:28:03 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata2514013434/packages
+        2026/10/24 20:28:03 ...s/storage/storage.go:201:initActions() [I] Initialising Actions storage with type: local
+        2026/10/24 20:28:03 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata2514013434/actions_log
+        2026/10/24 20:28:03 ...s/storage/storage.go:205:initActions() [I] Initialising ActionsArtifacts storage with type: local
+        2026/10/24 20:28:03 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/go-build165978171/b001/data/actions_artifacts
+        [xorm] [info]  2026/10/24 20:28:03.613587 PING DATABASE sqlite3
+        --- FAIL: TestPOCFileBackedMultiprocessReservations (0.56s)
+            lfs_generation_mapping_poc_test.go:445: database is locked
+        FAIL
+--- FAIL: TestPOCFileBackedMultiprocessReservations (0.81s)
+=== RUN   TestPOCFileBackedMultiprocessReservations
+--- PASS: TestPOCFileBackedMultiprocessReservations (0.85s)
+FAIL
+FAIL	forgejo.org/models/git	8.246s
+FAIL
+
+exit_code=1

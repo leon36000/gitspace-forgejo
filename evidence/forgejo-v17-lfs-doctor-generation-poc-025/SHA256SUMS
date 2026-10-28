@@ -1,0 +1,7 @@
+d2a54f058d5e1b8bb49a1e67a0c735416a6c3b5b3342836d84c1929858d37c6f  ./doctor-generation-safe-assertion-red-source.go
+cd57d955fe699e83c584ffb296e417bd20aeab6a2647d99cd056ab9f98bfe814  ./doctor-generation-safe-assertion-red.exit
+b78bfe41c484c7bc8d21a8eb17ba84e7a377de4510e0090e14d90b91439237d2  ./doctor-generation-safe-assertion-red.log
+75ac7b495ed852a11b81f6de0564b55a829ab8a52d43907a5bbe514a7acef387  ./doctor-generation-unsafe-behavior-green.exit
+1e34bb5830e03e86b8d96ef64d76512102769b57543aefebf4fc9497ca5832c5  ./doctor-generation-unsafe-behavior-green.log
+08231bb1aa4eeeb1613bf8708ca66ebda7ccbd7b1439166a54ba37c6e26582c7  ./lfs_doctor_generation_path_poc_test.go
+9750a3aaa08ec0c716e53551571688f3e8ad1c932148edf56e8658d8d42e5c76  ./local-run.md

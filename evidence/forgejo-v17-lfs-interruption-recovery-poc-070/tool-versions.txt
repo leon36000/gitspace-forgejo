@@ -1,0 +1,7 @@
+Forgejo source base: v17.0.0, commit 0d791421f85ca13a63b665053d81ea765fbbc571
+Go: go version go1.27.3 linux/arm64
+Git: git version 2.43.0
+Host: Linux aarch64
+Integration database: SQLite
+Go toolchain auto-download: disabled (GOTOOLCHAIN=local)
+Go module network access: disabled (GOPROXY=off)

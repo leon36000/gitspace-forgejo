@@ -1,0 +1,44 @@
+2026/10/24 16:31:16 ...s/storage/storage.go:157:initAttachments() [I] Initialising Attachment storage with type: local
+2026/10/24 16:31:16 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata2162132203/attachments
+2026/10/24 16:31:16 ...s/storage/storage.go:147:initAvatars() [I] Initialising Avatar storage with type: local
+2026/10/24 16:31:16 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata2162132203/avatars
+2026/10/24 16:31:16 ...s/storage/storage.go:174:initRepoAvatars() [I] Initialising Repository Avatar storage with type: local
+2026/10/24 16:31:16 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata2162132203/repo-avatars
+2026/10/24 16:31:16 ...s/storage/storage.go:180:initRepoArchives() [I] Initialising Repository Archive storage with type: local
+2026/10/24 16:31:16 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata2162132203/repo-archive
+2026/10/24 16:31:16 ...s/storage/storage.go:190:initPackages() [I] Initialising Packages storage with type: local
+2026/10/24 16:31:16 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata2162132203/packages
+2026/10/24 16:31:16 ...s/storage/storage.go:201:initActions() [I] Initialising Actions storage with type: local
+2026/10/24 16:31:16 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata2162132203/actions_log
+2026/10/24 16:31:16 ...s/storage/storage.go:205:initActions() [I] Initialising ActionsArtifacts storage with type: local
+2026/10/24 16:31:16 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/go-build4154694976/b001/data/actions_artifacts
+=== RUN   TestGarbageCollectLFSMetaObjectsPreservesPendingReferenceInAnotherRepository
+2026/10/24 16:31:16 ...s/storage/storage.go:157:initAttachments() [I] Initialising Attachment storage with type: local
+2026/10/24 16:31:16 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata2162132203/attachments
+2026/10/24 16:31:16 ...s/storage/storage.go:147:initAvatars() [I] Initialising Avatar storage with type: local
+2026/10/24 16:31:16 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata2162132203/avatars
+2026/10/24 16:31:16 ...s/storage/storage.go:174:initRepoAvatars() [I] Initialising Repository Avatar storage with type: local
+2026/10/24 16:31:16 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata2162132203/repo-avatars
+2026/10/24 16:31:16 ...s/storage/storage.go:168:initLFS() [I] Initialising LFS storage with type: local
+2026/10/24 16:31:16 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata2162132203/lfs
+2026/10/24 16:31:16 ...s/storage/storage.go:180:initRepoArchives() [I] Initialising Repository Archive storage with type: local
+2026/10/24 16:31:16 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata2162132203/repo-archive
+2026/10/24 16:31:16 ...s/storage/storage.go:190:initPackages() [I] Initialising Packages storage with type: local
+2026/10/24 16:31:16 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata2162132203/packages
+2026/10/24 16:31:16 ...s/storage/storage.go:201:initActions() [I] Initialising Actions storage with type: local
+2026/10/24 16:31:16 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata2162132203/actions_log
+2026/10/24 16:31:16 ...s/storage/storage.go:205:initActions() [I] Initialising ActionsArtifacts storage with type: local
+2026/10/24 16:31:16 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/go-build4154694976/b001/data/actions_artifacts
+    lfs.go:55: Checking user2/lfs
+    lfs.go:63: Collected 2/2 orphaned/5 total LFSMetaObjects in user2/lfs. 2 removed from storage.
+    lfs_test.go:101: 
+        	Error Trace:	/tmp/forgejo-v17-base-cas-poc/services/repository/lfs_test.go:101
+        	Error:      	Should be true
+        	Test:       	TestGarbageCollectLFSMetaObjectsPreservesPendingReferenceInAnotherRepository
+        	Messages:   	GC must retain the content object while another repository has a pending reference
+2026/10/24 16:31:16 ...s/actions/cleanup.go:184:CleanupEphemeralRunnersByPickedTaskOfRepo() [I] Removed 0 runners
+--- FAIL: TestGarbageCollectLFSMetaObjectsPreservesPendingReferenceInAnotherRepository (0.06s)
+FAIL
+FAIL	forgejo.org/services/repository	0.278s
+FAIL
+exit_status=1

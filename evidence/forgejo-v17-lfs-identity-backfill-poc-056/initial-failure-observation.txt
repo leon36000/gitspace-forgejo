@@ -1,0 +1,7 @@
+Observation issue de la première exécution interactive du test inter-pages; le journal brut de cette invocation n’a pas été enregistré sur disque.
+
+Le cas TestBackfillLFSPendingMetaOperationIdentityRefusesCrossPageConflictAndCanRetry a échoué sur une insertion unique :
+
+Error: "insert pending LFS operation identity legacy-cross-page-conflict: unique constraint violation: UNIQUE constraint failed: lfs_pending_meta_operation.operation_key" does not contain "conflicting legacy pending LFS identity"
+
+Diagnostic après inspection de XORM v1.4.1 `session_get.go::Get` : `Get` construit la condition avec tous les champs non vides du bean. La recherche avait donc inclus les métadonnées contradictoires et manqué l’en-tête existant. La migration a été corrigée pour ne fournir que `OperationKey`; la vérification finale ciblée et les trois paquets concernés passent (voir les journaux).

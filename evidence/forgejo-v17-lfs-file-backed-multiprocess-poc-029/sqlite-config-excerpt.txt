@@ -1,0 +1,68 @@
+# Scratch code excerpts; Forgejo v17.0.0 at audited commit and go-sqlite3 v1.14.52.
+# modules/setting/database.go: Database.Timeout default
+	EnableSQLite3 bool
+
+	// Database holds the database settings
+	Database = DatabaseSettings{
+		Timeout:           500,
+		IterateBufferSize: 50,
+	}
+)
+
+
+# modules/setting/database.go: SQLite DSN construction
+		} else {
+			opts += "&mode=rwc"
+		}
+		connStr = fmt.Sprintf("file:%s?_busy_timeout=%d&_txlock=immediate%s", Database.Path, Database.Timeout, opts)
+	default:
+		return "", fmt.Errorf("unknown database type: %s", Database.Type)
+
+# models/unittest/testdb.go: test engine DSN
+func CreateTestEngine(opts FixturesOptions) error {
+	x, err := xorm.NewEngine("sqlite3", "file::memory:?cache=shared&_txlock=immediate")
+	if err != nil {
+		if strings.Contains(err.Error(), "unknown driver") {
+			return fmt.Errorf(`sqlite3 requires: import _ "github.com/mattn/go-sqlite3" or -tags sqlite,sqlite_unlock_notify%s%w`, "\n", err)
+		}
+		return err
+	}
+	x.SetMapper(names.GonicMapper{})
+	x.AddHook(faultInjectorHook{})
+	db.SetDefaultEngine(context.Background(), x)
+
+# go-sqlite3 v1.14.52: _txlock mapping and _busy_timeout parser (sqlite3.go)
+
+		// _txlock
+		if val := params.Get("_txlock"); val != "" {
+			switch strings.ToLower(val) {
+			case "immediate":
+				txlock = "BEGIN IMMEDIATE"
+			case "exclusive":
+				txlock = "BEGIN EXCLUSIVE"
+			case "deferred":
+				txlock = "BEGIN"
+			default:
+				return nil, fmt.Errorf("Invalid _txlock: %v", val)
+			}
+		}
+
+		// Busy Timeout (_busy_timeout)
+		//
+		// https://www.sqlite.org/pragma.html#pragma_busy_timeout
+		//
+		pkey = "" // Reset pkey
+		if _, ok := params["_busy_timeout"]; ok {
+			pkey = "_busy_timeout"
+		}
+		if _, ok := params["_timeout"]; ok {
+			pkey = "_timeout"
+		}
+		if val := params.Get(pkey); val != "" {
+			iv, err := strconv.ParseInt(val, 10, 64)
+			if err != nil {
+				return nil, fmt.Errorf("Invalid _busy_timeout: %v: %v", val, err)
+			}
+			busyTimeout = int(iv)
+		}
+

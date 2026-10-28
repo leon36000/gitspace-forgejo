@@ -1,0 +1,6 @@
+PASS 5/5 targeted backfill and migration-dispatcher tests; see targeted-tests.log.
+PASS complete SQLite-tagged Go tests for models/forgejo_migrations, models/git, and services/pull; see package-tests.log.
+PASS gofmt inspection: gofmt-diff.log is empty.
+PASS local SHA-256 manifest: final check recorded in manifest-check.txt.
+PASS global SHA-256 manifest audit after the dispatcher test; see global-manifest-check-after-dispatcher.txt.
+No Forgejo server, external model, production instance, or network service was invoked.

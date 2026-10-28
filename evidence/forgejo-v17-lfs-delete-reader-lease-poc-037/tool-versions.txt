@@ -1,0 +1,6 @@
+go version go1.27.3 linux/arm64
+forgejo_version=v17.0.0
+forgejo_commit=0d791421f85ca13a63b665053d81ea765fbbc571
+platform=linux/arm64
+network=GOPROXY=off,GOSUMDB=off
+run_ended_utc=2026-10-25T01:38:58Z

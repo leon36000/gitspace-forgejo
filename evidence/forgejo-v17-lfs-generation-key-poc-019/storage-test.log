@@ -1,0 +1,5 @@
+=== RUN   TestPOCStaleDeleteForOldGenerationLeavesNewGeneration
+2026/10/24 18:14:24 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCStaleDeleteForOldGenerationLeavesNewGeneration3181495219/001/lfs
+--- PASS: TestPOCStaleDeleteForOldGenerationLeavesNewGeneration (0.00s)
+PASS
+ok  	forgejo.org/modules/storage	0.013s

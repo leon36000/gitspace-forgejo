@@ -1,0 +1,2 @@
+command=/tmp/forgejo-v17-toolchain/go/bin/gofmt -d models/git/lfs_generation_mapping_poc_test.go
+exit_code=0

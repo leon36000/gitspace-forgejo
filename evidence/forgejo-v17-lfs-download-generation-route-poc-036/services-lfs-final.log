@@ -1,0 +1,21 @@
+=== RUN   TestPOCStreamedDownloadUsesResolvedGenerationAndHonorsRange
+2026/10/24 21:28:06 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCStreamedDownloadUsesResolvedGenerationAndHonorsRange2767649301/001/lfs
+--- PASS: TestPOCStreamedDownloadUsesResolvedGenerationAndHonorsRange (0.00s)
+=== RUN   TestPOCStreamedDownloadRejectsMissingAndStaleVersions
+2026/10/24 21:28:06 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCStreamedDownloadRejectsMissingAndStaleVersions3322808450/001/lfs
+--- PASS: TestPOCStreamedDownloadRejectsMissingAndStaleVersions (0.00s)
+=== RUN   TestPOCSQLiteMappingBindsStreamToResolvedGeneration
+2026/10/24 21:28:06 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCSQLiteMappingBindsStreamToResolvedGeneration3036640619/002/lfs
+--- PASS: TestPOCSQLiteMappingBindsStreamToResolvedGeneration (0.09s)
+=== RUN   TestPOCInterruptedLFSGenerationStageRecoversAfterProcessRestart
+2026/10/24 21:28:06 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCInterruptedLFSGenerationStageRecoversAfterProcessRestart2460686470/001/objects
+--- PASS: TestPOCInterruptedLFSGenerationStageRecoversAfterProcessRestart (0.12s)
+=== RUN   TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRestart
+2026/10/24 21:28:06 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRest3817852015/001/objects
+2026/10/24 21:28:06 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRest3817852015/001/objects
+    versioned_download_sqlite_poc_test.go:436: concurrent promotion returned a retryable candidate error: database is locked
+    versioned_download_sqlite_poc_test.go:444: same live DB handle recovery retry after both first attempts ended: <nil>
+2026/10/24 21:28:06 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRest3817852015/001/objects
+--- PASS: TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRestart (0.07s)
+PASS
+ok  	forgejo.org/services/lfs	0.374s

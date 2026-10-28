@@ -1,0 +1,17 @@
+Scratch: /tmp/forgejo-v17-base-cas-poc
+Base: Forgejo v17.0.0, commit 0d791421f85ca13a63b665053d81ea765fbbc571
+Toolchain: Go 1.27.3 linux/arm64; GOTOOLCHAIN=local; GOPROXY=off
+Database/config: local SQLite integration fixture (tests/sqlite.ini)
+
+Focused integration test:
+GOTOOLCHAIN=local GOPROXY=off /tmp/forgejo-v17-toolchain/go/bin/go test -count=1 -v -timeout=20m -tags sqlite,forgejo_poc_lfs_ack_order ./tests/integration -run '^(TestPOCGenericFileLFSAPIInterruptionReturnsActionableErrorAndCanRecover|TestPOCGenericFileLFSAPIErrorLeavesRecoverablePendingOperation)$'
+
+Formatting check:
+/tmp/forgejo-v17-toolchain/go/bin/gofmt -d tests/integration/lfs_api_ack_order_poc_test.go
+
+Patch whitespace check:
+git diff --check
+
+The test seam skips only generic-file LFS promotion in the post-receive hook. It does not kill Forgejo or inject an actual database/storage failure.
+
+Test-first note: the initial integration run returned HTTP 500 with an empty API message; that failure is preserved. The scratch then added a typed partial-success error and a sanitized caller-visible message while preserving detailed server logging. A later intermediate assertion mismatch is also retained in test-expectation-correction.log; the final source test uses the public message contract.

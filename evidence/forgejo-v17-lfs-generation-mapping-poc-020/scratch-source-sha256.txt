@@ -1,0 +1,3 @@
+Forgejo base commit: 0d791421f85ca13a63b665053d81ea765fbbc571 (v17.0.0)
+Scratch-only test source: models/git/lfs_generation_mapping_poc_test.go
+SHA-256: 365ece2a2211f770d7ccc9f1acbab035cb490c868b28e864b5146b54f08e6b58

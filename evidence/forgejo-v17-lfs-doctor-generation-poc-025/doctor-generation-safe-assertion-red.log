@@ -1,0 +1,131 @@
+Environment variable $PROJECT_CONF not set, use default: tests/sqlite.ini
+2026/10/24 20:06:35 ...s/storage/storage.go:157:initAttachments() [I] Initialising Attachment storage with type: local
+2026/10/24 20:06:35 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/attachments
+2026/10/24 20:06:35 ...s/storage/storage.go:147:initAvatars() [I] Initialising Avatar storage with type: local
+2026/10/24 20:06:35 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/avatars
+2026/10/24 20:06:35 ...s/storage/storage.go:174:initRepoAvatars() [I] Initialising Repository Avatar storage with type: local
+2026/10/24 20:06:35 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/repo-avatars
+2026/10/24 20:06:35 ...s/storage/storage.go:168:initLFS() [I] Initialising LFS storage with type: local
+2026/10/24 20:06:35 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/lfs
+2026/10/24 20:06:35 ...s/storage/storage.go:180:initRepoArchives() [I] Initialising Repository Archive storage with type: local
+2026/10/24 20:06:35 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/repo-archive
+2026/10/24 20:06:35 ...s/storage/storage.go:190:initPackages() [I] Initialising Packages storage with type: local
+2026/10/24 20:06:35 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/packages
+2026/10/24 20:06:35 ...s/storage/storage.go:201:initActions() [I] Initialising Actions storage with type: local
+2026/10/24 20:06:35 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/actions_log
+2026/10/24 20:06:35 ...s/storage/storage.go:205:initActions() [I] Initialising ActionsArtifacts storage with type: local
+2026/10/24 20:06:35 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/actions_artifacts
+2026/10/24 20:06:35 modules/git/git.go:122:checkInit() [W] git module has been initialized already, duplicate init may work but it's better to fix it
+2026/10/24 20:06:35 routers/init.go:109:InitWebInstalled() [I] Git version: 2.43.0 (home: /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/home)
+??? [TestLogger] 2026/10/24 20:06:35 ...s/storage/storage.go:157:initAttachments() [I] Initialising Attachment storage with type: local
+??? [TestLogger] 2026/10/24 20:06:35 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/attachments
+??? [TestLogger] 2026/10/24 20:06:35 ...s/storage/storage.go:147:initAvatars() [I] Initialising Avatar storage with type: local
+??? [TestLogger] 2026/10/24 20:06:35 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/avatars
+??? [TestLogger] 2026/10/24 20:06:35 ...s/storage/storage.go:174:initRepoAvatars() [I] Initialising Repository Avatar storage with type: local
+??? [TestLogger] 2026/10/24 20:06:35 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/repo-avatars
+??? [TestLogger] 2026/10/24 20:06:35 ...s/storage/storage.go:168:initLFS() [I] Initialising LFS storage with type: local
+??? [TestLogger] 2026/10/24 20:06:35 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/lfs
+??? [TestLogger] 2026/10/24 20:06:35 ...s/storage/storage.go:180:initRepoArchives() [I] Initialising Repository Archive storage with type: local
+??? [TestLogger] 2026/10/24 20:06:35 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/repo-archive
+??? [TestLogger] 2026/10/24 20:06:35 ...s/storage/storage.go:190:initPackages() [I] Initialising Packages storage with type: local
+??? [TestLogger] 2026/10/24 20:06:35 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/packages
+??? [TestLogger] 2026/10/24 20:06:35 ...s/storage/storage.go:201:initActions() [I] Initialising Actions storage with type: local
+??? [TestLogger] 2026/10/24 20:06:35 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/actions_log
+??? [TestLogger] 2026/10/24 20:06:35 ...s/storage/storage.go:205:initActions() [I] Initialising ActionsArtifacts storage with type: local
+??? [TestLogger] 2026/10/24 20:06:35 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/actions_artifacts
+??? [TestLogger] 2026/10/24 20:06:35 routers/init.go:129:InitWebInstalled() [I] SQLite3 support is enabled
+??? [TestLogger] 2026/10/24 20:06:35 routers/common/db.go:23:InitDBEngine() [I] Beginning ORM engine initialization.
+??? [TestLogger] 2026/10/24 20:06:35 routers/common/db.go:30:InitDBEngine() [I] ORM engine initialization attempt #1/10...
+??? [TestLogger] 2026/10/24 20:06:35 routers/init.go:135:InitWebInstalled() [I] ORM engine initialization successful!
+??? [TestLogger] 2026/10/24 20:06:35 ...er/issues/indexer.go:80:func1() [I] PID 1155068: Initializing Issue Indexer: bleve
+??? [TestLogger] 2026/10/24 20:06:35 ...exer/code/indexer.go:169:func3() [I] PID: 1155068 Initializing Repository Indexer at: /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/indexers/repos.bleve
+??? [TestLogger] 2026/10/24 20:06:35 ...xer/stats/indexer.go:41:populateRepoIndexer() [I] Populating the repo stats indexer with existing repositories
+??? [TestLogger] 2026/10/24 20:06:35 routers/init.go:84:syncAppConfForGit() [I] AppPath changed from '' to '/tmp/go-build1788937970/b001/integration.test'
+??? [TestLogger] 2026/10/24 20:06:35 routers/init.go:89:syncAppConfForGit() [I] CustomConf changed from '' to '/tmp/forgejo-v17-base-cas-poc/tests/sqlite.ini'
+??? [TestLogger] 2026/10/24 20:06:35 modules/ssh/ssh.go:345:Listen() [I] Adding SSH host key: /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/ssh/gitea.rsa
+??? [TestLogger] 2026/10/24 20:06:35 modules/ssh/init.go:30:Init() [I] SSH server started on localhost:2203. Cipher list ([chacha20-poly1305@openssh.com aes128-ctr aes192-ctr aes256-ctr aes128-gcm@openssh.com aes256-gcm@openssh.com]), key exchange algorithms ([mlkem768x25519-sha256 curve25519-sha256 ecdh-sha2-nistp256 ecdh-sha2-nistp384 ecdh-sha2-nistp521 diffie-hellman-group14-sha256 diffie-hellman-group14-sha1]), MACs ([hmac-sha2-256-etm@openssh.com hmac-sha2-256 hmac-sha1])
+??? [TestLogger] 2026/10/24 20:06:35 ...s/graceful/server.go:50:NewServer() [I] Starting new SSH server: tcp:localhost:2203 on PID: 1155068
+??? [TestLogger] 2026/10/24 20:06:35 ...xer/stats/indexer.go:87:populateRepoIndexer() [I] Done (re)populating the repo stats indexer with existing repositories
+??? [TestLogger] 2026/10/24 20:06:35 ...exer/code/indexer.go:265:func4() [I] Repository Indexer Initialization took 21.884489ms
+??? [TestLogger] 2026/10/24 20:06:35 ...exer/code/indexer.go:291:populateRepoIndexer() [I] Populating the repo indexer with existing repositories
+??? [TestLogger] 2026/10/24 20:06:35 ...er/issues/indexer.go:160:func2() [I] Issue Indexer Initialization took 23.961962ms
+??? [TestLogger] 2026/10/24 20:06:35 ...er/cleanup_sha256.go:27:CleanupSHA256() [I] Start to cleanup dangling images with a sha256:* version
+??? [TestLogger] 2026/10/24 20:06:35 ...er/cleanup_sha256.go:106:cleanupSHA256() [I] Nothing to cleanup
+??? [TestLogger] 2026/10/24 20:06:35 ...er/cleanup_sha256.go:29:CleanupSHA256() [I] Finished to cleanup dangling images with a sha256:* version
+=== RUN   TestPOCDoctorAutofixPreservesActiveGenerationKey
+=== TestPOCDoctorAutofixPreservesActiveGenerationKey (tests/test_utils.go:370)
+    test_utils.go:276: PrepareTestEnv:Process "Cron: Delete old repository archives" cancelled
+    test_utils.go:276: PrepareTestEnv:Process "Cron: Update migration poster IDs" cancelled
+    test_utils.go:276: PrepareTestEnv:Process "Cron: Cancel abandoned actions jobs" cancelled
+    test_utils.go:276: PrepareTestEnv:Process "CodeIndexer batch" cancelled
+    testlogger.go:408: 2026/10/24 20:06:35 ...migrations/update.go:26:UpdateMigrationPosterID() [E] updateMigrationPosterIDByGitService failed: context canceled
+    testlogger.go:408: 2026/10/24 20:06:35 ...migrations/update.go:21:UpdateMigrationPosterID() [W] UpdateMigrationPosterID aborted before gitlab
+    testlogger.go:408: 2026/10/24 20:06:35 ...rvices/cron/tasks.go:131:func2() [E] CreateNotice: context canceled
+    testlogger.go:408: 2026/10/24 20:06:35 ...rvices/cron/tasks.go:131:func2() [E] CreateNotice: context canceled
+    test_utils.go:302: PrepareTestEnv: all processes cancelled within 7.548996ms
+    testlogger.go:408: 2026/10/24 20:06:35 ...exer/code/indexer.go:343:populateRepoIndexer() [I] Done (re)populating the repo indexer with existing repositories
+    testlogger.go:408: 2026/10/24 20:06:35 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/gitea-lfs-meta
+    testlogger.go:408: 2026/10/24 20:06:35 ...s/storage/storage.go:157:initAttachments() [I] Initialising Attachment storage with type: local
+    testlogger.go:408: 2026/10/24 20:06:35 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/attachments
+    testlogger.go:408: 2026/10/24 20:06:35 ...s/storage/storage.go:147:initAvatars() [I] Initialising Avatar storage with type: local
+    testlogger.go:408: 2026/10/24 20:06:35 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/avatars
+    testlogger.go:408: 2026/10/24 20:06:35 ...s/storage/storage.go:174:initRepoAvatars() [I] Initialising Repository Avatar storage with type: local
+    testlogger.go:408: 2026/10/24 20:06:35 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/repo-avatars
+    testlogger.go:408: 2026/10/24 20:06:35 ...s/storage/storage.go:168:initLFS() [I] Initialising LFS storage with type: local
+    testlogger.go:408: 2026/10/24 20:06:35 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCDoctorAutofixPreservesActiveGenerationKey1873881535/002
+    testlogger.go:408: 2026/10/24 20:06:35 ...s/storage/storage.go:180:initRepoArchives() [I] Initialising Repository Archive storage with type: local
+    testlogger.go:408: 2026/10/24 20:06:35 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/repo-archive
+    testlogger.go:408: 2026/10/24 20:06:35 ...s/storage/storage.go:190:initPackages() [I] Initialising Packages storage with type: local
+    testlogger.go:408: 2026/10/24 20:06:35 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/packages
+    testlogger.go:408: 2026/10/24 20:06:35 ...s/storage/storage.go:201:initActions() [I] Initialising Actions storage with type: local
+    testlogger.go:408: 2026/10/24 20:06:35 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/actions_log
+    testlogger.go:408: 2026/10/24 20:06:35 ...s/storage/storage.go:205:initActions() [I] Initialising ActionsArtifacts storage with type: local
+    testlogger.go:408: 2026/10/24 20:06:35 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/actions_artifacts
+    lfs_doctor_generation_path_poc_test.go:64: 
+        	Error Trace:	/tmp/forgejo-v17-base-cas-poc/tests/integration/lfs_doctor_generation_path_poc_test.go:64
+        	Error:      	Received unexpected error:
+        	            	stat /tmp/TestPOCDoctorAutofixPreservesActiveGenerationKey1873881535/002/generation/76fc98d36e4277a338d43769e5ce3c1eac382348fe68c11195f4393520dcc6f3/1/poc-operation: no such file or directory
+        	Test:       	TestPOCDoctorAutofixPreservesActiveGenerationKey
+        	Messages:   	autofix must preserve an active object's generation key
+    testlogger.go:408: 2026/10/24 20:06:35 ...s/storage/storage.go:157:initAttachments() [I] Initialising Attachment storage with type: local
+    testlogger.go:408: 2026/10/24 20:06:35 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/attachments
+    testlogger.go:408: 2026/10/24 20:06:35 ...s/storage/storage.go:147:initAvatars() [I] Initialising Avatar storage with type: local
+    testlogger.go:408: 2026/10/24 20:06:35 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/avatars
+    testlogger.go:408: 2026/10/24 20:06:35 ...s/storage/storage.go:174:initRepoAvatars() [I] Initialising Repository Avatar storage with type: local
+    testlogger.go:408: 2026/10/24 20:06:35 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/repo-avatars
+    testlogger.go:408: 2026/10/24 20:06:35 ...s/storage/storage.go:168:initLFS() [I] Initialising LFS storage with type: local
+    testlogger.go:408: 2026/10/24 20:06:35 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCDoctorAutofixPreservesActiveGenerationKey1873881535/002
+    testlogger.go:408: 2026/10/24 20:06:35 ...s/storage/storage.go:180:initRepoArchives() [I] Initialising Repository Archive storage with type: local
+    testlogger.go:408: 2026/10/24 20:06:35 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/repo-archive
+    testlogger.go:408: 2026/10/24 20:06:35 ...s/storage/storage.go:190:initPackages() [I] Initialising Packages storage with type: local
+    testlogger.go:408: 2026/10/24 20:06:35 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/packages
+    testlogger.go:408: 2026/10/24 20:06:35 ...s/storage/storage.go:201:initActions() [I] Initialising Actions storage with type: local
+    testlogger.go:408: 2026/10/24 20:06:35 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/actions_log
+    testlogger.go:408: 2026/10/24 20:06:35 ...s/storage/storage.go:205:initActions() [I] Initialising ActionsArtifacts storage with type: local
+    testlogger.go:408: 2026/10/24 20:06:35 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/actions_artifacts
+    testlogger.go:408: 2026/10/24 20:06:35 ...s/storage/storage.go:157:initAttachments() [I] Initialising Attachment storage with type: local
+    testlogger.go:408: 2026/10/24 20:06:35 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/attachments
+    testlogger.go:408: 2026/10/24 20:06:35 ...s/storage/storage.go:147:initAvatars() [I] Initialising Avatar storage with type: local
+    testlogger.go:408: 2026/10/24 20:06:35 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/avatars
+    testlogger.go:408: 2026/10/24 20:06:35 ...s/storage/storage.go:174:initRepoAvatars() [I] Initialising Repository Avatar storage with type: local
+    testlogger.go:408: 2026/10/24 20:06:35 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/repo-avatars
+    testlogger.go:408: 2026/10/24 20:06:35 ...s/storage/storage.go:168:initLFS() [I] Initialising LFS storage with type: local
+    testlogger.go:408: 2026/10/24 20:06:35 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/lfs
+    testlogger.go:408: 2026/10/24 20:06:35 ...s/storage/storage.go:180:initRepoArchives() [I] Initialising Repository Archive storage with type: local
+    testlogger.go:408: 2026/10/24 20:06:35 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/repo-archive
+    testlogger.go:408: 2026/10/24 20:06:35 ...s/storage/storage.go:190:initPackages() [I] Initialising Packages storage with type: local
+    testlogger.go:408: 2026/10/24 20:06:35 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/packages
+    testlogger.go:408: 2026/10/24 20:06:35 ...s/storage/storage.go:201:initActions() [I] Initialising Actions storage with type: local
+    testlogger.go:408: 2026/10/24 20:06:35 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/actions_log
+    testlogger.go:408: 2026/10/24 20:06:35 ...s/storage/storage.go:205:initActions() [I] Initialising ActionsArtifacts storage with type: local
+    testlogger.go:408: 2026/10/24 20:06:35 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/actions_artifacts
+testlogger.go:recordError() FATAL ERROR: log.Error has been called: // TestPOCDoctorAutofixPreservesActiveGenerationKey
+	"2026/10/24 20:06:35 ...migrations/update.go:26:UpdateMigrationPosterID() [E] updateMigrationPosterIDByGitService failed: context canceled",
+// TestPOCDoctorAutofixPreservesActiveGenerationKey
+	"2026/10/24 20:06:35 ...rvices/cron/tasks.go:131:func2() [E] CreateNotice: context canceled",
+// TestPOCDoctorAutofixPreservesActiveGenerationKey
+	"2026/10/24 20:06:35 ...rvices/cron/tasks.go:131:func2() [E] CreateNotice: context canceled",
+--- FAIL: TestPOCDoctorAutofixPreservesActiveGenerationKey (0.58s)
+FAIL
+FAIL	forgejo.org/tests/integration	1.055s
+FAIL

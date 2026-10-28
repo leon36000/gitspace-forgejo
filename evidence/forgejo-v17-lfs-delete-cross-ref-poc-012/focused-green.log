@@ -1,0 +1,38 @@
+2026/10/24 16:27:42 ...s/storage/storage.go:157:initAttachments() [I] Initialising Attachment storage with type: local
+2026/10/24 16:27:42 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata3068223310/attachments
+2026/10/24 16:27:42 ...s/storage/storage.go:147:initAvatars() [I] Initialising Avatar storage with type: local
+2026/10/24 16:27:42 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata3068223310/avatars
+2026/10/24 16:27:42 ...s/storage/storage.go:174:initRepoAvatars() [I] Initialising Repository Avatar storage with type: local
+2026/10/24 16:27:42 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata3068223310/repo-avatars
+2026/10/24 16:27:42 ...s/storage/storage.go:180:initRepoArchives() [I] Initialising Repository Archive storage with type: local
+2026/10/24 16:27:42 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata3068223310/repo-archive
+2026/10/24 16:27:42 ...s/storage/storage.go:190:initPackages() [I] Initialising Packages storage with type: local
+2026/10/24 16:27:42 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata3068223310/packages
+2026/10/24 16:27:42 ...s/storage/storage.go:201:initActions() [I] Initialising Actions storage with type: local
+2026/10/24 16:27:42 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata3068223310/actions_log
+2026/10/24 16:27:42 ...s/storage/storage.go:205:initActions() [I] Initialising ActionsArtifacts storage with type: local
+2026/10/24 16:27:42 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/go-build1104849218/b001/data/actions_artifacts
+=== RUN   TestDeleteRepositoryPreservesPendingLFSReferencesAcrossRepositories
+2026/10/24 16:27:42 ...s/storage/storage.go:157:initAttachments() [I] Initialising Attachment storage with type: local
+2026/10/24 16:27:42 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata3068223310/attachments
+2026/10/24 16:27:42 ...s/storage/storage.go:147:initAvatars() [I] Initialising Avatar storage with type: local
+2026/10/24 16:27:42 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata3068223310/avatars
+2026/10/24 16:27:42 ...s/storage/storage.go:174:initRepoAvatars() [I] Initialising Repository Avatar storage with type: local
+2026/10/24 16:27:42 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata3068223310/repo-avatars
+2026/10/24 16:27:42 ...s/storage/storage.go:168:initLFS() [I] Initialising LFS storage with type: local
+2026/10/24 16:27:42 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata3068223310/lfs
+2026/10/24 16:27:42 ...s/storage/storage.go:180:initRepoArchives() [I] Initialising Repository Archive storage with type: local
+2026/10/24 16:27:42 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata3068223310/repo-archive
+2026/10/24 16:27:42 ...s/storage/storage.go:190:initPackages() [I] Initialising Packages storage with type: local
+2026/10/24 16:27:42 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata3068223310/packages
+2026/10/24 16:27:42 ...s/storage/storage.go:201:initActions() [I] Initialising Actions storage with type: local
+2026/10/24 16:27:42 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata3068223310/actions_log
+2026/10/24 16:27:42 ...s/storage/storage.go:205:initActions() [I] Initialising ActionsArtifacts storage with type: local
+2026/10/24 16:27:42 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/go-build1104849218/b001/data/actions_artifacts
+2026/10/24 16:27:42 ...s/actions/cleanup.go:184:CleanupEphemeralRunnersByPickedTaskOfRepo() [I] Removed 0 runners
+2026/10/24 16:27:42 ...s/actions/cleanup.go:184:CleanupEphemeralRunnersByPickedTaskOfRepo() [I] Removed 0 runners
+2026/10/24 16:27:42 ...sitory/repository.go:58:DeleteRepository() [E] CloseRepoBranchesPulls failed: no such file or directory
+2026/10/24 16:27:42 ...sitory/repository.go:58:DeleteRepository() [E] CloseRepoBranchesPulls failed: no such file or directory
+--- PASS: TestDeleteRepositoryPreservesPendingLFSReferencesAcrossRepositories (0.06s)
+PASS
+ok  	forgejo.org/services/repository	0.248s

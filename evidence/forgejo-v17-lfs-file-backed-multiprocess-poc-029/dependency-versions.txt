@@ -1,0 +1,5 @@
+Scratch go.mod dependencies:
+- code.forgejo.org/xorm/xorm v1.4.1
+- github.com/mattn/go-sqlite3 v1.14.52
+
+`github.com/mattn/go-sqlite3@v1.14.52/sqlite3.go` parses `_busy_timeout` as an integer passed to SQLite's busy-timeout function (milliseconds per SQLite C API) and maps `_txlock=immediate` to `BEGIN IMMEDIATE`.

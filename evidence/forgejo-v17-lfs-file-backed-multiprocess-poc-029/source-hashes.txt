@@ -1,0 +1,6 @@
+0348d2259292013b5a236f5b40daffd1e89c7f50413aa595dd5906c6b893e63e  models/git/lfs_generation_mapping_poc_test.go
+02dd1a2b15c4e0ed639b37feebacc5d91e5a2b6c5fb5e26371928cf3c192df1c  modules/setting/database.go
+640fc88e040e36084a24ea3424716c6d345b8f3c47adf4c0fd5667fd042b5b2e  models/unittest/testdb.go
+7f89a35d1a5b948de5f7cb41a519ae740ac0d6a44883b76a23ef1df90de0c18a  go.mod
+1e1ecd7e523bc587aa7bdc4119b470b61f51aff913e4cc4856075df0af3bd2f2  /home/pc6/go/pkg/mod/github.com/mattn/go-sqlite3@v1.14.52/sqlite3.go
+4e7d1523cf95991f7e4c08c576e2232e063da6f10067e5c03c9bf9f904b1cf5f  /home/pc6/go/pkg/mod/github.com/mattn/go-sqlite3@v1.14.52/sqlite3-binding.h

@@ -1,0 +1,7 @@
+Base commit: 0d791421f85ca13a63b665053d81ea765fbbc571
+Scratch has extensive uncommitted diagnostic changes; this test is not against an intact Forgejo checkout.
+
+6c67d5ff0ad7bdd9312d98921b635d23efe21d1787868156c719d9816d4ced3e  /tmp/forgejo-v17-base-cas-poc/services/repository/files/update.go
+80807599a13ef2f000cca5e10ff66d34453daed51b8fde97a489e8bedb5743ee  /tmp/forgejo-v17-base-cas-poc/routers/api/v1/repo/file.go
+df1f7c1154100bc9742b2985832601963e2f6039584b7183b7958dd2411291cc  /tmp/forgejo-v17-base-cas-poc/routers/private/hook_post_receive.go
+3799a30bdc90e7bc2bbdd70d0f915255563a9f0ed50442998ecdbf950a80be7a  /tmp/forgejo-v17-base-cas-poc/tests/integration/lfs_api_ack_order_poc_test.go

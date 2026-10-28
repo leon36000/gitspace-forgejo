@@ -1,0 +1,38 @@
+2026/10/24 20:30:07 ...s/storage/storage.go:157:initAttachments() [I] Initialising Attachment storage with type: local
+2026/10/24 20:30:07 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata944913649/attachments
+2026/10/24 20:30:07 ...s/storage/storage.go:147:initAvatars() [I] Initialising Avatar storage with type: local
+2026/10/24 20:30:07 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata944913649/avatars
+2026/10/24 20:30:07 ...s/storage/storage.go:174:initRepoAvatars() [I] Initialising Repository Avatar storage with type: local
+2026/10/24 20:30:07 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata944913649/repo-avatars
+2026/10/24 20:30:07 ...s/storage/storage.go:180:initRepoArchives() [I] Initialising Repository Archive storage with type: local
+2026/10/24 20:30:07 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata944913649/repo-archive
+2026/10/24 20:30:07 ...s/storage/storage.go:190:initPackages() [I] Initialising Packages storage with type: local
+2026/10/24 20:30:07 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata944913649/packages
+2026/10/24 20:30:07 ...s/storage/storage.go:201:initActions() [I] Initialising Actions storage with type: local
+2026/10/24 20:30:07 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/appdata944913649/actions_log
+2026/10/24 20:30:07 ...s/storage/storage.go:205:initActions() [I] Initialising ActionsArtifacts storage with type: local
+2026/10/24 20:30:07 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/go-build2566507506/b001/data/actions_artifacts
+=== RUN   TestPOCFileBackedMultiprocessReservations
+--- PASS: TestPOCFileBackedMultiprocessReservations (1.11s)
+=== RUN   TestPOCFileBackedMultiprocessReservations
+--- PASS: TestPOCFileBackedMultiprocessReservations (1.08s)
+=== RUN   TestPOCFileBackedMultiprocessReservations
+--- PASS: TestPOCFileBackedMultiprocessReservations (0.98s)
+=== RUN   TestPOCFileBackedMultiprocessReservations
+--- PASS: TestPOCFileBackedMultiprocessReservations (0.94s)
+=== RUN   TestPOCFileBackedMultiprocessReservations
+--- PASS: TestPOCFileBackedMultiprocessReservations (0.95s)
+=== RUN   TestPOCFileBackedMultiprocessReservations
+--- PASS: TestPOCFileBackedMultiprocessReservations (0.96s)
+=== RUN   TestPOCFileBackedMultiprocessReservations
+--- PASS: TestPOCFileBackedMultiprocessReservations (0.95s)
+=== RUN   TestPOCFileBackedMultiprocessReservations
+--- PASS: TestPOCFileBackedMultiprocessReservations (0.60s)
+=== RUN   TestPOCFileBackedMultiprocessReservations
+--- PASS: TestPOCFileBackedMultiprocessReservations (0.76s)
+=== RUN   TestPOCFileBackedMultiprocessReservations
+--- PASS: TestPOCFileBackedMultiprocessReservations (0.99s)
+PASS
+ok  	forgejo.org/models/git	9.491s
+
+exit_code=0
