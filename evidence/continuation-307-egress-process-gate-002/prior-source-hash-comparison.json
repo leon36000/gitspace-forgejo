@@ -1,0 +1,16 @@
+{
+  "current_runner_matches_provenance": true,
+  "current_runner_sha256": "72e8562d8ec3d30d7f4862a07bbd2c09cc6ce06e573ac3eb4bfd96edeadd732f",
+  "prior_receipts": [
+    {
+      "evidence": "forgejo-agent-egress-stdio-mcp-005",
+      "matches_current_runner": false,
+      "runner_sha256": "8c8f8d802a18c4648714e7810e8285997fdd28ef7ee3416fcff4cd1d273b1f5a"
+    },
+    {
+      "evidence": "forgejo-agent-egress-stdio-mcp-007",
+      "matches_current_runner": false,
+      "runner_sha256": "d7277f66efa6a68ff366eef3e4538310f7f30bfcbe8778d63c86d2cb4d79cb59"
+    }
+  ]
+}

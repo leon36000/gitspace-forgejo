@@ -1,0 +1,4 @@
+$ python3 scripts/run_mission_012_stdio_mcp_egress_gate_e2e.py --forgejo-binary /tmp/forgejo-17.0.0 --state-dir /tmp/forgejo-agent-egress-stdio-mcp-009 --evidence-dir evidence/continuation-307-egress-process-gate-002
+$ python3 tests/test_forgejo_live_pr_merge_e2e.py ComposedStdioFixtureConsistencyTests ForgejoActionsConfigurationTests NativeActionsDeliveryBindingTests
+$ python3 -m py_compile scripts/run_mission_012_stdio_mcp_egress_gate_e2e.py scripts/run_forgejo_agent_egress_live_e2e.py scripts/run_forgejo_live_pr_merge_e2e.py scripts/mission_012_sandboxed_test_adapter.py scripts/mission_012_test_agent_adapter.py scripts/mission_012_egress_barrier_mcp_host.py tests/test_forgejo_live_pr_merge_e2e.py
+$ git diff --check

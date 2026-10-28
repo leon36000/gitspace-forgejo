@@ -1,0 +1,17 @@
+{
+  "confirmed": true,
+  "forgejo": {
+    "returncode": 0,
+    "started": true,
+    "stop_action": "terminate",
+    "stopped": true
+  },
+  "forgejo_listener_after_stop": [],
+  "receiver": {
+    "returncode": 0,
+    "started": true,
+    "stop_action": "terminate",
+    "stopped": true
+  },
+  "receiver_listener_after_stop": []
+}

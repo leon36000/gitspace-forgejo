@@ -1,0 +1,13 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.41s
+     Running tests/webhook_quarantine_cli.rs (target/debug/deps/webhook_quarantine_cli-9307333671b09d0c)
+
+running 5 tests
+test real_cli_fails_closed_on_malformed_or_rebound_quarantine_dispositions ... ok
+test real_cli_preserves_an_incomplete_tail_before_quarantine_validation ... ok
+test real_cli_preserves_an_incomplete_tail_for_an_unresolved_batch_selection ... ok
+test real_cli_quarantines_only_the_exact_invalid_row_and_never_reports_success ... ok
+test real_cli_refuses_a_torn_batch_when_every_selected_delivery_exists ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+

@@ -1,0 +1,9 @@
+{
+  "classified_failure": "scope_refusal",
+  "error_type": "RuntimeError",
+  "redaction": "only status/stage/type and reviewed enum facts retained; private values and stage_facts omitted",
+  "source_attempt": "continuation-306-native-actions-pending-webhook-003/result.json",
+  "stage": "reconcile_native_delivery",
+  "status": "failed",
+  "upstream_read_attempts": 0
+}

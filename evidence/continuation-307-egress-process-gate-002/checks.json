@@ -1,0 +1,118 @@
+{
+  "agent_boundary": {
+    "direct_forgejo_routes_blocked": [
+      "api",
+      "web",
+      "git_receive_pack"
+    ],
+    "host_systemd_bus_visible": false,
+    "network_connected": false,
+    "network_namespace": "net:[4026536169]",
+    "open_fds": [
+      0,
+      1,
+      2
+    ],
+    "pid_namespace": "pid:[4026536168]",
+    "probe_target_port": 3130,
+    "supervisor_observed_route_connections": 0
+  },
+  "route_probe_semantics": {
+    "child_probe_calls": ["socket.create_connection", "socket.sendall"],
+    "child_reads_http_response": false,
+    "child_records_errno_per_route": false,
+    "blocked_means": "OSError during connect or sendall",
+    "host_only_route_statuses": {"api_pr": 404, "web_pr": 404, "git_receive_pack": 401},
+    "supervisor_raw_field": "supervisor_observed_route_connections",
+    "supervisor_raw_field_means": "unexpected connections accepted by the ephemeral trusted MCP gate listener, not Forgejo sockets",
+    "supervisor_listener_observed_connections": 0,
+    "interpretation": "no child HTTP status is proven; Forgejo socket connections are not independently monitored by this counter"
+  },
+  "cleanup": {
+    "forgejo_exited": true,
+    "listener_absent": true,
+    "returncode": 0
+  },
+  "composed_e2e": {
+    "command": "python3 scripts/run_mission_012_stdio_mcp_egress_gate_e2e.py --forgejo-binary /tmp/forgejo-17.0.0 --state-dir /tmp/forgejo-agent-egress-stdio-mcp-009 --evidence-dir evidence/continuation-307-egress-process-gate-002",
+    "exit_code": 0,
+    "forgejo_binary_sha256": "e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7",
+    "forgejo_version": "forgejo version 17.0.0+gitea-1.22.0 (release name 17.0.0) built with GNU Make 4.4.1, go1.26.9 : bindata, timetzdata, sqlite, sqlite_unlock_notify",
+    "verdict": "passed"
+  },
+  "credential": {
+    "created": true,
+    "fd_inherited_by_child": false,
+    "merge_route_called": false,
+    "passed_to_child": false,
+    "persisted_to_file": false,
+    "probe_refused_inside_child_pid_namespace": true,
+    "serialized_to_mcp_config_command_or_environment": false,
+    "write_scope": "read:user,read:issue,read:repository,write:issue,write:repository"
+  },
+  "gate": {
+    "branch_sha_after": "43ef8041ed8010653116c4cd17f0ff103d71b6b6",
+    "branch_sha_before": "43ef8041ed8010653116c4cd17f0ff103d71b6b6",
+    "branch_sha_during_gate": "43ef8041ed8010653116c4cd17f0ff103d71b6b6",
+    "child_alive_during_read": true,
+    "process_identity_stable_before_after": true,
+    "route": "GET /api/v1/repos/forge-admin/mission-012-clamp/branches/main",
+    "status": 200
+  },
+  "git_diff_check_exit_code": 0,
+  "host_controls": [
+    {
+      "name": "health",
+      "status": 200
+    },
+    {
+      "name": "api_repository",
+      "status": 200
+    },
+    {
+      "name": "web_repository",
+      "status": 200
+    }
+  ],
+  "host_route_observations": [
+    {
+      "host_status": 404,
+      "method": "GET",
+      "name": "api",
+      "path": "/api/v1/repos/forge-admin/mission-012-clamp/pulls/1"
+    },
+    {
+      "host_status": 404,
+      "method": "GET",
+      "name": "web",
+      "path": "/forge-admin/mission-012-clamp/pulls/1"
+    },
+    {
+      "host_status": 401,
+      "method": "POST",
+      "name": "git_receive_pack",
+      "path": "/forge-admin/mission-012-clamp.git/git-receive-pack"
+    }
+  ],
+  "not_proven": [
+    "real AgentOS or LLM",
+    "PR or POST /merge authorization",
+    "multi-tenant or kernel-escape resistance",
+    "comparative benchmark"
+  ],
+  "py_compile_exit_code": 0,
+  "targeted_tests": {
+    "command": "python3 tests/test_forgejo_live_pr_merge_e2e.py ComposedStdioFixtureConsistencyTests ForgejoActionsConfigurationTests NativeActionsDeliveryBindingTests",
+    "exit_code": 0,
+    "failures": 0,
+    "tests_run": 4
+  },
+  "task": {
+    "barrier_reached_on": "tools/call:mission_context after corrected acceptance",
+    "baseline_actionable_failure": true,
+    "baseline_exit_code": 101,
+    "corrected_acceptance_pass": true,
+    "corrected_exit_code": 0,
+    "source_changed_through_mcp": true
+  }
+}

@@ -1,0 +1,19 @@
+Worktree: /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace
+HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+
+Inspection:
+  git status --short -- docs/checkpoint.md docs/refusal-evidence-matrix.md docs/source-inventory.md src/lib.rs src/mission_admission.rs src/forgejo.rs src/bin/forgejo-mission-local.rs tests/mission_requirement_arbitration_contract.rs tests/test_mission_requirement_arbitration_cli_process.py
+  git rev-parse HEAD
+  nl -ba docs/refusal-evidence-matrix.md | sed -n '18,25p'
+  rg -n 'CONTINUATION-30[01]|mission v3|schema v3|mission_requirement_arbitration' docs/source-inventory.md docs/checkpoint.md docs/architecture.md
+  rg -n 'pub struct Requirements|source_pull_request_number|RequirementArbitrationDecisionV1|MissionArbitrationSourceV1|unresolved|mission_requirement_arbitration_insufficient' src/lib.rs src/forgejo.rs src/mission_admission.rs src/bin/forgejo-mission-local.rs tests/mission_requirement_arbitration_contract.rs
+
+Proofs referenced without rerunning:
+  CONTINUATION-299 evidence/continuation-299-arbitration-http-policy-001/local-run.md
+  CONTINUATION-301 evidence/continuation-301-mission-v3-cli-process-001/local-run.md
+  Python SHA-256 comparison of the source paths listed in those two source-sha256.txt files against their current bytes; results: source-hash-reconcile.log
+
+Post-edit verification:
+  git diff --check
+  scripts/verify_cargo_license_state.py is not rerun: no Cargo files changed in this documentation-only lot.
+  No Rust/Python tests rerun: no executable source changed.

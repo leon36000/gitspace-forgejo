@@ -1,0 +1,23 @@
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 1 test
+test values_outside_the_range_clamp_to_the_nearest_boundary ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+--- stderr ---
+   Compiling mission012-egress-fixture v0.1.0 (/tmp/forgejo-agent-egress-stdio-mcp-009/mission-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.17s
+     Running unittests src/lib.rs (target/debug/deps/mission012_egress_fixture-6b1e1a57227e4f9a)
+     Running tests/acceptance.rs (target/debug/deps/acceptance-a195be5a38bcdc7e)
+   Doc-tests mission012_egress_fixture

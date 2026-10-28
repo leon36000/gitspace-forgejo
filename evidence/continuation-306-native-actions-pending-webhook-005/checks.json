@@ -1,0 +1,49 @@
+{
+  "cargo_fmt": {
+    "command": "cargo fmt --all -- --check",
+    "exit_code": 0
+  },
+  "cargo_fmt_final": {
+    "command": "cargo fmt --all -- --check",
+    "exit_code": 0,
+    "log": "rustfmt-final.log"
+  },
+  "cargo_license_metadata_guard": {
+    "command": "python3 scripts/verify_cargo_license_state.py",
+    "exit_code": 0,
+    "license": null,
+    "license_file": null,
+    "publish": [],
+    "redistribution_rights": "not_assessed",
+    "spdx_package_license_declared": "NOASSERTION",
+    "status": "metadata_policy_verified"
+  },
+  "cargo_license_metadata_guard_final": {
+    "command": "python3 scripts/verify_cargo_license_state.py",
+    "exit_code": 0,
+    "log": "license-state-final.log",
+    "status": "metadata_policy_verified"
+  },
+  "git_diff_check": {
+    "command": "git diff --check",
+    "exit_code": 0
+  },
+  "git_diff_check_final": {
+    "command": "git diff --check",
+    "exit_code": 0,
+    "log": "diff-check-final.log"
+  },
+  "py_compile": {
+    "command": "python3 -m py_compile scripts/run_forgejo_native_actions_pending_webhook_e2e.py scripts/run_forgejo_live_pr_merge_e2e.py scripts/run_forgejo_live_webhook_reconcile_emitted.py scripts/run_forgejo_live_webhook_reconcile_e2e.py tests/test_forgejo_live_pr_merge_e2e.py",
+    "exit_code": 0
+  },
+  "python_targeted_tests": {
+    "command": "python3 tests/test_forgejo_live_pr_merge_e2e.py ForgejoActionsConfigurationTests NativeActionsDeliveryBindingTests",
+    "exit_code": 0,
+    "summary": "Ran 3 tests; 0 failures"
+  },
+  "source_hashes_final": {
+    "command": "sha256sum -c evidence/continuation-306-native-actions-pending-webhook-005/source-sha256.txt",
+    "exit_code": 0
+  }
+}

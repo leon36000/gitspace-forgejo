@@ -1,0 +1,9 @@
+{
+  "classification": "the deterministic agent adapter expected the canonical upper-bound failure (left -2, right 10), while the composed runner had drifted to a different fixture (left 12, right 10)",
+  "correction": "reuse build_stdio_mcp_candidate_fixture from run_forgejo_live_pr_merge_e2e and pin source/failure-marker equality in a unit test",
+  "error_type": "RuntimeError",
+  "scope": "local synthetic task harness; Forgejo process started by that attempt and stopped in finally; no source files or PR changed",
+  "source_attempt": "continuation-307-egress-process-gate-001",
+  "stage": "stdio_mcp_task_and_gate_barrier",
+  "status": "failed"
+}

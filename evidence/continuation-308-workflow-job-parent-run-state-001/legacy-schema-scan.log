@@ -1,0 +1,1 @@
+Initial exploratory scan harness failed at Python parse time because of a mismatched quote in its search-pattern tuple. It read no product files; the corrected scan and result are in legacy-schema-scan-final.log.

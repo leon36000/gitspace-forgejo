@@ -1,0 +1,9 @@
+repository=/tmp/forgejo-v17-base-cas-poc
+commit=0d791421f85ca13a63b665053d81ea765fbbc571
+command: git -C /tmp/forgejo-v17-base-cas-poc diff --quiet HEAD -- routers/api/v1/repo/action.go services/actions/workflows.go services/actions/run.go services/webhook/notifier.go (exit 0)
+SHA-256 of git show COMMIT:path blobs:
+187d719470c492148f5b13ac31a5422022e31ff6fbd9d1ae167a96debfce7b18  routers/api/v1/repo/action.go
+8d0bd5408e5d3d01263157f69c4242adf107378c4becf4e817b61a687a7eb9be  services/actions/workflows.go
+c1b30e258fa466ee6f759a5d1ae86ccaac379ad38c90539d4008662bf40bc78a  services/actions/run.go
+a67cca36f92104efe0feabf0c62e668e7543b979e5a7440e713ce93dd490004f  services/webhook/notifier.go
+3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986  LICENSE

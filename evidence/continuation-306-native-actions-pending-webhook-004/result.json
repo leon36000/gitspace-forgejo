@@ -1,0 +1,64 @@
+{
+  "error_type": "RuntimeError",
+  "evidence_source_hashes": {
+    "scripts/run_forgejo_live_pr_merge_e2e.py": "c7cd2e7eec6b5f315b59c9a75e40b26fffc68c9236004bf4f41c1e8fd06557ba",
+    "scripts/run_forgejo_live_webhook_reconcile_e2e.py": "06268802afab5216eae3d7e5cd4a3c8a33a23af98e0baabefac2eefd7db74e34",
+    "scripts/run_forgejo_live_webhook_reconcile_emitted.py": "0a8f9cc4952751250515514657b4c6d7de2406dfc8956102613533d4c79ca6ce",
+    "scripts/run_forgejo_native_actions_pending_webhook_e2e.py": "f286178c9e507e255e4d04bab1f60494e5a3233649a1ff831e3427f746e5407c"
+  },
+  "hook_deactivation_confirmed": true,
+  "private_values_recorded": false,
+  "process_cleanup": {
+    "confirmed": true,
+    "forgejo": {
+      "returncode": 0,
+      "started": true,
+      "stop_action": "terminate",
+      "stopped": true
+    },
+    "forgejo_listener_after_stop": [],
+    "receiver": {
+      "returncode": 0,
+      "started": true,
+      "stop_action": "terminate",
+      "stopped": true
+    },
+    "receiver_listener_after_stop": []
+  },
+  "stage": "reconcile_native_delivery",
+  "stage_facts": {
+    "dispatch": {
+      "commit_sha": "3ee334dcc594a4036fe8e416d77186b378adb090",
+      "current_status_before_reconcile": "waiting",
+      "http_status": 201,
+      "run_id": 1,
+      "run_index": 1
+    },
+    "matching_successful_hook_tasks": 1,
+    "native_webhook": {
+      "action": "new_run_attempt",
+      "commit_sha": "3ee334dcc594a4036fe8e416d77186b378adb090",
+      "delivery_id": "1ba49a5c-708a-4554-b8f4-1e6c75bfaacd",
+      "event": "workflow_run_waiting",
+      "run_id": 1,
+      "run_index": 1,
+      "sequence": 1,
+      "status_at_event": "waiting"
+    },
+    "reconciliation_diagnostic": {
+      "canonical_status": "waiting",
+      "error": null,
+      "exit_status": 0,
+      "resource": {
+        "index_in_repo": 1,
+        "kind": "workflow_run",
+        "owner": "forge-admin",
+        "repository": "agent-forge-core",
+        "run_id": 1
+      },
+      "upstream_read_attempts": 1,
+      "verdict": "current_state_read"
+    }
+  },
+  "status": "failed"
+}
