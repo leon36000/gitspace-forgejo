@@ -1,0 +1,19 @@
+CONTINUATION-258 — exact commands and outcomes
+
+All Cargo commands used --offline and --locked except the initial offline lockfile refresh after making zeroize a direct dependency. No network service or model was called in this lot.
+
+- `cargo fmt --all` — exit 0; formatting applied before the final checks.
+- `cargo fmt --all -- --check` — exit 0; final output in `rustfmt-final.log`.
+- `cargo check --offline --all-targets` — exit 0 after the dependency lock update.
+- `cargo check --offline --locked --all-targets` — exit 0; final output in `cargo-check-locked.log`.
+- `cargo test --offline --locked --test webhook_attestation_contract` — exit 0; 3 passed, 0 failed; `attestation-focused-final.log` (after the final assertion change).
+- `cargo test --offline --locked --test webhook_receiver_process_e2e actual_receiver_process_attests_an_accepted_webhook_with_its_host_seed` — exit 0; 1 passed, 0 failed, 155 filtered; `receiver-process-focused-final.log`.
+- `cargo test --offline --locked --all-targets` — exit 0; 682 passed, 0 failed, 140 ignored across 37 target summaries; `cargo-all-targets-verified.log`. This full run was immediately before an assertion-only addition to the existing attestation contract test; both directly affected focused targets were rerun after that addition. No runtime code changed after the full run.
+- `cargo clippy --offline --locked --all-targets -- -D warnings` — exit 101; 23 warning-as-error diagnostics in `agent_runtime.rs`, `forgejo.rs`, `mission_admission.rs`, `webhook.rs`, `webhook/reconcile.rs`, and a test in `lib.rs`; see `clippy-final.log`. No diagnostic points into the new attestation contract test or receiver binary. Clippy is not passing.
+- `git diff --check` — exit 0; final output in `diff-check-final.log`.
+- `python3 scripts/verify_cargo_license_state.py` — exit 0; `cargo-license-state-final.json`.
+- `python3 scripts/test_cargo_license_state.py` — exit 0; 12 tests passed; `cargo-license-tests-final.log`.
+- The first attempt used the nonexistent path `tests/test_cargo_license_state.py` and failed with ENOENT; that failed invocation is retained in `cargo-license-tests.log`, then the actual script under `scripts/` was run successfully.
+- `python3 inventory_dependencies.py` — generated the current Cargo metadata and dependency inventory; both bind to the current Cargo.lock hash.
+- `python3 evidence/continuation-258-webhook-journal-attestation-001/verify_manifests.py` — first attempt exposed a filename/hash iteration bug in that newly written verifier; the defect and output are retained in `manifest-verification-first-attempt.log`, then the verifier was corrected and rerun before completion.
+- Final manifest verifier result: `python3 evidence/continuation-258-webhook-journal-attestation-001/verify_manifests.py` returned `verified` for 32 local evidence entries and 12 source files; both pre-existing index prefixes stayed byte-identical. Historical prefix contains 6 blank and 1 malformed worktree row, and 2 blank/0 malformed project rows; these were retained without rewriting. See `manifest-verification-final.json`.

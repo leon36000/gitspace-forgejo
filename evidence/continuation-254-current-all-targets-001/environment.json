@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-27",
+  "head": "f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0",
+  "worktree": "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace",
+  "worktree_pre_run_changed_paths": 1627,
+  "rustc": "rustc 1.95.0 (59807616e 2026-04-14)",
+  "cargo": "cargo 1.95.0 (f2d3ce0bd 2026-03-21)",
+  "network_mode": "cargo --offline",
+  "source_tree_modified_by_test_run": false
+}

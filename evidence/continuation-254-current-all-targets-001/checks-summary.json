@@ -1,0 +1,238 @@
+{
+  "cargo": "cargo 1.95.0 (f2d3ce0bd 2026-03-21)",
+  "command": [
+    "cargo",
+    "test",
+    "--offline",
+    "--locked",
+    "--all-targets"
+  ],
+  "completed_at_utc": "2026-10-27T16:35:28.985736+00:00",
+  "exit_code": 0,
+  "head": "f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0",
+  "rustc": "rustc 1.95.0 (59807616e 2026-04-14)",
+  "target_summaries": [
+    {
+      "failed": 0,
+      "ignored": 0,
+      "measured": 0,
+      "passed": 22
+    },
+    {
+      "failed": 0,
+      "ignored": 0,
+      "measured": 0,
+      "passed": 0
+    },
+    {
+      "failed": 0,
+      "ignored": 0,
+      "measured": 0,
+      "passed": 35
+    },
+    {
+      "failed": 0,
+      "ignored": 0,
+      "measured": 0,
+      "passed": 158
+    },
+    {
+      "failed": 0,
+      "ignored": 0,
+      "measured": 0,
+      "passed": 4
+    },
+    {
+      "failed": 0,
+      "ignored": 0,
+      "measured": 0,
+      "passed": 0
+    },
+    {
+      "failed": 0,
+      "ignored": 0,
+      "measured": 0,
+      "passed": 28
+    },
+    {
+      "failed": 0,
+      "ignored": 0,
+      "measured": 0,
+      "passed": 20
+    },
+    {
+      "failed": 0,
+      "ignored": 0,
+      "measured": 0,
+      "passed": 6
+    },
+    {
+      "failed": 0,
+      "ignored": 0,
+      "measured": 0,
+      "passed": 12
+    },
+    {
+      "failed": 0,
+      "ignored": 0,
+      "measured": 0,
+      "passed": 33
+    },
+    {
+      "failed": 0,
+      "ignored": 0,
+      "measured": 0,
+      "passed": 6
+    },
+    {
+      "failed": 0,
+      "ignored": 8,
+      "measured": 0,
+      "passed": 0
+    },
+    {
+      "failed": 0,
+      "ignored": 0,
+      "measured": 0,
+      "passed": 13
+    },
+    {
+      "failed": 0,
+      "ignored": 0,
+      "measured": 0,
+      "passed": 10
+    },
+    {
+      "failed": 0,
+      "ignored": 0,
+      "measured": 0,
+      "passed": 2
+    },
+    {
+      "failed": 0,
+      "ignored": 1,
+      "measured": 0,
+      "passed": 2
+    },
+    {
+      "failed": 0,
+      "ignored": 4,
+      "measured": 0,
+      "passed": 0
+    },
+    {
+      "failed": 0,
+      "ignored": 4,
+      "measured": 0,
+      "passed": 1
+    },
+    {
+      "failed": 0,
+      "ignored": 2,
+      "measured": 0,
+      "passed": 5
+    },
+    {
+      "failed": 0,
+      "ignored": 1,
+      "measured": 0,
+      "passed": 30
+    },
+    {
+      "failed": 0,
+      "ignored": 0,
+      "measured": 0,
+      "passed": 19
+    },
+    {
+      "failed": 0,
+      "ignored": 2,
+      "measured": 0,
+      "passed": 66
+    },
+    {
+      "failed": 0,
+      "ignored": 0,
+      "measured": 0,
+      "passed": 7
+    },
+    {
+      "failed": 0,
+      "ignored": 0,
+      "measured": 0,
+      "passed": 4
+    },
+    {
+      "failed": 0,
+      "ignored": 0,
+      "measured": 0,
+      "passed": 3
+    },
+    {
+      "failed": 0,
+      "ignored": 0,
+      "measured": 0,
+      "passed": 10
+    },
+    {
+      "failed": 0,
+      "ignored": 0,
+      "measured": 0,
+      "passed": 28
+    },
+    {
+      "failed": 0,
+      "ignored": 0,
+      "measured": 0,
+      "passed": 7
+    },
+    {
+      "failed": 0,
+      "ignored": 0,
+      "measured": 0,
+      "passed": 6
+    },
+    {
+      "failed": 0,
+      "ignored": 0,
+      "measured": 0,
+      "passed": 15
+    },
+    {
+      "failed": 0,
+      "ignored": 0,
+      "measured": 0,
+      "passed": 5
+    },
+    {
+      "failed": 0,
+      "ignored": 118,
+      "measured": 0,
+      "passed": 36
+    },
+    {
+      "failed": 0,
+      "ignored": 0,
+      "measured": 0,
+      "passed": 3
+    },
+    {
+      "failed": 0,
+      "ignored": 0,
+      "measured": 0,
+      "passed": 77
+    },
+    {
+      "failed": 0,
+      "ignored": 0,
+      "measured": 0,
+      "passed": 4
+    }
+  ],
+  "totals": {
+    "failed": 0,
+    "ignored": 140,
+    "measured": 0,
+    "passed": 677
+  }
+}

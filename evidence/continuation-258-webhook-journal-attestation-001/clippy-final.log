@@ -1,0 +1,461 @@
+    Checking agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+error: this function has too many arguments (10/7)
+   --> src/agent_runtime.rs:530:5
+    |
+530 | /     pub fn acquire_lease(
+531 | |         &self,
+532 | |         scope: &BaseBranchScope,
+533 | |         issue_number: u64,
+...   |
+540 | |         request: &AgentExecutionRequestV1,
+541 | |     ) -> Result<MissionExecutionLeaseV1, AgentRuntimeErrorV1> {
+    | |_____________________________________________________________^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#too_many_arguments
+    = note: `-D clippy::too-many-arguments` implied by `-D warnings`
+    = help: to override `-D warnings` add `#[allow(clippy::too_many_arguments)]`
+
+error: this function has too many arguments (8/7)
+    --> src/agent_runtime.rs:1456:5
+     |
+1456 | /     pub fn workspace_write_recovery_preflight(
+1457 | |         &self,
+1458 | |         scope: &BaseBranchScope,
+1459 | |         issue_number: u64,
+...    |
+1464 | |         observed_candidate_source_sha256: &str,
+1465 | |     ) -> Result<Option<WorkspaceWriteIntentV1>, AgentRuntimeErrorV1> {
+     | |____________________________________________________________________^
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#too_many_arguments
+
+error: this function has too many arguments (8/7)
+    --> src/agent_runtime.rs:1594:5
+     |
+1594 | /     pub fn workspace_write_operation_status(
+1595 | |         &self,
+1596 | |         scope: &BaseBranchScope,
+1597 | |         issue_number: u64,
+...    |
+1602 | |         observed_source_sha256: &str,
+1603 | |     ) -> Result<Option<WorkspaceWriteOperationStatusV1>, AgentRuntimeErrorV1> {
+     | |_____________________________________________________________________________^
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#too_many_arguments
+
+error: this `if` statement can be collapsed
+    --> src/agent_runtime.rs:1839:21
+     |
+1839 | /                     if let Some((existing_policy_sha256, existing_budget_ms)) = ledger.policy {
+1840 | |                         if existing_policy_sha256 != policy_sha256
+1841 | |                             || existing_budget_ms != mission_cpu_budget_ms
+...    |
+1849 | |                     }
+     | |_____________________^
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#collapsible_if
+     = note: `-D clippy::collapsible-if` implied by `-D warnings`
+     = help: to override `-D warnings` add `#[allow(clippy::collapsible_if)]`
+help: collapse nested if block
+     |
+1839 ~                     if let Some((existing_policy_sha256, existing_budget_ms)) = ledger.policy
+1840 ~                         && (existing_policy_sha256 != policy_sha256
+1841 ~                             || existing_budget_ms != mission_cpu_budget_ms)
+1842 |                         {
+ ...
+1847 |                             ));
+1848 ~                         }
+     |
+
+error: this `if` statement can be collapsed
+    --> src/agent_runtime.rs:2615:17
+     |
+2615 | /                 if let Some(resolved) = resolved.as_ref() {
+2616 | |                     if resolved.resolution.is_terminal() {
+2617 | |                         return Ok(Some(resolved.resolution.clone()));
+2618 | |                     }
+2619 | |                 }
+     | |_________________^
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#collapsible_if
+help: collapse nested if block
+     |
+2615 ~                 if let Some(resolved) = resolved.as_ref()
+2616 ~                     && resolved.resolution.is_terminal() {
+2617 |                         return Ok(Some(resolved.resolution.clone()));
+2618 ~                     }
+     |
+
+error: manually reimplementing `div_ceil`
+    --> src/agent_runtime.rs:4487:26
+     |
+4487 |             .map(|bytes| ((bytes.len() + 3) / 4) as u64)
+     |                          ^^^^^^^^^^^^^^^^^^^^^^^ help: consider using `.div_ceil()`: `bytes.len().div_ceil(4)`
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#manual_div_ceil
+     = note: `-D clippy::manual-div-ceil` implied by `-D warnings`
+     = help: to override `-D warnings` add `#[allow(clippy::manual_div_ceil)]`
+
+error: this function has too many arguments (9/7)
+   --> src/forgejo.rs:917:1
+    |
+917 | / pub fn evaluate_merge_readiness(
+918 | |     branch_scope: &BaseBranchScope,
+919 | |     current: &PullRequestSnapshotV1,
+920 | |     reviews: &PullRequestReviewsSnapshotV1,
+...   |
+926 | |     current_policy_bytes: &[u8],
+927 | | ) -> Result<MergeReadinessDecisionV1, MergeReadinessError> {
+    | |__________________________________________________________^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#too_many_arguments
+
+error: this function has too many arguments (10/7)
+   --> src/mission_admission.rs:378:1
+    |
+378 | / pub fn admit_reconciled_issue_v2(
+379 | |     event: &JournaledWebhookEventV1,
+380 | |     reconciliation_source: &impl ForgejoCurrentState,
+381 | |     scope: &BaseBranchScope,
+...   |
+388 | |     journal: &MissionExecutionJournalV1,
+389 | | ) -> Result<WebhookMissionAdmissionReceiptV1, WebhookMissionAdmissionErrorV1> {
+    | |_____________________________________________________________________________^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#too_many_arguments
+
+error: this function has too many arguments (8/7)
+   --> src/mission_admission.rs:476:1
+    |
+476 | / fn admit_and_claim_mission_v2_with_expected_hash(
+477 | |     scope: &BaseBranchScope,
+478 | |     binding: &MissionAdmissionBindingV2,
+479 | |     source: &dyn MissionAdmissionSourceV1,
+...   |
+484 | |     expected_requirement_sha256: Option<&str>,
+485 | | ) -> Result<MissionAdmissionReceiptV2, AgentRuntimeErrorV1> {
+    | |___________________________________________________________^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#too_many_arguments
+
+error: this function has too many arguments (10/7)
+   --> src/mission_admission.rs:555:1
+    |
+555 | / fn prepare_admission(
+556 | |     scope: &BaseBranchScope,
+557 | |     issue_number: u64,
+558 | |     requirement_id: &str,
+...   |
+565 | |     allocate_generation: impl FnOnce(&str) -> Result<GenerationChoice, AgentRuntimeErrorV1>,
+566 | | ) -> Result<PreparedAdmission, AgentRuntimeErrorV1> {
+    | |___________________________________________________^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#too_many_arguments
+
+error: items after a test module
+    --> src/webhook/reconcile.rs:1604:1
+     |
+1604 |   mod resource_kind_contract_tests {
+     |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...
+1850 | / fn parse_resource_ref(
+1851 | |     event_name: &str,
+1852 | |     kind: ResourceKind,
+1853 | |     payload: &Map<String, Value>,
+1854 | | ) -> Result<ResourceRef, ReconcileError> {
+     | |________________________________________^
+...
+2014 | / fn workflow_status_contract_for_event(
+2015 | |     event_name: &str,
+2016 | |     resource_kind: &str,
+2017 | | ) -> Option<&'static super::WebhookWorkflowStatusContractV1> {
+     | |____________________________________________________________^
+...
+2023 | / fn workflow_action_contract_for_resource_kind(
+2024 | |     resource_kind: &str,
+2025 | | ) -> Option<&'static super::WebhookWorkflowActionContractV1> {
+     | |____________________________________________________________^
+...
+2031 | / fn workflow_event_action_contract_for_event(
+2032 | |     event_name: &str,
+2033 | |     resource_kind: &str,
+2034 | | ) -> Option<&'static super::WebhookWorkflowEventActionContractV1> {
+     | |_________________________________________________________________^
+...
+2040 |   fn payload_string_at_path<'a>(payload: &'a Map<String, Value>, path: &str) -> Option<&'a str> {
+     |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...
+2049 |   fn valid_workflow_run_status(status: &str) -> bool {
+     |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...
+2057 | / fn validate_current_workflow_run_repository(
+2058 | |     current: &Value,
+2059 | |     resource: &ResourceRef,
+2060 | | ) -> Result<(), ReconcileError> {
+     | |_______________________________^
+...
+2075 | / fn validate_repository_identity(
+2076 | |     repository: &Map<String, Value>,
+2077 | |     expected_owner: &str,
+2078 | |     expected_name: &str,
+2079 | | ) -> Result<(), ReconcileError> {
+     | |_______________________________^
+...
+2103 | / fn validate_pull_request_base_repository(
+2104 | |     payload: &Map<String, Value>,
+2105 | |     expected_owner: &str,
+2106 | |     expected_repository: &str,
+2107 | |     expected_full_name: &str,
+2108 | | ) -> Result<(), ReconcileError> {
+     | |_______________________________^
+...
+2136 | / fn validate_current_pull_request_base_repository(
+2137 | |     current: &Value,
+2138 | |     resource: &ResourceRef,
+2139 | | ) -> Result<(), ReconcileError> {
+     | |_______________________________^
+...
+2184 | / pub fn reconcile_inbox_events(
+2185 | |     events: &[JournalEvent],
+2186 | |     source: &impl ForgejoCurrentState,
+2187 | | ) -> Result<Vec<Result<ReconciledState, ReconcileError>>, ReconcileError> {
+     | |_________________________________________________________________________^
+...
+2221 |   struct CachedCurrentState<'a, S> {
+     |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...
+2228 |   fn cache_resource_identity(resource: &ResourceRef) -> ResourceRef {
+     |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...
+2238 |   impl<S: ForgejoCurrentState> ForgejoCurrentState for CachedCurrentState<'_, S> {
+     |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...
+2323 | / fn validate_current_issue_repository(
+2324 | |     current: &Value,
+2325 | |     resource: &ResourceRef,
+2326 | | ) -> Result<(), ReconcileError> {
+     | |_______________________________^
+...
+2374 |   fn valid_delivery_id(value: &str) -> bool {
+     |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...
+2382 |   fn valid_repo_component(value: &str) -> bool {
+     |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...
+2391 |   fn valid_commit_sha(value: &str) -> bool {
+     |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...
+2395 |   fn valid_nonzero_commit_sha(value: &str) -> bool {
+     |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...
+2399 |   pub fn valid_forgejo_timestamp(value: &str) -> bool {
+     |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...
+2471 |   fn decimal(bytes: &[u8]) -> Option<u32> {
+     |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#items_after_test_module
+     = note: `-D clippy::items-after-test-module` implied by `-D warnings`
+     = help: to override `-D warnings` add `#[allow(clippy::items_after_test_module)]`
+     = help: move the items to before the test module was defined
+
+error: this `let...else` may be rewritten with the `?` operator
+   --> src/webhook/reconcile.rs:750:5
+    |
+750 | /     let Some(suffix) = job_url.strip_prefix(run_url) else {
+751 | |         return None;
+752 | |     };
+    | |______^ help: replace it with: `let suffix = job_url.strip_prefix(run_url)?;`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#question_mark
+    = note: `-D clippy::question-mark` implied by `-D warnings`
+    = help: to override `-D warnings` add `#[allow(clippy::question_mark)]`
+
+error: this `let...else` may be rewritten with the `?` operator
+   --> src/webhook/reconcile.rs:753:5
+    |
+753 | /     let Some(suffix) = suffix.strip_prefix("/jobs/") else {
+754 | |         return None;
+755 | |     };
+    | |______^ help: replace it with: `let suffix = suffix.strip_prefix("/jobs/")?;`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#question_mark
+
+error: this `let...else` may be rewritten with the `?` operator
+   --> src/webhook/reconcile.rs:768:5
+    |
+768 | /     let Some((job_index, attempt)) = suffix.split_once("/attempt/") else {
+769 | |         return None;
+770 | |     };
+    | |______^ help: replace it with: `let (job_index, attempt) = suffix.split_once("/attempt/")?;`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#question_mark
+
+error: very complex type used. Consider factoring parts into `type` definitions
+    --> src/webhook/reconcile.rs:1046:6
+     |
+1046 |   ) -> Result<
+     |  ______^
+1047 | |     (
+1048 | |         String,
+1049 | |         String,
+...    |
+1055 | |     ReconcileError,
+1056 | | > {
+     | |_^
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#type_complexity
+     = note: `-D clippy::type-complexity` implied by `-D warnings`
+     = help: to override `-D warnings` add `#[allow(clippy::type_complexity)]`
+
+error: this boolean expression can be simplified
+    --> src/webhook/reconcile.rs:1311:12
+     |
+1311 |           if !job
+     |  ____________^
+1312 | |             .get("html_url")
+1313 | |             .and_then(Value::as_str)
+1314 | |             .and_then(|url| workflow_job_index_from_event_url(url, run_index))
+1315 | |             .is_some()
+     | |______________________^
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#nonminimal_bool
+     = note: `-D clippy::nonminimal-bool` implied by `-D warnings`
+     = help: to override `-D warnings` add `#[allow(clippy::nonminimal_bool)]`
+help: try
+     |
+1311 ~         if job
+1312 +             .get("html_url")
+1313 +             .and_then(Value::as_str)
+1314 +             .and_then(|url| workflow_job_index_from_event_url(url, run_index)).is_none()
+     |
+
+error: this boolean expression can be simplified
+    --> src/webhook/reconcile.rs:1321:16
+     |
+1321 |               if !value
+     |  ________________^
+1322 | |                 .get(field)
+1323 | |                 .and_then(Value::as_u64)
+1324 | |                 .is_some_and(|id| id > 0)
+     | |_________________________________________^
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#nonminimal_bool
+help: try
+     |
+1321 ~             if value
+1322 +                 .get(field)
+1323 +                 .and_then(Value::as_u64).is_none_or(|id| id <= 0)
+     |
+
+error: this boolean expression can be simplified
+    --> src/webhook/reconcile.rs:1365:12
+     |
+1365 |           if !run
+     |  ____________^
+1366 | |             .get("id")
+1367 | |             .and_then(Value::as_u64)
+1368 | |             .is_some_and(|id| id > 0)
+     | |_____________________________________^
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#nonminimal_bool
+help: try
+     |
+1365 ~         if run
+1366 +             .get("id")
+1367 +             .and_then(Value::as_u64).is_none_or(|id| id <= 0)
+     |
+
+error: this boolean expression can be simplified
+    --> src/webhook/reconcile.rs:1372:12
+     |
+1372 |           if !run
+     |  ____________^
+1373 | |             .get("index_in_repo")
+1374 | |             .and_then(Value::as_u64)
+1375 | |             .is_some_and(|index| index > 0)
+     | |___________________________________________^
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#nonminimal_bool
+help: try
+     |
+1372 ~         if run
+1373 +             .get("index_in_repo")
+1374 +             .and_then(Value::as_u64).is_none_or(|index| index <= 0)
+     |
+
+error: this boolean expression can be simplified
+    --> src/webhook/reconcile.rs:1507:12
+     |
+1507 |           if !comment
+     |  ____________^
+1508 | |             .get("id")
+1509 | |             .and_then(Value::as_u64)
+1510 | |             .is_some_and(|id| id > 0)
+     | |_____________________________________^
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#nonminimal_bool
+help: try
+     |
+1507 ~         if comment
+1508 +             .get("id")
+1509 +             .and_then(Value::as_u64).is_none_or(|id| id <= 0)
+     |
+
+error: deref which would be done by auto-deref
+    --> src/webhook/reconcile.rs:1572:64
+     |
+1572 |         return Err(ReconcileError::UnexpectedEventPayloadField(*field));
+     |                                                                ^^^^^^ help: try: `field`
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#explicit_auto_deref
+     = note: `-D clippy::explicit-auto-deref` implied by `-D warnings`
+     = help: to override `-D warnings` add `#[allow(clippy::explicit_auto_deref)]`
+
+error: this `if` statement can be collapsed
+   --> src/webhook.rs:844:9
+    |
+844 | /         if disposition.source_sequence == source.sequence
+845 | |             && disposition.source_event_id == source.event_id
+846 | |             && disposition.source_event_hash == source.hash
+847 | |             && disposition.delivery_id
+...   |
+857 | |         }
+    | |_________^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#collapsible_if
+help: collapse nested if block
+    |
+852 ~                     .unwrap_or_default()
+853 ~             && matching.replace(disposition).is_some() {
+854 |                 return Err(WebhookError::InvalidJournaledEvent);
+855 ~             }
+    |
+
+error: used `assert_eq!` with a literal bool
+    --> src/lib.rs:2270:9
+     |
+2270 | /         assert_eq!(
+2271 | |             events
+2272 | |                 .iter()
+2273 | |                 .map(|e| &e.previous_hash)
+...    |
+2277 | |             true
+2278 | |         );
+     | |_________^
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#bool_assert_comparison
+     = note: `-D clippy::bool-assert-comparison` implied by `-D warnings`
+     = help: to override `-D warnings` add `#[allow(clippy::bool_assert_comparison)]`
+help: replace it with `assert!(..)`
+     |
+2270 ~         assert!(
+2271 |             events
+ ...
+2275 |                 .zip(events.iter().map(|e| &e.hash))
+2276 ~                 .all(|(a, b)| a == b)
+     |
+
+error: could not compile `agent-forge-core` (lib test) due to 23 previous errors
+warning: build failed, waiting for other jobs to finish...
+error: could not compile `agent-forge-core` (lib) due to 21 previous errors

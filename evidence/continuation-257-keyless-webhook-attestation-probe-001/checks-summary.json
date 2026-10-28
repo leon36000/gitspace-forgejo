@@ -1,0 +1,21 @@
+{
+  "cargo_test": {
+    "passed": 2,
+    "failed": 0,
+    "ignored": 0,
+    "offline_locked": true
+  },
+  "cargo_fmt_check": "passed",
+  "cargo_clippy_all_targets_deny_warnings": "passed",
+  "cargo_metadata": "passed_with_pinned_public_crates_online",
+  "initial_offline_metadata_attempt": "blocked_by_uncached_target_specific_package_then_retried_online",
+  "cargo_dependency_licenses_missing": 0,
+  "candidate_closure_counts_including_candidate": {
+    "ed25519-dalek-3.0.0": 24,
+    "ring-0.17.14": 19
+  },
+  "product_cargo_license_guard": "passed",
+  "git_diff_check": "passed",
+  "runtime_integration": false,
+  "receiver_to_reconciler_flow": false
+}

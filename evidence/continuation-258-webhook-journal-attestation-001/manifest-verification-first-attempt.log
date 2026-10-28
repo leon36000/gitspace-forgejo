@@ -1,0 +1,4 @@
+python3 verify_manifests.py
+worktree index mismatch: 3386d00ccca214a60f29c8572cf20dabffc2f1f15b7f219b32a239a2a0ebc9f0
+
+Cause: the local verification map is keyed by evidence filename, but the verifier initially iterated each mapping as (hash, filename). This was a verifier implementation defect; no project test result or indexed source file was altered. The verifier was corrected before final validation.

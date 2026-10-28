@@ -1,0 +1,31 @@
+{
+  "red_phase": {
+    "expected": "failure because the helper accepted only the two values it previously checked",
+    "exit_code": 101,
+    "passed": 0,
+    "failed": 1
+  },
+  "green_process_test_target": {
+    "exit_code": 0,
+    "passed": 37,
+    "failed": 0,
+    "ignored": 118,
+    "total": 155
+  },
+  "isolated_process_scenarios": [
+    {
+      "scenario": "actual_reconcile_cli_process_reads_gitea_alias_only_delivery",
+      "passed": 1,
+      "failed": 0,
+      "filtered_out": 154
+    },
+    {
+      "scenario": "actual_reconcile_cli_process_reads_receiver_journal_against_private_http_fixture",
+      "passed": 1,
+      "failed": 0,
+      "filtered_out": 154
+    }
+  ],
+  "source_code_changed": false,
+  "production_code_changed": false
+}

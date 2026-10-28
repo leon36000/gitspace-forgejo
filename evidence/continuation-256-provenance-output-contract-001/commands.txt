@@ -1,0 +1,11 @@
+# Intentionally failing: demonstrates that the old process assertion accepts a contract with only two of nine fields.
+cargo test --offline --locked --test webhook_receiver_process_e2e reconcile_process_contract_assertion_rejects_incomplete_provenance -- --exact --nocapture
+# Green test target after asserting the exact versioned provenance object.
+cargo test --offline --locked --test webhook_receiver_process_e2e
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_reads_gitea_alias_only_delivery
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_reads_receiver_journal_against_private_http_fixture
+cargo fmt --all -- --check
+git diff --check
+python3 -m py_compile scripts/run_webhook_reconcile_cli_e2e.py evidence/continuation-256-provenance-output-contract-001/append_manifests.py evidence/continuation-256-provenance-output-contract-001/verify_manifests.py
+python3 evidence/continuation-256-provenance-output-contract-001/append_manifests.py
+python3 evidence/continuation-256-provenance-output-contract-001/verify_manifests.py

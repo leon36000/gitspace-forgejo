@@ -1,0 +1,18 @@
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.09s
+     Running unittests src/lib.rs (evidence/continuation-257-keyless-webhook-attestation-probe-001/target/debug/deps/agent_forge_attestation_probe-8e54deb3db88580e)
+
+running 2 tests
+test tests::wrong_key_and_changed_receipt_are_rejected ... ok
+test tests::receiver_signature_verifies_with_public_key_only ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests agent_forge_attestation_probe
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

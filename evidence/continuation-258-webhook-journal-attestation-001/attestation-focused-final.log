@@ -1,0 +1,10 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.01s
+     Running tests/webhook_attestation_contract.rs (target/debug/deps/webhook_attestation_contract-675e47e556b9f9c5)
+
+running 3 tests
+test legacy_webhook_is_rejected_by_the_strict_public_key_reader_and_bad_hmac_is_not_appended ... ok
+test tampered_persisted_attestation_is_rejected_even_when_the_unkeyed_chain_is_recomputed ... ok
+test actual_http_handler_persists_receiver_attestation_verified_by_public_key_only ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+

@@ -1,0 +1,18 @@
+# First resolution/build (only pinned public crates; no private input):
+cargo test --manifest-path evidence/continuation-257-keyless-webhook-attestation-probe-001/Cargo.toml
+
+# Final offline checks with the saved probe lockfile:
+cargo test --manifest-path evidence/continuation-257-keyless-webhook-attestation-probe-001/Cargo.toml --locked --offline
+cargo fmt --manifest-path evidence/continuation-257-keyless-webhook-attestation-probe-001/Cargo.toml -- --check
+cargo clippy --manifest-path evidence/continuation-257-keyless-webhook-attestation-probe-001/Cargo.toml --locked --offline --all-targets -- -D warnings
+cargo tree --manifest-path evidence/continuation-257-keyless-webhook-attestation-probe-001/Cargo.toml --locked
+cargo metadata --manifest-path evidence/continuation-257-keyless-webhook-attestation-probe-001/Cargo.toml --format-version 1 --locked
+python3 evidence/continuation-257-keyless-webhook-attestation-probe-001/summarize_dependencies.py
+python3 -m py_compile evidence/continuation-257-keyless-webhook-attestation-probe-001/summarize_dependencies.py evidence/continuation-257-keyless-webhook-attestation-probe-001/append_manifests.py evidence/continuation-257-keyless-webhook-attestation-probe-001/verify_manifests.py
+python3 scripts/verify_cargo_license_state.py
+git diff --check
+
+# Source and append-only manifest capture (the append step is one-shot).
+sha256sum Cargo.toml Cargo.lock docs/architecture.md docs/checkpoint.md docs/refusal-evidence-matrix.md src/lib.rs src/webhook.rs evidence/continuation-257-keyless-webhook-attestation-probe-001/.gitignore evidence/continuation-257-keyless-webhook-attestation-probe-001/Cargo.toml evidence/continuation-257-keyless-webhook-attestation-probe-001/Cargo.lock evidence/continuation-257-keyless-webhook-attestation-probe-001/src/lib.rs evidence/continuation-257-keyless-webhook-attestation-probe-001/summarize_dependencies.py evidence/continuation-257-keyless-webhook-attestation-probe-001/append_manifests.py evidence/continuation-257-keyless-webhook-attestation-probe-001/verify_manifests.py > evidence/continuation-257-keyless-webhook-attestation-probe-001/source-sha256.txt
+python3 evidence/continuation-257-keyless-webhook-attestation-probe-001/append_manifests.py
+python3 evidence/continuation-257-keyless-webhook-attestation-probe-001/verify_manifests.py

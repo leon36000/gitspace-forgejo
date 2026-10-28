@@ -1,0 +1,19 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 2.61s
+     Running tests/webhook_receiver_process_e2e.rs (target/debug/deps/webhook_receiver_process_e2e-6caa738f5453f442)
+
+running 1 test
+
+thread 'reconcile_process_contract_assertion_rejects_incomplete_provenance' (4157139) panicked at tests/webhook_receiver_process_e2e.rs:67:5:
+process contract assertion must reject a response that omits the other provenance limits
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test reconcile_process_contract_assertion_rejects_incomplete_provenance ... FAILED
+
+failures:
+
+failures:
+    reconcile_process_contract_assertion_rejects_incomplete_provenance
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 154 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `--test webhook_receiver_process_e2e`

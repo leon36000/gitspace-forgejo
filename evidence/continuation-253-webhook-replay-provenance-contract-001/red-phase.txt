@@ -1,0 +1,8 @@
+Test-first observation, before implementing the new JSON field:
+
+Command:
+cargo test --offline --locked --bin forgejo-reconcile-local successful_reconciliation_states_that_webhook_hmac_is_not_reverified
+
+Result: exit 101; 1 test failed, 157 filtered. The assertion at `src/bin/forgejo-reconcile-local.rs` compared `single["source_event_provenance_contract"]["replay_hmac_verification"]`; actual was `Null`, expected `"not_performed"`.
+
+After adding the bounded contract object to both single and batch envelopes and the capabilities document, the same command passed 1/1. The final rerun is recorded in `rust-reconcile-unit.log`.

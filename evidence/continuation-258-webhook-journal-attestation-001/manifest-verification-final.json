@@ -1,0 +1,18 @@
+{
+  "handling": "Pre-existing blank/malformed rows remain untouched; this lot only appends new rows.",
+  "historical_prefixes_preserved": true,
+  "historical_project_prefix": {
+    "blank_rows": 2,
+    "malformed_rows": 0,
+    "rows": 8637
+  },
+  "historical_worktree_prefix": {
+    "blank_rows": 6,
+    "malformed_rows": 1,
+    "rows": 14282
+  },
+  "latest_hashes_verified": true,
+  "local_evidence_entries": 32,
+  "source_files": 12,
+  "status": "verified"
+}

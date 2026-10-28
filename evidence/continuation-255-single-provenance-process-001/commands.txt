@@ -1,0 +1,6 @@
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_reads_gitea_alias_only_delivery
+python3 -m py_compile scripts/run_webhook_reconcile_cli_e2e.py
+python3 -m py_compile evidence/continuation-255-single-provenance-process-001/append_manifests.py evidence/continuation-255-single-provenance-process-001/verify_manifests.py
+git diff --check
+python3 evidence/continuation-255-single-provenance-process-001/append_manifests.py
+python3 evidence/continuation-255-single-provenance-process-001/verify_manifests.py

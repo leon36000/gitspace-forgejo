@@ -1,0 +1,17 @@
+{
+  "batch_sanity_recheck": {
+    "counted_as_new_single_evidence": false,
+    "exit_code": 0,
+    "filtered_out": 153,
+    "scenario": "actual_reconcile_cli_process_reads_receiver_journal_against_private_http_fixture",
+    "test_passed": 1
+  },
+  "single_scenario": {
+    "exit_code": 0,
+    "filtered_out": 153,
+    "schema_version": 11,
+    "scenario": "actual_reconcile_cli_process_reads_gitea_alias_only_delivery",
+    "test_failed": 0,
+    "test_passed": 1
+  }
+}

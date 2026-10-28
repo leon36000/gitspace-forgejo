@@ -1,0 +1,235 @@
+{
+  "candidates": {
+    "ed25519-dalek": {
+      "dependency_count_including_candidate": 24,
+      "license": "BSD-3-Clause",
+      "missing_license_count": 0,
+      "packages": [
+        {
+          "license": "MIT OR Apache-2.0",
+          "name": "block-buffer",
+          "version": "0.12.1"
+        },
+        {
+          "license": "MIT OR Apache-2.0",
+          "name": "cfg-if",
+          "version": "1.0.5"
+        },
+        {
+          "license": "Apache-2.0 OR MIT",
+          "name": "const-oid",
+          "version": "0.10.2"
+        },
+        {
+          "license": "MIT OR Apache-2.0",
+          "name": "cpufeatures",
+          "version": "0.3.1"
+        },
+        {
+          "license": "MIT OR Apache-2.0",
+          "name": "crypto-common",
+          "version": "0.2.2"
+        },
+        {
+          "license": "BSD-3-Clause",
+          "name": "curve25519-dalek",
+          "version": "5.0.0"
+        },
+        {
+          "license": "MIT/Apache-2.0",
+          "name": "curve25519-dalek-derive",
+          "version": "0.1.1"
+        },
+        {
+          "license": "MIT OR Apache-2.0",
+          "name": "digest",
+          "version": "0.11.3"
+        },
+        {
+          "license": "Apache-2.0 OR MIT",
+          "name": "ed25519",
+          "version": "3.0.0"
+        },
+        {
+          "license": "BSD-3-Clause",
+          "name": "ed25519-dalek",
+          "version": "3.0.0"
+        },
+        {
+          "license": "MIT OR Apache-2.0 OR BSD-1-Clause",
+          "name": "fiat-crypto",
+          "version": "0.3.0"
+        },
+        {
+          "license": "MIT OR Apache-2.0",
+          "name": "hybrid-array",
+          "version": "0.4.15"
+        },
+        {
+          "license": "MIT OR Apache-2.0",
+          "name": "libc",
+          "version": "0.2.191"
+        },
+        {
+          "license": "MIT OR Apache-2.0",
+          "name": "proc-macro2",
+          "version": "1.0.107"
+        },
+        {
+          "license": "MIT OR Apache-2.0",
+          "name": "quote",
+          "version": "1.0.47"
+        },
+        {
+          "license": "MIT OR Apache-2.0",
+          "name": "rustc_version",
+          "version": "0.4.1"
+        },
+        {
+          "license": "MIT OR Apache-2.0",
+          "name": "semver",
+          "version": "1.0.28"
+        },
+        {
+          "license": "MIT OR Apache-2.0",
+          "name": "sha2",
+          "version": "0.11.0"
+        },
+        {
+          "license": "Apache-2.0 OR MIT",
+          "name": "signature",
+          "version": "3.0.0"
+        },
+        {
+          "license": "BSD-3-Clause",
+          "name": "subtle",
+          "version": "2.6.1"
+        },
+        {
+          "license": "MIT OR Apache-2.0",
+          "name": "syn",
+          "version": "2.0.119"
+        },
+        {
+          "license": "MIT OR Apache-2.0",
+          "name": "typenum",
+          "version": "1.20.1"
+        },
+        {
+          "license": "(MIT OR Apache-2.0) AND Unicode-3.0",
+          "name": "unicode-ident",
+          "version": "1.0.27"
+        },
+        {
+          "license": "Apache-2.0 OR MIT",
+          "name": "zeroize",
+          "version": "1.9.1"
+        }
+      ],
+      "version": "3.0.0"
+    },
+    "ring": {
+      "dependency_count_including_candidate": 19,
+      "license": "Apache-2.0 AND ISC",
+      "missing_license_count": 0,
+      "packages": [
+        {
+          "license": "MIT OR Apache-2.0",
+          "name": "cc",
+          "version": "1.10.0"
+        },
+        {
+          "license": "MIT OR Apache-2.0",
+          "name": "cfg-if",
+          "version": "1.0.5"
+        },
+        {
+          "license": "MIT OR Apache-2.0",
+          "name": "find-msvc-tools",
+          "version": "0.1.15"
+        },
+        {
+          "license": "MIT OR Apache-2.0",
+          "name": "getrandom",
+          "version": "0.2.17"
+        },
+        {
+          "license": "MIT OR Apache-2.0",
+          "name": "libc",
+          "version": "0.2.191"
+        },
+        {
+          "license": "Apache-2.0 AND ISC",
+          "name": "ring",
+          "version": "0.17.14"
+        },
+        {
+          "license": "MIT OR Apache-2.0",
+          "name": "shlex",
+          "version": "2.0.1"
+        },
+        {
+          "license": "ISC",
+          "name": "untrusted",
+          "version": "0.9.0"
+        },
+        {
+          "license": "Apache-2.0 WITH LLVM-exception OR Apache-2.0 OR MIT",
+          "name": "wasi",
+          "version": "0.11.1+wasi-snapshot-preview1"
+        },
+        {
+          "license": "MIT OR Apache-2.0",
+          "name": "windows-sys",
+          "version": "0.52.0"
+        },
+        {
+          "license": "MIT OR Apache-2.0",
+          "name": "windows-targets",
+          "version": "0.52.6"
+        },
+        {
+          "license": "MIT OR Apache-2.0",
+          "name": "windows_aarch64_gnullvm",
+          "version": "0.52.6"
+        },
+        {
+          "license": "MIT OR Apache-2.0",
+          "name": "windows_aarch64_msvc",
+          "version": "0.52.6"
+        },
+        {
+          "license": "MIT OR Apache-2.0",
+          "name": "windows_i686_gnu",
+          "version": "0.52.6"
+        },
+        {
+          "license": "MIT OR Apache-2.0",
+          "name": "windows_i686_gnullvm",
+          "version": "0.52.6"
+        },
+        {
+          "license": "MIT OR Apache-2.0",
+          "name": "windows_i686_msvc",
+          "version": "0.52.6"
+        },
+        {
+          "license": "MIT OR Apache-2.0",
+          "name": "windows_x86_64_gnu",
+          "version": "0.52.6"
+        },
+        {
+          "license": "MIT OR Apache-2.0",
+          "name": "windows_x86_64_gnullvm",
+          "version": "0.52.6"
+        },
+        {
+          "license": "MIT OR Apache-2.0",
+          "name": "windows_x86_64_msvc",
+          "version": "0.52.6"
+        }
+      ],
+      "version": "0.17.14"
+    }
+  }
+}

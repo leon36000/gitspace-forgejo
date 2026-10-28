@@ -1,0 +1,4 @@
+The first offline cargo metadata attempt could not complete because Cargo had not yet downloaded the target-specific package curve25519-dalek-derive v0.1.1:
+  error: failed to download `curve25519-dalek-derive v0.1.1`
+  caused by: attempting to make an HTTP request, but --offline was specified
+Metadata was then collected online for pinned public package metadata only. No private or operational data was supplied.

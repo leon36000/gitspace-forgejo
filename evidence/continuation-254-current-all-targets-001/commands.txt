@@ -1,0 +1,7 @@
+cargo test --offline --locked --all-targets
+rustc --version
+cargo --version
+python3 evidence/continuation-254-current-all-targets-001/replay_checks.py
+python3 -m py_compile evidence/continuation-254-current-all-targets-001/replay_checks.py
+git diff --check
+python3 evidence/continuation-254-current-all-targets-001/verify_manifests.py

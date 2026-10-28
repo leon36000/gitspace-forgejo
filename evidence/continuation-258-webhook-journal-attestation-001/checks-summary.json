@@ -1,0 +1,79 @@
+{
+  "cargo_check_locked_all_targets": {
+    "exit_code": 0
+  },
+  "cargo_license_metadata_gate": {
+    "exit_code": 0,
+    "guard_tests_passed": 12
+  },
+  "clippy_strict": {
+    "attestation_or_receiver_locations_reported": false,
+    "exit_code": 101,
+    "files": [
+      "src/agent_runtime.rs",
+      "src/forgejo.rs",
+      "src/mission_admission.rs",
+      "src/webhook.rs",
+      "src/webhook/reconcile.rs",
+      "src/lib.rs"
+    ],
+    "warning_as_error_diagnostics": 23
+  },
+  "focused_after_final_test_change": {
+    "actual_receiver_process_attestation": {
+      "failed": 0,
+      "filtered": 155,
+      "passed": 1
+    },
+    "webhook_attestation_contract": {
+      "failed": 0,
+      "passed": 3
+    }
+  },
+  "full_suite": {
+    "command": "cargo test --offline --locked --all-targets",
+    "exit_code": 0,
+    "failed": 0,
+    "ignored": 140,
+    "note": "Full run preceded a test-only assertion addition; affected focused targets were rerun afterward.",
+    "passed": 682,
+    "target_summaries": 37
+  },
+  "git_diff_check": {
+    "exit_code": 0
+  },
+  "integration_scope": {
+    "llm_or_agentos": false,
+    "merge_gate": false,
+    "real_forgejo_instance": false,
+    "real_http_handler_function": true,
+    "real_receiver_process_and_persisted_journal": true,
+    "reconciler_strict_public_key_enforcement": false
+  },
+  "known_gaps": [
+    "Neither forgejo-reconcile-local nor forgejo-mission-local enforces strict signature verification.",
+    "No configuration for trusted key rotation/revocation or journal anti-rollback is implemented.",
+    "Legacy rows are readable by the compatibility reader but fail strict attestation verification.",
+    "Clippy -D warnings has 23 outstanding diagnostics in existing modules."
+  ],
+  "lot": "CONTINUATION-258",
+  "manifest_verification": {
+    "historical_prefixes_preserved": true,
+    "historical_project_prefix": {
+      "blank_rows": 2,
+      "malformed_rows": 0
+    },
+    "historical_rows_retained": true,
+    "historical_worktree_prefix": {
+      "blank_rows": 6,
+      "malformed_rows": 1
+    },
+    "local_evidence_entries": 32,
+    "source_files": 12,
+    "status": "verified"
+  },
+  "rustfmt_check": {
+    "exit_code": 0
+  },
+  "status": "implemented_with_local_tests; not an admission_gate"
+}
