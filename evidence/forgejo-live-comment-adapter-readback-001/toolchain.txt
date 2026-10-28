@@ -1,0 +1,4 @@
+Forgejo runtime version and SHA-256: result.json
+Rust/Cargo/Python versions: rustc-version.txt, cargo-version.txt, python-version.txt
+Build flags, source hashes and executable hashes: provenance.json
+Cargo package metadata readback: cargo-metadata.json

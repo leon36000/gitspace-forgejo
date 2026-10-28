@@ -1,0 +1,4 @@
+PASS: current append-only product hashes match 29 paths
+PASS: current append-only parent hashes match 30 paths
+PASS: local run manifest verifies 22 files recursively
+Appended changed hashes: product=26, parent=26; prior prefixes preserved.

@@ -1,0 +1,5 @@
+HEAD=f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+branch=local/WEBHOOK-005-canonical-links
+source_worktree_dirty=true
+Runner provenance records source_head=null because the source snapshot was not exported by the runner.
+The checkout was already heavily modified; no reset, cleanup, commit, publication, or production access was performed.

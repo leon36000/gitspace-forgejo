@@ -1,0 +1,22 @@
+{
+  "delivery_id": "98b78b45-4251-4973-9a9d-a5c430bd1b2e",
+  "http_status": 202,
+  "journal_bytes_after": 60409,
+  "journal_bytes_before": 60409,
+  "journal_records_after": 8,
+  "journal_records_before": 8,
+  "journal_sha256_after": "c6ef9b2f4e75861184202ee67896dae071f2a3408ff70d9e0bde94da18108b32",
+  "journal_sha256_before": "c6ef9b2f4e75861184202ee67896dae071f2a3408ff70d9e0bde94da18108b32",
+  "payload_encoding": "JSON re-serialized from the journaled object; byte-for-byte original request body is not retained",
+  "payload_source": "verified Forgejo-emitted receiver journal envelope",
+  "receiver_restarted_with_same_journal": true,
+  "response": {
+    "accepted": true,
+    "delivery_id": "98b78b45-4251-4973-9a9d-a5c430bd1b2e",
+    "duplicate": true,
+    "reconcile_required": true,
+    "schema_version": 1,
+    "sequence": 1
+  },
+  "sequence": 1
+}
