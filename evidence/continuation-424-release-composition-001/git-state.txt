@@ -1,0 +1,12 @@
+worktree=/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace
+branch=local/WEBHOOK-005-canonical-links
+HEAD=f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+tracked_or_untracked_status_entries_at_capture=1837
+local_commit_created=false
+GitLab project=root/gitspace-forgejo (private, project id 4)
+GitLab work branch=codex/pc6-transfer-work-2026-10-28
+GitLab work branch head at capture=f4573f4adade893281fc9a448146262ca48a0fd7
+GitLab default branch=codex/pc6-transfer-2026-10-28 (newly selected automatically by GitLab after its first commit; contains README bootstrap only)
+GitLab work branch is separate, non-default, unprotected and reports can_push=true
+The local shell still cannot resolve pc4.tail0c55ff.ts.net; API work used the connected GitLab PC4 integration.
+No merge request, merge, production change, local staging or local commit was made.

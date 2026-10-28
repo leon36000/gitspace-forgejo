@@ -1,0 +1,19 @@
+Local anonymous route checks:
+getent hosts pc4.tail0c55ff.ts.net
+curl --noproxy '*' -sS -I --connect-timeout 3 --max-time 5 https://pc4.tail0c55ff.ts.net/
+GIT_TERMINAL_PROMPT=0 GIT_ASKPASS=/bin/false GCM_INTERACTIVE=never git -c credential.helper= -c http.extraHeader= ls-remote https://pc4.tail0c55ff.ts.net/root/gitspace-forgejo.git
+
+Local export audit:
+PYTHONDONTWRITEBYTECODE=1 python3 evidence/continuation-425-gitlab-connector-preflight-001/audit_transfer_candidates.py
+
+Connected GitLab API operations:
+mcp__GitLab_PC4__get_mcp_server_version
+mcp__GitLab_PC4__get_project(project_id=4)
+mcp__GitLab_PC4__list_branches(id=4)
+mcp__GitLab_PC4__list_repository_tree(project_id=4, recursive=true, ref=codex/pc6-transfer-work-2026-10-28), paginated by pageInfo.endCursor
+mcp__GitLab_PC4__get_repository_file(project_id=4, ref=codex/pc6-transfer-work-2026-10-28)
+mcp__GitLab_PC4__add_branch(project_id=4, branch=codex/pc6-transfer-work-2026-10-28, ref=codex/pc6-transfer-2026-10-28)
+mcp__GitLab_PC4__add_commit(project_id=4, branch=codex/pc6-transfer-work-2026-10-28)
+
+Readback verification:
+For every remote core blob, compared Git object ID with SHA-1("blob " + byte_length + NUL + local_file_bytes), then compared executable mode.

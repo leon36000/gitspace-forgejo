@@ -1,0 +1,19 @@
+TDD red:
+python3 tests/test_forgejo_emitted_webhook_e2e.py ReleaseReconciliationCompositionTests.test_public_release_readback_does_not_receive_a_host_credential_fd
+
+Focused green:
+python3 tests/test_forgejo_emitted_webhook_e2e.py ReleaseReconciliationCompositionTests
+
+Relevant suites:
+PYTHONDONTWRITEBYTECODE=1 python3 tests/test_forgejo_emitted_webhook_e2e.py
+PYTHONDONTWRITEBYTECODE=1 python3 tests/test_forgejo_webhook_native_replay_e2e.py
+PYTHONDONTWRITEBYTECODE=1 python3 tests/test_forgejo_live_org_team_reviewer_readback.py
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest scripts.test_cargo_license_state
+
+Static and policy checks:
+Python ast.parse for scripts/run_forgejo_live_webhook_reconcile_e2e.py, scripts/run_forgejo_live_webhook_reconcile_emitted.py and tests/test_forgejo_emitted_webhook_e2e.py
+cargo metadata --locked --offline --no-deps --format-version 1
+python3 scripts/verify_cargo_license_state.py
+git diff --check
+
+No Rust source changed; all-targets was not rerun in this Python-only slice.

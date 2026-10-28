@@ -1,0 +1,36 @@
+Bootstrap branch (GitLab made this first branch the default because the project was empty):
+codex/pc6-transfer-2026-10-28
+6c6ffa3d7d37d48b9d7877acb982d73a2c49a14f — README.md
+
+Non-default working branch:
+codex/pc6-transfer-work-2026-10-28
+Latest head at capture: f4573f4adade893281fc9a448146262ca48a0fd7
+
+Content upload commits on the work branch:
+6f57b4556dbb7d04523f912809bacaa127135cdf — initial API attempt encoded text files as literal Base64; readback detected it
+5b948017a9913c1289f96c44f08d9a042107618f — corrected .gitignore as text
+e0ff312951569458102afe42a788ceb995f76cdf — corrected Cargo.toml, Cargo.lock, requirement, acceptance policy and src/lib.rs as text
+c3984ed0147fc6b94b87bbe9df947c6edcabcf71 — reconciliation helper and test module
+995170f22d74374d5e55efe339f499d568e8b8b6 — emitted webhook runner
+fd5184c5ffbd22ab13d4748d1590666d86a7f1be
+6e08367994b2a4bb2b21a93b0de5dd3871fab002
+930da8afe08928598e290fc3659577c2a4557dba
+329a8939dc8af1523aabfae6f812236644d4818b
+f1e124b4ac7e6e1d773fc4db96fe6070ef3a2b2b
+9c10d00f6881ea01b02c004ceadac600a04bfa84
+4526acddd9d9929af2520f6d6adbebfb3ef6947a
+bbd96d716005a1611472cc97cfd69ec59fff5cb0
+9c943f93bed6eb61dcfc4639f2d079d2ffe73719
+d18c8b36a7f588a304f6f310795f7f5fcd23e31c
+7eac5eb3412c2ec6e2e65445e753082ebdf939f7
+1710abf2878926d813988337be041471c2566974
+805373c4f4051c1531b2023c44c0c52df11adca9
+43085772dbebbad81732095cc5c893e88c6e05a1
+3ee08b1b7f392d6d7b68efb2ab0df3ca44dd6b04
+3a3f265f3c4cad1801b4e2f53acec69b091b342c
+96775a47f997fffc93b2197e27e6fc9a1cb6d398
+eb7f4fd31fb742134e8597e24cf9c43302d58aac
+6a2b08189c542dcf73416f5bc5c3826ac46a54ef
+f0b3e0c4e8150491156e29dc10d62b63940c247a
+2f5da1ae425b281dbcb781b82d2867116d66399c
+f4573f4adade893281fc9a448146262ca48a0fd7

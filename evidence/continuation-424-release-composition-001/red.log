@@ -1,0 +1,37 @@
+FFFF
+======================================================================
+FAIL: test_event_tag_and_notes_do_not_replace_canonical_api_projection (__main__.ReleaseReconciliationCompositionTests.test_event_tag_and_notes_do_not_replace_canonical_api_projection)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/test_forgejo_emitted_webhook_e2e.py", line 4491, in setUp
+    self.assertTrue(callable(function), "Release journal-to-CLI composition is missing")
+AssertionError: False is not true : Release journal-to-CLI composition is missing
+
+======================================================================
+FAIL: test_unverified_or_stale_cli_result_is_not_accepted (__main__.ReleaseReconciliationCompositionTests.test_unverified_or_stale_cli_result_is_not_accepted)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/test_forgejo_emitted_webhook_e2e.py", line 4491, in setUp
+    self.assertTrue(callable(function), "Release journal-to-CLI composition is missing")
+AssertionError: False is not true : Release journal-to-CLI composition is missing
+
+======================================================================
+FAIL: test_valid_release_record_is_reconciled_by_delivery_id_and_current_api_state (__main__.ReleaseReconciliationCompositionTests.test_valid_release_record_is_reconciled_by_delivery_id_and_current_api_state)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/test_forgejo_emitted_webhook_e2e.py", line 4491, in setUp
+    self.assertTrue(callable(function), "Release journal-to-CLI composition is missing")
+AssertionError: False is not true : Release journal-to-CLI composition is missing
+
+======================================================================
+FAIL: test_wrong_release_identity_refuses_before_credential_or_cli (__main__.ReleaseReconciliationCompositionTests.test_wrong_release_identity_refuses_before_credential_or_cli)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/test_forgejo_emitted_webhook_e2e.py", line 4491, in setUp
+    self.assertTrue(callable(function), "Release journal-to-CLI composition is missing")
+AssertionError: False is not true : Release journal-to-CLI composition is missing
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.001s
+
+FAILED (failures=4)

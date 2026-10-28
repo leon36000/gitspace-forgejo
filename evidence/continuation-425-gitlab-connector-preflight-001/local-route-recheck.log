@@ -1,0 +1,6 @@
+$ getent hosts pc4.tail0c55ff.ts.net
+exit=2
+
+$ curl --noproxy * -sS -I --connect-timeout 3 --max-time 5 https://pc4.tail0c55ff.ts.net/
+curl: (6) Could not resolve host: pc4.tail0c55ff.ts.net
+exit=6
