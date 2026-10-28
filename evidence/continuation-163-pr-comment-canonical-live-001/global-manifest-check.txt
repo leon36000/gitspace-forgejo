@@ -1,0 +1,3 @@
+$ /usr/bin/python3 evidence/continuation-163-pr-comment-canonical-live-001/verify_append_only_indexes.py
+{"local_evidence_files_verified": 30, "parent_binds_current_worktree_index": true, "project_prefix_preserved": true, "worktree_prefix_preserved": true}
+exit_status=0

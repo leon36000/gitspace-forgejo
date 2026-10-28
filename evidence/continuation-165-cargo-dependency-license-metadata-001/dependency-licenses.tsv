@@ -1,0 +1,25 @@
+dependency_kind	name	version	license	license_file	source
+transitive	block-buffer	0.10.4	MIT OR Apache-2.0		registry+https://github.com/rust-lang/crates.io-index
+transitive	cfg-if	1.0.5	MIT OR Apache-2.0		registry+https://github.com/rust-lang/crates.io-index
+transitive	cpufeatures	0.2.17	MIT OR Apache-2.0		registry+https://github.com/rust-lang/crates.io-index
+transitive	crypto-common	0.1.7	MIT OR Apache-2.0		registry+https://github.com/rust-lang/crates.io-index
+transitive	digest	0.10.7	MIT OR Apache-2.0		registry+https://github.com/rust-lang/crates.io-index
+transitive	generic-array	0.14.7	MIT		registry+https://github.com/rust-lang/crates.io-index
+normal	hex	0.4.3	MIT OR Apache-2.0		registry+https://github.com/rust-lang/crates.io-index
+normal	hmac	0.12.1	MIT OR Apache-2.0		registry+https://github.com/rust-lang/crates.io-index
+transitive	itoa	1.0.18	MIT OR Apache-2.0		registry+https://github.com/rust-lang/crates.io-index
+normal	libc	0.2.190	MIT OR Apache-2.0		registry+https://github.com/rust-lang/crates.io-index
+transitive	memchr	2.8.3	Unlicense OR MIT		registry+https://github.com/rust-lang/crates.io-index
+transitive	proc-macro2	1.0.107	MIT OR Apache-2.0		registry+https://github.com/rust-lang/crates.io-index
+transitive	quote	1.0.47	MIT OR Apache-2.0		registry+https://github.com/rust-lang/crates.io-index
+normal	serde	1.0.228	MIT OR Apache-2.0		registry+https://github.com/rust-lang/crates.io-index
+transitive	serde_core	1.0.228	MIT OR Apache-2.0		registry+https://github.com/rust-lang/crates.io-index
+transitive	serde_derive	1.0.228	MIT OR Apache-2.0		registry+https://github.com/rust-lang/crates.io-index
+normal	serde_json	1.0.150	MIT OR Apache-2.0		registry+https://github.com/rust-lang/crates.io-index
+normal	sha2	0.10.9	MIT OR Apache-2.0		registry+https://github.com/rust-lang/crates.io-index
+transitive	subtle	2.6.1	BSD-3-Clause		registry+https://github.com/rust-lang/crates.io-index
+transitive	syn	2.0.117	MIT OR Apache-2.0		registry+https://github.com/rust-lang/crates.io-index
+transitive	typenum	1.20.0	MIT OR Apache-2.0		registry+https://github.com/rust-lang/crates.io-index
+transitive	unicode-ident	1.0.26	(MIT OR Apache-2.0) AND Unicode-3.0		registry+https://github.com/rust-lang/crates.io-index
+transitive	version_check	0.9.5	MIT/Apache-2.0		registry+https://github.com/rust-lang/crates.io-index
+transitive	zmij	1.0.23	MIT		registry+https://github.com/rust-lang/crates.io-index

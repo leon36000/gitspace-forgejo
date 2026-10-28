@@ -1,0 +1,41 @@
+HEAD=f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+worktree_status_entries=1503
+status_command_exit_status=0
+touched_file_status=
+ M docs/architecture.md
+ M docs/checkpoint.md
+ M docs/implementation-plan.md
+?? docs/refusal-evidence-matrix.md
+?? tests/test_forgejo_emitted_webhook_e2e.py
+versions=
+{
+  "cargo": {
+    "command": "cargo --version",
+    "exit_status": 0,
+    "output": "cargo 1.95.0 (f2d3ce0bd 2026-03-21)"
+  },
+  "git": {
+    "command": "git --version",
+    "exit_status": 0,
+    "output": "git version 2.43.0"
+  },
+  "python": {
+    "command": "python3 --version",
+    "exit_status": 0,
+    "output": "Python 3.12.3"
+  },
+  "rustc": {
+    "command": "rustc --version",
+    "exit_status": 0,
+    "output": "rustc 1.95.0 (59807616e 2026-04-14)"
+  },
+  "uname": {
+    "command": "uname -a",
+    "exit_status": 0,
+    "output": "Linux gx10-e526 7.0.0-1019-nvidia #19~24.04.2-Ubuntu SMP PREEMPT_DYNAMIC Sun Sep  6 18:35:11 UTC 2 aarch64 aarch64 aarch64 GNU/Linux"
+  }
+}
+forgejo_version=forgejo version 17.0.0+gitea-1.22.0 (release name 17.0.0) built with GNU Make 4.4.1, go1.26.9 : bindata, timetzdata, sqlite, sqlite_unlock_notify
+forgejo_binary_sha256=e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7
+forgejo_source_commit=not_established_by_local_binary_metadata
+cargo_build_sandbox=Bubblewrap allowlist; --unshare-net and --unshare-pid; clear environment; read-only staged source, registry and Rust sysroot; --offline --locked

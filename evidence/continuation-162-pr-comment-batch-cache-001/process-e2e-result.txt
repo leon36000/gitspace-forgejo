@@ -1,0 +1,5 @@
+COMMAND: python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_reuses_pull_request_parent_and_comment_read_across_batch_orders
+EXIT_STATUS: 0
+SANDBOX: Bubblewrap --unshare-net --unshare-pid
+OBSERVED: running 1 test; actual_reconcile_cli_process_reuses_pull_request_parent_and_comment_read_across_batch_orders ... ok; test result: ok. 1 passed; 0 failed; 0 ignored; 0 filtered out; finished in 0.12s
+NOTE: this is a concise transcription of the successful tool result; the command completed in this turn and no output transcript was persisted by the runner.

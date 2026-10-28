@@ -1,0 +1,7 @@
+{
+  "cleanup_failure": null,
+  "error_message": "name 'quote' is not defined",
+  "error_type": "NameError",
+  "stage": "revoke_comment_reader_and_confirm_parent_visibility",
+  "verdict": "failed"
+}

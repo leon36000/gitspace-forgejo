@@ -1,0 +1,48 @@
+[
+  {
+    "api_version": "forgejo-rest-v1",
+    "canonical_state": {
+      "base_sha": null,
+      "comment": null,
+      "head_sha": null,
+      "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/issues/1",
+      "merge_commit_sha": null,
+      "merged": null,
+      "state": "closed",
+      "updated_at": "2026-10-26T22:08:33-04:00"
+    },
+    "delivery_id": "7ec32246-f54b-46a7-aec8-9473caa5281d",
+    "resource": {
+      "kind": "issue",
+      "number": 1,
+      "owner": "forge-admin",
+      "repository": "agent-forge-core"
+    },
+    "schema_version": 5,
+    "upstream_read_attempts": 1,
+    "verdict": "current_state_read"
+  },
+  {
+    "api_version": "forgejo-rest-v1",
+    "canonical_state": {
+      "base_sha": null,
+      "comment": null,
+      "head_sha": null,
+      "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/issues/1",
+      "merge_commit_sha": null,
+      "merged": null,
+      "state": "closed",
+      "updated_at": "2026-10-26T22:08:33-04:00"
+    },
+    "delivery_id": "f256de41-cba6-4c74-93a3-239dd8eb7b02",
+    "resource": {
+      "kind": "issue",
+      "number": 1,
+      "owner": "forge-admin",
+      "repository": "agent-forge-core"
+    },
+    "schema_version": 5,
+    "upstream_read_attempts": 1,
+    "verdict": "current_state_read"
+  }
+]

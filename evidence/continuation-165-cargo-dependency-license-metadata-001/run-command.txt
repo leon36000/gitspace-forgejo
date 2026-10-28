@@ -1,0 +1,4 @@
+python3 evidence/continuation-165-cargo-dependency-license-metadata-001/generate_inventory.py
+
+Generator command:
+cargo metadata --offline --locked --format-version 1 --all-features
