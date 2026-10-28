@@ -1,0 +1,3 @@
+Current product evidence/SHA256SUMS before this lot: 7703 lines; 7696 valid hashes; 7 malformed historical lines preserved; SHA-256 ba804d025eac874ec56aeb8b9115e70a8442b4efb670c6e3654327b953035603.
+Parent workspace evidence/SHA256SUMS before this lot: SHA-256 f633ad45d3726dbe0cb02c6c21304f5f3690c245546455f0535e8782b96b6892; existing entries use .runtime/webhook-005-workspace/ prefixes.
+The indexes will be updated by appending entries only.

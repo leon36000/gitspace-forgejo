@@ -1,0 +1,19 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+error: unexpected closing delimiter: `}`
+     --> src/bin/forgejo-reconcile-local.rs:11864:1
+      |
+ 8032 |     fn merge_authority_policy_allows_only_gate_reads_and_one_merge_route() {
+      |                                                                            - the nearest open delimiter
+...
+ 8115 |             (
+      |             - the nearest open delimiter
+...
+ 8822 |         ]);
+      |         -- missing open `(` for this delimiter
+      |         |
+      |         missing open `[` for this delimiter
+...
+11864 | }
+      | ^ unexpected closing delimiter
+
+error: could not compile `agent-forge-core` (bin "forgejo-reconcile-local" test) due to 1 previous error

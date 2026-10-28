@@ -1,0 +1,2 @@
+PASS: current local hashes match 32 paths
+PASS: current parent hashes match 32 paths

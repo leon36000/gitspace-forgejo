@@ -1,0 +1,25 @@
+Worktree: /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace
+HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+Branch: local/WEBHOOK-005-canonical-links
+
+Test-first behavioral reproduction against the earlier body.is_some() predicate:
+cargo test --offline --locked --bin forgejo-reconcile-local merge_authority_policy_allows_only_gate_reads_and_one_merge_route -- --nocapture
+Expected nonzero; observed exit 101 because Do=rebase was allowed. See body-policy-red-behavior.log.
+
+First attempted red run had a malformed raw-string delimiter in the newly added test fixture and failed to compile. It is preserved as body-policy-red.log and is not counted as behavioral evidence.
+
+Final focused tests, each run separately against the final source:
+cargo test --offline --locked --bin forgejo-reconcile-local merge_authority_policy_allows_only_gate_reads_and_one_merge_route -- --nocapture
+cargo test --offline --locked --bin forgejo-reconcile-local merge_authority_policy_rejects_other_writes_before_network_or_credential_read -- --nocapture
+cargo test --offline --locked --bin forgejo-reconcile-local default_profile_gate_requests_are_unchanged -- --nocapture
+cargo test --offline --locked --bin forgejo-reconcile-local mission_012_profile_scopes_every_gate_request_to_one_repository -- --nocapture
+cargo test --offline --locked --bin forgejo-reconcile-local merge_gate_uses_separate_policy_reader_and_non_admin_merge_credentials -- --nocapture
+Observed: all five commands exit 0; each reports 1 passed, 0 failed.
+
+Formatting and static checks:
+cargo fmt --all
+cargo fmt --all -- --check
+git diff --check
+cargo clippy --offline --locked --bin forgejo-reconcile-local --tests
+python3 scripts/verify_cargo_license_state.py
+Observed: all exit 0. Clippy warnings are documented in local-run.md and clippy-current.log.

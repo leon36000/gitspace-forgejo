@@ -1,0 +1,13 @@
+# Working directory: /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace
+# Targeted refusal test after final assertion correction:
+cargo test --locked --offline --bin forgejo-reconcile-local merge_gate_refuses_a_mission_review_binding_for_another_pull_request_before_post -- --nocapture
+# Targeted positive admission/credential binding test:
+cargo test --locked --offline --bin forgejo-reconcile-local mission_gate_uses_separate_credentials_and_posts_only_for_the_admitted_pull_request -- --nocapture
+# All unit tests in the modified adapter binary:
+cargo test --locked --offline --bin forgejo-reconcile-local
+# Formatting and patch checks:
+cargo fmt --all -- --check
+git diff --check
+# Cargo package license state guard and its nine unit tests:
+python3 scripts/verify_cargo_license_state.py
+python3 scripts/test_cargo_license_state.py

@@ -1,0 +1,8 @@
+UTC run date: 2026-10-26
+Host: Linux 7.0.0-1019-nvidia aarch64 GNU/Linux
+rustc: rustc 1.95.0 (59807616e 2026-04-14)
+cargo: cargo 1.95.0 (f2d3ce0bd 2026-03-21)
+Python: Python 3.12.3
+Cargo mode: --locked --offline
+Product worktree HEAD (pre-existing): f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+Forgejo integration: loopback HTTP fixture only; no Forgejo server or upstream code was used in this test.

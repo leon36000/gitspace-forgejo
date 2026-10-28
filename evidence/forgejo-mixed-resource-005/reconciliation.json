@@ -1,0 +1,76 @@
+{
+  "batch_result": {
+    "api_version": "forgejo-rest-v1",
+    "results": [
+      {
+        "canonical_state": {
+          "base_sha": null,
+          "head_sha": null,
+          "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/issues/1",
+          "merge_commit_sha": null,
+          "merged": null,
+          "state": "open",
+          "updated_at": "2026-10-25T16:13:38-04:00"
+        },
+        "delivery_id": "20746a04-dd57-49da-b1ec-4927b01fa477",
+        "resource": {
+          "kind": "issue",
+          "number": 1,
+          "owner": "forge-admin",
+          "repository": "agent-forge-core"
+        },
+        "verdict": "current_state_read"
+      },
+      {
+        "canonical_state": {
+          "base_sha": null,
+          "head_sha": null,
+          "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/issues/1",
+          "merge_commit_sha": null,
+          "merged": null,
+          "state": "open",
+          "updated_at": "2026-10-25T16:13:38-04:00"
+        },
+        "delivery_id": "89fb1232-0a3b-4e73-851c-fc36f4dca85c",
+        "resource": {
+          "kind": "issue",
+          "number": 1,
+          "owner": "forge-admin",
+          "repository": "agent-forge-core"
+        },
+        "verdict": "current_state_read"
+      }
+    ],
+    "schema_version": 5,
+    "upstream_read_attempts": 1,
+    "verdict": "current_state_read"
+  },
+  "canonical_issue_readback": {
+    "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/issues/1",
+    "number": 1,
+    "state": "open",
+    "updated_at": "2026-10-25T16:13:38-04:00"
+  },
+  "credential_consumed": true,
+  "credential_recorded": false,
+  "credential_source": "read_only_private_inherited_pipe_fd",
+  "delivery_ids": [
+    "20746a04-dd57-49da-b1ec-4927b01fa477",
+    "89fb1232-0a3b-4e73-851c-fc36f4dca85c"
+  ],
+  "exit_status": 0,
+  "independent_api_observation": {
+    "credential_role": "read_only_non_admin",
+    "request_count": 1,
+    "requests": [
+      {
+        "method": "GET",
+        "path": "/api/v1/repos/forge-admin/agent-forge-core/issues/1",
+        "reader_credential_match": true,
+        "status": 200
+      }
+    ]
+  },
+  "journal_unchanged": true,
+  "validated_result_count": 2
+}

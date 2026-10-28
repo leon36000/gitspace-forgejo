@@ -1,0 +1,11 @@
+Focused Python native-replay validator suite: 25 tests, all passed.
+Full Python suite: 189 tests, all passed (19.324 s).
+Cargo license-state guard: 7 tests, all passed.
+Cargo metadata readback: license=null, license_file=null, publish=[], decision=no_license_selected, redistribution_rights=not_assessed.
+cargo fmt --all -- --check: exit 0.
+py_compile for the two changed Python files: exit 0.
+git diff --check: exit 0.
+No full Rust test suite was run in this slice. The actual reconciler and receiver binaries were built offline/locked under Bubblewrap by the E2E runner; see cargo-build.log and build-provenance.json.
+One attempt referenced a nonexistent guessed license-script filename and failed before executing; the repository's actual scripts/test_cargo_license_state.py and scripts/verify_cargo_license_state.py were then run successfully.
+Local evidence manifests: forgejo-mixed-resource-005 19/19; forgejo-private-404-reconcile-004 27/27.
+The append-only global manifest's latest hashes were checked for 53 current source/document/evidence paths with zero missing entries and zero mismatches. Its six historical malformed lines remain preserved.

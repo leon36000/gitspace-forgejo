@@ -1,0 +1,21 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.08s
+     Running unittests src/bin/forgejo-reconcile-local.rs (target/debug/deps/forgejo_reconcile_local-3e9fc5f7734f2ac5)
+
+running 1 test
+
+thread 'tests::merge_gate_refuses_a_mission_review_binding_for_another_pull_request_before_post' (1593978) panicked at src/bin/forgejo-reconcile-local.rs:11931:9:
+assertion `left == right` failed
+  left: String("merge_attempt_binding_mismatch")
+ right: "invalid_review_base_binding"
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test tests::merge_gate_refuses_a_mission_review_binding_for_another_pull_request_before_post ... FAILED
+
+failures:
+
+failures:
+    tests::merge_gate_refuses_a_mission_review_binding_for_another_pull_request_before_post
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 126 filtered out; finished in 0.02s
+
+error: test failed, to rerun pass `--bin forgejo-reconcile-local`

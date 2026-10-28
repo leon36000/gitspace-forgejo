@@ -1,0 +1,3 @@
+HEAD f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+Worktree is dirty; the source file is modified. Its hash identifies the whole observed file and is not a commit hash.
+08a30eab0ab2e00982b1e26a0dc0cf0abd09180586ee6d682c19daa2f14a705b  src/bin/forgejo-reconcile-local.rs

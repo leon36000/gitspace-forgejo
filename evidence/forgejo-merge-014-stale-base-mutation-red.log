@@ -1,0 +1,22 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.02s
+     Running unittests src/bin/forgejo-reconcile-local.rs (target/debug/deps/forgejo_reconcile_local-3e9fc5f7734f2ac5)
+
+running 1 test
+test tests::final_merge_state_refuses_an_advanced_base_without_a_merge_post ... FAILED
+
+failures:
+
+---- tests::final_merge_state_refuses_an_advanced_base_without_a_merge_post stdout ----
+
+thread 'tests::final_merge_state_refuses_an_advanced_base_without_a_merge_post' (1075071) panicked at src/bin/forgejo-reconcile-local.rs:3639:9:
+assertion failed: matches!(final_state, Err(FinalMergeStateError::StaleBase))
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    tests::final_merge_state_refuses_an_advanced_base_without_a_merge_post
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 43 filtered out; finished in 0.01s
+
+error: test failed, to rerun pass `--bin forgejo-reconcile-local`

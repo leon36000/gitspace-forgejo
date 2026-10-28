@@ -1,0 +1,19 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.03s
+     Running tests/mission_execution_journal_contract.rs (target/debug/deps/mission_execution_journal_contract-c0799a5ee06e38e9)
+
+running 1 test
+
+thread 'legacy_inconclusive_resolution_is_nonterminal_even_with_a_persisted_terminal_default' (208514) panicked at tests/mission_execution_journal_contract.rs:2690:5:
+assertion failed: !legacy.is_terminal()
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test legacy_inconclusive_resolution_is_nonterminal_even_with_a_persisted_terminal_default ... FAILED
+
+failures:
+
+failures:
+    legacy_inconclusive_resolution_is_nonterminal_even_with_a_persisted_terminal_default
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 54 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `--test mission_execution_journal_contract`

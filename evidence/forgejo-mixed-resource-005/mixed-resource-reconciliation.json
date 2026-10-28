@@ -1,0 +1,409 @@
+{
+  "correction": {
+    "action": "owner_created_issue_after_observed_404",
+    "created_issue_readback": {
+      "assets": [],
+      "assignee": null,
+      "assignees": null,
+      "body": "This issue is created after the observed 404.",
+      "closed_at": null,
+      "comments": 0,
+      "created_at": "2026-10-25T16:13:40-04:00",
+      "due_date": null,
+      "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/issues/2",
+      "id": 2,
+      "is_locked": false,
+      "labels": [],
+      "milestone": null,
+      "number": 2,
+      "original_author": "",
+      "original_author_id": 0,
+      "pin_order": 0,
+      "pull_request": null,
+      "ref": "",
+      "repository": {
+        "full_name": "forge-admin/agent-forge-core",
+        "id": 1,
+        "name": "agent-forge-core",
+        "owner": "forge-admin"
+      },
+      "state": "open",
+      "title": "Create the missing mixed-batch resource",
+      "updated_at": "2026-10-25T16:13:40-04:00",
+      "url": "http://127.0.0.1:3130/api/v1/repos/forge-admin/agent-forge-core/issues/2",
+      "user": {
+        "active": true,
+        "avatar_url": "http://127.0.0.1:3130/avatars/b15dd049cd92cf7c19a15640b8623681",
+        "created": "2026-10-25T16:13:37-04:00",
+        "description": "",
+        "email": "forge-admin@local.invalid",
+        "followers_count": 0,
+        "following_count": 0,
+        "full_name": "",
+        "html_url": "http://127.0.0.1:3130/forge-admin",
+        "id": 1,
+        "is_admin": true,
+        "language": "en-US",
+        "last_login": "2026-10-25T16:13:39-04:00",
+        "location": "",
+        "login": "forge-admin",
+        "login_name": "",
+        "prohibit_login": false,
+        "pronouns": "",
+        "restricted": false,
+        "source_id": 0,
+        "starred_repos_count": 0,
+        "username": "forge-admin",
+        "visibility": "public",
+        "website": ""
+      }
+    },
+    "native_webhook_event": {
+      "action": "opened",
+      "delivery_id": "8240ef9d-4653-4d6f-b675-7bd897737d0e",
+      "event": "issues",
+      "issue_number": 2,
+      "payload_state": "open",
+      "sequence": 4
+    },
+    "native_webhook_task": {
+      "event_type": "issues",
+      "hook_id": 1,
+      "is_delivered": true,
+      "is_succeed": true,
+      "payload_semantic_sha256": "dbbf2938999bfa0be9d2d9e5cb98625fe41cdac0f6c25047acf8a726b20e380e",
+      "payload_sha256": "6a0a81f63afc2ecf7bdf3878cebed188315e468a29cd140985c8f3583b0b9c11",
+      "response_status": 202,
+      "task_id": 4,
+      "uuid": "8240ef9d-4653-4d6f-b675-7bd897737d0e"
+    }
+  },
+  "delivery_ids_reused_unchanged": [
+    "mixed-resource-b48cef71911d1ce9ccdd5157b1321916",
+    "20746a04-dd57-49da-b1ec-4927b01fa477"
+  ],
+  "first_attempt": {
+    "api_observation": {
+      "credential_role": "read_only_non_admin",
+      "request_count": 2,
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/repos/forge-admin/agent-forge-core/issues/2",
+          "reader_credential_match": true,
+          "status": 404
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/repos/forge-admin/agent-forge-core/issues/1",
+          "reader_credential_match": true,
+          "status": 200
+        }
+      ]
+    },
+    "batch_result": {
+      "api_version": "forgejo-rest-v1",
+      "results": [
+        {
+          "delivery_id": "mixed-resource-b48cef71911d1ce9ccdd5157b1321916",
+          "error": {
+            "action": "verify the issue number and repository access; HTTP 404 does not distinguish a missing issue from an inaccessible repository",
+            "code": "resource_not_found",
+            "details": {
+              "resource": {
+                "kind": "issue",
+                "number": 2,
+                "owner": "forge-admin",
+                "repository": "agent-forge-core"
+              },
+              "upstream": "forgejo"
+            },
+            "retryable": false
+          },
+          "verdict": "inconclusive"
+        },
+        {
+          "canonical_state": {
+            "base_sha": null,
+            "head_sha": null,
+            "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/issues/1",
+            "merge_commit_sha": null,
+            "merged": null,
+            "state": "open",
+            "updated_at": "2026-10-25T16:13:38-04:00"
+          },
+          "delivery_id": "20746a04-dd57-49da-b1ec-4927b01fa477",
+          "resource": {
+            "kind": "issue",
+            "number": 1,
+            "owner": "forge-admin",
+            "repository": "agent-forge-core"
+          },
+          "verdict": "current_state_read"
+        }
+      ],
+      "schema_version": 5,
+      "upstream_read_attempts": 2,
+      "verdict": "inconclusive"
+    },
+    "exit_status": 1,
+    "issue_one_independent_readback": {
+      "assets": [],
+      "assignee": null,
+      "assignees": null,
+      "body": "One failed delivery is replayed natively.",
+      "closed_at": null,
+      "comments": 0,
+      "created_at": "2026-10-25T16:13:38-04:00",
+      "due_date": null,
+      "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/issues/1",
+      "id": 1,
+      "is_locked": false,
+      "labels": [],
+      "milestone": null,
+      "number": 1,
+      "original_author": "",
+      "original_author_id": 0,
+      "pin_order": 0,
+      "pull_request": null,
+      "ref": "",
+      "repository": {
+        "full_name": "forge-admin/agent-forge-core",
+        "id": 1,
+        "name": "agent-forge-core",
+        "owner": "forge-admin"
+      },
+      "state": "open",
+      "title": "Native webhook replay test",
+      "updated_at": "2026-10-25T16:13:38-04:00",
+      "url": "http://127.0.0.1:3130/api/v1/repos/forge-admin/agent-forge-core/issues/1",
+      "user": {
+        "active": false,
+        "avatar_url": "http://127.0.0.1:3130/avatars/b15dd049cd92cf7c19a15640b8623681",
+        "created": "2026-10-25T16:13:37-04:00",
+        "description": "",
+        "email": "forge-admin@local.invalid",
+        "followers_count": 0,
+        "following_count": 0,
+        "full_name": "",
+        "html_url": "http://127.0.0.1:3130/forge-admin",
+        "id": 1,
+        "is_admin": false,
+        "language": "",
+        "last_login": "0001-01-01T00:00:00Z",
+        "location": "",
+        "login": "forge-admin",
+        "login_name": "",
+        "prohibit_login": false,
+        "pronouns": "",
+        "restricted": false,
+        "source_id": 0,
+        "starred_repos_count": 0,
+        "username": "forge-admin",
+        "visibility": "public",
+        "website": ""
+      }
+    },
+    "journal_unchanged": true,
+    "validated_result_count": 2
+  },
+  "missing_resource_event": {
+    "delivery_id": "mixed-resource-b48cef71911d1ce9ccdd5157b1321916",
+    "forgejo_native_delivery": false,
+    "issue_number": 2,
+    "journal_sequence": 3,
+    "payload_sha256": "ecb10b9c52c0693491e18b25345549f1cc5fc2a1d758f01ddd0314e847b9cfc7",
+    "receiver_status": 202,
+    "source": "HMAC-signed synthetic issue event sent directly to the local receiver"
+  },
+  "recovery": {
+    "api_observation": {
+      "credential_role": "read_only_non_admin",
+      "request_count": 2,
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/repos/forge-admin/agent-forge-core/issues/2",
+          "reader_credential_match": true,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/repos/forge-admin/agent-forge-core/issues/1",
+          "reader_credential_match": true,
+          "status": 200
+        }
+      ]
+    },
+    "batch_result": {
+      "api_version": "forgejo-rest-v1",
+      "results": [
+        {
+          "canonical_state": {
+            "base_sha": null,
+            "head_sha": null,
+            "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/issues/2",
+            "merge_commit_sha": null,
+            "merged": null,
+            "state": "open",
+            "updated_at": "2026-10-25T16:13:40-04:00"
+          },
+          "delivery_id": "mixed-resource-b48cef71911d1ce9ccdd5157b1321916",
+          "resource": {
+            "kind": "issue",
+            "number": 2,
+            "owner": "forge-admin",
+            "repository": "agent-forge-core"
+          },
+          "verdict": "current_state_read"
+        },
+        {
+          "canonical_state": {
+            "base_sha": null,
+            "head_sha": null,
+            "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/issues/1",
+            "merge_commit_sha": null,
+            "merged": null,
+            "state": "open",
+            "updated_at": "2026-10-25T16:13:38-04:00"
+          },
+          "delivery_id": "20746a04-dd57-49da-b1ec-4927b01fa477",
+          "resource": {
+            "kind": "issue",
+            "number": 1,
+            "owner": "forge-admin",
+            "repository": "agent-forge-core"
+          },
+          "verdict": "current_state_read"
+        }
+      ],
+      "schema_version": 5,
+      "upstream_read_attempts": 2,
+      "verdict": "current_state_read"
+    },
+    "exit_status": 0,
+    "issue_readbacks": {
+      "1": {
+        "assets": [],
+        "assignee": null,
+        "assignees": null,
+        "body": "One failed delivery is replayed natively.",
+        "closed_at": null,
+        "comments": 0,
+        "created_at": "2026-10-25T16:13:38-04:00",
+        "due_date": null,
+        "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/issues/1",
+        "id": 1,
+        "is_locked": false,
+        "labels": [],
+        "milestone": null,
+        "number": 1,
+        "original_author": "",
+        "original_author_id": 0,
+        "pin_order": 0,
+        "pull_request": null,
+        "ref": "",
+        "repository": {
+          "full_name": "forge-admin/agent-forge-core",
+          "id": 1,
+          "name": "agent-forge-core",
+          "owner": "forge-admin"
+        },
+        "state": "open",
+        "title": "Native webhook replay test",
+        "updated_at": "2026-10-25T16:13:38-04:00",
+        "url": "http://127.0.0.1:3130/api/v1/repos/forge-admin/agent-forge-core/issues/1",
+        "user": {
+          "active": false,
+          "avatar_url": "http://127.0.0.1:3130/avatars/b15dd049cd92cf7c19a15640b8623681",
+          "created": "2026-10-25T16:13:37-04:00",
+          "description": "",
+          "email": "forge-admin@local.invalid",
+          "followers_count": 0,
+          "following_count": 0,
+          "full_name": "",
+          "html_url": "http://127.0.0.1:3130/forge-admin",
+          "id": 1,
+          "is_admin": false,
+          "language": "",
+          "last_login": "0001-01-01T00:00:00Z",
+          "location": "",
+          "login": "forge-admin",
+          "login_name": "",
+          "prohibit_login": false,
+          "pronouns": "",
+          "restricted": false,
+          "source_id": 0,
+          "starred_repos_count": 0,
+          "username": "forge-admin",
+          "visibility": "public",
+          "website": ""
+        }
+      },
+      "2": {
+        "assets": [],
+        "assignee": null,
+        "assignees": null,
+        "body": "This issue is created after the observed 404.",
+        "closed_at": null,
+        "comments": 0,
+        "created_at": "2026-10-25T16:13:40-04:00",
+        "due_date": null,
+        "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/issues/2",
+        "id": 2,
+        "is_locked": false,
+        "labels": [],
+        "milestone": null,
+        "number": 2,
+        "original_author": "",
+        "original_author_id": 0,
+        "pin_order": 0,
+        "pull_request": null,
+        "ref": "",
+        "repository": {
+          "full_name": "forge-admin/agent-forge-core",
+          "id": 1,
+          "name": "agent-forge-core",
+          "owner": "forge-admin"
+        },
+        "state": "open",
+        "title": "Create the missing mixed-batch resource",
+        "updated_at": "2026-10-25T16:13:40-04:00",
+        "url": "http://127.0.0.1:3130/api/v1/repos/forge-admin/agent-forge-core/issues/2",
+        "user": {
+          "active": false,
+          "avatar_url": "http://127.0.0.1:3130/avatars/b15dd049cd92cf7c19a15640b8623681",
+          "created": "2026-10-25T16:13:37-04:00",
+          "description": "",
+          "email": "forge-admin@local.invalid",
+          "followers_count": 0,
+          "following_count": 0,
+          "full_name": "",
+          "html_url": "http://127.0.0.1:3130/forge-admin",
+          "id": 1,
+          "is_admin": false,
+          "language": "",
+          "last_login": "0001-01-01T00:00:00Z",
+          "location": "",
+          "login": "forge-admin",
+          "login_name": "",
+          "prohibit_login": false,
+          "pronouns": "",
+          "restricted": false,
+          "source_id": 0,
+          "starred_repos_count": 0,
+          "username": "forge-admin",
+          "visibility": "public",
+          "website": ""
+        }
+      }
+    },
+    "journal_unchanged": true,
+    "same_delivery_ids": true,
+    "validated_result_count": 2
+  },
+  "resource_order": [
+    2,
+    1
+  ]
+}

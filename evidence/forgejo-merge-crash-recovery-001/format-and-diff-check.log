@@ -1,0 +1,4 @@
+$ rustfmt --edition 2024 --check src/agent_runtime.rs src/bin/forgejo-reconcile-local.rs tests/mission_execution_journal_contract.rs tests/forgejo_merge_post_crash_recovery_process_e2e.rs
+exit_code= 0
+$ git diff --check
+exit_code= 0
