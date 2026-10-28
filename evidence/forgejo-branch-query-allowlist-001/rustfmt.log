@@ -1,0 +1,13 @@
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/src/bin/forgejo-reconcile-local.rs:8032:
+         let served = server.join().unwrap();
+ 
+         assert_eq!(credential_reads.load(Ordering::Relaxed), 0);
+-        assert_eq!(served, 0, "a branch query must be rejected before network I/O");
++        assert_eq!(
++            served, 0,
++            "a branch query must be rejected before network I/O"
++        );
+     }
+ 
+     #[test]
+exit=1

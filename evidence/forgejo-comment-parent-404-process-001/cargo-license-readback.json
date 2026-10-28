@@ -1,0 +1,27 @@
+{
+  "captured_at_utc": "2026-10-26T21:23:44.959257+00:00",
+  "command": [
+    "cargo",
+    "metadata",
+    "--locked",
+    "--offline",
+    "--no-deps",
+    "--format-version",
+    "1"
+  ],
+  "packages": [
+    {
+      "license": null,
+      "license_file": null,
+      "metadata": {
+        "decision": "no_license_selected",
+        "redistribution_rights": "not_assessed",
+        "spdx_package_license_declared": "NOASSERTION"
+      },
+      "name": "agent-forge-core",
+      "publish": [],
+      "version": "0.1.0"
+    }
+  ],
+  "returncode": 0
+}

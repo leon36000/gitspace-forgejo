@@ -1,0 +1,97 @@
+{
+  "agent_process": {
+    "acceptance_baseline_exit_code": 101,
+    "baseline_failure": "cargo test failed: expected 10, observed -2",
+    "context_rechecked_after_acceptance": true,
+    "context_unchanged_required_by_host": true,
+    "corrected_acceptance_pass": true,
+    "corrected_exit_code": 0,
+    "implementation": "local-test-adapter fixture; no LLM or AgentOS invoked",
+    "mcp_methods": [
+      "initialize",
+      "tools/list",
+      "tools/call:mission_context",
+      "tools/call:cargo_test",
+      "tools/call:workspace_read_text",
+      "tools/call:workspace_read_text",
+      "tools/call:workspace_write_text",
+      "tools/call:cargo_test",
+      "tools/call:mission_context"
+    ],
+    "source_changed_through_mcp": true
+  },
+  "forgejo": {
+    "base_branch": "main",
+    "binary_sha256": "e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7",
+    "issue_number": 1,
+    "pull_request_number": 2,
+    "repo": "forge-admin/agent-forge-core",
+    "version": "17.0.0+gitea-1.22.0"
+  },
+  "postmerge_readback": {
+    "executor_forged_success_refused": true,
+    "independent_cargo_tests_failed": 0,
+    "independent_cargo_tests_passed": 9,
+    "issue_state": "closed",
+    "merge_sha": "45eaa653e311d69dce6238e99375442c33c343e0",
+    "pull_request_merged": true,
+    "pull_request_state": "closed",
+    "same_source_as_merged_candidate": true,
+    "source_sha256": "d2d3ae071c330a25aa59fba851ef59d51c3bf6da63138953e87c96b2b6274c45",
+    "tested_source_sha256": "d2d3ae071c330a25aa59fba851ef59d51c3bf6da63138953e87c96b2b6274c45"
+  },
+  "process_boundary": {
+    "blocked_direct_routes": [
+      "api",
+      "web",
+      "git_receive_pack"
+    ],
+    "child_environment_keys": [
+      "HOME",
+      "LANG",
+      "LC_ALL",
+      "PATH",
+      "PWD",
+      "PYTHONDONTWRITEBYTECODE"
+    ],
+    "child_open_fds": [
+      0,
+      1,
+      2
+    ],
+    "credential_fd_inherited_by_child": false,
+    "credential_held_by_parent_memfd_cloexec": true,
+    "credential_passed_to_child": false,
+    "credential_persisted_to_file": false,
+    "credential_read_refused_in_child_pid_namespace": true,
+    "credential_serialized_to_config_command_or_environment": false,
+    "gate_credential_visible_to_child": false,
+    "mcp_child_alive_during_gate_read": true,
+    "network_and_pid_namespaces_isolated": true,
+    "network_connected": false,
+    "supervisor_observed_route_connections": 0
+  },
+  "run_id": "FORGEJO-AGENT-STDIO-MCP-MERGE-001",
+  "schema_version": 1,
+  "scope_limits": {
+    "external_writers_excluded": false,
+    "mcp_fixture_authored_the_merged_pr_candidate": false,
+    "production_or_external_service_used": false,
+    "webhook_delivery_and_reconciliation_in_this_run": false
+  },
+  "trusted_gate": {
+    "branch_head_after_merge_sha": "45eaa653e311d69dce6238e99375442c33c343e0",
+    "branch_read_http_status": 200,
+    "branch_sha_before": "2e9b76760f03f1025cf8cf9fb9a37953abbf5a86",
+    "branch_sha_during_gate": "2e9b76760f03f1025cf8cf9fb9a37953abbf5a86",
+    "branch_sha_stable_during_gate_read": true,
+    "issue_state_after_merge": "closed",
+    "mcp_barrier_released_after_gate": true,
+    "merge_attempted": true,
+    "merge_authorized": true,
+    "merge_commit_sha": "45eaa653e311d69dce6238e99375442c33c343e0",
+    "merge_http_status": 200,
+    "pull_request_head_sha": "11d2c0703ed4991bebd9fbb63f3723d1114923af",
+    "validated_base_sha": "2e9b76760f03f1025cf8cf9fb9a37953abbf5a86"
+  }
+}

@@ -1,0 +1,35 @@
+Checkout: /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace
+HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+Branch: local/WEBHOOK-005-canonical-links
+Toolchain: rustc 1.95.0, cargo 1.95.0, Python 3.12.3, Bubblewrap 0.9.0
+
+RED, before production fix:
+cargo test --offline --locked --bin forgejo-reconcile-local reconciliation_policy_rejects_branch_query_before_credential_or_network -- --nocapture
+Observed: test failed at the expected `Forbidden` assertion because the query-bearing branch route passed the request filter. Exit 101. See red.log.
+
+GREEN:
+cargo test --offline --locked --bin forgejo-reconcile-local reconciliation_policy_rejects_branch_query_before_credential_or_network -- --nocapture
+Observed: 1 passed. Both a simple branch path and an encoded nested branch query are refused; provider call count and served requests are zero. See green.log.
+
+Full affected binary:
+cargo test --offline --locked --bin forgejo-reconcile-local -- --test-threads=1
+Observed: 117 passed, 0 failed, 0 ignored.
+
+Regression process scenario:
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_reads_current_branch_after_stale_push_webhook
+Observed: 1 passed, 59 filtered under Bubblewrap with --unshare-net --unshare-pid and a loopback HTTP fixture.
+
+Project suite:
+cargo test --offline --locked --all-targets -- --test-threads=1
+Observed: 510 passed, 0 failed, 59 ignored in 34 test groups.
+
+Static/tooling checks:
+cargo clippy --offline --locked --bin forgejo-reconcile-local --tests
+cargo fmt --all -- --check
+git diff --check
+python3 scripts/verify_cargo_license_state.py
+python3 -m unittest -q scripts.test_cargo_license_state
+
+Clippy exited 0 with one existing too_many_arguments warning in a fixture helper. The first rustfmt check found formatting in the added assertion; the final rustfmt check exited 0. License guard status was verified and its 7 tests passed.
+
+All tools used --offline for Cargo. No real secret, model, live Forgejo or external service was used.

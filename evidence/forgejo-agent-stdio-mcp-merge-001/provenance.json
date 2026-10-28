@@ -1,0 +1,41 @@
+{
+  "bubblewrap": "bubblewrap 0.9.0",
+  "cargo": "cargo 1.95.0 (f2d3ce0bd 2026-03-21)",
+  "date": "2026-10-26",
+  "forgejo_binary": {
+    "path": "/tmp/forgejo-17.0.0",
+    "sha256": "e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7",
+    "version": "17.0.0+gitea-1.22.0"
+  },
+  "git_branch": "local/WEBHOOK-005-canonical-links",
+  "git_head": "f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0",
+  "private_verifier_key_and_database_not_copied": true,
+  "product_source_sha256": {
+    "scripts/mission_012_egress_barrier_mcp_host.py": "4998beab3e3dc7836da48af6db357dc50cdadb93e452d7476a730a113c2fe08f",
+    "scripts/mission_012_mcp_supervisor.py": "c0145477016f15c6b808434873b2107a5429b02cb2f0736dda9cc72aaccb2893",
+    "scripts/mission_012_sandboxed_test_adapter.py": "589c5fce4d1cdb2bf210b494c9e653b6ac191a9db5162d4c1006b3d112515058",
+    "scripts/mission_012_test_agent_adapter.py": "15e493299705e9d74c0406999505353649264096a24a9e1b3c1f29875ccad2ec",
+    "scripts/run_forgejo_live_pr_merge_e2e.py": "3934c844c92374c47727a4ae8a652b8c077d8def97bc0b81d544fe1301475f99",
+    "scripts/run_mission_012_stdio_mcp_egress_gate_e2e.py": "3eeaa0bd8a0add77346659dff561f6cf2eae4cb7404e03b5d033e6013d70ba67",
+    "scripts/verify_mission_012_live_agent_postmerge.py": "17c51dd3970d8de604a43e5c53e754a7c634a3f6ca1af1ba289f473e5afdfbcb",
+    "src/bin/gate.rs": "4366abaa55d4d5d539b10d48a3706afbf37702c9dd199466545963dbdc9d116d",
+    "tests/test_mission_012_egress_barrier_mcp_host.py": "4649bb61f56f624d6545cb2987bc6e958419e0436ce0e219c22f4ebf0358b7d1",
+    "tests/test_mission_012_sandboxed_test_adapter.py": "490ef43d86b1533c374775419718d2cfb319d5cc4de483b06e84cf3ed85eb4ff",
+    "tests/test_mission_012_test_agent_adapter.py": "2846576cb225d96416d705af86f6a79242800c416f878522b1912b77582891a3"
+  },
+  "python": "3.12.3",
+  "run_command": "python3 scripts/run_forgejo_live_pr_merge_e2e.py --forgejo-binary /tmp/forgejo-17.0.0 --state-dir /tmp/forgejo-agent-stdio-mcp-merge-002 --non-admin-merger --stdio-mcp-egress-during-merge",
+  "run_exit_code": 0,
+  "rustc": "rustc 1.95.0 (59807616e 2026-04-14)",
+  "sanitized_source_evidence_sha256": {
+    "postmerge-forgejo-readback.json": "e50a6e8642020f388c552073eb635c83d74529b38b0986c7289b37ea1446ca0c",
+    "postmerge-verifier.log": "6a5432c13b0a4f341ff335adc0ad78eef3824e07aa76c37b9693d2c4a5dadafc",
+    "premerge-forgejo-readback.json": "36d0efccf202491956a5afdd49f7b0d65671ea0298cfd955b5249e97ccc71df5",
+    "result.json": "c7b0389862afa666ab0ac5133443154048c0358c240b3efd91d49d206190c9f0",
+    "rust-merge-authority-result.json": "209a22f7dd740bf1c725fb804ada147b53f8d67b8e50e9fe89101822cf14b083",
+    "stdio-mcp-egress-during-merge.json": "edaf1c294318cd2deb9ecf48e0f88b854a02fa1c69b4ac6d75f7638d8dfd632e",
+    "stdio-mcp-task/acceptance-baseline.log": "746cca03275a454a7fdf1f7c5246ca57010a8626a66444dcb4cce6840d01b22d",
+    "stdio-mcp-task/acceptance-corrected.log": "c6b4f8784cd9a52a46978c071a6cf67613d0209dc2f179e3ff7b9d777f071ad9"
+  },
+  "worktree_was_dirty": true
+}

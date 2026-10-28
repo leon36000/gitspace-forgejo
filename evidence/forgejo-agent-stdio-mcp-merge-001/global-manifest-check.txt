@@ -1,0 +1,4 @@
+PASS: append-only product manifest verifies 317 current paths
+PASS: append-only parent manifest verifies 318 current paths
+PASS: the two local manifests verify recursively
+Appended changed hashes: product=1, parent=1; prior prefixes preserved.
