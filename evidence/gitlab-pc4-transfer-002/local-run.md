@@ -20,6 +20,8 @@ Le décodage local des 68 parties a reconstruit exactement l’archive. Chaque m
 
 Le premier readback au HEAD 047d66ec a couvert 82 blobs/modes de cette étape (0 absent, 0 divergent); le seul des 134 chemins noyau en attente était docs/checkpoint.md. Après publication de ce checkpoint dans cfbc46c41391e6975c9df00cf3f60fe2e3578070, le readback récursif a retourné 259 entrées de tree et 238 blobs; les 238 correspondent tous aux Git blob SHA et modes locaux, sans absence ni divergence. Ces 238 blobs incluent aussi les quatre reçus de transfert.
 
+Après ce readback, l’intégration GitLab a créé le commit `40afccc6af784ae8b9a4d977ce050b97e4929946` sur la même branche, avec 38 actions de fichiers totalisant 4 447 259 octets. Le readback récursif à ce commit retourne 294 entrées et 270 blobs; les 243 chemins de la sélection texte locale (code, documentation, manifeste et preuves admissibles) ont tous le même blob SHA et mode, sans absence ni divergence. Pipeline 154, SHA 40afccc6af784ae8b9a4d977ce050b97e4929946, était `pending` au dernier contrôle; les jobs `pc4_gitleaks`, `pc4_semgrep` et `pc4_trivy` étaient pending, `pc4_ci_fallback` created, et le log de gitleaks vide. Il s’agit d’un état en attente, pas d’une validation CI.
+
 Le projet ne contient pas de fichier .gitlab-ci.yml dans l’arbre transféré. GitLab lance toutefois une configuration de pipeline côté service, avec pc4_gitleaks, pc4_semgrep, pc4_trivy et pc4_ci_fallback. Le pipeline 151 au commit cfbc46c4 est terminé `success` (actualisé à 16:40:46 -04:00). Le prochain commit déclenchera un pipeline distinct; il faudra en lire le statut et les jobs avant d’attribuer une validation à PC4.
 
 ## Prévol, exclusions et limites
