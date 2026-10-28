@@ -1,0 +1,8 @@
+{
+  "action": "opened",
+  "delivery_id": "5f34e9f0-d84a-4f99-ad8d-1561b2b9a5c9",
+  "event": "issues",
+  "issue_number": 1,
+  "payload_state": "open",
+  "sequence": 1
+}
