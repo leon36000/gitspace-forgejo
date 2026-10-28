@@ -1,0 +1,12 @@
+# Commandes de validation
+
+- `python3 scripts/run_forgejo_mission_delivery_process_e2e.py --only actual_mission_cli_refuses_same_revision_requirement_edit_after_signed_delivery`
+- `python3 scripts/run_forgejo_mission_delivery_process_e2e.py --only actual_mission_cli_admits_signed_webhook_after_closed_refusal_and_reuses_allocation` (régression ciblée de l’admission précédente)
+- `cargo fmt --all -- --check`
+- `git diff --check`
+- Analyse syntaxique Python avec `ast.parse` du runner de processus
+- Tests de garde du runner sur les sorties libtest : une ligne, deux lignes, zéro test et mauvais nom
+- `python3 scripts/verify_cargo_license_state.py`
+- `python3 -m unittest scripts.test_cargo_license_state`
+
+Les essais initiaux sont conservés séparément : `local-run.log` a montré le faux vert à zéro test; `guard-red.log` montre le refus du zéro test; `process-pass-final.log` consigne un contrôle trop strict corrigé ensuite; `process-pass-final-v2.log` est le résultat final positif.

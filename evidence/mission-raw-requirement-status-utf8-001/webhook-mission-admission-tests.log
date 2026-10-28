@@ -1,0 +1,20 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.01s
+     Running tests/webhook_mission_admission_contract.rs (target/debug/deps/webhook_mission_admission_contract-970f84c8f68c75fe)
+
+running 13 tests
+test a_new_delivery_id_for_the_same_issue_reuses_the_host_allocation_and_claim ... ok
+test adapter_with_another_canonical_origin_is_rejected_before_api_read ... ok
+test admission_rechecks_open_issue_after_reconciliation_to_close_the_stale_read_gap ... ok
+test closed_reconciled_issue_is_rejected_before_mission_admission ... ok
+test generic_journal_apis_cannot_forge_webhook_inbox_events ... ok
+test host_binding_for_another_issue_is_rejected_before_admission ... ok
+test issue_from_another_repository_is_rejected_even_when_its_api_url_is_canonical ... ok
+test pull_request_notification_cannot_create_issue_admission ... ok
+test reconciled_open_issue_uses_host_binding_and_ignores_delivery_id_and_payload_state ... ok
+test same_revision_with_changed_requirement_bytes_is_rejected_before_allocation ... ok
+test signed_http_delivery_replays_reconciles_then_admits_and_resumes_idempotently ... ok
+test webhook_event_lookup_refuses_incomplete_tail_without_repairing_inbox ... ok
+test webhook_source_receipt_revalidates_exact_event_without_changing_stable_handoff ... ok
+
+test result: ok. 13 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+

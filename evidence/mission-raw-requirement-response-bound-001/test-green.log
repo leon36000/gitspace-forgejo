@@ -1,0 +1,8 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+     Running unittests src/bin/forgejo-mission-local.rs (target/debug/deps/forgejo_mission_local-07e6661870a4625d)
+
+running 1 test
+test tests::oversized_raw_requirement_response_is_non_retryable_invalid_response ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 31 filtered out; finished in 0.01s
+

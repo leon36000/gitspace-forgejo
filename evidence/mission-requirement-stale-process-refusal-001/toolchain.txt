@@ -1,0 +1,11 @@
+Date du run final : 2026-10-26 (horodatage système conservé dans les journaux)
+HEAD observé : f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+OS : Linux-7.0.0-1019-nvidia-aarch64-with-glibc2.39
+Architecture : aarch64
+rustc : rustc 1.95.0 (59807616e 2026-04-14)
+cargo : cargo 1.95.0 (f2d3ce0bd 2026-03-21)
+Python : Python 3.12.3
+Bubblewrap : bubblewrap 0.9.0
+État observé à la reprise : 1417 entrées dirty/untracked avant l’ajout final des reçus et mises à jour de documentation
+Cargo en sandbox : --offline --locked; namespaces Bubblewrap --unshare-net --unshare-pid; source read-only, .runtime monté vide/privé.
+Instance API : fixture HTTP loopback 127.0.0.1:3130 dans le namespace privé; pas de Forgejo live.

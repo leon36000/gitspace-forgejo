@@ -1,0 +1,12 @@
+084a971432ea746348f12fdbe1b507600d71cd3d8392277bf8405a972c63d2f4  evidence/mission-tool-operation-journal-001/all-targets-final.log
+91017638a06c2168051fdbabcf06b8d4df738c7f4439cf068da42b86a4c87428  evidence/mission-tool-operation-journal-001/all-targets-serialized.log
+12396f2ef6e8cd195be3cc7ec06f54bf743753cdd16b1892f23823aad75c6a35  evidence/mission-tool-operation-journal-001/cargo-license-guard.json
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  evidence/mission-tool-operation-journal-001/cargo-license-guard.stderr
+fde4b613c2605c5d98395694a13e31424ed5a4e0864fb06f890a90b9f78e3ce9  evidence/mission-tool-operation-journal-001/clippy-bounded-allowances.log
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  evidence/mission-tool-operation-journal-001/diff-check.log
+58412cd903fa96f2a58d55387d2bbde47ec08b08b35aaab463dc2b9930cf2924  evidence/mission-tool-operation-journal-001/local-run.md
+d9b95cbfb9412ee3dfdbefd1809ba4675c7db7b375da51bd7785b727c4e58128  evidence/mission-tool-operation-journal-001/mission-journal-contract-parallel.log
+5c52ade3a9b535d90c35f86d5a4d93fb8aa9a267b2f4cfa055e9640101f37cee  evidence/mission-tool-operation-journal-001/release-build.log
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  evidence/mission-tool-operation-journal-001/rustfmt-check.log
+b11d9ff3bee4a5c86c7d3f517e88f332f570a1e3a95fd6363e2102e952120fdf  evidence/mission-tool-operation-journal-001/source-sha256.txt
+b72e37b82bd098d56c319f43beb9664ea621fd8c41a1de1dbb2df237d0e209e9  evidence/mission-tool-operation-journal-001/toolchain.txt

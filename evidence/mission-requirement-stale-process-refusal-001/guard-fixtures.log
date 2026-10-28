@@ -1,0 +1,1 @@
+guard fixtures: both valid libtest output shapes accepted; zero-test and wrong-test results refused

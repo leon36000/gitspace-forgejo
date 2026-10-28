@@ -1,0 +1,99 @@
+evidence.git_head=f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+evidence.source_tree_sha256=448c8304f0c3250b6a4b279c95825e0a426cbaddd09fb69658dc4cf3f3bf0eb0
+evidence.cargo_lock_sha256=bf599559dd11ff21ecc4754aa8a693966b4a9ca401153d7d7caa1f18d8995fcc
+evidence.runner_sha256=3101eabe80a85ee81693e15ecee00cb848c8ef51d37d48ee0e6a88ea274fa733
+evidence.registry_stage_sha256=a5ea9d0f4ab9d3e50cc22b0b22e0c5b93274462e61193b074e0a2173e5e46e30
+evidence.rustc=rustc 1.95.0 (59807616e 2026-04-14)
+evidence.cargo=cargo 1.95.0 (f2d3ce0bd 2026-03-21)
+evidence.bwrap=bubblewrap 0.9.0
+evidence.platform=Linux-7.0.0-1019-nvidia-aarch64-with-glibc2.39
+$ /usr/bin/bwrap --die-with-parent --unshare-net --unshare-pid --new-session --ro-bind /usr /usr --dir /etc --ro-bind /etc/alternatives /etc/alternatives --symlink usr/lib /lib --symlink usr/bin /bin --size 67108864 --tmpfs /home --dir /workspace --ro-bind /tmp/forgejo-mission-delivery-e2e-mco2ewsw/source /workspace --dir /toolchain --ro-bind /home/pc6/.rustup/toolchains/1.95.0-aarch64-unknown-linux-gnu /toolchain --dev /dev --proc /proc --size 134217728 --tmpfs /tmp --dir /tmp/cargo-home --size 1073741824 --tmpfs /build --dir /build/target --size 67108864 --tmpfs /workspace/.runtime --chmod 0700 /workspace/.runtime --clearenv --setenv PATH /toolchain/bin:/usr/bin:/bin --setenv HOME /tmp --setenv TMPDIR /tmp --setenv CARGO_HOME /tmp/cargo-home --setenv CARGO_TARGET_DIR /build/target --setenv CARGO_NET_OFFLINE true --setenv CARGO_BUILD_JOBS 2 --setenv RUSTC /toolchain/bin/rustc --setenv RUST_TEST_THREADS 1 --setenv MISSION_E2E_RUST_SYSROOT /toolchain --setenv MISSION_E2E_RUST_BIN_DIR /toolchain/bin --setenv MISSION_E2E_MASKED_HOME /home/pc6 --chdir /workspace --dir /bootstrap --ro-bind /tmp/forgejo-mission-delivery-e2e-mco2ewsw/cargo-registry /bootstrap/registry --size 134217728 --tmpfs /artifacts /usr/bin/prlimit --cpu=240 --as=4294967296 --nproc=384 --nofile=128 --fsize=67108864 -- /usr/bin/python3 -c 'import glob, json, os, shutil, subprocess, sys
+tests = json.loads(sys.argv[1])
+bins = json.loads(sys.argv[2])
+artifacts = json.loads(sys.argv[3])
+os.makedirs("/tmp/cargo-home/registry", exist_ok=True)
+shutil.copytree("/bootstrap/registry/index", "/tmp/cargo-home/registry/index")
+shutil.copytree("/bootstrap/registry/cache", "/tmp/cargo-home/registry/cache")
+def run_cargo(name):
+    process = subprocess.Popen([
+        "/toolchain/bin/cargo", "test", "--offline", "--locked",
+        "--test", name, "--no-run"
+    ], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    output = bytearray()
+    while chunk := process.stdout.read(65536):
+        output.extend(chunk)
+        if len(output) > 65536:
+            del output[:-65536]
+    status = process.wait()
+    if output:
+        sys.stderr.buffer.write(output)
+        sys.stderr.buffer.flush()
+    if status:
+        raise SystemExit(status)
+for name in tests:
+    run_cargo(name)
+total = 0
+for name in tests:
+    paths = [
+        path for path in glob.glob(f"/build/target/debug/deps/{name}-*")
+        if os.path.isfile(path) and os.access(path, os.X_OK)
+    ]
+    if len(paths) != 1:
+        raise SystemExit(f"expected one test executable for {name}, got {paths!r}")
+    size = os.path.getsize(paths[0])
+    if size > 67108864:
+        raise SystemExit(f"test executable exceeds per-file artifact limit: {name}")
+    shutil.copyfile(paths[0], f"/artifacts/{name}")
+    total += size
+for name in bins:
+    path = f"/build/target/debug/{name}"
+    if not os.path.isfile(path) or not os.access(path, os.X_OK):
+        raise SystemExit(f"Cargo binary target missing or not executable: {name}")
+    size = os.path.getsize(path)
+    if size > 67108864:
+        raise SystemExit(f"binary target exceeds per-file artifact limit: {name}")
+    shutil.copyfile(path, f"/artifacts/{name}")
+    total += size
+if total > 134217728:
+    raise SystemExit("total exported test and binary artifacts exceed 128 MiB")
+for name in artifacts:
+    path = f"/artifacts/{name}"
+    size = os.path.getsize(path)
+    sys.stdout.buffer.write(f"ARTIFACT {name} {size}\n".encode())
+    with open(path, "rb") as source:
+        shutil.copyfileobj(source, sys.stdout.buffer)
+    sys.stdout.buffer.flush()
+' '["forgejo_mission_delivery_process_e2e"]' '["forgejo-mission-local", "forgejo-reconcile-local", "forgejo-webhook-local", "mission-012-mcp-host", "mission-012-verify-local"]' '["forgejo_mission_delivery_process_e2e", "forgejo-mission-local", "forgejo-reconcile-local", "forgejo-webhook-local", "mission-012-mcp-host", "mission-012-verify-local"]'
+   Compiling version_check v0.9.5
+   Compiling typenum v1.20.0
+   Compiling generic-array v0.14.7
+   Compiling proc-macro2 v1.0.107
+   Compiling unicode-ident v1.0.26
+   Compiling quote v1.0.47
+   Compiling libc v0.2.190
+   Compiling serde_core v1.0.228
+   Compiling block-buffer v0.10.4
+   Compiling crypto-common v0.1.7
+   Compiling subtle v2.6.1
+   Compiling zmij v1.0.23
+   Compiling digest v0.10.7
+   Compiling syn v2.0.117
+   Compiling serde_json v1.0.150
+   Compiling serde v1.0.228
+   Compiling cpufeatures v0.2.17
+   Compiling serde_derive v1.0.228
+   Compiling cfg-if v1.0.5
+   Compiling memchr v2.8.3
+   Compiling itoa v1.0.18
+   Compiling sha2 v0.10.9
+   Compiling hmac v0.12.1
+   Compiling hex v0.4.3
+   Compiling agent-forge-core v0.1.0 (/workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 11.01s
+  Executable tests/forgejo_mission_delivery_process_e2e.rs (/build/target/debug/deps/forgejo_mission_delivery_process_e2e-b4b936c5c7cb8e50)
+$ /usr/bin/bwrap --die-with-parent --unshare-net --unshare-pid --new-session --ro-bind /usr /usr --dir /etc --ro-bind /etc/alternatives /etc/alternatives --symlink usr/lib /lib --symlink usr/bin /bin --size 67108864 --tmpfs /home --dir /workspace --ro-bind /tmp/forgejo-mission-delivery-e2e-mco2ewsw/source /workspace --dir /toolchain --ro-bind /home/pc6/.rustup/toolchains/1.95.0-aarch64-unknown-linux-gnu /toolchain --dev /dev --proc /proc --size 134217728 --tmpfs /tmp --dir /tmp/cargo-home --size 1073741824 --tmpfs /build --dir /build/target --size 67108864 --tmpfs /workspace/.runtime --chmod 0700 /workspace/.runtime --clearenv --setenv PATH /toolchain/bin:/usr/bin:/bin --setenv HOME /tmp --setenv TMPDIR /tmp --setenv CARGO_HOME /tmp/cargo-home --setenv CARGO_TARGET_DIR /build/target --setenv CARGO_NET_OFFLINE true --setenv CARGO_BUILD_JOBS 2 --setenv RUSTC /toolchain/bin/rustc --setenv RUST_TEST_THREADS 1 --setenv MISSION_E2E_RUST_SYSROOT /toolchain --setenv MISSION_E2E_RUST_BIN_DIR /toolchain/bin --setenv MISSION_E2E_MASKED_HOME /home/pc6 --chdir /workspace --dir /build/target --dir /build/target/debug --ro-bind /tmp/forgejo-mission-delivery-e2e-mco2ewsw/forgejo-mission-local /build/target/debug/forgejo-mission-local --ro-bind /tmp/forgejo-mission-delivery-e2e-mco2ewsw/forgejo-reconcile-local /build/target/debug/forgejo-reconcile-local --ro-bind /tmp/forgejo-mission-delivery-e2e-mco2ewsw/forgejo-webhook-local /build/target/debug/forgejo-webhook-local --ro-bind /tmp/forgejo-mission-delivery-e2e-mco2ewsw/mission-012-mcp-host /build/target/debug/mission-012-mcp-host --ro-bind /tmp/forgejo-mission-delivery-e2e-mco2ewsw/mission-012-verify-local /build/target/debug/mission-012-verify-local --ro-bind /tmp/forgejo-mission-delivery-e2e-mco2ewsw/forgejo_mission_delivery_process_e2e /test-binary /usr/bin/prlimit --cpu=240 --as=4294967296 --nproc=384 --nofile=128 --fsize=67108864 -- /test-binary actual_mission_cli_refuses_same_revision_requirement_edit_after_signed_delivery --exact --ignored --nocapture
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 4 filtered out; finished in 0.00s
+

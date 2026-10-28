@@ -1,0 +1,19 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.42s
+     Running tests/mission_execution_journal_contract.rs (target/debug/deps/mission_execution_journal_contract-c0799a5ee06e38e9)
+
+running 1 test
+
+thread 'unresolved_workspace_write_must_be_replayed_before_a_different_write' (3218421) panicked at tests/mission_execution_journal_contract.rs:1083:10:
+a pending write must be reconciled before creating another intent: WorkspaceWriteIntentV1 { schema_version: 1, mission_id: "mission-v1-393b3610d252808339a6783e0094fd0563230072eb1e7e8ec188fc7086b2f88b", execution_generation: 1, operation_id: "mission-workspace-write-v1:mission-v1-393b3610d252808339a6783e0094fd0563230072eb1e7e8ec188fc7086b2f88b:1:8e2a7add7111b5c24578120a301e669a4f5f2d74635174a2c3f2d2092ee32ed1:f34848ca92665c342abd5816c9e3eda0e82180671195362bcd0080544a3bc2ac", request_id: String("different-rpc"), allocation_id: "lease-admission-41", request_sha256: "b049c3945c85c9343e32f4f57f76e50afafbc0e17172921f00e288c51f443f99", lease_id: "workspace-write-recovery-lease", holder_id: "worker-b", fencing_token: 2, tool_id: "workspace.write_text", input: Object {"content": String("different operation\n"), "path": String("src/lib.rs")}, input_sha256: "8e2a7add7111b5c24578120a301e669a4f5f2d74635174a2c3f2d2092ee32ed1", path: "src/lib.rs", before_source_sha256: "f34848ca92665c342abd5816c9e3eda0e82180671195362bcd0080544a3bc2ac", after_source_sha256: "e08980351e8e69c0f2eb901b4cafcaa519eb52b1884d034880ee2513aa103663", replayed: false }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test unresolved_workspace_write_must_be_replayed_before_a_different_write ... FAILED
+
+failures:
+
+failures:
+    unresolved_workspace_write_must_be_replayed_before_a_different_write
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 64 filtered out; finished in 0.03s
+
+error: test failed, to rerun pass `--test mission_execution_journal_contract`

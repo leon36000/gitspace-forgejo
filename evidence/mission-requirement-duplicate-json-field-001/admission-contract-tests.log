@@ -1,0 +1,23 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.38s
+     Running tests/mission_admission_contract.rs (target/debug/deps/mission_admission_contract-e97ef4e8d91fdc1e)
+
+running 15 tests
+test admission_refuses_untrusted_or_stale_bindings_before_claiming ... ok
+test changed_protected_requirement_revision_creates_a_distinct_claim_identity ... ok
+test duplicate_acceptance_json_field_is_refused_before_generation_allocation ... ok
+test duplicate_delivery_or_fresh_uuid_replay_claims_the_same_semantic_mission_once ... ok
+test duplicate_requirement_binding_is_refused_before_generation_allocation ... ok
+test explicit_host_binding_loads_exact_requirement_from_protected_commit_and_claims_it ... ok
+test failed_context_validation_can_resume_with_the_same_reserved_generation ... ok
+test incomplete_requirement_inventory_is_refused_before_generation_allocation ... ok
+test issue_body_is_not_part_of_the_binding_contract ... ok
+test legacy_and_unbound_requirement_documents_are_not_admitted ... ok
+test malformed_unrelated_requirement_blocks_uniqueness_decision ... ok
+test requirement_issue_binding_is_checked_before_generation_allocation ... ok
+test secondary_v2_requirement_without_issue_binding_blocks_allocation ... ok
+test version_2_admission_allocates_generation_and_recovers_the_same_allocation ... ok
+test version_2_rejects_invalid_allocation_ids_before_reading_the_source ... ok
+
+test result: ok. 15 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.08s
+

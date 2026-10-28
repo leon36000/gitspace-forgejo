@@ -1,0 +1,72 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+     Running tests/mission_execution_journal_contract.rs (target/debug/deps/mission_execution_journal_contract-c0799a5ee06e38e9)
+
+running 65 tests
+test active_execution_lease_is_exclusive_and_replayable ... ok
+test allocation_replay_validates_later_records_for_the_same_mission ... ok
+test claim_child_waits_for_start_file_then_claims ... ignored, invoked as a subprocess by the concurrent claim contract
+test claim_requires_a_durable_allocation ... ok
+test concurrent_execution_lease_acquisition_has_one_winner ... ok
+test concurrent_generation_allocations_reserve_distinct_monotonic_values ... ok
+test concurrent_processes_admit_only_one_claim_for_the_same_generation ... ok
+test concurrent_retries_of_one_allocation_id_recover_one_generation ... ok
+test concurrent_workspace_writes_cannot_create_overlapping_effect_intents ... ok
+test corrupt_complete_journal_record_blocks_new_execution_claims ... ok
+test direct_claim_cannot_bypass_the_requirement_issue_binding ... ok
+test execute_workspace_write_allows_the_same_content_after_an_intervening_source_state ... ok
+test execute_workspace_write_holds_the_fence_and_replays_with_a_new_rpc_id ... ok
+test execution_lease_cannot_outlive_the_runtime_timeout ... ok
+test execution_lease_requires_a_matching_allocated_claim ... ok
+test existing_merge_intent_recovers_without_creating_a_second_intent ... ok
+test expired_lease_recovers_with_a_higher_fence_and_rejects_the_old_worker ... ok
+test first_claim_is_admitted_and_reopen_is_idempotent ... ok
+test generation_allocation_is_monotonic_and_replayable_after_reopen ... ok
+test generation_allocator_advances_after_an_allocated_claim ... ok
+test generic_journal_api_cannot_append_reserved_mission_transitions ... ok
+test generic_transaction_reentry_into_mission_transition_returns_busy ... ok
+test hard_linked_journal_and_lock_files_are_rejected ... ok
+test host_supplied_new_generation_creates_a_separate_claim ... ok
+test inconclusive_merge_readback_remains_unresolved_until_a_conclusive_readback ... ok
+test invalid_allocation_ids_are_refused_without_changing_the_journal ... ok
+test invalid_hashes_and_generation_are_refused_before_journal_append ... ok
+test lease_rejects_a_requirement_linked_to_another_issue_before_append ... ok
+test lease_retries_share_one_absolute_runtime_deadline ... ok
+test legacy_claim_cannot_consume_a_generation_reserved_by_the_allocator ... ok
+test legacy_inconclusive_resolution_is_nonterminal_even_with_a_persisted_terminal_default ... ok
+test legacy_inconclusive_resolution_requires_readback_before_a_new_attempt ... ok
+test malformed_generation_record_blocks_further_allocation ... ok
+test malformed_lease_record_blocks_further_admission ... ok
+test malformed_legacy_claim_blocks_generation_allocation ... ok
+test malformed_merge_transition_blocks_future_admission ... ok
+test merge_attempt_intent_is_durable_before_effect ... ok
+test merge_authority_can_verify_the_exact_claimed_request ... ok
+test merge_authority_refuses_an_unterminated_journal_without_repairing_it ... ok
+test merge_authority_rejects_a_different_request_for_the_claimed_generation ... ok
+test merge_authority_rejects_a_superseded_claim ... ok
+test merge_effect_holds_mission_lock_against_new_generation_allocation ... ok
+test merge_effect_rejects_a_superseded_claim_without_running_the_effect ... ok
+test merge_preflight_rejection_does_not_create_an_attempt_intent ... ok
+test merge_recovery_without_intent_is_a_no_op ... ok
+test mission_effect_keeps_global_journal_available_and_other_missions_progress ... ok
+test mission_lock_child_holds_until_parent_kills ... ignored, invoked as a subprocess by the mission lock interruption contract
+test mission_lock_is_private_and_released_after_process_interruption ... ok
+test mission_operations_return_busy_without_sampling_clock_while_global_lock_is_held ... ok
+test newer_generation_fences_every_lease_from_older_generations ... ok
+test one_generation_cannot_be_reused_with_changed_request_bytes ... ok
+test rejected_merge_attempt_replays_the_same_host_decision ... ok
+test resolved_merge_attempt_replays_saved_result ... ok
+test same_pr_with_changed_binding_is_rejected ... ok
+test unclassified_journal_io_failure_does_not_claim_it_is_retryable ... ok
+test unresolved_merge_intent_blocks_a_new_execution_generation ... ok
+test unresolved_merge_intent_blocks_another_mission_from_the_same_pull_request ... ok
+test unresolved_merge_intent_is_reused_read_only ... ok
+test unresolved_workspace_write_must_be_replayed_before_a_different_write ... ok
+test workspace_write_intent_precedes_and_binds_the_exact_result ... ok
+test workspace_write_intent_refuses_expired_lease_and_oversized_content ... ok
+test workspace_write_operation_replay_is_idempotent_and_rejects_changed_input ... ok
+test workspace_write_reconciles_a_post_state_under_a_newer_fence ... ok
+test workspace_write_result_can_be_completed_only_by_the_current_fence ... ok
+test workspace_write_result_requires_an_intent_and_the_declared_post_state ... ok
+
+test result: ok. 63 passed; 0 failed; 2 ignored; 0 measured; 0 filtered out; finished in 1.18s
+

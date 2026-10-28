@@ -1,0 +1,60 @@
+{
+  "scope": "process refusal for a protected requirements byte change after signed webhook acceptance, with unchanged requirement revision",
+  "head": "f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0",
+  "process_test": {
+    "name": "actual_mission_cli_refuses_same_revision_requirement_edit_after_signed_delivery",
+    "result": "passed",
+    "passed": 1,
+    "failed": 0,
+    "ignored": 0,
+    "refusal": "inconclusive/mission_requirement_hash_mismatch",
+    "accepted_signed_delivery": true,
+    "allocation_events": 0,
+    "host_handoff_created": false,
+    "inbox_delivery_count": 1,
+    "fixture_http_reads": 3,
+    "sample_size": 1
+  },
+  "runner_false_green": {
+    "initial_observation": "cargo exited 0 while --ignored selected zero tests because the new case lacked #[ignore]",
+    "guard_result": "zero-test summary now exits nonzero; guard requires exactly one passing result with the requested test name",
+    "refinement": "guard accepts libtest success on the test line or the following line after --nocapture exposed both output forms",
+    "fixture_checks": 4
+  },
+  "regression_test": {
+    "name": "actual_mission_cli_admits_signed_webhook_after_closed_refusal_and_reuses_allocation",
+    "result": "passed",
+    "passed": 1,
+    "failed": 0,
+    "sample_size": 1
+  },
+  "checks": {
+    "cargo_fmt_all_check": "passed",
+    "git_diff_check": "passed",
+    "python_runner_ast": "passed",
+    "runner_guard_fixtures": "passed",
+    "cargo_license_state_verifier": "passed",
+    "cargo_license_state_unit_tests": "passed: 9 tests"
+  },
+  "license_state": {
+    "cargo_license": null,
+    "cargo_license_file": null,
+    "cargo_publish": [],
+    "decision": "no_license_selected",
+    "redistribution_rights": "not_assessed",
+    "spdx_marker": "NOASSERTION"
+  },
+  "not_demonstrated": [
+    "live Forgejo event delivery",
+    "LLM, AgentOS, Forge Code, RAG or memory integration",
+    "PR, independent verifier, merge, or post-merge behavior in this test",
+    "generalized improvement or controlled benchmark"
+  ],
+  "manifest_validation": {
+    "local_payload_count": 20,
+    "current_artifact_hashes_verified": true,
+    "latest_entry_per_touched_path_checked": true,
+    "historical_malformed_rows_preserved": 9,
+    "status": "verified"
+  }
+}
