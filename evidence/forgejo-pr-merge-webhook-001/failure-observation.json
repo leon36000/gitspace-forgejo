@@ -1,0 +1,40 @@
+{
+  "attempt": "forgejo-pr-merge-webhook-001",
+  "post_failure_disposable_database_readback": {
+    "last_hook_task": {
+      "event_type": "pull_request",
+      "id": 7,
+      "is_delivered": false,
+      "is_succeed": false,
+      "payload_bytes": 14480,
+      "payload_summary": {
+        "action": "closed",
+        "merge_commit_sha": "a381fe792dbf642a0684b4445c352a78b5e02d5d",
+        "merged": true,
+        "pull_request_number": 2,
+        "state": "closed"
+      },
+      "request_bytes": 0,
+      "response_bytes": 0
+    },
+    "pull_request": {
+      "has_merged": 1,
+      "id": 1,
+      "index": 2,
+      "merged_commit_id": "a381fe792dbf642a0684b4445c352a78b5e02d5d",
+      "status": 2
+    }
+  },
+  "runner_failure": {
+    "error_type": "RuntimeError",
+    "stage": "deliver_closed_pull_request_event",
+    "verdict": "failed"
+  },
+  "secrets_recorded": false,
+  "source_checked": {
+    "commit": "0d791421f85ca13a63b665053d81ea765fbbc571",
+    "forgejo_version": "v17.0.0",
+    "interpretation": "The PR merge and webhook task were persisted before the harness failed. Its initial assertion incorrectly expected a non-empty JSON object from the merge POST; the runner was changed to use the PR GET readback as the result and then wait for the native webhook. This is a harness failure, not a Forgejo merge failure.",
+    "route": "routers/api/v1/repo/pull.go::MergePullRequest; successful standard merge ends with ctx.Status(http.StatusOK) at line 1082 and no JSON response."
+  }
+}

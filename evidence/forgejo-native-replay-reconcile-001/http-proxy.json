@@ -1,0 +1,32 @@
+{
+  "records": [
+    {
+      "delivery_id": "ba9b199f-8de7-4ce3-bdcd-9a7794f3e38d",
+      "event_type": "issues",
+      "forwarded_status": 401,
+      "method": "POST",
+      "path": "/forgejo/webhook",
+      "request_body_length": 5682,
+      "request_body_sha256": "b7e062448cb459dcf51c69f5b5118f04baeab6795e51e9b43c5e0873b24a90bd"
+    },
+    {
+      "delivery_id": "0b33626f-3b02-4b47-9b5d-2397edab2633",
+      "event_type": "issues",
+      "forwarded_status": 202,
+      "method": "POST",
+      "path": "/forgejo/webhook",
+      "request_body_length": 5682,
+      "request_body_sha256": "b7e062448cb459dcf51c69f5b5118f04baeab6795e51e9b43c5e0873b24a90bd"
+    },
+    {
+      "delivery_id": "988ffe34-55b5-43ae-b35d-b2607dbd349f",
+      "event_type": "issues",
+      "forwarded_status": 202,
+      "method": "POST",
+      "path": "/forgejo/webhook",
+      "request_body_length": 5682,
+      "request_body_sha256": "b7e062448cb459dcf51c69f5b5118f04baeab6795e51e9b43c5e0873b24a90bd"
+    }
+  ],
+  "schema_version": 1
+}

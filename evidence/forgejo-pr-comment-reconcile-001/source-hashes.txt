@@ -1,0 +1,10 @@
+Product HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+Product branch: local/WEBHOOK-005-canonical-links
+Product worktree: dirty; no commit created.
+SHA-256 source inputs:
+0d7c833bce0634836404871cfe51b82ac00288bc0fb1b6e04c206b61340bae0a  Cargo.toml
+3697590c6d35b5954fa4397a34e472c33270a3da4cb6851d0b597820d0f055cb  scripts/run_webhook_reconcile_cli_e2e.py
+ee27068bc65141b97e363a62b890867832e571e638df052c3d208a447ce41556  scripts/verify_cargo_license_state.py
+676e811afc3c1e3357bd17ef016d622a9d77454b3287c6b7e527fea7d42e91d8  scripts/test_cargo_license_state.py
+a844e8b06ab8bcc9714ce851d678d34fcf3a732cc480d6c53b11bf0f3b4225fb  tests/webhook_receiver_process_e2e.rs
+8731f97271e75a024ea827638838361e23fd543097bf689573a1ebc280919b77  evidence/forgejo-comment-wire-001/source-hashes.txt

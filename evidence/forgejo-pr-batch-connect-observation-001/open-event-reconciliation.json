@@ -1,0 +1,22 @@
+{
+  "api_version": "forgejo-rest-v1",
+  "canonical_state": {
+    "base_sha": null,
+    "head_sha": null,
+    "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/issues/1",
+    "merge_commit_sha": null,
+    "merged": null,
+    "state": "closed",
+    "updated_at": "2026-10-25T19:31:55-04:00"
+  },
+  "delivery_id": "e35521ee-f4b7-40c5-a4ed-434e4c11f9e2",
+  "resource": {
+    "kind": "issue",
+    "number": 1,
+    "owner": "forge-admin",
+    "repository": "agent-forge-core"
+  },
+  "schema_version": 4,
+  "upstream_read_attempts": 1,
+  "verdict": "current_state_read"
+}

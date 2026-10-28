@@ -1,0 +1,20 @@
+Final audit of evidence/SHA256SUMS after this lot.
+The command parses each SHA-256 row, checks that every well-formed path exists, and compares the current file digest.
+Expected: 3 257 rows; 3 239 matching; 0 missing; 17 divergent entries across 15 paths; 3 168 existing unique paths; 1 malformed historical row preserved.
+Divergent paths (pre-existing, untouched):
+- evidence/cargo-license-state-explicit-001/SHA256SUMS
+- evidence/cargo-license-state-explicit-001/manifest-check.txt
+- evidence/cargo-license-state-explicit-001/verification-checks.txt
+- evidence/forgejo-v17-lfs-pending-pagination-poc-054/SHA256SUMS
+- evidence/forgejo-v17-lfs-recovery-process-concurrency-051/SHA256SUMS
+- evidence/forgejo-v17-lfs-recovery-process-concurrency-051/local-run.md
+- evidence/forgejo-v17-lfs-recovery-process-concurrency-051/scratch-source-sha256.txt
+- evidence/forgejo-v17-writer-precondition-scope-052/SHA256SUMS
+- evidence/forgejo-v17-writer-precondition-scope-052/local-run.md
+- evidence/webhook-review-subtype-binding-001/SHA256SUMS
+- evidence/webhook-review-subtype-binding-001/format-and-diff-checks.txt
+- evidence/webhook-review-subtype-binding-001/local-run.md
+- evidence/webhook-review-subtype-binding-001/manifest-check.txt
+- evidence/webhook-review-subtype-binding-001/source-sha256.txt
+- tests/webhook_inbox_capacity.rs
+Malformed row preserved verbatim: None  tests/test_mission_012_live_composed_e2e.py

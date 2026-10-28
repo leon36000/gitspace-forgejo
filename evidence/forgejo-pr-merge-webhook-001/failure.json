@@ -1,0 +1,6 @@
+{
+  "cleanup_failure": null,
+  "error_type": "RuntimeError",
+  "stage": "deliver_closed_pull_request_event",
+  "verdict": "failed"
+}

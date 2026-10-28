@@ -1,0 +1,1 @@
+The local SHA256SUMS lists every regular evidence file in this directory except SHA256SUMS itself. Final command: sha256sum -c SHA256SUMS from this directory. The command is recorded as 12/12 PASS in checks-status.txt; the full current global-manifest accounting is in docs/checkpoint.md.

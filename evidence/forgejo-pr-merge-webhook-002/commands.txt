@@ -1,0 +1,7 @@
+# Commands executed for this evidence lot
+python3 -m unittest discover -s tests -p 'test_forgejo_emitted_webhook_e2e.py' -v
+python3 -m unittest tests.test_forgejo_emitted_webhook_e2e.ParseLivePullRequestDeliveryRecordTests -v
+python3 -m py_compile scripts/run_forgejo_live_webhook_reconcile_emitted.py tests/test_forgejo_emitted_webhook_e2e.py
+cargo fmt --all -- --check
+git diff --check
+python3 scripts/run_forgejo_live_webhook_reconcile_emitted.py --forgejo-binary /tmp/forgejo-17.0.0 --state-dir /tmp/forgejo-pr-merge-webhook-20261025-002 --evidence-dir "$PWD/evidence/forgejo-pr-merge-webhook-002" --merge-pull-request

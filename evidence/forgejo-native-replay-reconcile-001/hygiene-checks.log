@@ -1,0 +1,3 @@
+cargo fmt --all -- --check: exit 0
+git diff --check: exit 0
+python3 -m py_compile runner and tests: exit 0

@@ -1,0 +1,10 @@
+3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]
+$ cargo --version (exit 0)
+cargo 1.95.0 (f2d3ce0bd 2026-03-21)
+$ rustc --version (exit 0)
+rustc 1.95.0 (59807616e 2026-04-14)
+$ go version (unavailable: [Errno 2] No such file or directory: 'go')
+$ /tmp/forgejo-17.0.0 --version (exit 0)
+forgejo version 17.0.0+gitea-1.22.0 (release name 17.0.0) built with GNU Make 4.4.1, go1.26.9 : bindata, timetzdata, sqlite, sqlite_unlock_notify
+$ bwrap --version (exit 0)
+bubblewrap 0.9.0

@@ -1,0 +1,262 @@
+{
+  "cross_origin_replay_attempt": {
+    "created_task": false,
+    "hook_task_count_after_attempt": 1,
+    "http_status": 403
+  },
+  "forgejo_version": "17.0.0+gitea-1.22.0",
+  "hook_id": 1,
+  "inactive_hook_replay": {
+    "forgejo_response_status": 0,
+    "hook_active": false,
+    "payload_unchanged": true,
+    "proxy_request_count_after": 3,
+    "proxy_request_count_before": 3,
+    "receiver_journal_count_after": 2,
+    "receiver_journal_count_before": 2,
+    "receiver_journal_unchanged": true,
+    "replay_http_status": 303,
+    "task_created": true,
+    "task_marked_delivered": true,
+    "task_succeeded": false,
+    "task_uuid": "023910cf-0977-4c11-a0bb-13c4e4d895a2"
+  },
+  "initial_delivery": {
+    "delivery_id": "ba9b199f-8de7-4ce3-bdcd-9a7794f3e38d",
+    "http_status": 401,
+    "is_delivered": true,
+    "is_succeed": false,
+    "receiver_journal_records": 0
+  },
+  "issue_number": 1,
+  "journal_records_after_replay_and_inactive_replay": 2,
+  "native_replay": {
+    "authenticated_as": "forge-admin",
+    "binding": {
+      "all_payloads_unchanged": true,
+      "deliveries": [
+        {
+          "http_status": 202,
+          "new_delivery_id": true,
+          "original_uuid": "ba9b199f-8de7-4ce3-bdcd-9a7794f3e38d",
+          "payload_semantic_sha256": "4740bfc1767839e502e9c27526aa604a48c503a0563a2a70d90094774a878994",
+          "payload_unchanged": true,
+          "replay_uuid": "0b33626f-3b02-4b47-9b5d-2397edab2633",
+          "sequence": 1
+        },
+        {
+          "http_status": 202,
+          "new_delivery_id": true,
+          "original_uuid": "ba9b199f-8de7-4ce3-bdcd-9a7794f3e38d",
+          "payload_semantic_sha256": "4740bfc1767839e502e9c27526aa604a48c503a0563a2a70d90094774a878994",
+          "payload_unchanged": true,
+          "replay_uuid": "988ffe34-55b5-43ae-b35d-b2607dbd349f",
+          "sequence": 2
+        }
+      ],
+      "distinct_new_delivery_ids": true,
+      "original_uuid": "ba9b199f-8de7-4ce3-bdcd-9a7794f3e38d",
+      "replay_count": 2,
+      "replay_uuids": [
+        "0b33626f-3b02-4b47-9b5d-2397edab2633",
+        "988ffe34-55b5-43ae-b35d-b2607dbd349f"
+      ]
+    },
+    "idempotent_for_repeated_post": false,
+    "post_count_for_same_original_uuid": 2,
+    "post_results": [
+      {
+        "http_status": 303,
+        "redirect_path": "/forge-admin/agent-forge-core/settings/hooks/1"
+      },
+      {
+        "http_status": 303,
+        "redirect_path": "/forge-admin/agent-forge-core/settings/hooks/1"
+      }
+    ],
+    "route": "POST /{owner}/{repo}/settings/hooks/{id}/replay/{uuid}"
+  },
+  "no_session_replay_attempt": {
+    "created_task": false,
+    "hook_task_count_after_attempt": 1,
+    "http_status": 303,
+    "redirect_path": "/user/login"
+  },
+  "process_cleanup": {
+    "cleanup_failure": null,
+    "forgejo_stop": {
+      "returncode": 0,
+      "started": true,
+      "stop_action": "terminate",
+      "stopped": true
+    },
+    "http_proxy_listener_addresses_after_stop": [],
+    "http_proxy_stop": {
+      "stopped": true
+    },
+    "http_proxy_thread_exited": true,
+    "receiver_stops": [
+      {
+        "listener_addresses_after_stop": [],
+        "phase": "before_native_replay",
+        "stop": {
+          "returncode": 0,
+          "started": true,
+          "stop_action": "terminate",
+          "stopped": true
+        }
+      },
+      {
+        "listener_addresses_after_stop": [],
+        "phase": "final_cleanup",
+        "stop": {
+          "returncode": 0,
+          "started": true,
+          "stop_action": "terminate",
+          "stopped": true
+        }
+      }
+    ],
+    "tracked_processes_exited": true,
+    "webhook_deactivated_before_server_stop": true
+  },
+  "proxy_delivery_attempts": [
+    {
+      "delivery_id": "ba9b199f-8de7-4ce3-bdcd-9a7794f3e38d",
+      "event_type": "issues",
+      "forwarded_status": 401,
+      "method": "POST",
+      "path": "/forgejo/webhook",
+      "request_body_length": 5682,
+      "request_body_sha256": "b7e062448cb459dcf51c69f5b5118f04baeab6795e51e9b43c5e0873b24a90bd"
+    },
+    {
+      "delivery_id": "0b33626f-3b02-4b47-9b5d-2397edab2633",
+      "event_type": "issues",
+      "forwarded_status": 202,
+      "method": "POST",
+      "path": "/forgejo/webhook",
+      "request_body_length": 5682,
+      "request_body_sha256": "b7e062448cb459dcf51c69f5b5118f04baeab6795e51e9b43c5e0873b24a90bd"
+    },
+    {
+      "delivery_id": "988ffe34-55b5-43ae-b35d-b2607dbd349f",
+      "event_type": "issues",
+      "forwarded_status": 202,
+      "method": "POST",
+      "path": "/forgejo/webhook",
+      "request_body_length": 5682,
+      "request_body_sha256": "b7e062448cb459dcf51c69f5b5118f04baeab6795e51e9b43c5e0873b24a90bd"
+    }
+  ],
+  "proxy_delivery_binding": {
+    "delivery_count": 3,
+    "delivery_ids": [
+      "ba9b199f-8de7-4ce3-bdcd-9a7794f3e38d",
+      "0b33626f-3b02-4b47-9b5d-2397edab2633",
+      "988ffe34-55b5-43ae-b35d-b2607dbd349f"
+    ],
+    "raw_payload_hashes": [
+      "b7e062448cb459dcf51c69f5b5118f04baeab6795e51e9b43c5e0873b24a90bd",
+      "b7e062448cb459dcf51c69f5b5118f04baeab6795e51e9b43c5e0873b24a90bd",
+      "b7e062448cb459dcf51c69f5b5118f04baeab6795e51e9b43c5e0873b24a90bd"
+    ],
+    "raw_payload_hashes_match": true
+  },
+  "receiver_events": [
+    {
+      "action": "opened",
+      "delivery_id": "0b33626f-3b02-4b47-9b5d-2397edab2633",
+      "event": "issues",
+      "issue_number": 1,
+      "payload_state": "open",
+      "sequence": 1
+    },
+    {
+      "action": "opened",
+      "delivery_id": "988ffe34-55b5-43ae-b35d-b2607dbd349f",
+      "event": "issues",
+      "issue_number": 1,
+      "payload_state": "open",
+      "sequence": 2
+    }
+  ],
+  "replay_reconciliation": {
+    "batch_result": {
+      "api_version": "forgejo-rest-v1",
+      "results": [
+        {
+          "canonical_state": {
+            "base_sha": null,
+            "head_sha": null,
+            "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/issues/1",
+            "merge_commit_sha": null,
+            "merged": null,
+            "state": "open",
+            "updated_at": "2026-10-25T15:46:25-04:00"
+          },
+          "delivery_id": "0b33626f-3b02-4b47-9b5d-2397edab2633",
+          "resource": {
+            "kind": "issue",
+            "number": 1,
+            "owner": "forge-admin",
+            "repository": "agent-forge-core"
+          },
+          "verdict": "current_state_read"
+        },
+        {
+          "canonical_state": {
+            "base_sha": null,
+            "head_sha": null,
+            "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/issues/1",
+            "merge_commit_sha": null,
+            "merged": null,
+            "state": "open",
+            "updated_at": "2026-10-25T15:46:25-04:00"
+          },
+          "delivery_id": "988ffe34-55b5-43ae-b35d-b2607dbd349f",
+          "resource": {
+            "kind": "issue",
+            "number": 1,
+            "owner": "forge-admin",
+            "repository": "agent-forge-core"
+          },
+          "verdict": "current_state_read"
+        }
+      ],
+      "schema_version": 5,
+      "upstream_read_attempts": 1,
+      "verdict": "current_state_read"
+    },
+    "canonical_issue_readback": {
+      "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/issues/1",
+      "number": 1,
+      "state": "open",
+      "updated_at": "2026-10-25T15:46:25-04:00"
+    },
+    "credential_consumed": true,
+    "credential_recorded": false,
+    "credential_source": "read_only_private_inherited_pipe_fd",
+    "delivery_ids": [
+      "0b33626f-3b02-4b47-9b5d-2397edab2633",
+      "988ffe34-55b5-43ae-b35d-b2607dbd349f"
+    ],
+    "exit_status": 0,
+    "journal_unchanged": true,
+    "validated_result_count": 2
+  },
+  "repository": "forge-admin/agent-forge-core",
+  "schema_version": 1,
+  "task_count_observation": {
+    "hook_task_count_before_manual_replay": 1,
+    "http_request_count_observed": true,
+    "observation_seconds": 1.0,
+    "proxy_request_count_after_observation": 1
+  },
+  "unknown_uuid_replay_attempt": {
+    "created_task": false,
+    "hook_task_count_after_attempt": 1,
+    "http_status": 404
+  },
+  "verdict": "passed"
+}

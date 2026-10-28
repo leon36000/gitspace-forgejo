@@ -1,0 +1,38 @@
+usage: run_forgejo_live_webhook_reconcile_emitted.py [-h] --forgejo-binary
+                                                     FORGEJO_BINARY
+                                                     [--repo-root REPO_ROOT]
+                                                     --state-dir STATE_DIR
+                                                     --evidence-dir
+                                                     EVIDENCE_DIR
+                                                     [--merge-pull-request]
+                                                     [--synchronize-pull-request]
+                                                     [--request-changes-review]
+                                                     [--pull-request-review-comment]
+                                                     [--batch-pull-request-events]
+                                                     [--observe-batch-network]
+
+Run Forgejo-emitted issue and pull-request webhooks through the receiver.
+
+options:
+  -h, --help            show this help message and exit
+  --forgejo-binary FORGEJO_BINARY
+  --repo-root REPO_ROOT
+  --state-dir STATE_DIR
+  --evidence-dir EVIDENCE_DIR
+  --merge-pull-request  merge the disposable local PR instead of closing it
+                        unmerged and reconcile its native close event
+  --synchronize-pull-request
+                        push a second candidate commit and reconcile Forgejo's
+                        native pull_request_sync event
+  --request-changes-review
+                        create a separate non-admin PR author and reconcile
+                        Forgejo's native rejected-review event
+  --pull-request-review-comment
+                        create an inline PR review comment and reconcile
+                        Forgejo's native review-comment event
+  --batch-pull-request-events
+                        reconcile all emitted pull-request deliveries in one
+                        CLI batch and one current-state read
+  --observe-batch-network
+                        trace only connect syscalls during the PR batch and
+                        require one loopback connection
