@@ -1,0 +1,6 @@
+{
+  "cleanup_failure": null,
+  "error_type": "AttributeError",
+  "stage": "start_receiver_and_create_issue_hook",
+  "verdict": "failed"
+}

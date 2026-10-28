@@ -1,0 +1,15 @@
+{
+  "correction": "The successful later run stores one 64-character lowercase ASCII hex secret in the receiver file and sends exactly that text to Forgejo.",
+  "forgejo_internal_task": {
+    "delivery_uuid": "b7293fbf-63f8-4ed5-84e0-aa2d446dd628",
+    "event_type": "issues",
+    "is_delivered": true,
+    "is_succeed": false,
+    "response_status": 401
+  },
+  "historical_source_hash_pinned": false,
+  "receiver_inbox_exists": false,
+  "root_cause": "The run wrote 32 binary random bytes to the receiver secret file but sent the hex text of those bytes to Forgejo; both sides therefore computed HMAC with different keys. The actual Forgejo task was delivered to the receiver and rejected with HTTP 401.",
+  "scope": "Run 004 emitted an actual issue webhook but did not reach mission admission; no secret or payload was copied into this diagnosis.",
+  "verdict": "diagnosed_failed_delivery"
+}

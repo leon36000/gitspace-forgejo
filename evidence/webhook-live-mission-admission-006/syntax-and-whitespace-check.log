@@ -1,0 +1,3 @@
+syntax=ok
+trailing_whitespace=none
+files=scripts/run_forgejo_live_webhook_mission_admission.py,tests/test_forgejo_live_webhook_mission_admission.py

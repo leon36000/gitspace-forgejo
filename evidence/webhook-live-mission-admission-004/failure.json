@@ -1,0 +1,7 @@
+{
+  "cleanup_failure": null,
+  "error_detail": "Forgejo did not deliver the expected issue event to the receiver",
+  "error_type": "RuntimeError",
+  "stage": "emit_real_opened_issue_event",
+  "verdict": "failed"
+}

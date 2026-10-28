@@ -1,0 +1,11 @@
+{
+  "active_after_run": false,
+  "deactivation_readback_confirmed": true,
+  "events": [
+    "issues"
+  ],
+  "hook_id": 1,
+  "secret_value_recorded": false,
+  "target": "http://127.0.0.1:55799/forgejo/webhook",
+  "type": "gitea"
+}

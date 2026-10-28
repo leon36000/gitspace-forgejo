@@ -1,0 +1,9 @@
+{
+  "reviewed_artifact": "../webhook-live-mission-admission-005/provenance.json",
+  "finding": "private_state_dir_is_not_in_evidence was broader than the artifact contents support: admission.json and replay.json include the absolute host_admission_file path beneath the private /tmp state directory.",
+  "sensitivity": "The path is present; the private file contents and webhook secret are not copied into the evidence directory.",
+  "superseding_field": "private_state_contents_in_evidence",
+  "superseding_value": false,
+  "source_review_commit": "f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0",
+  "review_scope": "Static read of provenance.json, admission.json, replay.json, and the new run 006 provenance; no private state contents were inspected."
+}

@@ -1,0 +1,7 @@
+{
+  "cleanup_failure": null,
+  "error_detail": "local webhook receiver did not bind its expected loopback port",
+  "error_type": "RuntimeError",
+  "stage": "start_receiver_and_create_issue_hook",
+  "verdict": "failed"
+}

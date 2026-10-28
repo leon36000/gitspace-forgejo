@@ -1,0 +1,14 @@
+test_admission_validator_binds_reconciled_proof_to_the_emitted_event (tests.test_forgejo_live_webhook_mission_admission.LiveWebhookMissionAdmissionTests.test_admission_validator_binds_reconciled_proof_to_the_emitted_event) ... ok
+test_binds_one_successful_forgejo_task_to_its_receiver_delivery (tests.test_forgejo_live_webhook_mission_admission.LiveWebhookMissionAdmissionTests.test_binds_one_successful_forgejo_task_to_its_receiver_delivery) ... ok
+test_derives_hook_target_and_listener_port_from_actual_receiver_address (tests.test_forgejo_live_webhook_mission_admission.LiveWebhookMissionAdmissionTests.test_derives_hook_target_and_listener_port_from_actual_receiver_address) ... ok
+test_failure_diagnostic_redacts_host_tokens_and_webhook_secret_encodings (tests.test_forgejo_live_webhook_mission_admission.LiveWebhookMissionAdmissionTests.test_failure_diagnostic_redacts_host_tokens_and_webhook_secret_encodings) ... ok
+test_generates_one_ascii_hex_webhook_secret_for_both_receiver_and_forgejo (tests.test_forgejo_live_webhook_mission_admission.LiveWebhookMissionAdmissionTests.test_generates_one_ascii_hex_webhook_secret_for_both_receiver_and_forgejo) ... ok
+test_refuses_mismatched_delivery_uuid_or_non_open_event (tests.test_forgejo_live_webhook_mission_admission.LiveWebhookMissionAdmissionTests.test_refuses_mismatched_delivery_uuid_or_non_open_event) ... ok
+test_refuses_task_without_receiver_acknowledgement (tests.test_forgejo_live_webhook_mission_admission.LiveWebhookMissionAdmissionTests.test_refuses_task_without_receiver_acknowledgement) ... ok
+test_returns_terminal_http_failure_for_actionable_validation (tests.test_forgejo_live_webhook_mission_admission.LiveWebhookMissionAdmissionTests.test_returns_terminal_http_failure_for_actionable_validation) ... ok
+test_waits_until_forgejo_records_the_receiver_response (tests.test_forgejo_live_webhook_mission_admission.LiveWebhookMissionAdmissionTests.test_waits_until_forgejo_records_the_receiver_response) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.016s
+
+OK

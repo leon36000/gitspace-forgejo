@@ -1,0 +1,12 @@
+test_branch_protection_requires_current_base_gate (tests.test_mission_012_live_agent_pr_e2e.Mission012LiveAgentDriverTests.test_branch_protection_requires_current_base_gate) ... ok
+test_forged_test_output_candidate_is_rejected_before_cargo (tests.test_mission_012_live_agent_pr_e2e.Mission012LiveAgentDriverTests.test_forged_test_output_candidate_is_rejected_before_cargo) ... ok
+test_latest_merge_gate_api_reads_discard_only_headers (tests.test_mission_012_live_agent_pr_e2e.Mission012LiveAgentDriverTests.test_latest_merge_gate_api_reads_discard_only_headers) ... ok
+test_listener_requires_loopback_and_the_expected_process (tests.test_mission_012_live_agent_pr_e2e.Mission012LiveAgentDriverTests.test_listener_requires_loopback_and_the_expected_process) ... ok
+test_merge_parent_validation_rejects_duplicate_or_extra_parents (tests.test_mission_012_live_agent_pr_e2e.Mission012LiveAgentDriverTests.test_merge_parent_validation_rejects_duplicate_or_extra_parents) ... ok
+test_only_exact_expected_source_and_acceptance_suite_are_accepted (tests.test_mission_012_live_agent_pr_e2e.Mission012LiveAgentDriverTests.test_only_exact_expected_source_and_acceptance_suite_are_accepted) ... ok
+test_receipt_must_be_private_hash_bound_and_finalized_candidate_ready (tests.test_mission_012_live_agent_pr_e2e.Mission012LiveAgentDriverTests.test_receipt_must_be_private_hash_bound_and_finalized_candidate_ready) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.002s
+
+OK
