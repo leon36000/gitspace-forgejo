@@ -1,0 +1,9 @@
+{
+  "branch": "agent/lifecycle/inconclusive-001",
+  "delivery_id": "0e7cf577-5e16-4395-9eb9-8a0d3a80ed35",
+  "event": "create",
+  "ref": "agent/lifecycle/inconclusive-001",
+  "ref_type": "branch",
+  "sequence": 1,
+  "sha": "c77d8652318d5ceb51ebbc0e23371ae46d7d4ed8"
+}

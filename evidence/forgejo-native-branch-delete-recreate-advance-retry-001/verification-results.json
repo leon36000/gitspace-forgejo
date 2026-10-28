@@ -1,0 +1,22 @@
+{
+  "python_tests": {
+    "targeted_branch_ref_batch_validator": {"passed": 12, "failed": 0},
+    "forgejo_emitted_webhook_module": {"passed": 110, "failed": 0},
+    "cargo_license_guard": {"passed": 9, "failed": 0}
+  },
+  "checks": {
+    "cargo_license_metadata": "passed; license=null, license_file=null, publish=[], no_license_selected, redistribution_rights=not_assessed, NOASSERTION",
+    "receipt_verifier": "passed",
+    "py_compile": "passed",
+    "cargo_fmt_all_check": "passed",
+    "git_diff_check": "passed"
+  },
+  "live_run": {
+    "passed": 1,
+    "initial_absent_ref_verdict": "inconclusive",
+    "same_delivery_retry_verdict": "current_state_read",
+    "new_commit_created_after_delete": true,
+    "llm_runs": 0,
+    "production_runs": 0
+  }
+}

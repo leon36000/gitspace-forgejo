@@ -1,0 +1,8 @@
+{
+  "branch": "agent/lifecycle/inconclusive-001",
+  "delivery_id": "ae3b36df-bdf4-4e5a-ad8f-310cb2cd5c54",
+  "event": "delete",
+  "ref": "agent/lifecycle/inconclusive-001",
+  "ref_type": "branch",
+  "sequence": 2
+}

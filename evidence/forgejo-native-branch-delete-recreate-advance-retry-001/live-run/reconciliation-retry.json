@@ -1,0 +1,67 @@
+{
+  "branch_readback": {
+    "commit_sha": "622b6ef3103fc6789ca209fafe26ebb2fac7109e",
+    "name": "agent/lifecycle/advance-retry-001",
+    "new_commit_after_delete": true,
+    "reader_permission": "read_only",
+    "status": 200
+  },
+  "delivery_ids": [
+    "0df11c8e-0995-4bf1-b918-4baefac41b6e",
+    "f3abaf25-ad3e-42c4-8f1d-8db4ed25697a"
+  ],
+  "delivery_ids_unchanged": true,
+  "hook_tasks_unchanged": true,
+  "initial_exit_status": 1,
+  "initial_verdict": "inconclusive",
+  "retry_exit_status": 0,
+  "retry_result": {
+    "api_version": "forgejo-rest-v1",
+    "results": [
+      {
+        "canonical_state": {
+          "base_sha": null,
+          "comment": null,
+          "head_sha": "622b6ef3103fc6789ca209fafe26ebb2fac7109e",
+          "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/src/branch/agent%2Flifecycle%2Fadvance-retry-001",
+          "merge_commit_sha": null,
+          "merged": null,
+          "state": "present",
+          "updated_at": "2026-10-26T15:14:57-04:00"
+        },
+        "delivery_id": "0df11c8e-0995-4bf1-b918-4baefac41b6e",
+        "resource": {
+          "branch": "agent/lifecycle/advance-retry-001",
+          "kind": "branch",
+          "owner": "forge-admin",
+          "repository": "agent-forge-core"
+        },
+        "verdict": "current_state_read"
+      },
+      {
+        "canonical_state": {
+          "base_sha": null,
+          "comment": null,
+          "head_sha": "622b6ef3103fc6789ca209fafe26ebb2fac7109e",
+          "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/src/branch/agent%2Flifecycle%2Fadvance-retry-001",
+          "merge_commit_sha": null,
+          "merged": null,
+          "state": "present",
+          "updated_at": "2026-10-26T15:14:57-04:00"
+        },
+        "delivery_id": "f3abaf25-ad3e-42c4-8f1d-8db4ed25697a",
+        "resource": {
+          "branch": "agent/lifecycle/advance-retry-001",
+          "kind": "branch",
+          "owner": "forge-admin",
+          "repository": "agent-forge-core"
+        },
+        "verdict": "current_state_read"
+      }
+    ],
+    "schema_version": 6,
+    "upstream_read_attempts": 1,
+    "verdict": "current_state_read"
+  },
+  "webhook_journal_unchanged": true
+}

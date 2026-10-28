@@ -1,0 +1,14 @@
+Date: 2026-10-26
+HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+Platform: Linux-7.0.0-1019-nvidia-aarch64-with-glibc2.39
+Architecture: aarch64
+rustc: rustc 1.95.0 (59807616e 2026-04-14)
+cargo: cargo 1.95.0 (f2d3ce0bd 2026-03-21)
+Python: Python 3.12.3
+Git: git version 2.43.0
+Bubblewrap: bubblewrap 0.9.0
+Forgejo binary: forgejo version 17.0.0+gitea-1.22.0; Go 1.26.9; SHA-256 e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7
+Official source reviewed: Forgejo v17.0.0 commit 0d791421f85ca13a63b665053d81ea765fbbc571; binary build commit is not established.
+Rust build: Cargo offline/locked in Bubblewrap 0.9.0, network and PID namespaces unshared, environment cleared, source/registry/toolchain read-only; build receipts are in live-run/result.json and cargo-build.log.
+Forgejo app listener: 127.0.0.1:3130; webhook callback configured to loopback. Disposable private repo; reader permissions pull=true, push=false, admin=false.
+No model, AgentOS, external service, private user data, production or paid call was used.

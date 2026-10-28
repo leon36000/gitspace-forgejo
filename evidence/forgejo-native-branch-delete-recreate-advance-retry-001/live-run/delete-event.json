@@ -1,0 +1,8 @@
+{
+  "branch": "agent/lifecycle/advance-retry-001",
+  "delivery_id": "f3abaf25-ad3e-42c4-8f1d-8db4ed25697a",
+  "event": "delete",
+  "ref": "agent/lifecycle/advance-retry-001",
+  "ref_type": "branch",
+  "sequence": 2
+}

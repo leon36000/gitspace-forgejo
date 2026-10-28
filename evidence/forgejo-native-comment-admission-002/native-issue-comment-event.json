@@ -1,0 +1,9 @@
+{
+  "action": "created",
+  "comment_id": 1,
+  "delivery_id": "0b98d84e-b23e-4b6b-a10c-a1fb88979386",
+  "event": "issue_comment",
+  "is_pull": false,
+  "issue_number": 1,
+  "sequence": 2
+}

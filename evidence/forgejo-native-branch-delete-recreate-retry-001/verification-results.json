@@ -1,0 +1,23 @@
+{
+  "python_tests": {
+    "targeted_branch_ref_batch_validator": {"passed": 11, "failed": 0},
+    "forgejo_emitted_webhook_module": {"passed": 109, "failed": 0},
+    "cargo_license_guard": {"passed": 9, "failed": 0}
+  },
+  "checks": {
+    "cargo_license_metadata": "passed; license=null, license_file=null, publish=[], no_license_selected, redistribution_rights=not_assessed, NOASSERTION",
+    "py_compile": "passed",
+    "python_ast_parse": "passed",
+    "receipt_verifier": "passed; both execution manifests and retry transition checked",
+    "cargo_fmt_all_check": "passed",
+    "git_diff_check": "passed"
+  },
+  "live_run": {
+    "successful_runs": 1,
+    "failed_harness_runs": 1,
+    "failed_harness_failure": "NameError during evidence serialization; cleanup verified",
+    "forgejo_application_runs": 1,
+    "llm_runs": 0,
+    "production_runs": 0
+  }
+}

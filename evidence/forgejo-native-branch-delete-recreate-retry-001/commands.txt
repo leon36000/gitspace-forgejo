@@ -1,0 +1,13 @@
+# Reproduction and verification commands
+
+- `python3 -B scripts/run_forgejo_native_branch_delete_webhook_reconcile.py --forgejo-binary /tmp/forgejo-17.0.0 --repo-root /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace --state-dir /tmp/forgejo-native-branch-recreate-retry-20261026-002 --evidence-dir evidence/forgejo-native-branch-delete-recreate-retry-001/live-run-002 --include-create --expect-branch-absent-after-delete --retry-after-recreate --branch-name agent/lifecycle/recreate-retry-002`
+- `python3 -m unittest tests.test_forgejo_emitted_webhook_e2e.BranchRefBatchReconciliationValidationTests -v`
+- `python3 -m unittest tests.test_forgejo_emitted_webhook_e2e`
+- `python3 -m unittest scripts.test_cargo_license_state -v`
+- `python3 scripts/verify_cargo_license_state.py`
+- `python3 -m py_compile scripts/run_forgejo_native_branch_delete_webhook_reconcile.py tests/test_forgejo_emitted_webhook_e2e.py evidence/forgejo-native-branch-delete-recreate-retry-001/verify_retry_receipt.py`
+- `python3 evidence/forgejo-native-branch-delete-recreate-retry-001/verify_retry_receipt.py`
+- `cargo fmt --all -- --check`
+- `git diff --check`
+- `sha256sum -c` in each live-run directory and independent verification of local evidence and append-only indexes.
+- `python3 evidence/forgejo-native-branch-delete-recreate-retry-001/verify_append_only_indexes.py`

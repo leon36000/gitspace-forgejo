@@ -1,0 +1,7 @@
+{
+  "cleanup_failure": null,
+  "error_detail": "[Errno 2] No such file or directory: '/tmp/forgejo-native-comment-admission-001/project/requirements/MISSION-012-CLAMP-001.json'",
+  "error_type": "FileNotFoundError",
+  "stage": "emit_native_issue_comment_and_refuse_mission_admission",
+  "verdict": "failed"
+}

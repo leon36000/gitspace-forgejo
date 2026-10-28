@@ -1,0 +1,69 @@
+{
+  "objective": "Exercise a native Forgejo branch create->advance->delete sequence and reconcile both signed deliveries after the ref has disappeared.",
+  "head": "f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0",
+  "sample_size": 1,
+  "forgejo": {
+    "version": "forgejo version 17.0.0+gitea-1.22.0 (release name 17.0.0) built with GNU Make 4.4.1, go1.26.9 : bindata, timetzdata, sqlite, sqlite_unlock_notify",
+    "binary_sha256": "e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7",
+    "official_source_commit_reviewed": "0d791421f85ca13a63b665053d81ea765fbbc571",
+    "build_commit_established": false
+  },
+  "native_webhooks": {
+    "create_sequence": 1,
+    "delete_sequence": 2,
+    "both_delivery_tasks_http_202": true,
+    "remote_ref_absent_after_delete": true
+  },
+  "reconciliation": {
+    "exit_status": 1,
+    "batch_verdict": "inconclusive",
+    "upstream_read_attempts_reported_by_cli": 1,
+    "delivery_verdicts": [
+      "inconclusive",
+      "inconclusive"
+    ],
+    "delivery_error_codes": [
+      "resource_not_found",
+      "resource_not_found"
+    ],
+    "no_canonical_state": true,
+    "journal_unchanged": true,
+    "credential_recorded": false
+  },
+  "cleanup": {
+    "hook_disabled": true,
+    "forgejo_stopped": true,
+    "receiver_stopped": true,
+    "forgejo_listeners_after_stop": [],
+    "receiver_listeners_after_stop": []
+  },
+  "checks": {
+    "validator_unit_tests": "8/8 passed",
+    "python_test_module": "106/106 passed",
+    "python_ast": "passed",
+    "python_compile": "passed",
+    "cargo_license_verifier": "passed",
+    "cargo_license_unit_tests": "9/9 passed",
+    "raw_receipt_self_check": "passed; eight nested raw artifacts verified"
+  },
+  "cargo_license_state": {
+    "license": null,
+    "license_decision": "no_license_selected",
+    "license_file": null,
+    "package": "agent-forge-core",
+    "publish": [],
+    "redistribution_rights": "not_assessed",
+    "spdx_package_license_declared": "NOASSERTION",
+    "status": "verified"
+  },
+  "driver_result_wording_correction": "Raw result is preserved; result-correction.json records an inaccurate no-live-service limitation string and the corrected wording now used by the runner.",
+  "limits": [
+    "One disposable local Forgejo instance and one branch; n=1.",
+    "The CLI-reported upstream read count is not an independent packet trace.",
+    "HTTP 404 can also mask inaccessible private resources, so both results remain inconclusive and do not claim canonical absence.",
+    "The Forgejo binary build commit is unknown.",
+    "No LLM/AgentOS, PR, verifier, merge, post-merge behavior, or comparative productivity result was exercised."
+  ],
+  "current_runner_sha256": "923de0a0881557ac354671debbfd49b2c506d3067f53eeb9d561247cdbd0f673",
+  "runner_sha256_at_live_execution": "c4c6bcaa88752e2796cf784efaf7f227f14c6e51a6b330999cdc328a4f759d9a"
+}

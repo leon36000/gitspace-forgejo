@@ -1,0 +1,7 @@
+{
+  "commit_sha": "622b6ef3103fc6789ca209fafe26ebb2fac7109e",
+  "name": "agent/lifecycle/advance-retry-001",
+  "new_commit_after_delete": true,
+  "reader_permission": "read_only",
+  "status": 200
+}

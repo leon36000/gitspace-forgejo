@@ -1,0 +1,12 @@
+{
+  "artifact": "live-run/result.json",
+  "field": "limitations[0]",
+  "original_statement": "One disposable local Forgejo repository and one branch; no live service was contacted.",
+  "why_inaccurate": "The run starts a disposable Forgejo 17.0.0 process at 127.0.0.1:3130; the result itself records the version/listener, two successful native hook tasks (HTTP 202), hook deactivation readback and process shutdown.",
+  "corrected_statement": "Only a disposable local Forgejo instance and one branch were used; no external or production service was contacted.",
+  "raw_result_preserved": true,
+  "future_runner_source_hash": "923de0a0881557ac354671debbfd49b2c506d3067f53eeb9d561247cdbd0f673",
+  "runner_source_hash_at_run": "c4c6bcaa88752e2796cf784efaf7f227f14c6e51a6b330999cdc328a4f759d9a",
+  "test_source_hash_at_run": "26ee5fa65d205ec62ce9ce70ffd7ca3e90a8280931da9b2902c954db7faa8e3e",
+  "limit": "The run did not capture all host kernel egress; the correction describes the configured local harness and recorded endpoints, not a broad network-isolation proof."
+}

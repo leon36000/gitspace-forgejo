@@ -1,0 +1,3 @@
+native Forgejo create/delete batch receipt: all invariants verified
+raw nested manifest: 8/8 artifacts verified
+result wording discrepancy: recorded and corrected without rewriting the raw run

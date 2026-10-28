@@ -1,0 +1,13 @@
+test_accepts_native_create_and_delete_as_one_current_branch_read (tests.test_forgejo_emitted_webhook_e2e.BranchRefBatchReconciliationValidationTests.test_accepts_native_create_and_delete_as_one_current_branch_read) ... ok
+test_accepts_native_create_and_delete_when_branch_is_absent_at_readback (tests.test_forgejo_emitted_webhook_e2e.BranchRefBatchReconciliationValidationTests.test_accepts_native_create_and_delete_when_branch_is_absent_at_readback) ... ok
+test_accepts_nested_branch_path_when_result_url_encodes_each_separator (tests.test_forgejo_emitted_webhook_e2e.BranchRefBatchReconciliationValidationTests.test_accepts_nested_branch_path_when_result_url_encodes_each_separator) ... ok
+test_refuses_missing_branch_result_without_404_ambiguity_or_order_binding (tests.test_forgejo_emitted_webhook_e2e.BranchRefBatchReconciliationValidationTests.test_refuses_missing_branch_result_without_404_ambiguity_or_order_binding) ... ok
+test_refuses_present_state_when_batch_expected_deleted_branch (tests.test_forgejo_emitted_webhook_e2e.BranchRefBatchReconciliationValidationTests.test_refuses_present_state_when_batch_expected_deleted_branch) ... ok
+test_rejects_duplicate_reads_or_reordered_delivery_results (tests.test_forgejo_emitted_webhook_e2e.BranchRefBatchReconciliationValidationTests.test_rejects_duplicate_reads_or_reordered_delivery_results) ... ok
+test_rejects_malformed_or_wrong_branch_delivery_ids_without_type_error (tests.test_forgejo_emitted_webhook_e2e.BranchRefBatchReconciliationValidationTests.test_rejects_malformed_or_wrong_branch_delivery_ids_without_type_error) ... ok
+test_rejects_results_that_do_not_name_the_current_branch_head (tests.test_forgejo_emitted_webhook_e2e.BranchRefBatchReconciliationValidationTests.test_rejects_results_that_do_not_name_the_current_branch_head) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.000s
+
+OK

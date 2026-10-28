@@ -1,0 +1,9 @@
+{
+  "branch": "agent/lifecycle/recreate-retry-002",
+  "delivery_id": "7a33cb22-80ea-41cf-af0c-01f460930f44",
+  "event": "create",
+  "ref": "agent/lifecycle/recreate-retry-002",
+  "ref_type": "branch",
+  "sequence": 1,
+  "sha": "a28fa16b5afc3cb947b617c9c1f59fe29db1f17c"
+}

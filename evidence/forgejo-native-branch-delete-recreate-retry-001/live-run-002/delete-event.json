@@ -1,0 +1,8 @@
+{
+  "branch": "agent/lifecycle/recreate-retry-002",
+  "delivery_id": "dd0c619c-4a7a-4cb1-a9d5-1cf1f230c07d",
+  "event": "delete",
+  "ref": "agent/lifecycle/recreate-retry-002",
+  "ref_type": "branch",
+  "sequence": 2
+}

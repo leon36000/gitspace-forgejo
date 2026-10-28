@@ -1,0 +1,44 @@
+{
+  "api_version": "forgejo-rest-v1",
+  "results": [
+    {
+      "delivery_id": "7a33cb22-80ea-41cf-af0c-01f460930f44",
+      "error": {
+        "action": "verify the branch name and repository access; HTTP 404 does not distinguish an absent branch from an inaccessible repository",
+        "code": "resource_not_found",
+        "details": {
+          "resource": {
+            "branch": "agent/lifecycle/recreate-retry-002",
+            "kind": "branch",
+            "owner": "forge-admin",
+            "repository": "agent-forge-core"
+          },
+          "upstream": "forgejo"
+        },
+        "retryable": false
+      },
+      "verdict": "inconclusive"
+    },
+    {
+      "delivery_id": "dd0c619c-4a7a-4cb1-a9d5-1cf1f230c07d",
+      "error": {
+        "action": "verify the branch name and repository access; HTTP 404 does not distinguish an absent branch from an inaccessible repository",
+        "code": "resource_not_found",
+        "details": {
+          "resource": {
+            "branch": "agent/lifecycle/recreate-retry-002",
+            "kind": "branch",
+            "owner": "forge-admin",
+            "repository": "agent-forge-core"
+          },
+          "upstream": "forgejo"
+        },
+        "retryable": false
+      },
+      "verdict": "inconclusive"
+    }
+  ],
+  "schema_version": 6,
+  "upstream_read_attempts": 1,
+  "verdict": "inconclusive"
+}

@@ -1,0 +1,66 @@
+{
+  "branch_readback": {
+    "commit_sha": "9a51c6df93c46707e3ad3e5b5a673cdfbc741451",
+    "name": "agent/lifecycle/recreate-retry-002",
+    "reader_permission": "read_only",
+    "status": 200
+  },
+  "delivery_ids": [
+    "7a33cb22-80ea-41cf-af0c-01f460930f44",
+    "dd0c619c-4a7a-4cb1-a9d5-1cf1f230c07d"
+  ],
+  "delivery_ids_unchanged": true,
+  "hook_tasks_unchanged": true,
+  "initial_exit_status": 1,
+  "initial_verdict": "inconclusive",
+  "retry_exit_status": 0,
+  "retry_result": {
+    "api_version": "forgejo-rest-v1",
+    "results": [
+      {
+        "canonical_state": {
+          "base_sha": null,
+          "comment": null,
+          "head_sha": "9a51c6df93c46707e3ad3e5b5a673cdfbc741451",
+          "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/src/branch/agent%2Flifecycle%2Frecreate-retry-002",
+          "merge_commit_sha": null,
+          "merged": null,
+          "state": "present",
+          "updated_at": "2026-10-26T15:08:35-04:00"
+        },
+        "delivery_id": "7a33cb22-80ea-41cf-af0c-01f460930f44",
+        "resource": {
+          "branch": "agent/lifecycle/recreate-retry-002",
+          "kind": "branch",
+          "owner": "forge-admin",
+          "repository": "agent-forge-core"
+        },
+        "verdict": "current_state_read"
+      },
+      {
+        "canonical_state": {
+          "base_sha": null,
+          "comment": null,
+          "head_sha": "9a51c6df93c46707e3ad3e5b5a673cdfbc741451",
+          "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/src/branch/agent%2Flifecycle%2Frecreate-retry-002",
+          "merge_commit_sha": null,
+          "merged": null,
+          "state": "present",
+          "updated_at": "2026-10-26T15:08:35-04:00"
+        },
+        "delivery_id": "dd0c619c-4a7a-4cb1-a9d5-1cf1f230c07d",
+        "resource": {
+          "branch": "agent/lifecycle/recreate-retry-002",
+          "kind": "branch",
+          "owner": "forge-admin",
+          "repository": "agent-forge-core"
+        },
+        "verdict": "current_state_read"
+      }
+    ],
+    "schema_version": 6,
+    "upstream_read_attempts": 1,
+    "verdict": "current_state_read"
+  },
+  "webhook_journal_unchanged": true
+}
