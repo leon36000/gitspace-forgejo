@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "actor": "agent-bot",
+  "permission_readback": "read",
+  "request": {
+    "method": "POST",
+    "path": "/api/v1/repos/forge-admin/mission-012-clamp/statuses/1b6d81bf72214b1acc9735dc51eb35d233d54375",
+    "state": "success",
+    "context": "agent-forge/independent-acceptance",
+    "description": "untrusted false success"
+  },
+  "response": {
+    "http_status": 403,
+    "message": "user should have a permission to write to a repo"
+  },
+  "interpretation": "Forgejo refused this agent-authored status request; the verifier-authored required status remains the only accepted passing status in the recorded pre-merge readback."
+}

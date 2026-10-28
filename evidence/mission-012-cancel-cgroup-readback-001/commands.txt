@@ -1,0 +1,7 @@
+cargo test --offline --locked --test mission_012_mcp_lifecycle cgroup_readback_requires_a_live_process_still_in_the_scope -- --exact --nocapture
+cargo test --offline --locked --test mission_012_mcp_lifecycle mcp_supervisor_cancellation_terminates_the_in_flight_verifier_scope -- --exact --nocapture # run three times; see cancel-run-1.log through cancel-run-3.log
+cargo test --offline --locked --test mission_012_mcp_lifecycle mcp_supervisor_cancellation_terminates_the_in_flight_verifier_scope -- --exact --nocapture # final run after adding a last cgroup readback; see cancel-run-final.log
+cargo test --offline --locked --test mission_012_mcp_lifecycle -- --test-threads=1
+cargo test --offline --locked --test mission_012_mcp_lifecycle -- --test-threads=1 # final suite after last readback change; see lifecycle-suite-final.log
+cargo fmt --all -- --check
+git diff --check

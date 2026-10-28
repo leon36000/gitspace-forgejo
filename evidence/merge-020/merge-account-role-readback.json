@@ -1,0 +1,11 @@
+{
+  "is_admin": false,
+  "login": "forge-merger",
+  "repo_permission_admin": false,
+  "repo_permission_push": true,
+  "token_scopes": [
+    "read:user",
+    "read:issue",
+    "write:repository"
+  ]
+}

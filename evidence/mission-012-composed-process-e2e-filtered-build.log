@@ -1,0 +1,55 @@
+$ /usr/bin/bwrap --die-with-parent --unshare-net --unshare-pid --new-session --ro-bind /usr /usr --dir /etc --ro-bind /etc/alternatives /etc/alternatives --symlink usr/lib /lib --symlink usr/bin /bin --dir /home --dir /workspace --ro-bind /tmp/forgejo-mission-delivery-e2e-pbxwvu5t/source /workspace --dir /toolchain --ro-bind /home/pc6/.rustup/toolchains/1.95.0-aarch64-unknown-linux-gnu /toolchain --dev /dev --proc /proc --tmpfs /tmp --dir /tmp/cargo-home --dir /tmp/cargo-home/registry --ro-bind /tmp/forgejo-mission-delivery-e2e-pbxwvu5t/cargo-registry /tmp/cargo-home/registry --dir /tmp/forgejo-mission-delivery-e2e-pbxwvu5t --dir /tmp/forgejo-mission-delivery-e2e-pbxwvu5t/target --bind /tmp/forgejo-mission-delivery-e2e-pbxwvu5t/target /tmp/forgejo-mission-delivery-e2e-pbxwvu5t/target --bind /tmp/forgejo-mission-delivery-e2e-pbxwvu5t/runtime-build-forgejo_mission_delivery_process_e2e /workspace/.runtime --clearenv --setenv PATH /toolchain/bin:/usr/bin:/bin --setenv HOME /tmp --setenv TMPDIR /tmp --setenv CARGO_HOME /tmp/cargo-home --setenv CARGO_TARGET_DIR /tmp/forgejo-mission-delivery-e2e-pbxwvu5t/target --setenv CARGO_NET_OFFLINE true --setenv CARGO_BUILD_JOBS 2 --setenv RUSTC /toolchain/bin/rustc --setenv RUST_TEST_THREADS 1 --setenv MISSION_E2E_RUST_SYSROOT /toolchain --setenv MISSION_E2E_RUST_BIN_DIR /toolchain/bin --setenv MISSION_E2E_MASKED_HOME /home/pc6 --chdir /workspace /usr/bin/prlimit --cpu=240 --as=4294967296 --nproc=384 --nofile=128 --fsize=67108864 -- /toolchain/bin/cargo test --offline --locked --test forgejo_mission_delivery_process_e2e --no-run
+   Compiling version_check v0.9.5
+   Compiling proc-macro2 v1.0.107
+   Compiling generic-array v0.14.7
+   Compiling typenum v1.20.0
+   Compiling unicode-ident v1.0.26
+   Compiling quote v1.0.47
+   Compiling serde_core v1.0.228
+   Compiling libc v0.2.190
+   Compiling block-buffer v0.10.4
+   Compiling crypto-common v0.1.7
+   Compiling zmij v1.0.23
+   Compiling subtle v2.6.1
+   Compiling digest v0.10.7
+   Compiling syn v2.0.117
+   Compiling serde v1.0.228
+   Compiling serde_json v1.0.150
+   Compiling serde_derive v1.0.228
+   Compiling cpufeatures v0.2.17
+   Compiling cfg-if v1.0.5
+   Compiling itoa v1.0.18
+   Compiling memchr v2.8.3
+   Compiling sha2 v0.10.9
+   Compiling hmac v0.12.1
+   Compiling hex v0.4.3
+   Compiling agent-forge-core v0.1.0 (/workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 8.27s
+  Executable tests/forgejo_mission_delivery_process_e2e.rs (/tmp/forgejo-mission-delivery-e2e-pbxwvu5t/target/debug/deps/forgejo_mission_delivery_process_e2e-b4b936c5c7cb8e50)
+$ /usr/bin/bwrap --die-with-parent --unshare-net --unshare-pid --new-session --ro-bind /usr /usr --dir /etc --ro-bind /etc/alternatives /etc/alternatives --symlink usr/lib /lib --symlink usr/bin /bin --dir /home --dir /workspace --ro-bind /tmp/forgejo-mission-delivery-e2e-pbxwvu5t/source /workspace --dir /toolchain --ro-bind /home/pc6/.rustup/toolchains/1.95.0-aarch64-unknown-linux-gnu /toolchain --dev /dev --proc /proc --tmpfs /tmp --dir /tmp/cargo-home --dir /tmp/cargo-home/registry --ro-bind /tmp/forgejo-mission-delivery-e2e-pbxwvu5t/cargo-registry /tmp/cargo-home/registry --dir /tmp/forgejo-mission-delivery-e2e-pbxwvu5t --dir /tmp/forgejo-mission-delivery-e2e-pbxwvu5t/target --bind /tmp/forgejo-mission-delivery-e2e-pbxwvu5t/target /tmp/forgejo-mission-delivery-e2e-pbxwvu5t/target --bind /tmp/forgejo-mission-delivery-e2e-pbxwvu5t/runtime-build-forgejo_mission_delivery_process /workspace/.runtime --clearenv --setenv PATH /toolchain/bin:/usr/bin:/bin --setenv HOME /tmp --setenv TMPDIR /tmp --setenv CARGO_HOME /tmp/cargo-home --setenv CARGO_TARGET_DIR /tmp/forgejo-mission-delivery-e2e-pbxwvu5t/target --setenv CARGO_NET_OFFLINE true --setenv CARGO_BUILD_JOBS 2 --setenv RUSTC /toolchain/bin/rustc --setenv RUST_TEST_THREADS 1 --setenv MISSION_E2E_RUST_SYSROOT /toolchain --setenv MISSION_E2E_RUST_BIN_DIR /toolchain/bin --setenv MISSION_E2E_MASKED_HOME /home/pc6 --chdir /workspace /usr/bin/prlimit --cpu=240 --as=4294967296 --nproc=384 --nofile=128 --fsize=67108864 -- /toolchain/bin/cargo test --offline --locked --test forgejo_mission_delivery_process --no-run
+   Compiling agent-forge-core v0.1.0 (/workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.27s
+  Executable tests/forgejo_mission_delivery_process.rs (/tmp/forgejo-mission-delivery-e2e-pbxwvu5t/target/debug/deps/forgejo_mission_delivery_process-e3f068f8296e9210)
+$ /usr/bin/bwrap --die-with-parent --unshare-net --unshare-pid --new-session --ro-bind /usr /usr --dir /etc --ro-bind /etc/alternatives /etc/alternatives --symlink usr/lib /lib --symlink usr/bin /bin --dir /home --dir /workspace --ro-bind /tmp/forgejo-mission-delivery-e2e-pbxwvu5t/source /workspace --dir /toolchain --ro-bind /home/pc6/.rustup/toolchains/1.95.0-aarch64-unknown-linux-gnu /toolchain --dev /dev --proc /proc --tmpfs /tmp --dir /tmp/cargo-home --dir /tmp/cargo-home/registry --ro-bind /tmp/forgejo-mission-delivery-e2e-pbxwvu5t/cargo-registry /tmp/cargo-home/registry --dir /tmp/forgejo-mission-delivery-e2e-pbxwvu5t --dir /tmp/forgejo-mission-delivery-e2e-pbxwvu5t/target --ro-bind /tmp/forgejo-mission-delivery-e2e-pbxwvu5t/target /tmp/forgejo-mission-delivery-e2e-pbxwvu5t/target --bind /tmp/forgejo-mission-delivery-e2e-pbxwvu5t/runtime-0 /workspace/.runtime --clearenv --setenv PATH /toolchain/bin:/usr/bin:/bin --setenv HOME /tmp --setenv TMPDIR /tmp --setenv CARGO_HOME /tmp/cargo-home --setenv CARGO_TARGET_DIR /tmp/forgejo-mission-delivery-e2e-pbxwvu5t/target --setenv CARGO_NET_OFFLINE true --setenv CARGO_BUILD_JOBS 2 --setenv RUSTC /toolchain/bin/rustc --setenv RUST_TEST_THREADS 1 --setenv MISSION_E2E_RUST_SYSROOT /toolchain --setenv MISSION_E2E_RUST_BIN_DIR /toolchain/bin --setenv MISSION_E2E_MASKED_HOME /home/pc6 --chdir /workspace /usr/bin/prlimit --cpu=240 --as=4294967296 --nproc=384 --nofile=128 --fsize=67108864 -- /tmp/forgejo-mission-delivery-e2e-pbxwvu5t/target/debug/deps/forgejo_mission_delivery_process_e2e-b4b936c5c7cb8e50 actual_mission_cli_admits_signed_webhook_after_closed_refusal_and_reuses_allocation --exact --ignored --nocapture
+
+running 1 test
+test actual_mission_cli_admits_signed_webhook_after_closed_refusal_and_reuses_allocation ... process-e2e: closed refusal=mission_issue_closed; corrected admission=claimed; duplicate retry and new delivery reused allocation=admission-41 generation=1; inbox deliveries=2; fixture HTTP requests=31
+ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 1 filtered out; finished in 0.23s
+
+$ /usr/bin/bwrap --die-with-parent --unshare-net --unshare-pid --new-session --ro-bind /usr /usr --dir /etc --ro-bind /etc/alternatives /etc/alternatives --symlink usr/lib /lib --symlink usr/bin /bin --dir /home --dir /workspace --ro-bind /tmp/forgejo-mission-delivery-e2e-pbxwvu5t/source /workspace --dir /toolchain --ro-bind /home/pc6/.rustup/toolchains/1.95.0-aarch64-unknown-linux-gnu /toolchain --dev /dev --proc /proc --tmpfs /tmp --dir /tmp/cargo-home --dir /tmp/cargo-home/registry --ro-bind /tmp/forgejo-mission-delivery-e2e-pbxwvu5t/cargo-registry /tmp/cargo-home/registry --dir /tmp/forgejo-mission-delivery-e2e-pbxwvu5t --dir /tmp/forgejo-mission-delivery-e2e-pbxwvu5t/target --ro-bind /tmp/forgejo-mission-delivery-e2e-pbxwvu5t/target /tmp/forgejo-mission-delivery-e2e-pbxwvu5t/target --bind /tmp/forgejo-mission-delivery-e2e-pbxwvu5t/runtime-1 /workspace/.runtime --clearenv --setenv PATH /toolchain/bin:/usr/bin:/bin --setenv HOME /tmp --setenv TMPDIR /tmp --setenv CARGO_HOME /tmp/cargo-home --setenv CARGO_TARGET_DIR /tmp/forgejo-mission-delivery-e2e-pbxwvu5t/target --setenv CARGO_NET_OFFLINE true --setenv CARGO_BUILD_JOBS 2 --setenv RUSTC /toolchain/bin/rustc --setenv RUST_TEST_THREADS 1 --setenv MISSION_E2E_RUST_SYSROOT /toolchain --setenv MISSION_E2E_RUST_BIN_DIR /toolchain/bin --setenv MISSION_E2E_MASKED_HOME /home/pc6 --chdir /workspace /usr/bin/prlimit --cpu=240 --as=4294967296 --nproc=384 --nofile=128 --fsize=67108864 -- /tmp/forgejo-mission-delivery-e2e-pbxwvu5t/target/debug/deps/forgejo_mission_delivery_process-e3f068f8296e9210 launched_cli_refuses_an_unknown_delivery_without_creating_runtime_state --exact --ignored --nocapture
+
+running 1 test
+test launched_cli_refuses_an_unknown_delivery_without_creating_runtime_state ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 2 filtered out; finished in 0.00s
+
+$ /usr/bin/bwrap --die-with-parent --unshare-net --unshare-pid --new-session --ro-bind /usr /usr --dir /etc --ro-bind /etc/alternatives /etc/alternatives --symlink usr/lib /lib --symlink usr/bin /bin --dir /home --dir /workspace --ro-bind /tmp/forgejo-mission-delivery-e2e-pbxwvu5t/source /workspace --dir /toolchain --ro-bind /home/pc6/.rustup/toolchains/1.95.0-aarch64-unknown-linux-gnu /toolchain --dev /dev --proc /proc --tmpfs /tmp --dir /tmp/cargo-home --dir /tmp/cargo-home/registry --ro-bind /tmp/forgejo-mission-delivery-e2e-pbxwvu5t/cargo-registry /tmp/cargo-home/registry --dir /tmp/forgejo-mission-delivery-e2e-pbxwvu5t --dir /tmp/forgejo-mission-delivery-e2e-pbxwvu5t/target --ro-bind /tmp/forgejo-mission-delivery-e2e-pbxwvu5t/target /tmp/forgejo-mission-delivery-e2e-pbxwvu5t/target --bind /tmp/forgejo-mission-delivery-e2e-pbxwvu5t/runtime-2 /workspace/.runtime --clearenv --setenv PATH /toolchain/bin:/usr/bin:/bin --setenv HOME /tmp --setenv TMPDIR /tmp --setenv CARGO_HOME /tmp/cargo-home --setenv CARGO_TARGET_DIR /tmp/forgejo-mission-delivery-e2e-pbxwvu5t/target --setenv CARGO_NET_OFFLINE true --setenv CARGO_BUILD_JOBS 2 --setenv RUSTC /toolchain/bin/rustc --setenv RUST_TEST_THREADS 1 --setenv MISSION_E2E_RUST_SYSROOT /toolchain --setenv MISSION_E2E_RUST_BIN_DIR /toolchain/bin --setenv MISSION_E2E_MASKED_HOME /home/pc6 --chdir /workspace /usr/bin/prlimit --cpu=240 --as=4294967296 --nproc=384 --nofile=128 --fsize=67108864 -- /tmp/forgejo-mission-delivery-e2e-pbxwvu5t/target/debug/deps/forgejo_mission_delivery_process_e2e-b4b936c5c7cb8e50 mission_012_signed_request_context_red_green_independent_verification_and_sandbox_merge --exact --ignored --nocapture
+
+running 1 test
+test mission_012_signed_request_context_red_green_independent_verification_and_sandbox_merge ... mission-012-process-e2e: signed issue delivery admitted and replayed idempotently; context tied to db29bdb4ed8ad90b54066cda810b6b8a9468dd70; red acceptance failure followed by green fix; forbidden test rewrite and self-status denied; independent verifier=pass for d172c182af8c15ce78a5753d6a54cfec12b339d1; local sandbox main advanced to d172c182af8c15ce78a5753d6a54cfec12b339d1 with matching tree. Forgejo API, PR creation and LLM were not exercised in this test.
+ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 1 filtered out; finished in 2.17s
+

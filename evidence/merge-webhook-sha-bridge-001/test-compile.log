@@ -1,0 +1,2 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.01s
+  Executable tests/forgejo_merge_post_crash_recovery_process_e2e.rs (target/debug/deps/forgejo_merge_post_crash_recovery_process_e2e-a93ded6c21f8476f)

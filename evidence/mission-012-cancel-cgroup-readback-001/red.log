@@ -1,0 +1,39 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+error[E0425]: cannot find function `live_process_in_cgroup` in this scope
+   --> tests/mission_012_mcp_lifecycle.rs:623:13
+    |
+623 |     assert!(live_process_in_cgroup(scope, Some('S'), Some(scope)));
+    |             ^^^^^^^^^^^^^^^^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function `live_process_in_cgroup` in this scope
+   --> tests/mission_012_mcp_lifecycle.rs:624:13
+    |
+624 |     assert!(live_process_in_cgroup(
+    |             ^^^^^^^^^^^^^^^^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function `live_process_in_cgroup` in this scope
+   --> tests/mission_012_mcp_lifecycle.rs:629:14
+    |
+629 |     assert!(!live_process_in_cgroup(scope, None, None));
+    |              ^^^^^^^^^^^^^^^^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function `live_process_in_cgroup` in this scope
+   --> tests/mission_012_mcp_lifecycle.rs:630:14
+    |
+630 |     assert!(!live_process_in_cgroup(scope, Some('Z'), Some(scope)));
+    |              ^^^^^^^^^^^^^^^^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function `live_process_in_cgroup` in this scope
+   --> tests/mission_012_mcp_lifecycle.rs:631:14
+    |
+631 |     assert!(!live_process_in_cgroup(scope, Some('X'), Some(scope)));
+    |              ^^^^^^^^^^^^^^^^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function `live_process_in_cgroup` in this scope
+   --> tests/mission_012_mcp_lifecycle.rs:632:14
+    |
+632 |     assert!(!live_process_in_cgroup(
+    |              ^^^^^^^^^^^^^^^^^^^^^^ not found in this scope
+
+For more information about this error, try `rustc --explain E0425`.
+error: could not compile `agent-forge-core` (test "mission_012_mcp_lifecycle") due to 6 previous errors

@@ -1,0 +1,81 @@
+$ /usr/bin/bwrap --die-with-parent --unshare-net --unshare-pid --new-session --ro-bind /usr /usr --dir /etc --ro-bind /etc/alternatives /etc/alternatives --symlink usr/lib /lib --symlink usr/bin /bin --dir /home --dir /workspace --ro-bind /tmp/forgejo-mission-delivery-e2e-3thp3cxf/source /workspace --dir /toolchain --ro-bind /home/pc6/.rustup/toolchains/1.95.0-aarch64-unknown-linux-gnu /toolchain --dev /dev --proc /proc --size 134217728 --tmpfs /tmp --dir /tmp/cargo-home --dir /tmp/cargo-home/registry --ro-bind /tmp/forgejo-mission-delivery-e2e-3thp3cxf/cargo-registry /tmp/cargo-home/registry --dir /build --size 1073741824 --tmpfs /build/target --size 67108864 --tmpfs /workspace/.runtime --clearenv --setenv PATH /toolchain/bin:/usr/bin:/bin --setenv HOME /tmp --setenv TMPDIR /tmp --setenv CARGO_HOME /tmp/cargo-home --setenv CARGO_TARGET_DIR /build/target --setenv CARGO_NET_OFFLINE true --setenv CARGO_BUILD_JOBS 2 --setenv RUSTC /toolchain/bin/rustc --setenv RUST_TEST_THREADS 1 --setenv MISSION_E2E_RUST_SYSROOT /toolchain --setenv MISSION_E2E_RUST_BIN_DIR /toolchain/bin --setenv MISSION_E2E_MASKED_HOME /home/pc6 --chdir /workspace --size 134217728 --tmpfs /artifacts --bind /tmp/forgejo-mission-delivery-e2e-3thp3cxf/forgejo_mission_delivery_process_e2e /artifacts/forgejo_mission_delivery_process_e2e --bind /tmp/forgejo-mission-delivery-e2e-3thp3cxf/forgejo_mission_delivery_process /artifacts/forgejo_mission_delivery_process --bind /tmp/forgejo-mission-delivery-e2e-3thp3cxf/forgejo-mission-local /artifacts/forgejo-mission-local --bind /tmp/forgejo-mission-delivery-e2e-3thp3cxf/forgejo-webhook-local /artifacts/forgejo-webhook-local --bind /tmp/forgejo-mission-delivery-e2e-3thp3cxf/mission-012-mcp-host /artifacts/mission-012-mcp-host --bind /tmp/forgejo-mission-delivery-e2e-3thp3cxf/mission-012-verify-local /artifacts/mission-012-verify-local /usr/bin/prlimit --cpu=240 --as=4294967296 --nproc=384 --nofile=128 --fsize=67108864 -- /usr/bin/python3 -c 'import glob, json, os, shutil, subprocess, sys
+tests = json.loads(sys.argv[1])
+bins = json.loads(sys.argv[2])
+for name in tests:
+    subprocess.run([
+        "/toolchain/bin/cargo", "test", "--offline", "--locked",
+        "--test", name, "--no-run"
+    ], check=True)
+for name in tests:
+    paths = [
+        path for path in glob.glob(f"/build/target/debug/deps/{name}-*")
+        if os.path.isfile(path) and os.access(path, os.X_OK)
+    ]
+    if len(paths) != 1:
+        raise SystemExit(f"expected one test executable for {name}, got {paths!r}")
+    shutil.copyfile(paths[0], f"/artifacts/{name}")
+for name in bins:
+    path = f"/build/target/debug/{name}"
+    if not os.path.isfile(path) or not os.access(path, os.X_OK):
+        raise SystemExit(f"Cargo binary target missing or not executable: {name}")
+    shutil.copyfile(path, f"/artifacts/{name}")
+' '["forgejo_mission_delivery_process_e2e", "forgejo_mission_delivery_process"]' '["forgejo-mission-local", "forgejo-webhook-local", "mission-012-mcp-host", "mission-012-verify-local"]'
+   Compiling version_check v0.9.5
+   Compiling typenum v1.20.0
+   Compiling generic-array v0.14.7
+   Compiling proc-macro2 v1.0.107
+   Compiling quote v1.0.47
+   Compiling unicode-ident v1.0.26
+   Compiling serde_core v1.0.228
+   Compiling libc v0.2.190
+   Compiling crypto-common v0.1.7
+   Compiling block-buffer v0.10.4
+   Compiling zmij v1.0.23
+   Compiling subtle v2.6.1
+   Compiling digest v0.10.7
+   Compiling syn v2.0.117
+   Compiling serde_json v1.0.150
+   Compiling serde v1.0.228
+   Compiling serde_derive v1.0.228
+   Compiling cpufeatures v0.2.17
+   Compiling itoa v1.0.18
+   Compiling cfg-if v1.0.5
+   Compiling memchr v2.8.3
+   Compiling sha2 v0.10.9
+   Compiling hmac v0.12.1
+   Compiling hex v0.4.3
+   Compiling agent-forge-core v0.1.0 (/workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 8.36s
+  Executable tests/forgejo_mission_delivery_process_e2e.rs (/build/target/debug/deps/forgejo_mission_delivery_process_e2e-b4b936c5c7cb8e50)
+   Compiling agent-forge-core v0.1.0 (/workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.31s
+  Executable tests/forgejo_mission_delivery_process.rs (/build/target/debug/deps/forgejo_mission_delivery_process-e3f068f8296e9210)
+$ /usr/bin/bwrap --die-with-parent --unshare-net --unshare-pid --new-session --ro-bind /usr /usr --dir /etc --ro-bind /etc/alternatives /etc/alternatives --symlink usr/lib /lib --symlink usr/bin /bin --dir /home --dir /workspace --ro-bind /tmp/forgejo-mission-delivery-e2e-3thp3cxf/source /workspace --dir /toolchain --ro-bind /home/pc6/.rustup/toolchains/1.95.0-aarch64-unknown-linux-gnu /toolchain --dev /dev --proc /proc --size 134217728 --tmpfs /tmp --dir /tmp/cargo-home --dir /tmp/cargo-home/registry --ro-bind /tmp/forgejo-mission-delivery-e2e-3thp3cxf/cargo-registry /tmp/cargo-home/registry --dir /build --size 1073741824 --tmpfs /build/target --size 67108864 --tmpfs /workspace/.runtime --clearenv --setenv PATH /toolchain/bin:/usr/bin:/bin --setenv HOME /tmp --setenv TMPDIR /tmp --setenv CARGO_HOME /tmp/cargo-home --setenv CARGO_TARGET_DIR /build/target --setenv CARGO_NET_OFFLINE true --setenv CARGO_BUILD_JOBS 2 --setenv RUSTC /toolchain/bin/rustc --setenv RUST_TEST_THREADS 1 --setenv MISSION_E2E_RUST_SYSROOT /toolchain --setenv MISSION_E2E_RUST_BIN_DIR /toolchain/bin --setenv MISSION_E2E_MASKED_HOME /home/pc6 --chdir /workspace --dir /build --dir /build/target --dir /build/target/debug --ro-bind /tmp/forgejo-mission-delivery-e2e-3thp3cxf/forgejo-mission-local /build/target/debug/forgejo-mission-local --ro-bind /tmp/forgejo-mission-delivery-e2e-3thp3cxf/forgejo-webhook-local /build/target/debug/forgejo-webhook-local --ro-bind /tmp/forgejo-mission-delivery-e2e-3thp3cxf/mission-012-mcp-host /build/target/debug/mission-012-mcp-host --ro-bind /tmp/forgejo-mission-delivery-e2e-3thp3cxf/mission-012-verify-local /build/target/debug/mission-012-verify-local --ro-bind /tmp/forgejo-mission-delivery-e2e-3thp3cxf/forgejo_mission_delivery_process_e2e /test-binary /usr/bin/prlimit --cpu=240 --as=4294967296 --nproc=384 --nofile=128 --fsize=67108864 -- /test-binary actual_mission_cli_admits_signed_webhook_after_closed_refusal_and_reuses_allocation --exact --ignored --nocapture
+
+running 1 test
+test actual_mission_cli_admits_signed_webhook_after_closed_refusal_and_reuses_allocation ... 
+thread 'actual_mission_cli_admits_signed_webhook_after_closed_refusal_and_reuses_allocation' (3) panicked at tests/forgejo_mission_delivery_process_e2e.rs:405:5:
+assertion `left == right` failed
+  left: 493
+ right: 448
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+FAILED
+
+failures:
+
+failures:
+    actual_mission_cli_admits_signed_webhook_after_closed_refusal_and_reuses_allocation
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 1 filtered out; finished in 0.00s
+
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/scripts/run_forgejo_mission_delivery_process_e2e.py", line 410, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/scripts/run_forgejo_mission_delivery_process_e2e.py", line 394, in main
+    run(
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/scripts/run_forgejo_mission_delivery_process_e2e.py", line 43, in run
+    subprocess.run(command, cwd=cwd, env=env, check=True, timeout=300)
+  File "/usr/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/usr/bin/bwrap', '--die-with-parent', '--unshare-net', '--unshare-pid', '--new-session', '--ro-bind', '/usr', '/usr', '--dir', '/etc', '--ro-bind', '/etc/alternatives', '/etc/alternatives', '--symlink', 'usr/lib', '/lib', '--symlink', 'usr/bin', '/bin', '--dir', '/home', '--dir', '/workspace', '--ro-bind', '/tmp/forgejo-mission-delivery-e2e-3thp3cxf/source', '/workspace', '--dir', '/toolchain', '--ro-bind', '/home/pc6/.rustup/toolchains/1.95.0-aarch64-unknown-linux-gnu', '/toolchain', '--dev', '/dev', '--proc', '/proc', '--size', '134217728', '--tmpfs', '/tmp', '--dir', '/tmp/cargo-home', '--dir', '/tmp/cargo-home/registry', '--ro-bind', '/tmp/forgejo-mission-delivery-e2e-3thp3cxf/cargo-registry', '/tmp/cargo-home/registry', '--dir', '/build', '--size', '1073741824', '--tmpfs', '/build/target', '--size', '67108864', '--tmpfs', '/workspace/.runtime', '--clearenv', '--setenv', 'PATH', '/toolchain/bin:/usr/bin:/bin', '--setenv', 'HOME', '/tmp', '--setenv', 'TMPDIR', '/tmp', '--setenv', 'CARGO_HOME', '/tmp/cargo-home', '--setenv', 'CARGO_TARGET_DIR', '/build/target', '--setenv', 'CARGO_NET_OFFLINE', 'true', '--setenv', 'CARGO_BUILD_JOBS', '2', '--setenv', 'RUSTC', '/toolchain/bin/rustc', '--setenv', 'RUST_TEST_THREADS', '1', '--setenv', 'MISSION_E2E_RUST_SYSROOT', '/toolchain', '--setenv', 'MISSION_E2E_RUST_BIN_DIR', '/toolchain/bin', '--setenv', 'MISSION_E2E_MASKED_HOME', '/home/pc6', '--chdir', '/workspace', '--dir', '/build', '--dir', '/build/target', '--dir', '/build/target/debug', '--ro-bind', '/tmp/forgejo-mission-delivery-e2e-3thp3cxf/forgejo-mission-local', '/build/target/debug/forgejo-mission-local', '--ro-bind', '/tmp/forgejo-mission-delivery-e2e-3thp3cxf/forgejo-webhook-local', '/build/target/debug/forgejo-webhook-local', '--ro-bind', '/tmp/forgejo-mission-delivery-e2e-3thp3cxf/mission-012-mcp-host', '/build/target/debug/mission-012-mcp-host', '--ro-bind', '/tmp/forgejo-mission-delivery-e2e-3thp3cxf/mission-012-verify-local', '/build/target/debug/mission-012-verify-local', '--ro-bind', '/tmp/forgejo-mission-delivery-e2e-3thp3cxf/forgejo_mission_delivery_process_e2e', '/test-binary', '/usr/bin/prlimit', '--cpu=240', '--as=4294967296', '--nproc=384', '--nofile=128', '--fsize=67108864', '--', '/test-binary', 'actual_mission_cli_admits_signed_webhook_after_closed_refusal_and_reuses_allocation', '--exact', '--ignored', '--nocapture']' returned non-zero exit status 101.

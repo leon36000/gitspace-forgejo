@@ -1,0 +1,12 @@
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/mission_012_mcp_lifecycle.rs:628:
+     if matches!(process_state, 'Z' | 'X') {
+         return false;
+     }
+-    process_cgroup.is_some_and(|path| {
+-        path == cgroup_path || path.starts_with(&format!("{cgroup_path}/"))
+-    })
++    process_cgroup
++        .is_some_and(|path| path == cgroup_path || path.starts_with(&format!("{cgroup_path}/")))
+ }
+ 
+ fn linux_live_pids_in_cgroup(cgroup_path: &str) -> Vec<u32> {

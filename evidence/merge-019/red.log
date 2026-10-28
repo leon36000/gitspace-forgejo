@@ -1,0 +1,20 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.87s
+     Running unittests src/bin/forgejo-reconcile-local.rs (target/debug/deps/forgejo_reconcile_local-3e9fc5f7734f2ac5)
+
+running 1 test
+
+thread 'tests::local_merge_gate_rechecks_branch_protection_immediately_before_merge_post' (2780342) panicked at src/bin/forgejo-reconcile-local.rs:7285:9:
+assertion failed: !merge_authorized
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test tests::local_merge_gate_rechecks_branch_protection_immediately_before_merge_post ... FAILED
+
+failures:
+
+failures:
+    tests::local_merge_gate_rechecks_branch_protection_immediately_before_merge_post
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 78 filtered out; finished in 0.09s
+
+error: test failed, to rerun pass `--bin forgejo-reconcile-local`
+exit_code=101

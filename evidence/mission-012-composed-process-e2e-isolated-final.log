@@ -1,0 +1,55 @@
+$ /home/pc6/.cargo/bin/cargo test --offline --locked --test forgejo_mission_delivery_process_e2e --no-run
+   Compiling version_check v0.9.5
+   Compiling typenum v1.20.0
+   Compiling proc-macro2 v1.0.107
+   Compiling unicode-ident v1.0.26
+   Compiling quote v1.0.47
+   Compiling serde_core v1.0.228
+   Compiling libc v0.2.190
+   Compiling zmij v1.0.23
+   Compiling subtle v2.6.1
+   Compiling serde_json v1.0.150
+   Compiling serde v1.0.228
+   Compiling itoa v1.0.18
+   Compiling memchr v2.8.3
+   Compiling cfg-if v1.0.5
+   Compiling hex v0.4.3
+   Compiling generic-array v0.14.7
+   Compiling syn v2.0.117
+   Compiling block-buffer v0.10.4
+   Compiling crypto-common v0.1.7
+   Compiling digest v0.10.7
+   Compiling cpufeatures v0.2.17
+   Compiling sha2 v0.10.9
+   Compiling hmac v0.12.1
+   Compiling serde_derive v1.0.228
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 4.07s
+  Executable tests/forgejo_mission_delivery_process_e2e.rs (/tmp/forgejo-mission-delivery-e2e-q7fuv2f5/target/debug/deps/forgejo_mission_delivery_process_e2e-b4b936c5c7cb8e50)
+$ /home/pc6/.cargo/bin/cargo test --offline --locked --test forgejo_mission_delivery_process --no-run
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.24s
+  Executable tests/forgejo_mission_delivery_process.rs (/tmp/forgejo-mission-delivery-e2e-q7fuv2f5/target/debug/deps/forgejo_mission_delivery_process-e3f068f8296e9210)
+$ /usr/bin/bwrap --die-with-parent --unshare-net --unshare-pid --new-session --ro-bind /usr /usr --dir /etc --ro-bind /etc/alternatives /etc/alternatives --symlink usr/lib /lib --symlink usr/bin /bin --dir /home --dir /home/pc6 --dir /home/pc6/Documents --dir /home/pc6/Documents/Codex --dir /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue --dir /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime --dir /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace --ro-bind /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace --dir /toolchain --ro-bind /home/pc6/.rustup/toolchains/1.95.0-aarch64-unknown-linux-gnu /toolchain --dev /dev --proc /proc --tmpfs /tmp --dir /tmp/forgejo-mission-delivery-e2e-q7fuv2f5 --dir /tmp/forgejo-mission-delivery-e2e-q7fuv2f5/target --ro-bind /tmp/forgejo-mission-delivery-e2e-q7fuv2f5/target /tmp/forgejo-mission-delivery-e2e-q7fuv2f5/target --bind /tmp/forgejo-mission-delivery-e2e-q7fuv2f5/runtime-0 /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/.runtime --clearenv --setenv PATH /usr/bin:/bin --setenv HOME /tmp --setenv TMPDIR /tmp --setenv RUST_TEST_THREADS 1 --setenv MISSION_E2E_RUST_SYSROOT /toolchain --setenv MISSION_E2E_RUST_BIN_DIR /toolchain/bin --setenv MISSION_E2E_MASKED_HOME /home/pc6 --chdir /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace /tmp/forgejo-mission-delivery-e2e-q7fuv2f5/target/debug/deps/forgejo_mission_delivery_process_e2e-b4b936c5c7cb8e50 actual_mission_cli_admits_signed_webhook_after_closed_refusal_and_reuses_allocation --exact --ignored --nocapture
+
+running 1 test
+test actual_mission_cli_admits_signed_webhook_after_closed_refusal_and_reuses_allocation ... process-e2e: closed refusal=mission_issue_closed; corrected admission=claimed; duplicate retry and new delivery reused allocation=admission-41 generation=1; inbox deliveries=2; fixture HTTP requests=31
+ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 1 filtered out; finished in 0.25s
+
+$ /usr/bin/bwrap --die-with-parent --unshare-net --unshare-pid --new-session --ro-bind /usr /usr --dir /etc --ro-bind /etc/alternatives /etc/alternatives --symlink usr/lib /lib --symlink usr/bin /bin --dir /home --dir /home/pc6 --dir /home/pc6/Documents --dir /home/pc6/Documents/Codex --dir /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue --dir /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime --dir /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace --ro-bind /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace --dir /toolchain --ro-bind /home/pc6/.rustup/toolchains/1.95.0-aarch64-unknown-linux-gnu /toolchain --dev /dev --proc /proc --tmpfs /tmp --dir /tmp/forgejo-mission-delivery-e2e-q7fuv2f5 --dir /tmp/forgejo-mission-delivery-e2e-q7fuv2f5/target --ro-bind /tmp/forgejo-mission-delivery-e2e-q7fuv2f5/target /tmp/forgejo-mission-delivery-e2e-q7fuv2f5/target --bind /tmp/forgejo-mission-delivery-e2e-q7fuv2f5/runtime-1 /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/.runtime --clearenv --setenv PATH /usr/bin:/bin --setenv HOME /tmp --setenv TMPDIR /tmp --setenv RUST_TEST_THREADS 1 --setenv MISSION_E2E_RUST_SYSROOT /toolchain --setenv MISSION_E2E_RUST_BIN_DIR /toolchain/bin --setenv MISSION_E2E_MASKED_HOME /home/pc6 --chdir /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace /tmp/forgejo-mission-delivery-e2e-q7fuv2f5/target/debug/deps/forgejo_mission_delivery_process-e3f068f8296e9210 launched_cli_refuses_an_unknown_delivery_without_creating_runtime_state --exact --ignored --nocapture
+
+running 1 test
+test launched_cli_refuses_an_unknown_delivery_without_creating_runtime_state ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 2 filtered out; finished in 0.00s
+
+$ /usr/bin/bwrap --die-with-parent --unshare-net --unshare-pid --new-session --ro-bind /usr /usr --dir /etc --ro-bind /etc/alternatives /etc/alternatives --symlink usr/lib /lib --symlink usr/bin /bin --dir /home --dir /home/pc6 --dir /home/pc6/Documents --dir /home/pc6/Documents/Codex --dir /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue --dir /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime --dir /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace --ro-bind /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace --dir /toolchain --ro-bind /home/pc6/.rustup/toolchains/1.95.0-aarch64-unknown-linux-gnu /toolchain --dev /dev --proc /proc --tmpfs /tmp --dir /tmp/forgejo-mission-delivery-e2e-q7fuv2f5 --dir /tmp/forgejo-mission-delivery-e2e-q7fuv2f5/target --ro-bind /tmp/forgejo-mission-delivery-e2e-q7fuv2f5/target /tmp/forgejo-mission-delivery-e2e-q7fuv2f5/target --bind /tmp/forgejo-mission-delivery-e2e-q7fuv2f5/runtime-2 /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/.runtime --clearenv --setenv PATH /usr/bin:/bin --setenv HOME /tmp --setenv TMPDIR /tmp --setenv RUST_TEST_THREADS 1 --setenv MISSION_E2E_RUST_SYSROOT /toolchain --setenv MISSION_E2E_RUST_BIN_DIR /toolchain/bin --setenv MISSION_E2E_MASKED_HOME /home/pc6 --chdir /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace /tmp/forgejo-mission-delivery-e2e-q7fuv2f5/target/debug/deps/forgejo_mission_delivery_process_e2e-b4b936c5c7cb8e50 mission_012_signed_request_context_red_green_independent_verification_and_sandbox_merge --exact --ignored --nocapture
+
+running 1 test
+test mission_012_signed_request_context_red_green_independent_verification_and_sandbox_merge ... mission-012-process-e2e: signed issue delivery admitted and replayed idempotently; context tied to d13d9dee3e9dfc5629b32445b8d25a76aa268485; red acceptance failure followed by green fix; forbidden test rewrite and self-status denied; independent verifier=pass for 02b395ee513d2c5c9ba7bb0c699bd4182c0aaf62; local sandbox main advanced to 02b395ee513d2c5c9ba7bb0c699bd4182c0aaf62 with matching tree. Forgejo API, PR creation and LLM were not exercised in this test.
+ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 1 filtered out; finished in 2.27s
+

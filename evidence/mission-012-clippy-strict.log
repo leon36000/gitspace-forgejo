@@ -1,0 +1,64 @@
+command: cargo clippy --offline --locked --bin mission-012-mcp-host --bin mission-012-verify-local -- -D warnings
+exit_code: 101
+--- stdout ---
+--- stderr ---
+    Checking agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+error: this function has too many arguments (10/7)
+   --> src/agent_runtime.rs:210:5
+    |
+210 | /     pub fn acquire_lease(
+211 | |         &self,
+212 | |         scope: &BaseBranchScope,
+213 | |         issue_number: u64,
+...   |
+220 | |         request: &AgentExecutionRequestV1,
+221 | |     ) -> Result<MissionExecutionLeaseV1, AgentRuntimeErrorV1> {
+    | |_____________________________________________________________^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#too_many_arguments
+    = note: `-D clippy::too-many-arguments` implied by `-D warnings`
+    = help: to override `-D warnings` add `#[allow(clippy::too_many_arguments)]`
+
+error: this function has too many arguments (10/7)
+   --> src/mission_admission.rs:138:1
+    |
+138 | / pub fn admit_reconciled_issue_v2(
+139 | |     event: &JournaledWebhookEventV1,
+140 | |     reconciliation_source: &impl ForgejoCurrentState,
+141 | |     scope: &BaseBranchScope,
+...   |
+148 | |     journal: &MissionExecutionJournalV1,
+149 | | ) -> Result<WebhookMissionAdmissionReceiptV1, WebhookMissionAdmissionErrorV1> {
+    | |_____________________________________________________________________________^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#too_many_arguments
+
+error: this function has too many arguments (8/7)
+   --> src/mission_admission.rs:236:1
+    |
+236 | / fn admit_and_claim_mission_v2_with_expected_hash(
+237 | |     scope: &BaseBranchScope,
+238 | |     binding: &MissionAdmissionBindingV2,
+239 | |     source: &dyn MissionAdmissionSourceV1,
+...   |
+244 | |     expected_requirement_sha256: Option<&str>,
+245 | | ) -> Result<MissionAdmissionReceiptV2, AgentRuntimeErrorV1> {
+    | |___________________________________________________________^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#too_many_arguments
+
+error: this function has too many arguments (10/7)
+   --> src/mission_admission.rs:315:1
+    |
+315 | / fn prepare_admission(
+316 | |     scope: &BaseBranchScope,
+317 | |     issue_number: u64,
+318 | |     requirement_id: &str,
+...   |
+325 | |     allocate_generation: impl FnOnce(&str) -> Result<GenerationChoice, AgentRuntimeErrorV1>,
+326 | | ) -> Result<PreparedAdmission, AgentRuntimeErrorV1> {
+    | |___________________________________________________^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#too_many_arguments
+
+error: could not compile `agent-forge-core` (lib) due to 4 previous errors

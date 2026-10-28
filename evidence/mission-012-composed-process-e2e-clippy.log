@@ -1,0 +1,16 @@
+    Checking agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+error: useless use of `format!`
+    --> tests/forgejo_mission_delivery_process_e2e.rs:1129:37
+     |
+1129 |       assert!(fixture_paths.contains(&format!(
+     |  _____________________________________^
+1130 | |         "/api/v1/repos/forge-admin/mission-012-clamp/branches/main"
+1131 | |     )));
+     | |_____^ help: consider using `.to_string()`: `"/api/v1/repos/forge-admin/mission-012-clamp/branches/main".to_string()`
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#useless_format
+     = note: `-D clippy::useless-format` implied by `-D warnings`
+     = help: to override `-D warnings` add `#[allow(clippy::useless_format)]`
+
+error: could not compile `agent-forge-core` (test "forgejo_mission_delivery_process_e2e") due to 1 previous error
+warning: build failed, waiting for other jobs to finish...

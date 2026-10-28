@@ -1,0 +1,15 @@
+{
+  "artifacts": [
+    "merge-account-role-readback.json",
+    "followup-run-result.json"
+  ],
+  "attestation_scope": "local hashes bind the recorded files; they do not prove runtime truth or software correctness",
+  "driver": "scripts/run_forgejo_live_pr_merge_e2e.py",
+  "driver_sha256": "a73a9ea7e41354a6ca3bb9961bd8ef8fab15dc561a1f1ef093a9e8ca4527cf99",
+  "forgejo_binary": "/tmp/forgejo-17.0.0",
+  "forgejo_binary_sha256": "e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7",
+  "scenario": "MERGE-020 non-admin role readback follow-up",
+  "schema_version": 1,
+  "state_dir": "/tmp/forgejo-merge-020-nonadmin-004",
+  "workspace_head": "f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0"
+}

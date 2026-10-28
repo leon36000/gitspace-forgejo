@@ -1,0 +1,1 @@
+Implement clamp_inclusive(value, min, max) in Rust. For min <= max: values below min return min; above max return max; values inside the inclusive interval remain unchanged. Acceptance tests are host-owned and immutable during execution.
