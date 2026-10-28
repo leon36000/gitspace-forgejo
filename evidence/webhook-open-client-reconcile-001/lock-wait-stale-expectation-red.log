@@ -1,0 +1,18 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.03s
+     Running tests/reconcile_journal_lock_timeout.rs (target/debug/deps/reconcile_journal_lock_timeout-b4142bc5746006ba)
+
+running 1 test
+
+thread 'actual_cli_retries_when_the_lock_is_released_inside_the_wait_window' (1979908) panicked at tests/reconcile_journal_lock_timeout.rs:144:5:
+CLI did not continue past the released lock: 
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test actual_cli_retries_when_the_lock_is_released_inside_the_wait_window ... FAILED
+
+failures:
+
+failures:
+    actual_cli_retries_when_the_lock_is_released_inside_the_wait_window
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 2 filtered out; finished in 0.26s
+
+error: test failed, to rerun pass `--test reconcile_journal_lock_timeout`

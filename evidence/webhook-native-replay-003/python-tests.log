@@ -1,0 +1,10 @@
+test_binds_failed_original_to_successful_new_uuid_and_same_payload (tests.test_forgejo_webhook_native_replay_e2e.NativeReplayBindingTests.test_binds_failed_original_to_successful_new_uuid_and_same_payload) ... ok
+test_binds_repeated_manual_replays_to_distinct_ordered_deliveries (tests.test_forgejo_webhook_native_replay_e2e.NativeReplayBindingTests.test_binds_repeated_manual_replays_to_distinct_ordered_deliveries) ... ok
+test_rejects_journal_record_bound_to_another_uuid (tests.test_forgejo_webhook_native_replay_e2e.NativeReplayBindingTests.test_rejects_journal_record_bound_to_another_uuid) ... ok
+test_rejects_nonfailed_original_or_unverified_replay (tests.test_forgejo_webhook_native_replay_e2e.NativeReplayBindingTests.test_rejects_nonfailed_original_or_unverified_replay) ... ok
+test_rejects_same_uuid_or_changed_payload (tests.test_forgejo_webhook_native_replay_e2e.NativeReplayBindingTests.test_rejects_same_uuid_or_changed_payload) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.000s
+
+OK

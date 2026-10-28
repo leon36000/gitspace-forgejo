@@ -1,0 +1,21 @@
+$ cargo fmt --all -- --check
+$ python3 -m py_compile scripts/run_webhook_reconcile_cli_e2e.py
+$ python3 scripts/test_cargo_license_state.py
+.....
+----------------------------------------------------------------------
+Ran 5 tests in 0.000s
+
+OK
+$ python3 scripts/verify_cargo_license_state.py
+{
+  "license": null,
+  "license_decision": "unselected",
+  "license_file": null,
+  "package": "agent-forge-core",
+  "publish": [],
+  "redistribution_rights": "not_assessed",
+  "status": "verified"
+}
+$ git diff --check
+trailing whitespace check on new and updated evidence/source files
+7 files: clean

@@ -1,0 +1,18 @@
+{
+  "error": "AttributeError: module 'run_forgejo_live_webhook_reconcile_emitted' has no attribute 'listener_addresses_for_port'",
+  "process_cleanup": {
+    "cleanup_failure": "receiver cleanup readback failed",
+    "forgejo_stop": {
+      "returncode": 0,
+      "started": true,
+      "stop_action": "terminate",
+      "stopped": true
+    },
+    "receiver_stops": [],
+    "tracked_processes_exited": true,
+    "webhook_deactivated_before_server_stop": true
+  },
+  "schema_version": 1,
+  "stage": "restart_receiver_with_correct_webhook_secret",
+  "verdict": "failed"
+}

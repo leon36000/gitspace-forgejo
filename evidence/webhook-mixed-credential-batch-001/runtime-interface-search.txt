@@ -1,0 +1,11 @@
+$ rg -n trait AgentRuntimeV1|struct FixtureRuntime|impl AgentRuntimeV1 src tests
+exit_code=0
+tests/agent_runtime_contract.rs:46:struct FixtureRuntime {
+tests/agent_runtime_contract.rs:50:impl AgentRuntimeV1 for FixtureRuntime {
+src/agent_runtime.rs:3225:pub trait AgentRuntimeV1 {
+
+$ rg -n AgentOS|Forge Code|ForgeCode|Ollama|Anthropic|OpenAI|LiteLLM|ModelProvider Cargo.toml src
+exit_code=1
+(no matches)
+
+Repository inventory note (docs/source-inventory.md, lines 57–59): it records a local gateway/dashboard but says the model route, authorization, and cost were not verified. No request was made to either service in this turn.

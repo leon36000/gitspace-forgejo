@@ -1,0 +1,198 @@
+{
+  "cross_origin_replay_attempt": {
+    "created_task": false,
+    "hook_task_count_after_attempt": 1,
+    "http_status": 403
+  },
+  "forgejo_version": "17.0.0+gitea-1.22.0",
+  "hook_id": 1,
+  "inactive_hook_replay": {
+    "forgejo_response_status": 0,
+    "hook_active": false,
+    "payload_unchanged": true,
+    "proxy_request_count_after": 3,
+    "proxy_request_count_before": 3,
+    "receiver_journal_count_after": 2,
+    "receiver_journal_count_before": 2,
+    "receiver_journal_unchanged": true,
+    "replay_http_status": 303,
+    "task_created": true,
+    "task_marked_delivered": true,
+    "task_succeeded": false,
+    "task_uuid": "fb44b269-0a3f-4cfd-91ff-23322e491ea1"
+  },
+  "initial_delivery": {
+    "delivery_id": "fbc70ac4-49b9-4d0c-b1c3-8ceaea87624f",
+    "http_status": 401,
+    "is_delivered": true,
+    "is_succeed": false,
+    "receiver_journal_records": 0
+  },
+  "issue_number": 1,
+  "journal_records_after_replay_and_inactive_replay": 2,
+  "native_replay": {
+    "authenticated_as": "forge-admin",
+    "binding": {
+      "all_payloads_unchanged": true,
+      "deliveries": [
+        {
+          "http_status": 202,
+          "new_delivery_id": true,
+          "original_uuid": "fbc70ac4-49b9-4d0c-b1c3-8ceaea87624f",
+          "payload_semantic_sha256": "7f8c888061511441f8dce191eae810a9531c90794020d2ded7e6076b6e79c6d5",
+          "payload_unchanged": true,
+          "replay_uuid": "2ece2f57-5323-4aec-ba7b-92f8ef929f15",
+          "sequence": 1
+        },
+        {
+          "http_status": 202,
+          "new_delivery_id": true,
+          "original_uuid": "fbc70ac4-49b9-4d0c-b1c3-8ceaea87624f",
+          "payload_semantic_sha256": "7f8c888061511441f8dce191eae810a9531c90794020d2ded7e6076b6e79c6d5",
+          "payload_unchanged": true,
+          "replay_uuid": "8577a921-61df-442c-ac9a-2b1f0813393c",
+          "sequence": 2
+        }
+      ],
+      "distinct_new_delivery_ids": true,
+      "original_uuid": "fbc70ac4-49b9-4d0c-b1c3-8ceaea87624f",
+      "replay_count": 2,
+      "replay_uuids": [
+        "2ece2f57-5323-4aec-ba7b-92f8ef929f15",
+        "8577a921-61df-442c-ac9a-2b1f0813393c"
+      ]
+    },
+    "idempotent_for_repeated_post": false,
+    "post_count_for_same_original_uuid": 2,
+    "post_results": [
+      {
+        "http_status": 303,
+        "redirect_path": "/forge-admin/agent-forge-core/settings/hooks/1"
+      },
+      {
+        "http_status": 303,
+        "redirect_path": "/forge-admin/agent-forge-core/settings/hooks/1"
+      }
+    ],
+    "route": "POST /{owner}/{repo}/settings/hooks/{id}/replay/{uuid}"
+  },
+  "no_session_replay_attempt": {
+    "created_task": false,
+    "hook_task_count_after_attempt": 1,
+    "http_status": 303,
+    "redirect_path": "/user/login"
+  },
+  "process_cleanup": {
+    "cleanup_failure": null,
+    "forgejo_stop": {
+      "returncode": 0,
+      "started": true,
+      "stop_action": "terminate",
+      "stopped": true
+    },
+    "http_proxy_listener_addresses_after_stop": [],
+    "http_proxy_stop": {
+      "stopped": true
+    },
+    "http_proxy_thread_exited": true,
+    "receiver_stops": [
+      {
+        "listener_addresses_after_stop": [],
+        "phase": "before_native_replay",
+        "stop": {
+          "returncode": 0,
+          "started": true,
+          "stop_action": "terminate",
+          "stopped": true
+        }
+      },
+      {
+        "listener_addresses_after_stop": [],
+        "phase": "final_cleanup",
+        "stop": {
+          "returncode": 0,
+          "started": true,
+          "stop_action": "terminate",
+          "stopped": true
+        }
+      }
+    ],
+    "tracked_processes_exited": true,
+    "webhook_deactivated_before_server_stop": true
+  },
+  "proxy_delivery_attempts": [
+    {
+      "delivery_id": "fbc70ac4-49b9-4d0c-b1c3-8ceaea87624f",
+      "event_type": "issues",
+      "forwarded_status": 401,
+      "method": "POST",
+      "path": "/forgejo/webhook",
+      "request_body_length": 5682,
+      "request_body_sha256": "5e4d58af1642d0980f8dde4a043394b8963ebd7cd63914a0b8df0f9449dbca1b"
+    },
+    {
+      "delivery_id": "2ece2f57-5323-4aec-ba7b-92f8ef929f15",
+      "event_type": "issues",
+      "forwarded_status": 202,
+      "method": "POST",
+      "path": "/forgejo/webhook",
+      "request_body_length": 5682,
+      "request_body_sha256": "5e4d58af1642d0980f8dde4a043394b8963ebd7cd63914a0b8df0f9449dbca1b"
+    },
+    {
+      "delivery_id": "8577a921-61df-442c-ac9a-2b1f0813393c",
+      "event_type": "issues",
+      "forwarded_status": 202,
+      "method": "POST",
+      "path": "/forgejo/webhook",
+      "request_body_length": 5682,
+      "request_body_sha256": "5e4d58af1642d0980f8dde4a043394b8963ebd7cd63914a0b8df0f9449dbca1b"
+    }
+  ],
+  "proxy_delivery_binding": {
+    "delivery_count": 3,
+    "delivery_ids": [
+      "fbc70ac4-49b9-4d0c-b1c3-8ceaea87624f",
+      "2ece2f57-5323-4aec-ba7b-92f8ef929f15",
+      "8577a921-61df-442c-ac9a-2b1f0813393c"
+    ],
+    "raw_payload_hashes": [
+      "5e4d58af1642d0980f8dde4a043394b8963ebd7cd63914a0b8df0f9449dbca1b",
+      "5e4d58af1642d0980f8dde4a043394b8963ebd7cd63914a0b8df0f9449dbca1b",
+      "5e4d58af1642d0980f8dde4a043394b8963ebd7cd63914a0b8df0f9449dbca1b"
+    ],
+    "raw_payload_hashes_match": true
+  },
+  "receiver_events": [
+    {
+      "action": "opened",
+      "delivery_id": "2ece2f57-5323-4aec-ba7b-92f8ef929f15",
+      "event": "issues",
+      "issue_number": 1,
+      "payload_state": "open",
+      "sequence": 1
+    },
+    {
+      "action": "opened",
+      "delivery_id": "8577a921-61df-442c-ac9a-2b1f0813393c",
+      "event": "issues",
+      "issue_number": 1,
+      "payload_state": "open",
+      "sequence": 2
+    }
+  ],
+  "repository": "forge-admin/agent-forge-core",
+  "schema_version": 1,
+  "task_count_observation": {
+    "hook_task_count_before_manual_replay": 1,
+    "http_request_count_observed": true,
+    "observation_seconds": 1.0,
+    "proxy_request_count_after_observation": 1
+  },
+  "unknown_uuid_replay_attempt": {
+    "created_task": false,
+    "hook_task_count_after_attempt": 1,
+    "http_status": 404
+  },
+  "verdict": "passed"
+}

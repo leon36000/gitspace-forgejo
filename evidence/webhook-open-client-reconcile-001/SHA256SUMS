@@ -1,0 +1,10 @@
+140efdf9c0f083c2223cb677d19a9ee91240180b561fd799dc5d073305d17500  ./all-targets-green.log
+9f3c88cbb22d92e4fdc4edd0aa1b973103b12538d8d1c273cda815acf17bc5fd  ./all-targets.log
+30d83b565e0bc83df9f6ffa7250df1fc9928a6432a07db99cd491fba4f3f33fb  ./checks.log
+dd03aa5c77bd67341f9e5977fffd581011897baee6ee82e64587b96d976070db  ./initial-single-schema-assertion-failure.log
+8ae4985b2bcf52c8d62b4cf6f05e5f3cc53fb5623e0b07ecfc3954727ef27f6a  ./isolated-e2e.log
+16b415dc4c789a6ae8df96c96d9b9cf8258f228b9293c70bea73ec7d2c0c79ae  ./local-run.md
+970b7daad6205647994f0f14a62bcc767abf086ac795c08381c87c153a28c5ff  ./lock-wait-contract-green.log
+7051fd0b12e5e6ae8b5fdd99a9f05a19061d3017bba348c3ba3924c66eb94ce1  ./lock-wait-stale-expectation-red.log
+56eb5e52cbc00473099bd37917c2e7edc2f08fcfd1d6be354f1dbd1cf9253ea5  ./source-sha256.txt
+55bbaf3703d84338d6fb908c282a9a9b58fca8a07c74dae7ec285d50a35cc50a  ./tool-versions.txt

@@ -1,0 +1,1 @@
+PASS: py_compile runner and test; bytecode files written under /tmp

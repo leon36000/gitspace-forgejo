@@ -1,0 +1,80 @@
+{
+  "cross_origin_replay_attempt": {
+    "created_task": false,
+    "hook_task_count_after_attempt": 1,
+    "http_status": 403
+  },
+  "forgejo_version": "17.0.0+gitea-1.22.0",
+  "hook_id": 1,
+  "initial_delivery": {
+    "delivery_id": "e27edf4f-fe79-492d-9473-9e501a9cad56",
+    "http_status": 401,
+    "is_delivered": true,
+    "is_succeed": false,
+    "receiver_journal_records": 0
+  },
+  "issue_number": 1,
+  "journal_records_after_replay": 1,
+  "native_replay": {
+    "authenticated_as": "forge-admin",
+    "http_status": 303,
+    "redirect_path": "/forge-admin/agent-forge-core/settings/hooks/1",
+    "route": "POST /{owner}/{repo}/settings/hooks/{id}/replay/{uuid}",
+    "task": {
+      "http_status": 202,
+      "new_delivery_id": true,
+      "original_uuid": "e27edf4f-fe79-492d-9473-9e501a9cad56",
+      "payload_unchanged": true,
+      "replay_uuid": "77109091-ed75-431c-af21-471765456f98",
+      "sequence": 1
+    }
+  },
+  "no_automatic_retry_observation": {
+    "hook_task_count_before_manual_replay": 1,
+    "observation_seconds": 1.0
+  },
+  "process_cleanup": {
+    "cleanup_failure": null,
+    "forgejo_stop": {
+      "returncode": 0,
+      "started": true,
+      "stop_action": "terminate",
+      "stopped": true
+    },
+    "receiver_stops": [
+      {
+        "listener_addresses_after_stop": [],
+        "phase": "before_native_replay",
+        "stop": {
+          "returncode": 0,
+          "started": true,
+          "stop_action": "terminate",
+          "stopped": true
+        }
+      },
+      {
+        "listener_addresses_after_stop": [],
+        "phase": "final_cleanup",
+        "stop": {
+          "returncode": 0,
+          "started": true,
+          "stop_action": "terminate",
+          "stopped": true
+        }
+      }
+    ],
+    "tracked_processes_exited": true,
+    "webhook_deactivated_before_server_stop": true
+  },
+  "receiver_event": {
+    "action": "opened",
+    "delivery_id": "77109091-ed75-431c-af21-471765456f98",
+    "event": "issues",
+    "issue_number": 1,
+    "payload_state": "open",
+    "sequence": 1
+  },
+  "repository": "forge-admin/agent-forge-core",
+  "schema_version": 1,
+  "verdict": "passed"
+}
