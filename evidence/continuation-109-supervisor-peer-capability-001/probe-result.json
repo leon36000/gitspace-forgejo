@@ -1,0 +1,50 @@
+{
+  "bubblewrap_version": "bubblewrap 0.9.0",
+  "python_version": "Python 3.12.3",
+  "runs": [
+    {
+      "bwrap_parent_pid": 1642820,
+      "child": {
+        "fd_target": "socket:[49985490]",
+        "peer_gid": 1000,
+        "peer_pid": 1642817,
+        "peer_uid": 1000,
+        "phase": "hello",
+        "self_netns": "net:[4026535808]",
+        "self_pid": 1642821,
+        "self_pidns": "pid:[4026531836]",
+        "self_ppid": 1642820
+      },
+      "child_exit_code": 0,
+      "child_host_visible_network_namespace": "net:[4026535808]",
+      "host_network_namespace": "net:[4026531833]",
+      "host_pid_namespace": "pid:[4026531836]",
+      "host_supervisor_pid": 1642817,
+      "one_shot_packet_confirmed": true,
+      "pid_namespace_unshared": false
+    },
+    {
+      "bwrap_parent_pid": 1642822,
+      "child": {
+        "fd_target": "socket:[49999990]",
+        "peer_gid": 1000,
+        "peer_pid": 0,
+        "peer_uid": 1000,
+        "phase": "hello",
+        "self_netns": "net:[4026535952]",
+        "self_pid": 2,
+        "self_pidns": "pid:[4026535951]",
+        "self_ppid": 1
+      },
+      "child_exit_code": 0,
+      "child_host_visible_network_namespace": null,
+      "host_network_namespace": "net:[4026531833]",
+      "host_pid_namespace": "pid:[4026531836]",
+      "host_supervisor_pid": 1642817,
+      "one_shot_packet_confirmed": true,
+      "pid_namespace_unshared": true
+    }
+  ],
+  "schema_version": 1,
+  "verdict": "passed"
+}

@@ -1,0 +1,2 @@
+python3 evidence/continuation-109-supervisor-peer-capability-001/probe_supervisor_socket_capability.py > evidence/continuation-109-supervisor-peer-capability-001/probe-result.json
+exit=0

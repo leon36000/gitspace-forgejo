@@ -1,0 +1,4 @@
+PASS: local manifests for continuations 098–105 verify.
+PASS: current append-only product manifest hashes match 67 paths.
+PASS: current parent append-only manifest hashes match 67 paths.
+Appended changed entries: product=67, parent=67; original prefixes preserved.

@@ -1,0 +1,11 @@
+{
+  "base_head": "f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0",
+  "files": {
+    "docs/architecture.md": "3d3544e9da41dbb1e4befdd5727d5269217fd1e4a17442f4f3e65c25418630d4",
+    "docs/checkpoint.md": "1f89562ccee41e7c777383dcd7c3537b42b8df43415bdac18774df5ba394a04b",
+    "docs/refusal-evidence-matrix.md": "e7de7871362e6b70c6433e9c6177428b91492e7f171ef9294bb34c1affca8ea6",
+    "src/bin/forgejo-reconcile-local.rs": "a419fdc68729623f954747259290b9aa2b9d4762000c4c38618ead3159fe8ada",
+    "src/forgejo.rs": "3ec429b2cf9604d71a6037be52d61ed3a5d68d3b2aced1dacec965417b1858c7",
+    "tests/forgejo_merge_writer_admission.rs": "7a0b208f280e6d4fa5110ee7a885f45dc73575cff452fd1ba530ec89857e34e9"
+  }
+}

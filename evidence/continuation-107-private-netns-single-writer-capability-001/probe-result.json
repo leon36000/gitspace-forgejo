@@ -1,0 +1,1 @@
+{"bwrap_version": "bubblewrap 0.9.0", "expected_outer_errno": 111, "inner_ready": "ready", "inner_stdout": "inside_result=private-netns-ok:probe", "namespace_port": 54925, "outer_host_connection": "blocked:ConnectionRefusedError:111", "returncode": 0, "stderr": "", "uid": 1000}

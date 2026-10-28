@@ -1,0 +1,7 @@
+{
+  "cleanup_failure": null,
+  "error_message": "Command '['git', '-C', '/run/workspace', 'rev-parse', 'HEAD']' returned non-zero exit status 128.",
+  "error_type": "CalledProcessError",
+  "stage": "disable_test_webhook",
+  "verdict": "failed"
+}

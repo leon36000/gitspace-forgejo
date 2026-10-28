@@ -1,0 +1,15 @@
+{
+  "src/supervisor_capability.rs": "b9736909601c27a52da44101229682ba4a951fb501d43bc8de4ff184601d82ad",
+  "src/lib.rs": "82e1f32eda0c3d181744c9b194bc7a416d99addf0657be8b5233b7b6dc3cd58e",
+  "src/bin/forgejo-reconcile-local.rs": "be87e43d00fa02f56988e0e8360f1049b23b98687dcd072bdc6f4af0a97bfd76",
+  "docs/checkpoint.md": "4104302a528be64096b21cd6868bd381ac099f30d61ca8a447bae5dd5875df4f",
+  "docs/architecture.md": "f4c4f16d6a27fbd1677f9c50b47a6310471fb75155d9befd4cb84dcbaa634e10",
+  "evidence/continuation-110-supervisor-capability-gate-001/local-run.md": "ff2bd1e07597c6b51d193b1d24d83a70d17b32f7b04f23fca4b5d77de6474464",
+  "evidence/continuation-110-supervisor-capability-gate-001/command.txt": "fdbfacf80f8a0afd1476f38f8eb9455a90d028de10852551d8bef577513085ab",
+  "evidence/continuation-110-supervisor-capability-gate-001/toolchain.txt": "16a29e5744ceac44fdc02c404e4f6ee812c6408e0145bf52c12609d806220ad8",
+  "evidence/continuation-110-supervisor-capability-gate-001/all-targets.log": "58ef141dd53dc73bde8cf9c10fea0f116b55eacf6782f53c905041b90e2a4cc5",
+  "evidence/continuation-110-supervisor-capability-gate-001/all-targets-final.log": "7b71fad8286b76460a10357aacbcb9775980a5c2a2dc8bd18f91f6f10b3ec605",
+  "evidence/continuation-110-supervisor-capability-gate-001/clippy.log": "a2313502a95a3a7939c1ce23a09e494f13d927db477e6113ea82ed8ae5585e15",
+  "evidence/continuation-110-supervisor-capability-gate-001/append_manifest_entries.py": "50cc7980494eb824b916c50a319d638c954497ee7c1a79dccd8833c69bf98647",
+  "evidence/continuation-110-supervisor-capability-gate-001/verify_append_only_indexes.py": "fc06e996af9bc23c485a074535c51e1d4c1cfb113aa737bada2dacbae0c341ba"
+}

@@ -1,0 +1,5 @@
+PASS: local evidence for continuations 098–104 verified with sha256sum before final documentation edits.
+PASS: continuation-105 latest-entry hashes verify all 23 distinct artifacts.
+PASS: worktree and project global manifests each verify the latest hashes for 69 current paths.
+PASS: prior manifest prefixes preserved; no historical checksum lines were removed.
+Method: for append-only manifests, compare the last SHA-256 entry per path; the old local-run.md digest remains as history and the newest digest is authoritative.

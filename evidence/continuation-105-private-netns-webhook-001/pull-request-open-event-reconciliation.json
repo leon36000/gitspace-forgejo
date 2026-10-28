@@ -1,0 +1,20 @@
+{
+  "canonical_state": {
+    "base_sha": "e858232cc52d789bfd2d307ecd90971d01fdc327",
+    "comment": null,
+    "head_sha": "cc5bfb0c69a79644bba647a5b13368ae97c46e1b",
+    "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/2",
+    "merge_commit_sha": null,
+    "merged": false,
+    "state": "closed",
+    "updated_at": "2026-10-26T14:20:10-04:00"
+  },
+  "delivery_id": "e3ef0e19-d6b6-404c-bf4a-23d3fa2120c8",
+  "resource": {
+    "kind": "pull_request",
+    "number": 2,
+    "owner": "forge-admin",
+    "repository": "agent-forge-core"
+  },
+  "verdict": "current_state_read"
+}

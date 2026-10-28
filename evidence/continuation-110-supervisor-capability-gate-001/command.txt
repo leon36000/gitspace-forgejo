@@ -1,0 +1,21 @@
+cargo fmt --all -- --check                         # exit 0
+git diff --check                                   # exit 0
+cargo check --offline --locked --bin forgejo-reconcile-local # exit 0
+cargo test --offline --locked --all-targets        # exit 0; see all-targets-final.log
+cargo clippy --offline --locked --bin forgejo-reconcile-local # exit 0; see clippy.log
+sha256sum -c SHA256SUMS                           # from this evidence directory; verify local files
+python3 append_manifest_entries.py                 # append after prefix checks
+python3 verify_append_only_indexes.py              # verify local and both global indexes
+
+Relevant test names in all-targets-final.log:
+- supervisor_capability::tests::accepts_one_live_peer_bound_capability_and_rechecks_it
+- supervisor_capability::tests::refuses_wrong_target_and_expired_capabilities
+- supervisor_capability::tests::refuses_wrong_process_bindings_and_namespaces
+- supervisor_capability::tests::refuses_stream_sockets_malformed_packets_and_duplicate_packets
+- supervisor_capability::tests::refuses_a_supervisor_that_disconnects_after_receipt
+- tests::merge_cli_refuses_single_writer_profile_without_supervisor_capability_before_credential
+- tests::merge_cli_refuses_invalid_supervisor_descriptor_before_reading_credential
+- tests::live_supervisor_capability_reaches_fixture_merge_and_is_bound_in_audit_output
+- tests::capabilities_list_exact_merge_target_profiles
+
+The all-targets final run reports 35 groups, 610 passed, 0 failed and 101 ignored.

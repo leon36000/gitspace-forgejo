@@ -1,0 +1,32 @@
+{
+  "bwrap_version": "bubblewrap 0.9.0",
+  "captured_output_exceeded": false,
+  "host_network_namespace_inode": 4026531833,
+  "inner_failure_stage": null,
+  "inner_runner_exit_code": 0,
+  "inner_runner_timed_out": false,
+  "inner_verdict": null,
+  "limits": [
+    "local disposable Forgejo v17 fixture and webhook receiver only",
+    "the namespace observation covers this unprivileged host process and does not exclude root or privileged writers",
+    "no merge authority or CAS behavior is exercised by this webhook scenario",
+    "no LLM, AgentOS, external service, or model cost is involved"
+  ],
+  "private_service_observation": {
+    "forgejo_listener_owned_socket_inode": 48748964,
+    "forgejo_loopback_port": 3130,
+    "forgejo_network_namespace_inode": 4026535806,
+    "forgejo_pid": 1328255,
+    "host_loopback_probe_errno": 111,
+    "host_network_namespace_inode": 4026531833,
+    "host_setns_probe": {
+      "status": "denied_operation_not_permitted"
+    },
+    "observed_while_forgejo_process_alive": true,
+    "runner_network_namespace_inode": 4026535806,
+    "runner_pid": 1326990
+  },
+  "run_status": "failed",
+  "scenario": "Forgejo native pull_request synchronized webhook plus batch reconciliation",
+  "schema_version": 1
+}

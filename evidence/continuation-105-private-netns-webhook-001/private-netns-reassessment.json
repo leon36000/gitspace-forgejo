@@ -1,0 +1,38 @@
+{
+  "checks": {
+    "capture_within_limit": true,
+    "forgejo_network_namespace_differs_from_host": true,
+    "host_loopback_connection_refused": true,
+    "inner_result_passed": true,
+    "no_inner_failure_stage": true,
+    "runner_exited_successfully": true,
+    "runner_not_timed_out": true,
+    "runner_shares_private_service_namespace": true,
+    "service_observed_alive": true,
+    "unprivileged_namespace_join_denied": true
+  },
+  "forgejo_version": "forgejo version 17.0.0+gitea-1.22.0 (release name 17.0.0) built with GNU Make 4.4.1, go1.26.9 : bindata, timetzdata, sqlite, sqlite_unlock_notify",
+  "host_loopback_probe_errno": 111,
+  "host_setns_probe": {
+    "status": "denied_operation_not_permitted"
+  },
+  "inner_verdict": "passed",
+  "limits": [
+    "local disposable Forgejo and test runner only",
+    "does not establish resistance to root, privileged writers, or kernel compromise",
+    "does not exercise merge authority or Forgejo server-side compare-and-swap",
+    "does not involve an LLM or production instance"
+  ],
+  "network_namespace_inodes": {
+    "forgejo": 4026535806,
+    "host": 4026531833,
+    "runner": 4026535806
+  },
+  "prior_outer_run_status": "failed",
+  "schema_version": 1,
+  "source_sha256": {
+    "private-netns-observation.json": "243f0a1b93fec95e5c21ced73c97c401b8aa2c9874ac992f6329d06fb017ab34",
+    "result.json": "5de665b9281fddceae7ef8267fdac61366f9950ecfd871e3327c8e0142d79f4a"
+  },
+  "verdict": "passed"
+}

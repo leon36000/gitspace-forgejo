@@ -1,0 +1,102 @@
+{
+  "all_targets": {
+    "aggregate_count_not_captured": true,
+    "argv": [
+      "cargo",
+      "test",
+      "--offline",
+      "--locked",
+      "--all-targets"
+    ],
+    "exit_code": 0
+  },
+  "focused_checks": [
+    {
+      "argv": [
+        "cargo",
+        "test",
+        "--offline",
+        "--locked",
+        "--test",
+        "forgejo_merge_writer_admission"
+      ],
+      "exit_code": 0,
+      "log": "writer-admission-contract.log",
+      "name": "writer-admission-contract"
+    },
+    {
+      "argv": [
+        "cargo",
+        "test",
+        "--offline",
+        "--locked",
+        "--bin",
+        "forgejo-reconcile-local",
+        "merge_cli_refuses_single_writer_profile_without_supervisor_attestation_before_credential"
+      ],
+      "exit_code": 0,
+      "log": "single-writer-cli-refusal-test.log",
+      "name": "single-writer-cli-refusal-test"
+    },
+    {
+      "argv": [
+        "cargo",
+        "test",
+        "--offline",
+        "--locked",
+        "--bin",
+        "forgejo-reconcile-local",
+        "valid_single_writer_selector_refuses_before_reaching_the_credential_reader"
+      ],
+      "exit_code": 0,
+      "log": "valid-selector-unconsumed-credential-test.log",
+      "name": "valid-selector-unconsumed-credential-test"
+    },
+    {
+      "argv": [
+        "cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "exit_code": 0,
+      "log": "rustfmt-check.log",
+      "name": "rustfmt-check"
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "log": "diff-check.log",
+      "name": "diff-check"
+    },
+    {
+      "argv": [
+        "--merge-local-test",
+        "--writer-admission-profile",
+        "local_single_writer_sandbox",
+        "--target-profile",
+        "merge-014-agent-forge-core",
+        "23",
+        "missing-proof.json",
+        "missing-expected.json",
+        "missing-key",
+        "missing-policy.json",
+        "missing-review-binding.json",
+        "fixture-gate",
+        "999999"
+      ],
+      "error_code": "single_writer_supervisor_attestation_unavailable",
+      "exit_code": 1,
+      "merge_attempted": false,
+      "merge_authorized": false,
+      "name": "compiled-cli-negative-case",
+      "stderr_empty": true,
+      "verdict": "inconclusive"
+    }
+  ]
+}

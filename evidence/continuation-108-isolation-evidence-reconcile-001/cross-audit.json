@@ -1,0 +1,96 @@
+{
+  "isolated_agent_gate_merge": {
+    "artifact_sha256": {
+      "composition-result.json": "47a13ada21a44f6386ea199c03e273d9f0397b708ae2737a78bf51484d8967ec",
+      "local-run.md": "2c654dde3dfe90cbacc790d4d53372a58619a6a9d1eb06fcd9792eab3957afec"
+    },
+    "directory": "evidence/forgejo-agent-stdio-mcp-merge-001",
+    "findings": {
+      "blocked_direct_routes": [
+        "api",
+        "web",
+        "git_receive_pack"
+      ],
+      "branch_read_http_status": 200,
+      "credential_passed_to_child": false,
+      "external_writers_excluded": false,
+      "merge_http_status": 200
+    },
+    "local_manifest": {
+      "append_only_entry_count": 27,
+      "latest_entries_verified": 27,
+      "latest_entry_failures": [],
+      "manifest_sha256": "8051bf0173465e33d55ae6b20e502ab9f68f4b9ca99983bc917e96d5bad07e37",
+      "unique_paths": 27
+    }
+  },
+  "live_forgejo_private_network": {
+    "artifact_sha256": {
+      "local-run.md": "69e238fddbc02484293405d836a90349f7454e7c8b2c50673388bd80f1347217",
+      "private-netns-observation.json": "243f0a1b93fec95e5c21ced73c97c401b8aa2c9874ac992f6329d06fb017ab34",
+      "private-netns-reassessment.json": "6ed68e20445ac9f94e713f97cc08c9338ddacfd6e24bda8b468c9395ab0ea3cc",
+      "result.json": "5de665b9281fddceae7ef8267fdac61366f9950ecfd871e3327c8e0142d79f4a"
+    },
+    "directory": "evidence/continuation-105-private-netns-webhook-001",
+    "local_manifest": {
+      "append_only_entry_count": 26,
+      "latest_entries_verified": 23,
+      "latest_entry_failures": [],
+      "manifest_sha256": "390e8ea5a34034afb948eb9d16108a6afc5888b4467b54847f651c2ed3692b88",
+      "unique_paths": 23
+    },
+    "reassessment": {
+      "checks": {
+        "capture_within_limit": true,
+        "forgejo_network_namespace_differs_from_host": true,
+        "host_loopback_connection_refused": true,
+        "inner_result_passed": true,
+        "no_inner_failure_stage": true,
+        "runner_exited_successfully": true,
+        "runner_not_timed_out": true,
+        "runner_shares_private_service_namespace": true,
+        "service_observed_alive": true,
+        "unprivileged_namespace_join_denied": true
+      },
+      "inner_verdict": "passed",
+      "limits": [
+        "local disposable Forgejo and test runner only",
+        "does not establish resistance to root, privileged writers, or kernel compromise",
+        "does not exercise merge authority or Forgejo server-side compare-and-swap",
+        "does not involve an LLM or production instance"
+      ],
+      "network_namespace_inodes": {
+        "forgejo": 4026535806,
+        "host": 4026531833,
+        "runner": 4026535806
+      },
+      "prior_outer_run_status": "failed",
+      "verdict": "passed"
+    }
+  },
+  "manifest_prefix_before": {
+    "project": {
+      "line_count": 4550,
+      "sha256": "0ae34b79c91b4784dabcbfc006c845a469dd8ee4cb055021ef691e817bcf26de"
+    },
+    "worktree": {
+      "line_count": 10455,
+      "sha256": "cc307f64aae9b2c96e61e7c4c71c90f1169810f74d72cff429ceeec29e956174"
+    }
+  },
+  "merge_with_isolated_agent": {
+    "artifact_sha256": {
+      "local-run.md": "1ffd894ab3bfbc8bf4456de101a14b1e8f6975164feb29944128713efe013f47",
+      "result.json": "4d05ef1d801caf6d4749c1edb3ac182a3be999a0e476922cd1ff7812fc636c59",
+      "stdio-mcp-egress-during-merge.json": "ae7d01c8467132bee24a3d7ca5e0c05bb5aed03476843d912155cd92109c9b83"
+    },
+    "directory": "evidence/forgejo-stdio-mcp-same-candidate-001",
+    "local_manifest": {
+      "append_only_entry_count": 42,
+      "latest_entries_verified": 42,
+      "latest_entry_failures": [],
+      "manifest_sha256": "40fc76abe161fbd666a69a3132cb663f010661b66763ac459150483ebc5adbd8",
+      "unique_paths": 42
+    }
+  }
+}
