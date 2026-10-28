@@ -1,0 +1,16 @@
+Test rouge attendu avant correction (code non-zéro sur action générique) :
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_receiver_refuses_missing_create_sha_with_actionable_guidance
+
+Test vert après correction (1 passed, 185 filtered) :
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_receiver_refuses_missing_create_sha_with_actionable_guidance
+
+Sonde de conception ingress review.content (HTTP 202; couche choisie incorrectement pour tester le refus) :
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_receiver_refuses_non_string_review_content_with_actionable_guidance
+
+Contrôles finaux :
+cargo fmt --all -- --check
+git diff --check
+python3 -c 'import ast,pathlib; ast.parse(pathlib.Path("scripts/run_webhook_reconcile_cli_e2e.py").read_text())'
+python3 scripts/verify_cargo_license_state.py
+
+Isolation du runner : Bubblewrap 0.9.0 avec --unshare-net --unshare-pid; tests compilés en mode offline avec Cargo --locked.

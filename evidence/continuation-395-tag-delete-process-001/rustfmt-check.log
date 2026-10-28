@@ -1,0 +1,12 @@
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:3472:
+         address,
+         &request_event(TAG_DELIVERY_ID, "delete", &tag_delete),
+     );
+-    assert_eq!(tag_status, 422, "tag ref is outside this adapter: {tag_rejected}");
++    assert_eq!(
++        tag_status, 422,
++        "tag ref is outside this adapter: {tag_rejected}"
++    );
+     assert_eq!(tag_rejected["error"]["code"], "unsupported_event");
+     assert_eq!(tag_rejected["error"]["retryable"], false);
+     assert_eq!(

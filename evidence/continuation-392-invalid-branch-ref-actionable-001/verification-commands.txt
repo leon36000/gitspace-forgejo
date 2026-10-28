@@ -1,0 +1,13 @@
+Test rouge attendu avant correction (action HTTP générique) :
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_receiver_refuses_invalid_create_branch_ref_with_actionable_guidance
+
+Test vert après correction (1 passed, 186 filtered) :
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_receiver_refuses_invalid_create_branch_ref_with_actionable_guidance
+
+Contrôles finaux :
+cargo fmt --all -- --check
+git diff --check
+python3 -c 'import ast,pathlib; ast.parse(pathlib.Path("scripts/run_webhook_reconcile_cli_e2e.py").read_text())'
+python3 scripts/verify_cargo_license_state.py
+
+Isolation : Bubblewrap 0.9.0, `--unshare-net --unshare-pid`, Cargo offline et verrouillé.

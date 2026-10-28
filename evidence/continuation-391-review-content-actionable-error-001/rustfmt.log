@@ -1,0 +1,21 @@
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:3301:
+     .expect("serialize create payload with missing object ID");
+ 
+     let (mut receiver, address) = start_ready_receiver(&secret, &journal_path);
+-    let (status, rejected) = send(
+-        address,
+-        &request_event(DELIVERY_ID, "create", &body),
+-    );
++    let (status, rejected) = send(address, &request_event(DELIVERY_ID, "create", &body));
+     assert_eq!(status, 400, "create without sha: {rejected}");
+     assert_eq!(rejected["error"]["code"], "event_payload_invalid");
+     assert_eq!(rejected["error"]["retryable"], false);
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:3311:
+-    assert_eq!(
+-        rejected["error"]["details"]["field_path"],
+-        "payload.sha"
+-    );
++    assert_eq!(rejected["error"]["details"]["field_path"], "payload.sha");
+     assert_eq!(
+         rejected["error"]["action"],
+         "set payload.sha to a nonzero 40- or 64-character hexadecimal commit ID; consult GET /forgejo/capabilities and redeliver with the same delivery ID; the rejected body was not journaled"

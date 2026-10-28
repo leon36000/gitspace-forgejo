@@ -1,0 +1,20 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.36s
+     Running tests/webhook_quarantine_cli.rs (target/debug/deps/webhook_quarantine_cli-9307333671b09d0c)
+
+running 1 test
+
+thread 'real_cli_quarantines_persisted_unsupported_tag_with_field_reason' (3715453) panicked at tests/webhook_quarantine_cli.rs:350:5:
+source row changed, is not eligible for quarantine, or the inbox could not be updated; preserve the journal and inspect it in the trusted host
+
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test real_cli_quarantines_persisted_unsupported_tag_with_field_reason ... FAILED
+
+failures:
+
+failures:
+    real_cli_quarantines_persisted_unsupported_tag_with_field_reason
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 5 filtered out; finished in 0.01s
+
+error: test failed, to rerun pass `--test webhook_quarantine_cli`

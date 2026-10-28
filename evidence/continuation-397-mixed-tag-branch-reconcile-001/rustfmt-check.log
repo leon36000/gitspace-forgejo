@@ -1,0 +1,13 @@
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_reconcile_contract.rs:3609:
+     );
+ 
+     let requests = api.requests.lock().unwrap();
+-    assert_eq!(requests.len(), 2, "only the two branch deliveries read the API");
++    assert_eq!(
++        requests.len(),
++        2,
++        "only the two branch deliveries read the API"
++    );
+     assert!(requests.iter().all(|resource| {
+         resource.kind == ResourceKind::Branch
+             && resource.id == ResourceId::Branch("feature/agent-proof".into())

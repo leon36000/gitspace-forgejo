@@ -1,0 +1,24 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 3.93s
+     Running tests/webhook_receiver_process_e2e.rs (target/debug/deps/webhook_receiver_process_e2e-a95dae827636a64e)
+
+running 1 test
+test actual_receiver_localizes_missing_branch_ref_type_before_durable_append ... FAILED
+
+failures:
+
+---- actual_receiver_localizes_missing_branch_ref_type_before_durable_append stdout ----
+
+thread 'actual_receiver_localizes_missing_branch_ref_type_before_durable_append' (3647856) panicked at tests/webhook_receiver_process_e2e.rs:1811:5:
+assertion `left == right` failed
+  left: String("inspect the event payload field against the event contract; preserve the journal and do not edit it directly")
+ right: "set payload.ref_type to branch for branch create/delete events; tag refs are not accepted by this adapter; consult GET /forgejo/capabilities and redeliver with the same delivery ID; the rejected body was not journaled"
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    actual_receiver_localizes_missing_branch_ref_type_before_durable_append
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 186 filtered out; finished in 0.04s
+
+error: test failed, to rerun pass `--test webhook_receiver_process_e2e`

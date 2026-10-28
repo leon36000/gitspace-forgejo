@@ -1,0 +1,10 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.34s
+     Running tests/webhook_handler_contract.rs (target/debug/deps/webhook_handler_contract-3f813c02b258e567)
+
+running 2 tests
+test forgejo_branch_create_refuses_tags_and_malformed_bindings_without_journaling ... ok
+test forgejo_branch_delete_refuses_tags_and_malformed_bindings_without_journaling ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 28 filtered out; finished in 0.00s
+
