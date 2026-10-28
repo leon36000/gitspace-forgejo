@@ -17,3 +17,7 @@ python3 scripts/verify_cargo_license_state.py
 git diff --check
 
 No Rust source changed; all-targets was not rerun in this Python-only slice.
+
+Call-site scope check:
+rg -n 'reconcile_live_release_delivery' scripts/run_forgejo_live_webhook_reconcile_emitted.py scripts/run_forgejo_live_webhook_reconcile_e2e.py tests/test_forgejo_emitted_webhook_e2e.py
+Observed one function definition and one dynamic test lookup via getattr; no production-runner call site.
