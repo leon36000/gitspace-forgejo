@@ -1,0 +1,9 @@
+Final focused results:
+- webhook_reconcile_contract: 87 passed, 0 failed, 0 ignored.
+- cargo all-targets: exit 0; all reported test groups passed. Explicitly ignored runner-bound cases were not exercised by this generic command.
+- emitted webhook Python suite: 131 passed.
+- native webhook replay Python suite: 30 passed.
+- live org/team reviewer-readback Python suite: 29 passed.
+- Cargo licensing guard tests: 12 passed.
+- cargo fmt --all -- --check: exit 0.
+- git diff --check: exit 0.

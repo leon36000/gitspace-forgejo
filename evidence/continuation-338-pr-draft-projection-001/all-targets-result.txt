@@ -1,0 +1,4 @@
+Command: cargo test --offline --locked --all-targets -- --test-threads=1
+Final execution date: 2026-10-28 local time.
+Result: process exit code 0. The tool streamed output in several chunks; this is a status record, not a full stdout transcript.
+Earlier in the same lot: one run exposed a fixture missing current API `draft`; a later run exposed a stale expected single/batch schema number. Both fixtures/assertions were corrected before this final exit-0 run.

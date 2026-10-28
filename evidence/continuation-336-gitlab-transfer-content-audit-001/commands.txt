@@ -1,0 +1,4 @@
+python3 evidence/continuation-336-gitlab-transfer-content-audit-001/audit_transfer_contents.py
+git --git-dir=evidence/forgejo-v17-lfs-reflog-witness-poc-065/scratch/server.git bundle create evidence/continuation-336-gitlab-transfer-content-audit-001/forgejo-v17-lfs-reflog-witness-server.bundle --all
+git bundle verify evidence/continuation-336-gitlab-transfer-content-audit-001/forgejo-v17-lfs-reflog-witness-server.bundle
+git bundle list-heads evidence/continuation-336-gitlab-transfer-content-audit-001/forgejo-v17-lfs-reflog-witness-server.bundle

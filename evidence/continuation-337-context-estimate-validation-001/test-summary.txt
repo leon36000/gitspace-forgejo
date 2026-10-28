@@ -1,0 +1,8 @@
+command: cargo test --offline --locked --all-targets -- --test-threads=1
+result_groups: 38
+passed: 728
+failed: 0
+ignored: 158
+measured: 0
+new_regression_test: True
+producer_consistency_test: True

@@ -1,0 +1,113 @@
+{
+  "base_commit": "f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0",
+  "binary_file_count": 153,
+  "candidate_extensions_top_12": [
+    [
+      ".log",
+      4424
+    ],
+    [
+      ".json",
+      3932
+    ],
+    [
+      ".txt",
+      2045
+    ],
+    [
+      "[no extension]",
+      820
+    ],
+    [
+      ".md",
+      730
+    ],
+    [
+      ".py",
+      699
+    ],
+    [
+      ".exit",
+      387
+    ],
+    [
+      ".rs",
+      125
+    ],
+    [
+      ".pyc",
+      119
+    ],
+    [
+      ".exit-code",
+      38
+    ],
+    [
+      ".zip",
+      28
+    ],
+    [
+      ".go",
+      26
+    ]
+  ],
+  "candidate_files_by_top_level": {
+    ".claude": 1,
+    "Cargo.lock": 1,
+    "Cargo.toml": 1,
+    "README.md": 1,
+    "docs": 12,
+    "evidence": 13254,
+    "scripts": 80,
+    "src": 16,
+    "tests": 94
+  },
+  "credential_named_paths": [],
+  "direct_bytecode_cache_count": 119,
+  "evidence_tree_bytes": 378084003,
+  "excluded_local_instruction_file": ".claude/ralph-loop.local.md",
+  "files_over_20_mib": [],
+  "known_secret_format_file_hits": {},
+  "known_secret_format_zip_entry_hits": {},
+  "nested_bare_git_repository": {
+    "bare": true,
+    "bundle_bytes": 304,
+    "bundle_refs": [
+      "d5bd7f05d5e350dcba90ef3fceb101f4fb07a21b refs/heads/main"
+    ],
+    "bundle_sha256": "f04ce86af2246b1fd82b76488379c5d02ec27a77fe4c2ae0030c06bacf52153f",
+    "path": "evidence/forgejo-v17-lfs-reflog-witness-poc-065/scratch/server.git",
+    "transfer_bundle": "evidence/continuation-336-gitlab-transfer-content-audit-001/forgejo-v17-lfs-reflog-witness-server.bundle"
+  },
+  "nested_git_worktree": {
+    "clean": true,
+    "head": "d5bd7f05d5e350dcba90ef3fceb101f4fb07a21b",
+    "path": "evidence/forgejo-v17-lfs-reflog-witness-poc-065/scratch/work",
+    "same_head_as_bundle": true
+  },
+  "nonfile_candidate_paths": [
+    "evidence/forgejo-v17-lfs-reflog-witness-poc-065/scratch/work/"
+  ],
+  "quoted_credential_literal_candidates": [],
+  "remote_auth_or_git_exchange_attempted": false,
+  "root_manifest_refs_to_bytecode_or_archives": {
+    "direct_bytecode_files_not_referenced": 98,
+    "direct_bytecode_files_referenced": 21,
+    "pyc_path_entries": 22,
+    "unique_pyc_paths": 21,
+    "unique_zip_paths": 23,
+    "zip_files_not_referenced": 5,
+    "zip_files_referenced": 23,
+    "zip_path_entries": 24
+  },
+  "symlink_paths": [],
+  "tracked_changed_files": 19,
+  "unique_candidate_file_count": 13460,
+  "unique_candidate_path_count": 13461,
+  "untracked_nonignored_path_entries_before_audit": 13442,
+  "zip_count": 28,
+  "zip_entries_with_credential_like_names": [],
+  "zip_read_errors": [],
+  "zip_total_bytes": 107151276,
+  "zip_uncompressed_file_entries": 2712
+}

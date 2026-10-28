@@ -1,0 +1,9 @@
+$ cargo test --offline --locked --test webhook_reconcile_contract pull_request_draft_projection_uses_current_api_not_webhook_snapshot -- --exact --nocapture
+running 1 test
+thread 'pull_request_draft_projection_uses_current_api_not_webhook_snapshot' panicked:
+assertion `left == right` failed: the current API value must win over the webhook's stale draft=true
+left: Null
+right: Bool(false)
+test result: FAILED. 0 passed; 1 failed; 0 ignored
+error: test failed (exit code 101)
+This is the observed pre-implementation red result. The test passed after the current API projection was implemented.

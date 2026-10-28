@@ -1,0 +1,22 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.67s
+     Running tests/agent_runtime_contract.rs (target/debug/deps/agent_runtime_contract-63c65ec9a52b9cd0)
+
+running 1 test
+test request_validation_rejects_context_manifest_that_underreports_context_text ... FAILED
+
+failures:
+
+---- request_validation_rejects_context_manifest_that_underreports_context_text stdout ----
+
+thread 'request_validation_rejects_context_manifest_that_underreports_context_text' (695847) panicked at tests/agent_runtime_contract.rs:1056:28:
+called `Result::unwrap_err()` on an `Ok` value: ()
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    request_validation_rejects_context_manifest_that_underreports_context_text
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 12 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `--test agent_runtime_contract`

@@ -1,0 +1,7 @@
+d9d3182c7f5e08a2609524f534b106ee77ec7d881a05b41da6049211483c2cd9  evidence/continuation-336-gitlab-transfer-content-audit-001/audit_transfer_contents.py
+ca4b013a9b1716793fb860a0490d1886e070c0bc0879d3ca18b19356e147264d  evidence/continuation-336-gitlab-transfer-content-audit-001/transfer-content-audit.json
+f04ce86af2246b1fd82b76488379c5d02ec27a77fe4c2ae0030c06bacf52153f  evidence/continuation-336-gitlab-transfer-content-audit-001/forgejo-v17-lfs-reflog-witness-server.bundle
+e040ba19a04f26aaa867151395d30823fdd60c96afa13c2a5d46d2ce69acd58d  evidence/continuation-336-gitlab-transfer-content-audit-001/local-run.md
+56fb75a0b6db87022700922ac3e9bd24763048b5b6c3ff6d6641b9da4cc312db  evidence/continuation-336-gitlab-transfer-content-audit-001/commands.txt
+26a157134a6b5885c88802cded47796df4015f84251a8bdf90fdc0eb715c58e5  evidence/continuation-336-gitlab-transfer-content-audit-001/bundle-verify.log
+bd15027b79c8196b63ccb211ecb5b0e6fb9e182e23813ab6e8303c131883d277  docs/checkpoint.md

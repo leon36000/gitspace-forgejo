@@ -1,0 +1,18 @@
+TDD rouge, avec uniquement la nouvelle garde de validation temporairement retirée :
+cargo test --offline --locked --test agent_runtime_contract request_validation_rejects_context_manifest_that_underreports_context_text -- --exact
+Résultat capturé dans red.log : exit 101; le test échoue car validate() renvoie Ok.
+
+Vérification verte après restauration de la garde :
+cargo test --offline --locked --test agent_runtime_contract request_validation_rejects_context_manifest_that_underreports_context_text -- --exact
+cargo test --offline --locked --bin forgejo-mission-local tests::context_packet_pins_requirement_and_source_bytes_to_one_commit -- --exact
+
+Suite complète et contrôles :
+cargo test --offline --locked --all-targets -- --test-threads=1
+cargo fmt --all -- --check
+git diff --check
+python3 scripts/verify_cargo_license_state.py
+cargo clippy --offline --locked --all-targets -- -D warnings
+
+HEAD avant et après le lot : f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+Branche : local/WEBHOOK-005-canonical-links
+Aucun commit, push ou accès réseau n’a été fait.

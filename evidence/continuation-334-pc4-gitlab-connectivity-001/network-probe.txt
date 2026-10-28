@@ -1,0 +1,10 @@
+Connectivité expurgée — 2026-10-28
+
+Pair Tailscale : pc4 en ligne; ping direct réussi.
+Nom DNS : pc4.tail0c55ff.ts.net ne résout pas via getent.
+Sondes TCP vers l’adresse du pair fournie par tailscale status (adresse omise) :
+  22, 80, 443, 5050, 8080, 8443 -> TimeoutError (1,25 s par sonde).
+HTTPS avec SNI/Host pc4.tail0c55ff.ts.net forcé vers l’adresse Tailscale du pair :
+  curl --connect-timeout 3 --max-time 5 -> curl 28, HTTP 000, connexion non établie.
+
+Aucune authentification et aucun échange Git n’ont été tentés. Aucun secret n’est inclus.

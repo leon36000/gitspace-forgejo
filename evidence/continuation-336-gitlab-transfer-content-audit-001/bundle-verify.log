@@ -1,0 +1,5 @@
+evidence/continuation-336-gitlab-transfer-content-audit-001/forgejo-v17-lfs-reflog-witness-server.bundle is okay
+The bundle contains this ref:
+d5bd7f05d5e350dcba90ef3fceb101f4fb07a21b refs/heads/main
+The bundle records a complete history.
+The bundle uses this hash algorithm: sha1

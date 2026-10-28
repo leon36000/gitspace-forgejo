@@ -1,0 +1,8 @@
+$ python3 -m unittest discover -s tests -p test_forgejo_live_org_team_reviewer_readback.py
+.............................
+----------------------------------------------------------------------
+Ran 29 tests in 0.003s
+
+OK
+
+exit_code=0
