@@ -1,0 +1,7 @@
+Forgejo source reference only; no upstream source text copied into the product.
+Repository: /tmp/forgejo-v17-base-cas-poc
+Commit: 0d791421f85ca13a63b665053d81ea765fbbc571
+Path/symbol: modules/structs/hook.go::IssuePayload
+Git blob: 9c7f1deed1c38eeb435ab976bb8429c5458c7f2b
+Readback command: git show HEAD:modules/structs/hook.go (lines 320-350)
+Observation: IssuePayload serializes action, number, changes, issue, repository, sender, commit_id, and label. It declares no review field. The upstream file is unchanged in the scratch (git diff --quiet HEAD -- modules/structs/hook.go exited 0).

@@ -1,0 +1,12 @@
+Recorded: 2026-10-26 02:59 UTC (2026-10-25 22:59 America/Montreal)
+Product worktree: .runtime/webhook-005-workspace
+Product HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+Product status entries: 1299 (pre-existing heavily modified tree plus this evidence folder)
+Rust: rustc 1.95.0 (59807616e 2026-04-14), host aarch64-unknown-linux-gnu
+Cargo: 1.95.0 (f2d3ce0bd 2026-03-21)
+Python: 3.12.3
+Cargo commands used --locked --offline.
+Forgejo scratch: /tmp/forgejo-v17-base-cas-poc
+Forgejo source HEAD: 0d791421f85ca13a63b665053d81ea765fbbc571
+Forgejo scratch status entries: 60 (pre-existing modified POC state; not changed in this lot)
+Forgejo modules/structs/hook.go blob at HEAD: 9c7f1deed1c38eeb435ab976bb8429c5458c7f2b

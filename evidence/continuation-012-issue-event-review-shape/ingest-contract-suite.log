@@ -1,0 +1,17 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+     Running tests/webhook_contract.rs (target/debug/deps/webhook_contract-3a77ed745bc0a522)
+
+running 10 tests
+test invalid_signature_is_rejected_without_journal_side_effect ... ok
+test signed_payload_with_duplicate_json_member_is_rejected_without_journal_side_effect ... ok
+test signed_payload_with_escaped_duplicate_json_member_is_rejected_without_journal_side_effect ... ok
+test signed_repository_identity_conflicts_are_rejected_without_journal_side_effect ... ok
+test signed_issue_payload_with_non_object_review_member_is_rejected_without_journal_side_effect ... ok
+test identical_delivery_is_duplicate_after_journal_reopen ... ok
+test consistent_repository_identity_metadata_is_accepted ... ok
+test same_delivery_id_with_changed_payload_is_conflict ... ok
+test late_older_notification_is_appended_and_does_not_rewrite_history ... ok
+test concurrent_retries_append_exactly_once ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+

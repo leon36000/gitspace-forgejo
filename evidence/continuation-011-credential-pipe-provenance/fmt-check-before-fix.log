@@ -1,0 +1,10 @@
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/src/bin/forgejo-reconcile-local.rs:345:
+                 })?;
+                 if fd <= libc::STDERR_FILENO {
+                     return Err(
+-                        "host credential descriptor must be an anonymous pipe above stderr".to_owned(),
++                        "host credential descriptor must be an anonymous pipe above stderr"
++                            .to_owned(),
+                     );
+                 }
+                 credential_fd = Some(fd);

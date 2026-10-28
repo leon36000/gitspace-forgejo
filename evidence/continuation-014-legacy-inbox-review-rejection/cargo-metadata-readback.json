@@ -1,0 +1,10 @@
+{
+  "license": null,
+  "license_file": null,
+  "publish": [],
+  "agent_forge_licensing": {
+    "decision": "no_license_selected",
+    "redistribution_rights": "not_assessed",
+    "spdx_package_license_declared": "NOASSERTION"
+  }
+}

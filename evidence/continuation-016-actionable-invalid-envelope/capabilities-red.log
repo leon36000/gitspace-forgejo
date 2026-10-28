@@ -1,0 +1,21 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.54s
+     Running tests/webhook_receiver_process_e2e.rs (target/debug/deps/webhook_receiver_process_e2e-6caa738f5453f442)
+
+running 1 test
+
+thread 'capabilities_endpoint_describes_the_versioned_webhook_contract_without_mutating_inbox' (1233976) panicked at tests/webhook_receiver_process_e2e.rs:1231:5:
+assertion `left == right` failed
+  left: Null
+ right: Object {"event_payload_invalid": Object {"details_field_path": String("payload.<field>"), "status": Number(400)}, "optional_error_fields": Array [String("details")], "required_error_fields": Array [String("code"), String("retryable"), String("action")], "schema_version": Number(1)}
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test capabilities_endpoint_describes_the_versioned_webhook_contract_without_mutating_inbox ... FAILED
+
+failures:
+
+failures:
+    capabilities_endpoint_describes_the_versioned_webhook_contract_without_mutating_inbox
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 77 filtered out; finished in 0.04s
+
+error: test failed, to rerun pass `--test webhook_receiver_process_e2e`

@@ -1,0 +1,2 @@
+cargo test --locked --offline --all-targets
+groups=34 passed=536 failed=0 ignored=76

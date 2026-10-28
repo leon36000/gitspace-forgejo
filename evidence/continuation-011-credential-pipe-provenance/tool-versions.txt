@@ -1,0 +1,8 @@
+Recorded at: 2026-10-26 02:52 UTC (2026-10-25 22:52 America/Montreal)
+Workspace HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+Workspace status entries: 1298 (pre-existing dirty state plus this local evidence)
+rustc: 1.95.0 (59807616e 2026-04-14)
+cargo: 1.95.0 (f2d3ce0bd 2026-03-21)
+Python: 3.12.3
+Host: Linux aarch64, kernel 7.0.0-1019-nvidia
+All Cargo checks used --locked --offline.
