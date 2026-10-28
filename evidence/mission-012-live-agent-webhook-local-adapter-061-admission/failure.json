@@ -1,0 +1,7 @@
+{
+  "cleanup_failure": null,
+  "error_detail": "timed out",
+  "error_type": "TimeoutError",
+  "stage": "start_receiver_and_create_issue_hook",
+  "verdict": "failed"
+}

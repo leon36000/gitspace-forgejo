@@ -1,0 +1,27 @@
+{
+  "candidate_commit": "ab59d515e6c6f6c3122eb59e766661de581ad9f2",
+  "cpu_accounting": {
+    "accounting_elapsed_ms": 261,
+    "base_commit": "5e621a3d593eb908b8ac4e3fe9e6d2d5f8bc1828",
+    "candidate_commit": "ab59d515e6c6f6c3122eb59e766661de581ad9f2",
+    "charged_cpu_upper_bound_ms": 2522,
+    "exit_code": 0,
+    "expected_failure": null,
+    "mission_id": "mission-v1-94c26001d4370e63d3637fd5c06ef13f0496424a39a74bf498b7512b7d2b37b5",
+    "output_b64": "CnJ1bm5pbmcgMCB0ZXN0cwoKdGVzdCByZXN1bHQ6IG9rLiAwIHBhc3NlZDsgMCBmYWlsZWQ7IDAgaWdub3JlZDsgMCBtZWFzdXJlZDsgMCBmaWx0ZXJlZCBvdXQ7IGZpbmlzaGVkIGluIDAuMDBzCgoKcnVubmluZyAyIHRlc3RzCnRlc3QgdmFsdWVzX291dHNpZGVfdGhlX3JhbmdlX2NsYW1wX3RvX3RoZV9uZWFyZXN0X2JvdW5kYXJ5IC4uLiBvawp0ZXN0IHZhbHVlc19pbnNpZGVfdGhlX3JhbmdlX2FyZV91bmNoYW5nZWQgLi4uIG9rCgp0ZXN0IHJlc3VsdDogb2suIDIgcGFzc2VkOyAwIGZhaWxlZDsgMCBpZ25vcmVkOyAwIG1lYXN1cmVkOyAwIGZpbHRlcmVkIG91dDsgZmluaXNoZWQgaW4gMC4wMHMKCgpydW5uaW5nIDAgdGVzdHMKCnRlc3QgcmVzdWx0OiBvay4gMCBwYXNzZWQ7IDAgZmFpbGVkOyAwIGlnbm9yZWQ7IDAgbWVhc3VyZWQ7IDAgZmlsdGVyZWQgb3V0OyBmaW5pc2hlZCBpbiAwLjAwcwoKCiAgIENvbXBpbGluZyBtaXNzaW9uMDEyLWNsYW1wIHYwLjEuMCAoL2NhbmRpZGF0ZSkKICAgIEZpbmlzaGVkIGB0ZXN0YCBwcm9maWxlIFt1bm9wdGltaXplZCArIGRlYnVnaW5mb10gdGFyZ2V0KHMpIGluIDAuMjBzCiAgICAgUnVubmluZyB1bml0dGVzdHMgc3JjL2xpYi5ycyAoL3RhcmdldC9kZWJ1Zy9kZXBzL21pc3Npb24wMTJfY2xhbXAtMmFkNjA2MWUxNWY5Y2ViYikKICAgICBSdW5uaW5nIHRlc3RzL2FjY2VwdGFuY2UucnMgKC90YXJnZXQvZGVidWcvZGVwcy9hY2NlcHRhbmNlLTI2ZDlkZTVkM2E4ZjUwZWYpCiAgIERvYy10ZXN0cyBtaXNzaW9uMDEyX2NsYW1wCg==",
+    "output_sha256": "e36884c81cc387a86e3cc75eef0aa8a3f92d9f40290d0303ea2b10ed5e7379bc",
+    "output_truncated": false,
+    "policy_sha256": "f73785cb8eade278f2c14677c633ee34c391f2a7d7ff55e9e3e02a04b9307a50",
+    "reservation_id": "pr-premerge-green-fd4716a024d1c2caae658f4c09147fd7",
+    "reserved_cpu_ms": 240000,
+    "sandbox_elapsed_ms": 261,
+    "stage": "premerge-green",
+    "tested_commit": "ab59d515e6c6f6c3122eb59e766661de581ad9f2",
+    "timed_out": false
+  },
+  "output_file": "premerge-reverification-cargo-test.log",
+  "output_sha256": "e36884c81cc387a86e3cc75eef0aa8a3f92d9f40290d0303ea2b10ed5e7379bc",
+  "policy_sha256": "e23907b5bd6b2c0f342c88ddcfa9f9a9be98065adcd24f9f7299dc796b5739eb",
+  "requirement_sha256": "3a3c444075c93a3bcfb2bec17d1a2e74ec0051effc2994e6b02ac095eb0dd431",
+  "verdict": "pass"
+}

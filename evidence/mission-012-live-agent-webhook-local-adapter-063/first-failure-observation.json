@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "run_id": "MISSION-012-COMPOSE-063",
+  "stage": "pull-request",
+  "stage_exit_code": 1,
+  "failure": "FAIL-CLOSED: 'merge_commit_sha'",
+  "observed_merge_effect": {
+    "verdict": "merged",
+    "merge_commit_sha": "12e4f35993262a9abf101bbe1af841a496bd5ed7",
+    "main_head_sha": "12e4f35993262a9abf101bbe1af841a496bd5ed7",
+    "evidence_file": "rust-merge-authority-result.json"
+  },
+  "root_cause": "The PR observer called parse_live_pull_request_delivery_record without expected_merged=True for the closed event. The parser therefore omitted merge_commit_sha from its returned object, and the composed runner indexed the missing field.",
+  "recovery": "The caller now marks the closed PR event as expected_merged=True. A new isolated run 064 completed the workflow and bound the event SHA, every reconciliation receipt, and canonical current state to the authority's merge SHA.",
+  "state_reused_for_retry": false,
+  "model_invoked": false,
+  "sensitive_private_state_copied_to_evidence": false
+}

@@ -1,0 +1,6 @@
+{
+  "http_status": 405,
+  "merged": false,
+  "reason": "not allowed to merge [reason: Does not have enough approvals]",
+  "state_after_refusal": "open"
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "observed_main_head_after_merge": "51860e96e265be51194e505429914af0e6512c9b",
+  "merge_commit": "51860e96e265be51194e505429914af0e6512c9b",
+  "candidate_commit": "ab59d515e6c6f6c3122eb59e766661de581ad9f2",
+  "merge_tree_entries_sha256": "5acd4a07d65b213d48afbf510a23dd1cce043a3faa61212a4e4d61af48792e74",
+  "reviewed_candidate_tree_entries_sha256": "5acd4a07d65b213d48afbf510a23dd1cce043a3faa61212a4e4d61af48792e74",
+  "merge_tree_matches_candidate": true,
+  "source_snapshot": "/tmp/mission-012-forgejo-restart-062/verify-candidate-snapshot",
+  "source_path": "src/lib.rs",
+  "source_sha256": "173304ad7d32aabc1e8e1ee41eabda3398a8690798e68f906bcebc73cbcd6d15",
+  "candidate_source_sha256": "173304ad7d32aabc1e8e1ee41eabda3398a8690798e68f906bcebc73cbcd6d15",
+  "acceptance_test_path": "tests/acceptance.rs",
+  "acceptance_test_sha256": "5d4727542ea32f61aa4500754556fcfd1f39b59b4131ede257cb736fab231dc2",
+  "command": "CARGO_TARGET_DIR=/tmp/mission-012-postmerge-062-target-20261025 cargo test --offline --locked --test acceptance",
+  "test_log": "postmerge-062-cargo-test.log",
+  "test_log_sha256": "2899836b23398381fad9f135b118574a66bde69a2145d324c47b19e60b1448ac",
+  "result": "2 passed, 0 failed, 0 ignored",
+  "source_checkout_is_merge_commit": false,
+  "scope_note": "The test ran after merge against the persisted candidate snapshot; the source SHA and full reviewed-tree digest match the merged candidate. This is not a fresh checkout of the Forgejo merge ref."
+}

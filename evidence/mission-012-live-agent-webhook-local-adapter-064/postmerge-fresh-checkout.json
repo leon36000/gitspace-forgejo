@@ -1,0 +1,46 @@
+{
+  "base": {
+    "acceptance_sha256": "5d4727542ea32f61aa4500754556fcfd1f39b59b4131ede257cb736fab231dc2",
+    "exit_code": 101,
+    "head": "81dcd94e0e65e95d2732ff9d3fffcd32b23c69cd",
+    "log_sha256": "748430f000dcea008fe0ac673d4f89d260580f629b4fb6bcb0089b5db8d53e47",
+    "source_sha256": "de0175e0fc5341a0ff3080f647ee16f4f4c1c45a205fc01ee8ec73899b3f9aa2",
+    "summary": [
+      "test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s",
+      "test result: FAILED. 1 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s"
+    ],
+    "tree": "33abd2cc2b30f0dc03be39595173f2f47b84d114"
+  },
+  "base_commit": "81dcd94e0e65e95d2732ff9d3fffcd32b23c69cd",
+  "candidate_commit": "6ed55ce35290e9a1814607e253324a6a88610abf",
+  "candidate_tree": "518f1e74cfd70f848c882b9937588dadd5710b10",
+  "candidate_tree_matches_merge_tree": true,
+  "checkout_strategy": "git clone --no-hardlinks --no-checkout from preserved Forgejo local bare repository; detached exact-SHA checkouts",
+  "fresh_clone_path": "/tmp/mission-012-postmerge-fresh-checkout-064",
+  "limitation": "retrospective test of the exact merged commit and same private Forgejo bare repository; it does not retest the Forgejo service or establish a comparative productivity gain",
+  "merge_commit": "a71ec6833c236b4c3f0cc56cd90bb1eabf9a9afb",
+  "merge_parents": [
+    "81dcd94e0e65e95d2732ff9d3fffcd32b23c69cd",
+    "6ed55ce35290e9a1814607e253324a6a88610abf"
+  ],
+  "merge_tree": "518f1e74cfd70f848c882b9937588dadd5710b10",
+  "merged": {
+    "acceptance_sha256": "5d4727542ea32f61aa4500754556fcfd1f39b59b4131ede257cb736fab231dc2",
+    "exit_code": 0,
+    "head": "a71ec6833c236b4c3f0cc56cd90bb1eabf9a9afb",
+    "log_sha256": "8906e5709b4b6b9f937635f516688307cfd37357d55431324e41df51c7c82286",
+    "source_sha256": "173304ad7d32aabc1e8e1ee41eabda3398a8690798e68f906bcebc73cbcd6d15",
+    "summary": [
+      "test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s",
+      "test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s",
+      "test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s"
+    ],
+    "tree": "518f1e74cfd70f848c882b9937588dadd5710b10"
+  },
+  "model_and_cost": "no model invocation; deterministic local-test-adapter; reported cost USD 0",
+  "sandbox": "systemd user scope: MemoryMax=1 GiB, TasksMax=64, CPUQuota=200%, RuntimeMaxSec=120s; Bubblewrap user/mount/PID/network namespaces; checkout read-only; fresh tmpfs target and Cargo home; no host home or credentials; offline locked Cargo",
+  "schema_version": 1,
+  "source_bare_repo": "/tmp/mission-012-composed-merge-sha-064/repositories/forge-admin/mission-012-clamp.git",
+  "test_command": "cargo test --offline --locked",
+  "verdict": "pass_retrospective"
+}
