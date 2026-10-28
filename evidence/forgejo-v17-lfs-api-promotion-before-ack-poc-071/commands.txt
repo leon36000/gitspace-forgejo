@@ -1,0 +1,14 @@
+Base Forgejo: git rev-parse HEAD
+Toolchain: GOTOOLCHAIN=local /tmp/forgejo-v17-toolchain/go/bin/go version
+Formatting check: /tmp/forgejo-v17-toolchain/go/bin/gofmt -d services/repository/files/update.go tests/integration/lfs_api_ack_order_poc_test.go
+
+Red (before the service-side post-push promotion was added):
+GOTOOLCHAIN=local GOPROXY=off /tmp/forgejo-v17-toolchain/go/bin/go test -count=1 -v -timeout=20m -tags sqlite,forgejo_poc_lfs_ack_order ./tests/integration -run '^TestPOCGenericFileLFSAPI201IsReturnedAfterPromotion$'
+
+Green and fresh rerun:
+GOTOOLCHAIN=local GOPROXY=off /tmp/forgejo-v17-toolchain/go/bin/go test -count=1 -v -timeout=20m -tags sqlite,forgejo_poc_lfs_ack_order ./tests/integration -run '^TestPOCGenericFileLFSAPI201IsReturnedAfterPromotion$'
+
+Injected database promotion failure, followed by direct recovery, and the positive acknowledgment test:
+GOTOOLCHAIN=local GOPROXY=off /tmp/forgejo-v17-toolchain/go/bin/go test -count=1 -v -timeout=20m -tags sqlite,forgejo_poc_lfs_ack_order ./tests/integration -run '^TestPOCGenericFileLFSAPI(201IsReturnedAfterPromotion|ErrorLeavesRecoverablePendingOperation)$'
+
+All runs were local, on the dirty scratch checkout, with network dependency fetches disabled. The red run is diagnostic evidence and exits 1 by design; the final green and rerun exit 0.

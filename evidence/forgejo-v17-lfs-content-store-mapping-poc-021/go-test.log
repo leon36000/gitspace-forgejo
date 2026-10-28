@@ -1,0 +1,6 @@
+=== RUN   TestPOCContentStoreUsesGenerationMappingAndLegacyFallback
+2026/10/24 18:56:22 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCContentStoreUsesGenerationMappingAndLegacyFallback2859714122/001/lfs
+2026/10/24 18:56:22 ...lfs/content_store.go:58:Put() [E] Whilst putting LFS OID[906d82b69ad9d92f9658a41a74f0398b98a46bdb2c2901a9f03c8de0b6c41f0e]: Failed to copy to tmpPath: 90/6d/82b69ad9d92f9658a41a74f0398b98a46bdb2c2901a9f03c8de0b6c41f0e Error: content hash does not match OID
+--- PASS: TestPOCContentStoreUsesGenerationMappingAndLegacyFallback (0.00s)
+PASS
+ok  	forgejo.org/modules/lfs	0.079s

@@ -1,0 +1,5 @@
+Go: go1.27.3 linux/arm64 (/tmp/forgejo-v17-toolchain/go/bin/go)
+Git: 2.43.0
+SQLite CLI: 3.45.1 2024-01-30
+Host: linux/arm64
+Dependency mode: GOTOOLCHAIN=local, GOPROXY=off

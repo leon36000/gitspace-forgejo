@@ -1,0 +1,188 @@
+Environment variable $PROJECT_CONF not set, use default: tests/sqlite.ini
+2026/10/24 21:22:00 ...s/storage/storage.go:157:initAttachments() [I] Initialising Attachment storage with type: local
+2026/10/24 21:22:00 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/attachments
+2026/10/24 21:22:00 ...s/storage/storage.go:147:initAvatars() [I] Initialising Avatar storage with type: local
+2026/10/24 21:22:00 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/avatars
+2026/10/24 21:22:00 ...s/storage/storage.go:174:initRepoAvatars() [I] Initialising Repository Avatar storage with type: local
+2026/10/24 21:22:00 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/repo-avatars
+2026/10/24 21:22:00 ...s/storage/storage.go:168:initLFS() [I] Initialising LFS storage with type: local
+2026/10/24 21:22:00 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/lfs
+2026/10/24 21:22:00 ...s/storage/storage.go:180:initRepoArchives() [I] Initialising Repository Archive storage with type: local
+2026/10/24 21:22:00 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/repo-archive
+2026/10/24 21:22:00 ...s/storage/storage.go:190:initPackages() [I] Initialising Packages storage with type: local
+2026/10/24 21:22:00 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/packages
+2026/10/24 21:22:00 ...s/storage/storage.go:201:initActions() [I] Initialising Actions storage with type: local
+2026/10/24 21:22:00 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/actions_log
+2026/10/24 21:22:00 ...s/storage/storage.go:205:initActions() [I] Initialising ActionsArtifacts storage with type: local
+2026/10/24 21:22:00 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/actions_artifacts
+2026/10/24 21:22:01 modules/git/git.go:122:checkInit() [W] git module has been initialized already, duplicate init may work but it's better to fix it
+2026/10/24 21:22:01 routers/init.go:109:InitWebInstalled() [I] Git version: 2.43.0 (home: /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/home)
+??? [TestLogger] 2026/10/24 21:22:01 ...s/storage/storage.go:157:initAttachments() [I] Initialising Attachment storage with type: local
+??? [TestLogger] 2026/10/24 21:22:01 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/attachments
+??? [TestLogger] 2026/10/24 21:22:01 ...s/storage/storage.go:147:initAvatars() [I] Initialising Avatar storage with type: local
+??? [TestLogger] 2026/10/24 21:22:01 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/avatars
+??? [TestLogger] 2026/10/24 21:22:01 ...s/storage/storage.go:174:initRepoAvatars() [I] Initialising Repository Avatar storage with type: local
+??? [TestLogger] 2026/10/24 21:22:01 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/repo-avatars
+??? [TestLogger] 2026/10/24 21:22:01 ...s/storage/storage.go:168:initLFS() [I] Initialising LFS storage with type: local
+??? [TestLogger] 2026/10/24 21:22:01 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/lfs
+??? [TestLogger] 2026/10/24 21:22:01 ...s/storage/storage.go:180:initRepoArchives() [I] Initialising Repository Archive storage with type: local
+??? [TestLogger] 2026/10/24 21:22:01 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/repo-archive
+??? [TestLogger] 2026/10/24 21:22:01 ...s/storage/storage.go:190:initPackages() [I] Initialising Packages storage with type: local
+??? [TestLogger] 2026/10/24 21:22:01 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/packages
+??? [TestLogger] 2026/10/24 21:22:01 ...s/storage/storage.go:201:initActions() [I] Initialising Actions storage with type: local
+??? [TestLogger] 2026/10/24 21:22:01 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/actions_log
+??? [TestLogger] 2026/10/24 21:22:01 ...s/storage/storage.go:205:initActions() [I] Initialising ActionsArtifacts storage with type: local
+??? [TestLogger] 2026/10/24 21:22:01 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/actions_artifacts
+??? [TestLogger] 2026/10/24 21:22:01 routers/init.go:129:InitWebInstalled() [I] SQLite3 support is enabled
+??? [TestLogger] 2026/10/24 21:22:01 routers/common/db.go:23:InitDBEngine() [I] Beginning ORM engine initialization.
+??? [TestLogger] 2026/10/24 21:22:01 routers/common/db.go:30:InitDBEngine() [I] ORM engine initialization attempt #1/10...
+??? [TestLogger] 2026/10/24 21:22:01 routers/init.go:135:InitWebInstalled() [I] ORM engine initialization successful!
+??? [TestLogger] 2026/10/24 21:22:01 ...xer/stats/indexer.go:41:populateRepoIndexer() [I] Populating the repo stats indexer with existing repositories
+??? [TestLogger] 2026/10/24 21:22:01 ...er/issues/indexer.go:80:func1() [I] PID 1648063: Initializing Issue Indexer: bleve
+??? [TestLogger] 2026/10/24 21:22:01 ...exer/code/indexer.go:169:func3() [I] PID: 1648063 Initializing Repository Indexer at: /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/indexers/repos.bleve
+??? [TestLogger] 2026/10/24 21:22:01 routers/init.go:84:syncAppConfForGit() [I] AppPath changed from '' to '/tmp/go-build2982318847/b001/integration.test'
+??? [TestLogger] 2026/10/24 21:22:01 routers/init.go:89:syncAppConfForGit() [I] CustomConf changed from '' to '/tmp/forgejo-v17-base-cas-poc/tests/sqlite.ini'
+??? [TestLogger] 2026/10/24 21:22:01 ...exer/code/indexer.go:265:func4() [I] Repository Indexer Initialization took 2.317464ms
+??? [TestLogger] 2026/10/24 21:22:01 ...exer/code/indexer.go:291:populateRepoIndexer() [I] Populating the repo indexer with existing repositories
+??? [TestLogger] 2026/10/24 21:22:01 ...er/issues/indexer.go:160:func2() [I] Issue Indexer Initialization took 2.612648ms
+??? [TestLogger] 2026/10/24 21:22:01 modules/ssh/ssh.go:345:Listen() [I] Adding SSH host key: /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/ssh/gitea.rsa
+??? [TestLogger] 2026/10/24 21:22:01 modules/ssh/init.go:30:Init() [I] SSH server started on localhost:2203. Cipher list ([chacha20-poly1305@openssh.com aes128-ctr aes192-ctr aes256-ctr aes128-gcm@openssh.com aes256-gcm@openssh.com]), key exchange algorithms ([mlkem768x25519-sha256 curve25519-sha256 ecdh-sha2-nistp256 ecdh-sha2-nistp384 ecdh-sha2-nistp521 diffie-hellman-group14-sha256 diffie-hellman-group14-sha1]), MACs ([hmac-sha2-256-etm@openssh.com hmac-sha2-256 hmac-sha1])
+??? [TestLogger] 2026/10/24 21:22:01 ...s/graceful/server.go:50:NewServer() [I] Starting new SSH server: tcp:localhost:2203 on PID: 1648063
+??? [TestLogger] 2026/10/24 21:22:01 ...er/cleanup_sha256.go:27:CleanupSHA256() [I] Start to cleanup dangling images with a sha256:* version
+??? [TestLogger] 2026/10/24 21:22:01 ...er/cleanup_sha256.go:106:cleanupSHA256() [I] Nothing to cleanup
+??? [TestLogger] 2026/10/24 21:22:01 ...er/cleanup_sha256.go:29:CleanupSHA256() [I] Finished to cleanup dangling images with a sha256:* version
+=== RUN   TestPOCLFSBatchDownloadURLUsesActiveGenerationAndOmitsAuthorization
+=== TestPOCLFSBatchDownloadURLUsesActiveGenerationAndOmitsAuthorization (tests/test_utils.go:370)
+    test_utils.go:276: PrepareTestEnv:Process "CodeIndexer batch" cancelled
+    test_utils.go:276: PrepareTestEnv:Process "git(dir:/tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/forgejo-repositories/org26/repo_external_tracker_numeric.git): /usr/bin/git -c credential.helper= -c filter.lfs.required= -c filter.lfs.smudge= -c filter.lfs.clean= show-ref -s refs/heads/master" cancelled
+    test_utils.go:276: PrepareTestEnv:Process "Stats.DB Index Repo[40]" cancelled
+    testlogger.go:408: 2026/10/24 21:22:01 ...xer/stats/indexer.go:87:populateRepoIndexer() [I] Done (re)populating the repo stats indexer with existing repositories
+    test_utils.go:302: PrepareTestEnv: all processes cancelled within 5.726012ms
+    testlogger.go:408: 2026/10/24 21:22:01 ...exer/code/indexer.go:343:populateRepoIndexer() [I] Done (re)populating the repo indexer with existing repositories
+    testlogger.go:408: 2026/10/24 21:22:01 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/gitea-lfs-meta
+    testlogger.go:408: 2026/10/24 21:22:01 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/login for test-mock:12345, 303 See Other in 3.4ms @ auth/auth.go:208(auth.SignInPost)
+    testlogger.go:408: 2026/10/24 21:22:01 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/settings/applications/tokens/new for test-mock:12345, 303 See Other in 5.6ms @ setting/access_token.go:220(setting.AccessTokenCreatePost)
+    testlogger.go:408: 2026/10/24 21:22:01 ...odels/user/avatar.go:59:GenerateRandomAvatar() [I] New random avatar created: 2
+    testlogger.go:408: 2026/10/24 21:22:01 ...s/setting/setting.go:65:initialAppDocsVer() [W] Doclinks will fallback to version 'latest' due to err: Malformed version: dev
+    testlogger.go:408: 2026/10/24 21:22:01 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user/settings/applications for test-mock:12345, 200 OK in 10.5ms @ setting/applications.go:24(setting.Applications)
+=== RUN   TestPOCLFSBatchDownloadURLUsesActiveGenerationAndOmitsAuthorization/CreateRepo
+=== NAME  TestPOCLFSBatchDownloadURLUsesActiveGenerationAndOmitsAuthorization
+    testlogger.go:408: 2026/10/24 21:22:01 ...s/notifier_helper.go:216:getGitRepoAndCommit() [W] Ref of event "repository" is empty, will fall back to the default branch
+    testlogger.go:408: 2026/10/24 21:22:01 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/v1/user/repos for test-mock:12345, 201 Created in 218.1ms @ repo/repo.go:306(repo.Create)
+    testlogger.go:408: 2026/10/24 21:22:01 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user2/lfs-batch-generation-url-repo.git/info/lfs/objects/batch for test-mock:12345, 200 OK in 0.7ms @ lfs/server.go:198(lfs.BatchHandler)
+--- PASS: TestPOCLFSBatchDownloadURLUsesActiveGenerationAndOmitsAuthorization (0.44s)
+    --- PASS: TestPOCLFSBatchDownloadURLUsesActiveGenerationAndOmitsAuthorization/CreateRepo (0.22s)
+=== RUN   TestPOCLFSSettingsDeleteResolvesCurrentGeneration
+=== TestPOCLFSSettingsDeleteResolvesCurrentGeneration (tests/test_utils.go:370)
+    testlogger.go:408: 2026/10/24 21:22:01 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/gitea-lfs-meta
+    testlogger.go:408: 2026/10/24 21:22:01 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/login for test-mock:12345, 303 See Other in 11.5ms @ auth/auth.go:208(auth.SignInPost)
+    testlogger.go:408: 2026/10/24 21:22:02 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user2/repo1/settings/lfs/delete/c0e23b550b6aa3b44f70c276ca82002d9265d9421012278e50851aa1d67d207d for test-mock:12345, 303 See Other in 26.5ms @ setting/lfs.go:354(setting.LFSDelete)
+--- PASS: TestPOCLFSSettingsDeleteResolvesCurrentGeneration (0.33s)
+=== RUN   TestPOCLFSSettingsDeleteCanRetryAfterStorageFailure
+=== TestPOCLFSSettingsDeleteCanRetryAfterStorageFailure (tests/test_utils.go:370)
+    testlogger.go:408: 2026/10/24 21:22:02 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/gitea-lfs-meta
+    testlogger.go:408: 2026/10/24 21:22:02 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/login for test-mock:12345, 303 See Other in 12.4ms @ auth/auth.go:208(auth.SignInPost)
+    testlogger.go:408: 2026/10/24 21:22:02 .../repo/setting/lfs.go:377:LFSDelete() [E] LFSDelete: injected generation delete failure
+    testlogger.go:408: 2026/10/24 21:22:02 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user2/repo1/settings/lfs/delete/45d33f478950762485632e74f7ecb508d1c3004383c92a336a92a7da73c044e2 for test-mock:12345, 500 Internal Server Error in 18.3ms @ setting/lfs.go:354(setting.LFSDelete)
+    testlogger.go:408: 2026/10/24 21:22:02 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user2/repo1/settings/lfs/delete/45d33f478950762485632e74f7ecb508d1c3004383c92a336a92a7da73c044e2 for test-mock:12345, 303 See Other in 21.6ms @ setting/lfs.go:354(setting.LFSDelete)
+testlogger.go:recordError() FATAL ERROR: log.Error has been called: // TestPOCLFSSettingsDeleteCanRetryAfterStorageFailure
+	"2026/10/24 21:22:02 .../repo/setting/lfs.go:377:LFSDelete() [E] LFSDelete: injected generation delete failure",
+--- PASS: TestPOCLFSSettingsDeleteCanRetryAfterStorageFailure (0.33s)
+=== RUN   TestPOCLFSAuthenticatedUploadPromotesSQLiteGenerationAndReadsItBack
+=== TestPOCLFSAuthenticatedUploadPromotesSQLiteGenerationAndReadsItBack (tests/test_utils.go:370)
+    testlogger.go:408: 2026/10/24 21:22:02 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/gitea-lfs-meta
+    testlogger.go:408: 2026/10/24 21:22:02 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/login for test-mock:12345, 303 See Other in 12.9ms @ auth/auth.go:208(auth.SignInPost)
+    testlogger.go:408: 2026/10/24 21:22:02 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/settings/applications/tokens/new for test-mock:12345, 303 See Other in 6.9ms @ setting/access_token.go:220(setting.AccessTokenCreatePost)
+    testlogger.go:408: 2026/10/24 21:22:02 ...odels/user/avatar.go:59:GenerateRandomAvatar() [I] New random avatar created: 2
+    testlogger.go:408: 2026/10/24 21:22:02 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user/settings/applications for test-mock:12345, 200 OK in 10.8ms @ setting/applications.go:24(setting.Applications)
+=== RUN   TestPOCLFSAuthenticatedUploadPromotesSQLiteGenerationAndReadsItBack/CreateRepo
+=== NAME  TestPOCLFSAuthenticatedUploadPromotesSQLiteGenerationAndReadsItBack
+    testlogger.go:408: 2026/10/24 21:22:02 ...s/notifier_helper.go:216:getGitRepoAndCommit() [W] Ref of event "repository" is empty, will fall back to the default branch
+    testlogger.go:408: 2026/10/24 21:22:02 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/v1/user/repos for test-mock:12345, 201 Created in 207.1ms @ repo/repo.go:306(repo.Create)
+    testlogger.go:408: 2026/10/24 21:22:02 ...eb/routing/logger.go:109:func1() [I] router: completed PUT /user2/lfs-poc-generation-upload-repo.git/info/lfs/objects/8dfcb8c38ca4fa61cdb65f32db1734ac8d9163078553eca24685c29426d2fefd/94 for test-mock:12345, 200 OK in 18.0ms @ lfs/server.go:333(lfs.UploadHandler)
+    testlogger.go:408: 2026/10/24 21:22:02 ...eb/routing/logger.go:109:func1() [I] router: completed PUT /user2/lfs-poc-generation-upload-repo.git/info/lfs/objects/8dfcb8c38ca4fa61cdb65f32db1734ac8d9163078553eca24685c29426d2fefd/94 for test-mock:12345, 200 OK in 2.1ms @ lfs/server.go:333(lfs.UploadHandler)
+    testlogger.go:408: 2026/10/24 21:22:02 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user2/lfs-poc-generation-upload-repo.git/info/lfs/objects/8dfcb8c38ca4fa61cdb65f32db1734ac8d9163078553eca24685c29426d2fefd/name for test-mock:12345, 206 Partial Content in 0.8ms @ lfs/server.go:178(lfs.DownloadHandler)
+--- PASS: TestPOCLFSAuthenticatedUploadPromotesSQLiteGenerationAndReadsItBack (0.43s)
+    --- PASS: TestPOCLFSAuthenticatedUploadPromotesSQLiteGenerationAndReadsItBack/CreateRepo (0.21s)
+=== RUN   TestPOCLFSUploadRetryPromotesDurablePendingGeneration
+=== TestPOCLFSUploadRetryPromotesDurablePendingGeneration (tests/test_utils.go:370)
+    testlogger.go:408: 2026/10/24 21:22:02 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/gitea-lfs-meta
+    testlogger.go:408: 2026/10/24 21:22:02 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/login for test-mock:12345, 303 See Other in 13.1ms @ auth/auth.go:208(auth.SignInPost)
+    testlogger.go:408: 2026/10/24 21:22:02 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/settings/applications/tokens/new for test-mock:12345, 303 See Other in 8.9ms @ setting/access_token.go:220(setting.AccessTokenCreatePost)
+    testlogger.go:408: 2026/10/24 21:22:02 ...odels/user/avatar.go:59:GenerateRandomAvatar() [I] New random avatar created: 2
+    testlogger.go:408: 2026/10/24 21:22:02 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user/settings/applications for test-mock:12345, 200 OK in 8.7ms @ setting/applications.go:24(setting.Applications)
+=== RUN   TestPOCLFSUploadRetryPromotesDurablePendingGeneration/CreateRepo
+=== NAME  TestPOCLFSUploadRetryPromotesDurablePendingGeneration
+    testlogger.go:408: 2026/10/24 21:22:03 ...s/notifier_helper.go:216:getGitRepoAndCommit() [W] Ref of event "repository" is empty, will fall back to the default branch
+    testlogger.go:408: 2026/10/24 21:22:03 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/v1/user/repos for test-mock:12345, 201 Created in 224.8ms @ repo/repo.go:306(repo.Create)
+    testlogger.go:408: 2026/10/24 21:22:03 ...lfs/content_store.go:58:Put() [E] Whilst putting LFS OID[7c7583e37c07f0ec704711184062c710bfda2d34964e86a2107b81abca6e636e]: Failed to copy to tmpPath: 7c/75/83e37c07f0ec704711184062c710bfda2d34964e86a2107b81abca6e636e Error: injected interruption after verified stage and before mapping promotion
+    testlogger.go:408: 2026/10/24 21:22:03 ...rvices/lfs/server.go:399:func1() [E] Error putting LFS MetaObject [7c7583e37c07f0ec704711184062c710bfda2d34964e86a2107b81abca6e636e] into content store. Error: injected interruption after verified stage and before mapping promotion
+    testlogger.go:408: 2026/10/24 21:22:03 ...rvices/lfs/server.go:412:UploadHandler() [E] Error whilst uploadOrVerify LFS OID[7c7583e37c07f0ec704711184062c710bfda2d34964e86a2107b81abca6e636e]: injected interruption after verified stage and before mapping promotion
+    testlogger.go:408: 2026/10/24 21:22:03 ...eb/routing/logger.go:109:func1() [I] router: completed PUT /user2/lfs-poc-generation-upload-retry-repo.git/info/lfs/objects/7c7583e37c07f0ec704711184062c710bfda2d34964e86a2107b81abca6e636e/97 for test-mock:12345, 500 Internal Server Error in 5.9ms @ lfs/server.go:333(lfs.UploadHandler)
+    testlogger.go:408: 2026/10/24 21:22:03 ...eb/routing/logger.go:109:func1() [I] router: completed PUT /user2/lfs-poc-generation-upload-retry-repo.git/info/lfs/objects/7c7583e37c07f0ec704711184062c710bfda2d34964e86a2107b81abca6e636e/97 for test-mock:12345, 200 OK in 13.4ms @ lfs/server.go:333(lfs.UploadHandler)
+    testlogger.go:408: 2026/10/24 21:22:03 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user2/lfs-poc-generation-upload-retry-repo.git/info/lfs/objects/7c7583e37c07f0ec704711184062c710bfda2d34964e86a2107b81abca6e636e/name for test-mock:12345, 206 Partial Content in 0.8ms @ lfs/server.go:178(lfs.DownloadHandler)
+testlogger.go:recordError() FATAL ERROR: log.Error has been called: // TestPOCLFSUploadRetryPromotesDurablePendingGeneration
+	"2026/10/24 21:22:03 ...lfs/content_store.go:58:Put() [E] Whilst putting LFS OID[7c7583e37c07f0ec704711184062c710bfda2d34964e86a2107b81abca6e636e]: Failed to copy to tmpPath: 7c/75/83e37c07f0ec704711184062c710bfda2d34964e86a2107b81abca6e636e Error: injected interruption after verified stage and before mapping promotion",
+// TestPOCLFSUploadRetryPromotesDurablePendingGeneration
+	"2026/10/24 21:22:03 ...rvices/lfs/server.go:399:func1() [E] Error putting LFS MetaObject [7c7583e37c07f0ec704711184062c710bfda2d34964e86a2107b81abca6e636e] into content store. Error: injected interruption after verified stage and before mapping promotion",
+// TestPOCLFSUploadRetryPromotesDurablePendingGeneration
+	"2026/10/24 21:22:03 ...rvices/lfs/server.go:412:UploadHandler() [E] Error whilst uploadOrVerify LFS OID[7c7583e37c07f0ec704711184062c710bfda2d34964e86a2107b81abca6e636e]: injected interruption after verified stage and before mapping promotion",
+--- PASS: TestPOCLFSUploadRetryPromotesDurablePendingGeneration (0.46s)
+    --- PASS: TestPOCLFSUploadRetryPromotesDurablePendingGeneration/CreateRepo (0.22s)
+=== RUN   TestPOCLFSInvalidUploadRejectsStageThenFreshAttemptRecovers
+=== RUN   TestPOCLFSInvalidUploadRejectsStageThenFreshAttemptRecovers/hash-mismatch
+=== TestPOCLFSInvalidUploadRejectsStageThenFreshAttemptRecovers/hash-mismatch (tests/test_utils.go:370)
+    testlogger.go:408: 2026/10/24 21:22:03 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/gitea-lfs-meta
+    testlogger.go:408: 2026/10/24 21:22:03 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/login for test-mock:12345, 303 See Other in 12.8ms @ auth/auth.go:208(auth.SignInPost)
+    testlogger.go:408: 2026/10/24 21:22:03 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/settings/applications/tokens/new for test-mock:12345, 303 See Other in 8.7ms @ setting/access_token.go:220(setting.AccessTokenCreatePost)
+    testlogger.go:408: 2026/10/24 21:22:03 ...odels/user/avatar.go:59:GenerateRandomAvatar() [I] New random avatar created: 2
+    testlogger.go:408: 2026/10/24 21:22:03 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user/settings/applications for test-mock:12345, 200 OK in 6.6ms @ setting/applications.go:24(setting.Applications)
+=== RUN   TestPOCLFSInvalidUploadRejectsStageThenFreshAttemptRecovers/hash-mismatch/CreateRepo
+=== NAME  TestPOCLFSInvalidUploadRejectsStageThenFreshAttemptRecovers/hash-mismatch
+    testlogger.go:408: 2026/10/24 21:22:03 ...s/notifier_helper.go:216:getGitRepoAndCommit() [W] Ref of event "repository" is empty, will fall back to the default branch
+    testlogger.go:408: 2026/10/24 21:22:03 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/v1/user/repos for test-mock:12345, 201 Created in 252.4ms @ repo/repo.go:306(repo.Create)
+    testlogger.go:408: 2026/10/24 21:22:03 ...lfs/content_store.go:58:Put() [E] Whilst putting LFS OID[13292b12d6de75536779a9740f3661b0562c13f2e336f46d0752c22d7fc43bdb]: Failed to copy to tmpPath: 13/29/2b12d6de75536779a9740f3661b0562c13f2e336f46d0752c22d7fc43bdb Error: content hash does not match OID
+    testlogger.go:408: 2026/10/24 21:22:03 ...rvices/lfs/server.go:399:func1() [E] Error putting LFS MetaObject [13292b12d6de75536779a9740f3661b0562c13f2e336f46d0752c22d7fc43bdb] into content store. Error: content hash does not match OID
+    testlogger.go:408: 2026/10/24 21:22:03 ...rvices/lfs/server.go:409:UploadHandler() [E] Upload does not match LFS MetaObject [13292b12d6de75536779a9740f3661b0562c13f2e336f46d0752c22d7fc43bdb]. Error: content hash does not match OID
+    testlogger.go:408: 2026/10/24 21:22:03 ...eb/routing/logger.go:109:func1() [I] router: completed PUT /user2/lfs-invalid-hash-mismatch-repo.git/info/lfs/objects/13292b12d6de75536779a9740f3661b0562c13f2e336f46d0752c22d7fc43bdb/79 for test-mock:12345, 422 Unprocessable Entity in 10.6ms @ lfs/server.go:333(lfs.UploadHandler)
+    testlogger.go:408: 2026/10/24 21:22:03 ...eb/routing/logger.go:109:func1() [I] router: completed PUT /user2/lfs-invalid-hash-mismatch-repo.git/info/lfs/objects/13292b12d6de75536779a9740f3661b0562c13f2e336f46d0752c22d7fc43bdb/79 for test-mock:12345, 200 OK in 18.0ms @ lfs/server.go:333(lfs.UploadHandler)
+    testlogger.go:408: 2026/10/24 21:22:03 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user2/lfs-invalid-hash-mismatch-repo.git/info/lfs/objects/13292b12d6de75536779a9740f3661b0562c13f2e336f46d0752c22d7fc43bdb/name for test-mock:12345, 206 Partial Content in 1.6ms @ lfs/server.go:178(lfs.DownloadHandler)
+testlogger.go:recordError() FATAL ERROR: log.Error has been called: // TestPOCLFSInvalidUploadRejectsStageThenFreshAttemptRecovers/hash-mismatch
+	"2026/10/24 21:22:03 ...lfs/content_store.go:58:Put() [E] Whilst putting LFS OID[13292b12d6de75536779a9740f3661b0562c13f2e336f46d0752c22d7fc43bdb]: Failed to copy to tmpPath: 13/29/2b12d6de75536779a9740f3661b0562c13f2e336f46d0752c22d7fc43bdb Error: content hash does not match OID",
+// TestPOCLFSInvalidUploadRejectsStageThenFreshAttemptRecovers/hash-mismatch
+	"2026/10/24 21:22:03 ...rvices/lfs/server.go:399:func1() [E] Error putting LFS MetaObject [13292b12d6de75536779a9740f3661b0562c13f2e336f46d0752c22d7fc43bdb] into content store. Error: content hash does not match OID",
+// TestPOCLFSInvalidUploadRejectsStageThenFreshAttemptRecovers/hash-mismatch
+	"2026/10/24 21:22:03 ...rvices/lfs/server.go:409:UploadHandler() [E] Upload does not match LFS MetaObject [13292b12d6de75536779a9740f3661b0562c13f2e336f46d0752c22d7fc43bdb]. Error: content hash does not match OID",
+=== RUN   TestPOCLFSInvalidUploadRejectsStageThenFreshAttemptRecovers/size-mismatch
+=== TestPOCLFSInvalidUploadRejectsStageThenFreshAttemptRecovers/size-mismatch (tests/test_utils.go:370)
+    testlogger.go:408: 2026/10/24 21:22:03 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/gitea-lfs-meta
+    testlogger.go:408: 2026/10/24 21:22:03 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/login for test-mock:12345, 303 See Other in 12.2ms @ auth/auth.go:208(auth.SignInPost)
+    testlogger.go:408: 2026/10/24 21:22:03 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/settings/applications/tokens/new for test-mock:12345, 303 See Other in 6.5ms @ setting/access_token.go:220(setting.AccessTokenCreatePost)
+    testlogger.go:408: 2026/10/24 21:22:03 ...odels/user/avatar.go:59:GenerateRandomAvatar() [I] New random avatar created: 2
+    testlogger.go:408: 2026/10/24 21:22:03 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user/settings/applications for test-mock:12345, 200 OK in 6.3ms @ setting/applications.go:24(setting.Applications)
+=== RUN   TestPOCLFSInvalidUploadRejectsStageThenFreshAttemptRecovers/size-mismatch/CreateRepo
+=== NAME  TestPOCLFSInvalidUploadRejectsStageThenFreshAttemptRecovers/size-mismatch
+    testlogger.go:408: 2026/10/24 21:22:04 ...s/notifier_helper.go:216:getGitRepoAndCommit() [W] Ref of event "repository" is empty, will fall back to the default branch
+    testlogger.go:408: 2026/10/24 21:22:04 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/v1/user/repos for test-mock:12345, 201 Created in 243.7ms @ repo/repo.go:306(repo.Create)
+    testlogger.go:408: 2026/10/24 21:22:04 ...lfs/content_store.go:58:Put() [E] Whilst putting LFS OID[f51959e271d7d2a5d1dc8df2bf0b352017e936c800ca2c908b33f204d678e6b6]: Failed to copy to tmpPath: f5/19/59e271d7d2a5d1dc8df2bf0b352017e936c800ca2c908b33f204d678e6b6 Error: content size does not match
+    testlogger.go:408: 2026/10/24 21:22:04 ...rvices/lfs/server.go:399:func1() [E] Error putting LFS MetaObject [f51959e271d7d2a5d1dc8df2bf0b352017e936c800ca2c908b33f204d678e6b6] into content store. Error: content size does not match
+    testlogger.go:408: 2026/10/24 21:22:04 ...rvices/lfs/server.go:409:UploadHandler() [E] Upload does not match LFS MetaObject [f51959e271d7d2a5d1dc8df2bf0b352017e936c800ca2c908b33f204d678e6b6]. Error: content size does not match
+    testlogger.go:408: 2026/10/24 21:22:04 ...eb/routing/logger.go:109:func1() [I] router: completed PUT /user2/lfs-invalid-size-mismatch-repo.git/info/lfs/objects/f51959e271d7d2a5d1dc8df2bf0b352017e936c800ca2c908b33f204d678e6b6/80 for test-mock:12345, 422 Unprocessable Entity in 10.3ms @ lfs/server.go:333(lfs.UploadHandler)
+    testlogger.go:408: 2026/10/24 21:22:04 ...eb/routing/logger.go:109:func1() [I] router: completed PUT /user2/lfs-invalid-size-mismatch-repo.git/info/lfs/objects/f51959e271d7d2a5d1dc8df2bf0b352017e936c800ca2c908b33f204d678e6b6/79 for test-mock:12345, 200 OK in 17.0ms @ lfs/server.go:333(lfs.UploadHandler)
+    testlogger.go:408: 2026/10/24 21:22:04 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user2/lfs-invalid-size-mismatch-repo.git/info/lfs/objects/f51959e271d7d2a5d1dc8df2bf0b352017e936c800ca2c908b33f204d678e6b6/name for test-mock:12345, 206 Partial Content in 1.3ms @ lfs/server.go:178(lfs.DownloadHandler)
+testlogger.go:recordError() FATAL ERROR: log.Error has been called: // TestPOCLFSInvalidUploadRejectsStageThenFreshAttemptRecovers/size-mismatch
+	"2026/10/24 21:22:04 ...lfs/content_store.go:58:Put() [E] Whilst putting LFS OID[f51959e271d7d2a5d1dc8df2bf0b352017e936c800ca2c908b33f204d678e6b6]: Failed to copy to tmpPath: f5/19/59e271d7d2a5d1dc8df2bf0b352017e936c800ca2c908b33f204d678e6b6 Error: content size does not match",
+// TestPOCLFSInvalidUploadRejectsStageThenFreshAttemptRecovers/size-mismatch
+	"2026/10/24 21:22:04 ...rvices/lfs/server.go:399:func1() [E] Error putting LFS MetaObject [f51959e271d7d2a5d1dc8df2bf0b352017e936c800ca2c908b33f204d678e6b6] into content store. Error: content size does not match",
+// TestPOCLFSInvalidUploadRejectsStageThenFreshAttemptRecovers/size-mismatch
+	"2026/10/24 21:22:04 ...rvices/lfs/server.go:409:UploadHandler() [E] Upload does not match LFS MetaObject [f51959e271d7d2a5d1dc8df2bf0b352017e936c800ca2c908b33f204d678e6b6]. Error: content size does not match",
+--- PASS: TestPOCLFSInvalidUploadRejectsStageThenFreshAttemptRecovers (1.01s)
+    --- PASS: TestPOCLFSInvalidUploadRejectsStageThenFreshAttemptRecovers/hash-mismatch (0.51s)
+        --- PASS: TestPOCLFSInvalidUploadRejectsStageThenFreshAttemptRecovers/hash-mismatch/CreateRepo (0.25s)
+    --- PASS: TestPOCLFSInvalidUploadRejectsStageThenFreshAttemptRecovers/size-mismatch (0.50s)
+        --- PASS: TestPOCLFSInvalidUploadRejectsStageThenFreshAttemptRecovers/size-mismatch/CreateRepo (0.24s)
+=== RUN   TestPOCLFSUploadSurvivesProcessRestart
+??? [TestLogger] 2026/10/24 21:22:07 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCLFSUploadSurvivesProcessRestart3337275714/001/lfs-objects
+--- PASS: TestPOCLFSUploadSurvivesProcessRestart (4.31s)
+PASS
+ok  	forgejo.org/tests/integration	7.786s

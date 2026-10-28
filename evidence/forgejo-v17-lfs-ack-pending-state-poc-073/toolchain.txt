@@ -1,0 +1,4 @@
+go version go1.27.3 linux/arm64
+git version 2.43.0
+SQLite integration build tag: sqlite
+POC test build tag: forgejo_poc_lfs_ack_order

@@ -1,0 +1,5 @@
+Scratch base HEAD: 0d791421f85ca13a63b665053d81ea765fbbc571 (Forgejo v17.0.0); scratch worktree modified.
+b91d2a3344b3e6c495166c32305138cbbf1330b92b821bec3f3ee017a01509bf  scratch:services/repository/files/update.go
+d860bf41a98c66a6ae34862940b34ad8a98e8d13c6f3480cd716107832be4d43  scratch:routers/api/v1/repo/file.go
+ea2c94b794db8c28ccc3f0bf4cf354b6afcbe7e4e713fc5777241a6337f4f07b  scratch:routers/private/hook_post_receive.go
+a650042625e871522ec22bb226df901e4c98b15c8d01c03119ef4cf22ac47ef3  scratch:tests/integration/lfs_api_ack_order_poc_test.go

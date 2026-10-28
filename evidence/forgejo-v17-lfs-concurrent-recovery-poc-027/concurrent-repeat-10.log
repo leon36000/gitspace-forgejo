@@ -1,0 +1,72 @@
+=== RUN   TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRestart
+2026/10/24 20:20:44 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRest395350543/001/objects
+2026/10/24 20:20:44 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRest395350543/001/objects
+    versioned_download_sqlite_poc_test.go:436: concurrent promotion returned a retryable candidate error: database is locked
+    versioned_download_sqlite_poc_test.go:444: same live DB handle recovery retry after both first attempts ended: <nil>
+2026/10/24 20:20:44 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRest395350543/001/objects
+--- PASS: TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRestart (0.10s)
+=== RUN   TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRestart
+2026/10/24 20:20:44 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRest1231609233/001/objects
+2026/10/24 20:20:44 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRest1231609233/001/objects
+    versioned_download_sqlite_poc_test.go:436: concurrent promotion returned a retryable candidate error: database is locked
+    versioned_download_sqlite_poc_test.go:444: same live DB handle recovery retry after both first attempts ended: <nil>
+2026/10/24 20:20:44 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRest1231609233/001/objects
+--- PASS: TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRestart (0.09s)
+=== RUN   TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRestart
+2026/10/24 20:20:44 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRest2238374114/001/objects
+2026/10/24 20:20:44 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRest2238374114/001/objects
+    versioned_download_sqlite_poc_test.go:436: concurrent promotion returned a retryable candidate error: database is locked
+    versioned_download_sqlite_poc_test.go:444: same live DB handle recovery retry after both first attempts ended: <nil>
+2026/10/24 20:20:44 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRest2238374114/001/objects
+--- PASS: TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRestart (0.09s)
+=== RUN   TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRestart
+2026/10/24 20:20:45 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRest4036942200/001/objects
+2026/10/24 20:20:45 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRest4036942200/001/objects
+    versioned_download_sqlite_poc_test.go:436: concurrent promotion returned a retryable candidate error: database is locked
+    versioned_download_sqlite_poc_test.go:444: same live DB handle recovery retry after both first attempts ended: <nil>
+2026/10/24 20:20:45 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRest4036942200/001/objects
+--- PASS: TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRestart (0.11s)
+=== RUN   TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRestart
+2026/10/24 20:20:45 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRest171547836/001/objects
+2026/10/24 20:20:45 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRest171547836/001/objects
+    versioned_download_sqlite_poc_test.go:436: concurrent promotion returned a retryable candidate error: database is locked
+    versioned_download_sqlite_poc_test.go:444: same live DB handle recovery retry after both first attempts ended: <nil>
+2026/10/24 20:20:45 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRest171547836/001/objects
+--- PASS: TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRestart (0.11s)
+=== RUN   TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRestart
+2026/10/24 20:20:45 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRest297570371/001/objects
+2026/10/24 20:20:45 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRest297570371/001/objects
+    versioned_download_sqlite_poc_test.go:436: concurrent promotion returned a retryable candidate error: database is locked
+    versioned_download_sqlite_poc_test.go:444: same live DB handle recovery retry after both first attempts ended: <nil>
+2026/10/24 20:20:45 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRest297570371/001/objects
+--- PASS: TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRestart (0.10s)
+=== RUN   TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRestart
+2026/10/24 20:20:45 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRest4020700730/001/objects
+2026/10/24 20:20:45 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRest4020700730/001/objects
+    versioned_download_sqlite_poc_test.go:436: concurrent promotion returned a retryable candidate error: database is locked
+    versioned_download_sqlite_poc_test.go:444: same live DB handle recovery retry after both first attempts ended: <nil>
+2026/10/24 20:20:45 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRest4020700730/001/objects
+--- PASS: TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRestart (0.10s)
+=== RUN   TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRestart
+2026/10/24 20:20:45 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRest2987739433/001/objects
+2026/10/24 20:20:45 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRest2987739433/001/objects
+    versioned_download_sqlite_poc_test.go:436: concurrent promotion returned a retryable candidate error: database is locked
+    versioned_download_sqlite_poc_test.go:444: same live DB handle recovery retry after both first attempts ended: <nil>
+2026/10/24 20:20:45 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRest2987739433/001/objects
+--- PASS: TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRestart (0.19s)
+=== RUN   TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRestart
+2026/10/24 20:20:45 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRest4206251749/001/objects
+2026/10/24 20:20:45 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRest4206251749/001/objects
+    versioned_download_sqlite_poc_test.go:436: concurrent promotion returned a retryable candidate error: database is locked
+    versioned_download_sqlite_poc_test.go:444: same live DB handle recovery retry after both first attempts ended: <nil>
+2026/10/24 20:20:45 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRest4206251749/001/objects
+--- PASS: TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRestart (0.18s)
+=== RUN   TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRestart
+2026/10/24 20:20:45 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRest3429946657/001/objects
+2026/10/24 20:20:45 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRest3429946657/001/objects
+    versioned_download_sqlite_poc_test.go:436: concurrent promotion returned a retryable candidate error: database is locked
+    versioned_download_sqlite_poc_test.go:444: same live DB handle recovery retry after both first attempts ended: <nil>
+2026/10/24 20:20:45 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRest3429946657/001/objects
+--- PASS: TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRestart (0.15s)
+PASS
+ok  	forgejo.org/services/lfs	1.307s

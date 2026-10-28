@@ -1,0 +1,3 @@
+Forgejo source base commit: 0d791421f85ca13a63b665053d81ea765fbbc571
+Scratch working tree: dirty; 58 porcelain entries; preserved without reset.
+Test date: 2026-10-25.

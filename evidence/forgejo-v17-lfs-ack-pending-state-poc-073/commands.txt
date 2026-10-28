@@ -1,0 +1,10 @@
+Final verification (exit 0):
+GOTOOLCHAIN=local GOPROXY=off /tmp/forgejo-v17-toolchain/go/bin/go test -count=1 -v -timeout=20m -tags sqlite,forgejo_poc_lfs_ack_order ./tests/integration -run '^(TestPOCGenericFileLFSWriterLeavesPendingWhenTargetRefMovesBeforeAcknowledgement|TestPOCGenericFileLFSRecoveryUsesTargetReflogAfterRefMovesBack|TestPOCGenericFileLFSAPI201IsReturnedAfterPromotion|TestPOCGenericFileLFSAPIErrorLeavesRecoverablePendingOperation)$'
+
+Formatting:
+/tmp/forgejo-v17-toolchain/go/bin/gofmt -d models/git/lfs.go services/repository/files/update.go tests/integration/git_push_test.go tests/integration/lfs_api_ack_order_poc_test.go
+
+git diff --check
+
+Superseded intermediate invocation (exit 1; omitted the custom forgejo_poc_lfs_ack_order build tag and still had the old test expectation that recovery would defer even when the candidate was recorded in the target ref reflog):
+GOTOOLCHAIN=local GOPROXY=off /tmp/forgejo-v17-toolchain/go/bin/go test -count=1 -v -timeout=20m -tags sqlite ./tests/integration -run '^(TestPOCGenericFileLFSRecoveryDefersUntilTargetRefReachesCandidate|TestPOCGenericFileLFSRecoveryUsesTargetReflogAfterRefMovesBack|TestPOCGenericFileLFSAPI201IsReturnedAfterPromotion|TestPOCGenericFileLFSAPIErrorLeavesRecoverablePendingOperation)$'

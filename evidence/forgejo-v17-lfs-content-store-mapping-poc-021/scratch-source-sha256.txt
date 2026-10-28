@@ -1,0 +1,3 @@
+Forgejo base commit: 0d791421f85ca13a63b665053d81ea765fbbc571 (v17.0.0)
+Scratch-only test source: modules/lfs/content_store_generation_poc_test.go
+SHA-256: 339cdf129715bf930ede5e6fb5cc1eb3bb8823cc5698bb583be672ffae9a57c3

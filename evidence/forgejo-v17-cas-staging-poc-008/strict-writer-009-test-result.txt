@@ -1,0 +1,29 @@
+FORGEJO-CAS-STAGING-POC-008 — extension writer API / LFS
+Date: 2026-10-24
+Source: Forgejo v17.0.0, base commit 0d791421f85ca13a63b665053d81ea765fbbc571
+Scratch: /tmp/forgejo-v17-base-cas-poc
+Environment: Linux arm64, Go 1.27.3, SQLite, Git 2.43.0
+
+Command:
+PROJECT_ROOT=/tmp/forgejo-v17-base-cas-poc PROJECT_CONF=tests/sqlite.ini \
+  /tmp/forgejo-v17-toolchain/go/bin/go test -tags 'sqlite sqlite_unlock_notify' \
+  ./tests/integration \
+  -run '^TestExpectedBasePolicyRejectsFileAPIAndLeavesLFSMetadata$|^TestPullMergeExpectedBaseCommitID$|^TestGitPushExpectedBaseCommitIDRequired$' \
+  -count=1
+
+Output:
+ok   forgejo.org/tests/integration 3.647s
+Exit status: 0
+
+The test traverses the API create-file route. It observes HTTP 403, unchanged branch SHA, an active LFS metadata association, and a successful anonymous GET of the synthetic object from the public fixture repository.
+
+Command:
+PROJECT_ROOT=/tmp/forgejo-v17-base-cas-poc PROJECT_CONF=tests/sqlite.ini \
+  /tmp/forgejo-v17-toolchain/go/bin/go test -tags 'sqlite sqlite_unlock_notify' \
+  ./models/git -run '^TestLFSPendingMetaObjectLifecycle$' -count=1
+
+Output:
+ok   forgejo.org/models/git 0.204s
+Exit status: 0
+
+Formatting was run with gofmt on tests/integration/git_push_test.go. `git diff --check` passed. These targeted tests do not cover all writers, crash recovery, private-repository LFS authorization, or a real Git LFS client transfer. `git-lfs` is not installed in this environment.

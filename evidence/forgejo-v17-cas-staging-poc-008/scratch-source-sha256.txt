@@ -1,0 +1,20 @@
+Forgejo official source: tag v17.0.0
+Base commit: 0d791421f85ca13a63b665053d81ea765fbbc571
+Scratch: /tmp/forgejo-v17-base-cas-poc
+Scratch source diff SHA-256: 27ce6a43cb645cb88f7e5e93b73a38b5d51114b87255a0ee467aa69e5e0fcea4
+Scratch change summary: 14 files, 488 insertions, 30 deletions; `git diff --check` passed.
+
+c03b264a65d6b914d72c7e2f83875456e5c985e9d7b1bf8678a489e6ad13048b  cmd/hook.go
+51ded9ad0ac2161416f501f0123ed85e7ab982a596c6acf2b4ef5d9eb2ef96be  models/git/lfs.go
+1b30e64168444fa16db2a3438b9ec3389102bb9ea3cd669a418340164a13ec53  models/git/lfs_test.go
+0c299df82bf423549af0ad5c78a83df26be96cb392c9f3abb64d0740410456fb  models/repo/repo_unit.go
+c7413c866aa393f93faf57f07895dd1ef353110156c7dc6f4c3501b491c4334c  modules/private/hook.go
+de8c547cc6db6904de7961e93085365cbb5febaab1ca4c788132395e83768503  modules/repository/env.go
+52a7cecbbee8e51f73f2fe207b085b6bbeb97ec57ce93bfdf828a3fbad4dd0db  routers/private/hook_post_receive.go
+080fdca033f43d9c2f7adc48551bfaf32cb2a7aeed0bdaedb94ad24b8524c70e  routers/private/hook_pre_receive.go
+6666c7ddf119827c9099d3922928f0d57fec0d902d59e8c2fdda829ca579b8a8  services/pull/lfs.go
+c6e724ffbf8f2ab76712b44f8d0674ebf2ef2fe59e5a3e0114042dcbe42d933e  services/pull/merge.go
+b62e9d23a3d530402dd1842fb60aa3fdff2e41c914459578349fb04ece53aa69  services/pull/merge_manual.go
+69a74bf7e345fe751c0b39bb31bddd5ff3353bd87258164e6a7239ab448d79a6  services/pull/update_rebase.go
+b5c0f61fb37812d2fea0680db50460d8379b796a51e5613c3957feb661ee9288  tests/integration/git_push_test.go
+5ffdf1eb3cfa01bfb8e34225442430c01173604946849ca6c150d777e2bd56a9  tests/integration/pull_merge_test.go

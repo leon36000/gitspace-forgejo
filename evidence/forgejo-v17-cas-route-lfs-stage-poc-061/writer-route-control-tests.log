@@ -1,0 +1,307 @@
+Environment variable $PROJECT_CONF not set, use default: tests/sqlite.ini
+2026/10/25 06:25:31 ...s/storage/storage.go:157:initAttachments() [I] Initialising Attachment storage with type: local
+2026/10/25 06:25:31 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/attachments
+2026/10/25 06:25:31 ...s/storage/storage.go:147:initAvatars() [I] Initialising Avatar storage with type: local
+2026/10/25 06:25:31 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/avatars
+2026/10/25 06:25:31 ...s/storage/storage.go:174:initRepoAvatars() [I] Initialising Repository Avatar storage with type: local
+2026/10/25 06:25:31 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/repo-avatars
+2026/10/25 06:25:31 ...s/storage/storage.go:168:initLFS() [I] Initialising LFS storage with type: local
+2026/10/25 06:25:31 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/lfs
+2026/10/25 06:25:31 ...s/storage/storage.go:180:initRepoArchives() [I] Initialising Repository Archive storage with type: local
+2026/10/25 06:25:31 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/repo-archive
+2026/10/25 06:25:31 ...s/storage/storage.go:190:initPackages() [I] Initialising Packages storage with type: local
+2026/10/25 06:25:31 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/packages
+2026/10/25 06:25:31 ...s/storage/storage.go:201:initActions() [I] Initialising Actions storage with type: local
+2026/10/25 06:25:31 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/actions_log
+2026/10/25 06:25:31 ...s/storage/storage.go:205:initActions() [I] Initialising ActionsArtifacts storage with type: local
+2026/10/25 06:25:31 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/actions_artifacts
+2026/10/25 06:25:31 modules/git/git.go:122:checkInit() [W] git module has been initialized already, duplicate init may work but it's better to fix it
+2026/10/25 06:25:31 routers/init.go:109:InitWebInstalled() [I] Git version: 2.43.0 (home: /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/home)
+??? [TestLogger] 2026/10/25 06:25:31 ...s/storage/storage.go:157:initAttachments() [I] Initialising Attachment storage with type: local
+??? [TestLogger] 2026/10/25 06:25:31 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/attachments
+??? [TestLogger] 2026/10/25 06:25:31 ...s/storage/storage.go:147:initAvatars() [I] Initialising Avatar storage with type: local
+??? [TestLogger] 2026/10/25 06:25:31 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/avatars
+??? [TestLogger] 2026/10/25 06:25:31 ...s/storage/storage.go:174:initRepoAvatars() [I] Initialising Repository Avatar storage with type: local
+??? [TestLogger] 2026/10/25 06:25:31 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/repo-avatars
+??? [TestLogger] 2026/10/25 06:25:31 ...s/storage/storage.go:168:initLFS() [I] Initialising LFS storage with type: local
+??? [TestLogger] 2026/10/25 06:25:31 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/lfs
+??? [TestLogger] 2026/10/25 06:25:31 ...s/storage/storage.go:180:initRepoArchives() [I] Initialising Repository Archive storage with type: local
+??? [TestLogger] 2026/10/25 06:25:31 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/repo-archive
+??? [TestLogger] 2026/10/25 06:25:31 ...s/storage/storage.go:190:initPackages() [I] Initialising Packages storage with type: local
+??? [TestLogger] 2026/10/25 06:25:31 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/packages
+??? [TestLogger] 2026/10/25 06:25:31 ...s/storage/storage.go:201:initActions() [I] Initialising Actions storage with type: local
+??? [TestLogger] 2026/10/25 06:25:31 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/actions_log
+??? [TestLogger] 2026/10/25 06:25:31 ...s/storage/storage.go:205:initActions() [I] Initialising ActionsArtifacts storage with type: local
+??? [TestLogger] 2026/10/25 06:25:31 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/actions_artifacts
+??? [TestLogger] 2026/10/25 06:25:31 routers/init.go:129:InitWebInstalled() [I] SQLite3 support is enabled
+??? [TestLogger] 2026/10/25 06:25:31 routers/common/db.go:23:InitDBEngine() [I] Beginning ORM engine initialization.
+??? [TestLogger] 2026/10/25 06:25:31 routers/common/db.go:30:InitDBEngine() [I] ORM engine initialization attempt #1/10...
+??? [TestLogger] 2026/10/25 06:25:31 routers/init.go:135:InitWebInstalled() [I] ORM engine initialization successful!
+??? [TestLogger] 2026/10/25 06:25:31 ...er/issues/indexer.go:80:func1() [I] PID 876350: Initializing Issue Indexer: bleve
+??? [TestLogger] 2026/10/25 06:25:31 ...exer/code/indexer.go:169:func3() [I] PID: 876350 Initializing Repository Indexer at: /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/indexers/repos.bleve
+??? [TestLogger] 2026/10/25 06:25:31 ...xer/stats/indexer.go:41:populateRepoIndexer() [I] Populating the repo stats indexer with existing repositories
+??? [TestLogger] 2026/10/25 06:25:31 routers/init.go:84:syncAppConfForGit() [I] AppPath changed from '' to '/tmp/go-build775991448/b001/integration.test'
+??? [TestLogger] 2026/10/25 06:25:31 routers/init.go:89:syncAppConfForGit() [I] CustomConf changed from '' to '/tmp/forgejo-v17-base-cas-poc/tests/sqlite.ini'
+??? [TestLogger] 2026/10/25 06:25:32 modules/ssh/ssh.go:345:Listen() [I] Adding SSH host key: /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/ssh/gitea.rsa
+??? [TestLogger] 2026/10/25 06:25:32 modules/ssh/init.go:30:Init() [I] SSH server started on localhost:2203. Cipher list ([chacha20-poly1305@openssh.com aes128-ctr aes192-ctr aes256-ctr aes128-gcm@openssh.com aes256-gcm@openssh.com]), key exchange algorithms ([mlkem768x25519-sha256 curve25519-sha256 ecdh-sha2-nistp256 ecdh-sha2-nistp384 ecdh-sha2-nistp521 diffie-hellman-group14-sha256 diffie-hellman-group14-sha1]), MACs ([hmac-sha2-256-etm@openssh.com hmac-sha2-256 hmac-sha1])
+??? [TestLogger] 2026/10/25 06:25:32 ...s/graceful/server.go:50:NewServer() [I] Starting new SSH server: tcp:localhost:2203 on PID: 876350
+=== RUN   TestGitPushExpectedBaseCommitIDRequired
+=== TestGitPushExpectedBaseCommitIDRequired (tests/integration/git_helper_for_declarative_test.go:67)
+    test_utils.go:276: PrepareTestEnv:Process "Stats.DB Index Repo[39]" cancelled
+    test_utils.go:276: PrepareTestEnv:Process "Cron: Clean-up deleted branches" cancelled
+    test_utils.go:276: PrepareTestEnv:Process "Cron: Revoke Forgejo Actions trust for inactive users" cancelled
+    test_utils.go:276: PrepareTestEnv:Process "Cron: Transfer actions logs of finished actions jobs from the database to storage" cancelled
+    test_utils.go:276: PrepareTestEnv:Process "Cron: Update migration poster IDs" cancelled
+    test_utils.go:276: PrepareTestEnv:Process "Cron: Clean up expired packages" cancelled
+    test_utils.go:276: PrepareTestEnv:Process "Cron: Delete old repository archives" cancelled
+    testlogger.go:408: 2026/10/25 06:25:32 ...rvices/cron/tasks.go:131:func2() [E] CreateNotice: context canceled
+    testlogger.go:408: 2026/10/25 06:25:32 ...rvices/cron/tasks.go:131:func2() [E] CreateNotice: context canceled
+    testlogger.go:408: 2026/10/25 06:25:32 ...rvices/cron/tasks.go:131:func2() [E] CreateNotice: context canceled
+    testlogger.go:408: 2026/10/25 06:25:32 ...rvices/cron/tasks.go:131:func2() [E] CreateNotice: context canceled
+    testlogger.go:408: 2026/10/25 06:25:32 ...migrations/update.go:26:UpdateMigrationPosterID() [E] updateMigrationPosterIDByGitService failed: context canceled
+    testlogger.go:408: 2026/10/25 06:25:32 ...migrations/update.go:21:UpdateMigrationPosterID() [W] UpdateMigrationPosterID aborted before gitlab
+    testlogger.go:408: 2026/10/25 06:25:32 ...rvices/cron/tasks.go:131:func2() [E] CreateNotice: context canceled
+    test_utils.go:302: PrepareTestEnv: all processes cancelled within 33.442795ms
+    testlogger.go:408: 2026/10/25 06:25:32 ...xer/stats/indexer.go:87:populateRepoIndexer() [I] Done (re)populating the repo stats indexer with existing repositories
+    testlogger.go:408: 2026/10/25 06:25:32 ...er/issues/indexer.go:160:func2() [I] Issue Indexer Initialization took 227.131291ms
+    testlogger.go:408: 2026/10/25 06:25:32 ...exer/code/indexer.go:265:func4() [I] Repository Indexer Initialization took 255.868411ms
+    testlogger.go:408: 2026/10/25 06:25:32 ...exer/code/indexer.go:291:populateRepoIndexer() [I] Populating the repo indexer with existing repositories
+    testlogger.go:408: 2026/10/25 06:25:32 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/gitea-lfs-meta
+    testlogger.go:408: 2026/10/25 06:25:32 ...odels/user/avatar.go:59:GenerateRandomAvatar() [I] New random avatar created: 2
+    testlogger.go:408: 2026/10/25 06:25:33 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user2/repo-expected-base-required.git/info/refs?service=git-receive-pack for 127.0.0.1:41974, 401 Unauthorized in 19.0ms @ repo/githttp.go:509(repo.GetInfoRefs)
+    testlogger.go:408: 2026/10/25 06:25:33 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user2/repo-expected-base-required.git/info/refs?service=git-receive-pack for 127.0.0.1:41974, 200 OK in 32.4ms @ repo/githttp.go:509(repo.GetInfoRefs)
+    testlogger.go:408: 2026/10/25 06:25:33 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/pre-receive/user2/repo-expected-base-required for 127.0.0.1:0, 200 OK in 1.5ms @ private/hook_pre_receive.go:206(private.HookPreReceive)
+    testlogger.go:408: 2026/10/25 06:25:33 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/post-receive/user2/repo-expected-base-required for 127.0.0.1:0, 200 OK in 572.0ms @ private/hook_post_receive.go:45(private.HookPostReceive)
+    testlogger.go:408: 2026/10/25 06:25:33 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/set-default-branch/user2/repo-expected-base-required/master for 127.0.0.1:0, 200 OK in 11.2ms @ private/default_branch.go:17(private.SetDefaultBranch)
+    testlogger.go:408: 2026/10/25 06:25:33 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user2/repo-expected-base-required.git/git-receive-pack for 127.0.0.1:41974, 200 OK in 770.1ms @ repo/githttp.go:477(repo.ServiceReceivePack)
+    testlogger.go:408: 2026/10/25 06:25:33 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user2/repo-expected-base-required.git/info/refs?service=git-receive-pack for 127.0.0.1:42026, 401 Unauthorized in 4.4ms @ repo/githttp.go:509(repo.GetInfoRefs)
+    testlogger.go:408: 2026/10/25 06:25:33 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user2/repo-expected-base-required.git/info/refs?service=git-receive-pack for 127.0.0.1:42026, 200 OK in 2.5ms @ repo/githttp.go:509(repo.GetInfoRefs)
+    testlogger.go:408: 2026/10/25 06:25:34 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/pre-receive/user2/repo-expected-base-required for 127.0.0.1:0, 200 OK in 3.0ms @ private/hook_pre_receive.go:206(private.HookPreReceive)
+    testlogger.go:408: 2026/10/25 06:25:34 ...exer/code/indexer.go:343:populateRepoIndexer() [I] Done (re)populating the repo indexer with existing repositories
+    testlogger.go:408: 2026/10/25 06:25:34 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/post-receive/user2/repo-expected-base-required for 127.0.0.1:0, 200 OK in 54.7ms @ private/hook_post_receive.go:45(private.HookPostReceive)
+    testlogger.go:408: 2026/10/25 06:25:34 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user2/repo-expected-base-required.git/git-receive-pack for 127.0.0.1:42026, 200 OK in 243.6ms @ repo/githttp.go:477(repo.ServiceReceivePack)
+    testlogger.go:408: 2026/10/25 06:25:34 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user2/repo-expected-base-required.git/info/refs?service=git-receive-pack for 127.0.0.1:42046, 401 Unauthorized in 0.5ms @ repo/githttp.go:509(repo.GetInfoRefs)
+    testlogger.go:408: 2026/10/25 06:25:34 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user2/repo-expected-base-required.git/info/refs?service=git-receive-pack for 127.0.0.1:42046, 200 OK in 2.2ms @ repo/githttp.go:509(repo.GetInfoRefs)
+    testlogger.go:408: 2026/10/25 06:25:34 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/pre-receive/user2/repo-expected-base-required for 127.0.0.1:0, 409 Conflict in 1.3ms @ private/hook_pre_receive.go:206(private.HookPreReceive)
+    testlogger.go:408: 2026/10/25 06:25:34 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user2/repo-expected-base-required.git/git-receive-pack for 127.0.0.1:42046, 200 OK in 59.5ms @ repo/githttp.go:477(repo.ServiceReceivePack)
+    testlogger.go:408: 2026/10/25 06:25:34 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user2/repo-expected-base-required.git/info/refs?service=git-receive-pack for 127.0.0.1:42058, 401 Unauthorized in 0.5ms @ repo/githttp.go:509(repo.GetInfoRefs)
+    testlogger.go:408: 2026/10/25 06:25:34 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user2/repo-expected-base-required.git/info/refs?service=git-receive-pack for 127.0.0.1:42058, 200 OK in 3.4ms @ repo/githttp.go:509(repo.GetInfoRefs)
+    testlogger.go:408: 2026/10/25 06:25:34 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/pre-receive/user2/repo-expected-base-required for 127.0.0.1:0, 409 Conflict in 1.2ms @ private/hook_pre_receive.go:206(private.HookPreReceive)
+    testlogger.go:408: 2026/10/25 06:25:34 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user2/repo-expected-base-required.git/git-receive-pack for 127.0.0.1:42058, 200 OK in 86.2ms @ repo/githttp.go:477(repo.ServiceReceivePack)
+testlogger.go:recordError() FATAL ERROR: log.Error has been called: // TestGitPushExpectedBaseCommitIDRequired
+	"2026/10/25 06:25:32 ...rvices/cron/tasks.go:131:func2() [E] CreateNotice: context canceled",
+// TestGitPushExpectedBaseCommitIDRequired
+	"2026/10/25 06:25:32 ...rvices/cron/tasks.go:131:func2() [E] CreateNotice: context canceled",
+// TestGitPushExpectedBaseCommitIDRequired
+	"2026/10/25 06:25:32 ...rvices/cron/tasks.go:131:func2() [E] CreateNotice: context canceled",
+// TestGitPushExpectedBaseCommitIDRequired
+	"2026/10/25 06:25:32 ...rvices/cron/tasks.go:131:func2() [E] CreateNotice: context canceled",
+// TestGitPushExpectedBaseCommitIDRequired
+	"2026/10/25 06:25:32 ...migrations/update.go:26:UpdateMigrationPosterID() [E] updateMigrationPosterIDByGitService failed: context canceled",
+// TestGitPushExpectedBaseCommitIDRequired
+	"2026/10/25 06:25:32 ...rvices/cron/tasks.go:131:func2() [E] CreateNotice: context canceled",
+--- PASS: TestGitPushExpectedBaseCommitIDRequired (2.39s)
+=== RUN   TestPullMergeExpectedBaseCommitID
+=== TestPullMergeExpectedBaseCommitID (tests/integration/git_helper_for_declarative_test.go:67)
+    testlogger.go:408: 2026/10/25 06:25:34 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/gitea-lfs-meta
+    testlogger.go:408: 2026/10/25 06:25:34 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/login for test-mock:12345, 303 See Other in 3.0ms @ auth/auth.go:208(auth.SignInPost)
+    testlogger.go:408: 2026/10/25 06:25:34 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user1/repo1 for test-mock:12345, 404 Not Found in 0.8ms @ context/repo.go:460(context.RepoAssignment)
+    testlogger.go:408: 2026/10/25 06:25:34 ...s/setting/setting.go:65:initialAppDocsVer() [W] Doclinks will fallback to version 'latest' due to err: Malformed version: dev
+    testlogger.go:408: 2026/10/25 06:25:34 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user2/repo1/fork for test-mock:12345, 200 OK in 12.9ms @ repo/pull.go:221(repo.Fork)
+    testlogger.go:408: 2026/10/25 06:25:34 ...odels/user/avatar.go:59:GenerateRandomAvatar() [I] New random avatar created: 2
+    testlogger.go:408: 2026/10/25 06:25:34 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user2/repo1/fork for test-mock:12345, 303 See Other in 61.1ms @ repo/pull.go:240(repo.ForkPost)
+    testlogger.go:408: 2026/10/25 06:25:34 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user1/repo1 for test-mock:12345, 200 OK in 31.2ms @ repo/view.go:862(repo.Home)
+    testlogger.go:408: 2026/10/25 06:25:34 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user1/repo1/_edit/master/README.md for test-mock:12345, 200 OK in 25.9ms @ repo/editor.go:256(repo.EditFile)
+    testlogger.go:408: 2026/10/25 06:25:34 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/pre-receive/user1/repo1 for 127.0.0.1:0, 200 OK in 1.2ms @ private/hook_pre_receive.go:206(private.HookPreReceive)
+    testlogger.go:408: 2026/10/25 06:25:35 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/post-receive/user1/repo1 for 127.0.0.1:0, 200 OK in 53.2ms @ private/hook_post_receive.go:45(private.HookPostReceive)
+    testlogger.go:408: 2026/10/25 06:25:35 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user1/repo1/_edit/master/README.md for test-mock:12345, 303 See Other in 308.8ms @ repo/editor.go:433(repo.EditFilePost)
+    testlogger.go:408: 2026/10/25 06:25:35 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user1/repo1/raw/branch/master/README.md for test-mock:12345, 200 OK in 16.3ms @ repo/download.go:111(repo.SingleDownload)
+    testlogger.go:408: 2026/10/25 06:25:35 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user1/repo1 for test-mock:12345, 200 OK in 26.2ms @ repo/view.go:862(repo.Home)
+    testlogger.go:408: 2026/10/25 06:25:35 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user2/repo1/compare/master...user1/repo1:master for test-mock:12345, 200 OK in 127.9ms @ repo/compare.go:702(repo.CompareDiff)
+    testlogger.go:408: 2026/10/25 06:25:35 ...ces/mailer/mailer.go:384:Send() [I] Mail From: sqlite-integration-test@gitea.io To: [user11@example.com] Body: Mime-Version: 1.0
+        X-GitHub-Recipient-Address: user11@example.com
+        X-GitHub-Reason: pull
+        X-GitLab-Issue-IID: 6
+        X-Forgejo-Reason: pull
+        Subject: [user2/repo1] CAS policy merge (PR #6)
+        X-Forgejo-Repository-Path: user2/repo1
+        From: "user1" <sqlite-integration-test@gitea.io>
+        List-ID: user2/repo1 <repo1.user2.localhost>
+        X-GitLab-Project-Path: user2/repo1
+        X-Gitea-Sender: user1
+        X-Auto-Response-Suppress: All
+        X-GitHub-Recipient: user11
+        X-Forgejo-Sender: user1
+        X-Gitea-Recipient: user11
+        X-Forgejo-Issue-Link: http://localhost:3003/user2/repo1/pulls/6
+        X-Gitea-Reason: pull
+        X-Gitea-Recipient-Address: user11@example.com
+        References: <user2/repo1/pulls/6@localhost>
+        List-Archive: <http://localhost:3003/user2/repo1>
+        To: user11@example.com
+        X-Gitea-Repository-Link: http://localhost:3003/user2/repo1
+        X-Forgejo-Recipient-Address: user11@example.com
+        X-Mailer: Forgejo
+        List-Unsubscribe: <http://localhost:3003/user2/repo1/pulls/6>
+        X-GitHub-Sender: user1
+        X-Gitea-Repository-Path: user2/repo1
+        X-GitLab-Project: repo1
+        X-Forgejo-Repository: repo1
+        In-Reply-To: <user2/repo1/pulls/6@localhost>
+        X-Gitea-Repository: repo1
+        X-GitLab-NotificationReason: pull
+        X-Gitea-Issue-ID: 6
+        X-Gitea-Issue-Link: http://localhost:3003/user2/repo1/pulls/6
+        X-Forgejo-Issue-ID: 6
+        Message-ID: <user2/repo1/pulls/6@localhost>
+        Date: Sun, 25 Oct 2026 06:25:35 -0400
+        X-Forgejo-Repository-Link: http://localhost:3003/user2/repo1
+        X-Forgejo-Recipient: user11
+        Content-Type: multipart/alternative;
+         boundary=871da46c6f7681da353f65ade8bf4ea2da1dba2f2ab2d5ebfbf137ab7dcf
+        
+        --871da46c6f7681da353f65ade8bf4ea2da1dba2f2ab2d5ebfbf137ab7dcf
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/plain; charset=UTF-8
+        
+        *@user1* created #6.
+        
+        ---
+        View it on Forgejo ( http://localhost:3003/user2/repo1/pulls/6 ).
+        --871da46c6f7681da353f65ade8bf4ea2da1dba2f2ab2d5ebfbf137ab7dcf
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/html; charset=UTF-8
+        
+        <!DOCTYPE html>
+        <html>
+        <head>
+        	<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+        
+        	<style>
+        		blockquote { padding-left: 1em; margin: 1em 0; border-left: 1px solid gre=
+        y; color: #777}
+        		.footer { font-size:small; color:#666;}
+        	=09
+        	</style>
+        
+        </head>
+        
+        <body>
+        =09
+        =09
+        	<p>
+        	=09
+        		=09
+        				<b>@user1</b> created #6.
+        		=09
+        	=09
+        	</p>
+        	<div class=3D"footer">
+        	<p>
+        		---
+        		<br>
+        		<a href=3D"http://localhost:3003/user2/repo1/pulls/6">View it on Forgejo<=
+        /a>.
+        	</p>
+        	</div>
+        </body>
+        </html>
+        
+        --871da46c6f7681da353f65ade8bf4ea2da1dba2f2ab2d5ebfbf137ab7dcf--
+    testlogger.go:408: 2026/10/25 06:25:35 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user2/repo1/compare/master...user1/repo1:master for test-mock:12345, 200 OK in 151.3ms @ repo/pull.go:1635(repo.CompareAndPullRequestPost)
+    testlogger.go:408: 2026/10/25 06:25:35 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/pre-receive/user2/repo1 for 127.0.0.1:0, 200 OK in 0.7ms @ private/hook_pre_receive.go:206(private.HookPreReceive)
+    testlogger.go:408: 2026/10/25 06:25:35 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/post-receive/user2/repo1 for 127.0.0.1:0, 200 OK in 70.1ms @ private/hook_post_receive.go:45(private.HookPostReceive)
+    testlogger.go:408: 2026/10/25 06:25:35 ...ces/mailer/mailer.go:384:Send() [I] Mail From: sqlite-integration-test@gitea.io To: [user11@example.com] Body: Mime-Version: 1.0
+        Message-ID: <user2/repo1/pulls/6/merge/1792923935733@localhost>
+        X-Forgejo-Recipient-Address: user11@example.com
+        X-Gitea-Repository: repo1
+        List-Unsubscribe: <http://localhost:3003/user2/repo1/pulls/6>
+        X-Mailer: Forgejo
+        X-Gitea-Sender: user1
+        From: "user1" <sqlite-integration-test@gitea.io>
+        X-Forgejo-Issue-Link: http://localhost:3003/user2/repo1/pulls/6
+        X-Gitea-Issue-Link: http://localhost:3003/user2/repo1/pulls/6
+        X-Gitea-Repository-Link: http://localhost:3003/user2/repo1
+        X-Forgejo-Repository-Path: user2/repo1
+        X-GitLab-Project-Path: user2/repo1
+        X-Gitea-Reason: pull
+        References: <user2/repo1/pulls/6@localhost>
+        X-GitHub-Reason: pull
+        X-Gitea-Repository-Path: user2/repo1
+        X-GitHub-Recipient: user11
+        X-Gitea-Issue-ID: 6
+        X-Forgejo-Recipient: user11
+        X-Gitea-Recipient-Address: user11@example.com
+        X-GitHub-Sender: user1
+        In-Reply-To: <user2/repo1/pulls/6@localhost>
+        List-Archive: <http://localhost:3003/user2/repo1>
+        X-GitLab-Issue-IID: 6
+        List-ID: user2/repo1 <repo1.user2.localhost>
+        Subject: Re: [user2/repo1] CAS policy merge (PR #6)
+        Date: Sun, 25 Oct 2026 06:25:35 -0400
+        X-GitHub-Recipient-Address: user11@example.com
+        X-GitLab-Project: repo1
+        X-Gitea-Recipient: user11
+        X-Forgejo-Issue-ID: 6
+        X-Auto-Response-Suppress: All
+        To: user11@example.com
+        X-Forgejo-Repository-Link: http://localhost:3003/user2/repo1
+        X-GitLab-NotificationReason: pull
+        X-Forgejo-Sender: user1
+        X-Forgejo-Repository: repo1
+        X-Forgejo-Reason: pull
+        Content-Type: multipart/alternative;
+         boundary=de56005b8f73678419b885860ca3855dae898ae99ba03057df850a1d523f
+        
+        --de56005b8f73678419b885860ca3855dae898ae99ba03057df850a1d523f
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/plain; charset=UTF-8
+        
+        *@user1* merged #6 into master.
+        
+        ---
+        View it on Forgejo ( http://localhost:3003/user2/repo1/pulls/6 ).
+        --de56005b8f73678419b885860ca3855dae898ae99ba03057df850a1d523f
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/html; charset=UTF-8
+        
+        <!DOCTYPE html>
+        <html>
+        <head>
+        	<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+        
+        	<style>
+        		blockquote { padding-left: 1em; margin: 1em 0; border-left: 1px solid gre=
+        y; color: #777}
+        		.footer { font-size:small; color:#666;}
+        	=09
+        	</style>
+        
+        </head>
+        
+        <body>
+        =09
+        =09
+        	<p>
+        	=09
+        			<b>@user1</b> merged #6 into master.
+        	=09
+        		=09
+        	=09
+        	</p>
+        	<div class=3D"footer">
+        	<p>
+        		---
+        		<br>
+        		<a href=3D"http://localhost:3003/user2/repo1/pulls/6">View it on Forgejo<=
+        /a>.
+        	</p>
+        	</div>
+        </body>
+        </html>
+        
+        --de56005b8f73678419b885860ca3855dae898ae99ba03057df850a1d523f--
+    testlogger.go:408: 2026/10/25 06:25:35 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user2/repo1/pulls/6/merge for test-mock:12345, 200 OK in 399.5ms @ repo/pull.go:1375(repo.MergePullRequest)
+--- PASS: TestPullMergeExpectedBaseCommitID (1.35s)
+PASS
+ok  	forgejo.org/tests/integration	4.635s

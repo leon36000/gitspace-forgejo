@@ -1,0 +1,4 @@
+# forgejo.org/tests/integration [forgejo.org/tests/integration.test]
+tests/integration/lfs_api_ack_order_poc_test.go:21:2: "forgejo.org/modules/git" imported and not used
+FAIL	forgejo.org/tests/integration [build failed]
+FAIL

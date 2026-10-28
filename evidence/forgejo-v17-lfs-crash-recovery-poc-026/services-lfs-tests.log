@@ -1,0 +1,8 @@
+=== RUN   TestPOCSQLiteMappingBindsStreamToResolvedGeneration
+2026/10/24 20:15:17 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCSQLiteMappingBindsStreamToResolvedGeneration348655719/002/lfs
+--- PASS: TestPOCSQLiteMappingBindsStreamToResolvedGeneration (0.07s)
+=== RUN   TestPOCInterruptedLFSGenerationStageRecoversAfterProcessRestart
+2026/10/24 20:15:17 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCInterruptedLFSGenerationStageRecoversAfterProcessRestart1991306292/001/objects
+--- PASS: TestPOCInterruptedLFSGenerationStageRecoversAfterProcessRestart (0.11s)
+PASS
+ok  	forgejo.org/services/lfs	0.276s

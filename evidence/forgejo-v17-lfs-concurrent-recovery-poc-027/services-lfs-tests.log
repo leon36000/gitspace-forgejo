@@ -1,0 +1,15 @@
+=== RUN   TestPOCSQLiteMappingBindsStreamToResolvedGeneration
+2026/10/24 20:20:49 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCSQLiteMappingBindsStreamToResolvedGeneration2201970427/002/lfs
+--- PASS: TestPOCSQLiteMappingBindsStreamToResolvedGeneration (0.10s)
+=== RUN   TestPOCInterruptedLFSGenerationStageRecoversAfterProcessRestart
+2026/10/24 20:20:49 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCInterruptedLFSGenerationStageRecoversAfterProcessRestart3118015040/001/objects
+--- PASS: TestPOCInterruptedLFSGenerationStageRecoversAfterProcessRestart (0.10s)
+=== RUN   TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRestart
+2026/10/24 20:20:49 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRest1233564913/001/objects
+2026/10/24 20:20:49 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRest1233564913/001/objects
+    versioned_download_sqlite_poc_test.go:436: concurrent promotion returned a retryable candidate error: database is locked
+    versioned_download_sqlite_poc_test.go:444: same live DB handle recovery retry after both first attempts ended: <nil>
+2026/10/24 20:20:49 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRest1233564913/001/objects
+--- PASS: TestPOCConcurrentLFSRecoveryAcrossSQLiteEnginesRecoversAfterRestart (0.07s)
+PASS
+ok  	forgejo.org/services/lfs	0.333s
