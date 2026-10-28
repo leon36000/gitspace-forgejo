@@ -1,0 +1,2 @@
+test_executables_with_summary=36
+passed=619 failed=0 ignored=106

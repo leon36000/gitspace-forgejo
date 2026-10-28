@@ -1,0 +1,19 @@
+Base revision: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+
+Test-first regression reproduction (expected failure before the fix):
+cargo test --offline --locked --test webhook_reconcile_contract workflow_job_readback_refuses_api_url_for_another_job_index
+
+Final contract and receiver checks:
+cargo test --offline --locked --test webhook_reconcile_contract
+cargo test --offline --locked --test webhook_handler_contract
+
+Sandboxed process checks:
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_refuses_api_url_for_another_workflow_job_index
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_reads_workflow_job_and_parent_run_without_runner_details
+
+Compile every test target without executing the suite:
+cargo test --offline --locked --all-targets --no-run
+
+Final source hygiene:
+cargo fmt --all -- --check
+git diff --check

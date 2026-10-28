@@ -1,0 +1,7 @@
+6fc9e0bbdf1e0285e225ee6b5d33f4b276d4acfc03894688e2a845a1ff12db93  docs/checkpoint.md
+8097ffc823d6c92d003db8cfc5314c78ea3884f4b5197b50e0ee1f58974b88dc  docs/refusal-evidence-matrix.md
+bc7c9129dd51f86bec4c75b87382bbe3e109fdc8e04f0484b49d7d5ef8d873a0  evidence/mission-012-live-agent-webhook-supervised-009/local-run.md
+1b8c9ea465a33c12790052499dbc502c805dc8cb6a218159b40d68fd10aff99e  evidence/mission-012-live-agent-webhook-supervised-009/rust-merge-authority-result.json
+42ccf908f886aa3723b1afec9260d12ef6c52d2c7e40f86fb9259d200c607b3d  evidence/mission-012-live-agent-webhook-supervised-009/supervisor-capability-issuance.json
+2182625645ee06a8c6855a303c3b7a26450ba500d8759c00255e034b2add3bbb  evidence/mission-012-live-agent-webhook-supervised-009/forgejo-result.json
+368d679c4f4cf9bf2069ea2f3e32daca5d658aa5af862bdc17bc8c619a6d2315  evidence/mission-012-live-agent-webhook-supervised-009/postmerge-artifact-binding-validation.json

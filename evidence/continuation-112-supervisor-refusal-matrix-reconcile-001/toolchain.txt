@@ -1,0 +1,5 @@
+Python: 3.12.3 (local workspace runtime)
+Git: 2.43.0
+Forgejo proof referenced, not rerun: 17.0.0+gitea-1.22.0 local binary, SHA-256 e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7
+Bubblewrap in referenced run: 0.9.0
+Product test status for this reconciliation: not run; docs-only change.

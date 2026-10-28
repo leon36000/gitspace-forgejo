@@ -1,0 +1,12 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.43s
+     Running tests/webhook_reconcile_contract.rs (target/debug/deps/webhook_reconcile_contract-1e83f04d6aace668)
+
+running 4 tests
+test workflow_job_readback_uses_current_job_and_parent_run_without_runner_details ... ok
+test workflow_job_readback_refuses_job_from_another_run_before_parent_read ... ok
+test workflow_job_readback_refuses_api_url_for_another_job_index ... ok
+test workflow_job_readback_accepts_zero_based_first_job_and_rejects_unscoped_urls ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 50 filtered out; finished in 0.00s
+

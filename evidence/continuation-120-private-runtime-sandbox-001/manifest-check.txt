@@ -1,0 +1,5 @@
+Manifest local et résultats finaux
+
+- verify_append_only_indexes.py : code 0; 11 artefacts locaux vérifiés, 10 artefacts de l’admission source vérifiés, liaison admission→agent vérifiée, index worktree/projet liés et préfixes conservés.
+- SHA256SUMS du dossier d’admission : 10/10. source-hashes.txt : 7/7.
+- SHA256SUMS local de CONT-120 conserve une première empreinte de append_manifests.py antérieure à sa correction puis l’empreinte courante ajoutée ensuite. Le contrôle brut sha256sum -c rapporte donc l’ancienne ligne comme FAILED; la ligne courante et toutes les autres dernières empreintes sont vérifiées par verify_append_only_indexes.py. Aucune ligne historique n’a été réécrite.

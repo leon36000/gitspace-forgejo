@@ -1,0 +1,4 @@
+Initial prefix-snapshot helper attempt failed before any manifest append.
+Cause: the shell-side project index path used ../evidence/SHA256SUMS from the worktree; that path does not exist.
+Correction: use ../../evidence/SHA256SUMS (the helper itself resolves the project root from its location).
+No global index was modified by the failed attempt.

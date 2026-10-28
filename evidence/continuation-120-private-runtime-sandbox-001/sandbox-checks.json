@@ -1,0 +1,51 @@
+{
+  "credential_visible": false,
+  "direct_forgejo_routes_blocked": [
+    "api",
+    "web",
+    "git_receive_pack"
+  ],
+  "environment_keys": [
+    "HOME",
+    "LANG",
+    "LC_ALL",
+    "PATH",
+    "PWD",
+    "PYTHONDONTWRITEBYTECODE"
+  ],
+  "network_connected": false,
+  "network_namespace": "net:[4026535803]",
+  "open_fds": [
+    0,
+    1,
+    2
+  ],
+  "pid_namespace": "pid:[4026535802]",
+  "private_runtime_files_not_visible": [
+    "admission_source",
+    "forgejo_read_token",
+    "host_admission",
+    "invalid_forgejo_read_token",
+    "mission_journal",
+    "webhook_inbox"
+  ],
+  "probe_target_port": 3132,
+  "route_probe_specs": [
+    {
+      "method": "GET",
+      "name": "api",
+      "path": "/api/v1/repos/forge-admin/mission-012-clamp/pulls/2"
+    },
+    {
+      "method": "GET",
+      "name": "web",
+      "path": "/forge-admin/mission-012-clamp/pulls/2"
+    },
+    {
+      "method": "POST",
+      "name": "git_receive_pack",
+      "path": "/forge-admin/mission-012-clamp.git/git-receive-pack"
+    }
+  ],
+  "supervisor_observed_route_connections": 0
+}

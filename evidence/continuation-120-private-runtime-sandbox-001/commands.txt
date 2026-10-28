@@ -1,0 +1,15 @@
+1. Admission locale, sortie 0 :
+python3 scripts/run_forgejo_live_webhook_mission_admission.py --forgejo-binary /tmp/forgejo-17.0.0 --repo-root <worktree> --state-dir /tmp/mission-012-private-runtime-sandbox-001 --evidence-dir <worktree>/evidence/mission-012-private-runtime-sandbox-001 --allocation-id mission012-private-runtime-001 --build-mcp-host
+
+2. Stage agent isolé réutilisant cette admission et cette instance Forgejo, sortie 0 :
+python3 scripts/run_mission_012_live_mcp_agent_e2e.py --state-dir /tmp/mission-012-private-runtime-sandbox-001 --execution-id live-mcp-120 --agent-adapter local-test-adapter --sandbox-test-adapter --webhook-inbox-file /tmp/mission-012-private-runtime-sandbox-001/project/.runtime/forgejo-webhook-inbox.jsonl --admission-source-file /tmp/mission-012-private-runtime-sandbox-001/project/.runtime/mission-host-admission-source-92f603464e6ff43345790f1492a1446ed719868c515a60e9a4bd586daac77ba2.json
+
+3. Tentative diagnostique sur l’ancien état déjà fusionné, sortie 1 avant l’agent; refusée pour base obsolète et exclue des résultats :
+python3 scripts/run_mission_012_live_mcp_agent_e2e.py --state-dir /tmp/mission-012-admission-host-handoff-005 --execution-id live-mcp-127 --agent-adapter local-test-adapter --sandbox-test-adapter --webhook-inbox-file /tmp/mission-012-admission-host-handoff-005/project/.runtime/forgejo-webhook-inbox.jsonl --admission-source-file /tmp/mission-012-admission-host-handoff-005/project/.runtime/mission-host-admission-source-8a02f3b9d49f846ab66b484b3c51a05c606ca8245833b984f4c50f6c83eeb3b4.json
+
+4. Vérifications ciblées, sortie 0 :
+python3 -m py_compile scripts/mission_012_test_agent_adapter.py scripts/mission_012_sandboxed_test_adapter.py scripts/run_mission_012_live_mcp_agent_e2e.py tests/test_mission_012_sandboxed_test_adapter.py tests/test_mission_012_live_mcp_agent_e2e.py
+python3 -m unittest -v tests.test_mission_012_sandboxed_test_adapter tests.test_mission_012_live_mcp_agent_e2e tests.test_mission_012_test_agent_adapter tests.test_forgejo_agent_egress_live_e2e tests.test_mission_webhook_handoff tests.test_composition_source_snapshot
+
+5. Intégrité de l’admission :
+sha256sum -c evidence/mission-012-private-runtime-sandbox-001/SHA256SUMS

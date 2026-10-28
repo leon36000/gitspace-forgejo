@@ -1,0 +1,20 @@
+Base revision: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+
+Contract:
+cargo test --offline --locked --test webhook_reconcile_contract
+
+Isolated process workflow:
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_reads_workflow_job_and_parent_run_without_runner_details
+
+Cargo license metadata guard (license remains unselected):
+cargo metadata --offline --locked --no-deps --format-version 1
+python3 scripts/verify_cargo_license_state.py
+python3 -m unittest -v scripts.test_cargo_license_state
+
+Source hygiene:
+cargo fmt --all -- --check
+git diff --check
+
+Append-only evidence indexes:
+python3 evidence/continuation-118-webhook-job-hostile-origin-001/append_manifests.py
+python3 evidence/continuation-118-webhook-job-hostile-origin-001/verify_append_only_indexes.py

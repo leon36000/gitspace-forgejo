@@ -1,0 +1,5 @@
+Index append-only globaux
+
+- Le snapshot de préfixes est manifest-prefix-before.json. Les index globaux ont reçu uniquement des lignes ajoutées.
+- verify_append_only_indexes.py confirme les hashes de tous les artefacts courants de CONT-120, du dossier d’admission source, des trois documents canoniques et le hash courant de evidence/SHA256SUMS dans l’index parent.
+- Les preuves d’admission ne sont pas copiées dans le dossier CONT-120; le dossier source existant est référencé et vérifié sur place.

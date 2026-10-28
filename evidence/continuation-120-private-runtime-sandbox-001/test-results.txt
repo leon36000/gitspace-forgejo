@@ -1,0 +1,11 @@
+python3 -m py_compile scripts/mission_012_test_agent_adapter.py scripts/mission_012_sandboxed_test_adapter.py scripts/run_mission_012_live_mcp_agent_e2e.py tests/test_mission_012_sandboxed_test_adapter.py tests/test_mission_012_live_mcp_agent_e2e.py
+exit=0
+
+python3 -m unittest -v tests.test_mission_012_sandboxed_test_adapter tests.test_mission_012_live_mcp_agent_e2e tests.test_mission_012_test_agent_adapter tests.test_forgejo_agent_egress_live_e2e tests.test_mission_webhook_handoff tests.test_composition_source_snapshot
+exit=0; 43 tests passed, 0 failed.
+
+python3 -m unittest -v tests.test_mission_012_live_composed_e2e
+attempted; unittest could not import the module because that test source file is absent (only a stale __pycache__ entry exists). No product test ran and no product behavior is inferred from this loader error.
+
+sha256sum -c evidence/mission-012-private-runtime-sandbox-001/SHA256SUMS
+exit=0; 10 files passed.

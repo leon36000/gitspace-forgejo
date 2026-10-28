@@ -1,0 +1,24 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.63s
+     Running tests/webhook_reconcile_contract.rs (target/debug/deps/webhook_reconcile_contract-1e83f04d6aace668)
+
+running 1 test
+test workflow_job_readback_refuses_api_url_for_another_job_index ... FAILED
+
+failures:
+
+---- workflow_job_readback_refuses_api_url_for_another_job_index stdout ----
+
+thread 'workflow_job_readback_refuses_api_url_for_another_job_index' (2112345) panicked at tests/webhook_reconcile_contract.rs:502:5:
+assertion `left == right` failed: the API URL must still identify the job index in the signed event
+  left: Ok(ReconciledState { delivery_id: "fixture-workflow-job-failure", resource: ResourceRef { kind: WorkflowJob, owner: "forge-admin", repository: "agent-forge-core", id: WorkflowJob { job_id: 9001, run_id: 7001, index_in_repo: 41 } }, state: "success", updated_at: "2026-10-26T11:05:00Z", html_url: "http://127.0.0.1:3130/forge-admin/agent-forge-core/actions/runs/41/jobs/0/attempt/1", head_sha: Some("bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"), base_sha: None, merged: None, merge_commit_sha: None, comment: None })
+ right: Err(InvalidCurrentStateField("html_url"))
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    workflow_job_readback_refuses_api_url_for_another_job_index
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 53 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `--test webhook_reconcile_contract`

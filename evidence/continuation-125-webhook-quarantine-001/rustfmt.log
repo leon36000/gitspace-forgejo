@@ -1,0 +1,10 @@
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/src/webhook.rs:962:
+             .append(true)
+             .open(&path)
+             .expect("open journal for crash-tail fixture");
+-        file.write_all(b"{\"sequence\":")
+-            .expect("append torn tail");
++        file.write_all(b"{\"sequence\":").expect("append torn tail");
+         file.sync_all().expect("sync torn tail");
+         drop(file);
+         let before = fs::read(&path).expect("read journal before refusal");

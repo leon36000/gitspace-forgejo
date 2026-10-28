@@ -1,0 +1,12 @@
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:4072:
+     write_secret(&secret);
+     let run_url = format!("http://127.0.0.1:3130/{OWNER}/{REPOSITORY}/actions/runs/41");
+     let job_url = format!("{run_url}/jobs/0/attempt/1");
+-    let event_job_url = format!(
+-        "https://attacker.invalid/{OWNER}/{REPOSITORY}/actions/runs/41/jobs/0/attempt/1"
+-    );
++    let event_job_url =
++        format!("https://attacker.invalid/{OWNER}/{REPOSITORY}/actions/runs/41/jobs/0/attempt/1");
+ 
+     let event_body = serde_json::to_vec(&json!({
+         "action": "job_completed",

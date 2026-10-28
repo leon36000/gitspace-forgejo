@@ -1,0 +1,25 @@
+{
+  "admission_manifest_sha256": "433ee0c734d348f5c0f9383eddef60cb5fe07530c7642c3e4a596ec880f781f2",
+  "admission_result_sha256": "e5aeb443399333042332b621c35c513f48ca07ebd2ba2f6fc4c35f2a78ea3388",
+  "admission_source_file_basename": "mission-host-admission-source-92f603464e6ff43345790f1492a1446ed719868c515a60e9a4bd586daac77ba2.json",
+  "admission_source_sha256": "1fa7772fca441b65bbbe674348f065d20a5ef84e5c6ebc21e69e82e7e27da4cd",
+  "base_commit": "27ebd0154fbb4ce732c8188fd8acff6fe63b0e3d",
+  "candidate_file_sha256": {
+    "src/lib.rs": "173304ad7d32aabc1e8e1ee41eabda3398a8690798e68f906bcebc73cbcd6d15"
+  },
+  "delivery_id": "36d13213-46c3-449d-8abe-176e0a0befb4",
+  "forgejo_binary_sha256": "e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7",
+  "host_binary_sha256": "015ea0a8cb339ba9370c4c88b805707ddefd74743606d96faf929ae051f3e92d",
+  "issue_number": 1,
+  "model_invoked_during_run": false,
+  "private_runtime_files_not_visible": [
+    "admission_source",
+    "forgejo_read_token",
+    "host_admission",
+    "invalid_forgejo_read_token",
+    "mission_journal",
+    "webhook_inbox"
+  ],
+  "requirement_sha256": "3a3c444075c93a3bcfb2bec17d1a2e74ec0051effc2994e6b02ac095eb0dd431",
+  "webhook_inbox_sha256": "5169960021f685835de52c76e91168e095b475a7305a4fe2c4f6ed8ad894c3e6"
+}

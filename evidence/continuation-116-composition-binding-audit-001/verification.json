@@ -1,0 +1,27 @@
+{
+  "audit": "pass_read_only_saved_evidence",
+  "base_commit": "81dcd94e0e65e95d2732ff9d3fffcd32b23c69cd",
+  "candidate_commit": "6ed55ce35290e9a1814607e253324a6a88610abf",
+  "candidate_sha256": "173304ad7d32aabc1e8e1ee41eabda3398a8690798e68f906bcebc73cbcd6d15",
+  "checks": [
+    "native_delivery_to_versioned_admission",
+    "admission_to_same_candidate_source_bytes",
+    "candidate_to_independent_verification_and_pr",
+    "merge_to_native_pr_webhooks_and_canonical_readback",
+    "exact_merge_checkout_behavior_and_base_counterexample",
+    "local_test_adapter_and_writer_exclusion_limit_recorded"
+  ],
+  "composition": "MISSION-012-COMPOSE-064",
+  "delivery_id": "cd0dc393-bf35-48b0-a8c5-b1b0a1f37f91",
+  "merge_commit": "a71ec6833c236b4c3f0cc56cd90bb1eabf9a9afb",
+  "mission_id": "mission-v1-94c26001d4370e63d3637fd5c06ef13f0496424a39a74bf498b7512b7d2b37b5",
+  "model_invoked": false,
+  "mutation_refusals": [
+    "native_delivery_id_mismatch",
+    "candidate_bytes_mismatch",
+    "merged_commit_mismatch",
+    "postmerge_source_mismatch"
+  ],
+  "n": 1,
+  "requirement_sha256": "3a3c444075c93a3bcfb2bec17d1a2e74ec0051effc2994e6b02ac095eb0dd431"
+}
