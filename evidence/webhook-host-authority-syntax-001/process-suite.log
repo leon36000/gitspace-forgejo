@@ -1,0 +1,59 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+     Running tests/webhook_receiver_process_e2e.rs (target/debug/deps/webhook_receiver_process_e2e-6caa738f5453f442)
+
+running 52 tests
+test actual_reconcile_cli_process_accepts_complete_request_before_client_half_close ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_bounds_transient_upstream_retries ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_cancels_slow_reads_at_the_shared_budget ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_continues_mixed_batch_after_forbidden_resource ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_denied_batch_does_not_read_host_credential_fd ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_does_not_follow_redirect_with_host_credential ... ignored, run inside bwrap --unshare-net; fixtures reserve loopback ports 3130 and 3131
+test actual_reconcile_cli_process_enforces_batch_cache_budget_against_private_http_fixture ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_handles_invalid_and_http_date_retry_after ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_keeps_deleted_pull_request_collision_separate_in_batch ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_keeps_forbidden_upstream_inconclusive ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_keeps_invalid_host_credential_inconclusive ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_keeps_issue_and_pull_request_number_collision_separate ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_keeps_missing_merge_sha_inconclusive_in_mixed_batch ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_mixed_batch_limits_credential_to_configured_repository ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_preserves_out_of_scope_refusal_after_401 ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_preserves_retry_after_for_replayed_batch_deliveries ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_preserves_successful_issue_when_pull_read_latches_401 ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_reads_pull_request_current_state_from_private_http_fixture ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_reads_receiver_journal_against_private_http_fixture ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_refuses_merged_pull_request_without_merge_commit_sha ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_refuses_open_pull_request_reported_as_merged ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_refuses_partial_selection_before_credential_read ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_refuses_success_http_with_invalid_timestamp ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_rejects_foreign_canonical_html_url ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_reports_actionable_upstream_401_without_leaking_credential ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_reports_deleted_pull_request_in_single_delivery ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_reports_deleted_resource_in_single_delivery ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_reports_deleted_resource_without_aborting_batch ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_reports_invalid_pull_request_base_sha_field ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_respects_retry_after_beyond_read_budget ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_resumes_mixed_batch_after_transient_failure ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_routes_approved_review_to_pull_request_api ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_routes_issue_comment_pr_conversation_to_pull_request_api ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_routes_issue_comment_to_issue_api ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_routes_pull_request_review_comment_to_pull_request_api ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_routes_rejected_review_to_pull_request_api ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_stops_batch_reads_after_401_and_resumes_with_rotated_credential ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_uses_current_state_after_out_of_order_webhooks ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_uses_host_credential_fd_for_receiver_journal ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test interrupted_reconcile_cli_can_resume_from_the_unchanged_journal ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_receiver_rejects_a_signed_body_with_a_mismatched_event_header_before_append ... ok
+test missing_host_header_in_http11_is_rejected_before_the_webhook_is_journaled ... ok
+test duplicate_host_header_is_rejected_before_the_webhook_is_journaled ... ok
+test actual_receiver_accepts_forgejo_v17_issue_comment_event_for_pull_request_conversation ... ok
+test capabilities_endpoint_describes_the_versioned_webhook_contract_without_mutating_inbox ... ok
+test actual_receiver_accepts_forgejo_v17_review_event_names ... ok
+test actual_receiver_rejects_review_event_subtype_that_disagrees_with_signed_body ... ok
+test malformed_host_authority_is_rejected_before_the_webhook_is_journaled ... ok
+test receiver_creates_private_journal_and_restarts_under_umask_022 ... ok
+test process_output_deadline_kills_a_cli_process_group ... ok
+test actual_receiver_process_handles_parallel_delivery_conflict_submissions_across_restart ... ok
+test actual_receiver_process_accepts_retries_recovers_and_reconciles ... ok
+
+test result: ok. 12 passed; 0 failed; 40 ignored; 0 measured; 0 filtered out; finished in 0.14s
+

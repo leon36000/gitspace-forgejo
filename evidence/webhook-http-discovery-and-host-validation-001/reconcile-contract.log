@@ -1,0 +1,8 @@
+$ cargo test --offline --test webhook_reconcile_contract --quiet
+
+running 25 tests
+.........................
+test result: ok. 25 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.22s
+
+
+exit_code: 0

@@ -1,0 +1,8 @@
+$ cargo test --offline --bin forgejo-webhook-local --quiet
+
+running 4 tests
+....
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 3.22s
+
+
+exit_code: 0

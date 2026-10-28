@@ -1,0 +1,19 @@
+# Worktree base HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+# All commands run locally; the E2E runner compiles offline/locked and executes under Bubblewrap.
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_reads_fork_pull_request_with_host_credential_fd
+# Invalid host token refusal composition; runner returned 0, test result 1 passed / 72 filtered.
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_refuses_fork_pull_request_with_invalid_host_credential
+# No host credential descriptor: fixture rejects the anonymous read with 401; runner returned 0, test result 1 passed / 73 filtered.
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_keeps_fork_pull_request_inconclusive_without_host_credential
+# Rerun after independent review required the fixture to remain active until the CLI exits and assert all captured requests.
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_reads_fork_pull_request_with_host_credential_fd
+/home/pc6/.codex/plugins/cache/openai-curated-remote/superpowers/7.0.1/skills/executing-plans/scripts/task-done docs/superpowers/plans/2026-10-25-fork-pr-host-credential-readback.md 1 f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0 -- python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_reads_fork_pull_request_with_host_credential_fd
+rustfmt --edition 2024 --check tests/webhook_receiver_process_e2e.rs
+PYTHONPYCACHEPREFIX=/tmp/webhook-fork-pr-host-credential-pycache python3 -m py_compile scripts/run_webhook_reconcile_cli_e2e.py
+git diff --check
+PYTHONDONTWRITEBYTECODE=1 python3 evidence/webhook-fork-pr-host-credential-001/whitespace-check.py
+PYTHONDONTWRITEBYTECODE=1 python3 scripts/test_cargo_license_state.py
+python3 scripts/verify_cargo_license_state.py
+cargo metadata --offline --locked --format-version 1 --no-deps --manifest-path Cargo.toml | python3 -c 'import json,sys; p=json.load(sys.stdin)["packages"][0]; print(json.dumps({k:p.get(k) for k in ("name","version","license","license_file","publish")}, sort_keys=True))'
+(cd evidence/webhook-fork-pr-host-credential-001 && sha256sum -c SHA256SUMS)
+python3 evidence/forgejo-webhook-repository-identity-001/verify_indexes.py  # after append-only indexes were updated

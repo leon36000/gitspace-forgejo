@@ -1,0 +1,6 @@
+cargo test --offline --locked --test webhook_receiver_process_e2e actual_receiver_rejects_ambiguous_message_framing_before_append -- --exact --nocapture
+cargo test --offline --locked --all-targets -- --test-threads=1
+cargo fmt --all -- --check
+git diff --check
+python3 -m unittest -v scripts/test_cargo_license_state.py
+python3 scripts/verify_cargo_license_state.py

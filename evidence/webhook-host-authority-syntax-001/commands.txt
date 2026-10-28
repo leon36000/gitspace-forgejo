@@ -1,0 +1,18 @@
+# RED: exit 101; each malformed authority was accepted with HTTP 202 and journaled.
+cargo test --offline --locked --test webhook_receiver_process_e2e malformed_host_authority_is_rejected_before_the_webhook_is_journaled -- --exact --nocapture
+
+# GREEN
+cargo test --offline --locked --test webhook_http_contract
+cargo test --offline --locked --test webhook_receiver_process_e2e malformed_host_authority_is_rejected_before_the_webhook_is_journaled -- --exact
+cargo test --offline --locked --test webhook_receiver_process_e2e
+cargo fmt --all -- --check
+git diff --check
+cargo metadata --offline --no-deps --format-version 1
+python3 scripts/verify_cargo_license_state.py
+python3 -m unittest discover -s scripts -p test_cargo_license_state.py
+python3 - <<'PY'
+from pathlib import Path
+assert Path('evidence/mission-012-live-agent-opus-005-local-run.md').is_file()
+assert Path('evidence/webhook-host-authority-syntax-001/local-run.md').is_file()
+PY
+(cd evidence/webhook-host-authority-syntax-001 && sha256sum -c SHA256SUMS)

@@ -1,0 +1,8 @@
+$ cargo test --offline --test webhook_inbox_capacity --quiet
+
+running 6 tests
+......
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+
+exit_code: 0

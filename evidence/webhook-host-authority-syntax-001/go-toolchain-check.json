@@ -1,0 +1,14 @@
+{
+  "path_lookup": null,
+  "checked_paths": {
+    "/usr/local/go/bin/go": false,
+    "/opt/go/bin/go": false,
+    "/home/pc6/go/bin/go": false,
+    "/home/pc6/.local/bin/go": false,
+    "/usr/lib/go/bin/go": false
+  },
+  "version_probe": {
+    "error": "[Errno 2] No such file or directory: 'go'"
+  },
+  "install_attempted": false
+}

@@ -1,0 +1,14 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.24s
+     Running tests/webhook_http_contract.rs (target/debug/deps/webhook_http_contract-c2471fc0bf34976e)
+
+running 6 tests
+test conflicting_content_length_and_chunked_transfer_are_rejected ... ok
+test duplicate_security_header_is_rejected ... ok
+test host_authority_accepts_uri_host_forms_and_rejects_malformed_syntax ... ok
+test oversized_and_incomplete_requests_are_distinguished ... ok
+test mismatched_forgejo_and_gitea_aliases_are_rejected ... ok
+test parser_preserves_body_bytes_and_accepts_matching_forgejo_aliases ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

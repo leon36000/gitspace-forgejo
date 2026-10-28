@@ -1,0 +1,19 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.20s
+     Running tests/webhook_receiver_process_e2e.rs (target/debug/deps/webhook_receiver_process_e2e-6caa738f5453f442)
+
+running 1 test
+
+thread 'malformed_host_authority_is_rejected_before_the_webhook_is_journaled' (1944942) panicked at tests/webhook_receiver_process_e2e.rs:897:5:
+Host value "forgejo.local/path" returned HTTP 202 with Null; Host value "forgejo.local/path" changed the inbox journal; Host value "forgejo.local:abc" returned HTTP 202 with Null; Host value "forgejo.local:abc" changed the inbox journal; Host value "[not-ipv6]" returned HTTP 202 with Null; Host value "[not-ipv6]" changed the inbox journal; Host value "forgejo.local extra" returned HTTP 202 with Null; Host value "forgejo.local extra" changed the inbox journal; Host value "user@forgejo.local" returned HTTP 202 with Null; Host value "user@forgejo.local" changed the inbox journal
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test malformed_host_authority_is_rejected_before_the_webhook_is_journaled ... FAILED
+
+failures:
+
+failures:
+    malformed_host_authority_is_rejected_before_the_webhook_is_journaled
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 51 filtered out; finished in 0.10s
+
+error: test failed, to rerun pass `--test webhook_receiver_process_e2e`

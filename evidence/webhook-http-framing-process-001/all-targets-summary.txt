@@ -1,0 +1,3 @@
+Commande: cargo test --offline --locked --all-targets -- --test-threads=1
+Code de sortie: 0
+34 groupes de résultat: tous `ok`; 501 tests réussis, 0 échec, 55 ignorés.
