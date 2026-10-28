@@ -1,0 +1,7 @@
+$ python3 -m unittest discover -s tests -p test_mission_012_live_mcp_agent_e2e.py
+exit_code=0
+..........
+----------------------------------------------------------------------
+Ran 10 tests in 0.053s
+
+OK

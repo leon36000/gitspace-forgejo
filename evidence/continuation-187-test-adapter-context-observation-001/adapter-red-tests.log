@@ -1,0 +1,24 @@
+
+......FF.
+======================================================================
+FAIL: test_success_event_reports_boolean_without_echoing_issue_content (__main__.Mission012TestAgentAdapterTests.test_success_event_reports_boolean_without_echoing_issue_content)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/test_mission_012_test_agent_adapter.py", line 190, in test_success_event_reports_boolean_without_echoing_issue_content
+    self.assertIs(event.get("test_adapter_untrusted_work_item_observed"), True)
+AssertionError: None is not True
+
+======================================================================
+FAIL: test_success_event_reports_false_when_optional_issue_context_is_absent (__main__.Mission012TestAgentAdapterTests.test_success_event_reports_false_when_optional_issue_context_is_absent)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/test_mission_012_test_agent_adapter.py", line 199, in test_success_event_reports_false_when_optional_issue_context_is_absent
+    self.assertIs(event.get("test_adapter_untrusted_work_item_observed"), False)
+AssertionError: None is not False
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.002s
+
+FAILED (failures=2)
+
+EXIT_CODE=1

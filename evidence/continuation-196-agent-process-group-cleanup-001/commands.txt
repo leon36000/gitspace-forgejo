@@ -1,0 +1,12 @@
+Red, before the runtime fix:
+  python3 -m unittest discover -s tests -p 'test_mission_012_live_composed_e2e.py'
+  python3 -m unittest discover -s tests -p 'test_mission_012_live_mcp_agent_e2e.py' -k bounded_cli_rejects_success_when_same_group_child_outlives_cli
+
+Green, current worktree:
+  python3 -m unittest discover -s tests -p 'test_mission_012_live_composed_e2e.py'
+  python3 -m unittest discover -s tests -p 'test_mission_012_live_mcp_agent_e2e.py'
+  python3 -m py_compile scripts/process_group_lifecycle.py scripts/run_mission_012_live_composed_e2e.py scripts/run_mission_012_live_mcp_agent_e2e.py tests/test_mission_012_live_composed_e2e.py tests/test_mission_012_live_mcp_agent_e2e.py
+  git diff --check
+  custom Python scan for trailing whitespace and NUL in the five changed Python files
+
+No live Forgejo, model CLI, AgentOS, external network, cost, production or Cargo command was used for this lot.

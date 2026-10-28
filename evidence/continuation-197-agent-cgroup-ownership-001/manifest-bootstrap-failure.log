@@ -1,0 +1,5 @@
+Command: python3 evidence/continuation-197-agent-cgroup-ownership-001/append_manifests.py > evidence/continuation-197-agent-cgroup-ownership-001/manifest-check.txt
+Observed stderr: local manifest is missing or redirected
+Exit status: 1
+
+Cause: this new evidence folder did not yet contain its local SHA256SUMS. The append-only local/worktree/project prefixes were untouched. An empty local manifest was then created with the recorded zero-line prefix before retrying.

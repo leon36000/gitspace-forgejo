@@ -1,0 +1,26 @@
+
+....EE
+======================================================================
+ERROR: test_composed_gate_binds_adapter_observation_to_admitted_context_presence (__main__.TestAdapterIssueObservationTests.test_composed_gate_binds_adapter_observation_to_admitted_context_presence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/test_mission_012_live_composed_e2e.py", line 140, in test_composed_gate_binds_adapter_observation_to_admitted_context_presence
+    composed.validate_test_adapter_issue_observation(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'run_mission_012_live_composed_e2e' has no attribute 'validate_test_adapter_issue_observation'
+
+======================================================================
+ERROR: test_model_run_cannot_claim_the_fixture_observed_issue_context (__main__.TestAdapterIssueObservationTests.test_model_run_cannot_claim_the_fixture_observed_issue_context)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/test_mission_012_live_composed_e2e.py", line 175, in test_model_run_cannot_claim_the_fixture_observed_issue_context
+    composed.validate_test_adapter_issue_observation(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'run_mission_012_live_composed_e2e' has no attribute 'validate_test_adapter_issue_observation'
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.163s
+
+FAILED (errors=2)
+
+EXIT_CODE=1

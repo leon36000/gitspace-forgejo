@@ -1,0 +1,15 @@
+test_bounded_cli_rejects_success_when_same_group_child_outlives_cli (test_mission_012_live_mcp_agent_e2e.AgentCommandTests.test_bounded_cli_rejects_success_when_same_group_child_outlives_cli) ... ok
+test_claude_command_remains_explicitly_bounded_and_tool_scoped (test_mission_012_live_mcp_agent_e2e.AgentCommandTests.test_claude_command_remains_explicitly_bounded_and_tool_scoped) ... ok
+test_explicit_sandbox_option_routes_only_the_test_adapter_through_bwrap (test_mission_012_live_mcp_agent_e2e.AgentCommandTests.test_explicit_sandbox_option_routes_only_the_test_adapter_through_bwrap) ... ok
+test_gate_barrier_is_refused_for_non_sandboxed_or_model_agents (test_mission_012_live_mcp_agent_e2e.AgentCommandTests.test_gate_barrier_is_refused_for_non_sandboxed_or_model_agents) ... ok
+test_local_adapter_command_never_resolves_claude (test_mission_012_live_mcp_agent_e2e.AgentCommandTests.test_local_adapter_command_never_resolves_claude) ... ok
+test_post_acceptance_barrier_paths_are_routed_only_to_the_sandbox_wrapper (test_mission_012_live_mcp_agent_e2e.AgentCommandTests.test_post_acceptance_barrier_paths_are_routed_only_to_the_sandbox_wrapper) ... ok
+test_restart_fixture_can_capture_only_its_local_host_diagnostics (test_mission_012_live_mcp_agent_e2e.AgentCommandTests.test_restart_fixture_can_capture_only_its_local_host_diagnostics) ... ok
+test_sandbox_option_is_rejected_for_model_adapter (test_mission_012_live_mcp_agent_e2e.AgentCommandTests.test_sandbox_option_is_rejected_for_model_adapter) ... ok
+test_test_adapter_work_item_observation_must_be_explicit_and_match_admission (test_mission_012_live_mcp_agent_e2e.AgentCommandTests.test_test_adapter_work_item_observation_must_be_explicit_and_match_admission) ... ok
+test_webhook_files_are_passed_only_as_bounded_sandbox_visibility_probes (test_mission_012_live_mcp_agent_e2e.AgentCommandTests.test_webhook_files_are_passed_only_as_bounded_sandbox_visibility_probes) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.055s
+
+OK

@@ -1,0 +1,12 @@
+{
+  "package": "agent-forge-core",
+  "version": "0.1.0",
+  "license": null,
+  "license_file": null,
+  "publish": [],
+  "license_decision": "no_license_selected",
+  "redistribution_rights": "not_assessed",
+  "spdx_package_license_declared": "NOASSERTION",
+  "source": "cargo metadata --offline --locked --no-deps --format-version 1 and scripts/verify_cargo_license_state.py",
+  "status": "verified"
+}

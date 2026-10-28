@@ -1,0 +1,7 @@
+scripts/systemd_process_scope.py: OK
+scripts/systemd_scope_exec.py: OK
+scripts/run_mission_012_live_composed_e2e.py: OK
+scripts/run_mission_012_live_mcp_agent_e2e.py: OK
+tests/test_mission_012_live_composed_e2e.py: OK
+tests/test_mission_012_mcp_supervisor.py: OK
+tests/test_mission_012_live_mcp_agent_e2e.py: OK

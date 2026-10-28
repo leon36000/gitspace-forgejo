@@ -1,0 +1,4 @@
+Attempt: sha256sum -c source-hashes.txt from evidence/continuation-197-agent-cgroup-ownership-001/
+Exit status: 1
+Result: listed source paths such as scripts/systemd_process_scope.py were not found because source-hashes.txt paths are relative to the worktree root, not the evidence directory.
+No source files were modified by this failed read-only check. The same check was rerun from the worktree root and passed; see source-hash-check.log.

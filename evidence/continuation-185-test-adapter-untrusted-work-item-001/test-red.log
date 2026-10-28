@@ -1,0 +1,13 @@
+F
+======================================================================
+FAIL: test_untrusted_issue_instructions_do_not_change_protected_work (__main__.Mission012TestAgentAdapterTests.test_untrusted_issue_instructions_do_not_change_protected_work)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/test_mission_012_test_agent_adapter.py", line 158, in test_untrusted_issue_instructions_do_not_change_protected_work
+    self.assertIn("contexte d’issue non fiable observé", result)
+AssertionError: 'contexte d’issue non fiable observé' not found in 'ADAPTATEUR DE TEST LOCAL SANS LLM: contexte admis consommé; échec rouge observé; src/lib.rs corrigé par MCP; test protégé vert; hôte finalisé avec reçu.'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (failures=1)

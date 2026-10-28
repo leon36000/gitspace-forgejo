@@ -1,0 +1,5 @@
+$ python3 -m unittest discover -s tests -p 'test_mission_012_live_mcp_agent_e2e.py' -k bounded_cli_rejects_success_when_same_group_child_outlives_cli
+exit_code=1
+FAIL: test_bounded_cli_rejects_success_when_same_group_child_outlives_cli
+AssertionError: 0 != 125 : (b'CLI returned\n', b'')
+Ran 1 test; FAILED (failures=1)

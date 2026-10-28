@@ -1,0 +1,13 @@
+$ python3 -m unittest discover -s tests -p 'test_mission_012_live_composed_e2e.py'
+exit_code=0
+Ran 7 tests in 0.472s; OK
+
+$ python3 -m unittest discover -s tests -p 'test_mission_012_live_mcp_agent_e2e.py'
+exit_code=0
+Ran 10 tests in 0.057s; OK
+
+$ python3 -m py_compile scripts/process_group_lifecycle.py scripts/run_mission_012_live_composed_e2e.py scripts/run_mission_012_live_mcp_agent_e2e.py tests/test_mission_012_live_composed_e2e.py tests/test_mission_012_live_mcp_agent_e2e.py
+exit_code=0
+
+$ git diff --check && custom five-file trailing-whitespace/NUL scan
+exit_code=0

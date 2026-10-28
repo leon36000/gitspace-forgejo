@@ -1,0 +1,6 @@
+$ python3 -m unittest discover -s tests -p 'test_mission_012_live_composed_e2e.py'
+exit_code=1
+..F....
+FAIL: test_stage_runner_rejects_success_when_child_leaves_a_live_group_descendant
+AssertionError: 0 != 125 : agent stage returned
+Ran 7 tests; FAILED (failures=1)

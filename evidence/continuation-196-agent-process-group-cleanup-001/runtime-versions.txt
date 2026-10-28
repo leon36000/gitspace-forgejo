@@ -1,0 +1,3 @@
+Python 3.12.3
+Linux 7.0.0-1019-nvidia
+Rust/Cargo not invoked: this lot edits only Python stage/CLI runners and their tests.

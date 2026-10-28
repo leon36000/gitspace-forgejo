@@ -1,0 +1,92 @@
+[
+  {
+    "argv": [
+      "/usr/bin/python3",
+      "-m",
+      "py_compile",
+      "scripts/systemd_process_scope.py",
+      "scripts/systemd_scope_exec.py",
+      "scripts/run_mission_012_live_composed_e2e.py",
+      "scripts/run_mission_012_live_mcp_agent_e2e.py",
+      "tests/test_mission_012_live_composed_e2e.py",
+      "tests/test_mission_012_mcp_supervisor.py",
+      "tests/test_mission_012_live_mcp_agent_e2e.py"
+    ],
+    "exit_code": 0,
+    "file": "py_compile.log",
+    "output_bytes": 0
+  },
+  {
+    "argv": [
+      "/usr/bin/python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_mission_012_live_composed_e2e.py",
+      "-v"
+    ],
+    "exit_code": 0,
+    "file": "composed-tests.log",
+    "output_bytes": 2558
+  },
+  {
+    "argv": [
+      "/usr/bin/python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_mission_012_mcp_supervisor.py",
+      "-v"
+    ],
+    "exit_code": 0,
+    "file": "supervisor-tests.log",
+    "output_bytes": 3364
+  },
+  {
+    "argv": [
+      "/usr/bin/python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_mission_012_live_mcp_agent_e2e.py",
+      "-v"
+    ],
+    "exit_code": 0,
+    "file": "agent-command-tests.log",
+    "output_bytes": 2035
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit_code": 0,
+    "file": "diff-check.log",
+    "output_bytes": 0
+  },
+  {
+    "active_scope_count": 0,
+    "argv": [
+      "systemctl",
+      "--user",
+      "list-units",
+      "--state=active",
+      "--type=scope",
+      "--no-legend",
+      "run-mission012-stage-*"
+    ],
+    "exit_code": 0,
+    "file": "active-stage-scopes.log",
+    "output_bytes": 0
+  }
+]

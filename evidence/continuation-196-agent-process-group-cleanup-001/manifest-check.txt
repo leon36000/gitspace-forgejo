@@ -1,0 +1,125 @@
+$ python3 evidence/continuation-196-agent-process-group-cleanup-001/verify_append_only_indexes.py
+exit_code=0
+{"local_evidence_files_verified": 15, "parent_binds_current_worktree_index": true, "project_prefix_preserved": true, "worktree_prefix_preserved": true}
+
+$ sha256sum -c evidence/continuation-196-agent-process-group-cleanup-001/SHA256SUMS
+exit_code=1
+append_manifests.py: FAILED open or read
+commands.txt: FAILED open or read
+local-run.md: FAILED open or read
+manifest-prefix-before.json: FAILED open or read
+runtime-versions.txt: FAILED open or read
+source-hashes.txt: FAILED open or read
+tdd-green-process-runners.txt: FAILED open or read
+tdd-red-cli.txt: FAILED open or read
+tdd-red-stage.txt: FAILED open or read
+verification/git-diff-check.log: FAILED open or read
+verification/pycompile.log: FAILED open or read
+verification/test-agent-cli.log: FAILED open or read
+verification/test-composed.log: FAILED open or read
+verification/text-hygiene.log: FAILED open or read
+verify_append_only_indexes.py: FAILED open or read
+sha256sum: append_manifests.py: No such file or directory
+sha256sum: commands.txt: No such file or directory
+sha256sum: local-run.md: No such file or directory
+sha256sum: manifest-prefix-before.json: No such file or directory
+sha256sum: runtime-versions.txt: No such file or directory
+sha256sum: source-hashes.txt: No such file or directory
+sha256sum: tdd-green-process-runners.txt: No such file or directory
+sha256sum: tdd-red-cli.txt: No such file or directory
+sha256sum: tdd-red-stage.txt: No such file or directory
+sha256sum: verification/git-diff-check.log: No such file or directory
+sha256sum: verification/pycompile.log: No such file or directory
+sha256sum: verification/test-agent-cli.log: No such file or directory
+sha256sum: verification/test-composed.log: No such file or directory
+sha256sum: verification/text-hygiene.log: No such file or directory
+sha256sum: verify_append_only_indexes.py: No such file or directory
+sha256sum: WARNING: 15 listed files could not be read
+
+Corrected verification from the evidence directory / worktree root:
+
+$ sha256sum -c SHA256SUMS (cwd=/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/continuation-196-agent-process-group-cleanup-001)
+exit_code=0
+append_manifests.py: OK
+commands.txt: OK
+local-run.md: OK
+manifest-prefix-before.json: OK
+runtime-versions.txt: OK
+source-hashes.txt: OK
+tdd-green-process-runners.txt: OK
+tdd-red-cli.txt: OK
+tdd-red-stage.txt: OK
+verification/git-diff-check.log: OK
+verification/pycompile.log: OK
+verification/test-agent-cli.log: OK
+verification/test-composed.log: OK
+verification/text-hygiene.log: OK
+verify_append_only_indexes.py: OK
+
+$ sha256sum -c evidence/continuation-196-agent-process-group-cleanup-001/source-hashes.txt (cwd=/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+exit_code=0
+scripts/process_group_lifecycle.py: OK
+scripts/run_mission_012_live_composed_e2e.py: OK
+scripts/run_mission_012_live_mcp_agent_e2e.py: OK
+tests/test_mission_012_live_composed_e2e.py: OK
+tests/test_mission_012_live_mcp_agent_e2e.py: OK
+docs/checkpoint.md: OK
+docs/refusal-evidence-matrix.md: OK
+
+$ python3 evidence/continuation-196-agent-process-group-cleanup-001/verify_append_only_indexes.py (cwd=/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+exit_code=0
+{"local_evidence_files_verified": 15, "parent_binds_current_worktree_index": true, "project_prefix_preserved": true, "worktree_prefix_preserved": true}
+
+Final verification after binding the corrected run report:
+
+$ sha256sum -c SHA256SUMS (cwd=/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/continuation-196-agent-process-group-cleanup-001)
+exit_code=1
+append_manifests.py: OK
+commands.txt: OK
+local-run.md: FAILED
+manifest-prefix-before.json: OK
+runtime-versions.txt: OK
+source-hashes.txt: OK
+tdd-green-process-runners.txt: OK
+tdd-red-cli.txt: OK
+tdd-red-stage.txt: OK
+verification/git-diff-check.log: OK
+verification/pycompile.log: OK
+verification/test-agent-cli.log: OK
+verification/test-composed.log: OK
+verification/text-hygiene.log: OK
+verify_append_only_indexes.py: OK
+local-run.md: OK
+sha256sum: WARNING: 1 computed checksum did NOT match
+
+Final current-state checks (raw local manifest check intentionally omitted because it retains historical hashes):
+
+$ python3 evidence/continuation-196-agent-process-group-cleanup-001/verify_append_only_indexes.py
+exit_code=0
+{"local_evidence_files_verified": 15, "parent_binds_current_worktree_index": true, "project_prefix_preserved": true, "worktree_prefix_preserved": true}
+
+$ sha256sum -c evidence/continuation-196-agent-process-group-cleanup-001/source-hashes.txt
+exit_code=0
+scripts/process_group_lifecycle.py: OK
+scripts/run_mission_012_live_composed_e2e.py: OK
+scripts/run_mission_012_live_mcp_agent_e2e.py: OK
+tests/test_mission_012_live_composed_e2e.py: OK
+tests/test_mission_012_live_mcp_agent_e2e.py: OK
+docs/checkpoint.md: OK
+docs/refusal-evidence-matrix.md: OK
+
+Final verification after adding the current-process-group review and fresh tests:
+
+$ python3 evidence/continuation-196-agent-process-group-cleanup-001/verify_append_only_indexes.py
+exit_code=0
+{"local_evidence_files_verified": 15, "parent_binds_current_worktree_index": true, "project_prefix_preserved": true, "worktree_prefix_preserved": true}
+
+$ sha256sum -c evidence/continuation-196-agent-process-group-cleanup-001/source-hashes.txt
+exit_code=0
+scripts/process_group_lifecycle.py: OK
+scripts/run_mission_012_live_composed_e2e.py: OK
+scripts/run_mission_012_live_mcp_agent_e2e.py: OK
+tests/test_mission_012_live_composed_e2e.py: OK
+tests/test_mission_012_live_mcp_agent_e2e.py: OK
+docs/checkpoint.md: OK
+docs/refusal-evidence-matrix.md: OK

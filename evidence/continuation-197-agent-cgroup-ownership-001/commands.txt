@@ -1,0 +1,9 @@
+python3 -m py_compile scripts/systemd_process_scope.py scripts/systemd_scope_exec.py scripts/run_mission_012_live_composed_e2e.py scripts/run_mission_012_live_mcp_agent_e2e.py tests/test_mission_012_live_composed_e2e.py tests/test_mission_012_mcp_supervisor.py tests/test_mission_012_live_mcp_agent_e2e.py
+python3 -m unittest discover -s tests -p test_mission_012_live_composed_e2e.py -v
+python3 -m unittest discover -s tests -p test_mission_012_mcp_supervisor.py -v
+python3 -m unittest discover -s tests -p test_mission_012_live_mcp_agent_e2e.py -v
+git diff --check
+systemctl --user list-units --state=active --type=scope --no-legend 'run-mission012-stage-*'
+sha256sum -c evidence/continuation-197-agent-cgroup-ownership-001/source-hashes.txt
+python3 evidence/continuation-197-agent-cgroup-ownership-001/append_manifests.py
+python3 evidence/continuation-197-agent-cgroup-ownership-001/verify_append_only_indexes.py

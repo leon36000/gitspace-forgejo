@@ -1,0 +1,10 @@
+COMMAND: python3 tests/test_mission_012_sandboxed_test_adapter.py
+EXIT_CODE: 0
+STDOUT:
+
+STDERR:
+.........
+----------------------------------------------------------------------
+Ran 9 tests in 0.637s
+
+OK

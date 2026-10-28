@@ -1,0 +1,14 @@
+Command before the owner-scope binding change:
+python3 -m unittest tests.test_mission_012_live_composed_e2e.Mission012LiveComposedTests.test_parent_cleanup_removes_cli_scope_after_stage_is_killed -v
+
+Observed failing output (captured before adding BindsTo=<owner scope>):
+test_parent_cleanup_removes_cli_scope_after_stage_is_killed (...) ... FAIL
+Traceback (most recent call last):
+  File "tests/test_mission_012_live_composed_e2e.py", line 363, in test_parent_cleanup_removes_cli_scope_after_stage_is_killed
+    self.assertIn(state, {None, b"Z", b"X"}, "interrupted stage left its nested CLI scope running")
+AssertionError: b'S' not found in {None, b'X', b'Z'} : interrupted stage left its nested CLI scope running
+
+Ran 1 test in 2.147s
+FAILED (failures=1)
+
+The fixture first confirmed the nested child had written its PID/cgroup receipt, then SIGKILLed only the stage interpreter. The parent runner returned while the child remained in state S. The test's finally block killed only that fixture PID to avoid leaving a process behind.

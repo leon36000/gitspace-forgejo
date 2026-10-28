@@ -1,0 +1,17 @@
+
+.......E.
+======================================================================
+ERROR: test_test_adapter_work_item_observation_must_be_explicit_and_match_admission (__main__.AgentCommandTests.test_test_adapter_work_item_observation_must_be_explicit_and_match_admission)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/test_mission_012_live_mcp_agent_e2e.py", line 18, in test_test_adapter_work_item_observation_must_be_explicit_and_match_admission
+    driver.validate_test_adapter_work_item_observation(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'run_mission_012_live_mcp_agent_e2e' has no attribute 'validate_test_adapter_work_item_observation'
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.001s
+
+FAILED (errors=1)
+
+EXIT_CODE=1
