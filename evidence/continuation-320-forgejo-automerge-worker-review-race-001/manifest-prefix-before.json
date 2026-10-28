@@ -1,0 +1,17 @@
+{
+  "evidence/continuation-320-forgejo-automerge-worker-review-race-001/SHA256SUMS": {
+    "lines": 0,
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "evidence/SHA256SUMS": {
+    "lines": 15919,
+    "bytes": 2088095,
+    "sha256": "0908634440fa17fb9b11645184bf3ca68963ba0f10dc5f003e5d9ddcfb5cc196"
+  },
+  "../../evidence/SHA256SUMS": {
+    "lines": 10367,
+    "bytes": 1652267,
+    "sha256": "f3560e0d5f581d8870bda3f2d1bbb899b3a6bf3bd415db74c503e2d9a9268a73"
+  }
+}

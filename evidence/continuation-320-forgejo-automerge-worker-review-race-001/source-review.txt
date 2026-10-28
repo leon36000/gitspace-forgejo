@@ -1,0 +1,11 @@
+Source review was read-only against original blobs using `git show HEAD:<path>` at Forgejo v17.0.0 commit 0d791421f85ca13a63b665053d81ea765fbbc571. Hashes are in source-sha256.txt.
+
+- `services/automerge/automerge.go::handlePullRequestAutoMerge`: loads the scheduled record, checks the queue SHA against the current head ref, checks commit statuses, reloads the scheduled actor and permissions, invokes `pull_service.CheckPullMergeable(...MergeCheckTypeGeneral...)`, deletes the scheduled row, then invokes `pull_service.Merge`. No approval/policy recheck occurs between the last check and Merge in this path.
+- Test-only scratch edit inserts `runAutoMergeAfterCheckHookForTest()` between the successful checker and deletion of the scheduled record, creating a deterministic pause without changing production logic.
+- The test first schedules through `routers/api/v1/repo/pull.go::MergePullRequest` using `services/forms.MergePullRequestForm`, then directly invokes the same private worker body by a test-only wrapper. This covers scheduling persistence and worker body but bypasses real queue dispatch.
+- `services/pull/check.go::CheckPullMergeable` and its branch-protection helper are the controlling check call. Existing CONT-319 documents its relevant branches and force/manual distinctions.
+- `services/forms/repo_form.go::MergePullRequestForm` contains `HeadCommitID` and `MergeWhenChecksSucceed` request fields.
+- `models/issues/pull.go::PullRequest.HeadCommitID` has `xorm:"-"`; the early failing assertion that assumed it was a persisted field was invalid and removed. The API response supplies the checked SHA; the worker separately reads the current Git ref.
+- Actual behavior observed: the paused worker resumed after API dismissal and merged; API readback said `HasMerged=true` while review readback said `Dismissed=true`. The fresh check triggered by dismissal logged the expected insufficient-approvals refusal.
+
+Coverage is one deterministic interleaving in an instrumented scratch. It is not a test on the pristine upstream binary, worker queue dispatch, another DB, production, or all merge/ref writers. No Forgejo patch is adopted.

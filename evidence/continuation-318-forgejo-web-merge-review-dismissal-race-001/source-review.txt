@@ -1,0 +1,8 @@
+Focused source read from Forgejo v17.0.0 at `0d791421f85ca13a63b665053d81ea765fbbc571`:
+
+- `routers/web/web.go:1755` registers POST `/merge` to `repo.MergePullRequest`.
+- `routers/web/repo/pull.go::MergePullRequest` at line 1375 uses `CheckPullMergeable` at line 1398 and, for the normal path, `pull_service.Merge` at line 1487.
+- The manual mode branches to `pull_service.MergedManually`; AutoMerge is scheduled on a separate path before `Merge`; those paths are not this test.
+- The test hook was added only to the detached scratch after `CheckPullMergeable` succeeds. The review dismissal uses the already-audited API route from CONT-317.
+
+This audit covers the exercised Web handler and route registration, not all Forgejo writers, Actions enforcement, repository permission permutations, or full upstream tests.

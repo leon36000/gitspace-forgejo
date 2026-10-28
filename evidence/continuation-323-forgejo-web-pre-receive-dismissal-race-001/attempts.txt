@@ -1,0 +1,6 @@
+Test harness record:
+- The targeted Web scenario passed on first execution.
+- The test was repeated five times and passed all iterations.
+- The race detector run passed with no reported races.
+- The only pre-test actions were formatting and whitespace checks; no harness assertion failed.
+- Logs, exact commands, source commit, and scratch/upstream hashes are retained in this directory.

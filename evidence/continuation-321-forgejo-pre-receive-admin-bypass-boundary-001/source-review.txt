@@ -1,0 +1,10 @@
+Every source assertion below was checked against the original commit using `git show HEAD:<path>` or `git grep ... HEAD` at Forgejo v17.0.0 `0d791421f85ca13a63b665053d81ea765fbbc571`; SHA-256 values are in source-sha256.txt.
+
+- `models/fixtures/user.yml`: explicitly calls user1 ID 1 the instance admin; user2 ID 2 has `is_admin=false`.
+- Test source of CONT-316/317: merge/policy actor is `user1`. CONT-318: Web merge session logs in as `user1`. CONT-320: AutoMerge schedule actor is `user1`. Their successful post-dismiss behavior is therefore specific to an instance-admin actor.
+- `routers/private/hook_pre_receive.go::preReceiveBranch`: for a protected branch, after push permission and PR merge permission checks, the code returns for `ctx.user.IsAdmin` before calling `pull_service.CheckPullBranchProtections`. For other actors, it calls `CheckPullBranchProtections` and returns HTTP 403 for a disallowed merge when `ApplyToAdmins` does not exempt a repo admin.
+- `services/pull/merge.go::doMergeAndPush`: calls `repo_module.FullPushingEnvironment(headUser, doer, baseRepo, baseRepo.Name, pr.ID)` and pushes to the base branch, including PR identity; it does not call `InternalPushingEnvironment` in this path.
+- `modules/repository/env.go::InternalPushingEnvironment` adds `GITEA_INTERNAL_PUSH=true`; `cmd/hook.go::runHookPreReceive` skips pre-receive only for that flag. A targeted call-site scan found `services/repository/init.go` as the only non-definition caller of `InternalPushingEnvironment` in the selected code roots. This is a bounded grep, not a full audit of extension hooks or all Git writers.
+- CONT-321 adds two actual integration cases after the AutoMerge worker’s final checker: user1 admin merges after dismissal; user2 repo-admin/non-instance-admin is rejected by the actual pre-receive HTTP hook, and the base ref SHA remains unchanged. Test assertions, not log strings alone, determine the pass.
+
+No production source change is present in the product. Scratch modifications are test-only instrumentation and test source.

@@ -1,0 +1,8 @@
+Official source inspection (all `git show` reads use detached scratch HEAD 0d791421f85ca13a63b665053d81ea765fbbc571):
+
+routers/api/v1/repo/pull.go::MergePullRequest (line 864); normal path calls `pull_service.CheckPullMergeable` at line 948; the test-only hook is at line 968 of the instrumented scratch.
+services/pull/check.go::CheckPullMergeable (line 68); `CheckPullBranchProtections` (located by repository search; see upstream source file hash).
+routers/api/v1/repo/branch.go handles branch protection creation/edit; test PATCHes required approvals from 1 to 2 and reads it back.
+Test source in scratch only: tests/integration/api_pull_merge_race_test.go::TestAPIMergePullRequestCanUseProtectionBeforeConcurrentPolicyTightening (line 24).
+
+Hashes of upstream blobs and instrumented files are in source-sha256.txt. The official source inspection is scoped to the route and checker needed to interpret this test; it is not a complete Forgejo security review. The new test and hook files were not added to product code and are not treated as upstream Forgejo source.

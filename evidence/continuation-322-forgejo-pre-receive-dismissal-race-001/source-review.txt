@@ -1,0 +1,18 @@
+Official source is read from HEAD at 0d791421f85ca13a63b665053d81ea765fbbc571 in /tmp/forgejo-v17-merge-review-race-001.
+
+routers/private/hook_pre_receive.go::preReceiveBranch
+- Lines 457–460: instance admins return before CheckPullBranchProtections.
+- Lines 472–490: non-global-admin actors run CheckPullBranchProtections and return an error if current branch protections fail.
+- The test-only scratch seam runs after this block succeeds, at scratch lines 496–498. It is nil outside this test and gated by testing.Testing(). The upstream blob has no seam.
+
+routers/api/v1/repo/pull.go::MergePullRequest
+- Official lines 947–948 call CheckPullMergeable for the normal merge route.
+- The normal path later calls pull_service.Merge around line 1021; the test does not use manual-merged marking or force_merge.
+
+services/pull/merge.go::doMergeAndPush
+- The official function prepares a merge and uses repo_module.FullPushingEnvironment with the PR ID around lines 383–390, so the receive hook can resolve the PR.
+- The integration log shows the normal API merge invoking POST /api/internal/hook/pre-receive/user2/repo1. The barrier is after a successful review-policy check and before the hook returns; dismissal completes in a separate API request while Git is waiting for the hook.
+
+Fixture identity: models/fixtures/user.yml identifies user1 as instance admin and user2 as not instance admin. The new scenario uses user2 as merge actor and user1 as review dismiss actor. Branch protection has RequiredApprovals=1, ApprovalsWhitelistUsernames=[user2], DismissStaleApprovals=true, ApplyToAdmins=true.
+
+No broad audit of every Git ref writer, no source-level change proposal adopted, and no compatibility/rebase hour estimate is implied by this targeted interleaving.

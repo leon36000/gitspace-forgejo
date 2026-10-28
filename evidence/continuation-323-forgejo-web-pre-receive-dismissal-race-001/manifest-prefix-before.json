@@ -1,0 +1,17 @@
+{
+  "evidence/continuation-323-forgejo-web-pre-receive-dismissal-race-001/SHA256SUMS": {
+    "lines": 0,
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "evidence/SHA256SUMS": {
+    "lines": 15968,
+    "bytes": 2094984,
+    "sha256": "130e14687a927474d0da3215dcd563bb9c90384b5b66a148cf791947e2f0b5fc"
+  },
+  "../../evidence/SHA256SUMS": {
+    "lines": 10419,
+    "bytes": 1661026,
+    "sha256": "4db146e51957b291b88c2dec1421608ee3f8f3c96c0762cf261041c7dac6d239"
+  }
+}

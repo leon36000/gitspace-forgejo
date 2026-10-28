@@ -1,0 +1,7 @@
+Final behavior runs are recorded in integration-test-5x.log and integration-test-race.log.
+
+Initial targeted build before correction:
+PATH=/tmp/forgejo-v17-toolchain/go/bin:$PATH PROJECT_ROOT=/tmp/forgejo-v17-merge-review-race-001 PROJECT_CONF=tests/sqlite.ini TZ=UTC go test -tags='sqlite sqlite_unlock_notify' -run '^TestWebMergePullRequestCanUseApprovalBeforeConcurrentDismissal$' -count=1 ./tests/integration
+Result: compile failure at tests/integration/web_pull_merge_race_test.go:18:2 because import forgejo.org/routers/api/v1/repo (alias apirepo) was unused.
+
+Correction: removed only the unused import, ran gofmt, then the isolated test passed once, five repetitions, and once with -race. No behavior code was changed in response to the compiler error.

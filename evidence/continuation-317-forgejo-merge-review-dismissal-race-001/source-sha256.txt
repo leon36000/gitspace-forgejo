@@ -1,0 +1,14 @@
+Official Forgejo commit: 0d791421f85ca13a63b665053d81ea765fbbc571
+
+Official source blobs, computed with `git show HEAD:<path> | sha256sum`:
+routers/api/v1/repo/pull_review.go  0ada741ac5530bced27b3764dccec77826a3f9ac2a706dfcc1dc1d824dd23d52
+routers/api/v1/api.go  889589a7824613c3e55e4878e6002ef8429e69a1be2e2492dc1c97b3aac55e3a
+services/pull/review.go  95007aeb8c241ef5e52e85b5346daaa34ba5b924be9cb3e2aa83c43cb0f9d042
+models/issues/review.go  9a249afcc4471ba65e2a79a7eb8cd89e6176e767268c30835a6efaefa0d96845
+
+Instrumented scratch:
+routers/api/v1/repo/pull.go  5c7f11ca4fa12ec00697d69b888534bc5733624e235c9c8ec20fb42c3324c498
+routers/api/v1/repo/pull_merge_test_hook.go  e3a5e32c9e02f575cc14d8fcd7b9b33c6aefe9982a86cac2577c479e5270c95e
+tests/integration/api_pull_merge_race_test.go  4651b158079e78b7adea07398581a439897d469888bd67c02697c5668cbea28c
+
+The hook/test remain in the `/tmp` scratch only; no Forgejo code was copied into product code.

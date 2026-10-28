@@ -1,0 +1,10 @@
+Date: 2026-10-27
+Official Forgejo HEAD: 0d791421f85ca13a63b665053d81ea765fbbc571
+Scratch: /tmp/forgejo-v17-merge-review-race-001 (detached; test hooks from CONT-316/317 plus Web hook)
+
+PATH=/tmp/forgejo-v17-toolchain/go/bin:$PATH PROJECT_ROOT=/tmp/forgejo-v17-merge-review-race-001 PROJECT_CONF=tests/sqlite.ini TZ=UTC go test -tags='sqlite sqlite_unlock_notify' -run '^TestWebMergePullRequestCanUseApprovalBeforeConcurrentDismissal$' -count=5 ./tests/integration
+
+PATH=/tmp/forgejo-v17-toolchain/go/bin:$PATH PROJECT_ROOT=/tmp/forgejo-v17-merge-review-race-001 PROJECT_CONF=tests/sqlite.ini TZ=UTC go test -race -tags='sqlite sqlite_unlock_notify' -run '^TestWebMergePullRequestCanUseApprovalBeforeConcurrentDismissal$' -count=1 ./tests/integration
+
+PATH=/tmp/forgejo-v17-toolchain/go/bin:$PATH gofmt -d routers/web/repo/pull_merge_test_hook.go tests/integration/web_pull_merge_race_test.go
+git diff --check

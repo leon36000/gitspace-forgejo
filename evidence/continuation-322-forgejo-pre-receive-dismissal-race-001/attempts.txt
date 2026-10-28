@@ -1,0 +1,5 @@
+Harness setup:
+- A first formatting invocation used bare gofmt, which was absent from PATH and exited 127. Retried with /tmp/forgejo-v17-toolchain/go/bin/gofmt; formatting output was empty and git diff --check passed. This was a tool-path issue, not a Forgejo/test failure.
+- The first targeted integration run passed. It was run again with verbose output redirected to integration-test-1x.log so that the receipt includes the actual HTTP hook and merge log lines.
+- The -count=5 and -race -count=1 runs both passed; captured one-line outputs are retained in their matching log files.
+- No test assertions failed in this lot. The earlier CONT316–321 scratch changes remain in place and are not rewritten here.

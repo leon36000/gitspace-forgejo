@@ -1,0 +1,13 @@
+Date: 2026-10-27
+Official Forgejo source: v17.0.0
+Commit: 0d791421f85ca13a63b665053d81ea765fbbc571
+Scratch: /tmp/forgejo-v17-merge-review-race-001 (only `git show HEAD:<path>` source reads)
+
+git -C /tmp/forgejo-v17-merge-review-race-001 rev-parse HEAD
+git -C /tmp/forgejo-v17-merge-review-race-001 show HEAD:services/pull/check.go | nl -ba | sed -n '68,135p'
+git -C /tmp/forgejo-v17-merge-review-race-001 show HEAD:services/automerge/automerge.go | nl -ba | sed -n '105,245p'
+git -C /tmp/forgejo-v17-merge-review-race-001 show HEAD:services/pull/merge_manual.go | nl -ba | sed -n '24,82p'
+git -C /tmp/forgejo-v17-merge-review-race-001 show HEAD:routers/api/v1/repo/pull.go | nl -ba | sed -n '930,1035p'
+git -C /tmp/forgejo-v17-merge-review-race-001 show HEAD:routers/web/repo/pull.go | nl -ba | sed -n '1388,1488p'
+
+for f in services/pull/check.go services/automerge/automerge.go services/pull/merge_manual.go routers/api/v1/repo/pull.go routers/web/repo/pull.go routers/api/v1/api.go routers/web/web.go; do printf '%s ' "$f"; git -C /tmp/forgejo-v17-merge-review-race-001 show "HEAD:$f" | sha256sum | cut -d' ' -f1; done

@@ -1,0 +1,10 @@
+Official Forgejo HEAD: 0d791421f85ca13a63b665053d81ea765fbbc571
+Official source blobs (SHA-256):
+3cf2bb74bb9e81c5b1441a8e7ef31ff3ef085bce15f789b4ea0b7ad65dbb5d34  routers/web/repo/pull.go
+c628d1bbb7a80f3524b58fcd4c845b7137b61da6c1491bbbd18e03e569ecd91c  routers/private/hook_pre_receive.go
+43d724e4bcdcad0d48ca6b04430b18612c1008af86a374afa932b23d83659ac6  services/pull/merge.go
+afa46a09042b4ab5cc22050ba6d278c4e3f6ce0f888cebfec44d5f4c222614ed  models/fixtures/user.yml
+
+Modified/untracked test-only scratch bytes:
+42059afedf2a29af1dbd83324b16608beca0e251354757f79710440e473e2637  routers/private/hook_pre_receive.go
+119f49048d804e4a63bc87c3642123469af293b988ce040669551373896ae758  tests/integration/web_pull_merge_race_test.go

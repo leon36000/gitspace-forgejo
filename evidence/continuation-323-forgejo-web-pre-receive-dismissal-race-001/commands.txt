@@ -1,0 +1,24 @@
+Scratch source: /tmp/forgejo-v17-merge-review-race-001
+Official HEAD: 0d791421f85ca13a63b665053d81ea765fbbc571
+Working tree is dirty with test-only seams/scenarios from CONT316–323.
+
+One verbose integration run:
+env PATH=/tmp/forgejo-v17-toolchain/go/bin:$PATH PROJECT_ROOT=/tmp/forgejo-v17-merge-review-race-001 PROJECT_CONF=tests/sqlite.ini TZ=UTC go test -v -tags='sqlite sqlite_unlock_notify' -run '^TestWebMergePullRequestCanUseApprovalBeforeConcurrentDismissalDuringPreReceive$' -count=1 ./tests/integration
+
+Five repeated executions:
+env PATH=/tmp/forgejo-v17-toolchain/go/bin:$PATH PROJECT_ROOT=/tmp/forgejo-v17-merge-review-race-001 PROJECT_CONF=tests/sqlite.ini TZ=UTC go test -tags='sqlite sqlite_unlock_notify' -run '^TestWebMergePullRequestCanUseApprovalBeforeConcurrentDismissalDuringPreReceive$' -count=5 ./tests/integration
+
+Race detector:
+env PATH=/tmp/forgejo-v17-toolchain/go/bin:$PATH PROJECT_ROOT=/tmp/forgejo-v17-merge-review-race-001 PROJECT_CONF=tests/sqlite.ini TZ=UTC go test -race -tags='sqlite sqlite_unlock_notify' -run '^TestWebMergePullRequestCanUseApprovalBeforeConcurrentDismissalDuringPreReceive$' -count=1 ./tests/integration
+
+Format / whitespace:
+/tmp/forgejo-v17-toolchain/go/bin/gofmt -d routers/private/hook_pre_receive.go tests/integration/web_pull_merge_race_test.go
+git diff --check -- routers/private/hook_pre_receive.go tests/integration/web_pull_merge_race_test.go
+
+Amont ciblé:
+/tmp/forgejo-v17-toolchain/go/bin/go version
+git rev-parse HEAD
+git show HEAD:routers/web/repo/pull.go | sha256sum
+git show HEAD:routers/private/hook_pre_receive.go | sha256sum
+git show HEAD:services/pull/merge.go | sha256sum
+git show HEAD:models/fixtures/user.yml | sha256sum

@@ -1,0 +1,22 @@
+Date locale : 2026-10-27 (America/Montreal)
+Source Forgejo : tag v17.0.0 au commit 0d791421f85ca13a63b665053d81ea765fbbc571
+Scratch : /tmp/forgejo-v17-merge-review-race-001, detached HEAD, modifications test-only des lots 316–320
+
+Initial (échec build, journal integration-test-initial.log):
+PATH=/tmp/forgejo-v17-toolchain/go/bin:$PATH PROJECT_ROOT=/tmp/forgejo-v17-merge-review-race-001 PROJECT_CONF=tests/sqlite.ini TZ=UTC go test -v -tags='sqlite sqlite_unlock_notify' -run '^TestAutoMergeWorkerCanUseApprovalBeforeConcurrentDismissal$' -count=1 ./tests/integration
+
+Après remplacement par services/forms.MergePullRequestForm, avant retrait de l’assertion HeadCommitID non persistée (échec assertion, journal integration-test-repair-1x.log):
+PATH=/tmp/forgejo-v17-toolchain/go/bin:$PATH PROJECT_ROOT=/tmp/forgejo-v17-merge-review-race-001 PROJECT_CONF=tests/sqlite.ini TZ=UTC go test -v -tags='sqlite sqlite_unlock_notify' -run '^TestAutoMergeWorkerCanUseApprovalBeforeConcurrentDismissal$' -count=1 ./tests/integration
+
+Après correction du test seulement (réussite 1/1, journal integration-test-repair-2-1x.log):
+PATH=/tmp/forgejo-v17-toolchain/go/bin:$PATH PROJECT_ROOT=/tmp/forgejo-v17-merge-review-race-001 PROJECT_CONF=tests/sqlite.ini TZ=UTC go test -v -tags='sqlite sqlite_unlock_notify' -run '^TestAutoMergeWorkerCanUseApprovalBeforeConcurrentDismissal$' -count=1 ./tests/integration
+
+Répétabilité 5/5:
+PATH=/tmp/forgejo-v17-toolchain/go/bin:$PATH PROJECT_ROOT=/tmp/forgejo-v17-merge-review-race-001 PROJECT_CONF=tests/sqlite.ini TZ=UTC go test -tags='sqlite sqlite_unlock_notify' -run '^TestAutoMergeWorkerCanUseApprovalBeforeConcurrentDismissal$' -count=5 ./tests/integration
+
+Race detector 1/1:
+PATH=/tmp/forgejo-v17-toolchain/go/bin:$PATH PROJECT_ROOT=/tmp/forgejo-v17-merge-review-race-001 PROJECT_CONF=tests/sqlite.ini TZ=UTC go test -race -tags='sqlite sqlite_unlock_notify' -run '^TestAutoMergeWorkerCanUseApprovalBeforeConcurrentDismissal$' -count=1 ./tests/integration
+
+Gofmt/diff check:
+PATH=/tmp/forgejo-v17-toolchain/go/bin:$PATH gofmt -d services/automerge/automerge_test_hook.go tests/integration/automerge_review_race_test.go
+git diff --check

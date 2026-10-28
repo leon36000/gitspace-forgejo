@@ -1,0 +1,9 @@
+Forgejo source: official v17.0.0, commit 0d791421f85ca13a63b665053d81ea765fbbc571
+Go: go1.27.3 linux/arm64
+GOOS=linux
+GOARCH=arm64
+CGO_ENABLED=1
+Git: 2.43.0
+OS/kernel/architecture: Linux 7.0.0-1019-nvidia aarch64
+Database: SQLite, integration config tests/sqlite.ini, build tags sqlite sqlite_unlock_notify
+Race detector: Go race detector enabled for the final targeted run

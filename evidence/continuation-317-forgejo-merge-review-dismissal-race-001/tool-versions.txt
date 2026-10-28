@@ -1,0 +1,8 @@
+Date: 2026-10-27
+Go: go1.27.3 linux/arm64
+Go environment: GOOS=linux, GOARCH=arm64, CGO_ENABLED=1
+Git: 2.43.0
+Database: SQLite with `sqlite_unlock_notify`, tests/sqlite.ini
+Go race detector: enabled for race run
+git-lfs: absent (Make repository precheck unavailable)
+OS/runtime: Linux arm64

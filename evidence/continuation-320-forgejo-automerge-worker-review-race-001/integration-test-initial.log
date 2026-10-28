@@ -1,0 +1,4 @@
+# forgejo.org/tests/integration [forgejo.org/tests/integration.test]
+tests/integration/automerge_review_race_test.go:68:80: undefined: api.MergePullRequestOption
+FAIL	forgejo.org/tests/integration [build failed]
+FAIL

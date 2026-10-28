@@ -1,0 +1,16 @@
+Official Forgejo HEAD: 0d791421f85ca13a63b665053d81ea765fbbc571
+Official blobs (sha256 of `git show HEAD:<path>`):
+routers/private/hook_pre_receive.go c628d1bbb7a80f3524b58fcd4c845b7137b61da6c1491bbbd18e03e569ecd91c
+services/pull/merge.go 43d724e4bcdcad0d48ca6b04430b18612c1008af86a374afa932b23d83659ac6
+modules/repository/env.go 2b67fad9f4f5836ff0c487b71f60a61000d6b76a50325fe6831f51f90dbc8721
+cmd/hook.go eed9e7bb26afefb66e7188863234755f52e53f12a7371b588dd82d9fba7e4f6
+models/git/protected_branch.go 3ff83fa5ec22ac25400574ee6c32843048d6275fc11fefdb5521fbbf4c179ee6
+models/fixtures/user.yml afa46a09042b4ab5cc22050ba6d278c4e3f6ce0f888cebfec44d5f4c222614ed
+services/automerge/automerge.go a42e902b10cb862e576d73332683273cd29a1efa35e9dde6b9be98b7b88c3f37
+
+Scratch source/test files after CONT-321 edits:
+services/automerge/automerge.go 85a51e42384bf969f07add6272e70ec8792d274b7f9cc8b2b58122c95db0817a
+services/automerge/automerge_test_hook.go 6bfcbfa82419d308777052dd397068709a4ba55d13589d9049f184e0f87cc99f
+tests/integration/automerge_review_race_test.go 14f1fa032fd359ad12d0e146a16202ecb250280c3c28ce3aaf256d5a043663e4
+
+CONT-316/317/318 route tests remain in the scratch unchanged; their actor identity is verified from those test sources and original `models/fixtures/user.yml`.

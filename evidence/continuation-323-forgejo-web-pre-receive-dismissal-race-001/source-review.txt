@@ -1,0 +1,22 @@
+Forgejo upstream blobs inspected at official HEAD 0d791421f85ca13a63b665053d81ea765fbbc571.
+
+routers/private/hook_pre_receive.go::preReceiveBranch
+- Upstream lines 457–460 return early for instance admins.
+- Non-global-admin actors execute CheckPullBranchProtections at lines 472–490.
+- Scratch-only callback is invoked at lines 496–498 after a successful check. Callback is guarded by testing.Testing(); there is no such seam in the upstream blob.
+
+routers/web/repo/pull.go::MergePullRequest
+- Upstream lines 1397–1398 call CheckPullMergeable.
+- The normal route later calls pull_service.Merge at lines 1486 onward.
+- Test request is the actual authenticated web POST /{owner}/{repo}/pulls/{index}/merge, not the API endpoint and not manual-merge marking.
+
+services/pull/merge.go::doMergeAndPush
+- Normal merge uses repo_module.FullPushingEnvironment with the pull request ID (same shared merge/write service as the API route).
+- Integration output confirms the real internal POST /api/internal/hook/pre-receive/user2/repo1 returns 200 before the Web request reports merge success.
+
+Fixture/users:
+- models/fixtures/user.yml hash follows; CONT321 confirms user2 is not an instance admin.
+- user2 is repository owner/admin; user1 is the separate instance-admin actor who dismisses the review.
+- Rule requires one approval from user2, enables DismissStaleApprovals and ApplyToAdmins.
+
+This is one targeted integration interleaving. No complete enumeration of ref writers or all route/mode guarantees is claimed.

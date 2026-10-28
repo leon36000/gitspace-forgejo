@@ -1,0 +1,9 @@
+Source read from the detached official Forgejo v17.0.0 commit `0d791421f85ca13a63b665053d81ea765fbbc571`:
+
+- `routers/api/v1/api.go:1053` registers POST `/dismissals` with repository token middleware.
+- `routers/api/v1/repo/pull_review.go::DismissPullReview` binds the dismissal message, then calls `dismissReview`.
+- `routers/api/v1/repo/pull_review.go::dismissReview` requires `ctx.IsUserRepoAdmin()` before calling the service.
+- `services/pull/review.go::DismissReview` checks that the review is an approval/rejection, belongs to the target repository, and the PR is still open, then changes the dismissal flag.
+- `routers/api/v1/repo/pull.go::MergePullRequest` calls `CheckPullMergeable` before the test-only barrier. The scratch barrier allows the test to make the dismissal request before merge continues.
+
+This is a narrow source read around the exercised route and service; it is not a full review of Forgejo authorization, all merge modes, or all branch-protection writers. The test itself is locally authored and retained only in the scratch worktree.

@@ -1,0 +1,734 @@
+2026/10/28 02:41:00 ...s/storage/storage.go:157:initAttachments() [I] Initialising Attachment storage with type: local
+2026/10/28 02:41:00 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-merge-review-race-001/tests/integration/forgejo-integration-sqlite/data/attachments
+2026/10/28 02:41:00 ...s/storage/storage.go:147:initAvatars() [I] Initialising Avatar storage with type: local
+2026/10/28 02:41:00 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-merge-review-race-001/tests/integration/forgejo-integration-sqlite/data/avatars
+2026/10/28 02:41:00 ...s/storage/storage.go:174:initRepoAvatars() [I] Initialising Repository Avatar storage with type: local
+2026/10/28 02:41:00 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-merge-review-race-001/tests/integration/forgejo-integration-sqlite/data/repo-avatars
+2026/10/28 02:41:00 ...s/storage/storage.go:168:initLFS() [I] Initialising LFS storage with type: local
+2026/10/28 02:41:00 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-merge-review-race-001/tests/integration/forgejo-integration-sqlite/data/lfs
+2026/10/28 02:41:00 ...s/storage/storage.go:180:initRepoArchives() [I] Initialising Repository Archive storage with type: local
+2026/10/28 02:41:00 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-merge-review-race-001/tests/integration/forgejo-integration-sqlite/data/repo-archive
+2026/10/28 02:41:00 ...s/storage/storage.go:190:initPackages() [I] Initialising Packages storage with type: local
+2026/10/28 02:41:00 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-merge-review-race-001/tests/integration/forgejo-integration-sqlite/data/packages
+2026/10/28 02:41:00 ...s/storage/storage.go:201:initActions() [I] Initialising Actions storage with type: local
+2026/10/28 02:41:00 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-merge-review-race-001/tests/integration/forgejo-integration-sqlite/data/actions_log
+2026/10/28 02:41:00 ...s/storage/storage.go:205:initActions() [I] Initialising ActionsArtifacts storage with type: local
+2026/10/28 02:41:00 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-merge-review-race-001/tests/integration/forgejo-integration-sqlite/data/actions_artifacts
+2026/10/28 02:41:00 modules/git/git.go:122:checkInit() [W] git module has been initialized already, duplicate init may work but it's better to fix it
+2026/10/28 02:41:00 routers/init.go:109:InitWebInstalled() [I] Git version: 2.43.0 (home: /tmp/forgejo-v17-merge-review-race-001/tests/integration/forgejo-integration-sqlite/data/home)
+??? [TestLogger] 2026/10/28 02:41:00 ...s/storage/storage.go:157:initAttachments() [I] Initialising Attachment storage with type: local
+??? [TestLogger] 2026/10/28 02:41:00 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-merge-review-race-001/tests/integration/forgejo-integration-sqlite/data/attachments
+??? [TestLogger] 2026/10/28 02:41:00 ...s/storage/storage.go:147:initAvatars() [I] Initialising Avatar storage with type: local
+??? [TestLogger] 2026/10/28 02:41:00 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-merge-review-race-001/tests/integration/forgejo-integration-sqlite/data/avatars
+??? [TestLogger] 2026/10/28 02:41:00 ...s/storage/storage.go:174:initRepoAvatars() [I] Initialising Repository Avatar storage with type: local
+??? [TestLogger] 2026/10/28 02:41:00 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-merge-review-race-001/tests/integration/forgejo-integration-sqlite/data/repo-avatars
+??? [TestLogger] 2026/10/28 02:41:00 ...s/storage/storage.go:168:initLFS() [I] Initialising LFS storage with type: local
+??? [TestLogger] 2026/10/28 02:41:00 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-merge-review-race-001/tests/integration/forgejo-integration-sqlite/data/lfs
+??? [TestLogger] 2026/10/28 02:41:00 ...s/storage/storage.go:180:initRepoArchives() [I] Initialising Repository Archive storage with type: local
+??? [TestLogger] 2026/10/28 02:41:00 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-merge-review-race-001/tests/integration/forgejo-integration-sqlite/data/repo-archive
+??? [TestLogger] 2026/10/28 02:41:00 ...s/storage/storage.go:190:initPackages() [I] Initialising Packages storage with type: local
+??? [TestLogger] 2026/10/28 02:41:00 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-merge-review-race-001/tests/integration/forgejo-integration-sqlite/data/packages
+??? [TestLogger] 2026/10/28 02:41:00 ...s/storage/storage.go:201:initActions() [I] Initialising Actions storage with type: local
+??? [TestLogger] 2026/10/28 02:41:00 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-merge-review-race-001/tests/integration/forgejo-integration-sqlite/data/actions_log
+??? [TestLogger] 2026/10/28 02:41:00 ...s/storage/storage.go:205:initActions() [I] Initialising ActionsArtifacts storage with type: local
+??? [TestLogger] 2026/10/28 02:41:00 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-merge-review-race-001/tests/integration/forgejo-integration-sqlite/data/actions_artifacts
+??? [TestLogger] 2026/10/28 02:41:00 routers/init.go:129:InitWebInstalled() [I] SQLite3 support is enabled
+??? [TestLogger] 2026/10/28 02:41:00 routers/common/db.go:23:InitDBEngine() [I] Beginning ORM engine initialization.
+??? [TestLogger] 2026/10/28 02:41:00 routers/common/db.go:30:InitDBEngine() [I] ORM engine initialization attempt #1/10...
+??? [TestLogger] 2026/10/28 02:41:00 routers/init.go:135:InitWebInstalled() [I] ORM engine initialization successful!
+??? [TestLogger] 2026/10/28 02:41:00 ...er/issues/indexer.go:80:func1() [I] PID 4002030: Initializing Issue Indexer: bleve
+??? [TestLogger] 2026/10/28 02:41:00 ...exer/code/indexer.go:169:func3() [I] PID: 4002030 Initializing Repository Indexer at: /tmp/forgejo-v17-merge-review-race-001/tests/integration/forgejo-integration-sqlite/indexers/repos.bleve
+??? [TestLogger] 2026/10/28 02:41:00 ...xer/stats/indexer.go:41:populateRepoIndexer() [I] Populating the repo stats indexer with existing repositories
+??? [TestLogger] 2026/10/28 02:41:00 ...er/issues/indexer.go:160:func2() [I] Issue Indexer Initialization took 3.325944ms
+??? [TestLogger] 2026/10/28 02:41:00 ...exer/code/indexer.go:265:func4() [I] Repository Indexer Initialization took 3.540681ms
+??? [TestLogger] 2026/10/28 02:41:00 ...exer/code/indexer.go:291:populateRepoIndexer() [I] Populating the repo indexer with existing repositories
+??? [TestLogger] 2026/10/28 02:41:00 routers/init.go:84:syncAppConfForGit() [I] AppPath changed from '' to '/tmp/go-build1358607410/b001/integration.test'
+??? [TestLogger] 2026/10/28 02:41:00 routers/init.go:89:syncAppConfForGit() [I] CustomConf changed from '' to '/tmp/forgejo-v17-merge-review-race-001/tests/sqlite.ini'
+??? [TestLogger] 2026/10/28 02:41:00 modules/ssh/ssh.go:345:Listen() [I] Adding SSH host key: /tmp/forgejo-v17-merge-review-race-001/tests/integration/forgejo-integration-sqlite/data/ssh/gitea.rsa
+??? [TestLogger] 2026/10/28 02:41:00 modules/ssh/init.go:30:Init() [I] SSH server started on localhost:2203. Cipher list ([chacha20-poly1305@openssh.com aes128-ctr aes192-ctr aes256-ctr aes128-gcm@openssh.com aes256-gcm@openssh.com]), key exchange algorithms ([mlkem768x25519-sha256 curve25519-sha256 ecdh-sha2-nistp256 ecdh-sha2-nistp384 ecdh-sha2-nistp521 diffie-hellman-group14-sha256 diffie-hellman-group14-sha1]), MACs ([hmac-sha2-256-etm@openssh.com hmac-sha2-256 hmac-sha1])
+??? [TestLogger] 2026/10/28 02:41:00 ...s/graceful/server.go:50:NewServer() [I] Starting new SSH server: tcp:localhost:2203 on PID: 4002030
+??? [TestLogger] 2026/10/28 02:41:00 ...xer/stats/indexer.go:87:populateRepoIndexer() [I] Done (re)populating the repo stats indexer with existing repositories
+??? [TestLogger] 2026/10/28 02:41:00 ...er/cleanup_sha256.go:27:CleanupSHA256() [I] Start to cleanup dangling images with a sha256:* version
+??? [TestLogger] 2026/10/28 02:41:00 ...er/cleanup_sha256.go:106:cleanupSHA256() [I] Nothing to cleanup
+??? [TestLogger] 2026/10/28 02:41:00 ...er/cleanup_sha256.go:29:CleanupSHA256() [I] Finished to cleanup dangling images with a sha256:* version
+??? [TestLogger] 2026/10/28 02:41:00 ...exer/code/indexer.go:343:populateRepoIndexer() [I] Done (re)populating the repo indexer with existing repositories
+=== RUN   TestWebMergePullRequestCanUseApprovalBeforeConcurrentDismissalDuringPreReceive
+=== TestWebMergePullRequestCanUseApprovalBeforeConcurrentDismissalDuringPreReceive (tests/integration/git_helper_for_declarative_test.go:67)
+    testlogger.go:408: 2026/10/28 02:41:00 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-merge-review-race-001/tests/gitea-lfs-meta
+    testlogger.go:408: 2026/10/28 02:41:00 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/login for test-mock:12345, 303 See Other in 2.4ms @ auth/auth.go:208(auth.SignInPost)
+    testlogger.go:408: 2026/10/28 02:41:00 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/settings/applications/tokens/new for test-mock:12345, 303 See Other in 5.5ms @ setting/access_token.go:220(setting.AccessTokenCreatePost)
+    testlogger.go:408: 2026/10/28 02:41:00 ...odels/user/avatar.go:59:GenerateRandomAvatar() [I] New random avatar created: 2
+    testlogger.go:408: 2026/10/28 02:41:00 ...s/setting/setting.go:65:initialAppDocsVer() [W] Doclinks will fallback to version 'latest' due to err: Malformed version: dev
+    testlogger.go:408: 2026/10/28 02:41:00 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user/settings/applications for test-mock:12345, 200 OK in 11.1ms @ setting/applications.go:24(setting.Applications)
+    testlogger.go:408: 2026/10/28 02:41:00 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/login for test-mock:12345, 303 See Other in 4.2ms @ auth/auth.go:208(auth.SignInPost)
+    testlogger.go:408: 2026/10/28 02:41:00 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/settings/applications/tokens/new for test-mock:12345, 303 See Other in 5.0ms @ setting/access_token.go:220(setting.AccessTokenCreatePost)
+    testlogger.go:408: 2026/10/28 02:41:00 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user/settings/applications for test-mock:12345, 200 OK in 3.6ms @ setting/applications.go:24(setting.Applications)
+    testlogger.go:408: 2026/10/28 02:41:00 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/login for test-mock:12345, 303 See Other in 1.4ms @ auth/auth.go:208(auth.SignInPost)
+    testlogger.go:408: 2026/10/28 02:41:00 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/settings/applications/tokens/new for test-mock:12345, 303 See Other in 3.1ms @ setting/access_token.go:220(setting.AccessTokenCreatePost)
+    testlogger.go:408: 2026/10/28 02:41:00 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user/settings/applications for test-mock:12345, 200 OK in 2.3ms @ setting/applications.go:24(setting.Applications)
+    testlogger.go:408: 2026/10/28 02:41:00 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/login for test-mock:12345, 303 See Other in 1.2ms @ auth/auth.go:208(auth.SignInPost)
+    testlogger.go:408: 2026/10/28 02:41:00 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/v1/repos/user2/repo1/branch_protections for test-mock:12345, 201 Created in 3.9ms @ repo/branch.go:544(repo.CreateBranchProtection)
+    testlogger.go:408: 2026/10/28 02:41:00 ...ces/mailer/mailer.go:384:Send() [I] Mail From: sqlite-integration-test@gitea.io To: [user11@example.com] Body: Mime-Version: 1.0
+        X-Forgejo-Reason: pull
+        X-Forgejo-Recipient: user11
+        List-Archive: <http://localhost:3003/user2/repo1>
+        X-Gitea-Issue-Link: http://localhost:3003/user2/repo1/pulls/6
+        Subject: [user2/repo1] isolated web pre-receive approval dismissal race (PR
+         #6)
+        To: user11@example.com
+        X-GitLab-Project: repo1
+        X-GitHub-Reason: pull
+        X-Forgejo-Sender: user1
+        X-Gitea-Repository-Path: user2/repo1
+        X-GitLab-Project-Path: user2/repo1
+        References: <user2/repo1/pulls/6@localhost>
+        X-GitLab-NotificationReason: pull
+        X-Forgejo-Repository: repo1
+        X-Forgejo-Repository-Path: user2/repo1
+        List-ID: user2/repo1 <repo1.user2.localhost>
+        X-GitHub-Recipient-Address: user11@example.com
+        X-Forgejo-Repository-Link: http://localhost:3003/user2/repo1
+        X-Forgejo-Issue-Link: http://localhost:3003/user2/repo1/pulls/6
+        X-Gitea-Recipient: user11
+        X-GitHub-Sender: user1
+        List-Unsubscribe: <http://localhost:3003/user2/repo1/pulls/6>
+        X-Forgejo-Issue-ID: 6
+        Message-ID: <user2/repo1/pulls/6@localhost>
+        X-GitHub-Recipient: user11
+        X-GitLab-Issue-IID: 6
+        X-Gitea-Repository: repo1
+        X-Mailer: Forgejo
+        Date: Wed, 28 Oct 2026 02:41:00 +0000
+        X-Gitea-Reason: pull
+        X-Gitea-Issue-ID: 6
+        In-Reply-To: <user2/repo1/pulls/6@localhost>
+        X-Gitea-Repository-Link: http://localhost:3003/user2/repo1
+        X-Forgejo-Recipient-Address: user11@example.com
+        X-Gitea-Sender: user1
+        X-Gitea-Recipient-Address: user11@example.com
+        X-Auto-Response-Suppress: All
+        From: "user1" <sqlite-integration-test@gitea.io>
+        Content-Type: multipart/alternative;
+         boundary=d95b530e127db6a80b9f5ee300f393f030ed8ccd7ba566d52077621e7552
+        
+        --d95b530e127db6a80b9f5ee300f393f030ed8ccd7ba566d52077621e7552
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/plain; charset=UTF-8
+        
+        *@user1* created #6.
+        
+        ---
+        View it on Forgejo ( http://localhost:3003/user2/repo1/pulls/6 ).
+        --d95b530e127db6a80b9f5ee300f393f030ed8ccd7ba566d52077621e7552
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/html; charset=UTF-8
+        
+        <!DOCTYPE html>
+        <html>
+        <head>
+        	<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+        
+        	<style>
+        		blockquote { padding-left: 1em; margin: 1em 0; border-left: 1px solid gre=
+        y; color: #777}
+        		.footer { font-size:small; color:#666;}
+        	=09
+        	</style>
+        
+        </head>
+        
+        <body>
+        =09
+        =09
+        	<p>
+        	=09
+        		=09
+        				<b>@user1</b> created #6.
+        		=09
+        	=09
+        	</p>
+        	<div class=3D"footer">
+        	<p>
+        		---
+        		<br>
+        		<a href=3D"http://localhost:3003/user2/repo1/pulls/6">View it on Forgejo<=
+        /a>.
+        	</p>
+        	</div>
+        </body>
+        </html>
+        
+        --d95b530e127db6a80b9f5ee300f393f030ed8ccd7ba566d52077621e7552--
+    testlogger.go:408: 2026/10/28 02:41:00 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/v1/repos/user2/repo1/pulls for test-mock:12345, 201 Created in 138.7ms @ repo/pull.go:399(repo.CreatePullRequest)
+    testlogger.go:408: 2026/10/28 02:41:00 ...ces/mailer/mailer.go:384:Send() [I] Mail From: sqlite-integration-test@gitea.io To: [user1@example.com] Body: Mime-Version: 1.0
+        List-ID: user2/repo1 <repo1.user2.localhost>
+        X-Forgejo-Issue-Link: http://localhost:3003/user2/repo1/pulls/6
+        List-Archive: <http://localhost:3003/user2/repo1>
+        Message-ID: <user2/repo1/pulls/6/comment/2409@localhost>
+        X-GitHub-Recipient: user1
+        X-Gitea-Reason: pull
+        References: <user2/repo1/pulls/6@localhost>
+        To: user1@example.com
+        X-GitHub-Reason: pull
+        X-GitLab-Project: repo1
+        X-Gitea-Issue-Link: http://localhost:3003/user2/repo1/pulls/6
+        X-Forgejo-Repository: repo1
+        X-Forgejo-Recipient: user1
+        X-Forgejo-Sender: user2
+        X-Forgejo-Recipient-Address: user1@example.com
+        X-GitLab-Project-Path: user2/repo1
+        X-GitLab-NotificationReason: pull
+        X-Forgejo-Repository-Link: http://localhost:3003/user2/repo1
+        X-Forgejo-Issue-ID: 6
+        List-Unsubscribe: <http://localhost:3003/user2/repo1/pulls/6>
+        In-Reply-To: <user2/repo1/pulls/6@localhost>
+        X-Forgejo-Reason: pull
+        X-Forgejo-Repository-Path: user2/repo1
+        X-Gitea-Recipient-Address: user1@example.com
+        X-Gitea-Issue-ID: 6
+        X-GitHub-Sender: user2
+        From: "user2" <sqlite-integration-test@gitea.io>
+        X-Mailer: Forgejo
+        X-Auto-Response-Suppress: All
+        X-Gitea-Recipient: user1
+        X-GitLab-Issue-IID: 6
+        Subject: Re: [user2/repo1] isolated web pre-receive approval dismissal race
+         (PR #6)
+        Date: Wed, 28 Oct 2026 02:41:00 +0000
+        X-GitHub-Recipient-Address: user1@example.com
+        X-Gitea-Repository: repo1
+        X-Gitea-Repository-Path: user2/repo1
+        X-Gitea-Sender: user2
+        X-Gitea-Repository-Link: http://localhost:3003/user2/repo1
+        Content-Type: multipart/alternative;
+         boundary=c3a3efbdda95f626bd1febc872f721bb2481226d234bb01a52a9ecb5b1b1
+        
+        --c3a3efbdda95f626bd1febc872f721bb2481226d234bb01a52a9ecb5b1b1
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/plain; charset=UTF-8
+        
+        *@user2* approved this pull request.
+        
+        approval before web pre-receive barrier
+        
+        ---
+        View it on Forgejo ( http://localhost:3003/user2/repo1/pulls/6#issuecomment=
+        -2409 ).
+        --c3a3efbdda95f626bd1febc872f721bb2481226d234bb01a52a9ecb5b1b1
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/html; charset=UTF-8
+        
+        <!DOCTYPE html>
+        <html>
+        <head>
+        	<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+        
+        	<style>
+        		blockquote { padding-left: 1em; margin: 1em 0; border-left: 1px solid gre=
+        y; color: #777}
+        		.footer { font-size:small; color:#666;}
+        	=09
+        	</style>
+        
+        </head>
+        
+        <body>
+        =09
+        =09
+        	<p>
+        	=09
+        			<b>@user2</b> approved this pull request.
+        	=09
+        			<p dir=3D"auto">approval before web pre-receive barrier</p>
+        
+        	=09
+        	</p>
+        	<div class=3D"footer">
+        	<p>
+        		---
+        		<br>
+        		<a href=3D"http://localhost:3003/user2/repo1/pulls/6#issuecomment-2409">V=
+        iew it on Forgejo</a>.
+        	</p>
+        	</div>
+        </body>
+        </html>
+        
+        --c3a3efbdda95f626bd1febc872f721bb2481226d234bb01a52a9ecb5b1b1--
+    testlogger.go:408: 2026/10/28 02:41:00 ...ces/mailer/mailer.go:384:Send() [I] Mail From: sqlite-integration-test@gitea.io To: [user11@example.com] Body: Mime-Version: 1.0
+        X-Gitea-Repository: repo1
+        X-GitHub-Reason: pull
+        X-GitHub-Recipient: user11
+        X-Auto-Response-Suppress: All
+        In-Reply-To: <user2/repo1/pulls/6@localhost>
+        References: <user2/repo1/pulls/6@localhost>
+        X-Mailer: Forgejo
+        X-Gitea-Reason: pull
+        X-GitLab-Issue-IID: 6
+        X-Forgejo-Repository: repo1
+        Message-ID: <user2/repo1/pulls/6/comment/2409@localhost>
+        X-Forgejo-Recipient-Address: user11@example.com
+        X-GitLab-Project-Path: user2/repo1
+        From: "user2" <sqlite-integration-test@gitea.io>
+        X-Gitea-Recipient-Address: user11@example.com
+        List-Unsubscribe: <http://localhost:3003/user2/repo1/pulls/6>
+        X-Gitea-Issue-Link: http://localhost:3003/user2/repo1/pulls/6
+        X-GitLab-NotificationReason: pull
+        List-Archive: <http://localhost:3003/user2/repo1>
+        X-Forgejo-Repository-Path: user2/repo1
+        X-GitHub-Recipient-Address: user11@example.com
+        Subject: Re: [user2/repo1] isolated web pre-receive approval dismissal race
+         (PR #6)
+        X-Forgejo-Issue-ID: 6
+        X-Forgejo-Repository-Link: http://localhost:3003/user2/repo1
+        X-GitHub-Sender: user2
+        X-Gitea-Repository-Path: user2/repo1
+        X-Gitea-Recipient: user11
+        X-Forgejo-Recipient: user11
+        X-Gitea-Repository-Link: http://localhost:3003/user2/repo1
+        Date: Wed, 28 Oct 2026 02:41:00 +0000
+        X-GitLab-Project: repo1
+        X-Gitea-Issue-ID: 6
+        X-Forgejo-Issue-Link: http://localhost:3003/user2/repo1/pulls/6
+        X-Forgejo-Sender: user2
+        X-Gitea-Sender: user2
+        X-Forgejo-Reason: pull
+        List-ID: user2/repo1 <repo1.user2.localhost>
+        To: user11@example.com
+        Content-Type: multipart/alternative;
+         boundary=270cc5fe003122d38357b0390092bdd511e0f3c520c3a99ea373e5af755b
+        
+        --270cc5fe003122d38357b0390092bdd511e0f3c520c3a99ea373e5af755b
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/plain; charset=UTF-8
+        
+        *@user2* approved this pull request.
+        
+        approval before web pre-receive barrier
+        
+        ---
+        View it on Forgejo ( http://localhost:3003/user2/repo1/pulls/6#issuecomment=
+        -2409 ).
+        --270cc5fe003122d38357b0390092bdd511e0f3c520c3a99ea373e5af755b
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/html; charset=UTF-8
+        
+        <!DOCTYPE html>
+        <html>
+        <head>
+        	<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+        
+        	<style>
+        		blockquote { padding-left: 1em; margin: 1em 0; border-left: 1px solid gre=
+        y; color: #777}
+        		.footer { font-size:small; color:#666;}
+        	=09
+        	</style>
+        
+        </head>
+        
+        <body>
+        =09
+        =09
+        	<p>
+        	=09
+        			<b>@user2</b> approved this pull request.
+        	=09
+        			<p dir=3D"auto">approval before web pre-receive barrier</p>
+        
+        	=09
+        	</p>
+        	<div class=3D"footer">
+        	<p>
+        		---
+        		<br>
+        		<a href=3D"http://localhost:3003/user2/repo1/pulls/6#issuecomment-2409">V=
+        iew it on Forgejo</a>.
+        	</p>
+        	</div>
+        </body>
+        </html>
+        
+        --270cc5fe003122d38357b0390092bdd511e0f3c520c3a99ea373e5af755b--
+    testlogger.go:408: 2026/10/28 02:41:00 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/v1/repos/user2/repo1/pulls/6/reviews for test-mock:12345, 200 OK in 57.6ms @ repo/pull_review.go:432(repo.CreatePullReview)
+    testlogger.go:408: 2026/10/28 02:41:00 ...ces/mailer/mailer.go:384:Send() [I] Mail From: sqlite-integration-test@gitea.io To: [user2@example.com] Body: Mime-Version: 1.0
+        X-Forgejo-Reason: pull
+        X-Gitea-Repository-Link: http://localhost:3003/user2/repo1
+        X-GitLab-Issue-IID: 6
+        X-Forgejo-Repository-Path: user2/repo1
+        X-Forgejo-Issue-ID: 6
+        X-Mailer: Forgejo
+        X-GitHub-Sender: user1
+        X-Forgejo-Repository-Link: http://localhost:3003/user2/repo1
+        X-Gitea-Recipient-Address: user2@example.com
+        X-GitHub-Recipient: user2
+        X-GitHub-Reason: pull
+        X-Forgejo-Issue-Link: http://localhost:3003/user2/repo1/pulls/6
+        X-Gitea-Issue-ID: 6
+        X-Forgejo-Recipient: user2
+        X-Gitea-Repository: repo1
+        X-Auto-Response-Suppress: All
+        X-GitLab-Project: repo1
+        List-Unsubscribe: <http://localhost:3003/user2/repo1/pulls/6>
+        Message-ID: <user2/repo1/pulls/6/comment/2410@localhost>
+        X-GitLab-Project-Path: user2/repo1
+        X-GitLab-NotificationReason: pull
+        X-Gitea-Issue-Link: http://localhost:3003/user2/repo1/pulls/6
+        X-Gitea-Recipient: user2
+        In-Reply-To: <user2/repo1/pulls/6@localhost>
+        Subject: Re: [user2/repo1] isolated web pre-receive approval dismissal race
+         (PR #6)
+        Date: Wed, 28 Oct 2026 02:41:00 +0000
+        X-Gitea-Repository-Path: user2/repo1
+        X-Gitea-Reason: pull
+        X-Forgejo-Sender: user1
+        X-Forgejo-Repository: repo1
+        X-Gitea-Sender: user1
+        From: "user1" <sqlite-integration-test@gitea.io>
+        To: user2@example.com
+        X-GitHub-Recipient-Address: user2@example.com
+        List-ID: user2/repo1 <repo1.user2.localhost>
+        References: <user2/repo1/pulls/6@localhost>
+        X-Forgejo-Recipient-Address: user2@example.com
+        List-Archive: <http://localhost:3003/user2/repo1>
+        Content-Type: multipart/alternative;
+         boundary=8658915e27de815539e8fc73d9e68c0c867fca806e7357d7300c4771458b
+        
+        --8658915e27de815539e8fc73d9e68c0c867fca806e7357d7300c4771458b
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/plain; charset=UTF-8
+        
+        *@user1* dismissed last review from user2 for this pull request.
+        
+        dismiss after web pre-receive approval check
+        
+        ---
+        View it on Forgejo ( http://localhost:3003/user2/repo1/pulls/6#issuecomment=
+        -2410 ).
+        --8658915e27de815539e8fc73d9e68c0c867fca806e7357d7300c4771458b
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/html; charset=UTF-8
+        
+        <!DOCTYPE html>
+        <html>
+        <head>
+        	<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+        
+        	<style>
+        		blockquote { padding-left: 1em; margin: 1em 0; border-left: 1px solid gre=
+        y; color: #777}
+        		.footer { font-size:small; color:#666;}
+        	=09
+        	</style>
+        
+        </head>
+        
+        <body>
+        =09
+        =09
+        	<p>
+        	=09
+        			<b>@user1</b> dismissed last review from user2 for this pull request.
+        	=09
+        			<p dir=3D"auto">dismiss after web pre-receive approval check</p>
+        
+        	=09
+        	</p>
+        	<div class=3D"footer">
+        	<p>
+        		---
+        		<br>
+        		<a href=3D"http://localhost:3003/user2/repo1/pulls/6#issuecomment-2410">V=
+        iew it on Forgejo</a>.
+        	</p>
+        	</div>
+        </body>
+        </html>
+        
+        --8658915e27de815539e8fc73d9e68c0c867fca806e7357d7300c4771458b--
+    testlogger.go:408: 2026/10/28 02:41:00 ...ces/mailer/mailer.go:384:Send() [I] Mail From: sqlite-integration-test@gitea.io To: [user11@example.com] Body: Mime-Version: 1.0
+        X-GitHub-Sender: user1
+        X-Forgejo-Recipient: user11
+        X-Gitea-Repository-Path: user2/repo1
+        X-Forgejo-Issue-Link: http://localhost:3003/user2/repo1/pulls/6
+        List-Archive: <http://localhost:3003/user2/repo1>
+        X-Gitea-Recipient: user11
+        Date: Wed, 28 Oct 2026 02:41:00 +0000
+        X-Auto-Response-Suppress: All
+        X-Forgejo-Reason: pull
+        X-Gitea-Recipient-Address: user11@example.com
+        References: <user2/repo1/pulls/6@localhost>
+        X-GitLab-NotificationReason: pull
+        X-Gitea-Sender: user1
+        X-Mailer: Forgejo
+        X-GitHub-Recipient: user11
+        X-Gitea-Reason: pull
+        From: "user1" <sqlite-integration-test@gitea.io>
+        List-ID: user2/repo1 <repo1.user2.localhost>
+        Subject: Re: [user2/repo1] isolated web pre-receive approval dismissal race
+         (PR #6)
+        X-Forgejo-Repository: repo1
+        X-Forgejo-Recipient-Address: user11@example.com
+        X-Forgejo-Issue-ID: 6
+        X-Gitea-Issue-ID: 6
+        X-GitLab-Issue-IID: 6
+        X-GitLab-Project: repo1
+        Message-ID: <user2/repo1/pulls/6/comment/2410@localhost>
+        In-Reply-To: <user2/repo1/pulls/6@localhost>
+        X-GitHub-Reason: pull
+        X-Forgejo-Repository-Link: http://localhost:3003/user2/repo1
+        X-Forgejo-Sender: user1
+        X-Gitea-Repository-Link: http://localhost:3003/user2/repo1
+        X-Gitea-Issue-Link: http://localhost:3003/user2/repo1/pulls/6
+        X-Forgejo-Repository-Path: user2/repo1
+        To: user11@example.com
+        X-GitHub-Recipient-Address: user11@example.com
+        X-GitLab-Project-Path: user2/repo1
+        List-Unsubscribe: <http://localhost:3003/user2/repo1/pulls/6>
+        X-Gitea-Repository: repo1
+        Content-Type: multipart/alternative;
+         boundary=24516ef2a14f15698b77f63cd390b902d162b35ba0ad1053fda1cfad8d1d
+        
+        --24516ef2a14f15698b77f63cd390b902d162b35ba0ad1053fda1cfad8d1d
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/plain; charset=UTF-8
+        
+        *@user1* dismissed last review from user2 for this pull request.
+        
+        dismiss after web pre-receive approval check
+        
+        ---
+        View it on Forgejo ( http://localhost:3003/user2/repo1/pulls/6#issuecomment=
+        -2410 ).
+        --24516ef2a14f15698b77f63cd390b902d162b35ba0ad1053fda1cfad8d1d
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/html; charset=UTF-8
+        
+        <!DOCTYPE html>
+        <html>
+        <head>
+        	<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+        
+        	<style>
+        		blockquote { padding-left: 1em; margin: 1em 0; border-left: 1px solid gre=
+        y; color: #777}
+        		.footer { font-size:small; color:#666;}
+        	=09
+        	</style>
+        
+        </head>
+        
+        <body>
+        =09
+        =09
+        	<p>
+        	=09
+        			<b>@user1</b> dismissed last review from user2 for this pull request.
+        	=09
+        			<p dir=3D"auto">dismiss after web pre-receive approval check</p>
+        
+        	=09
+        	</p>
+        	<div class=3D"footer">
+        	<p>
+        		---
+        		<br>
+        		<a href=3D"http://localhost:3003/user2/repo1/pulls/6#issuecomment-2410">V=
+        iew it on Forgejo</a>.
+        	</p>
+        	</div>
+        </body>
+        </html>
+        
+        --24516ef2a14f15698b77f63cd390b902d162b35ba0ad1053fda1cfad8d1d--
+    testlogger.go:408: 2026/10/28 02:41:00 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/v1/repos/user2/repo1/pulls/6/reviews/88/dismissals for test-mock:12345, 200 OK in 18.7ms @ repo/pull_review.go:966(repo.DismissPullReview)
+    testlogger.go:408: 2026/10/28 02:41:00 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/pre-receive/user2/repo1 for 127.0.0.1:0, 200 OK in 23.1ms @ private/hook_pre_receive.go:209(private.HookPreReceive)
+    testlogger.go:408: 2026/10/28 02:41:00 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/post-receive/user2/repo1 for 127.0.0.1:0, 200 OK in 66.8ms @ private/hook_post_receive.go:41(private.HookPostReceive)
+    testlogger.go:408: 2026/10/28 02:41:01 ...ces/mailer/mailer.go:384:Send() [I] Mail From: sqlite-integration-test@gitea.io To: [user1@example.com] Body: Mime-Version: 1.0
+        In-Reply-To: <user2/repo1/pulls/6@localhost>
+        Subject: Re: [user2/repo1] isolated web pre-receive approval dismissal race
+         (PR #6)
+        References: <user2/repo1/pulls/6@localhost>
+        Message-ID: <user2/repo1/pulls/6/merge/1793155261024@localhost>
+        X-GitHub-Sender: user2
+        X-Gitea-Reason: pull
+        X-Forgejo-Issue-ID: 6
+        X-Gitea-Recipient: user1
+        X-Gitea-Issue-ID: 6
+        X-Gitea-Repository-Path: user2/repo1
+        X-GitLab-NotificationReason: pull
+        X-Gitea-Repository-Link: http://localhost:3003/user2/repo1
+        List-Unsubscribe: <http://localhost:3003/user2/repo1/pulls/6>
+        X-Forgejo-Recipient: user1
+        X-Gitea-Recipient-Address: user1@example.com
+        X-Forgejo-Issue-Link: http://localhost:3003/user2/repo1/pulls/6
+        List-Archive: <http://localhost:3003/user2/repo1>
+        X-Mailer: Forgejo
+        X-Forgejo-Repository-Path: user2/repo1
+        X-GitLab-Project: repo1
+        X-Auto-Response-Suppress: All
+        X-Forgejo-Reason: pull
+        X-GitHub-Recipient: user1
+        X-GitHub-Reason: pull
+        X-Gitea-Issue-Link: http://localhost:3003/user2/repo1/pulls/6
+        To: user1@example.com
+        X-Gitea-Repository: repo1
+        X-Gitea-Sender: user2
+        X-Forgejo-Repository: repo1
+        X-GitLab-Project-Path: user2/repo1
+        Date: Wed, 28 Oct 2026 02:41:01 +0000
+        X-Forgejo-Sender: user2
+        X-GitHub-Recipient-Address: user1@example.com
+        List-ID: user2/repo1 <repo1.user2.localhost>
+        X-Forgejo-Repository-Link: http://localhost:3003/user2/repo1
+        From: "user2" <sqlite-integration-test@gitea.io>
+        X-Forgejo-Recipient-Address: user1@example.com
+        X-GitLab-Issue-IID: 6
+        Content-Type: multipart/alternative;
+         boundary=706353c984b38db4776ef2fbc56174fc7d74132d702f5cfa65595eebfd58
+        
+        --706353c984b38db4776ef2fbc56174fc7d74132d702f5cfa65595eebfd58
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/plain; charset=UTF-8
+        
+        *@user2* merged #6 into master.
+        
+        ---
+        View it on Forgejo ( http://localhost:3003/user2/repo1/pulls/6 ).
+        --706353c984b38db4776ef2fbc56174fc7d74132d702f5cfa65595eebfd58
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/html; charset=UTF-8
+        
+        <!DOCTYPE html>
+        <html>
+        <head>
+        	<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+        
+        	<style>
+        		blockquote { padding-left: 1em; margin: 1em 0; border-left: 1px solid gre=
+        y; color: #777}
+        		.footer { font-size:small; color:#666;}
+        	=09
+        	</style>
+        
+        </head>
+        
+        <body>
+        =09
+        =09
+        	<p>
+        	=09
+        			<b>@user2</b> merged #6 into master.
+        	=09
+        		=09
+        	=09
+        	</p>
+        	<div class=3D"footer">
+        	<p>
+        		---
+        		<br>
+        		<a href=3D"http://localhost:3003/user2/repo1/pulls/6">View it on Forgejo<=
+        /a>.
+        	</p>
+        	</div>
+        </body>
+        </html>
+        
+        --706353c984b38db4776ef2fbc56174fc7d74132d702f5cfa65595eebfd58--
+    testlogger.go:408: 2026/10/28 02:41:01 ...ces/mailer/mailer.go:384:Send() [I] Mail From: sqlite-integration-test@gitea.io To: [user11@example.com] Body: Mime-Version: 1.0
+        X-Forgejo-Sender: user2
+        X-GitLab-Project-Path: user2/repo1
+        X-Gitea-Repository-Link: http://localhost:3003/user2/repo1
+        X-GitLab-Issue-IID: 6
+        X-GitHub-Sender: user2
+        X-Gitea-Issue-ID: 6
+        X-GitLab-NotificationReason: pull
+        List-Archive: <http://localhost:3003/user2/repo1>
+        X-GitHub-Reason: pull
+        In-Reply-To: <user2/repo1/pulls/6@localhost>
+        X-Gitea-Sender: user2
+        Date: Wed, 28 Oct 2026 02:41:01 +0000
+        X-Forgejo-Repository-Path: user2/repo1
+        X-GitLab-Project: repo1
+        Message-ID: <user2/repo1/pulls/6/merge/1793155261024@localhost>
+        X-Forgejo-Reason: pull
+        To: user11@example.com
+        List-ID: user2/repo1 <repo1.user2.localhost>
+        X-Gitea-Recipient: user11
+        X-Forgejo-Repository: repo1
+        X-Gitea-Reason: pull
+        X-GitHub-Recipient-Address: user11@example.com
+        From: "user2" <sqlite-integration-test@gitea.io>
+        References: <user2/repo1/pulls/6@localhost>
+        X-Gitea-Issue-Link: http://localhost:3003/user2/repo1/pulls/6
+        X-GitHub-Recipient: user11
+        X-Gitea-Repository: repo1
+        X-Forgejo-Recipient: user11
+        List-Unsubscribe: <http://localhost:3003/user2/repo1/pulls/6>
+        X-Forgejo-Issue-ID: 6
+        X-Forgejo-Issue-Link: http://localhost:3003/user2/repo1/pulls/6
+        X-Forgejo-Repository-Link: http://localhost:3003/user2/repo1
+        X-Mailer: Forgejo
+        Subject: Re: [user2/repo1] isolated web pre-receive approval dismissal race
+         (PR #6)
+        X-Auto-Response-Suppress: All
+        X-Gitea-Repository-Path: user2/repo1
+        X-Gitea-Recipient-Address: user11@example.com
+        X-Forgejo-Recipient-Address: user11@example.com
+        Content-Type: multipart/alternative;
+         boundary=48f3c23a1c448a3f08defa4280e273f8eef983bda5952e4fd2badbb21c66
+        
+        --48f3c23a1c448a3f08defa4280e273f8eef983bda5952e4fd2badbb21c66
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/plain; charset=UTF-8
+        
+        *@user2* merged #6 into master.
+        
+        ---
+        View it on Forgejo ( http://localhost:3003/user2/repo1/pulls/6 ).
+        --48f3c23a1c448a3f08defa4280e273f8eef983bda5952e4fd2badbb21c66
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/html; charset=UTF-8
+        
+        <!DOCTYPE html>
+        <html>
+        <head>
+        	<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+        
+        	<style>
+        		blockquote { padding-left: 1em; margin: 1em 0; border-left: 1px solid gre=
+        y; color: #777}
+        		.footer { font-size:small; color:#666;}
+        	=09
+        	</style>
+        
+        </head>
+        
+        <body>
+        =09
+        =09
+        	<p>
+        	=09
+        			<b>@user2</b> merged #6 into master.
+        	=09
+        		=09
+        	=09
+        	</p>
+        	<div class=3D"footer">
+        	<p>
+        		---
+        		<br>
+        		<a href=3D"http://localhost:3003/user2/repo1/pulls/6">View it on Forgejo<=
+        /a>.
+        	</p>
+        	</div>
+        </body>
+        </html>
+        
+        --48f3c23a1c448a3f08defa4280e273f8eef983bda5952e4fd2badbb21c66--
+    testlogger.go:408: 2026/10/28 02:41:01 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user2/repo1/pulls/6/merge for test-mock:12345, 200 OK in 403.7ms @ repo/pull.go:1375(repo.MergePullRequest)
+    testlogger.go:408: 2026/10/28 02:41:01 ...eb/routing/logger.go:109:func1() [I] router: completed GET /api/v1/repos/user2/repo1/pulls/6 for test-mock:12345, 200 OK in 22.0ms @ repo/pull.go:200(repo.GetPullRequest)
+    testlogger.go:408: 2026/10/28 02:41:01 ...eb/routing/logger.go:109:func1() [I] router: completed GET /api/v1/repos/user2/repo1/pulls/6/reviews/88 for test-mock:12345, 200 OK in 9.1ms @ repo/pull_review.go:112(repo.GetPullReview)
+--- PASS: TestWebMergePullRequestCanUseApprovalBeforeConcurrentDismissalDuringPreReceive (0.84s)
+PASS
+ok  	forgejo.org/tests/integration	1.291s

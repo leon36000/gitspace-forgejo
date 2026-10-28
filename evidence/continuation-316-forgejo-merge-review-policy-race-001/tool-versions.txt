@@ -1,0 +1,8 @@
+Date: 2026-10-27
+Go: go1.27.3 linux/arm64
+Go environment: GOOS=linux, GOARCH=arm64, CGO_ENABLED=1
+Git: 2.43.0
+Go race detector: enabled for the race run
+Database tag/config: sqlite, sqlite_unlock_notify; tests/sqlite.ini
+git-lfs: absent (command -v returned no path); Make wrapper preflight unavailable
+OS/runtime: Linux arm64 (workstation environment)

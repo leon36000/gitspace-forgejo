@@ -1,0 +1,13 @@
+Attempt 1 — 2026-10-27
+Command: targeted `go test -v ... -run '^TestAutoMergeWorker' -count=1 ./tests/integration`.
+Result: both identities pass. The user1 instance-admin path merges and moves the ref after review dismissal. The user2 repo-admin/non-instance-admin path is rejected at pre-receive (HTTP 403, “Does not have enough approvals”), keeps `HasMerged=false`, and preserves the branch base SHA. The log includes a fresh AutoMerge worker check refusing after dismissal, plus the paused worker’s Git push rejected by the pre-receive hook; assertions confirmed the actual PR and ref state.
+
+Attempt 2 — 2026-10-27
+Command: targeted `go test ... -count=5 ./tests/integration` for both tests.
+Result: pass; both role cases repeated five times (`ok forgejo.org/tests/integration 7.607s`).
+
+Attempt 3 — 2026-10-27
+Command: targeted `go test -race ... -count=1 ./tests/integration` for both tests.
+Result: pass (`ok forgejo.org/tests/integration 10.872s`); no race-detector report.
+
+The earlier CONT-320 one-admin test remains archived in its own receipt; CONT-321 clarifies its identity boundary rather than replacing that raw log.

@@ -1,0 +1,10 @@
+Forgejo v17.0.0 commit: 0d791421f85ca13a63b665053d81ea765fbbc571
+
+Official blobs from git show HEAD:<path> | sha256sum:
+services/pull/check.go  d51ab2040c82c89609368db0ea3f781dfc047d50fda3d3b785e4d4267b420b88
+services/automerge/automerge.go  a42e902b10cb862e576d73332683273cd29a1efa35e9dde6b9be98b7b88c3f37
+services/pull/merge_manual.go  e88a14afab98d216adab683818c5c81a3bd91b12f08b9761e83e9af6d92955ad
+routers/api/v1/repo/pull.go  10586bae76ce9976cfdd44bec2196bd74216e5555a11eae78ca6d41867023dcb
+routers/web/repo/pull.go  3cf2bb74bb9e81c5b1441a8e7ef31ff3ef085bce15f789b4ea0b7ad65dbb5d34
+routers/api/v1/api.go  889589a7824613c3e55e4878e6002ef8429e69a1be2e2492dc1c97b3aac55e3a
+routers/web/web.go  3c70ac37fee5364c796561bcc6bfa3d494e03833c2bc54a11c012e8cb0f80731

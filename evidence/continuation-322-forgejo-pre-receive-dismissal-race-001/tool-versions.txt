@@ -1,0 +1,8 @@
+Test date (local): 2026-10-27 America/Montreal
+Test log timestamps: 2026-10-28 UTC
+Forgejo: official v17.0.0 source at commit 0d791421f85ca13a63b665053d81ea765fbbc571; scratch dirty only with integration-test seams/scenarios for these continuation lots.
+Go: go1.27.3 linux/arm64
+Git: 2.43.0
+Host kernel/arch: Linux 7.0.0-1019-nvidia aarch64 GNU/Linux
+Integration configuration: tests/sqlite.ini, tags sqlite sqlite_unlock_notify
+Build/runtime verification scope: Go integration package, one targeted test; no git-lfs/Make precheck, PostgreSQL, Actions runner, production instance, or uninstrumented Forgejo binary.

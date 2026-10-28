@@ -1,0 +1,19 @@
+Forgejo official source revision:
+0d791421f85ca13a63b665053d81ea765fbbc571
+
+Official blobs from git show HEAD:<path> in the detached scratch:
+routers/api/v1/repo/pull.go  10586bae76ce9976cfdd44bec2196bd74216e5555a11eae78ca6d41867023dcb
+services/pull/check.go  d51ab2040c82c89609368db0ea3f781dfc047d50fda3d3b785e4d4267b420b88
+services/pull/merge.go  43d724e4bcdcad0d48ca6b04430b18612c1008af86a374afa932b23d83659ac6
+models/issues/pull.go  d49511635b8a69e54389c83477e282f62445744cabd951adb7698f083831584b
+models/issues/review.go  9a249afcc4471ba65e2a79a7eb8cd89e6176e767268c30835a6efaefa0d96845
+routers/api/v1/repo/branch.go  0d5d076529bf336cd112b70d5126b8ba9310e25ebcc046023e3b405cae0a635b
+
+Instrumented scratch files:
+routers/api/v1/repo/pull.go  5c7f11ca4fa12ec00697d69b888534bc5733624e235c9c8ec20fb42c3324c498
+routers/api/v1/repo/pull_merge_test_hook.go  e3a5e32c9e02f575cc14d8fcd7b9b33c6aefe9982a86cac2577c479e5270c95e
+tests/integration/api_pull_merge_race_test.go  5109c7f24e412ec693caa9b3f5f72a8122fa83220fdd3408ae776e10eaaa2e21
+
+The test source is retained in the scratch only; no Forgejo implementation or test source has been copied into product code. Source paths and function names reviewed are listed in `source-review.txt`.
+
+After CONT-316 completed, a distinct CONT-317 test was appended to the scratch test file. The exact 143-line source snapshot used for CONT-316 has been preserved outside the worktree at `/tmp/forgejo-v17-merge-review-race-001-cont316-source-snapshot/api_pull_merge_race_test.go`; its digest above remains reproducible.

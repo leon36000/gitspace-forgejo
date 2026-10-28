@@ -1,0 +1,14 @@
+Official HEAD: 0d791421f85ca13a63b665053d81ea765fbbc571
+Official Forgejo blobs (sha256 of `git show HEAD:<path>`):
+services/automerge/automerge.go a42e902b10cb862e576d73332683273cd29a1efa35e9dde6b9be98b7b88c3f37
+services/forms/repo_form.go 30e7801ec62cd3cd4cba5448c4fad232a3cb63b8337cb4e3dd54f34fe4411fb6
+models/issues/pull.go d49511635b8a69e54389c83477e282f62445744cabd951adb7698f083831584b
+services/pull/check.go d51ab2040c82c89609368db0ea3f781dfc047d50fda3d3b785e4d4267b420b88
+services/pull/merge.go 43d724e4bcdcad0d48ca6b04430b18612c1008af86a374afa932b23d83659ac6
+
+Modified scratch source/test files:
+services/automerge/automerge.go 85a51e42384bf969f07add6272e70ec8792d274b7f9cc8b2b58122c95db0817a
+services/automerge/automerge_test_hook.go 6bfcbfa82419d308777052dd397068709a4ba55d13589d9049f184e0f87cc99f
+tests/integration/automerge_review_race_test.go dcf37a16a4a8044886077b27473accc1ac17c68bbc78951c7d47014e4c06d8b5
+
+Test output files are listed in SHA256SUMS.current; that list is generated after all evidence files are final.

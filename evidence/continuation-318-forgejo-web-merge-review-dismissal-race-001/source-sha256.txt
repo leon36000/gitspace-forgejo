@@ -1,0 +1,12 @@
+Official Forgejo commit: 0d791421f85ca13a63b665053d81ea765fbbc571
+
+Official source blobs from git show HEAD:<path>:
+routers/web/repo/pull.go  3cf2bb74bb9e81c5b1441a8e7ef31ff3ef085bce15f789b4ea0b7ad65dbb5d34
+routers/web/web.go  3c70ac37fee5364c796561bcc6bfa3d494e03833c2bc54a11c012e8cb0f80731
+
+Scratch files used for the Web test:
+routers/web/repo/pull.go  ade01a08135efd38fa752ebe3fbc12eaaf7217c1775ed364b49bce67b4575e25
+routers/web/repo/pull_merge_test_hook.go  9cc8fb171e426e09de53757cc7941379252c4fff656e3b3ecf79f4561ca0a59a
+tests/integration/web_pull_merge_race_test.go  8ba835a10f1e860e29e4d120f5b6b13a84d038ec641ec88c0e156b75d40efc38
+
+The source route and tests are retained in /tmp only; no Forgejo code has been copied into product source.

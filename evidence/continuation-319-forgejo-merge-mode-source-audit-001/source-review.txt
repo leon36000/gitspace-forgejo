@@ -1,0 +1,9 @@
+Audited blobs at Forgejo v17.0.0 commit 0d791421f85ca13a63b665053d81ea765fbbc571; SHA-256 values in source-sha256.txt.
+
+- services/pull/check.go::CheckPullMergeable, lines 68–135: manual mode returns after state and allowed-merge check; AutoMerge may schedule through an ErrDisallowedToMerge result; ForceMerge skip is conditional on privileged identity and ApplyToAdmins.
+- services/automerge/automerge.go::handlePullRequestAutoMerge, lines 110–245: rechecks queued head SHA, status checks, permission, general branch protection, then calls Merge.
+- services/pull/merge_manual.go::MergedManually, lines 24–82: validates allowed merge style and target-branch commit membership, then marks the PR merged.
+- routers/api/v1/repo/pull.go::MergePullRequest and routers/web/repo/pull.go::MergePullRequest pass ForceMerge and route mode to the shared checker.
+- API/Web route registration blobs are hashed and referenced by the CONT-317/318 source reviews.
+
+This inspection is limited to the stated functions and does not imply full coverage of Forgejo's route and writer surface.

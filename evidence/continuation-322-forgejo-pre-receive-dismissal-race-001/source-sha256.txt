@@ -1,0 +1,12 @@
+Official Forgejo HEAD: 0d791421f85ca13a63b665053d81ea765fbbc571
+Official source blobs (SHA-256 of git show HEAD:<path>):
+c628d1bbb7a80f3524b58fcd4c845b7137b61da6c1491bbbd18e03e569ecd91c  routers/private/hook_pre_receive.go
+10586bae76ce9976cfdd44bec2196bd74216e5555a11eae78ca6d41867023dcb  routers/api/v1/repo/pull.go
+43d724e4bcdcad0d48ca6b04430b18612c1008af86a374afa932b23d83659ac6  services/pull/merge.go
+afa46a09042b4ab5cc22050ba6d278c4e3f6ce0f888cebfec44d5f4c222614ed  models/fixtures/user.yml
+
+Modified/untracked scratch-only test artifacts (SHA-256 of current bytes):
+42059afedf2a29af1dbd83324b16608beca0e251354757f79710440e473e2637  routers/private/hook_pre_receive.go
+8e57eef73c930c62471c179cddb2340bced0334701a0b59141527be95799a7eb  tests/integration/api_pull_merge_race_test.go
+
+The scratch is dirty due prior isolated tests. These hashes identify the exact checked files but do not imply a clean upstream build or an adopted patch.

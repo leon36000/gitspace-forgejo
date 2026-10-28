@@ -1,0 +1,17 @@
+{
+  "evidence/continuation-319-forgejo-merge-mode-source-audit-001/SHA256SUMS": {
+    "bytes": 0,
+    "lines": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "evidence/SHA256SUMS": {
+    "bytes": 2086276,
+    "lines": 15905,
+    "sha256": "58d362e3e6dba6c0ec9c3ee3c45cd1ae514e587198833b28dd218a83ebeb4d80"
+  },
+  "../../evidence/SHA256SUMS": {
+    "bytes": 1649897,
+    "lines": 10352,
+    "sha256": "5ebad5de8de11e949edc42ce18d106e7240d00072731121ade6b1d3f596eddac"
+  }
+}
