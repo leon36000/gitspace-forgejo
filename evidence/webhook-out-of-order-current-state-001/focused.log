@@ -1,0 +1,9 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.36s
+     Running tests/webhook_reconcile_pipeline.rs (/tmp/agent-forge-webhook-045-target/debug/deps/webhook_reconcile_pipeline-059c903bd86c5636)
+
+running 1 test
+test late_stale_notification_is_reconciled_to_current_forgejo_state ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 1 filtered out; finished in 0.01s
+

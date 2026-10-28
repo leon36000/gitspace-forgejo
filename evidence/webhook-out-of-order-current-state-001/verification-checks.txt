@@ -1,0 +1,21 @@
+Focused contract command:
+CARGO_TARGET_DIR=/tmp/agent-forge-webhook-045-target cargo test --offline --locked --test webhook_reconcile_pipeline late_stale_notification_is_reconciled_to_current_forgejo_state -- --exact --nocapture
+Result: 1 passed, 0 failed.
+
+Isolated process command:
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_uses_current_state_after_out_of_order_webhooks
+Result: 1 passed, 0 failed, 28 filtered; Bubblewrap 0.9.0, network namespace isolated.
+
+Complete Rust suite command:
+CARGO_TARGET_DIR=/tmp/agent-forge-webhook-045-target cargo test --offline --locked --all-targets -- --test-threads=1
+Result: 468 passed, 0 failed, 33 ignored, 34 test-result groups.
+
+Formatting:
+rustfmt --edition 2024 --check tests/webhook_reconcile_pipeline.rs
+Result: passed.
+
+Whitespace:
+git diff --check -- tests/webhook_reconcile_pipeline.rs
+Result: passed.
+
+No production source, dependency, lockfile, CI, or Forgejo scratch code changed in this evidence tranche.

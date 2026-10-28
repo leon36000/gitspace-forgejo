@@ -1,0 +1,112 @@
+$ /home/pc6/.cargo/bin/cargo test --offline --locked --test webhook_receiver_process_e2e --no-run
+   Compiling version_check v0.9.5
+   Compiling proc-macro2 v1.0.107
+   Compiling typenum v1.20.0
+   Compiling unicode-ident v1.0.26
+   Compiling quote v1.0.47
+   Compiling libc v0.2.190
+   Compiling serde_core v1.0.228
+   Compiling zmij v1.0.23
+   Compiling subtle v2.6.1
+   Compiling serde_json v1.0.150
+   Compiling serde v1.0.228
+   Compiling memchr v2.8.3
+   Compiling itoa v1.0.18
+   Compiling cfg-if v1.0.5
+   Compiling hex v0.4.3
+   Compiling generic-array v0.14.7
+   Compiling syn v2.0.117
+   Compiling crypto-common v0.1.7
+   Compiling block-buffer v0.10.4
+   Compiling digest v0.10.7
+   Compiling cpufeatures v0.2.17
+   Compiling hmac v0.12.1
+   Compiling sha2 v0.10.9
+   Compiling serde_derive v1.0.228
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 4.80s
+  Executable tests/webhook_receiver_process_e2e.rs (/tmp/webhook-reconcile-cli-e2e-v6a4nm38/target/debug/deps/webhook_receiver_process_e2e-6caa738f5453f442)
+$ /usr/bin/bwrap --die-with-parent --unshare-net --ro-bind / / --dev-bind /dev /dev --proc /proc --tmpfs /tmp --ro-bind /tmp/webhook-reconcile-cli-e2e-v6a4nm38/target /tmp/webhook-reconcile-cli-e2e-v6a4nm38/target --clearenv --setenv PATH /usr/bin:/bin --setenv HOME /tmp --setenv TMPDIR /tmp --setenv RUST_TEST_THREADS 1 --chdir /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace /tmp/webhook-reconcile-cli-e2e-v6a4nm38/target/debug/deps/webhook_receiver_process_e2e-6caa738f5453f442 actual_reconcile_cli_process_reads_receiver_journal_against_private_http_fixture --exact --ignored --nocapture
+
+running 1 test
+test actual_reconcile_cli_process_reads_receiver_journal_against_private_http_fixture ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 15 filtered out; finished in 0.13s
+
+$ /usr/bin/bwrap --die-with-parent --unshare-net --ro-bind / / --dev-bind /dev /dev --proc /proc --tmpfs /tmp --ro-bind /tmp/webhook-reconcile-cli-e2e-v6a4nm38/target /tmp/webhook-reconcile-cli-e2e-v6a4nm38/target --clearenv --setenv PATH /usr/bin:/bin --setenv HOME /tmp --setenv TMPDIR /tmp --setenv RUST_TEST_THREADS 1 --chdir /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace /tmp/webhook-reconcile-cli-e2e-v6a4nm38/target/debug/deps/webhook_receiver_process_e2e-6caa738f5453f442 actual_reconcile_cli_process_uses_current_state_after_out_of_order_webhooks --exact --ignored --nocapture
+
+running 1 test
+test actual_reconcile_cli_process_uses_current_state_after_out_of_order_webhooks ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 15 filtered out; finished in 0.08s
+
+$ /usr/bin/bwrap --die-with-parent --unshare-net --ro-bind / / --dev-bind /dev /dev --proc /proc --tmpfs /tmp --ro-bind /tmp/webhook-reconcile-cli-e2e-v6a4nm38/target /tmp/webhook-reconcile-cli-e2e-v6a4nm38/target --clearenv --setenv PATH /usr/bin:/bin --setenv HOME /tmp --setenv TMPDIR /tmp --setenv RUST_TEST_THREADS 1 --chdir /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace /tmp/webhook-reconcile-cli-e2e-v6a4nm38/target/debug/deps/webhook_receiver_process_e2e-6caa738f5453f442 actual_reconcile_cli_process_enforces_batch_cache_budget_against_private_http_fixture --exact --ignored --nocapture
+
+running 1 test
+test actual_reconcile_cli_process_enforces_batch_cache_budget_against_private_http_fixture ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 15 filtered out; finished in 1.18s
+
+$ /usr/bin/bwrap --die-with-parent --unshare-net --ro-bind / / --dev-bind /dev /dev --proc /proc --tmpfs /tmp --ro-bind /tmp/webhook-reconcile-cli-e2e-v6a4nm38/target /tmp/webhook-reconcile-cli-e2e-v6a4nm38/target --clearenv --setenv PATH /usr/bin:/bin --setenv HOME /tmp --setenv TMPDIR /tmp --setenv RUST_TEST_THREADS 1 --chdir /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace /tmp/webhook-reconcile-cli-e2e-v6a4nm38/target/debug/deps/webhook_receiver_process_e2e-6caa738f5453f442 actual_reconcile_cli_process_uses_host_credential_fd_for_receiver_journal --exact --ignored --nocapture
+
+running 1 test
+test actual_reconcile_cli_process_uses_host_credential_fd_for_receiver_journal ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 15 filtered out; finished in 0.06s
+
+$ /usr/bin/bwrap --die-with-parent --unshare-net --ro-bind / / --dev-bind /dev /dev --proc /proc --tmpfs /tmp --ro-bind /tmp/webhook-reconcile-cli-e2e-v6a4nm38/target /tmp/webhook-reconcile-cli-e2e-v6a4nm38/target --clearenv --setenv PATH /usr/bin:/bin --setenv HOME /tmp --setenv TMPDIR /tmp --setenv RUST_TEST_THREADS 1 --chdir /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace /tmp/webhook-reconcile-cli-e2e-v6a4nm38/target/debug/deps/webhook_receiver_process_e2e-6caa738f5453f442 actual_reconcile_cli_process_keeps_invalid_host_credential_inconclusive --exact --ignored --nocapture
+
+running 1 test
+test actual_reconcile_cli_process_keeps_invalid_host_credential_inconclusive ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 15 filtered out; finished in 0.06s
+
+$ /usr/bin/bwrap --die-with-parent --unshare-net --ro-bind / / --dev-bind /dev /dev --proc /proc --tmpfs /tmp --ro-bind /tmp/webhook-reconcile-cli-e2e-v6a4nm38/target /tmp/webhook-reconcile-cli-e2e-v6a4nm38/target --clearenv --setenv PATH /usr/bin:/bin --setenv HOME /tmp --setenv TMPDIR /tmp --setenv RUST_TEST_THREADS 1 --chdir /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace /tmp/webhook-reconcile-cli-e2e-v6a4nm38/target/debug/deps/webhook_receiver_process_e2e-6caa738f5453f442 actual_reconcile_cli_process_reads_pull_request_current_state_from_private_http_fixture --exact --ignored --nocapture
+
+running 1 test
+test actual_reconcile_cli_process_reads_pull_request_current_state_from_private_http_fixture ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 15 filtered out; finished in 0.06s
+
+$ /usr/bin/bwrap --die-with-parent --unshare-net --ro-bind / / --dev-bind /dev /dev --proc /proc --tmpfs /tmp --ro-bind /tmp/webhook-reconcile-cli-e2e-v6a4nm38/target /tmp/webhook-reconcile-cli-e2e-v6a4nm38/target --clearenv --setenv PATH /usr/bin:/bin --setenv HOME /tmp --setenv TMPDIR /tmp --setenv RUST_TEST_THREADS 1 --chdir /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace /tmp/webhook-reconcile-cli-e2e-v6a4nm38/target/debug/deps/webhook_receiver_process_e2e-6caa738f5453f442 actual_reconcile_cli_process_keeps_forbidden_upstream_inconclusive --exact --ignored --nocapture
+
+running 1 test
+test actual_reconcile_cli_process_keeps_forbidden_upstream_inconclusive ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 15 filtered out; finished in 0.08s
+
+$ /usr/bin/bwrap --die-with-parent --unshare-net --ro-bind / / --dev-bind /dev /dev --proc /proc --tmpfs /tmp --ro-bind /tmp/webhook-reconcile-cli-e2e-v6a4nm38/target /tmp/webhook-reconcile-cli-e2e-v6a4nm38/target --clearenv --setenv PATH /usr/bin:/bin --setenv HOME /tmp --setenv TMPDIR /tmp --setenv RUST_TEST_THREADS 1 --chdir /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace /tmp/webhook-reconcile-cli-e2e-v6a4nm38/target/debug/deps/webhook_receiver_process_e2e-6caa738f5453f442 actual_reconcile_cli_process_bounds_transient_upstream_retries --exact --ignored --nocapture
+
+running 1 test
+test actual_reconcile_cli_process_bounds_transient_upstream_retries ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 15 filtered out; finished in 0.39s
+
+$ /usr/bin/bwrap --die-with-parent --unshare-net --ro-bind / / --dev-bind /dev /dev --proc /proc --tmpfs /tmp --ro-bind /tmp/webhook-reconcile-cli-e2e-v6a4nm38/target /tmp/webhook-reconcile-cli-e2e-v6a4nm38/target --clearenv --setenv PATH /usr/bin:/bin --setenv HOME /tmp --setenv TMPDIR /tmp --setenv RUST_TEST_THREADS 1 --chdir /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace /tmp/webhook-reconcile-cli-e2e-v6a4nm38/target/debug/deps/webhook_receiver_process_e2e-6caa738f5453f442 actual_reconcile_cli_process_respects_retry_after_beyond_read_budget --exact --ignored --nocapture
+
+running 1 test
+test actual_reconcile_cli_process_respects_retry_after_beyond_read_budget ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 15 filtered out; finished in 1.06s
+
+$ /usr/bin/bwrap --die-with-parent --unshare-net --ro-bind / / --dev-bind /dev /dev --proc /proc --tmpfs /tmp --ro-bind /tmp/webhook-reconcile-cli-e2e-v6a4nm38/target /tmp/webhook-reconcile-cli-e2e-v6a4nm38/target --clearenv --setenv PATH /usr/bin:/bin --setenv HOME /tmp --setenv TMPDIR /tmp --setenv RUST_TEST_THREADS 1 --chdir /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace /tmp/webhook-reconcile-cli-e2e-v6a4nm38/target/debug/deps/webhook_receiver_process_e2e-6caa738f5453f442 actual_reconcile_cli_process_handles_invalid_and_http_date_retry_after --exact --ignored --nocapture
+
+running 1 test
+test actual_reconcile_cli_process_handles_invalid_and_http_date_retry_after ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 15 filtered out; finished in 5.30s
+
+$ /usr/bin/bwrap --die-with-parent --unshare-net --ro-bind / / --dev-bind /dev /dev --proc /proc --tmpfs /tmp --ro-bind /tmp/webhook-reconcile-cli-e2e-v6a4nm38/target /tmp/webhook-reconcile-cli-e2e-v6a4nm38/target --clearenv --setenv PATH /usr/bin:/bin --setenv HOME /tmp --setenv TMPDIR /tmp --setenv RUST_TEST_THREADS 1 --chdir /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace /tmp/webhook-reconcile-cli-e2e-v6a4nm38/target/debug/deps/webhook_receiver_process_e2e-6caa738f5453f442 interrupted_reconcile_cli_can_resume_from_the_unchanged_journal --exact --ignored --nocapture
+
+running 1 test
+test interrupted_reconcile_cli_can_resume_from_the_unchanged_journal ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 15 filtered out; finished in 0.08s
+
+$ /usr/bin/bwrap --die-with-parent --unshare-net --ro-bind / / --dev-bind /dev /dev --proc /proc --tmpfs /tmp --ro-bind /tmp/webhook-reconcile-cli-e2e-v6a4nm38/target /tmp/webhook-reconcile-cli-e2e-v6a4nm38/target --clearenv --setenv PATH /usr/bin:/bin --setenv HOME /tmp --setenv TMPDIR /tmp --setenv RUST_TEST_THREADS 1 --chdir /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace /tmp/webhook-reconcile-cli-e2e-v6a4nm38/target/debug/deps/webhook_receiver_process_e2e-6caa738f5453f442 actual_reconcile_cli_process_cancels_slow_reads_at_the_shared_budget --exact --ignored --nocapture
+
+running 1 test
+test actual_reconcile_cli_process_cancels_slow_reads_at_the_shared_budget ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 15 filtered out; finished in 33.42s
+

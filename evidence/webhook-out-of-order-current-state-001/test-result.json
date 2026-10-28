@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-25",
+  "worktree_head": "f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0",
+  "test_only_change": true,
+  "focused_contract": {
+    "test": "late_stale_notification_is_reconciled_to_current_forgejo_state",
+    "passed": 1,
+    "failed": 0
+  },
+  "isolated_cli_process": {
+    "test": "actual_reconcile_cli_process_uses_current_state_after_out_of_order_webhooks",
+    "passed": 1,
+    "failed": 0,
+    "filtered": 28,
+    "bubblewrap_network_namespace": true,
+    "upstream": "synthetic loopback HTTP fixture; no live Forgejo instance"
+  },
+  "all_targets": {
+    "command": "cargo test --offline --locked --all-targets -- --test-threads=1",
+    "passed": 468,
+    "failed": 0,
+    "ignored": 33,
+    "result_groups": 34
+  },
+  "production_code_changed": false,
+  "llm_or_agentos_used": false,
+  "comparison_benchmark_performed": false
+}
