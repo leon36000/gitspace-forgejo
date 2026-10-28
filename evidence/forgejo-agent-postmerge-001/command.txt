@@ -1,0 +1,1 @@
+python3 scripts/run_forgejo_live_pr_merge_e2e.py --forgejo-binary /tmp/forgejo-17.0.0 --repo-root "$PWD" --state-dir /tmp/forgejo-agent-postmerge-001 --non-admin-merger --sandbox-egress-during-merge

@@ -1,0 +1,22 @@
+{
+  "issue_state": "closed",
+  "main_head": "91da7c45add2f16ad65476c9e65dcf6f1192229c",
+  "postmerge_behavior": {
+    "acceptance_exit_code": 0,
+    "failed_tests": 0,
+    "passed_tests": 9,
+    "tested_source_sha256": "d2d3ae071c330a25aa59fba851ef59d51c3bf6da63138953e87c96b2b6274c45",
+    "worker_sha256": "94347097f1c48eb26b881b494475284b2c9b924281f1b50571641a0ddaff4dd6"
+  },
+  "pull_request": {
+    "base_ref": "main",
+    "base_sha": "91da7c45add2f16ad65476c9e65dcf6f1192229c",
+    "head_sha": "012a293ab720b0cde552788c909bf962ee91e2eb",
+    "merge_commit_sha": "91da7c45add2f16ad65476c9e65dcf6f1192229c",
+    "merged": true,
+    "number": 2,
+    "state": "closed"
+  },
+  "source_sha256": "d2d3ae071c330a25aa59fba851ef59d51c3bf6da63138953e87c96b2b6274c45",
+  "tested_source_sha256": "d2d3ae071c330a25aa59fba851ef59d51c3bf6da63138953e87c96b2b6274c45"
+}
