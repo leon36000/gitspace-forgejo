@@ -1,0 +1,8 @@
+Date: 2026-10-25
+Host: Linux aarch64
+rustc: 1.95.0 (59807616e 2026-04-14), host aarch64-unknown-linux-gnu, LLVM 22.1.2
+cargo: 1.95.0 (f2d3ce0bd 2026-03-21)
+Python: 3.12.3
+Bubblewrap: 0.9.0
+Repository HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+Branch: local/WEBHOOK-005-canonical-links

@@ -1,0 +1,3 @@
+Command: python3 -m unittest -v scripts/test_cargo_license_state.py
+Exit: 0
+Result: 7 tests passed; these accept no-license-selected with publication disabled and reject an SPDX choice, license file, enabled publishing, missing/ambiguous package metadata, or claims of assessed rights.

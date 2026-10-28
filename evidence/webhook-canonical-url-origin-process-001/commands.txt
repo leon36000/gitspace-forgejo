@@ -1,0 +1,18 @@
+Répertoire : racine du worktree `webhook-005-workspace`; HEAD observé `f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0`.
+
+Parcours ciblé, exécuté après formatage du test :
+```sh
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_rejects_foreign_canonical_html_url
+```
+
+Contrôles consignés (tous code 0) :
+```sh
+cargo fmt --all -- --check
+python3 -c 'import ast,pathlib; ast.parse(pathlib.Path("scripts/run_webhook_reconcile_cli_e2e.py").read_text()); print("runner syntax: valid")'
+git diff --check
+python3 scripts/verify_cargo_license_state.py
+sha256sum -c evidence/webhook-canonical-url-origin-process-001/source-sha256.txt
+sha256sum -c evidence/webhook-canonical-url-origin-process-001/SHA256SUMS
+```
+
+Le runner compile le test hors ligne puis lance uniquement le scénario ignoré sous Bubblewrap. La sortie complète et son code sont dans `focused-process.log` et `focused-process.exit`.

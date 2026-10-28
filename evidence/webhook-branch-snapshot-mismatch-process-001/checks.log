@@ -1,0 +1,7 @@
+cargo fmt --all -- --check: exit 0
+git diff --check: exit 0
+python3 scripts/verify_cargo_license_state.py: status=verified
+python3 -m unittest -v scripts/test_cargo_license_state.py: 7 passed, 0 failed
+Cargo metadata evidence: license=null, license_file=null, publish=[], decision=no_license_selected, redistribution_rights=not_assessed
+Current Cargo.toml and licensing guard hashes match CARGO-LICENSE-NO-SELECTION-007/source-sha256.txt.
+Full all-targets suite: not run in this lot; 60 other tests were filtered by the focused process runner.

@@ -1,0 +1,34 @@
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:3508:
+ 
+     let (mut receiver, address) = start_ready_receiver(&secret, &journal_path);
+     let (status, accepted) = send(address, &request_event(DELIVERY_ID, "push", &body));
+-    assert_eq!(status, 202, "valid branch push should be journaled: {accepted}");
++    assert_eq!(
++        status, 202,
++        "valid branch push should be journaled: {accepted}"
++    );
+     assert_eq!(accepted["accepted"], true);
+     assert_eq!(accepted["reconcile_required"], true);
+     assert!(stop_receiver(&mut receiver).success());
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:3555:
+     assert_eq!(value["error"]["retryable"], false);
+     assert_eq!(value["upstream_read_attempts"], 1);
+     assert_eq!(value["error"]["details"]["resource"]["kind"], "branch");
+-    assert_eq!(
+-        value["error"]["details"]["resource"]["branch"],
+-        BRANCH
+-    );
++    assert_eq!(value["error"]["details"]["resource"]["branch"], BRANCH);
+     assert!(value.get("canonical_state").is_none());
+     let action = value["error"]["action"]
+         .as_str()
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:3565:
+         .expect("404 has a remediation action");
+-    assert!(action.contains("branch name"), "unexpected action: {action}");
++    assert!(
++        action.contains("branch name"),
++        "unexpected action: {action}"
++    );
+     assert!(
+         action.contains("does not distinguish"),
+         "the action must preserve 404 ambiguity: {action}"

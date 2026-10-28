@@ -1,0 +1,5 @@
+runner: scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_refuses_mismatched_branch_snapshot_without_journal_mutation
+process result: exit 0
+test actual_reconcile_cli_process_refuses_mismatched_branch_snapshot_without_journal_mutation ... ok
+test result: 1 passed; 0 failed; 0 ignored; 60 filtered out
+sandbox: bubblewrap --unshare-net --unshare-pid; offline locked build; loopback fixture only

@@ -1,0 +1,19 @@
+Isolated process scenario:
+python3 -B scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_keeps_branch_404_ambiguous_and_inconclusive
+python3 -B scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_reports_deleted_resource_in_single_delivery
+python3 -B scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_reports_deleted_pull_request_in_single_delivery
+
+Full Rust suite:
+cargo test --offline --locked --all-targets -- --test-threads=1
+
+Formatting and workspace diff:
+cargo fmt --all
+cargo fmt --all -- --check
+git diff --check
+
+Cargo license state:
+python3 scripts/verify_cargo_license_state.py
+python3 -B -m unittest -v scripts.test_cargo_license_state
+
+Runner syntax:
+python3 -B -c 'import ast, pathlib; ast.parse(pathlib.Path("scripts/run_webhook_reconcile_cli_e2e.py").read_text())'

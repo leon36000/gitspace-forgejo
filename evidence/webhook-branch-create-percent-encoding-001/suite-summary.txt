@@ -1,0 +1,5 @@
+Command: cargo test --offline --locked --all-targets -- --test-threads=1
+Exit: 0
+Rust test groups: 34
+Aggregate: 510 passed, 0 failed, 61 ignored.
+Ignored scenarios were not exercised by this command; the new ignored process case was run explicitly through the Bubblewrap runner above.

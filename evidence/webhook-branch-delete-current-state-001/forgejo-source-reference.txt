@@ -1,0 +1,18 @@
+Référentiel scratch issu du dépôt officiel Forgejo, version inspectée: v17.0.0.
+Commit HEAD: 0d791421f85ca13a63b665053d81ea765fbbc571
+Remote vérifié: https://codeberg.org/forgejo/forgejo.git
+
+services/webhook/notifier.go, lignes 806-815:
+webhookNotifier.DeleteRef appelle PrepareWebhooks avec HookEventDelete et api.DeletePayload,
+et remplit Ref et RefType à partir de git.RefName.
+SHA-256 du blob de fichier: a67cca36f92104efe0feabf0c62e668e7543b979e5a7440e713ce93dd490004f
+
+modules/structs/hook.go, lignes 160-166:
+DeletePayload sérialise Ref comme `ref` et RefType comme `ref_type`.
+SHA-256 du blob de fichier: 42f951d98dbea6b78e70e595b8c2cc0f5931bee2d96b837d8d4e8f034b015a12
+
+modules/webhook/type.go, lignes 11-13 et 58-62:
+HookEventDelete a la valeur `delete`; Event() retourne `delete` pour cet événement.
+SHA-256 du blob de fichier: ca6a94e1574be77bc4f5da1ee01a3e59147a148342b958577d12544dbd6d820c
+
+Les trois chemins sont propres dans `git diff` au checkout scratch. Le code Forgejo reste dans /tmp et n'est pas copié dans le produit.

@@ -1,0 +1,8 @@
+Commande:
+cargo test --offline --locked --test webhook_reconcile_contract branch_delete_notification -- --nocapture
+
+Statut avant modification du support d'événements: exit 101.
+Échec observé:
+branch_delete_notification_reads_current_ref_before_reporting_presence
+panique: le test attend un snapshot courant, mais reconcile_inbox_event retourne UnsupportedEvent.
+Résultat: 0 réussi, 1 échoué.

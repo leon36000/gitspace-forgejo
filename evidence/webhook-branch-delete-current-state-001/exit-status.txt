@@ -1,0 +1,18 @@
+test-first-red branch_delete_notification: 101 (expected before support was added)
+initial capabilities contract after adding delete: 101 (expected list omitted delete; test updated)
+final webhook_reconcile_contract: 0
+final webhook_handler_contract: 0
+final webhook_contract: 0
+final webhook_http_contract: 0
+final capabilities-process test: 0
+final duplicate-host process test: 0
+final branch-delete process test under Bubblewrap: 0
+final branch-delete 404 process refusal under Bubblewrap: 0 (expected inconclusive output)
+final Cargo license guard: 0
+final Cargo license policy tests: 0
+final cargo fmt --all -- --check: 0
+final git diff --check: 0
+final Python py_compile: 0
+
+Historical adjacent evidence check after this turn's test-file addition:
+sha256sum -c evidence/webhook-duplicate-host-process-001/SHA256SUMS: 1 stale whole-file source hash (tests/webhook_receiver_process_e2e.rs), all other listed entries valid. The affected test was rerun on current source; its log is current-duplicate-host-process.log.
