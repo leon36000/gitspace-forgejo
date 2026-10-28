@@ -1,0 +1,76 @@
+{
+  "observed_date": "2026-10-26",
+  "product_worktree_head": "f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0",
+  "scope": "Local read-only interface inventory; no model generation, dispatcher invocation, credential read, or service state change.",
+  "hermes_cli": {
+    "wrapper_path": "/home/pc6/.local/bin/hermes",
+    "wrapper_type": "POSIX shell executable wrapper",
+    "wrapper_sha256": "32146b6d806ba64f913009e7b679b3fd88d251a27187c3482959ed382d3be577",
+    "target_path": "/home/pc6/.hermes/hermes-agent/.hermes/bin/hermes",
+    "target_executable": true,
+    "target_size_bytes": 7566,
+    "target_sha256": "e68db0b5fc21b6cea663046e23b79cdc482bf4623108845dfd465ef09c080d91",
+    "invoked": false,
+    "version_and_license": "not established"
+  },
+  "dispatcher": {
+    "repository_path": "/home/pc6/NAOS/60_travaux/GitSpace_Hermes_20261011",
+    "policy_sha256": "898c9982decccc526b0318114888175f782b505341df61fe39508a449fd3636c",
+    "tick_script_sha256": "2a57f52dd7f740028433292b60358633bb1ad4920c28062f17ef2537cee1180b",
+    "service_unit_sha256": "fabee88c108c75d71c2487785f2e57c37301fb7230ac960444a0326554744deb",
+    "timer_unit_sha256": "4e29db1889484b966a23248736ea7ab39c85b2fcd3f0da073ef073be10c1afeb",
+    "systemd_service_active": false,
+    "systemd_timer_active": false,
+    "referenced_python_helper": "/home/pc6/NAOS/60_travaux/GitSpace_DSH_Eval_20261009/tools/quality/bin/python",
+    "referenced_python_helper_exists": false,
+    "dispatch_script_invoked": false,
+    "config_files_read": "YAML parsed locally; only selected non-secret fields were emitted; key material was not emitted."
+  },
+  "service_observation": {
+    "gitspace-hermes-dispatch.timer": "inactive",
+    "gitspace-hermes-dispatch.service": "inactive",
+    "forge-gateway.service": "inactive",
+    "hermes-dashboard.service": "inactive",
+    "ollama.service": "inactive",
+    "listening_loopback_ports": [
+      18086,
+      18088,
+      18089,
+      9119
+    ],
+    "no_listener_observed_on_ports": [
+      8787,
+      11434
+    ]
+  },
+  "safe_metadata_probes": [
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:18086/v1/models",
+      "authorization_header": false,
+      "request_body_sent": false,
+      "result": "connection reset"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:18088/v1/models",
+      "authorization_header": false,
+      "request_body_sent": false,
+      "result": "connection reset"
+    }
+  ],
+  "not_probed": [
+    "127.0.0.1:18089 because configured routing may reach a paid cloud provider; 127.0.0.1:9119 because no dashboard request was needed"
+  ],
+  "product_runtime": {
+    "interface": "AgentRuntimeV1",
+    "only_executable_implementation_observed": "tests/agent_runtime_contract.rs::FixtureRuntime",
+    "production_Hermes_adapter_observed": false
+  },
+  "limitations": [
+    "Point-in-time host state only.",
+    "No model server version, license, authorization policy, or current loaded model was established.",
+    "TCP listeners do not establish a usable inference API.",
+    "The dispatcher source configuration is not proof that the installed systemd unit uses identical bytes."
+  ]
+}

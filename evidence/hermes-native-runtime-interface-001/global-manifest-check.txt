@@ -1,0 +1,4 @@
+PASS: product append-only manifest verifies 9 paths
+PASS: parent append-only manifest verifies 10 paths
+PASS: local evidence manifest verifies 3 files
+New hash records: product=4, parent=4; prior prefixes preserved.

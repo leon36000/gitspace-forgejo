@@ -1,0 +1,7 @@
+# Read-only remote inspection; interactive credentials and credential helpers disabled.
+GIT_TERMINAL_PROMPT=0 GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null git -c credential.helper= ls-remote https://pc4.tail0c55ff.ts.net/root/gitspace-forgejo.git
+
+# Read-only route check; --resolve used the current Tailscale address from local status.
+curl --silent --show-error --head --max-time 5 --resolve pc4.tail0c55ff.ts.net:443:<PC4_CURRENT_TAILSCALE_IP> https://pc4.tail0c55ff.ts.net/ -o /dev/null
+
+# No authentication or Git write command was run.

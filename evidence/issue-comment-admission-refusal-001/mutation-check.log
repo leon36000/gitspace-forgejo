@@ -1,0 +1,14 @@
+$ cargo test --offline --locked --test webhook_mission_admission_contract ordinary_issue_comment_cannot_create_mission_from_comment_text
+test ordinary_issue_comment_cannot_create_mission_from_comment_text ... ok
+test result: 1 passed; 0 failed; 0 ignored; 0 measured; 13 filtered out
+
+Temporary mutation: removed only the initial `resource.kind != ResourceKind::Issue` refusal in src/mission_admission.rs.
+$ cargo test --offline --locked --test webhook_mission_admission_contract ordinary_issue_comment_cannot_create_mission_from_comment_text
+test ordinary_issue_comment_cannot_create_mission_from_comment_text ... FAILED
+assertion left: Reconciliation(InvalidCurrentStateField("comment.id")); right: ResourceMismatch
+test result: 0 passed; 1 failed; 0 ignored; 0 measured; 13 filtered out; exit 101 (expected)
+
+Restored the original guard. SHA-256(src/mission_admission.rs) before and after: 2cba1de794d67605de10c94fe1fa33266e66af0a7b4efc58e1253b98d00ebd8b.
+$ cargo test --offline --locked --test webhook_mission_admission_contract ordinary_issue_comment_cannot_create_mission_from_comment_text
+test ordinary_issue_comment_cannot_create_mission_from_comment_text ... ok
+test result: 1 passed; 0 failed; 0 ignored; 0 measured; 13 filtered out

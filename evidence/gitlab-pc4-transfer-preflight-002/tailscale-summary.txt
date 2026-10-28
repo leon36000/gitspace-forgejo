@@ -1,0 +1,2 @@
+BackendState: Running
+PC4 peer entry: present in local status snapshot; private IP intentionally omitted.

@@ -1,0 +1,206 @@
+    Checking agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+error: this function has too many arguments (10/7)
+   --> src/agent_runtime.rs:529:5
+    |
+529 | /     pub fn acquire_lease(
+530 | |         &self,
+531 | |         scope: &BaseBranchScope,
+532 | |         issue_number: u64,
+...   |
+539 | |         request: &AgentExecutionRequestV1,
+540 | |     ) -> Result<MissionExecutionLeaseV1, AgentRuntimeErrorV1> {
+    | |_____________________________________________________________^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#too_many_arguments
+    = note: `-D clippy::too-many-arguments` implied by `-D warnings`
+    = help: to override `-D warnings` add `#[allow(clippy::too_many_arguments)]`
+
+error: this function has too many arguments (8/7)
+    --> src/agent_runtime.rs:1455:5
+     |
+1455 | /     pub fn workspace_write_recovery_preflight(
+1456 | |         &self,
+1457 | |         scope: &BaseBranchScope,
+1458 | |         issue_number: u64,
+...    |
+1463 | |         observed_candidate_source_sha256: &str,
+1464 | |     ) -> Result<Option<WorkspaceWriteIntentV1>, AgentRuntimeErrorV1> {
+     | |____________________________________________________________________^
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#too_many_arguments
+
+error: this function has too many arguments (8/7)
+    --> src/agent_runtime.rs:1593:5
+     |
+1593 | /     pub fn workspace_write_operation_status(
+1594 | |         &self,
+1595 | |         scope: &BaseBranchScope,
+1596 | |         issue_number: u64,
+...    |
+1601 | |         observed_source_sha256: &str,
+1602 | |     ) -> Result<Option<WorkspaceWriteOperationStatusV1>, AgentRuntimeErrorV1> {
+     | |_____________________________________________________________________________^
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#too_many_arguments
+
+error: this `if` statement can be collapsed
+    --> src/agent_runtime.rs:1838:21
+     |
+1838 | /                     if let Some((existing_policy_sha256, existing_budget_ms)) = ledger.policy {
+1839 | |                         if existing_policy_sha256 != policy_sha256
+1840 | |                             || existing_budget_ms != mission_cpu_budget_ms
+...    |
+1848 | |                     }
+     | |_____________________^
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#collapsible_if
+     = note: `-D clippy::collapsible-if` implied by `-D warnings`
+     = help: to override `-D warnings` add `#[allow(clippy::collapsible_if)]`
+help: collapse nested if block
+     |
+1838 ~                     if let Some((existing_policy_sha256, existing_budget_ms)) = ledger.policy
+1839 ~                         && (existing_policy_sha256 != policy_sha256
+1840 ~                             || existing_budget_ms != mission_cpu_budget_ms)
+1841 |                         {
+ ...
+1846 |                             ));
+1847 ~                         }
+     |
+
+error: this `if` statement can be collapsed
+    --> src/agent_runtime.rs:2617:17
+     |
+2617 | /                 if let Some(resolved) = resolved.as_ref() {
+2618 | |                     if resolved.resolution.is_terminal() {
+2619 | |                         return Ok(Some(resolved.resolution.clone()));
+2620 | |                     }
+2621 | |                 }
+     | |_________________^
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#collapsible_if
+help: collapse nested if block
+     |
+2617 ~                 if let Some(resolved) = resolved.as_ref()
+2618 ~                     && resolved.resolution.is_terminal() {
+2619 |                         return Ok(Some(resolved.resolution.clone()));
+2620 ~                     }
+     |
+
+error: this function has too many arguments (9/7)
+   --> src/forgejo.rs:854:1
+    |
+854 | / pub fn evaluate_merge_readiness(
+855 | |     branch_scope: &BaseBranchScope,
+856 | |     current: &PullRequestSnapshotV1,
+857 | |     reviews: &PullRequestReviewsSnapshotV1,
+...   |
+863 | |     current_policy_bytes: &[u8],
+864 | | ) -> Result<MergeReadinessDecisionV1, MergeReadinessError> {
+    | |__________________________________________________________^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#too_many_arguments
+
+error: this function has too many arguments (10/7)
+   --> src/mission_admission.rs:375:1
+    |
+375 | / pub fn admit_reconciled_issue_v2(
+376 | |     event: &JournaledWebhookEventV1,
+377 | |     reconciliation_source: &impl ForgejoCurrentState,
+378 | |     scope: &BaseBranchScope,
+...   |
+385 | |     journal: &MissionExecutionJournalV1,
+386 | | ) -> Result<WebhookMissionAdmissionReceiptV1, WebhookMissionAdmissionErrorV1> {
+    | |_____________________________________________________________________________^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#too_many_arguments
+
+error: this function has too many arguments (8/7)
+   --> src/mission_admission.rs:473:1
+    |
+473 | / fn admit_and_claim_mission_v2_with_expected_hash(
+474 | |     scope: &BaseBranchScope,
+475 | |     binding: &MissionAdmissionBindingV2,
+476 | |     source: &dyn MissionAdmissionSourceV1,
+...   |
+481 | |     expected_requirement_sha256: Option<&str>,
+482 | | ) -> Result<MissionAdmissionReceiptV2, AgentRuntimeErrorV1> {
+    | |___________________________________________________________^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#too_many_arguments
+
+error: this function has too many arguments (10/7)
+   --> src/mission_admission.rs:552:1
+    |
+552 | / fn prepare_admission(
+553 | |     scope: &BaseBranchScope,
+554 | |     issue_number: u64,
+555 | |     requirement_id: &str,
+...   |
+562 | |     allocate_generation: impl FnOnce(&str) -> Result<GenerationChoice, AgentRuntimeErrorV1>,
+563 | | ) -> Result<PreparedAdmission, AgentRuntimeErrorV1> {
+    | |___________________________________________________^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#too_many_arguments
+
+error: this `if` has identical blocks
+   --> src/webhook/reconcile.rs:445:47
+    |
+445 |       } else if event_name == super::PUSH_EVENT {
+    |  _______________________________________________^
+446 | |         Some(ResourceKind::Branch)
+447 | |     } else if event_name == super::CREATE_EVENT || event_name == super::DELETE_EVENT {
+    | |_____^
+    |
+note: same as this
+   --> src/webhook/reconcile.rs:447:86
+    |
+447 |       } else if event_name == super::CREATE_EVENT || event_name == super::DELETE_EVENT {
+    |  ______________________________________________________________________________________^
+448 | |         Some(ResourceKind::Branch)
+449 | |     } else if super::SUPPORTED_EVENTS.contains(&event_name) {
+    | |_____^
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#if_same_then_else
+    = note: `-D clippy::if-same-then-else` implied by `-D warnings`
+    = help: to override `-D warnings` add `#[allow(clippy::if_same_then_else)]`
+
+error: this function has too many arguments (8/7)
+    --> src/lib.rs:1288:5
+     |
+1288 | /     fn append_locked(
+1289 | |         &self,
+1290 | |         events: &[JournalEvent],
+1291 | |         idempotency_key: &str,
+...    |
+1296 | |         maximum_bytes: Option<u64>,
+1297 | |     ) -> Result<AppendResult, JournalError> {
+     | |___________________________________________^
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#too_many_arguments
+
+error: could not compile `agent-forge-core` (lib) due to 11 previous errors
+warning: build failed, waiting for other jobs to finish...
+error: used `assert_eq!` with a literal bool
+    --> src/lib.rs:2040:9
+     |
+2040 | /         assert_eq!(
+2041 | |             events
+2042 | |                 .iter()
+2043 | |                 .map(|e| &e.previous_hash)
+...    |
+2047 | |             true
+2048 | |         );
+     | |_________^
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#bool_assert_comparison
+     = note: `-D clippy::bool-assert-comparison` implied by `-D warnings`
+     = help: to override `-D warnings` add `#[allow(clippy::bool_assert_comparison)]`
+help: replace it with `assert!(..)`
+     |
+2040 ~         assert!(
+2041 |             events
+ ...
+2045 |                 .zip(events.iter().map(|e| &e.hash))
+2046 ~                 .all(|(a, b)| a == b)
+     |
+
+error: could not compile `agent-forge-core` (lib test) due to 12 previous errors

@@ -1,0 +1,21 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.40s
+     Running tests/webhook_reconcile_contract.rs (target/debug/deps/webhook_reconcile_contract-1e83f04d6aace668)
+
+running 1 test
+
+thread 'repository_identity_conflicts_are_rejected_before_api_call' (402912) panicked at tests/webhook_reconcile_contract.rs:972:9:
+assertion `left == right` failed: the name field must agree with repository.full_name
+  left: Err(InvalidCurrentStateField("number"))
+ right: Err(ResourceMismatch)
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test repository_identity_conflicts_are_rejected_before_api_call ... FAILED
+
+failures:
+
+failures:
+    repository_identity_conflicts_are_rejected_before_api_call
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 34 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `--test webhook_reconcile_contract`

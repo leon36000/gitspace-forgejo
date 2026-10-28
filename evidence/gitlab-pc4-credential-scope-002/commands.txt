@@ -1,0 +1,3 @@
+Recherche Gmail ciblée : `"gitspace-forgejo" OR "pc4.tail0c55ff.ts.net"`; résultat traité en mémoire, sans journaliser snippets ou secrets.
+Lecture unique : message général PC4 pour classifier la portée; aucun corps de message root initial ni Nexora lu.
+Aucune authentification Git, `ls-remote`, staging, commit ou push.

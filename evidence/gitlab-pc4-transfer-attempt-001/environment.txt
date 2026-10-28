@@ -1,0 +1,1 @@
+Linux aarch64; Python 3.12.3; Rust 1.95.0; Cargo 1.95.0; Tailscale 1.102.4. Pas d’interface `tailscale0` visible dans le namespace. Disque racine presque plein au moment du prévol; `/dev/shm` disponible pour builds locaux.

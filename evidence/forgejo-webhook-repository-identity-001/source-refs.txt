@@ -1,0 +1,14 @@
+Official Forgejo source commit requested: 0d791421f85ca13a63b665053d81ea765fbbc571
+Scratch HEAD: 0d791421f85ca13a63b665053d81ea765fbbc571
+Scratch worktree contains unrelated experimental POC edits; all cited source bytes were read with git show <commit>:<path>.
+No Forgejo source was copied or modified by this product change.
+
+modules/structs/repo.go
+  commit: 0d791421f85ca13a63b665053d81ea765fbbc571
+  sha256: d1e5864b5d95436822d64a58b3ee1ed64eec7a778fd279fe2cdf677536c84a1f
+modules/structs/user.go
+  commit: 0d791421f85ca13a63b665053d81ea765fbbc571
+  sha256: b946c8cb957aa5397420036ec5583f0c1a08e9a07177f4ff5846c03fad07ceff
+services/convert/repository.go
+  commit: 0d791421f85ca13a63b665053d81ea765fbbc571
+  sha256: edc14cbb5e831ac69d46858596e1e03f7e550efc7522add59e1f985ebcea7fe8

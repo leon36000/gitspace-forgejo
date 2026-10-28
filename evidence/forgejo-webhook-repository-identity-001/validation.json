@@ -1,0 +1,28 @@
+{
+  "checks": {
+    "all_targets_green": true,
+    "diff_check_green": true,
+    "focused_clippy_existing_lint_categories_allowed": true,
+    "focused_contracts_green": true,
+    "format_check_green": true,
+    "full_clippy_known_existing_lints": true,
+    "license_no_selection": true,
+    "test_first_ingestion_red": true,
+    "test_first_reconciliation_red": true
+  },
+  "full_clippy_existing_lint_counts": {
+    "bool_assert_comparison": 1,
+    "collapsible_if": 2,
+    "if_same_then_else": 1,
+    "too_many_arguments": 8
+  },
+  "full_suite": {
+    "failed": 0,
+    "ignored": 65,
+    "passed": 529,
+    "source_log_bytes": 60299,
+    "test_result_groups": 34
+  },
+  "schema_version": 1,
+  "scope": "local fixture tests; no live Forgejo or model run"
+}

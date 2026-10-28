@@ -1,0 +1,7 @@
+cargo test --offline --locked --test webhook_mission_admission_contract ordinary_issue_comment_cannot_create_mission_from_comment_text
+cargo test --offline --locked --test webhook_mission_admission_contract
+cargo fmt --all -- --check
+git diff --check
+sha256sum -c evidence/issue-comment-admission-refusal-001/source-hashes.txt
+
+Sensitivity probe temporarily removed the ResourceKind::Issue admission guard, ran the targeted test (expected failure), restored the source byte-for-byte, then reran the targeted test (pass). See mutation-check.log. No live service or model was invoked.

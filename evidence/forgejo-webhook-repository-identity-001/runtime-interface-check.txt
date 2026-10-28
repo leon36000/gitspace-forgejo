@@ -1,0 +1,5 @@
+Contrôle borné des interfaces existantes (25 octobre 2026)
+
+- `Cargo.toml` et `src/` inspectés; recherche `AgentOS|Hermes|OpenAI|Anthropic|model provider` sans résultat. Cela n’affirme rien sur des systèmes non présents dans ce worktree.
+- `scripts/run_mission_012_live_mcp_agent_e2e.py::build_agent_command` contient le chemin explicite `local-test-adapter` vers `mission_012_test_agent_adapter.py` (ou sa variante sandboxée), et un choix distinct `claude`. Ce script est un driver CLI, pas un contrat AgentOS versionné dans le noyau.
+- Aucun Claude CLI, LLM ou service AgentOS n’a été lancé dans ce lot. L’exécution de code utilise des fixtures Rust déterministes et le journal temporaire HMAC.

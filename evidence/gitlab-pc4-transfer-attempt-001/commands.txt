@@ -1,0 +1,5 @@
+Révision/configuration : `git rev-parse HEAD`; `git status --short --branch`; `git remote -v`.
+Prévol : `git ls-files --others --exclude-standard`; `du -sh .runtime .claude .git`; `git check-ignore -v <chemin-runtime>`.
+Motifs sensibles (sortie limitée au type et au chemin, aucune valeur) : script Python local recherchant glpat, GitHub PAT, AWS access key, bearer token et PEM privé.
+Route : `getent hosts pc4.tail0c55ff.ts.net`; `tailscale status --json` (résultat filtré aux champs self/PC4); `tailscale ping --timeout=4s pc4`; essais `curl` sans credential vers l’URL Git smart-http et TCP 22/80/443.
+Aucune commande d’authentification, écriture, staging, commit ou push.

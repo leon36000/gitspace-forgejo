@@ -1,0 +1,9 @@
+Forgejo official source reference
+Tag: v17.0.0
+Commit: 0d791421f85ca13a63b665053d81ea765fbbc571
+Path: services/webhook/notifier.go
+Symbol: (*webhookNotifier).CreateRef
+Lines: 770-783
+Blob: 5aea521a0f2cb5d7513c98e9805d10e6a6b2901b
+SHA-256 of local file: a67cca36f92104efe0feabf0c62e668e7543b979e5a7440e713ce93dd490004f
+Evidence: the upstream method assigns refID to api.CreatePayload.Sha and refFullName.RefType() to RefType. The official-source file is unchanged in the dirty scratch checkout at this commit (`git diff --quiet HEAD -- services/webhook/notifier.go` succeeded). Source scope is this symbol only; no exhaustive Forgejo audit is claimed.

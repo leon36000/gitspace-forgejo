@@ -1,0 +1,2 @@
+origin	http://127.0.0.1:3130/forge-admin/agent-forge-core.git
+pc4-gitlab	https://pc4.tail0c55ff.ts.net/root/gitspace-forgejo.git

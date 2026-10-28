@@ -1,0 +1,12 @@
+$ cargo fmt --all -- --check
+PASS (exit 0)
+$ git diff --check
+PASS (exit 0)
+$ sha256sum -c evidence/issue-comment-admission-refusal-001/source-hashes.txt
+docs/architecture.md: OK
+docs/checkpoint.md: OK
+docs/refusal-evidence-matrix.md: OK
+src/mission_admission.rs: OK
+tests/webhook_mission_admission_contract.rs: OK
+$ cargo test --offline --locked --test webhook_mission_admission_contract
+14 passed; 0 failed; 0 ignored

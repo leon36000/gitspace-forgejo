@@ -1,0 +1,36 @@
+# FORGEJO-WEBHOOK-REPOSITORY-IDENTITY-001
+# Worktree root; HEAD f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+# Cargo tests/Clippy ran with bwrap: --unshare-net --clearenv --ro-bind / / --dev /dev --proc /proc --tmpfs /tmp; only target/ was writable. Cargo used --offline --locked.
+
+# Test-first red (both returned 101 because the new assertions correctly failed):
+cargo test --offline --locked --test webhook_contract signed_repository_identity_conflicts_are_rejected_without_journal_side_effect -- --nocapture
+cargo test --offline --locked --test webhook_reconcile_contract repository_identity_conflicts_are_rejected_before_api_call -- --nocapture
+
+# Green targeted contracts:
+cargo test --offline --locked --test webhook_contract --test webhook_reconcile_contract -- --test-threads=1
+
+# Full non-ignored Rust target suite:
+cargo test --offline --locked --all-targets -- --test-threads=1
+
+# Full Clippy attempt (returns 101 on 12 existing warnings outside the new helper):
+cargo clippy --offline --locked --all-targets -- -D warnings
+
+# Targeted Clippy. Allows only the already-present categories reported by full Clippy:
+cargo clippy --offline --locked --lib --test webhook_contract --test webhook_reconcile_contract -- -D warnings -A clippy::too_many_arguments -A clippy::collapsible_if -A clippy::if_same_then_else -A clippy::bool_assert_comparison
+
+# Format and whitespace checks:
+rustfmt --edition 2024 --check src/webhook/reconcile.rs tests/webhook_contract.rs tests/webhook_reconcile_contract.rs
+git diff --check
+
+# Cargo license metadata remains unselected:
+python3 scripts/verify_cargo_license_state.py
+cargo metadata --offline --locked --format-version 1 --no-deps
+
+# Upstream source inspection (read-only, pinned blobs; no checkout changes):
+git -C /tmp/forgejo-v17-base-cas-poc show 0d791421f85ca13a63b665053d81ea765fbbc571:modules/structs/repo.go
+git -C /tmp/forgejo-v17-base-cas-poc show 0d791421f85ca13a63b665053d81ea765fbbc571:modules/structs/user.go
+git -C /tmp/forgejo-v17-base-cas-poc show 0d791421f85ca13a63b665053d81ea765fbbc571:services/convert/repository.go
+
+# Local and global append-only index audit:
+(cd evidence/forgejo-webhook-repository-identity-001 && sha256sum -c SHA256SUMS)
+python3 evidence/forgejo-webhook-repository-identity-001/verify_indexes.py

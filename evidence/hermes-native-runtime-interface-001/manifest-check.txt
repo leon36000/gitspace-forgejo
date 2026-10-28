@@ -1,0 +1,1 @@
+PASS: local manifest verifies 3 evidence files

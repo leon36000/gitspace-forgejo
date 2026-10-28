@@ -1,0 +1,68 @@
+test_extracts_native_issue_label_transition_actions_and_payload_snapshot (tests.test_forgejo_emitted_webhook_e2e.ParseLiveDeliveryRecordTests.test_extracts_native_issue_label_transition_actions_and_payload_snapshot) ... 
+  test_extracts_native_issue_label_transition_actions_and_payload_snapshot (tests.test_forgejo_emitted_webhook_e2e.ParseLiveDeliveryRecordTests.test_extracts_native_issue_label_transition_actions_and_payload_snapshot) (action='label_updated') ... ERROR
+  test_extracts_native_issue_label_transition_actions_and_payload_snapshot (tests.test_forgejo_emitted_webhook_e2e.ParseLiveDeliveryRecordTests.test_extracts_native_issue_label_transition_actions_and_payload_snapshot) (action='label_cleared') ... ERROR
+test_accepts_stale_or_empty_clear_payload_but_requires_empty_current_api (tests.test_forgejo_emitted_webhook_e2e.IssueLabelSnapshotTests.test_accepts_stale_or_empty_clear_payload_but_requires_empty_current_api) ... FAIL
+test_rejects_unrelated_clear_snapshot_and_nonempty_current_api (tests.test_forgejo_emitted_webhook_e2e.IssueLabelSnapshotTests.test_rejects_unrelated_clear_snapshot_and_nonempty_current_api) ... FAIL
+test_binds_native_issue_label_task_type_to_issues_header (tests.test_forgejo_emitted_webhook_e2e.HookTaskBindingTests.test_binds_native_issue_label_task_type_to_issues_header) ... ERROR
+test_exposes_live_issue_label_transition_scenario (tests.test_forgejo_emitted_webhook_e2e.EmittedWebhookRunnerCliTests.test_exposes_live_issue_label_transition_scenario) ... FAIL
+
+======================================================================
+ERROR: test_extracts_native_issue_label_transition_actions_and_payload_snapshot (tests.test_forgejo_emitted_webhook_e2e.ParseLiveDeliveryRecordTests.test_extracts_native_issue_label_transition_actions_and_payload_snapshot) (action='label_updated')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/test_forgejo_emitted_webhook_e2e.py", line 832, in test_extracts_native_issue_label_transition_actions_and_payload_snapshot
+    parsed = self.parse_record(
+             ^^^^^^^^^^^^^^^^^^
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/scripts/run_forgejo_live_webhook_reconcile_emitted.py", line 156, in parse_live_delivery_record
+    raise ValueError("webhook action does not match the expected transition")
+ValueError: webhook action does not match the expected transition
+
+======================================================================
+ERROR: test_extracts_native_issue_label_transition_actions_and_payload_snapshot (tests.test_forgejo_emitted_webhook_e2e.ParseLiveDeliveryRecordTests.test_extracts_native_issue_label_transition_actions_and_payload_snapshot) (action='label_cleared')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/test_forgejo_emitted_webhook_e2e.py", line 832, in test_extracts_native_issue_label_transition_actions_and_payload_snapshot
+    parsed = self.parse_record(
+             ^^^^^^^^^^^^^^^^^^
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/scripts/run_forgejo_live_webhook_reconcile_emitted.py", line 156, in parse_live_delivery_record
+    raise ValueError("webhook action does not match the expected transition")
+ValueError: webhook action does not match the expected transition
+
+======================================================================
+ERROR: test_binds_native_issue_label_task_type_to_issues_header (tests.test_forgejo_emitted_webhook_e2e.HookTaskBindingTests.test_binds_native_issue_label_task_type_to_issues_header)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/test_forgejo_emitted_webhook_e2e.py", line 2056, in test_binds_native_issue_label_task_type_to_issues_header
+    driver.validate_hook_task_bindings(tasks, events)
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/scripts/run_forgejo_live_webhook_reconcile_emitted.py", line 1070, in validate_hook_task_bindings
+    raise ValueError("Forgejo delivery task does not match its receiver journal event")
+ValueError: Forgejo delivery task does not match its receiver journal event
+
+======================================================================
+FAIL: test_accepts_stale_or_empty_clear_payload_but_requires_empty_current_api (tests.test_forgejo_emitted_webhook_e2e.IssueLabelSnapshotTests.test_accepts_stale_or_empty_clear_payload_but_requires_empty_current_api)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/test_forgejo_emitted_webhook_e2e.py", line 1939, in test_accepts_stale_or_empty_clear_payload_but_requires_empty_current_api
+    self.assertTrue(validate, "live issue label-clear snapshot validator is missing")
+AssertionError: None is not true : live issue label-clear snapshot validator is missing
+
+======================================================================
+FAIL: test_rejects_unrelated_clear_snapshot_and_nonempty_current_api (tests.test_forgejo_emitted_webhook_e2e.IssueLabelSnapshotTests.test_rejects_unrelated_clear_snapshot_and_nonempty_current_api)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/test_forgejo_emitted_webhook_e2e.py", line 1954, in test_rejects_unrelated_clear_snapshot_and_nonempty_current_api
+    self.assertTrue(validate, "live issue label-clear snapshot validator is missing")
+AssertionError: None is not true : live issue label-clear snapshot validator is missing
+
+======================================================================
+FAIL: test_exposes_live_issue_label_transition_scenario (tests.test_forgejo_emitted_webhook_e2e.EmittedWebhookRunnerCliTests.test_exposes_live_issue_label_transition_scenario)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/test_forgejo_emitted_webhook_e2e.py", line 624, in test_exposes_live_issue_label_transition_scenario
+    self.assertIn("--change-issue-labels", completed.stdout)
+AssertionError: '--change-issue-labels' not found in "usage: run_forgejo_live_webhook_reconcile_emitted.py [-h] --forgejo-binary\n                                                     FORGEJO_BINARY\n                                                     [--repo-root REPO_ROOT]\n                                                     --state-dir STATE_DIR\n                                                     --evidence-dir\n                                                     EVIDENCE_DIR\n                                                     [--ordinary-issue-comment]\n                                                     [--edit-ordinary-issue-comment]\n                                                     [--delete-ordinary-issue-comment]\n                                                     [--merge-pull-request]\n                                                     [--reopen-pull-request]\n                                                     [--edit-pull-request-title]\n                                                     [--change-pull-request-labels]\n                                                     [--synchronize-pull-request]\n                                                     [--fork-pull-request]\n                                                     [--request-changes-review]\n                                                     [--approve-review]\n                                                     [--request-review]\n                                                     [--remove-review-request]\n                                                     [--pull-request-review-comment]\n                                                     [--delete-pull-request-comment]\n                                                     [--revoke-pull-request-comment-reader-before-reconcile]\n                                                     [--batch-pull-request-events]\n                                                     [--observe-batch-network]\n\nRun Forgejo-emitted issue and pull-request webhooks through the receiver.\n\noptions:\n  -h, --help            show this help message and exit\n  --forgejo-binary FORGEJO_BINARY\n  --repo-root REPO_ROOT\n  --state-dir STATE_DIR\n  --evidence-dir EVIDENCE_DIR\n  --ordinary-issue-comment\n                        create one comment on the disposable ordinary issue\n                        and reconcile Forgejo's emitted issue_comment event\n  --edit-ordinary-issue-comment\n                        edit the created ordinary issue comment and reconcile\n                        its native issue_comment/edited event\n  --delete-ordinary-issue-comment\n                        delete the created ordinary issue comment and\n                        reconcile its native issue_comment/deleted event\n  --merge-pull-request  merge the disposable local PR instead of closing it\n                        unmerged and reconcile its native close event\n  --reopen-pull-request\n                        close and reopen the disposable PR before its final\n                        close, reconciling both native transitions\n  --edit-pull-request-title\n                        edit the disposable PR title and reconcile Forgejo's\n                        native pull_request/edited event\n  --change-pull-request-labels\n                        add then clear a disposable PR label and reconcile\n                        Forgejo's native pull_request/label_updated and\n                        label_cleared events\n  --synchronize-pull-request\n                        push a second candidate commit and reconcile Forgejo's\n                        native pull_request_sync event\n  --fork-pull-request   create a private contributor fork with read-only\n                        target access and reconcile its native pull-request\n                        event\n  --request-changes-review\n                        create a separate non-admin PR author and reconcile\n                        Forgejo's native rejected-review event\n  --approve-review      create a separate non-admin PR author and reconcile\n                        Forgejo's native approved-review event\n  --request-review      request review from the scoped read-only collaborator\n                        and reconcile Forgejo's native review_requested event\n  --remove-review-request\n                        request and then remove the scoped read-only\n                        collaborator's review request, reconciling both native\n                        events\n  --pull-request-review-comment\n                        create an inline PR review comment and reconcile\n                        Forgejo's native review-comment event\n  --delete-pull-request-comment\n                        delete the disposable PR conversation comment and\n                        verify stale-created versus deleted reconciliation\n  --revoke-pull-request-comment-reader-before-reconcile\n                        after deleting the PR comment and reconciling other\n                        events, revoke reader access and require both comment\n                        events to stay inconclusive when the PR parent is\n                        unreadable\n  --batch-pull-request-events\n                        reconcile all emitted pull-request deliveries in one\n                        CLI batch and one current-state read\n  --observe-batch-network\n                        trace connect syscalls during the PR batch; require at\n                        least one and reject non-fixture destinations\n"
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.068s
+
+FAILED (failures=3, errors=3)
