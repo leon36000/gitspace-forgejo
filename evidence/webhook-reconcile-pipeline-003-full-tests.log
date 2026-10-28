@@ -1,0 +1,126 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 2.71s
+     Running unittests src/lib.rs (/tmp/webhook-reconcile-pipeline-target/debug/deps/agent_forge_core-4f3c0a59eee64024)
+
+running 6 tests
+test tests::stale_events_cancellation_and_expired_or_forbidden_capabilities_are_denied ... ok
+test tests::proof_requires_signature_pass_and_all_fresh_hashes ... ok
+test tests::verifier_preserves_failure_and_inconclusive_outcomes ... ok
+test tests::context_and_mission_state_are_pinned_and_bounded ... ok
+test tests::duration_parser_handles_units_and_errors ... ok
+test tests::journal_deduplicates_replays_and_serializes_concurrent_events ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.08s
+
+     Running unittests src/main.rs (/tmp/webhook-reconcile-pipeline-target/debug/deps/agent_forge_core-b9742ad16d453f0e)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/forgejo-mission-local.rs (/tmp/webhook-reconcile-pipeline-target/debug/deps/forgejo_mission_local-07e6661870a4625d)
+
+running 17 tests
+test tests::duration_context_extraction_accepts_multiline_signatures_and_ignores_signature_comments ... ok
+test tests::branch_snapshot_preserves_the_protection_flag_and_requires_a_full_commit ... ok
+test tests::duration_context_extraction_does_not_match_a_prefix_function_name ... ok
+test tests::duration_context_extraction_ignores_items_inside_macro_token_groups ... ok
+test tests::requirement_tree_limit_is_reported_as_a_bounded_refusal ... ok
+test tests::requirement_tree_rejects_symlinked_or_nested_requirement_json ... ok
+test tests::duration_context_extraction_ignores_braces_inside_strings_and_comments ... ok
+test tests::context_packet_pins_requirement_and_source_bytes_to_one_commit ... ok
+test tests::duration_context_extraction_ignores_a_commented_enum_decoy ... ok
+test tests::mission_arguments_require_a_stable_allocation_id_instead_of_a_generation_number ... ok
+test tests::requirement_paths_cannot_escape_the_fixed_namespace ... ok
+test tests::mission_journal_path_is_anchored_to_the_checkout ... ok
+test tests::requirement_tree_pagination_must_be_complete_and_ordered ... ok
+test tests::issue_snapshot_rejects_a_canonical_url_from_another_repository ... ok
+test tests::duration_context_extraction_skips_a_function_declaration_inside_a_block_comment ... ok
+test tests::issue_snapshot_requires_the_canonical_url_and_supported_state ... ok
+test tests::mission_arguments_reject_duplicate_host_bindings ... ok
+
+test result: ok. 17 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+     Running unittests src/bin/forgejo-reconcile-local.rs (/tmp/webhook-reconcile-pipeline-target/debug/deps/forgejo_reconcile_local-3e9fc5f7734f2ac5)
+
+running 20 tests
+test tests::local_adapter_refuses_repositories_outside_the_sandbox_allowlist ... ok
+test tests::curl_timeout_rounds_down_to_whole_milliseconds ... ok
+test tests::invalid_snapshot_error_is_not_retryable_success ... ok
+test tests::batch_level_failure_is_structured_and_inconclusive ... ok
+test tests::command_reader_stops_an_unbounded_child_at_the_cap ... ok
+test tests::stale_merge_preflight_is_actionable_and_inconclusive ... ok
+test tests::bounded_command_cleans_up_child_when_reader_thread_cannot_start ... ok
+test tests::merge_preflight_keeps_failure_distinct_from_inconclusive ... ok
+test tests::merge_preflight_success_is_read_only_and_not_merge_authority ... ok
+test tests::response_reader_accepts_the_exact_limit ... ok
+test tests::response_reader_stops_after_one_byte_over_the_limit ... ok
+test tests::single_reconciliation_failure_is_structured_and_inconclusive ... ok
+test tests::local_adapter_shares_one_deadline_across_reads ... FAILED
+test tests::bounded_command_is_cancelled_shortly_after_its_absolute_deadline ... ok
+test tests::local_adapter_retries_non_utf8_transient_http_body ... FAILED
+test tests::local_adapter_retries_rate_limit_response_within_the_read_budget ... FAILED
+test tests::local_adapter_does_not_retry_unauthorized_http_responses ... FAILED
+test tests::local_adapter_retries_transient_http_failure_then_returns_current_state ... FAILED
+test tests::local_adapter_does_not_retry_oversized_http_response ... FAILED
+test tests::local_adapter_stops_after_three_transient_http_attempts ... FAILED
+
+failures:
+
+---- tests::local_adapter_shares_one_deadline_across_reads stdout ----
+
+thread 'tests::local_adapter_shares_one_deadline_across_reads' (782239) panicked at src/bin/forgejo-reconcile-local.rs:1362:9:
+assertion `left == right` failed
+  left: 6
+ right: 1
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+---- tests::local_adapter_retries_non_utf8_transient_http_body stdout ----
+
+thread 'tests::local_adapter_retries_non_utf8_transient_http_body' (782236) panicked at src/bin/forgejo-reconcile-local.rs:1275:28:
+called `Result::unwrap()` on an `Err` value: Unavailable
+
+---- tests::local_adapter_retries_rate_limit_response_within_the_read_budget stdout ----
+
+thread 'tests::local_adapter_retries_rate_limit_response_within_the_read_budget' (782237) panicked at src/bin/forgejo-reconcile-local.rs:1288:28:
+called `Result::unwrap()` on an `Err` value: Unavailable
+
+---- tests::local_adapter_does_not_retry_unauthorized_http_responses stdout ----
+
+thread 'tests::local_adapter_does_not_retry_unauthorized_http_responses' (782234) panicked at src/bin/forgejo-reconcile-local.rs:1318:9:
+assertion `left == right` failed
+  left: Err(Unavailable)
+ right: Err(Unauthorized)
+
+---- tests::local_adapter_retries_transient_http_failure_then_returns_current_state stdout ----
+
+thread 'tests::local_adapter_retries_transient_http_failure_then_returns_current_state' (782238) panicked at src/bin/forgejo-reconcile-local.rs:1260:28:
+called `Result::unwrap()` on an `Err` value: Unavailable
+
+---- tests::local_adapter_does_not_retry_oversized_http_response stdout ----
+
+thread 'tests::local_adapter_does_not_retry_oversized_http_response' (782233) panicked at src/bin/forgejo-reconcile-local.rs:1333:9:
+assertion `left == right` failed
+  left: Err(Unavailable)
+ right: Err(InvalidResponse)
+
+---- tests::local_adapter_stops_after_three_transient_http_attempts stdout ----
+
+thread 'tests::local_adapter_stops_after_three_transient_http_attempts' (782253) panicked at src/bin/forgejo-reconcile-local.rs:1305:9:
+assertion `left == right` failed
+  left: Err(Unavailable)
+ right: Err(HttpStatus(503))
+
+
+failures:
+    tests::local_adapter_does_not_retry_oversized_http_response
+    tests::local_adapter_does_not_retry_unauthorized_http_responses
+    tests::local_adapter_retries_non_utf8_transient_http_body
+    tests::local_adapter_retries_rate_limit_response_within_the_read_budget
+    tests::local_adapter_retries_transient_http_failure_then_returns_current_state
+    tests::local_adapter_shares_one_deadline_across_reads
+    tests::local_adapter_stops_after_three_transient_http_attempts
+
+test result: FAILED. 13 passed; 7 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.33s
+
+error: test failed, to rerun pass `--bin forgejo-reconcile-local`

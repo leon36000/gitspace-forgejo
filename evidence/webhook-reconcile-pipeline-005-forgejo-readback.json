@@ -1,0 +1,27 @@
+{
+  "observed_at_utc": "2026-10-22T20:37:11Z",
+  "origin": "http://127.0.0.1:3132",
+  "process": ".tools/forgejo-17.0.0-linux-arm64",
+  "scope_fixture": "evidence/mission-012-ollama-runtime/raw/forgejo-instance-scope.json",
+  "scope": {
+    "offline_mode": true,
+    "disable_ssh": true,
+    "actions_enabled": false,
+    "packages_enabled": false
+  },
+  "readbacks": [
+    {"method": "GET", "path": "/api/healthz", "authorization": "none", "http_status": 200},
+    {"method": "GET", "path": "/api/v1/version", "authorization": "none", "http_status": 403},
+    {"method": "GET", "path": "/api/v1/version", "authorization": "pre-existing local credential; value omitted", "http_status": 200, "version": "17.0.0+gitea-1.22.0"},
+    {"method": "GET", "path": "/api/v1/repos/forge-admin/mission-012-clamp/issues/1", "authorization": "none", "http_status": 403},
+    {"method": "GET", "path": "/api/v1/repos/forge-admin/mission-012-clamp/issues/1", "authorization": "pre-existing local credential; value omitted", "http_status": 200, "issue_state": "closed"}
+  ],
+  "adapter_limit": {
+    "source": "src/bin/forgejo-reconcile-local.rs",
+    "origin_constant": "http://127.0.0.1:3130",
+    "authentication": "none; the adapter is deliberately unauthenticated",
+    "result": "cannot read the private 3132 repository through this adapter without a host-only credential integration"
+  },
+  "writes_performed": false,
+  "secrets_recorded": false
+}

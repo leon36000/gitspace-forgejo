@@ -1,0 +1,13 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.39s
+     Running tests/webhook_receiver_process_e2e.rs (/tmp/webhook-receiver-adapter-025-clean-target/debug/deps/webhook_receiver_process_e2e-6caa738f5453f442)
+
+running 5 tests
+test actual_reconcile_cli_process_bounds_transient_upstream_retries ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_keeps_forbidden_upstream_inconclusive ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_reads_receiver_journal_against_private_http_fixture ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test interrupted_reconcile_cli_can_resume_from_the_unchanged_journal ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_receiver_process_accepts_retries_recovers_and_reconciles ... ok
+
+test result: ok. 1 passed; 0 failed; 4 ignored; 0 measured; 0 filtered out; finished in 0.14s
+

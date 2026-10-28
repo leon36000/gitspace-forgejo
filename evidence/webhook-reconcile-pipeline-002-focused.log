@@ -1,0 +1,21 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.41s
+     Running tests/webhook_reconcile_pipeline.rs (/tmp/webhook-reconcile-pipeline-target/debug/deps/webhook_reconcile_pipeline-059c903bd86c5636)
+
+running 1 test
+
+thread 'signed_webhook_journal_replay_reconciles_stale_payload_to_fixture_state' (775506) panicked at tests/webhook_reconcile_pipeline.rs:146:5:
+assertion `left == right` failed
+  left: Null
+ right: "delivery_conflict"
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test signed_webhook_journal_replay_reconciles_stale_payload_to_fixture_state ... FAILED
+
+failures:
+
+failures:
+    signed_webhook_journal_replay_reconciles_stale_payload_to_fixture_state
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `--test webhook_reconcile_pipeline`

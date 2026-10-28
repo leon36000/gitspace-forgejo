@@ -1,0 +1,104 @@
+    Checking typenum v1.20.0
+    Checking subtle v2.6.1
+    Checking itoa v1.0.18
+    Checking cfg-if v1.0.5
+    Checking memchr v2.8.3
+    Checking hex v0.4.3
+    Checking libc v0.2.190
+    Checking serde_core v1.0.228
+    Checking zmij v1.0.23
+    Checking generic-array v0.14.7
+    Checking cpufeatures v0.2.17
+    Checking crypto-common v0.1.7
+    Checking block-buffer v0.10.4
+    Checking digest v0.10.7
+    Checking sha2 v0.10.9
+    Checking hmac v0.12.1
+    Checking serde v1.0.228
+    Checking serde_json v1.0.150
+    Checking agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+error: this function has too many arguments (10/7)
+   --> src/agent_runtime.rs:210:5
+    |
+210 | /     pub fn acquire_lease(
+211 | |         &self,
+212 | |         scope: &BaseBranchScope,
+213 | |         issue_number: u64,
+...   |
+220 | |         request: &AgentExecutionRequestV1,
+221 | |     ) -> Result<MissionExecutionLeaseV1, AgentRuntimeErrorV1> {
+    | |_____________________________________________________________^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#too_many_arguments
+    = note: `-D clippy::too-many-arguments` implied by `-D warnings`
+    = help: to override `-D warnings` add `#[allow(clippy::too_many_arguments)]`
+
+error: this function has too many arguments (10/7)
+   --> src/mission_admission.rs:138:1
+    |
+138 | / pub fn admit_reconciled_issue_v2(
+139 | |     event: &JournaledWebhookEventV1,
+140 | |     reconciliation_source: &impl ForgejoCurrentState,
+141 | |     scope: &BaseBranchScope,
+...   |
+148 | |     journal: &MissionExecutionJournalV1,
+149 | | ) -> Result<WebhookMissionAdmissionReceiptV1, WebhookMissionAdmissionErrorV1> {
+    | |_____________________________________________________________________________^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#too_many_arguments
+
+error: this function has too many arguments (8/7)
+   --> src/mission_admission.rs:236:1
+    |
+236 | / fn admit_and_claim_mission_v2_with_expected_hash(
+237 | |     scope: &BaseBranchScope,
+238 | |     binding: &MissionAdmissionBindingV2,
+239 | |     source: &dyn MissionAdmissionSourceV1,
+...   |
+244 | |     expected_requirement_sha256: Option<&str>,
+245 | | ) -> Result<MissionAdmissionReceiptV2, AgentRuntimeErrorV1> {
+    | |___________________________________________________________^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#too_many_arguments
+
+error: this function has too many arguments (10/7)
+   --> src/mission_admission.rs:315:1
+    |
+315 | / fn prepare_admission(
+316 | |     scope: &BaseBranchScope,
+317 | |     issue_number: u64,
+318 | |     requirement_id: &str,
+...   |
+325 | |     allocate_generation: impl FnOnce(&str) -> Result<GenerationChoice, AgentRuntimeErrorV1>,
+326 | | ) -> Result<PreparedAdmission, AgentRuntimeErrorV1> {
+    | |___________________________________________________^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#too_many_arguments
+
+error: could not compile `agent-forge-core` (lib) due to 4 previous errors
+warning: build failed, waiting for other jobs to finish...
+error: used `assert_eq!` with a literal bool
+    --> src/lib.rs:1144:9
+     |
+1144 | /         assert_eq!(
+1145 | |             events
+1146 | |                 .iter()
+1147 | |                 .map(|e| &e.previous_hash)
+...    |
+1151 | |             true
+1152 | |         );
+     | |_________^
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#bool_assert_comparison
+     = note: `-D clippy::bool-assert-comparison` implied by `-D warnings`
+     = help: to override `-D warnings` add `#[allow(clippy::bool_assert_comparison)]`
+help: replace it with `assert!(..)`
+     |
+1144 ~         assert!(
+1145 |             events
+ ...
+1149 |                 .zip(events.iter().map(|e| &e.hash))
+1150 ~                 .all(|(a, b)| a == b)
+     |
+
+error: could not compile `agent-forge-core` (lib test) due to 5 previous errors

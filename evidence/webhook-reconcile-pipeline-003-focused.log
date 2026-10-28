@@ -1,0 +1,9 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.38s
+     Running tests/webhook_reconcile_pipeline.rs (/tmp/webhook-reconcile-pipeline-target/debug/deps/webhook_reconcile_pipeline-059c903bd86c5636)
+
+running 1 test
+test signed_webhook_journal_replay_reconciles_stale_payload_to_fixture_state ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+

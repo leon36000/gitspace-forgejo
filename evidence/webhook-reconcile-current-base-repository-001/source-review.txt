@@ -1,0 +1,17 @@
+Product workspace:
+  worktree: /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace
+  HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+  state: heavily modified before this tranche; no commit or reset performed.
+  implementation: src/webhook/reconcile.rs:195 and :586-621
+  regression contract: tests/webhook_reconcile_contract.rs:985 onward
+
+Forgejo source:
+  remote: https://codeberg.org/forgejo/forgejo.git
+  version: v17.0.0
+  commit: 0d791421f85ca13a63b665053d81ea765fbbc571
+  scratch: /tmp/forgejo-v17-base-cas-poc (dirty with unrelated POC changes)
+  modules/structs/pull.go blob: 1ce7550e197752d5065283bab01bc7da98dfb901
+  modules/structs/hook.go blob: 9c7f1deed1c38eeb435ab976bb8429c5458c7f2b
+  pull.go:46-47: PullRequest.Base and Head are *PRBranchInfo.
+  pull.go:64-71: PRBranchInfo.Repository is *Repository.
+  No Forgejo source was copied or edited in the product workspace.

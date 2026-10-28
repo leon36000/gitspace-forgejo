@@ -1,0 +1,351 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.32s
+     Running unittests src/lib.rs (/tmp/webhook-receiver-process-e2e-target/debug/deps/agent_forge_core-4f3c0a59eee64024)
+
+running 6 tests
+test tests::context_and_mission_state_are_pinned_and_bounded ... ok
+test tests::duration_parser_handles_units_and_errors ... ok
+test tests::stale_events_cancellation_and_expired_or_forbidden_capabilities_are_denied ... ok
+test tests::verifier_preserves_failure_and_inconclusive_outcomes ... ok
+test tests::proof_requires_signature_pass_and_all_fresh_hashes ... ok
+test tests::journal_deduplicates_replays_and_serializes_concurrent_events ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running unittests src/main.rs (/tmp/webhook-receiver-process-e2e-target/debug/deps/agent_forge_core-b9742ad16d453f0e)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/forgejo-mission-local.rs (/tmp/webhook-receiver-process-e2e-target/debug/deps/forgejo_mission_local-07e6661870a4625d)
+
+running 17 tests
+test tests::branch_snapshot_preserves_the_protection_flag_and_requires_a_full_commit ... ok
+test tests::duration_context_extraction_does_not_match_a_prefix_function_name ... ok
+test tests::duration_context_extraction_accepts_multiline_signatures_and_ignores_signature_comments ... ok
+test tests::duration_context_extraction_ignores_a_commented_enum_decoy ... ok
+test tests::context_packet_pins_requirement_and_source_bytes_to_one_commit ... ok
+test tests::duration_context_extraction_ignores_braces_inside_strings_and_comments ... ok
+test tests::duration_context_extraction_ignores_items_inside_macro_token_groups ... ok
+test tests::duration_context_extraction_skips_a_function_declaration_inside_a_block_comment ... ok
+test tests::issue_snapshot_rejects_a_canonical_url_from_another_repository ... ok
+test tests::issue_snapshot_requires_the_canonical_url_and_supported_state ... ok
+test tests::mission_arguments_reject_duplicate_host_bindings ... ok
+test tests::mission_arguments_require_a_stable_allocation_id_instead_of_a_generation_number ... ok
+test tests::requirement_paths_cannot_escape_the_fixed_namespace ... ok
+test tests::requirement_tree_limit_is_reported_as_a_bounded_refusal ... ok
+test tests::requirement_tree_rejects_symlinked_or_nested_requirement_json ... ok
+test tests::mission_journal_path_is_anchored_to_the_checkout ... ok
+test tests::requirement_tree_pagination_must_be_complete_and_ordered ... ok
+
+test result: ok. 17 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running unittests src/bin/forgejo-reconcile-local.rs (/tmp/webhook-receiver-process-e2e-target/debug/deps/forgejo_reconcile_local-3e9fc5f7734f2ac5)
+
+running 28 tests
+test tests::batch_level_failure_is_structured_and_inconclusive ... ok
+test tests::curl_timeout_rounds_down_to_whole_milliseconds ... ok
+test tests::invalid_host_credential_is_actionable_nonretryable_and_value_free ... ok
+test tests::invalid_snapshot_error_is_not_retryable_success ... ok
+test tests::bounded_command_cleans_up_child_when_reader_thread_cannot_start ... ok
+test tests::local_adapter_refuses_repositories_outside_the_sandbox_allowlist ... ok
+test tests::command_reader_stops_an_unbounded_child_at_the_cap ... ok
+test tests::merge_preflight_keeps_failure_distinct_from_inconclusive ... ok
+test tests::merge_preflight_success_is_read_only_and_not_merge_authority ... ok
+test tests::origin_bound_provider_withholds_token_for_a_different_origin ... ok
+test tests::response_reader_accepts_the_exact_limit ... ok
+test tests::response_reader_stops_after_one_byte_over_the_limit ... ok
+test tests::stale_merge_preflight_is_actionable_and_inconclusive ... ok
+test tests::synthetic_credential_is_not_added_to_curl_arguments_or_environment ... ok
+test tests::token_parser_rejects_empty_oversized_and_header_injection_values ... ok
+test tests::single_reconciliation_failure_is_structured_and_inconclusive ... ok
+test tests::local_adapter_uses_host_credential_provider_for_loopback_request ... ok
+test tests::signed_journal_deliveries_reconcile_through_the_local_http_adapter ... ok
+test tests::local_adapter_retries_non_utf8_transient_http_body ... ok
+test tests::local_adapter_retries_rate_limit_response_within_the_read_budget ... ok
+test tests::local_adapter_retries_transient_http_failure_then_returns_current_state ... ok
+test tests::bounded_command_is_cancelled_before_the_child_exits_naturally ... ok
+test tests::local_adapter_shares_one_deadline_across_reads ... ok
+test tests::local_adapter_rejects_foreign_request_url_before_sending_host_credential ... ok
+test tests::local_adapter_does_not_retry_unauthorized_http_responses ... ok
+test tests::local_adapter_does_not_retry_oversized_http_response ... ok
+test tests::local_adapter_stops_after_three_transient_http_attempts ... ok
+test tests::local_adapter_does_not_follow_redirects_with_host_credential ... ok
+
+test result: ok. 28 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.01s
+
+     Running unittests src/bin/forgejo-webhook-local.rs (/tmp/webhook-receiver-process-e2e-target/debug/deps/forgejo_webhook_local-56310d649f1759d0)
+
+running 3 tests
+test tests::truncated_half_closed_request_gets_a_retryable_timeout_response ... ok
+test tests::complete_redelivery_after_truncation_is_accepted_once ... ok
+test tests::slow_drip_request_hits_total_read_deadline ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 3.22s
+
+     Running unittests src/bin/gate.rs (/tmp/webhook-receiver-process-e2e-target/debug/deps/gate-cdaaa55ea2a0e8dc)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/mission-012-mcp-host.rs (/tmp/webhook-receiver-process-e2e-target/debug/deps/mission_012_mcp_host-3e32cf331dafa499)
+
+running 13 tests
+test host::tests::writable_test_path_aliases_and_model_diff_are_refused ... ok
+test tests::exposes_only_three_exact_model_tools_and_denies_unknown_capabilities ... ok
+test tests::mcp_line_reader_rejects_malformed_json_rpc_and_accepts_one_frame ... ok
+test tests::mcp_protocol_negotiation_is_versioned_and_rejects_unknown_versions ... ok
+test host::tests::verifier_materializes_a_private_snapshot_and_rejects_changed_source_bytes ... ok
+test host::tests::sandbox_refuses_overlapping_writable_target_before_mutating_source_tree ... ok
+test host::tests::hard_linked_candidate_source_is_refused_without_touching_external_file ... ok
+test tests::mcp_call_is_receipted_and_still_uses_the_host_path_allowlist ... ok
+test host::tests::independent_pair_verifier_refuses_unapproved_source_even_with_git_binding ... ok
+test host::tests::sandbox_reports_real_red_then_green_on_the_candidate ... ok
+test host::tests::host_requires_baseline_red_and_fresh_green_and_receipts_refusals ... ok
+test host::tests::candidate_cannot_forge_libtest_success_with_print_and_process_exit ... ok
+test host::tests::independent_pair_verifier_binds_fresh_red_green_to_exact_snapshots ... ok
+
+test result: ok. 13 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.20s
+
+     Running unittests src/bin/mission-012-verify-local.rs (/tmp/webhook-receiver-process-e2e-target/debug/deps/mission_012_verify_local-efe680254b98a82f)
+
+running 9 tests
+test host::tests::writable_test_path_aliases_and_model_diff_are_refused ... ok
+test host::tests::sandbox_refuses_overlapping_writable_target_before_mutating_source_tree ... ok
+test host::tests::hard_linked_candidate_source_is_refused_without_touching_external_file ... ok
+test host::tests::verifier_materializes_a_private_snapshot_and_rejects_changed_source_bytes ... ok
+test host::tests::independent_pair_verifier_refuses_unapproved_source_even_with_git_binding ... ok
+test host::tests::sandbox_reports_real_red_then_green_on_the_candidate ... ok
+test host::tests::host_requires_baseline_red_and_fresh_green_and_receipts_refusals ... ok
+test host::tests::candidate_cannot_forge_libtest_success_with_print_and_process_exit ... ok
+test host::tests::independent_pair_verifier_binds_fresh_red_green_to_exact_snapshots ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.31s
+
+     Running tests/agent_mission_identity_contract.rs (/tmp/webhook-receiver-process-e2e-target/debug/deps/agent_mission_identity_contract-490ba25ab9630e44)
+
+running 6 tests
+test invalid_requirement_hash_or_zero_identity_values_are_refused ... ok
+test new_intentional_execution_generation_keeps_mission_but_changes_idempotency_key ... ok
+test normalized_origin_and_hex_case_do_not_create_duplicate_missions ... ok
+test changed_requirements_create_a_new_versioned_mission ... ok
+test mission_is_scoped_to_repository_and_issue_not_base_branch ... ok
+test new_webhook_delivery_ids_do_not_change_the_same_mission_identity ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/agent_runtime_contract.rs (/tmp/webhook-receiver-process-e2e-target/debug/deps/agent_runtime_contract-6eab092b75d50757)
+
+running 10 tests
+test fixture_runtime_rejects_context_from_another_base_before_tool_use ... ok
+test request_validation_binds_the_requirements_document_to_its_hash ... ok
+test request_validation_rejects_invalid_or_unlinked_context_citations ... ok
+test request_validation_rejects_nonportable_or_non_normalized_paths ... ok
+test claim_of_superseded_generation_is_rejected ... ok
+test replay_of_claimed_generation_remains_idempotent_after_newer_allocation ... ok
+test superseded_generation_replay_after_reopen_is_idempotent_but_cannot_be_leased ... ok
+test fixture_runtime_consumes_context_calls_tools_and_runs_generated_code_idempotently ... ok
+test result_from_an_earlier_generation_is_rejected_when_mission_id_is_stable ... ok
+test fixture_tool_port_denies_unlisted_tools_and_enforces_call_budget ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.19s
+
+     Running tests/forgejo_merge_lock.rs (/tmp/webhook-receiver-process-e2e-target/debug/deps/forgejo_merge_lock-820411f60f76dbc6)
+
+running 6 tests
+test invalid_scope_is_rejected_before_lock_creation ... ok
+test lock_child_waits_for_parent_release ... ok
+test different_base_branches_do_not_share_a_lock ... ok
+test symbolic_link_lock_directory_is_rejected ... ok
+test symbolic_link_lock_file_is_rejected ... ok
+test same_base_branch_lock_serializes_across_processes ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running tests/forgejo_merge_preflight.rs (/tmp/webhook-receiver-process-e2e-target/debug/deps/forgejo_merge_preflight-aa5dc3d199c0d2e1)
+
+running 13 tests
+test api_snapshot_parser_pins_url_and_both_repositories ... ok
+test api_snapshot_parser_rejects_wrong_pull_request_and_html_url ... ok
+test draft_pull_request_is_refused ... ok
+test closed_pull_request_is_refused ... ok
+test already_merged_pull_request_is_refused ... ok
+test fresh_open_pull_request_and_passing_proof_are_ready_for_later_review ... ok
+test proof_for_an_old_base_is_refused ... ok
+test proof_for_an_old_candidate_is_refused ... ok
+test unknown_or_negative_mergeability_is_refused ... ok
+test verifier_cannot_also_be_the_execution_identity ... ok
+test wrong_repository_or_base_branch_are_refused ... ok
+test missing_or_nonpassing_proof_never_becomes_ready ... ok
+test wrong_pull_request_number_is_refused ... ok
+
+test result: ok. 13 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/mission_012_mcp_lifecycle.rs (/tmp/webhook-receiver-process-e2e-target/debug/deps/mission_012_mcp_lifecycle-8222febbc3dbb2d9)
+
+running 1 test
+test complete_stdio_mcp_lifecycle_runs_red_write_green_shutdown_refusal_and_exit ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.56s
+
+     Running tests/mission_admission_contract.rs (/tmp/webhook-receiver-process-e2e-target/debug/deps/mission_admission_contract-e97ef4e8d91fdc1e)
+
+running 14 tests
+test issue_body_is_not_part_of_the_binding_contract ... ok
+test duplicate_requirement_binding_is_refused_before_generation_allocation ... ok
+test incomplete_requirement_inventory_is_refused_before_generation_allocation ... ok
+test requirement_issue_binding_is_checked_before_generation_allocation ... ok
+test legacy_and_unbound_requirement_documents_are_not_admitted ... ok
+test malformed_unrelated_requirement_blocks_uniqueness_decision ... ok
+test secondary_v2_requirement_without_issue_binding_blocks_allocation ... ok
+test version_2_rejects_invalid_allocation_ids_before_reading_the_source ... ok
+test admission_refuses_untrusted_or_stale_bindings_before_claiming ... ok
+test explicit_host_binding_loads_exact_requirement_from_protected_commit_and_claims_it ... ok
+test failed_context_validation_can_resume_with_the_same_reserved_generation ... ok
+test duplicate_delivery_or_fresh_uuid_replay_claims_the_same_semantic_mission_once ... ok
+test changed_protected_requirement_revision_creates_a_distinct_claim_identity ... ok
+test version_2_admission_allocates_generation_and_recovers_the_same_allocation ... ok
+
+test result: ok. 14 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/mission_execution_journal_contract.rs (/tmp/webhook-receiver-process-e2e-target/debug/deps/mission_execution_journal_contract-c0799a5ee06e38e9)
+
+running 35 tests
+test claim_child_waits_for_start_file_then_claims ... ignored, invoked as a subprocess by the concurrent claim contract
+test claim_requires_a_durable_allocation ... ok
+test corrupt_complete_journal_record_blocks_new_execution_claims ... ok
+test generic_journal_api_cannot_append_reserved_mission_transitions ... ok
+test allocation_replay_validates_later_records_for_the_same_mission ... ok
+test direct_claim_cannot_bypass_the_requirement_issue_binding ... ok
+test invalid_hashes_and_generation_are_refused_before_journal_append ... ok
+test generic_transaction_reentry_into_mission_transition_returns_busy ... ok
+test execution_lease_requires_a_matching_allocated_claim ... ok
+test invalid_allocation_ids_are_refused_without_changing_the_journal ... ok
+test mission_lock_child_holds_until_parent_kills ... ignored, invoked as a subprocess by the mission lock interruption contract
+test generation_allocation_is_monotonic_and_replayable_after_reopen ... ok
+test execution_lease_cannot_outlive_the_runtime_timeout ... ok
+test malformed_generation_record_blocks_further_allocation ... ok
+test lease_rejects_a_requirement_linked_to_another_issue_before_append ... ok
+test hard_linked_journal_and_lock_files_are_rejected ... ok
+test first_claim_is_admitted_and_reopen_is_idempotent ... ok
+test unclassified_journal_io_failure_does_not_claim_it_is_retryable ... ok
+test legacy_claim_cannot_consume_a_generation_reserved_by_the_allocator ... ok
+test malformed_legacy_claim_blocks_generation_allocation ... ok
+test generation_allocator_advances_after_an_allocated_claim ... ok
+test concurrent_retries_of_one_allocation_id_recover_one_generation ... ok
+test active_execution_lease_is_exclusive_and_replayable ... ok
+test concurrent_execution_lease_acquisition_has_one_winner ... ok
+test host_supplied_new_generation_creates_a_separate_claim ... ok
+test one_generation_cannot_be_reused_with_changed_request_bytes ... ok
+test malformed_lease_record_blocks_further_admission ... ok
+test expired_lease_recovers_with_a_higher_fence_and_rejects_the_old_worker ... ok
+test mission_lock_is_private_and_released_after_process_interruption ... ok
+test concurrent_processes_admit_only_one_claim_for_the_same_generation ... ok
+test mission_operations_return_busy_without_sampling_clock_while_global_lock_is_held ... ok
+test lease_retries_share_one_absolute_runtime_deadline ... ok
+test newer_generation_fences_every_lease_from_older_generations ... ok
+test mission_effect_keeps_global_journal_available_and_other_missions_progress ... ok
+test concurrent_generation_allocations_reserve_distinct_monotonic_values ... ok
+
+test result: ok. 33 passed; 0 failed; 2 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests/reconcile_config_contract.rs (/tmp/webhook-receiver-process-e2e-target/debug/deps/reconcile_config_contract-9069dc04dad0536b)
+
+running 3 tests
+test canonical_config_is_loaded_before_the_inbox ... ok
+test config_rejects_other_repositories_versions_and_unknown_credentials ... ok
+test config_cannot_redirect_the_local_adapter ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/webhook_contract.rs (/tmp/webhook-receiver-process-e2e-target/debug/deps/webhook_contract-3a77ed745bc0a522)
+
+running 5 tests
+test invalid_signature_is_rejected_without_journal_side_effect ... ok
+test identical_delivery_is_duplicate_after_journal_reopen ... ok
+test same_delivery_id_with_changed_payload_is_conflict ... ok
+test concurrent_retries_append_exactly_once ... ok
+test late_older_notification_is_appended_and_does_not_rewrite_history ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/webhook_handler_contract.rs (/tmp/webhook-receiver-process-e2e-target/debug/deps/webhook_handler_contract-627b310cb6f343c9)
+
+running 5 tests
+test body_over_limit_is_rejected_by_parser_before_allocation ... ok
+test unsupported_event_is_rejected_without_journal_side_effect ... ok
+test wrong_path_method_and_content_type_are_rejected ... ok
+test invalid_signature_is_unauthorized_and_not_journaled ... ok
+test valid_delivery_is_accepted_and_identical_retry_is_idempotent ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/webhook_http_contract.rs (/tmp/webhook-receiver-process-e2e-target/debug/deps/webhook_http_contract-c2471fc0bf34976e)
+
+running 5 tests
+test conflicting_content_length_and_chunked_transfer_are_rejected ... ok
+test duplicate_security_header_is_rejected ... ok
+test mismatched_forgejo_and_gitea_aliases_are_rejected ... ok
+test oversized_and_incomplete_requests_are_distinguished ... ok
+test parser_preserves_body_bytes_and_accepts_matching_forgejo_aliases ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/webhook_mission_admission_contract.rs (/tmp/webhook-receiver-process-e2e-target/debug/deps/webhook_mission_admission_contract-970f84c8f68c75fe)
+
+running 11 tests
+test generic_journal_apis_cannot_forge_webhook_inbox_events ... ok
+test adapter_with_another_canonical_origin_is_rejected_before_api_read ... ok
+test closed_reconciled_issue_is_rejected_before_mission_admission ... ok
+test same_revision_with_changed_requirement_bytes_is_rejected_before_allocation ... ok
+test host_binding_for_another_issue_is_rejected_before_admission ... ok
+test issue_from_another_repository_is_rejected_even_when_its_api_url_is_canonical ... ok
+test pull_request_notification_cannot_create_issue_admission ... ok
+test admission_rechecks_open_issue_after_reconciliation_to_close_the_stale_read_gap ... ok
+test reconciled_open_issue_uses_host_binding_and_ignores_delivery_id_and_payload_state ... ok
+test a_new_delivery_id_for_the_same_issue_reuses_the_host_allocation_and_claim ... ok
+test signed_http_delivery_replays_reconciles_then_admits_and_resumes_idempotently ... ok
+
+test result: ok. 11 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/webhook_receiver_process_e2e.rs (/tmp/webhook-receiver-process-e2e-target/debug/deps/webhook_receiver_process_e2e-6caa738f5453f442)
+
+running 1 test
+test actual_receiver_process_accepts_retries_recovers_and_reconciles ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.12s
+
+     Running tests/webhook_reconcile_contract.rs (/tmp/webhook-receiver-process-e2e-target/debug/deps/webhook_reconcile_contract-1e83f04d6aace668)
+
+running 19 tests
+test api_response_for_another_resource_is_rejected ... ok
+test api_response_url_from_another_origin_is_rejected_even_with_matching_path ... ok
+test api_response_with_the_same_number_but_another_repository_is_rejected ... ok
+test batch_reconciliation_caches_unavailable_reads_for_the_same_resource ... ok
+test batch_reconciliation_ignores_out_of_order_notification_state ... ok
+test incomplete_api_snapshot_never_becomes_canonical ... ok
+test batch_reconciliation_coalesces_forgejo_replays_with_new_delivery_ids ... ok
+test invalid_or_unrepresentable_forgejo_updated_at_is_rejected ... ok
+test envelope_mismatch_is_rejected_without_api_call ... ok
+test malformed_repository_reference_is_rejected_before_api_call ... ok
+test pull_request_reconciliation_uses_current_merge_and_head ... ok
+test pull_request_with_malformed_current_base_sha_is_not_canonical ... ok
+test pull_request_without_current_base_sha_is_not_canonical ... ok
+test unavailable_api_returns_no_canonical_snapshot ... ok
+test stale_issue_notification_returns_fresh_forgejo_state ... ok
+test unsupported_notification_never_calls_forgejo_api ... ok
+test valid_forgejo_updated_at_accepts_leap_day_fraction_and_offset ... ok
+test zero_resource_number_is_rejected_before_api_call ... ok
+test oversized_reconciliation_batch_is_rejected_before_api_calls ... ok
+
+test result: ok. 19 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/webhook_reconcile_pipeline.rs (/tmp/webhook-receiver-process-e2e-target/debug/deps/webhook_reconcile_pipeline-059c903bd86c5636)
+
+running 1 test
+test signed_webhook_journal_replay_reconciles_stale_payload_to_fixture_state ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+

@@ -1,0 +1,46 @@
+    Checking agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+error: manually reimplementing `div_ceil`
+   --> src/bin/forgejo-mission-local.rs:994:28
+    |
+994 |     let estimated_tokens = ((text.len() + 3) / 4) as u64;
+    |                            ^^^^^^^^^^^^^^^^^^^^^^ help: consider using `.div_ceil()`: `text.len().div_ceil(4)`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#manual_div_ceil
+    = note: `-D clippy::manual-div-ceil` implied by `-D warnings`
+    = help: to override `-D warnings` add `#[allow(clippy::manual_div_ceil)]`
+
+error: could not compile `agent-forge-core` (bin "forgejo-mission-local") due to 1 previous error
+warning: build failed, waiting for other jobs to finish...
+error: could not compile `agent-forge-core` (bin "forgejo-mission-local" test) due to 1 previous error
+error: `format!` in `format!` args
+    --> src/bin/../mission_012_host.rs:2781:30
+     |
+2781 |           acceptance.push_str(&format!(
+     |  ______________________________^
+2782 | |             r#"
+2783 | |
+2784 | | #[test]
+...    |
+2800 | |             control_file = format!("{:?}", control_file.to_string_lossy().as_ref()),
+2801 | |         ));
+     | |_________^
+     |
+     = help: combine the `format!(..)` arguments with the outer `format!(..)` call
+     = help: or consider changing `format!` to `format_args!`
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#format_in_format_args
+     = note: `-D clippy::format-in-format-args` implied by `-D warnings`
+     = help: to override `-D warnings` add `#[allow(clippy::format_in_format_args)]`
+
+error: could not compile `agent-forge-core` (bin "mission-012-verify-local" test) due to 1 previous error
+error: could not compile `agent-forge-core` (bin "mission-012-mcp-host" test) due to 1 previous error
+error: very complex type used. Consider factoring parts into `type` definitions
+    --> tests/webhook_receiver_process_e2e.rs:1415:16
+     |
+1415 |     responses: Vec<(u16, Value, Vec<(String, String)>)>,
+     |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#type_complexity
+     = note: `-D clippy::type-complexity` implied by `-D warnings`
+     = help: to override `-D warnings` add `#[allow(clippy::type_complexity)]`
+
+error: could not compile `agent-forge-core` (test "webhook_receiver_process_e2e") due to 1 previous error

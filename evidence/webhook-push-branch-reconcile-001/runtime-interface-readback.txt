@@ -1,0 +1,10 @@
+# Runtime readback — 25 octobre 2026
+
+Méthode : lire uniquement des propriétés systemd (`ActiveState`, `SubState`, `FragmentPath`) et la table des sockets d’écoute filtrée aux ports 8787, 9119 et 11434. Aucun argv, variable d’environnement, journal, prompt, transcript, credential ou contenu de fichier de configuration n’a été consulté. Aucun appel API/modèle n’a été émis.
+
+- `forge-gateway.service`: `ActiveState=activating`, `SubState=auto-restart`; unité `/home/pc6/.config/systemd/user/forge-gateway.service`; aucun listener observé sur 8787 pendant le contrôle.
+- `hermes-dashboard.service`: `ActiveState=active`, `SubState=running`; unité `/home/pc6/.config/systemd/user/hermes-dashboard.service`; aucun listener observé sur 9119 pendant le contrôle.
+- `ollama.service`: unité absente (`LoadState=not-found`); aucun listener observé sur 11434.
+- Résultat `ss -ltn` limité à ces ports : uniquement la ligne d’en-tête, aucun socket correspondant.
+
+Le contrôle est un instantané local, pas une preuve sur les services distants ou une autorisation. La recherche `rg -n 'impl\\s+.*AgentRuntimeV1|FixtureRuntime|AgentRuntimeV1' src tests` ne trouve aucune implémentation réelle en `src`; `src/agent_runtime.rs` expose le trait versionné et `tests/agent_runtime_contract.rs` fournit `FixtureRuntime`. Aucun runtime existant n’a été branché à cette tranche.

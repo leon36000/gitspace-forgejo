@@ -1,0 +1,24 @@
+Checkout: /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace
+HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+Branch: local/WEBHOOK-005-canonical-links
+Worktree: modified and contains many pre-existing local changes; no commit, reset, staging, or cleanup performed for this evidence-only slice.
+
+1) cargo test --offline --locked --test webhook_reconcile_contract -- --test-threads=1
+   Exit 0; 29 passed, 0 failed, 0 ignored.
+
+2) python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_reads_current_branch_after_stale_push_webhook
+   Exit 0; 1 passed, 59 filtered. Runner compiles a source snapshot and executes the ignored process test under Bubblewrap with --unshare-net --unshare-pid. The snapshot script selects Cargo.toml, Cargo.lock, src, tests and build.rs; it does not copy .claude or runtime secrets. The HTTP destination is a loopback fixture.
+
+3) python3 -m unittest -v scripts.test_cargo_license_state
+   Exit 0; 7 tests passed.
+
+4) python3 scripts/verify_cargo_license_state.py
+   Exit 0; JSON status=verified, license=null, license_file=null, publish=[], license_decision=no_license_selected, redistribution_rights=not_assessed.
+
+5) cargo fmt --all -- --check
+   Exit 0; no formatting differences.
+
+6) git diff --check
+   Exit 0; no whitespace errors in the tracked diff.
+
+The historical all-targets and clippy logs in this evidence directory were not rerun and are not counted as current results.

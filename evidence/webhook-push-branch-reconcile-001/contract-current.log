@@ -1,0 +1,37 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.90s
+     Running tests/webhook_reconcile_contract.rs (target/debug/deps/webhook_reconcile_contract-1e83f04d6aace668)
+
+running 29 tests
+test api_response_for_another_resource_is_rejected ... ok
+test api_response_url_from_another_origin_is_rejected_even_with_matching_path ... ok
+test api_response_with_the_same_number_but_another_repository_is_rejected ... ok
+test approved_review_notification_reconciles_current_pull_request_instead_of_payload_state ... ok
+test batch_reconciliation_caches_unavailable_reads_for_the_same_resource ... ok
+test batch_reconciliation_coalesces_forgejo_replays_with_new_delivery_ids ... ok
+test batch_reconciliation_ignores_out_of_order_notification_state ... ok
+test batch_reconciliation_stops_reads_when_aggregate_cache_budget_is_exhausted ... ok
+test branch_snapshot_requires_the_requested_name_and_a_valid_commit ... ok
+test deleted_or_inaccessible_push_branch_remains_inconclusive_on_api_not_found ... ok
+test envelope_mismatch_is_rejected_without_api_call ... ok
+test incomplete_api_snapshot_never_becomes_canonical ... ok
+test invalid_or_unrepresentable_forgejo_updated_at_is_rejected ... ok
+test malformed_repository_reference_is_rejected_before_api_call ... ok
+test merged_pull_request_with_malformed_merge_commit_sha_is_not_canonical ... ok
+test merged_pull_request_without_merge_commit_sha_is_not_canonical ... ok
+test open_pull_request_cannot_be_reported_as_merged ... ok
+test open_unmerged_pull_request_remains_canonical ... ok
+test oversized_reconciliation_batch_is_rejected_before_api_calls ... ok
+test pull_request_reconciliation_uses_current_merge_and_head ... ok
+test pull_request_with_malformed_current_base_sha_is_not_canonical ... ok
+test pull_request_without_current_base_sha_is_not_canonical ... ok
+test push_notification_reconciles_current_branch_head_instead_of_stale_after_sha ... ok
+test push_notifications_reject_tags_and_malformed_commit_ids_before_api_calls ... ok
+test stale_issue_notification_returns_fresh_forgejo_state ... ok
+test unavailable_api_returns_no_canonical_snapshot ... ok
+test unsupported_notification_never_calls_forgejo_api ... ok
+test valid_forgejo_updated_at_accepts_leap_day_fraction_and_offset ... ok
+test zero_resource_number_is_rejected_before_api_call ... ok
+
+test result: ok. 29 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.23s
+
