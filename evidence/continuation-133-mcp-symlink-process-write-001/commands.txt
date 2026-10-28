@@ -1,0 +1,16 @@
+HEAD and branch: recorded in tool-versions.txt
+
+Implementation and focused process verification:
+cargo test --offline --locked --test mission_012_mcp_lifecycle mcp_process_refuses_source_and_directory_symlinks_injected_after_initialization -- --exact --nocapture
+
+Formatting:
+cargo fmt --all -- --check
+
+Whitespace/diff check:
+git diff --check
+
+Manifest verification:
+python3 evidence/continuation-133-mcp-symlink-process-write-001/verify_append_only_indexes.py
+
+Source file hashes:
+sha256sum tests/mission_012_mcp_lifecycle.rs src/mission_012_host.rs src/bin/mission-012-mcp-host.rs

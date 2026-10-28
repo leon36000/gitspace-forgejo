@@ -1,0 +1,3 @@
+4dbbad3caf18c72446cae3846b3254fc626a5d18c6e435551911e926d9b14137  tests/mission_012_mcp_lifecycle.rs
+4c3ab96d6eb1639f929403993414e1bbc162a61c685fbfe4c4f65599f0bc8bce  src/mission_012_host.rs
+23ef910a9d92e719c0f7bb22ce9e458024543849bcc4d5c3d60f6d8c9967ea46  src/bin/mission-012-mcp-host.rs

@@ -1,0 +1,36 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.57s
+     Running unittests src/bin/mission-012-mcp-host.rs (target/debug/deps/mission_012_mcp_host-3e32cf331dafa499)
+
+running 28 tests
+test host::tests::base_binding_requires_a_full_lowercase_commit_and_a_plain_branch ... ok
+test host::tests::verifier_cpu_reservations_bound_the_policy_timeout_and_observed_wall_time ... ok
+test host::tests::writable_test_path_aliases_and_model_diff_are_refused ... ok
+test tests::exposes_four_exact_model_tools_and_denies_unknown_capabilities ... ok
+test tests::mcp_dispatch_preserves_the_json_rpc_id_for_durable_tool_idempotency ... ok
+test tests::mcp_line_reader_rejects_malformed_json_rpc_and_accepts_one_frame ... ok
+test tests::mcp_protocol_negotiation_is_versioned_and_rejects_unknown_versions ... ok
+test host::tests::symlinked_candidate_source_or_source_directory_is_refused_without_touching_target ... ok
+test tests::finalization_reports_failure_when_its_receipt_cannot_be_written ... ok
+test tests::receipt_write_failures_stop_the_host_for_calls_and_budget_refusals ... ok
+test host::tests::hard_linked_candidate_source_is_refused_without_touching_external_file ... ok
+test host::tests::sandbox_refuses_overlapping_writable_target_before_mutating_source_tree ... ok
+test tests::mcp_call_is_receipted_and_still_uses_the_host_path_allowlist ... ok
+test host::tests::journaled_writer_refuses_a_candidate_changed_since_its_prestate_read ... ok
+test host::tests::recovery_restores_only_an_exact_single_source_post_state ... ok
+test host::tests::recovery_refuses_a_third_source_hash_or_any_other_candidate_change ... ok
+test host::tests::verifier_materializes_a_private_snapshot_and_rejects_changed_source_bytes ... ok
+test host::tests::sandbox_blocks_nested_user_namespace_creation ... ok
+test host::tests::verifier_cannot_read_host_control_file_or_write_candidate_snapshot ... ok
+test tests::mcp_workspace_write_uses_the_journaled_fenced_writer_and_replays_exactly ... ok
+test host::tests::sandbox_mounts_have_finite_sizes ... ok
+test host::tests::independent_pair_verifier_refuses_unapproved_source_even_with_git_binding ... ok
+test host::tests::sandbox_reports_real_red_then_green_on_the_candidate ... ok
+test host::tests::host_requires_baseline_red_and_fresh_green_and_receipts_refusals ... ok
+test host::tests::shallow_smoke_green_cannot_authorize_candidate_rejected_by_protected_acceptance ... ok
+test host::tests::candidate_cannot_forge_libtest_success_with_print_and_process_exit ... ok
+test host::tests::verifier_scope_applies_cgroup_limits_and_kills_detached_children_at_deadline ... ok
+test host::tests::independent_pair_verifier_binds_fresh_red_green_to_exact_snapshots ... ok
+
+test result: ok. 28 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.60s
+

@@ -1,0 +1,14 @@
+Initial focused process test:
+cargo test --offline --locked --test webhook_receiver_process_e2e actual_receiver_rejects_duplicate_event_headers_before_append -- --exact --nocapture
+Initial format check (found one overlong assert_eq!; preserved in rustfmt-initial.log):
+cargo fmt --all -- --check
+After formatting the assertion, final focused process test:
+cargo test --offline --locked --test webhook_receiver_process_e2e actual_receiver_rejects_duplicate_event_headers_before_append -- --exact --nocapture
+Final format check:
+cargo fmt --all -- --check
+Final tracked diff whitespace check:
+git diff --check
+Append local/worktree/project evidence hashes:
+python3 evidence/continuation-136-duplicate-event-header-retry-001/append_manifests.py
+Verify local/worktree/project append-only bindings:
+python3 evidence/continuation-136-duplicate-event-header-retry-001/verify_append_only_indexes.py

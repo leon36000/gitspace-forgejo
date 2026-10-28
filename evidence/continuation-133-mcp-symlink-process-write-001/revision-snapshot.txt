@@ -1,0 +1,5 @@
+ M docs/checkpoint.md
+?? docs/refusal-evidence-matrix.md
+?? src/bin/mission-012-mcp-host.rs
+?? src/mission_012_host.rs
+?? tests/mission_012_mcp_lifecycle.rs

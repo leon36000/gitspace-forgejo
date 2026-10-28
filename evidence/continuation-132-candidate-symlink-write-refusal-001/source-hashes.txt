@@ -1,0 +1,3 @@
+4c3ab96d6eb1639f929403993414e1bbc162a61c685fbfe4c4f65599f0bc8bce  src/mission_012_host.rs
+a1dde3a25f7d0d285ba31ef4a8e2b6610d6d901f968c955e707c0508b35f41f4  docs/checkpoint.md
+8d9b7a9a600bd1dae87bb185342b23728be458291bb211e1246c29123d1aeeb0  docs/refusal-evidence-matrix.md

@@ -1,0 +1,6 @@
+cargo fmt --all -- --check
+python3 -c "import ast; from pathlib import Path; ast.parse(Path('scripts/run_webhook_reconcile_cli_e2e.py').read_text())"
+PYTHONDONTWRITEBYTECODE=1 python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_reads_corrected_header_retry_from_receiver_journal
+git diff --check
+python3 evidence/continuation-137-corrected-header-cli-readback-001/append_manifests.py
+python3 evidence/continuation-137-corrected-header-cli-readback-001/verify_append_only_indexes.py

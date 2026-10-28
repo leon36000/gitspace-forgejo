@@ -1,0 +1,22 @@
+HEAD and branch: recorded in tool-versions.txt
+
+Process-level receiver test:
+cargo test --offline --locked --test webhook_receiver_process_e2e actual_receiver_rejects_a_signed_body_with_a_mismatched_event_header_before_append -- --exact --nocapture
+
+Cargo license policy unit tests:
+python3 scripts/test_cargo_license_state.py
+
+Cargo license metadata readback:
+python3 scripts/verify_cargo_license_state.py
+
+Formatting:
+cargo fmt --all -- --check
+
+Whitespace/diff check:
+git diff --check
+
+Manifest verification:
+python3 evidence/continuation-134-webhook-event-header-retry-001/verify_append_only_indexes.py
+
+Source hashes:
+sha256sum tests/webhook_receiver_process_e2e.rs src/webhook/http.rs src/webhook.rs src/webhook/reconcile.rs Cargo.toml scripts/verify_cargo_license_state.py scripts/test_cargo_license_state.py
