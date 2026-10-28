@@ -1,0 +1,11 @@
+{
+  "collector_rerun_exit_code": 0,
+  "collector_rerun_matches_archived_snapshot_byte_for_byte": true,
+  "missing_conventional_text_assertions": "passed",
+  "missing_metadata_assertions": "passed",
+  "package_count_assertions": "passed",
+  "product_license_state_exit_code": 0,
+  "product_license_state_matches_archived_readback": true,
+  "schema_version": 1,
+  "scope": "offline metadata/file-hash inventory only; no legal assessment"
+}

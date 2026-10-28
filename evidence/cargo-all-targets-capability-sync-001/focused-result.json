@@ -1,0 +1,7 @@
+{
+  "command": "cargo test --offline --locked --test forgejo_reconcile_capabilities_e2e",
+  "exit_code": 0,
+  "passed": 3,
+  "failed": 0,
+  "ignored": 0
+}

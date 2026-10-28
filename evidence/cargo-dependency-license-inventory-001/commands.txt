@@ -1,0 +1,14 @@
+# Commands for CARGO-DEPENDENCY-LICENSE-INVENTORY-001
+# Working directory: repository root of webhook-005-workspace
+# Base revision observed: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+# All commands run locally; Cargo access was offline.
+
+cargo -V
+rustc -Vv
+python3 -V
+uname -srmo
+sha256sum Cargo.lock
+python3 scripts/verify_cargo_license_state.py
+python3 evidence/cargo-dependency-license-inventory-001/collect.py
+(cd evidence/cargo-dependency-license-inventory-001 && sha256sum -c SHA256SUMS)
+git diff --check

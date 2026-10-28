@@ -1,0 +1,21 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.36s
+     Running tests/mission_012_mcp_lifecycle.rs (target/debug/deps/mission_012_mcp_lifecycle-8222febbc3dbb2d9)
+
+running 1 test
+
+thread 'admission_handoff_is_versioned_and_host_config_has_no_copied_claim_fields' (1143266) panicked at tests/mission_012_mcp_lifecycle.rs:1251:5:
+assertion `left == right` failed
+  left: Number(2)
+ right: Number(3)
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test admission_handoff_is_versioned_and_host_config_has_no_copied_claim_fields ... FAILED
+
+failures:
+
+failures:
+    admission_handoff_is_versioned_and_host_config_has_no_copied_claim_fields
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 20 filtered out; finished in 0.03s
+
+error: test failed, to rerun pass `--test mission_012_mcp_lifecycle`

@@ -1,0 +1,6 @@
+Date: 2026-10-25 (America/Montreal)
+OS: Linux 7.0.0-1019-nvidia aarch64 GNU/Linux
+Cargo: cargo 1.95.0 (f2d3ce0bd 2026-03-21)
+rustc: rustc 1.95.0 (59807616e 2026-04-14), host aarch64-unknown-linux-gnu, LLVM 22.1.2
+Python: 3.12.3
+Cargo.lock SHA-256: bf599559dd11ff21ecc4754aa8a693966b4a9ca401153d7d7caa1f18d8995fcc

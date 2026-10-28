@@ -1,0 +1,7 @@
+# Capability discovery synchronized with native branch-delete support
+
+Le premier run de `cargo test --offline --locked --all-targets` a échoué (exit 101) dans `actual_cli_discloses_versioned_local_test_capabilities`. Le binaire annonçait `delete` après `push`, tandis que la liste attendue dans le test ne le contenait pas. L’observation est conservée sans sortie sensible dans `first-failure-observation.json`. La cause est un contrat de découverte resté en retard après l’ajout du traitement natif `delete` : `capabilities_document()` sérialise `SUPPORTED_EVENTS`.
+
+La correction ajoute `delete` à l’assertion exacte dans `tests/forgejo_reconcile_capabilities_e2e.rs`; aucun code runtime ne change. Le test ciblé passe 3/3. Le run complet suivant passe 519 tests, 0 échec et 63 ignorés sur 34 groupes. Les tests ignorés n’ont pas été exécutés par cette commande. `cargo fmt --all -- --check` et `git diff --check` passent. Toolchain: Rust/Cargo 1.95.0. Le journal complet du run global est `cargo-test.log`; les empreintes des sources courantes sont dans `source-sha256.txt`.
+
+Portée: la vérification couvre le contrat de découverte du binaire réel et la suite Rust `--all-targets` sur cet arbre local. Elle ne rejoue pas le parcours Forgejo, n’exécute pas les 63 cas ignorés ni les doctests (aucun bloc Doc-tests n’apparaît au journal), et ne démontre pas un fournisseur LLM, AgentOS ou un gain comparatif. Le worktree reste fortement modifié et non committé.

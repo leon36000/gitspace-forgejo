@@ -1,0 +1,5 @@
+AST parse OK: scripts/mission_012_test_agent_adapter.py
+AST parse OK: scripts/mission_012_sandboxed_test_adapter.py
+AST parse OK: scripts/run_mission_012_live_mcp_agent_e2e.py
+AST parse OK: scripts/run_forgejo_live_pr_merge_e2e.py
+AST parse OK: tests/test_mission_012_sandboxed_test_adapter.py

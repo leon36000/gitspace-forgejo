@@ -1,0 +1,5 @@
+host_fixture=reachable
+sandbox_network=blocked
+host_tmp_canary=hidden
+external_network_used=false
+exit=0

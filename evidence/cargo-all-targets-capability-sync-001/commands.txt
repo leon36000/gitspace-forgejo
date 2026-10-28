@@ -1,0 +1,8 @@
+Observed before test-contract update:
+  cargo test --offline --locked --all-targets  # exit 101; see first-failure-observation.json
+
+After update:
+  cargo test --offline --locked --test forgejo_reconcile_capabilities_e2e  # 3 passed
+  cargo test --offline --locked --all-targets  # 519 passed, 0 failed, 63 ignored across 34 result groups
+  cargo fmt --all -- --check
+  git diff --check

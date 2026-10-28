@@ -1,0 +1,27 @@
+{
+  "command": "cargo test --offline --locked --all-targets",
+  "exit_code": 101,
+  "failing_test": "tests/forgejo_reconcile_capabilities_e2e.rs::actual_cli_discloses_versioned_local_test_capabilities",
+  "assertion": "reconcile.supported_events",
+  "actual": [
+    "issues",
+    "issue_comment",
+    "pull_request",
+    "push",
+    "delete",
+    "pull_request_approved",
+    "pull_request_rejected",
+    "pull_request_comment"
+  ],
+  "expected_before_fix": [
+    "issues",
+    "issue_comment",
+    "pull_request",
+    "push",
+    "pull_request_approved",
+    "pull_request_rejected",
+    "pull_request_comment"
+  ],
+  "diagnosis": "Capability discovery serializes the runtime SUPPORTED_EVENTS list, which already included delete. The exact test expectation had not been updated.",
+  "change": "Added delete after push in the expected capability array; no runtime code changed."
+}

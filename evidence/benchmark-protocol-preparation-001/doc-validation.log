@@ -1,0 +1,13 @@
+$ git rev-parse HEAD
+f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+$ git diff --check -- docs/architecture.md docs/checkpoint.md
+PASS (exit 0)
+$ python3 -m json.tool evidence/benchmark-protocol-preparation-001/protocol-status.json
+PASS (exit 0)
+$ sha256sum -c evidence/benchmark-protocol-preparation-001/source-hashes.txt
+docs/architecture.md: OK
+docs/checkpoint.md: OK
+src/webhook/reconcile.rs: OK
+src/bin/forgejo-reconcile-local.rs: OK
+tests/webhook_reconcile_contract.rs: OK
+tests/webhook_receiver_process_e2e.rs: OK

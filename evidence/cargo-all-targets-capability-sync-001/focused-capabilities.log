@@ -1,0 +1,12 @@
+$ cargo test --offline --locked --test forgejo_reconcile_capabilities_e2e
+exit_code=0
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.01s
+     Running tests/forgejo_reconcile_capabilities_e2e.rs (target/debug/deps/forgejo_reconcile_capabilities_e2e-79e71d1241083922)
+
+running 3 tests
+test capability_discovery_rejects_extra_arguments ... ok
+test actual_cli_discloses_versioned_local_test_capabilities ... ok
+test preflight_rejects_fifo_input_without_blocking ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+

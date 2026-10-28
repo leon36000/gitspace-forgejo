@@ -1,0 +1,27 @@
+{
+  "cargo_lock_sha256": "bf599559dd11ff21ecc4754aa8a693966b4a9ca401153d7d7caa1f18d8995fcc",
+  "direct_registry_dependency_count": 6,
+  "interpretation": "Raw Cargo metadata and local license-file hashes only; no legal compatibility or redistribution decision.",
+  "locked_registry_package_count": 24,
+  "packages_missing_raw_license_metadata": 0,
+  "packages_without_collected_conventional_license_text": 0,
+  "product_package_state": {
+    "license": null,
+    "license_decision": "no_license_selected",
+    "license_file": null,
+    "name": "agent-forge-core",
+    "publish": [],
+    "redistribution_rights": "not_assessed",
+    "version": "0.1.0"
+  },
+  "raw_license_expression_counts": {
+    "(MIT OR Apache-2.0) AND Unicode-3.0": 1,
+    "BSD-3-Clause": 1,
+    "MIT": 2,
+    "MIT OR Apache-2.0": 18,
+    "MIT/Apache-2.0": 1,
+    "Unlicense OR MIT": 1
+  },
+  "schema_version": 1,
+  "unique_collected_license_file_sha256": 22
+}

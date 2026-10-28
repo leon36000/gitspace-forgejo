@@ -1,0 +1,6 @@
+explicit_fd_credential=visible
+close_fds_credential=not_visible
+explicit_fd_socket=reachable_across_unshare_net
+close_fds_socket=not_delivered
+external_network_used=false
+exit_code=0

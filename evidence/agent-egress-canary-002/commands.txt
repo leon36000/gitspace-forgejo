@@ -1,0 +1,12 @@
+Worktree: /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace
+Base HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+External services: none
+Credentials: synthetic marker only
+
+$ python3 evidence/agent-egress-canary-002/test_bwrap_inherited_fd_canary.py
+explicit_fd_credential=visible
+close_fds_credential=not_visible
+explicit_fd_socket=reachable_across_unshare_net
+close_fds_socket=not_delivered
+external_network_used=false
+exit_code=0

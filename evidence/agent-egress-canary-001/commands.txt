@@ -1,0 +1,16 @@
+Checkout base HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+Worktree: modified; no commit, production service, model, external endpoint, or credential was used.
+
+Command:
+python3 evidence/agent-egress-canary-001/test_bwrap_egress_canary.py
+
+Exit: 0
+Expected/observed assertions:
+host_fixture=reachable
+sandbox_network=blocked
+host_tmp_canary=hidden
+external_network_used=false
+
+The host listener binds to 127.0.0.1 on a kernel-assigned ephemeral port. The test child runs with Bubblewrap --unshare-net --unshare-pid, private tmpfs /tmp and /home, --clearenv, and only system directories needed for Python. The generated canary contains synthetic text only and is removed by the test's finally block.
+
+No test was made against Forgejo, a real credential, an agent runtime, an LLM, or an external network.

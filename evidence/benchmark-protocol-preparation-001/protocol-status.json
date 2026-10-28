@@ -1,0 +1,25 @@
+{
+  "run_id": "BENCHMARK-PROTOCOL-PREPARATION-001",
+  "date": "2026-10-26",
+  "design_state": "draft_written_locally",
+  "execution_status": "not_run",
+  "benchmark_tasks_selected": 0,
+  "model_calls": 0,
+  "model_tokens": null,
+  "model_cost_usd": null,
+  "pilot_design": {
+    "tasks": 12,
+    "independent_repetitions_per_arm_and_task": 3,
+    "arms": 2,
+    "planned_sessions": 72,
+    "is_confirmatory": false
+  },
+  "confirmatory_sample_size": null,
+  "blocking_preconditions": [
+    "real task corpus and repository rights",
+    "protected independent acceptance oracle",
+    "authorized reproducible agent runtime",
+    "verifiable provider-enforced cost limit and explicit numeric authorization"
+  ],
+  "gain_claim_supported": false
+}

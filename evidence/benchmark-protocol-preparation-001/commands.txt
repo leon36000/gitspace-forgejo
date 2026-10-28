@@ -1,0 +1,8 @@
+git rev-parse HEAD
+git status --short --untracked-files=all
+git diff --check -- docs/architecture.md docs/checkpoint.md
+python3 -m json.tool evidence/benchmark-protocol-preparation-001/protocol-status.json
+sha256sum docs/architecture.md docs/checkpoint.md src/webhook/reconcile.rs src/bin/forgejo-reconcile-local.rs tests/webhook_reconcile_contract.rs tests/webhook_receiver_process_e2e.rs
+python3 evidence/benchmark-protocol-preparation-001/update_manifests.py
+
+No model, benchmark, test suite, external service, production endpoint, or paid command was run for this documentation-only lot.
