@@ -1,0 +1,13 @@
+{
+  "active": false,
+  "events": [
+    "issues",
+    "issue_assign",
+    "issue_label",
+    "issue_milestone",
+    "issue_comment"
+  ],
+  "id": 1,
+  "secret_value_recorded": false,
+  "target_url": "http://127.0.0.1:54769/forgejo/webhook"
+}

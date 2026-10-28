@@ -1,0 +1,48 @@
+{
+  "api_version": "forgejo-rest-v1",
+  "results": [
+    {
+      "canonical_state": {
+        "base_sha": null,
+        "comment": null,
+        "head_sha": "1b0379f17672c9154570e3d0a6ec0b3732e94a24",
+        "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/src/branch/agent%2Ffixture%2Fnested%2Fe2e-proof",
+        "merge_commit_sha": null,
+        "merged": null,
+        "state": "present",
+        "updated_at": "2026-10-26T14:34:18-04:00"
+      },
+      "delivery_id": "19b3aaa1-3d35-4fdc-927e-7f539e26236b",
+      "resource": {
+        "branch": "agent/fixture/nested/e2e-proof",
+        "kind": "branch",
+        "owner": "forge-admin",
+        "repository": "agent-forge-core"
+      },
+      "verdict": "current_state_read"
+    },
+    {
+      "canonical_state": {
+        "base_sha": null,
+        "comment": null,
+        "head_sha": "1b0379f17672c9154570e3d0a6ec0b3732e94a24",
+        "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/src/branch/agent%2Ffixture%2Fnested%2Fe2e-proof",
+        "merge_commit_sha": null,
+        "merged": null,
+        "state": "present",
+        "updated_at": "2026-10-26T14:34:18-04:00"
+      },
+      "delivery_id": "ba681ed2-80d5-4ffa-aa41-2ebf8d7e217c",
+      "resource": {
+        "branch": "agent/fixture/nested/e2e-proof",
+        "kind": "branch",
+        "owner": "forge-admin",
+        "repository": "agent-forge-core"
+      },
+      "verdict": "current_state_read"
+    }
+  ],
+  "schema_version": 6,
+  "upstream_read_attempts": 1,
+  "verdict": "current_state_read"
+}

@@ -1,0 +1,59 @@
+{
+  "checks": {
+    "cargo_license_state": {
+      "decision": "no_license_selected",
+      "license": null,
+      "license_file": null,
+      "publish": [],
+      "redistribution_rights": "not_assessed",
+      "spdx_package_license_declared": "NOASSERTION"
+    },
+    "changed_python_ranges_trailing_whitespace": 0,
+    "python_ast_parse": "passed",
+    "targeted_python_tests": {
+      "failed": 0,
+      "passed": 112
+    },
+    "tracked_diff_check": "passed"
+  },
+  "commands": {
+    "cargo_license_state": "python3 scripts/verify_cargo_license_state.py",
+    "live_run": "python3 scripts/run_forgejo_live_webhook_reconcile_emitted.py --forgejo-binary /tmp/forgejo-17.0.0 --state-dir /tmp/forgejo-native-fork-pr-20261026-001 --evidence-dir evidence/forgejo-native-fork-pr-reconcile-001 --fork-pull-request",
+    "python_ast": "ast.parse on scripts/run_forgejo_live_webhook_reconcile_emitted.py and tests/test_forgejo_emitted_webhook_e2e.py",
+    "targeted_tests": "PYTHONDONTWRITEBYTECODE=1 python3 -m unittest -v tests.test_forgejo_emitted_webhook_e2e",
+    "tracked_diff_check": "git diff --check"
+  },
+  "console_sha256": "12dca21c25a83b2bee80f7914e982af1a0378e977802d56c3c2af472300411f9",
+  "forgejo": {
+    "binary_sha256": "e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7",
+    "reported_version": "forgejo version 17.0.0+gitea-1.22.0 (release name 17.0.0) built with GNU Make 4.4.1, go1.26.9 : bindata, timetzdata, sqlite, sqlite_unlock_notify",
+    "source_build_commit": null
+  },
+  "head_commit": "f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0",
+  "manifest_scope": {
+    "excluded_generated_cache": "__pycache__/*.pyc created by py_compile; retained, not used as evidence, and constrained by the verifier to regular non-symlink .pyc files",
+    "indexed": "all regular files directly in this evidence directory, plus the documented source and documentation paths in the append-only indexes"
+  },
+  "pull_request": {
+    "base_repository_full_name": "forge-admin/agent-forge-core",
+    "base_sha": "e6ff856f778f026adb9b537afc0bd4e5e0b7a50a",
+    "fork_metadata": {
+      "fork": true,
+      "full_name": "forge-review-author/agent-forge-core",
+      "parent_full_name": "forge-admin/agent-forge-core",
+      "private": true
+    },
+    "from_fork": true,
+    "head_repository_full_name": "forge-review-author/agent-forge-core",
+    "head_sha": "d6cd2f8b973a1d02618f457dcee11072d7d9216e",
+    "merged_after_run": false,
+    "number": 2,
+    "state_after_run": "closed"
+  },
+  "result_sha256": "12dca21c25a83b2bee80f7914e982af1a0378e977802d56c3c2af472300411f9",
+  "source_sha256": {
+    "scripts/run_forgejo_live_webhook_reconcile_emitted.py": "2d7529de9a78911057d4e89db0ba67297ba4cf28adddc943c231e9ceff7c516d",
+    "tests/test_forgejo_emitted_webhook_e2e.py": "41f19a582a3f41594fc59293b60608be58dad6610b0f2ee5e95cef7e9dab02d9"
+  },
+  "targeted_python_log_sha256": "309ef023c4fe59d89d6bdc23b83568c1363a339b0a54964757a8c962c291424a"
+}

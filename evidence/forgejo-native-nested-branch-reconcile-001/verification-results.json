@@ -1,0 +1,75 @@
+{
+  "commands": [
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "tests.test_forgejo_emitted_webhook_e2e",
+        "-v"
+      ],
+      "duration_ms": 1011,
+      "exit_code": 0,
+      "output_file": "python-webhook-suite.log"
+    },
+    {
+      "command": [
+        "cargo",
+        "test",
+        "--offline",
+        "--locked",
+        "--test",
+        "webhook_reconcile_contract",
+        "branch_create_notification_reconciles_current_head_instead_of_payload_sha"
+      ],
+      "duration_ms": 20,
+      "exit_code": 0,
+      "output_file": "rust-branch-contract.log"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/verify_cargo_license_state.py"
+      ],
+      "duration_ms": 49,
+      "exit_code": 0,
+      "output_file": "cargo-license-verify.json"
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "scripts.test_cargo_license_state",
+        "-v"
+      ],
+      "duration_ms": 42,
+      "exit_code": 0,
+      "output_file": "cargo-license-tests.log"
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "py_compile",
+        "scripts/run_forgejo_native_branch_delete_webhook_reconcile.py",
+        "tests/test_forgejo_emitted_webhook_e2e.py"
+      ],
+      "duration_ms": 28,
+      "exit_code": 0,
+      "output_file": "pycompile-diff-check.log"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "duration_ms": 24,
+      "exit_code": 0,
+      "output_file": "git-diff-check.log"
+    }
+  ],
+  "schema_version": 1,
+  "status": "passed"
+}

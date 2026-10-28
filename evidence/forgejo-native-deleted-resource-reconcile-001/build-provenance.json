@@ -1,0 +1,17 @@
+{
+  "bubblewrap_sha256": "cd6b143283b464baf078ab09ca19dadc5bcc2423b833c4f9dd7e83f9ba1b640b",
+  "bubblewrap_version": "bubblewrap 0.9.0",
+  "built_executable_sha256": {
+    "forgejo-reconcile-local": "f33d2529fd705f6872aebc7768e219a45f01dc832879cccf350ac2623365f3a9",
+    "forgejo-webhook-local": "c44e0f39cfae2b1f78374aa6386f54f02483a14a7882cc962590c962629f9c06"
+  },
+  "cargo_sha256": "959e627e4d7b8d8b618d32ae7af795ce9f1544656822eb9d407b4fd76a4f53b0",
+  "policy": "Bubblewrap allowlist; --unshare-net and --unshare-pid; clear environment; read-only staged source, registry and Rust sysroot; --offline --locked",
+  "rustc_sha256": "db0c9200524653ed0ff20a2950b49402879887ad4932c4de18606df9de5cf3d9",
+  "staged_registry_tree_sha256": "a5ea9d0f4ab9d3e50cc22b0b22e0c5b93274462e61193b074e0a2173e5e46e30",
+  "staged_source_tree_sha256": "7be0239b032fbfc11820fa1974deeeb9ae24bccb7e0f798ebb651d8cf54b90fe",
+  "toolchain_versions": {
+    "cargo": "cargo 1.95.0 (f2d3ce0bd 2026-03-21)",
+    "rustc": "rustc 1.95.0 (59807616e 2026-04-14)"
+  }
+}

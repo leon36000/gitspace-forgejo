@@ -1,0 +1,9 @@
+{
+  "branch": "agent/fixture/nested/e2e-proof",
+  "delivery_id": "19b3aaa1-3d35-4fdc-927e-7f539e26236b",
+  "event": "create",
+  "ref": "agent/fixture/nested/e2e-proof",
+  "ref_type": "branch",
+  "sequence": 1,
+  "sha": "a752c3bf514b101df35a619d47a06b89b36e00c2"
+}

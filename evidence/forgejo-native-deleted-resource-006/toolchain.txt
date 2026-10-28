@@ -1,0 +1,10 @@
+date: 2026-10-25
+platform: Linux-7.0.0-1019-nvidia-aarch64-with-glibc2.39
+python: Python 3.12.3
+rustc: rustc 1.95.0 (59807616e 2026-04-14)
+cargo: cargo 1.95.0 (f2d3ce0bd 2026-03-21)
+bubblewrap: bubblewrap 0.9.0
+forgejo: forgejo version 17.0.0+gitea-1.22.0 (release name 17.0.0) built with GNU Make 4.4.1, go1.26.9 : bindata, timetzdata, sqlite, sqlite_unlock_notify
+forgejo_binary_sha256: e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7
+forgejo_source_commit_examined: 0d791421f85ca13a63b665053d81ea765fbbc571
+forgejo_binary_build_commit_established: False

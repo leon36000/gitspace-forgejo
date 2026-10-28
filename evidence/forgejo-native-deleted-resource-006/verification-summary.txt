@@ -1,0 +1,8 @@
+Targeted Python module: 27 tests passed, 0 failures.
+Python compilation: runner and test module compile.
+Whitespace inspection: no CR bytes or trailing spaces/tabs in the two changed Python files.
+Forgejo native deleted-resource runner: exit 0; report verdict passed; expected reconciler exit status 1/inconclusive.
+Local Rust binaries: built offline and locked under Bubblewrap with network/PID namespaces; see build-provenance.json and cargo-build.log.
+Cargo license metadata: license=null, license_file=null, publish=[], decision=no_license_selected, redistribution_rights=not_assessed.
+Local evidence manifest: regenerated after report files were written and verified with sha256sum -c.
+Full Python suite and full Rust suite were not rerun for this narrow slice.

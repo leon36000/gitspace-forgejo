@@ -1,0 +1,10 @@
+{
+  "decision": "no_license_selected",
+  "license": null,
+  "license_file": null,
+  "meaning": "No license selected; publishing disabled; redistribution rights not assessed.",
+  "package": "agent-forge-core",
+  "publish": [],
+  "redistribution_rights": "not_assessed",
+  "version": "0.1.0"
+}
