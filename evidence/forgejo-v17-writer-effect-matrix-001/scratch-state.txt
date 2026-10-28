@@ -1,0 +1,8 @@
+origin=https://codeberg.org/forgejo/forgejo.git
+tag=v17.0.0
+HEAD=0d791421f85ca13a63b665053d81ea765fbbc571
+commit_date=2026-10-15T10:43:25+02:00
+subject=[v17.0/forgejo] i18n: backport of translation updates from Codeberg Translate (#14798)
+worktree_status_entries=58
+modified_tracked_go_files=19
+HEAD_expected_base_contract_matches=none (git grep ExpectedBase HEAD -- routers services modules cmd returned no matches)

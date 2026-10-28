@@ -1,0 +1,2 @@
+GOTOOLCHAIN=local GOPROXY=off /tmp/forgejo-v17-toolchain/go/bin/go test -count=1 -v -timeout=20m -tags sqlite ./tests/integration -run '^TestPOCExpectedBasePolicyMakesWebBranchRestoreFailClosed$'
+/tmp/forgejo-v17-toolchain/go/bin/gofmt -d tests/integration/branch_expected_base_restore_policy_poc_test.go

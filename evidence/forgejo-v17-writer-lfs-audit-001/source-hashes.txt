@@ -1,0 +1,24 @@
+# Hachages des sources du scratch Forgejo
+
+HEAD officiel : `0d791421f85ca13a63b665053d81ea765fbbc571`. Les SHA-256 portent sur les fichiers actuels modifiés/non suivis; le blob est celui de HEAD ou `UNTRACKED_AT_BASE`.
+
+| Fichier | SHA-256 courant | Blob HEAD |
+|---|---|---|
+| `cmd/hook.go` | `c03b264a65d6b914d72c7e2f83875456e5c985e9d7b1bf8678a489e6ad13048b` | `d3eb4dea890a8584f638dcee9b57f55ca53464b6` |
+| `models/repo/repo_unit.go` | `0c299df82bf423549af0ad5c78a83df26be96cb392c9f3abb64d0740410456fb` | `8846c142b0f6cb85c2d2e09832e7f44f5fcc1fac` |
+| `modules/private/hook.go` | `c7413c866aa393f93faf57f07895dd1ef353110156c7dc6f4c3501b491c4334c` | `e289f14bba9b14145e4b79861053fb4cb240d24b` |
+| `modules/repository/env.go` | `de8c547cc6db6904de7961e93085365cbb5febaab1ca4c788132395e83768503` | `110f6ca67407f10aa9e868667e151d3c0eaf5225` |
+| `modules/structs/repo.go` | `d1e5864b5d95436822d64a58b3ee1ed64eec7a778fd279fe2cdf677536c84a1f` | `504429f8375c04fe45fdac1a088be6c1131d8a30` |
+| `routers/api/v1/repo/file.go` | `80807599a13ef2f000cca5e10ff66d34453daed51b8fde97a489e8bedb5743ee` | `ca82083db78ba59c03ff8c83fa4036c71f1044a0` |
+| `routers/private/hook_post_receive.go` | `df1f7c1154100bc9742b2985832601963e2f6039584b7183b7958dd2411291cc` | `933960ca203d12b99f6636a33b5b8a20084ad62f` |
+| `routers/private/hook_pre_receive.go` | `080fdca033f43d9c2f7adc48551bfaf32cb2a7aeed0bdaedb94ad24b8524c70e` | `0c603d0c4b0793b1878c37face67c9dd9c0e80e5` |
+| `services/automerge/automerge.go` | `a42e902b10cb862e576d73332683273cd29a1efa35e9dde6b9be98b7b88c3f37` | `21a33a1382167f6376225b26b17dd7d0590c8aa3` |
+| `services/pull/lfs.go` | `6666c7ddf119827c9099d3922928f0d57fec0d902d59e8c2fdda829ca579b8a8` | `6600e73792784778f845d4a6967a540865232bd5` |
+| `services/pull/merge.go` | `c6e724ffbf8f2ab76712b44f8d0674ebf2ef2fe59e5a3e0114042dcbe42d933e` | `5f5ce92a1db24123322fd75c574239530d05b5e4` |
+| `services/pull/merge_manual.go` | `b62e9d23a3d530402dd1842fb60aa3fdff2e41c914459578349fb04ece53aa69` | `ed780d6ebd69ecdb30cedfc9482ac63ba4bce204` |
+| `services/pull/update_rebase.go` | `69a74bf7e345fe751c0b39bb31bddd5ff3353bd87258164e6a7239ab448d79a6` | `b12613985aa217befbea476611031c551df35a22` |
+| `services/repository/branch.go` | `456f3f5312c99a2303196f374371dc3202908bfaee5a6980403f30e1053778ad` | `e2897ccdeeb4ce094931eb64589f380a17a777da` |
+| `services/repository/files/update.go` | `6c67d5ff0ad7bdd9312d98921b635d23efe21d1787868156c719d9816d4ced3e` | `0c23ff52703152bdd2f0d0fd6c24b88dcb153dbb` |
+| `services/repository/files/upload.go` | `c0f07f26c544031694a460648da49a2aaaa96b2bfdff96cba123631f41283ee2` | `77e4b38037a9b187764263ab4724fcc983d4c785` |
+| `services/pull/lfs_recovery.go` | `bb3f76bf664d95e4eb8786e37f29abb6e66f71994636b7955913d9cee100abe4` | `UNTRACKED_AT_BASE` |
+| `tests/integration/lfs_api_ack_order_poc_test.go` | `3799a30bdc90e7bc2bbdd70d0f915255563a9f0ed50442998ecdbf950a80be7a` | `UNTRACKED_AT_BASE` |

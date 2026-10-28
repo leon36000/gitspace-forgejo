@@ -1,0 +1,74 @@
+{
+  "batch_result": {
+    "api_version": "forgejo-rest-v1",
+    "results": [
+      {
+        "delivery_id": "f0d76d9c-77ef-477f-84a4-e12a1f824b35",
+        "error": {
+          "action": "verify the issue number and repository access; HTTP 404 does not distinguish a missing issue from an inaccessible repository",
+          "code": "resource_not_found",
+          "details": {
+            "journal_source_hash": "668dbc379bf9723a1fa7d942a58e9e1515f03e3a3126c9b59ae942c73f8506f5",
+            "journal_source_sequence": 1,
+            "resource": {
+              "kind": "issue",
+              "number": 1,
+              "owner": "forge-admin",
+              "repository": "agent-forge-core"
+            },
+            "upstream": "forgejo"
+          },
+          "retryable": false
+        },
+        "verdict": "inconclusive"
+      },
+      {
+        "delivery_id": "6e8d45b9-ba92-4c03-8dd6-c1d889e2108f",
+        "error": {
+          "action": "verify the issue number and repository access; HTTP 404 does not distinguish a missing issue from an inaccessible repository",
+          "code": "resource_not_found",
+          "details": {
+            "journal_source_hash": "6ac564067581eb8113f85fed3c6b0d12719d1517b08a6efdc5be26178afeb0ea",
+            "journal_source_sequence": 2,
+            "resource": {
+              "kind": "issue",
+              "number": 1,
+              "owner": "forge-admin",
+              "repository": "agent-forge-core"
+            },
+            "upstream": "forgejo"
+          },
+          "retryable": false
+        },
+        "verdict": "inconclusive"
+      }
+    ],
+    "schema_version": 9,
+    "upstream_read_attempts": 1,
+    "verdict": "inconclusive"
+  },
+  "credential_consumed": true,
+  "credential_recorded": false,
+  "credential_source": "read_only_private_inherited_pipe_fd",
+  "delivery_ids": [
+    "f0d76d9c-77ef-477f-84a4-e12a1f824b35",
+    "6e8d45b9-ba92-4c03-8dd6-c1d889e2108f"
+  ],
+  "exit_status": 1,
+  "independent_api_observation": {
+    "credential_role": "read_only_non_admin",
+    "request_count": 1,
+    "requests": [
+      {
+        "method": "GET",
+        "path": "/api/v1/repos/forge-admin/agent-forge-core/issues/1",
+        "reader_credential_match": true,
+        "status": 404
+      }
+    ]
+  },
+  "journal_unchanged": true,
+  "owner_readback_confirms_issue_exists": true,
+  "permission_change": "owner_deleted_read_only_collaborator",
+  "validated_result_count": 2
+}

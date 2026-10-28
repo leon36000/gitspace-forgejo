@@ -1,0 +1,87 @@
+services/federation/user_activity.go:50:		if err := deliveryQueue.Push(deliveryQueueItem{
+services/federation/person_service.go:55:	return deliveryQueue.Push(deliveryQueueItem{
+services/stats/stats.go:115:		err := statsQueue.Push(recalc.string())
+services/federation/person_inbox_follow.go:61:	if err := deliveryQueue.Push(deliveryQueueItem{
+services/mirror/mirror_push.go:278:		if err := git.Push(ctx, path, git.PushOptions{
+services/mirror/queue.go:66:	return mirrorQueue.Push(&SyncRequest{
+services/task/task.go:68:	return taskQueue.Push(task)
+services/task/task.go:163:	return taskQueue.Push(migratingTask)
+services/repository/archiver/archiver.go:324:	return archiverQueue.Push(request)
+services/repository/push.go:73:	return pushQueue.Push(opts)
+routers/web/admin/queue_tester.go:73:						_ = testQueue.Push(cnt)
+services/repository/init.go:75:	if stdout, _, err := git.NewCommand(ctx, "push", "origin").AddDynamicArguments("HEAD:" + defaultBranch).
+services/mailer/mailer.go:446:			_ = mailQueue.Push(msg)
+services/repository/sync_fork.go:31:	err = git.Push(ctx, repo.BaseRepo.RepoPath(), git.PushOptions{
+services/release/tag.go:39:	return tagSyncQueue.Push(&TagSyncOptions{
+services/repository/branch.go:354:	if err := git.Push(ctx, repo.RepoPath(), git.PushOptions{
+services/repository/branch.go:368:func RenameBranch(ctx context.Context, repo *repo_model.Repository, doer *user_model.User, gitRepo *git.Repository, from, to string) (string, error) {
+services/repository/branch.go:386:	if err := git_model.RenameBranch(ctx, repo, from, to, func(ctx context.Context, isDefault bool) error {
+services/repository/branch.go:387:		err2 := gitRepo.RenameBranch(from, to)
+services/repository/branch.go:436:func DeleteBranch(ctx context.Context, doer *user_model.User, repo *repo_model.Repository, gitRepo *git.Repository, branchName string) error {
+services/repository/branch.go:474:		return gitRepo.DeleteBranch(branchName, git.DeleteBranchOptions{
+services/repository/branch.go:524:	if err := DeleteBranch(ctx, doer, pr.HeadRepo, headRepo, pr.HeadBranch); err != nil {
+services/repository/branch.go:554:	return branchSyncQueue.Push(&BranchSyncOptions{
+services/repository/files/upload.go:161:	if err := t.Push(doer, commitHash, opts.NewBranch, false); err != nil {
+services/pull/pull.go:136:		if err1 := baseGitRepo.RemoveReference(pr.GetGitRefName()); err1 != nil {
+services/pull/pull.go:454:	return baseRepo.SetReference(pr.GetGitRefName(), fetchedCommitID)
+services/pull/pull.go:465:	_, _, err = git.NewCommand(ctx, "update-ref").AddDynamicArguments(pr.GetGitRefName(), pr.HeadCommitID).RunStdString(&git.RunOpts{Dir: pr.BaseRepo.RepoPath()})
+services/repository/files/update.go:284:	if err := t.Push(doer, commitHash, opts.NewBranch, opts.ForceOverwriteNewBranch); err != nil {
+services/pull/merge_prepare.go:279:		if err := git.NewCommand(ctx, "update-ref", "--stdin").Run(opts); err != nil {
+services/repository/files/cherry_pick.go:124:	if err := t.Push(doer, commitHash, opts.NewBranch, false); err != nil {
+services/pull/check.go:53:	err = prPatchCheckerQueue.Push(strconv.FormatInt(pr.ID, 10))
+services/pull/check.go:277:			if err := prPatchCheckerQueue.Push(strconv.FormatInt(prID, 10)); err != nil {
+services/repository/files/temp_repo.go:304:	if err := git.Push(t.ctx, t.basePath, git.PushOptions{
+modules/queue/workergroup.go:116:		if err := q.Push(item); err != nil {
+services/repository/files/patch.go:194:	if err := t.Push(doer, commitHash, opts.NewBranch, false); err != nil {
+services/pull/merge.go:404:	pushCmd := git.NewCommand(ctx, "push", "origin").AddDynamicArguments(baseBranch + ":" + git.BranchPrefix + pr.BaseBranch)
+services/pull/update_rebase.go:85:	pushCmd := git.NewCommand(ctx, "push", "-f", "head_repo").
+services/uinotification/notify.go:76:	_ = ns.issueQueue.Push(opts)
+services/uinotification/notify.go:86:		_ = ns.issueQueue.Push(opts)
+services/uinotification/notify.go:91:	_ = ns.issueQueue.Push(issueNotificationOpts{
+services/uinotification/notify.go:96:		_ = ns.issueQueue.Push(issueNotificationOpts{
+services/uinotification/notify.go:105:	_ = ns.issueQueue.Push(issueNotificationOpts{
+services/uinotification/notify.go:118:		_ = ns.issueQueue.Push(issueNotificationOpts{
+services/uinotification/notify.go:126:	_ = ns.issueQueue.Push(issueNotificationOpts{
+services/uinotification/notify.go:163:		_ = ns.issueQueue.Push(issueNotificationOpts{
+services/uinotification/notify.go:179:	_ = ns.issueQueue.Push(opts)
+services/uinotification/notify.go:189:		_ = ns.issueQueue.Push(opts)
+services/uinotification/notify.go:195:		_ = ns.issueQueue.Push(issueNotificationOpts{
+services/uinotification/notify.go:210:	_ = ns.issueQueue.Push(opts)
+services/uinotification/notify.go:219:	_ = ns.issueQueue.Push(opts)
+services/uinotification/notify.go:234:		_ = ns.issueQueue.Push(opts)
+services/uinotification/notify.go:250:		_ = ns.issueQueue.Push(opts)
+services/wiki/wiki.go:86:	if err := gitRepo.RenameBranch(from, to); err != nil {
+services/wiki/wiki.go:259:	if err := git.Push(gitRepo.Ctx, basePath, git.PushOptions{
+services/wiki/wiki.go:377:	if err := git.Push(gitRepo.Ctx, basePath, git.PushOptions{
+modules/git/fetch.go:68:		if err := repo.RemoveReference(localReference); err != nil {
+modules/git/repo_commit.go:560:func (repo *Repository) SetReference(name, commitID string) error {
+modules/git/repo_commit.go:561:	_, _, err := NewCommand(repo.Ctx, "update-ref").AddDynamicArguments(name, commitID).RunStdString(&RunOpts{Dir: repo.Path})
+modules/git/repo_commit.go:566:func (repo *Repository) RemoveReference(name string) error {
+modules/git/repo_commit.go:567:	_, _, err := NewCommand(repo.Ctx, "update-ref", "--no-deref", "-d").AddDynamicArguments(name).RunStdString(&RunOpts{Dir: repo.Path})
+modules/git/repo_branch.go:106:func (repo *Repository) DeleteBranch(name string, opts DeleteBranchOptions) error {
+modules/git/repo_branch.go:155:func (repo *Repository) RenameBranch(from, to string) error {
+services/packages/cargo/index.go:305:	return t.Push(doer, commitHash, repo.DefaultBranch, false)
+routers/web/repo/pull.go:463:				if err := ctx.Repo.GitRepo.SetReference(pull.GetGitRefName(), commitSHA); err != nil {
+routers/web/repo/pull.go:1868:	if err := repo_service.DeleteBranch(ctx, ctx.Doer, pr.HeadRepo, gitRepo, pr.HeadBranch); err != nil {
+modules/git/repo.go:227:	cmd.AddArguments("push")
+routers/web/repo/setting/protected_branch.go:319:	msg, err := repository.RenameBranch(ctx, ctx.Repo.Repository, ctx.Doer, ctx.Repo.GitRepo, form.From, form.To)
+services/webhook/webhook.go:136:	err := hookQueue.Push(taskID)
+services/migrations/gitea_uploader.go:754:		_, _, err = git.NewCommand(g.ctx, "update-ref", "--no-deref").AddDynamicArguments(pr.GetGitRefName(), pr.Head.SHA).RunStdString(&git.RunOpts{Dir: g.repo.RepoPath()})
+services/migrations/gitea_uploader.go:777:			_, _, err = git.NewCommand(g.ctx, "update-ref", "--no-deref").AddDynamicArguments(pr.GetGitRefName(), pr.Head.SHA).RunStdString(&git.RunOpts{Dir: g.repo.RepoPath()})
+services/issue/issue.go:187:		if err := gitRepo.RemoveReference(fmt.Sprintf("%s%d/head", git.PullPrefix, issue.PullRequest.Index)); err != nil {
+services/migrations/dump.go:453:			_, _, err := git.NewCommand(g.ctx, "update-ref", "--no-deref").AddDynamicArguments(pr.GetGitRefName(), pr.Head.SHA).RunStdString(&git.RunOpts{Dir: g.gitPath()})
+services/migrations/dump.go:483:			_, _, err := git.NewCommand(g.ctx, "update-ref", "--no-deref").AddDynamicArguments(pr.GetGitRefName(), pr.Head.SHA).RunStdString(&git.RunOpts{Dir: g.gitPath()})
+services/migrations/dump.go:542:		_, _, err := git.NewCommand(g.ctx, "update-ref", "--no-deref").AddDynamicArguments(pr.GetGitRefName(), pr.Head.SHA).RunStdString(&git.RunOpts{Dir: g.gitPath()})
+services/feed/action.go:172:		err := notificationQueue.Push(notificationQueueItem{
+modules/indexer/stats/queue.go:42:	if err := statsQueue.Push(repo.ID); err != nil {
+modules/indexer/stats/indexer.go:81:			if err := statsQueue.Push(id); err != nil {
+modules/indexer/issues/util.go:187:		err := issueIndexerQueue.Push(data)
+modules/indexer/code/indexer.go:278:	if err := indexerQueue.Push(indexData); err != nil {
+modules/indexer/code/indexer.go:336:			if err := indexerQueue.Push(&internal.IndexerData{RepoID: id}); err != nil {
+services/shared/automerge/automerge.go:26:	if err := PRAutoMergeQueue.Push(fmt.Sprintf("%d_%s", pr.ID, sha)); err != nil && !errors.Is(err, queue.ErrAlreadyInQueue) {
+routers/web/repo/branch.go:93:	if err := repo_service.DeleteBranch(ctx, ctx.Doer, ctx.Repo.Repository, ctx.Repo.GitRepo, branchName); err != nil {
+routers/web/repo/branch.go:133:	if err := git.Push(ctx, ctx.Repo.Repository.RepoPath(), git.PushOptions{
+services/actions/job_emitter.go:37:	err := jobEmitterQueue.Push(&jobUpdate{
+routers/api/v1/repo/branch.go:92:func DeleteBranch(ctx *context.APIContext) {
+routers/api/v1/repo/branch.go:152:	if err := repo_service.DeleteBranch(ctx, ctx.Doer(), ctx.Repo().Repository, ctx.Repo().GitRepo, branchName); err != nil {
+routers/api/v1/repo/branch.go:446:	msg, err := repo_service.RenameBranch(ctx, repo, ctx.Doer(), ctx.Repo().GitRepo, oldName, opt.Name)

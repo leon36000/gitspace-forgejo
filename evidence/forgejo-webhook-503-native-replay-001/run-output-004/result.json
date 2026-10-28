@@ -1,0 +1,922 @@
+{
+  "cross_origin_replay_attempt": {
+    "created_task": false,
+    "hook_task_count_after_attempt": 1,
+    "http_status": 403
+  },
+  "forgejo_version": "17.0.0+gitea-1.22.0",
+  "hook_id": 1,
+  "inactive_hook_replay": {
+    "reason": "this run isolates recovery from an actual 503; inactive-hook behavior is tested separately",
+    "skipped": true
+  },
+  "initial_delivery": {
+    "delivery_id": "6e28add7-b4df-48f4-a7eb-e5ec60ec052b",
+    "http_status": 503,
+    "is_delivered": true,
+    "is_succeed": false,
+    "queue_pressure_used": true,
+    "receiver_journal_records": 0,
+    "retry_after": "5"
+  },
+  "issue_number": 1,
+  "journal_records_after_mixed_recovery_and_inactive_replay": null,
+  "journal_records_after_overload_native_replay": 4,
+  "limitations": [
+    "Forgejo, receiver, and the trusted local reconciliation CLI share the host UID; no agent process is run in this scenario.",
+    "The Forgejo webhook task database is inspected read-only as local test evidence and is not a supported public API.",
+    "When receiver-overload mode is enabled, Forgejo receives one actual HTTP 503 with Retry-After and its owner manually invokes native replay, which creates a new delivery UUID; automatic retries are not established.",
+    "No production Forgejo, external service, model, AgentOS, token-cost measurement or production credential is used."
+  ],
+  "mixed_resource_reconciliation": {
+    "correction": {
+      "action": "owner_created_issue_after_observed_404",
+      "created_issue_readback": {
+        "assets": [],
+        "assignee": null,
+        "assignees": null,
+        "body": "This issue is created after the observed 404.",
+        "closed_at": null,
+        "comments": 0,
+        "created_at": "2026-10-27T03:00:37-04:00",
+        "due_date": null,
+        "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/issues/2",
+        "id": 2,
+        "is_locked": false,
+        "labels": [],
+        "milestone": null,
+        "number": 2,
+        "original_author": "",
+        "original_author_id": 0,
+        "pin_order": 0,
+        "pull_request": null,
+        "ref": "",
+        "repository": {
+          "full_name": "forge-admin/agent-forge-core",
+          "id": 1,
+          "name": "agent-forge-core",
+          "owner": "forge-admin"
+        },
+        "state": "open",
+        "title": "Create the missing mixed-batch resource",
+        "updated_at": "2026-10-27T03:00:37-04:00",
+        "url": "http://127.0.0.1:3130/api/v1/repos/forge-admin/agent-forge-core/issues/2",
+        "user": {
+          "active": true,
+          "avatar_url": "http://127.0.0.1:3130/avatars/b15dd049cd92cf7c19a15640b8623681",
+          "created": "2026-10-27T03:00:25-04:00",
+          "description": "",
+          "email": "forge-admin@local.invalid",
+          "followers_count": 0,
+          "following_count": 0,
+          "full_name": "",
+          "html_url": "http://127.0.0.1:3130/forge-admin",
+          "id": 1,
+          "is_admin": true,
+          "language": "en-US",
+          "last_login": "2026-10-27T03:00:35-04:00",
+          "location": "",
+          "login": "forge-admin",
+          "login_name": "",
+          "prohibit_login": false,
+          "pronouns": "",
+          "restricted": false,
+          "source_id": 0,
+          "starred_repos_count": 0,
+          "username": "forge-admin",
+          "visibility": "public",
+          "website": ""
+        }
+      },
+      "native_webhook_event": {
+        "action": "opened",
+        "delivery_id": "084f4f47-7701-4618-a473-497ec027f00f",
+        "event": "issues",
+        "issue_number": 2,
+        "payload_state": "open",
+        "sequence": 4
+      },
+      "native_webhook_task": {
+        "event_type": "issues",
+        "hook_id": 1,
+        "is_delivered": true,
+        "is_succeed": true,
+        "payload_semantic_sha256": "f5ba94c88a6332c7e574add1903de81ec278c6692748ac95015da180e2a511a7",
+        "payload_sha256": "1b320a091607a981f8c67139519b44699f9e6c9f714b1ddd46df50f4b09094a6",
+        "response_status": 202,
+        "task_id": 4,
+        "uuid": "084f4f47-7701-4618-a473-497ec027f00f"
+      }
+    },
+    "delivery_ids_reused_unchanged": [
+      "mixed-resource-84c0fb002e493185468af2eb9a4a7e85",
+      "f0d76d9c-77ef-477f-84a4-e12a1f824b35"
+    ],
+    "first_attempt": {
+      "api_observation": {
+        "credential_role": "read_only_non_admin",
+        "request_count": 2,
+        "requests": [
+          {
+            "method": "GET",
+            "path": "/api/v1/repos/forge-admin/agent-forge-core/issues/2",
+            "reader_credential_match": true,
+            "status": 404
+          },
+          {
+            "method": "GET",
+            "path": "/api/v1/repos/forge-admin/agent-forge-core/issues/1",
+            "reader_credential_match": true,
+            "status": 200
+          }
+        ]
+      },
+      "batch_result": {
+        "api_version": "forgejo-rest-v1",
+        "results": [
+          {
+            "delivery_id": "mixed-resource-84c0fb002e493185468af2eb9a4a7e85",
+            "error": {
+              "action": "verify the issue number and repository access; HTTP 404 does not distinguish a missing issue from an inaccessible repository",
+              "code": "resource_not_found",
+              "details": {
+                "journal_source_hash": "d0bafc738de8db4f26a2adc6f678171257131a3391370628db5fbff197889605",
+                "journal_source_sequence": 3,
+                "resource": {
+                  "kind": "issue",
+                  "number": 2,
+                  "owner": "forge-admin",
+                  "repository": "agent-forge-core"
+                },
+                "upstream": "forgejo"
+              },
+              "retryable": false
+            },
+            "verdict": "inconclusive"
+          },
+          {
+            "canonical_state": {
+              "base_sha": null,
+              "comment": null,
+              "head_sha": null,
+              "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/issues/1",
+              "merge_commit_sha": null,
+              "merged": null,
+              "requested_reviewers": null,
+              "requested_reviewers_teams": null,
+              "state": "open",
+              "updated_at": "2026-10-27T03:00:26-04:00",
+              "work_item_content": {
+                "body": "One failed delivery is replayed natively.",
+                "source": "current_forgejo_issue_api",
+                "title": "Native webhook replay test",
+                "trust": "untrusted_user_content"
+              }
+            },
+            "delivery_id": "f0d76d9c-77ef-477f-84a4-e12a1f824b35",
+            "resource": {
+              "kind": "issue",
+              "number": 1,
+              "owner": "forge-admin",
+              "repository": "agent-forge-core"
+            },
+            "verdict": "current_state_read"
+          }
+        ],
+        "schema_version": 9,
+        "upstream_read_attempts": 2,
+        "verdict": "inconclusive"
+      },
+      "exit_status": 1,
+      "issue_one_independent_readback": {
+        "assets": [],
+        "assignee": null,
+        "assignees": null,
+        "body": "One failed delivery is replayed natively.",
+        "closed_at": null,
+        "comments": 0,
+        "created_at": "2026-10-27T03:00:26-04:00",
+        "due_date": null,
+        "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/issues/1",
+        "id": 1,
+        "is_locked": false,
+        "labels": [],
+        "milestone": null,
+        "number": 1,
+        "original_author": "",
+        "original_author_id": 0,
+        "pin_order": 0,
+        "pull_request": null,
+        "ref": "",
+        "repository": {
+          "full_name": "forge-admin/agent-forge-core",
+          "id": 1,
+          "name": "agent-forge-core",
+          "owner": "forge-admin"
+        },
+        "state": "open",
+        "title": "Native webhook replay test",
+        "updated_at": "2026-10-27T03:00:26-04:00",
+        "url": "http://127.0.0.1:3130/api/v1/repos/forge-admin/agent-forge-core/issues/1",
+        "user": {
+          "active": false,
+          "avatar_url": "http://127.0.0.1:3130/avatars/b15dd049cd92cf7c19a15640b8623681",
+          "created": "2026-10-27T03:00:25-04:00",
+          "description": "",
+          "email": "forge-admin@local.invalid",
+          "followers_count": 0,
+          "following_count": 0,
+          "full_name": "",
+          "html_url": "http://127.0.0.1:3130/forge-admin",
+          "id": 1,
+          "is_admin": false,
+          "language": "",
+          "last_login": "0001-01-01T00:00:00Z",
+          "location": "",
+          "login": "forge-admin",
+          "login_name": "",
+          "prohibit_login": false,
+          "pronouns": "",
+          "restricted": false,
+          "source_id": 0,
+          "starred_repos_count": 0,
+          "username": "forge-admin",
+          "visibility": "public",
+          "website": ""
+        }
+      },
+      "journal_unchanged": true,
+      "validated_result_count": 2
+    },
+    "missing_resource_event": {
+      "delivery_id": "mixed-resource-84c0fb002e493185468af2eb9a4a7e85",
+      "forgejo_native_delivery": false,
+      "issue_number": 2,
+      "journal_sequence": 3,
+      "payload_sha256": "ecb10b9c52c0693491e18b25345549f1cc5fc2a1d758f01ddd0314e847b9cfc7",
+      "receiver_status": 202,
+      "source": "HMAC-signed synthetic issue event sent directly to the local receiver"
+    },
+    "recovery": {
+      "api_observation": {
+        "credential_role": "read_only_non_admin",
+        "request_count": 2,
+        "requests": [
+          {
+            "method": "GET",
+            "path": "/api/v1/repos/forge-admin/agent-forge-core/issues/2",
+            "reader_credential_match": true,
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/api/v1/repos/forge-admin/agent-forge-core/issues/1",
+            "reader_credential_match": true,
+            "status": 200
+          }
+        ]
+      },
+      "batch_result": {
+        "api_version": "forgejo-rest-v1",
+        "results": [
+          {
+            "canonical_state": {
+              "base_sha": null,
+              "comment": null,
+              "head_sha": null,
+              "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/issues/2",
+              "merge_commit_sha": null,
+              "merged": null,
+              "requested_reviewers": null,
+              "requested_reviewers_teams": null,
+              "state": "open",
+              "updated_at": "2026-10-27T03:00:37-04:00",
+              "work_item_content": {
+                "body": "This issue is created after the observed 404.",
+                "source": "current_forgejo_issue_api",
+                "title": "Create the missing mixed-batch resource",
+                "trust": "untrusted_user_content"
+              }
+            },
+            "delivery_id": "mixed-resource-84c0fb002e493185468af2eb9a4a7e85",
+            "resource": {
+              "kind": "issue",
+              "number": 2,
+              "owner": "forge-admin",
+              "repository": "agent-forge-core"
+            },
+            "verdict": "current_state_read"
+          },
+          {
+            "canonical_state": {
+              "base_sha": null,
+              "comment": null,
+              "head_sha": null,
+              "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/issues/1",
+              "merge_commit_sha": null,
+              "merged": null,
+              "requested_reviewers": null,
+              "requested_reviewers_teams": null,
+              "state": "open",
+              "updated_at": "2026-10-27T03:00:26-04:00",
+              "work_item_content": {
+                "body": "One failed delivery is replayed natively.",
+                "source": "current_forgejo_issue_api",
+                "title": "Native webhook replay test",
+                "trust": "untrusted_user_content"
+              }
+            },
+            "delivery_id": "f0d76d9c-77ef-477f-84a4-e12a1f824b35",
+            "resource": {
+              "kind": "issue",
+              "number": 1,
+              "owner": "forge-admin",
+              "repository": "agent-forge-core"
+            },
+            "verdict": "current_state_read"
+          }
+        ],
+        "schema_version": 9,
+        "upstream_read_attempts": 2,
+        "verdict": "current_state_read"
+      },
+      "exit_status": 0,
+      "issue_readbacks": {
+        "1": {
+          "assets": [],
+          "assignee": null,
+          "assignees": null,
+          "body": "One failed delivery is replayed natively.",
+          "closed_at": null,
+          "comments": 0,
+          "created_at": "2026-10-27T03:00:26-04:00",
+          "due_date": null,
+          "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/issues/1",
+          "id": 1,
+          "is_locked": false,
+          "labels": [],
+          "milestone": null,
+          "number": 1,
+          "original_author": "",
+          "original_author_id": 0,
+          "pin_order": 0,
+          "pull_request": null,
+          "ref": "",
+          "repository": {
+            "full_name": "forge-admin/agent-forge-core",
+            "id": 1,
+            "name": "agent-forge-core",
+            "owner": "forge-admin"
+          },
+          "state": "open",
+          "title": "Native webhook replay test",
+          "updated_at": "2026-10-27T03:00:26-04:00",
+          "url": "http://127.0.0.1:3130/api/v1/repos/forge-admin/agent-forge-core/issues/1",
+          "user": {
+            "active": false,
+            "avatar_url": "http://127.0.0.1:3130/avatars/b15dd049cd92cf7c19a15640b8623681",
+            "created": "2026-10-27T03:00:25-04:00",
+            "description": "",
+            "email": "forge-admin@local.invalid",
+            "followers_count": 0,
+            "following_count": 0,
+            "full_name": "",
+            "html_url": "http://127.0.0.1:3130/forge-admin",
+            "id": 1,
+            "is_admin": false,
+            "language": "",
+            "last_login": "0001-01-01T00:00:00Z",
+            "location": "",
+            "login": "forge-admin",
+            "login_name": "",
+            "prohibit_login": false,
+            "pronouns": "",
+            "restricted": false,
+            "source_id": 0,
+            "starred_repos_count": 0,
+            "username": "forge-admin",
+            "visibility": "public",
+            "website": ""
+          }
+        },
+        "2": {
+          "assets": [],
+          "assignee": null,
+          "assignees": null,
+          "body": "This issue is created after the observed 404.",
+          "closed_at": null,
+          "comments": 0,
+          "created_at": "2026-10-27T03:00:37-04:00",
+          "due_date": null,
+          "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/issues/2",
+          "id": 2,
+          "is_locked": false,
+          "labels": [],
+          "milestone": null,
+          "number": 2,
+          "original_author": "",
+          "original_author_id": 0,
+          "pin_order": 0,
+          "pull_request": null,
+          "ref": "",
+          "repository": {
+            "full_name": "forge-admin/agent-forge-core",
+            "id": 1,
+            "name": "agent-forge-core",
+            "owner": "forge-admin"
+          },
+          "state": "open",
+          "title": "Create the missing mixed-batch resource",
+          "updated_at": "2026-10-27T03:00:37-04:00",
+          "url": "http://127.0.0.1:3130/api/v1/repos/forge-admin/agent-forge-core/issues/2",
+          "user": {
+            "active": false,
+            "avatar_url": "http://127.0.0.1:3130/avatars/b15dd049cd92cf7c19a15640b8623681",
+            "created": "2026-10-27T03:00:25-04:00",
+            "description": "",
+            "email": "forge-admin@local.invalid",
+            "followers_count": 0,
+            "following_count": 0,
+            "full_name": "",
+            "html_url": "http://127.0.0.1:3130/forge-admin",
+            "id": 1,
+            "is_admin": false,
+            "language": "",
+            "last_login": "0001-01-01T00:00:00Z",
+            "location": "",
+            "login": "forge-admin",
+            "login_name": "",
+            "prohibit_login": false,
+            "pronouns": "",
+            "restricted": false,
+            "source_id": 0,
+            "starred_repos_count": 0,
+            "username": "forge-admin",
+            "visibility": "public",
+            "website": ""
+          }
+        }
+      },
+      "journal_unchanged": true,
+      "same_delivery_ids": true,
+      "validated_result_count": 2
+    },
+    "resource_order": [
+      2,
+      1
+    ]
+  },
+  "native_replay": {
+    "authenticated_as": "forge-admin",
+    "binding": {
+      "all_payloads_unchanged": true,
+      "deliveries": [
+        {
+          "http_status": 202,
+          "new_delivery_id": true,
+          "original_uuid": "6e28add7-b4df-48f4-a7eb-e5ec60ec052b",
+          "payload_semantic_sha256": "eb8821568a2cd6769f25f9fc8bd207f5eb039d9ee5f64366b19d4e9c166d9417",
+          "payload_unchanged": true,
+          "replay_uuid": "f0d76d9c-77ef-477f-84a4-e12a1f824b35",
+          "sequence": 1
+        },
+        {
+          "http_status": 202,
+          "new_delivery_id": true,
+          "original_uuid": "6e28add7-b4df-48f4-a7eb-e5ec60ec052b",
+          "payload_semantic_sha256": "eb8821568a2cd6769f25f9fc8bd207f5eb039d9ee5f64366b19d4e9c166d9417",
+          "payload_unchanged": true,
+          "replay_uuid": "6e8d45b9-ba92-4c03-8dd6-c1d889e2108f",
+          "sequence": 2
+        }
+      ],
+      "distinct_new_delivery_ids": true,
+      "original_uuid": "6e28add7-b4df-48f4-a7eb-e5ec60ec052b",
+      "replay_count": 2,
+      "replay_uuids": [
+        "f0d76d9c-77ef-477f-84a4-e12a1f824b35",
+        "6e8d45b9-ba92-4c03-8dd6-c1d889e2108f"
+      ]
+    },
+    "idempotent_for_repeated_post": false,
+    "post_count_for_same_original_uuid": 2,
+    "post_results": [
+      {
+        "http_status": 303,
+        "redirect_path": "/forge-admin/agent-forge-core/settings/hooks/1"
+      },
+      {
+        "http_status": 303,
+        "redirect_path": "/forge-admin/agent-forge-core/settings/hooks/1"
+      }
+    ],
+    "route": "POST /{owner}/{repo}/settings/hooks/{id}/replay/{uuid}"
+  },
+  "no_session_replay_attempt": {
+    "created_task": false,
+    "hook_task_count_after_attempt": 1,
+    "http_status": 303,
+    "redirect_path": "/user/login"
+  },
+  "overload_recovery": {
+    "failed_delivery_id": "6e28add7-b4df-48f4-a7eb-e5ec60ec052b",
+    "forgejo_task_status": 503,
+    "manual_native_replay_required": true,
+    "partial_requests_timed_out": 4,
+    "queued_probes_drained": 16,
+    "receiver_retry_after_seconds": 5,
+    "rejected_attempt_journaled": false
+  },
+  "private_404_reconciliation": {
+    "batch_result": {
+      "api_version": "forgejo-rest-v1",
+      "results": [
+        {
+          "delivery_id": "f0d76d9c-77ef-477f-84a4-e12a1f824b35",
+          "error": {
+            "action": "verify the issue number and repository access; HTTP 404 does not distinguish a missing issue from an inaccessible repository",
+            "code": "resource_not_found",
+            "details": {
+              "journal_source_hash": "668dbc379bf9723a1fa7d942a58e9e1515f03e3a3126c9b59ae942c73f8506f5",
+              "journal_source_sequence": 1,
+              "resource": {
+                "kind": "issue",
+                "number": 1,
+                "owner": "forge-admin",
+                "repository": "agent-forge-core"
+              },
+              "upstream": "forgejo"
+            },
+            "retryable": false
+          },
+          "verdict": "inconclusive"
+        },
+        {
+          "delivery_id": "6e8d45b9-ba92-4c03-8dd6-c1d889e2108f",
+          "error": {
+            "action": "verify the issue number and repository access; HTTP 404 does not distinguish a missing issue from an inaccessible repository",
+            "code": "resource_not_found",
+            "details": {
+              "journal_source_hash": "6ac564067581eb8113f85fed3c6b0d12719d1517b08a6efdc5be26178afeb0ea",
+              "journal_source_sequence": 2,
+              "resource": {
+                "kind": "issue",
+                "number": 1,
+                "owner": "forge-admin",
+                "repository": "agent-forge-core"
+              },
+              "upstream": "forgejo"
+            },
+            "retryable": false
+          },
+          "verdict": "inconclusive"
+        }
+      ],
+      "schema_version": 9,
+      "upstream_read_attempts": 1,
+      "verdict": "inconclusive"
+    },
+    "credential_consumed": true,
+    "credential_recorded": false,
+    "credential_source": "read_only_private_inherited_pipe_fd",
+    "delivery_ids": [
+      "f0d76d9c-77ef-477f-84a4-e12a1f824b35",
+      "6e8d45b9-ba92-4c03-8dd6-c1d889e2108f"
+    ],
+    "exit_status": 1,
+    "independent_api_observation": {
+      "credential_role": "read_only_non_admin",
+      "request_count": 1,
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/repos/forge-admin/agent-forge-core/issues/1",
+          "reader_credential_match": true,
+          "status": 404
+        }
+      ]
+    },
+    "journal_unchanged": true,
+    "owner_readback_confirms_issue_exists": true,
+    "permission_change": "owner_deleted_read_only_collaborator",
+    "validated_result_count": 2
+  },
+  "private_404_recovery": {
+    "batch_result": {
+      "api_version": "forgejo-rest-v1",
+      "results": [
+        {
+          "canonical_state": {
+            "base_sha": null,
+            "comment": null,
+            "head_sha": null,
+            "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/issues/1",
+            "merge_commit_sha": null,
+            "merged": null,
+            "requested_reviewers": null,
+            "requested_reviewers_teams": null,
+            "state": "open",
+            "updated_at": "2026-10-27T03:00:26-04:00",
+            "work_item_content": {
+              "body": "One failed delivery is replayed natively.",
+              "source": "current_forgejo_issue_api",
+              "title": "Native webhook replay test",
+              "trust": "untrusted_user_content"
+            }
+          },
+          "delivery_id": "f0d76d9c-77ef-477f-84a4-e12a1f824b35",
+          "resource": {
+            "kind": "issue",
+            "number": 1,
+            "owner": "forge-admin",
+            "repository": "agent-forge-core"
+          },
+          "verdict": "current_state_read"
+        },
+        {
+          "canonical_state": {
+            "base_sha": null,
+            "comment": null,
+            "head_sha": null,
+            "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/issues/1",
+            "merge_commit_sha": null,
+            "merged": null,
+            "requested_reviewers": null,
+            "requested_reviewers_teams": null,
+            "state": "open",
+            "updated_at": "2026-10-27T03:00:26-04:00",
+            "work_item_content": {
+              "body": "One failed delivery is replayed natively.",
+              "source": "current_forgejo_issue_api",
+              "title": "Native webhook replay test",
+              "trust": "untrusted_user_content"
+            }
+          },
+          "delivery_id": "6e8d45b9-ba92-4c03-8dd6-c1d889e2108f",
+          "resource": {
+            "kind": "issue",
+            "number": 1,
+            "owner": "forge-admin",
+            "repository": "agent-forge-core"
+          },
+          "verdict": "current_state_read"
+        }
+      ],
+      "schema_version": 9,
+      "upstream_read_attempts": 1,
+      "verdict": "current_state_read"
+    },
+    "credential_consumed": true,
+    "credential_recorded": false,
+    "credential_source": "read_only_private_inherited_pipe_fd",
+    "delivery_ids": [
+      "f0d76d9c-77ef-477f-84a4-e12a1f824b35",
+      "6e8d45b9-ba92-4c03-8dd6-c1d889e2108f"
+    ],
+    "exit_status": 0,
+    "independent_api_observation": {
+      "credential_role": "read_only_non_admin",
+      "request_count": 1,
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/repos/forge-admin/agent-forge-core/issues/1",
+          "reader_credential_match": true,
+          "status": 200
+        }
+      ]
+    },
+    "journal_unchanged": true,
+    "owner_readback_confirms_issue_exists": true,
+    "permission_change": "owner_restored_read_only_collaborator",
+    "same_delivery_ids_after_permission_restore": true,
+    "validated_result_count": 2
+  },
+  "process_cleanup": {
+    "api_observation_proxy_listener_addresses_after_stop": [],
+    "api_observation_proxy_stop": {
+      "stopped": true
+    },
+    "api_observation_proxy_thread_exited": true,
+    "cleanup_failure": null,
+    "forgejo_stop": {
+      "returncode": 0,
+      "started": true,
+      "stop_action": "terminate",
+      "stopped": true
+    },
+    "http_proxy_listener_addresses_after_stop": [],
+    "http_proxy_stop": {
+      "stopped": true
+    },
+    "http_proxy_thread_exited": true,
+    "receiver_stops": [
+      {
+        "listener_addresses_after_stop": [],
+        "phase": "before_native_replay",
+        "stop": {
+          "returncode": 0,
+          "started": true,
+          "stop_action": "terminate",
+          "stopped": true
+        }
+      },
+      {
+        "listener_addresses_after_stop": [],
+        "phase": "final_cleanup",
+        "stop": {
+          "returncode": 0,
+          "started": true,
+          "stop_action": "terminate",
+          "stopped": true
+        }
+      }
+    ],
+    "tracked_processes_exited": true,
+    "webhook_deactivated_before_server_stop": true
+  },
+  "proxy_delivery_attempts": [
+    {
+      "delivery_id": "6e28add7-b4df-48f4-a7eb-e5ec60ec052b",
+      "event_type": "issues",
+      "forwarded_retry_after": "5",
+      "forwarded_status": 503,
+      "method": "POST",
+      "path": "/forgejo/webhook",
+      "request_body_length": 5682,
+      "request_body_sha256": "5f90fffef78760c02cad4afc3adce23c3f713ea5b2aee2a2b3ec7dc2bb0ad990"
+    },
+    {
+      "delivery_id": "f0d76d9c-77ef-477f-84a4-e12a1f824b35",
+      "event_type": "issues",
+      "forwarded_retry_after": null,
+      "forwarded_status": 202,
+      "method": "POST",
+      "path": "/forgejo/webhook",
+      "request_body_length": 5682,
+      "request_body_sha256": "5f90fffef78760c02cad4afc3adce23c3f713ea5b2aee2a2b3ec7dc2bb0ad990"
+    },
+    {
+      "delivery_id": "6e8d45b9-ba92-4c03-8dd6-c1d889e2108f",
+      "event_type": "issues",
+      "forwarded_retry_after": null,
+      "forwarded_status": 202,
+      "method": "POST",
+      "path": "/forgejo/webhook",
+      "request_body_length": 5682,
+      "request_body_sha256": "5f90fffef78760c02cad4afc3adce23c3f713ea5b2aee2a2b3ec7dc2bb0ad990"
+    },
+    {
+      "delivery_id": "084f4f47-7701-4618-a473-497ec027f00f",
+      "event_type": "issues",
+      "forwarded_retry_after": null,
+      "forwarded_status": 202,
+      "method": "POST",
+      "path": "/forgejo/webhook",
+      "request_body_length": 5704,
+      "request_body_sha256": "1b320a091607a981f8c67139519b44699f9e6c9f714b1ddd46df50f4b09094a6"
+    }
+  ],
+  "proxy_delivery_binding": {
+    "delivery_count": 4,
+    "delivery_ids": [
+      "6e28add7-b4df-48f4-a7eb-e5ec60ec052b",
+      "f0d76d9c-77ef-477f-84a4-e12a1f824b35",
+      "6e8d45b9-ba92-4c03-8dd6-c1d889e2108f",
+      "084f4f47-7701-4618-a473-497ec027f00f"
+    ],
+    "raw_payload_hashes": [
+      "5f90fffef78760c02cad4afc3adce23c3f713ea5b2aee2a2b3ec7dc2bb0ad990",
+      "5f90fffef78760c02cad4afc3adce23c3f713ea5b2aee2a2b3ec7dc2bb0ad990",
+      "5f90fffef78760c02cad4afc3adce23c3f713ea5b2aee2a2b3ec7dc2bb0ad990",
+      "1b320a091607a981f8c67139519b44699f9e6c9f714b1ddd46df50f4b09094a6"
+    ],
+    "raw_payload_hashes_match": true
+  },
+  "receiver_events": [
+    {
+      "action": "opened",
+      "delivery_id": "f0d76d9c-77ef-477f-84a4-e12a1f824b35",
+      "event": "issues",
+      "issue_number": 1,
+      "payload_state": "open",
+      "sequence": 1
+    },
+    {
+      "action": "opened",
+      "delivery_id": "6e8d45b9-ba92-4c03-8dd6-c1d889e2108f",
+      "event": "issues",
+      "issue_number": 1,
+      "payload_state": "open",
+      "sequence": 2
+    }
+  ],
+  "replay_reconciliation": {
+    "batch_result": {
+      "api_version": "forgejo-rest-v1",
+      "results": [
+        {
+          "canonical_state": {
+            "base_sha": null,
+            "comment": null,
+            "head_sha": null,
+            "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/issues/1",
+            "merge_commit_sha": null,
+            "merged": null,
+            "requested_reviewers": null,
+            "requested_reviewers_teams": null,
+            "state": "open",
+            "updated_at": "2026-10-27T03:00:26-04:00",
+            "work_item_content": {
+              "body": "One failed delivery is replayed natively.",
+              "source": "current_forgejo_issue_api",
+              "title": "Native webhook replay test",
+              "trust": "untrusted_user_content"
+            }
+          },
+          "delivery_id": "f0d76d9c-77ef-477f-84a4-e12a1f824b35",
+          "resource": {
+            "kind": "issue",
+            "number": 1,
+            "owner": "forge-admin",
+            "repository": "agent-forge-core"
+          },
+          "verdict": "current_state_read"
+        },
+        {
+          "canonical_state": {
+            "base_sha": null,
+            "comment": null,
+            "head_sha": null,
+            "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/issues/1",
+            "merge_commit_sha": null,
+            "merged": null,
+            "requested_reviewers": null,
+            "requested_reviewers_teams": null,
+            "state": "open",
+            "updated_at": "2026-10-27T03:00:26-04:00",
+            "work_item_content": {
+              "body": "One failed delivery is replayed natively.",
+              "source": "current_forgejo_issue_api",
+              "title": "Native webhook replay test",
+              "trust": "untrusted_user_content"
+            }
+          },
+          "delivery_id": "6e8d45b9-ba92-4c03-8dd6-c1d889e2108f",
+          "resource": {
+            "kind": "issue",
+            "number": 1,
+            "owner": "forge-admin",
+            "repository": "agent-forge-core"
+          },
+          "verdict": "current_state_read"
+        }
+      ],
+      "schema_version": 9,
+      "upstream_read_attempts": 1,
+      "verdict": "current_state_read"
+    },
+    "canonical_issue_readback": {
+      "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/issues/1",
+      "number": 1,
+      "state": "open",
+      "updated_at": "2026-10-27T03:00:26-04:00"
+    },
+    "credential_consumed": true,
+    "credential_recorded": false,
+    "credential_source": "read_only_private_inherited_pipe_fd",
+    "delivery_ids": [
+      "f0d76d9c-77ef-477f-84a4-e12a1f824b35",
+      "6e8d45b9-ba92-4c03-8dd6-c1d889e2108f"
+    ],
+    "exit_status": 0,
+    "independent_api_observation": {
+      "credential_role": "read_only_non_admin",
+      "request_count": 1,
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/repos/forge-admin/agent-forge-core/issues/1",
+          "reader_credential_match": true,
+          "status": 200
+        }
+      ]
+    },
+    "journal_unchanged": true,
+    "validated_result_count": 2
+  },
+  "repository": "forge-admin/agent-forge-core",
+  "schema_version": 1,
+  "task_count_observation": {
+    "hook_task_count_before_manual_replay": 1,
+    "http_request_count_observed": true,
+    "observation_seconds": 6.0,
+    "proxy_request_count_after_observation": 1
+  },
+  "unknown_uuid_replay_attempt": {
+    "created_task": false,
+    "hook_task_count_after_attempt": 1,
+    "http_status": 404
+  },
+  "verdict": "passed"
+}

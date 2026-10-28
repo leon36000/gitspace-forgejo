@@ -1,0 +1,54 @@
+{
+  "forgejo_binary_sha256": "e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7",
+  "forgejo_version": "forgejo version 17.0.0+gitea-1.22.0 (release name 17.0.0) built with GNU Make 4.4.1, go1.26.9 : bindata, timetzdata, sqlite, sqlite_unlock_notify",
+  "head": "0d791421f85ca13a63b665053d81ea765fbbc571",
+  "source_files": {
+    "models/webhook/hooktask.go": {
+      "blob": "f5f73842aedd7093972bef35efb032ef4a126c74",
+      "sha256": "650d5fe0fe01112d76ae389bc69350205b0538abb7e57a22a0dad8b77d85aa06",
+      "unchanged_from_head": true
+    },
+    "routers/web/repo/setting/webhook.go": {
+      "blob": "e4c550a530b89ec695372757e2549c2e56a8214a",
+      "sha256": "031c075a8a04f89ec215b4438f2273b0b8f4344b5b2b3c706fc4f043f43bfa70",
+      "unchanged_from_head": true
+    },
+    "services/webhook/deliver.go": {
+      "blob": "23aca803451d441f3d0784724d47a1e9ad8e0905",
+      "sha256": "f67b7b0f4b0ba90d4616c0ad64649877ee3a4fd6a3b2d2641e9914148f1af26e",
+      "unchanged_from_head": true
+    },
+    "services/webhook/shared/payloader.go": {
+      "blob": "65c1a4cf99fb12357f216a138aa0563978dd06fe",
+      "sha256": "a2d3649a7cdc6414dda108acb9c5904a7b7a1194fe77c4579390a211803e22f8",
+      "unchanged_from_head": true
+    },
+    "services/webhook/webhook.go": {
+      "blob": "f163971d460d08bd74c53cbdcf8eb85fb1f1d0c5",
+      "sha256": "207514263c9fd88356544489f973cd9d0317e611d845b052870c5736dc0093c0",
+      "unchanged_from_head": true
+    }
+  },
+  "toolchain": [
+    {
+      "command": "python3 --version",
+      "output": "Python 3.12.3",
+      "status": 0
+    },
+    {
+      "command": "rustc --version",
+      "output": "rustc 1.95.0 (59807616e 2026-04-14)",
+      "status": 0
+    },
+    {
+      "command": "cargo --version",
+      "output": "cargo 1.95.0 (f2d3ce0bd 2026-03-21)",
+      "status": 0
+    },
+    {
+      "command": "git --version",
+      "output": "git version 2.43.0",
+      "status": 0
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+ff8d9ef792ed374a75b4b4b8d81ca2aff329f509f8feae383e9c913a533c7ace  scratch test: tests/integration/branch_expected_base_restore_policy_poc_test.go
+23886cf5928edbe8d57e3d9e8ba80e0ec08a36e9ef787d12d7c83607f24756b3  official base object HEAD:routers/web/repo/branch.go
+456f3f5312c99a2303196f374371dc3202908bfaee5a6980403f30e1053778ad  official base object HEAD:services/repository/branch.go
+d58505ebb556f11608afa5d09b31a0d425ade84c2aeebdf8c1d9f2615b458678  official base object HEAD:models/git/branch.go
+080fdca033f43d9c2f7adc48551bfaf32cb2a7aeed0bdaedb94ad24b8524c70e  experimental scratch hook: routers/private/hook_pre_receive.go (modified scratch file)

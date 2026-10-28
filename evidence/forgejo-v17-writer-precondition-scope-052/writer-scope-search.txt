@@ -1,0 +1,74 @@
+Current symbol inventory:
+cmd/hook.go:209:		ExpectedBaseCommitID:            os.Getenv(repo_module.EnvExpectedBaseCommitID),
+models/git/lfs.go:128:	ExpectedBaseCommitID string             `xorm:"VARCHAR(64) NOT NULL"`
+models/git/lfs.go:185:		if existing.TargetRef != pending.TargetRef || existing.ExpectedBaseCommitID != pending.ExpectedBaseCommitID || existing.CandidateCommitID != pending.CandidateCommitID || existing.Size != pending.Size {
+models/git/lfs.go:196:			existing.ExpectedBaseCommitID == pending.ExpectedBaseCommitID &&
+models/git/lfs_test.go:35:		ExpectedBaseCommitID: strings.Repeat("b", 40),
+models/git/lfs_test.go:66:		ExpectedBaseCommitID: strings.Repeat("b", 40),
+models/git/lfs_test.go:81:		ExpectedBaseCommitID: strings.Repeat("b", 40),
+models/git/lfs_test.go:118:		ExpectedBaseCommitID: strings.Repeat("7", 40),
+models/repo/repo_unit.go:154:	RequireExpectedBaseCommitID   bool
+modules/private/hook.go:38:	ExpectedBaseCommitID            string
+modules/repository/env.go:28:	EnvExpectedBaseCommitID = "GITEA_EXPECTED_BASE_COMMIT_ID"
+modules/repository/env.go:48:// WithExpectedBaseCommitID replaces any inherited value so a daemon-level
+modules/repository/env.go:50:func WithExpectedBaseCommitID(env []string, commitID string) []string {
+modules/repository/env.go:51:	return WithEnvValue(env, EnvExpectedBaseCommitID, commitID)
+routers/private/hook_pre_receive.go:260:	if !ctx.assertExpectedBaseCommitID(oldCommitID, branchName) {
+routers/private/hook_pre_receive.go:499:// assertExpectedBaseCommitID enforces the repository's opt-in CAS policy at
+routers/private/hook_pre_receive.go:502:func (ctx *preReceiveContext) assertExpectedBaseCommitID(oldCommitID, branchName string) bool {
+routers/private/hook_pre_receive.go:515:	if !pullUnit.PullRequestsConfig().RequireExpectedBaseCommitID {
+routers/private/hook_pre_receive.go:518:	expected := ctx.opts.ExpectedBaseCommitID
+services/pull/merge.go:365:		ExpectedBaseCommitID: mergeBaseSHA,
+services/pull/merge.go:403:	mergeCtx.env = repo_module.WithExpectedBaseCommitID(mergeCtx.env, mergeBaseSHA)
+services/pull/merge_manual.go:36:		if prConfig.RequireExpectedBaseCommitID {
+services/pull/merge_manual.go:105:		if !config.AutodetectManualMerge || config.RequireExpectedBaseCommitID {
+services/pull/update_rebase.go:51:		ExpectedBaseCommitID: expectedHeadCommitID,
+services/pull/update_rebase.go:101:	pushEnv = repo_module.WithExpectedBaseCommitID(pushEnv, expectedHeadCommitID)
+tests/integration/git_push_test.go:58:func TestGitPushExpectedBaseCommitIDRequired(t *testing.T) {
+tests/integration/git_push_test.go:93:		pullConfig.RequireExpectedBaseCommitID = true
+tests/integration/git_push_test.go:99:		t.Setenv(repo_module.EnvExpectedBaseCommitID, expectedBase)
+tests/integration/git_push_test.go:109:		t.Setenv(repo_module.EnvExpectedBaseCommitID, currentBase)
+tests/integration/git_push_test.go:131:		pullConfig.RequireExpectedBaseCommitID = true
+tests/integration/pull_merge_test.go:155:func TestPullMergeExpectedBaseCommitID(t *testing.T) {
+tests/integration/pull_merge_test.go:167:		pullConfig.RequireExpectedBaseCommitID = true
+
+Expected-base spelling across source tree:
+cmd/hook.go:209:		ExpectedBaseCommitID:            os.Getenv(repo_module.EnvExpectedBaseCommitID),
+models/git/lfs_test.go:35:		ExpectedBaseCommitID: strings.Repeat("b", 40),
+models/git/lfs_test.go:66:		ExpectedBaseCommitID: strings.Repeat("b", 40),
+models/git/lfs_test.go:81:		ExpectedBaseCommitID: strings.Repeat("b", 40),
+models/git/lfs_test.go:118:		ExpectedBaseCommitID: strings.Repeat("7", 40),
+models/git/lfs.go:128:	ExpectedBaseCommitID string             `xorm:"VARCHAR(64) NOT NULL"`
+models/git/lfs.go:185:		if existing.TargetRef != pending.TargetRef || existing.ExpectedBaseCommitID != pending.ExpectedBaseCommitID || existing.CandidateCommitID != pending.CandidateCommitID || existing.Size != pending.Size {
+models/git/lfs.go:196:			existing.ExpectedBaseCommitID == pending.ExpectedBaseCommitID &&
+models/repo/repo_unit.go:154:	RequireExpectedBaseCommitID   bool
+tests/integration/git_push_test.go:58:func TestGitPushExpectedBaseCommitIDRequired(t *testing.T) {
+tests/integration/git_push_test.go:93:		pullConfig.RequireExpectedBaseCommitID = true
+tests/integration/git_push_test.go:99:		t.Setenv(repo_module.EnvExpectedBaseCommitID, expectedBase)
+tests/integration/git_push_test.go:109:		t.Setenv(repo_module.EnvExpectedBaseCommitID, currentBase)
+tests/integration/git_push_test.go:131:		pullConfig.RequireExpectedBaseCommitID = true
+modules/repository/env.go:28:	EnvExpectedBaseCommitID = "GITEA_EXPECTED_BASE_COMMIT_ID"
+modules/repository/env.go:48:// WithExpectedBaseCommitID replaces any inherited value so a daemon-level
+modules/repository/env.go:50:func WithExpectedBaseCommitID(env []string, commitID string) []string {
+modules/repository/env.go:51:	return WithEnvValue(env, EnvExpectedBaseCommitID, commitID)
+tests/integration/branch_expected_base_policy_poc_test.go:44:		pullConfig.RequireExpectedBaseCommitID = true
+tests/integration/pull_merge_test.go:155:func TestPullMergeExpectedBaseCommitID(t *testing.T) {
+tests/integration/pull_merge_test.go:167:		pullConfig.RequireExpectedBaseCommitID = true
+routers/private/hook_pre_receive.go:260:	if !ctx.assertExpectedBaseCommitID(oldCommitID, branchName) {
+routers/private/hook_pre_receive.go:499:// assertExpectedBaseCommitID enforces the repository's opt-in CAS policy at
+routers/private/hook_pre_receive.go:502:func (ctx *preReceiveContext) assertExpectedBaseCommitID(oldCommitID, branchName string) bool {
+routers/private/hook_pre_receive.go:515:	if !pullUnit.PullRequestsConfig().RequireExpectedBaseCommitID {
+routers/private/hook_pre_receive.go:518:	expected := ctx.opts.ExpectedBaseCommitID
+modules/private/hook.go:38:	ExpectedBaseCommitID            string
+services/pull/lfs_recovery_multiprocess_poc_test.go:76:		ExpectedBaseCommitID: strings.Repeat("b", 40),
+services/pull/merge.go:365:		ExpectedBaseCommitID: mergeBaseSHA,
+services/pull/merge.go:403:	mergeCtx.env = repo_module.WithExpectedBaseCommitID(mergeCtx.env, mergeBaseSHA)
+services/pull/lfs_recovery.go:45:		if exists && (operation.targetRef != row.TargetRef || operation.expectedBaseCommitID != row.ExpectedBaseCommitID || operation.candidateCommitID != row.CandidateCommitID) {
+services/pull/lfs_recovery.go:50:			expectedBaseCommitID: row.ExpectedBaseCommitID,
+services/pull/update_rebase.go:51:		ExpectedBaseCommitID: expectedHeadCommitID,
+services/pull/update_rebase.go:101:	pushEnv = repo_module.WithExpectedBaseCommitID(pushEnv, expectedHeadCommitID)
+services/pull/lfs_recovery_test.go:46:		ExpectedBaseCommitID: strings.Repeat("b", 40),
+services/pull/lfs_recovery_test.go:91:		ExpectedBaseCommitID: strings.Repeat("b", 40),
+services/pull/lfs_recovery_test.go:134:		ExpectedBaseCommitID: strings.Repeat("b", 40),
+services/pull/merge_manual.go:36:		if prConfig.RequireExpectedBaseCommitID {
+services/pull/merge_manual.go:105:		if !config.AutodetectManualMerge || config.RequireExpectedBaseCommitID {

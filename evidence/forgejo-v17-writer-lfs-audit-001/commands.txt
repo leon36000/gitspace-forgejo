@@ -1,0 +1,20 @@
+# Commandes d’inspection — audit Forgejo v17.0.0
+
+Dossier lu : `/tmp/forgejo-v17-base-cas-poc`; le code est modifié, mais `HEAD` reste l’objet officiel épinglé indiqué dans le rapport.
+
+```sh
+git -C /tmp/forgejo-v17-base-cas-poc rev-parse HEAD
+git -C /tmp/forgejo-v17-base-cas-poc log -1 --format='%H %s'
+git -C /tmp/forgejo-v17-base-cas-poc diff --stat
+rg --no-ignore -n 'RequireExpectedBaseCommitID|WithExpectedBaseCommitID|ExpectedBaseCommitID' /tmp/forgejo-v17-base-cas-poc
+rg --no-ignore -n 'RecoverLFSPendingMetaObjects' /tmp/forgejo-v17-base-cas-poc -g '*.go' -g '!**/*_test.go'
+rg --no-ignore -n 'GITEA_INTERNAL_PUSH|EnvIsInternal' /tmp/forgejo-v17-base-cas-poc -g '*.go'
+rg --no-ignore -n 'lfs_publication_pending|operation_id|LFSPublicationPendingError' /tmp/forgejo-v17-base-cas-poc/routers -g '*.go'
+sed -n '255,262p;499,535p' /tmp/forgejo-v17-base-cas-poc/routers/private/hook_pre_receive.go
+sed -n '278,331p' /tmp/forgejo-v17-base-cas-poc/services/repository/files/update.go
+sed -n '131,163p' /tmp/forgejo-v17-base-cas-poc/services/repository/files/upload.go
+go version
+sha256sum -c /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/forgejo-v17-writer-lfs-audit-001/source-content-SHA256SUMS
+```
+
+Le dernier contrôle échoue dans l’environnement courant car l’exécutable Go est absent du `PATH`; il ne lance pas de test.

@@ -1,0 +1,11 @@
+Selected excerpt from the focused Go test output; this is not the complete raw log.
+
+POST /api/internal/hook/pre-receive/user2/repo1 -> 409 Conflict
+Hook refusal: missing server-side pull request context; expected base "", current base "0000000000000000000000000000000000000000".
+POST /user2/repo1/branches/restore?... -> 200 OK (redirect destination)
+restore_ref_created=false deleted_record_preserved=true
+--- PASS: TestPOCExpectedBasePolicyMakesWebBranchRestoreFailClosed
+PASS
+ok forgejo.org/tests/integration 1.200s
+
+The integration logger also labels the expected RestoreBranchPost log.Error as FATAL ERROR even though Go reports PASS. The browser sees a generic restore_failed flash, not the detailed hook guidance.

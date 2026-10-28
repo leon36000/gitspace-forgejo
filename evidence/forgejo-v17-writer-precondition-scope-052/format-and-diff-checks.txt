@@ -1,0 +1,5 @@
+Gofmt test source:
+PASS
+Git diff check in Forgejo scratch:
+PASS
+Source-and-test SHA-256 verification from the Forgejo scratch worktree: 12 entries, all OK.

@@ -1,0 +1,45 @@
+{
+  "records": [
+    {
+      "delivery_id": "6e28add7-b4df-48f4-a7eb-e5ec60ec052b",
+      "event_type": "issues",
+      "forwarded_retry_after": "5",
+      "forwarded_status": 503,
+      "method": "POST",
+      "path": "/forgejo/webhook",
+      "request_body_length": 5682,
+      "request_body_sha256": "5f90fffef78760c02cad4afc3adce23c3f713ea5b2aee2a2b3ec7dc2bb0ad990"
+    },
+    {
+      "delivery_id": "f0d76d9c-77ef-477f-84a4-e12a1f824b35",
+      "event_type": "issues",
+      "forwarded_retry_after": null,
+      "forwarded_status": 202,
+      "method": "POST",
+      "path": "/forgejo/webhook",
+      "request_body_length": 5682,
+      "request_body_sha256": "5f90fffef78760c02cad4afc3adce23c3f713ea5b2aee2a2b3ec7dc2bb0ad990"
+    },
+    {
+      "delivery_id": "6e8d45b9-ba92-4c03-8dd6-c1d889e2108f",
+      "event_type": "issues",
+      "forwarded_retry_after": null,
+      "forwarded_status": 202,
+      "method": "POST",
+      "path": "/forgejo/webhook",
+      "request_body_length": 5682,
+      "request_body_sha256": "5f90fffef78760c02cad4afc3adce23c3f713ea5b2aee2a2b3ec7dc2bb0ad990"
+    },
+    {
+      "delivery_id": "084f4f47-7701-4618-a473-497ec027f00f",
+      "event_type": "issues",
+      "forwarded_retry_after": null,
+      "forwarded_status": 202,
+      "method": "POST",
+      "path": "/forgejo/webhook",
+      "request_body_length": 5704,
+      "request_body_sha256": "1b320a091607a981f8c67139519b44699f9e6c9f714b1ddd46df50f4b09094a6"
+    }
+  ],
+  "schema_version": 1
+}

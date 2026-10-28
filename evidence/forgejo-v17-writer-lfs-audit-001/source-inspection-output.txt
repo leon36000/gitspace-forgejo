@@ -1,0 +1,120 @@
+### baseline commit
+$ git -C /tmp/forgejo-v17-base-cas-poc rev-parse HEAD
+exit=0
+0d791421f85ca13a63b665053d81ea765fbbc571
+
+### current diff summary
+$ git -C /tmp/forgejo-v17-base-cas-poc diff --stat
+exit=0
+cmd/hook.go                          |   3 +
+ models/git/lfs.go                    | 306 ++++++++++++++++++++++++++
+ models/git/lfs_test.go               | 285 ++++++++++++++++++++++++
+ models/repo/repo_unit.go             |   1 +
+ modules/private/hook.go              |   1 +
+ modules/repository/env.go            |  52 +++--
+ routers/api/v1/repo/file.go          |   9 +
+ routers/private/hook_post_receive.go |  56 +++++
+ routers/private/hook_pre_receive.go  |  36 ++++
+ services/lfs/server.go               | 265 +++++++++++++++++++----
+ services/pull/lfs.go                 |  19 +-
+ services/pull/merge.go               |  31 ++-
+ services/pull/merge_manual.go        |   5 +-
+ services/pull/update_rebase.go       |  54 ++++-
+ services/repository/delete.go        |  32 ++-
+ services/repository/delete_test.go   |  52 +++++
+ services/repository/files/update.go  |  75 ++++++-
+ services/repository/lfs_test.go      |  84 ++++++++
+ tests/integration/git_push_test.go   | 406 +++++++++++++++++++++++++++++++++++
+ tests/integration/pull_merge_test.go |  22 ++
+ 20 files changed, 1709 insertions(+), 85 deletions(-)
+
+### option declaration and pre-receive gate
+$ rg --no-ignore -n RequireExpectedBaseCommitID /tmp/forgejo-v17-base-cas-poc/models /tmp/forgejo-v17-base-cas-poc/routers /tmp/forgejo-v17-base-cas-poc/services /tmp/forgejo-v17-base-cas-poc/modules /tmp/forgejo-v17-base-cas-poc/cmd
+exit=0
+/tmp/forgejo-v17-base-cas-poc/models/repo/repo_unit.go:154:	RequireExpectedBaseCommitID   bool
+/tmp/forgejo-v17-base-cas-poc/services/pull/merge_manual.go:36:		if prConfig.RequireExpectedBaseCommitID {
+/tmp/forgejo-v17-base-cas-poc/services/pull/merge_manual.go:105:		if !config.AutodetectManualMerge || config.RequireExpectedBaseCommitID {
+/tmp/forgejo-v17-base-cas-poc/routers/private/hook_pre_receive.go:515:	if !pullUnit.PullRequestsConfig().RequireExpectedBaseCommitID {
+
+### public DTO search
+$ rg --no-ignore -n RequireExpectedBaseCommitID /tmp/forgejo-v17-base-cas-poc/modules/structs
+exit=1
+
+
+### LFS recovery production call sites
+$ rg --no-ignore -n RecoverLFSPendingMetaObjects -g *.go -g !**/*_test.go /tmp/forgejo-v17-base-cas-poc
+exit=0
+/tmp/forgejo-v17-base-cas-poc/services/pull/lfs_recovery.go:44:// RecoverLFSPendingMetaObjects promotes staged LFS associations only when the
+/tmp/forgejo-v17-base-cas-poc/services/pull/lfs_recovery.go:47:func RecoverLFSPendingMetaObjects(ctx context.Context, repositoryID int64, repositoryPath string) (LFSPendingRecoveryResult, error) {
+/tmp/forgejo-v17-base-cas-poc/services/pull/lfs_recovery.go:120:// RecoverLFSPendingMetaObjectsPage handles at most pageSize staged LFS
+/tmp/forgejo-v17-base-cas-poc/services/pull/lfs_recovery.go:125:func RecoverLFSPendingMetaObjectsPage(ctx context.Context, repositoryID int64, repositoryPath string, afterID int64, pageSize int) (LFSPendingRecoveryPageResult, error) {
+/tmp/forgejo-v17-base-cas-poc/services/pull/lfs_recovery.go:129:// RecoverLFSPendingMetaObjectsCheckpointPage runs one bounded page from a
+/tmp/forgejo-v17-base-cas-poc/services/pull/lfs_recovery.go:134:func RecoverLFSPendingMetaObjectsCheckpointPage(ctx context.Context, repositoryID int64, repositoryPath string, pageSize int) (LFSPendingRecoveryPageResult, error) {
+
+### AutoMerge invocation
+$ rg --no-ignore -n pull_service.Merge|DeleteBranchAfterMerge /tmp/forgejo-v17-base-cas-poc/services/automerge
+exit=0
+/tmp/forgejo-v17-base-cas-poc/services/automerge/automerge.go:218:	if err := pull_service.CheckPullMergeable(ctx, doer, &perm, pr, pull_service.MergeCheckTypeGeneral, false, scheduledPRM.MergeStyle); err != nil {
+/tmp/forgejo-v17-base-cas-poc/services/automerge/automerge.go:231:	if err := pull_service.Merge(ctx, pr, doer, baseGitRepo, scheduledPRM.MergeStyle, "", scheduledPRM.Message, true); err != nil {
+/tmp/forgejo-v17-base-cas-poc/services/automerge/automerge.go:232:		log.Error("pull_service.Merge: %v", err)
+/tmp/forgejo-v17-base-cas-poc/services/automerge/automerge.go:239:	if scheduledPRM.DeleteBranchAfterMerge {
+/tmp/forgejo-v17-base-cas-poc/services/automerge/automerge.go:240:		err := repo_service.DeleteBranchAfterMerge(ctx, doer, pr, headGitRepo)
+
+### internal push paths
+$ rg --no-ignore -n GITEA_INTERNAL_PUSH|EnvIsInternal /tmp/forgejo-v17-base-cas-poc/cmd/hook.go /tmp/forgejo-v17-base-cas-poc/modules/repository/env.go /tmp/forgejo-v17-base-cas-poc/services/repository/init.go
+exit=0
+/tmp/forgejo-v17-base-cas-poc/modules/repository/env.go:30:	EnvIsInternal           = "GITEA_INTERNAL_PUSH"
+/tmp/forgejo-v17-base-cas-poc/modules/repository/env.go:71:		EnvIsInternal+"=true",
+/tmp/forgejo-v17-base-cas-poc/cmd/hook.go:176:	if isInternal, _ := strconv.ParseBool(os.Getenv(repo_module.EnvIsInternal)); isInternal {
+/tmp/forgejo-v17-base-cas-poc/cmd/hook.go:316:	if isInternal, _ := strconv.ParseBool(os.Getenv(repo_module.EnvIsInternal)); isInternal {
+
+### pending client/status surface
+$ rg --no-ignore -n LFSPublicationPendingError|lfs_publication_pending|operation_key|OperationKey /tmp/forgejo-v17-base-cas-poc/routers/api/v1/repo/file.go /tmp/forgejo-v17-base-cas-poc/services/repository/files/update.go /tmp/forgejo-v17-base-cas-poc/modules/structs
+exit=0
+/tmp/forgejo-v17-base-cas-poc/services/repository/files/update.go:63:// LFSPublicationPendingError reports a partial success after Git accepted the
+/tmp/forgejo-v17-base-cas-poc/services/repository/files/update.go:65:type LFSPublicationPendingError struct {
+/tmp/forgejo-v17-base-cas-poc/services/repository/files/update.go:68:	OperationKey string
+/tmp/forgejo-v17-base-cas-poc/services/repository/files/update.go:72:func (e *LFSPublicationPendingError) Error() string {
+/tmp/forgejo-v17-base-cas-poc/services/repository/files/update.go:73:	message := fmt.Sprintf("commit %s was accepted but LFS metadata remains pending; retry recovery for operation %s", e.CommitSHA, e.OperationKey)
+/tmp/forgejo-v17-base-cas-poc/services/repository/files/update.go:80:func (e *LFSPublicationPendingError) Unwrap() error {
+/tmp/forgejo-v17-base-cas-poc/services/repository/files/update.go:86:func (e *LFSPublicationPendingError) PublicMessage() string {
+/tmp/forgejo-v17-base-cas-poc/services/repository/files/update.go:87:	return fmt.Sprintf("lfs_publication_pending: commit %s was accepted on %s, but its LFS metadata is not readable yet. Verify this ref before retrying the write. operation_id=%s",
+/tmp/forgejo-v17-base-cas-poc/services/repository/files/update.go:88:		e.CommitSHA, e.TargetRef, e.OperationKey)
+/tmp/forgejo-v17-base-cas-poc/services/repository/files/update.go:296:		operationKey := git_model.LFSPendingOperationKey(0, repo.ID, targetRef, commitHash)
+/tmp/forgejo-v17-base-cas-poc/services/repository/files/update.go:299:				OperationKey:         operationKey,
+/tmp/forgejo-v17-base-cas-poc/services/repository/files/update.go:318:		operationKey := git_model.LFSPendingOperationKey(0, repo.ID, targetRef, commitHash)
+/tmp/forgejo-v17-base-cas-poc/services/repository/files/update.go:321:			return nil, &LFSPublicationPendingError{CommitSHA: commitHash, TargetRef: targetRef, OperationKey: operationKey, Cause: err}
+/tmp/forgejo-v17-base-cas-poc/services/repository/files/update.go:324:			return nil, &LFSPublicationPendingError{CommitSHA: commitHash, TargetRef: targetRef, OperationKey: operationKey}
+/tmp/forgejo-v17-base-cas-poc/services/repository/files/update.go:328:				return nil, &LFSPublicationPendingError{CommitSHA: commitHash, TargetRef: targetRef, OperationKey: operationKey, Cause: err}
+/tmp/forgejo-v17-base-cas-poc/routers/api/v1/repo/file.go:788:	var pendingErr *files_service.LFSPublicationPendingError
+
+### Go version probe
+$ go version
+exit=not-found
+[Errno 2] No such file or directory: 'go'
+### all internal push references
+$ rg --no-ignore -n GITEA_INTERNAL_PUSH|EnvIsInternal -g *.go /tmp/forgejo-v17-base-cas-poc
+exit=0
+/tmp/forgejo-v17-base-cas-poc/modules/repository/env.go:30:	EnvIsInternal           = "GITEA_INTERNAL_PUSH"
+/tmp/forgejo-v17-base-cas-poc/modules/repository/env.go:71:		EnvIsInternal+"=true",
+/tmp/forgejo-v17-base-cas-poc/cmd/hook.go:176:	if isInternal, _ := strconv.ParseBool(os.Getenv(repo_module.EnvIsInternal)); isInternal {
+/tmp/forgejo-v17-base-cas-poc/cmd/hook.go:316:	if isInternal, _ := strconv.ParseBool(os.Getenv(repo_module.EnvIsInternal)); isInternal {
+
+### all pending operation status identifiers in routers
+$ rg --no-ignore -n lfs_publication_pending|operation_id|LFSPublicationPendingError -g *.go /tmp/forgejo-v17-base-cas-poc/routers
+exit=0
+/tmp/forgejo-v17-base-cas-poc/routers/api/v1/repo/file.go:788:	var pendingErr *files_service.LFSPublicationPendingError
+
+### branch writer route callsites
+$ rg --no-ignore -n CreateNewBranchFromCommit|RenameBranch\(|DeleteBranch\( -g *.go /tmp/forgejo-v17-base-cas-poc/routers/api/v1/repo /tmp/forgejo-v17-base-cas-poc/routers/web/repo
+exit=0
+/tmp/forgejo-v17-base-cas-poc/routers/web/repo/pull.go:1868:	if err := repo_service.DeleteBranch(ctx, ctx.Doer, pr.HeadRepo, gitRepo, pr.HeadBranch); err != nil {
+/tmp/forgejo-v17-base-cas-poc/routers/web/repo/setting/protected_branch.go:319:	msg, err := repository.RenameBranch(ctx, ctx.Repo.Repository, ctx.Doer, ctx.Repo.GitRepo, form.From, form.To)
+/tmp/forgejo-v17-base-cas-poc/routers/api/v1/repo/branch.go:92:func DeleteBranch(ctx *context.APIContext) {
+/tmp/forgejo-v17-base-cas-poc/routers/api/v1/repo/branch.go:152:	if err := repo_service.DeleteBranch(ctx, ctx.Doer(), ctx.Repo().Repository, ctx.Repo().GitRepo, branchName); err != nil {
+/tmp/forgejo-v17-base-cas-poc/routers/api/v1/repo/branch.go:247:	err = repo_service.CreateNewBranchFromCommit(ctx, ctx.Doer(), ctx.Repo().Repository, ctx.Repo().GitRepo, oldCommit.ID.String(), opt.BranchName)
+/tmp/forgejo-v17-base-cas-poc/routers/api/v1/repo/branch.go:258:			ctx.Error(http.StatusInternalServerError, "CreateNewBranchFromCommit", err)
+/tmp/forgejo-v17-base-cas-poc/routers/api/v1/repo/branch.go:446:	msg, err := repo_service.RenameBranch(ctx, repo, ctx.Doer(), ctx.Repo().GitRepo, oldName, opt.Name)
+/tmp/forgejo-v17-base-cas-poc/routers/web/repo/branch.go:93:	if err := repo_service.DeleteBranch(ctx, ctx.Doer, ctx.Repo.Repository, ctx.Repo.GitRepo, branchName); err != nil {
+/tmp/forgejo-v17-base-cas-poc/routers/web/repo/branch.go:197:		err = repo_service.CreateNewBranchFromCommit(ctx, ctx.Doer, ctx.Repo.Repository, ctx.Repo.GitRepo, ctx.Repo.CommitID, form.NewBranchName)
+

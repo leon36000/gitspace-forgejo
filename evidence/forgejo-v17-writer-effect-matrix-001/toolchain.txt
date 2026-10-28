@@ -1,0 +1,5 @@
+Examen statique uniquement; aucune compilation ni exécution Forgejo dans ce lot.
+
+Forgejo source: v17.0.0, commit 0d791421f85ca13a63b665053d81ea765fbbc571
+Git: git version 2.43.0
+Scratch Go toolchain (used by previous POCs, not invoked here): go1.27.3 linux/arm64

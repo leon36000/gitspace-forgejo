@@ -1,0 +1,6 @@
+services/pull/lfs_recovery.go:44:// RecoverLFSPendingMetaObjects promotes staged LFS associations only when the
+services/pull/lfs_recovery.go:47:func RecoverLFSPendingMetaObjects(ctx context.Context, repositoryID int64, repositoryPath string) (LFSPendingRecoveryResult, error) {
+services/pull/lfs_recovery.go:120:// RecoverLFSPendingMetaObjectsPage handles at most pageSize staged LFS
+services/pull/lfs_recovery.go:125:func RecoverLFSPendingMetaObjectsPage(ctx context.Context, repositoryID int64, repositoryPath string, afterID int64, pageSize int) (LFSPendingRecoveryPageResult, error) {
+services/pull/lfs_recovery.go:129:// RecoverLFSPendingMetaObjectsCheckpointPage runs one bounded page from a
+services/pull/lfs_recovery.go:134:func RecoverLFSPendingMetaObjectsCheckpointPage(ctx context.Context, repositoryID int64, repositoryPath string, pageSize int) (LFSPendingRecoveryPageResult, error) {

@@ -1,0 +1,7 @@
+# Outils — audit statique du 26 octobre 2026
+
+Forgejo source HEAD: 0d791421f85ca13a63b665053d81ea765fbbc571 (v17.0.0 selon l’inventaire épinglé).
+Git: git version 2.43.0.
+Clippy: clippy 0.1.95 (59807616e1 2026-04-14).
+Go: `go version` non disponible (`/bin/bash: go: command not found`); recherche limitée aux emplacements Go/Mise/opt/usrlocal n’a trouvé aucun exécutable.
+Tests Go exécutés dans cette tranche: aucun.

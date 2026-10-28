@@ -1,0 +1,3 @@
+All commands run in /tmp/forgejo-v17-base-cas-poc; no external network access (GOPROXY=off).
+GOTOOLCHAIN=local GOPROXY=off /tmp/forgejo-v17-toolchain/go/bin/go test -tags sqlite ./tests/integration -run 'TestPOCExpectedBasePolicyMakesAPIBranchCreateFailClosedButOpaque|TestPOCExpectedBasePolicyKeepsWebBranchCreateActionable|TestPOCExpectedBasePolicyDoesNotGateAPIBranchDelete|TestPOCExpectedBasePolicyDoesNotGateWebBranchMutationRoutes' -count=1
+GOTOOLCHAIN=local GOPROXY=off /tmp/forgejo-v17-toolchain/go/bin/go test -tags 'sqlite,forgejo_poc_lfs_recovery_multiprocess' ./services/pull -run '^TestPOCRecoveryPromotesFromARefSnapshotThatIsStaleBeforeDBPromotion$' -count=1

@@ -1,0 +1,5 @@
+base_commit=0d791421f85ca13a63b665053d81ea765fbbc571
+source_state=dirty scratch; status entries=59
+go version go1.27.3 linux/arm64
+git version 2.43.0
+platform=Linux aarch64
