@@ -1,0 +1,4 @@
+Test first added before the implementation change:
+cargo test --offline --locked --test webhook_receiver_process_e2e actual_receiver_accepts_forgejo_v17_pull_request_comment_event -- --exact --nocapture --test-threads=1
+
+Observed against the actual receiver process: a signed Forgejo `pull_request_comment` payload with `action=created`, `pull_request`, and `comment` returned HTTP 400 `event_payload_invalid`. The old validator treated the same wire name only as a review-comment alias requiring `review.type`. This is the expected red result; the post-fix process test is captured in `official-header-process.log` after rerun.

@@ -1,0 +1,13 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+     Running tests/webhook_receiver_process_e2e.rs (target/debug/deps/webhook_receiver_process_e2e-6caa738f5453f442)
+
+running 6 tests
+test actual_reconcile_cli_process_bounds_transient_upstream_retries ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_keeps_forbidden_upstream_inconclusive ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test actual_reconcile_cli_process_reads_receiver_journal_against_private_http_fixture ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test interrupted_reconcile_cli_can_resume_from_the_unchanged_journal ... ignored, run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint
+test receiver_creates_private_journal_and_restarts_under_umask_022 ... ok
+test actual_receiver_process_accepts_retries_recovers_and_reconciles ... ok
+
+test result: ok. 2 passed; 0 failed; 4 ignored; 0 measured; 0 filtered out; finished in 0.14s
+

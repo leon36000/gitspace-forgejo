@@ -1,0 +1,3 @@
+Branch: local/WEBHOOK-005-canonical-links
+HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+Status: pre-existing heavily modified worktree preserved; this slice changes only tests/webhook_receiver_process_e2e.rs, scripts/run_webhook_reconcile_cli_e2e.py, checkpoint/evidence.

@@ -1,0 +1,6 @@
+Final verification commands on the final source:
+- rustfmt --edition 2024 --check for src/webhook.rs, src/webhook/reconcile.rs, src/webhook/http.rs, both Forgejo binaries, and all touched Rust tests: exit 0.
+- git diff --check for Cargo.toml, checkpoint/source/implementation docs and changed tracked Rust files: exit 0.
+- trailing-whitespace scan for nine relevant Python and Rust source/test files: clean.
+- python3 -m py_compile for the webhook driver, cargo license guard/tests, and webhook parser tests: exit 0.
+- cargo test --offline --locked --all-targets -- --test-threads=1: see all-targets-official-wire-final.log (467 passed, 0 failed, 33 ignored).

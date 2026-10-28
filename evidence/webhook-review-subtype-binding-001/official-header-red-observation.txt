@@ -1,0 +1,4 @@
+Test first added before the implementation change:
+cargo test --offline --locked --test webhook_receiver_process_e2e actual_receiver_accepts_forgejo_v17_review_event_names -- --exact --nocapture --test-threads=1
+
+Observed against the actual receiver process: `pull_request_review_approved` returned HTTP 422 with `unsupported_event`; the response listed only the internal `pull_request_approved`, `pull_request_rejected`, and `pull_request_comment` names. This was the expected red result. The command output was captured in the tool run for 2026-10-25; the post-fix process test log is `official-header-process.log`.

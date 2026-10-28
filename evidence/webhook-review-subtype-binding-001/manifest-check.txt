@@ -1,0 +1,2 @@
+Command: (cd evidence/webhook-review-subtype-binding-001 && sha256sum -c SHA256SUMS)
+Expected result: 21/21 local proof artefacts verified successfully; the command output was checked during the final run.

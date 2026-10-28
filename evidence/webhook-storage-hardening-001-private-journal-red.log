@@ -1,0 +1,21 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.45s
+     Running tests/webhook_receiver_process_e2e.rs (target/debug/deps/webhook_receiver_process_e2e-6caa738f5453f442)
+
+running 1 test
+
+thread 'receiver_creates_private_journal_and_restarts_under_umask_022' (475717) panicked at tests/webhook_receiver_process_e2e.rs:445:5:
+assertion `left == right` failed: new journal must be owner-only
+  left: 420
+ right: 384
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test receiver_creates_private_journal_and_restarts_under_umask_022 ... FAILED
+
+failures:
+
+failures:
+    receiver_creates_private_journal_and_restarts_under_umask_022
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 5 filtered out; finished in 0.06s
+
+error: test failed, to rerun pass `--test webhook_receiver_process_e2e`

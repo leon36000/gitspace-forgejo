@@ -1,0 +1,11 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.18s
+     Running tests/webhook_receiver_storage_security.rs (target/debug/deps/webhook_receiver_storage_security-a64c16bc41b3310b)
+
+running 3 tests
+test receiver_refuses_inbox_directory_accessible_to_other_users ... ok
+test receiver_refuses_group_accessible_existing_inbox ... ok
+test receiver_refuses_hard_linked_existing_inbox ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
