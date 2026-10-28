@@ -1,0 +1,22 @@
+# Commands ran from the worktree root. Final verification commands returned 0 except the preserved diagnostic red runs.
+cargo test --locked --offline --bin forgejo-reconcile-local batch_host_attestation_refusal_binds_all_selected_source_rows > evidence/continuation-268-batch-attestation-refusal-source-binding-001/rust-red.log 2>&1  # expected red before implementation
+cargo test --locked --offline --bin forgejo-reconcile-local batch_host_attestation_refusal_binds_all_selected_source_rows > evidence/continuation-268-batch-attestation-refusal-source-binding-001/rust-green-initial.log 2>&1
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_requires_trusted_attestation_policy_before_host_credential_read > evidence/continuation-268-batch-attestation-refusal-source-binding-001/process-green.log 2>&1
+cargo test --locked --offline --test forgejo_reconcile_capabilities_e2e --test reconcile_config_contract --test reconcile_journal_lock_timeout --test webhook_quarantine_cli > evidence/continuation-268-batch-attestation-refusal-source-binding-001/cargo-contract-tests.log 2>&1  # stale batch schema expectation, then fixed
+cargo test --locked --offline --test webhook_quarantine_cli > evidence/continuation-268-batch-attestation-refusal-source-binding-001/cargo-quarantine-green.log 2>&1
+cargo test --locked --offline --test forgejo_reconcile_capabilities_e2e --test reconcile_config_contract --test reconcile_journal_lock_timeout --test webhook_quarantine_cli > evidence/continuation-268-batch-attestation-refusal-source-binding-001/cargo-contract-tests-final.log 2>&1
+python3 -m unittest tests.test_forgejo_emitted_webhook_e2e tests.test_forgejo_live_org_team_reviewer_readback tests.test_forgejo_webhook_native_replay_e2e > evidence/continuation-268-batch-attestation-refusal-source-binding-001/python-consumers.log 2>&1
+python3 -m py_compile scripts/run_forgejo_live_org_team_reviewer_readback.py scripts/run_forgejo_live_webhook_native_replay_e2e.py scripts/run_forgejo_native_branch_delete_webhook_reconcile.py scripts/run_forgejo_native_push_webhook_reconcile.py scripts/run_forgejo_live_webhook_reconcile_emitted.py tests/test_forgejo_emitted_webhook_e2e.py tests/test_forgejo_live_org_team_reviewer_readback.py tests/test_forgejo_webhook_native_replay_e2e.py > evidence/continuation-268-batch-attestation-refusal-source-binding-001/python-compile.log 2>&1
+cargo fmt --all
+cargo fmt --all -- --check > evidence/continuation-268-batch-attestation-refusal-source-binding-001/cargo-fmt-final.log 2>&1
+cargo test --locked --offline --all-targets > evidence/continuation-268-batch-attestation-refusal-source-binding-001/cargo-all-targets-final.log 2>&1
+cargo check --locked --offline --all-targets > evidence/continuation-268-batch-attestation-refusal-source-binding-001/cargo-check-final.log 2>&1
+python3 scripts/verify_cargo_license_state.py > evidence/continuation-268-batch-attestation-refusal-source-binding-001/cargo-license-guard.log 2>&1
+python3 scripts/test_cargo_license_state.py > evidence/continuation-268-batch-attestation-refusal-source-binding-001/cargo-license-tests.log 2>&1
+git diff --check > evidence/continuation-268-batch-attestation-refusal-source-binding-001/git-diff-check.log 2>&1
+python3 -m py_compile evidence/continuation-268-batch-attestation-refusal-source-binding-001/append_manifests.py evidence/continuation-268-batch-attestation-refusal-source-binding-001/verify_manifests.py
+python3 evidence/continuation-268-batch-attestation-refusal-source-binding-001/append_manifests.py
+python3 evidence/continuation-268-batch-attestation-refusal-source-binding-001/verify_manifests.py
+
+# cargo-all-targets.log is the first full run before rustfmt; cargo-all-targets-final.log is the final full run.
+# cargo-fmt-check.log is the first formatting failure and is retained alongside cargo-fmt-final.log.

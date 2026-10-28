@@ -1,0 +1,6 @@
+cd /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_refuses_named_fifo_as_host_credential_source
+cargo test --locked --offline --all-targets
+cargo fmt --all -- --check
+PYTHONPYCACHEPREFIX=/tmp/continuation-273-pycache python3 -m py_compile scripts/run_webhook_reconcile_cli_e2e.py
+git diff --check

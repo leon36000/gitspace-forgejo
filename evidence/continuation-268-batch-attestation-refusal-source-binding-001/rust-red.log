@@ -1,0 +1,22 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.56s
+     Running unittests src/bin/forgejo-reconcile-local.rs (target/debug/deps/forgejo_reconcile_local-1cabf43e3a16c18e)
+
+running 1 test
+test tests::batch_host_attestation_refusal_binds_all_selected_source_rows ... FAILED
+
+failures:
+
+---- tests::batch_host_attestation_refusal_binds_all_selected_source_rows stdout ----
+
+thread 'tests::batch_host_attestation_refusal_binds_all_selected_source_rows' (690829) panicked at src/bin/forgejo-reconcile-local.rs:12452:14:
+attestation-policy refusal retains all selected source identities
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    tests::batch_host_attestation_refusal_binds_all_selected_source_rows
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 159 filtered out; finished in 0.01s
+
+error: test failed, to rerun pass `--bin forgejo-reconcile-local`

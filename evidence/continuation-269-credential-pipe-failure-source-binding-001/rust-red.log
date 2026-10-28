@@ -1,0 +1,22 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.53s
+     Running unittests src/bin/forgejo-reconcile-local.rs (target/debug/deps/forgejo_reconcile_local-1cabf43e3a16c18e)
+
+running 1 test
+test tests::batch_credential_pipe_read_failure_is_structured_and_source_bound ... FAILED
+
+failures:
+
+---- tests::batch_credential_pipe_read_failure_is_structured_and_source_bound stdout ----
+
+thread 'tests::batch_credential_pipe_read_failure_is_structured_and_source_bound' (772836) panicked at src/bin/forgejo-reconcile-local.rs:12570:10:
+called `Result::unwrap()` on an `Err` value: "cannot secure the host credential descriptor"
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    tests::batch_credential_pipe_read_failure_is_structured_and_source_bound
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 160 filtered out; finished in 0.01s
+
+error: test failed, to rerun pass `--bin forgejo-reconcile-local`

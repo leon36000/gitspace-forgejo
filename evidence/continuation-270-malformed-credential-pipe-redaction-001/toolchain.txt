@@ -1,0 +1,5 @@
+rustc 1.95.0 (59807616e 2026-04-14)
+rustc host: aarch64-unknown-linux-gnu
+cargo 1.95.0 (f2d3ce0bd 2026-03-21)
+bubblewrap 0.9.0
+Linux gx10-e526 7.0.0-1019-nvidia #19~24.04.2-Ubuntu SMP PREEMPT_DYNAMIC Sun Sep 6 18:35:11 UTC 2026 aarch64 aarch64 aarch64 GNU/Linux

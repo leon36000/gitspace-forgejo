@@ -1,0 +1,9 @@
+cd /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_refuses_oversized_credential_pipe_without_leaking_bytes
+python3 scripts/verify_cargo_license_state.py
+PYTHONPYCACHEPREFIX=/tmp/continuation-272-pycache python3 scripts/test_cargo_license_state.py
+cargo metadata --locked --offline --no-deps --format-version 1
+cargo test --locked --offline --all-targets
+cargo fmt --all -- --check
+PYTHONPYCACHEPREFIX=/tmp/continuation-272-pycache python3 -m py_compile scripts/run_webhook_reconcile_cli_e2e.py scripts/verify_cargo_license_state.py scripts/test_cargo_license_state.py
+git diff --check
