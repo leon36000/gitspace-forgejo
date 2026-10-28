@@ -1,0 +1,12 @@
+{
+  "issue_number": 1,
+  "original_delivery_id": "46ade58b-04ea-4e9d-8037-ad8f04536735",
+  "payload_semantic_sha256": "3d0c059749adfdfed09afb7176373a159340ce3ed540887f2ad40ea59e8e1814",
+  "payload_sha256": "4a522cabb8e71e8def234af96f9248c56d58831659b035a092ec4e34919aa16b",
+  "payload_unchanged": true,
+  "receiver_sequences": [
+    1,
+    2
+  ],
+  "replay_delivery_id": "4e048859-447d-4193-ad53-0b090f854e5f"
+}

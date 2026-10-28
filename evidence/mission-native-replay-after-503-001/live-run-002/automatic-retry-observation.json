@@ -1,0 +1,9 @@
+{
+  "automatic_retry_observed": false,
+  "observation_seconds": 6.0,
+  "proxy_request_count_after": 1,
+  "proxy_request_count_before": 1,
+  "receiver_journal_records_after": 0,
+  "task_count_after": 1,
+  "task_count_before": 1
+}

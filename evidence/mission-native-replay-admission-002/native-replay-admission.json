@@ -1,0 +1,9 @@
+{
+  "admission_file_unchanged": true,
+  "allocation_id": "mission012-native-replay-admission-002",
+  "delivery_id": "4e048859-447d-4193-ad53-0b090f854e5f",
+  "execution_generation": 1,
+  "mission_id": "mission-v1-94c26001d4370e63d3637fd5c06ef13f0496424a39a74bf498b7512b7d2b37b5",
+  "mission_journal_unchanged": true,
+  "verdict": "already_claimed"
+}

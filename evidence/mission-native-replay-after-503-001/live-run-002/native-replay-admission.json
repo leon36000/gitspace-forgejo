@@ -1,0 +1,13 @@
+{
+  "admission_file_after_sha256": "abb1abebdc42545ce0fd1016e1fea598c66a5339e4c17bec5ba4f468662a6067",
+  "admission_file_before_sha256": "abb1abebdc42545ce0fd1016e1fea598c66a5339e4c17bec5ba4f468662a6067",
+  "admission_file_unchanged": true,
+  "allocation_id": "mission012-live-webhook-001",
+  "delivery_id": "90a767bf-2d06-468a-b116-162913ed92a8",
+  "execution_generation": 1,
+  "mission_id": "mission-v1-94c26001d4370e63d3637fd5c06ef13f0496424a39a74bf498b7512b7d2b37b5",
+  "mission_journal_after_sha256": "6f5c6586104c4472186de7512e9b0b2352fd6ae818c39cd726143894b8b5175b",
+  "mission_journal_before_sha256": "6f5c6586104c4472186de7512e9b0b2352fd6ae818c39cd726143894b8b5175b",
+  "mission_journal_unchanged": true,
+  "verdict": "already_claimed"
+}

@@ -1,0 +1,13 @@
+{
+  "admission_file_after_sha256": "cca622228e6dffbeb8c8c7f5bd706f2dc4445a4855027fb9186f17c00da6578c",
+  "admission_file_before_sha256": "cca622228e6dffbeb8c8c7f5bd706f2dc4445a4855027fb9186f17c00da6578c",
+  "admission_file_unchanged": true,
+  "allocation_id": "mission012-native-replay-admission-005",
+  "delivery_id": "c4a52b84-021d-498e-9c7d-f2819c4fae76",
+  "execution_generation": 1,
+  "mission_id": "mission-v1-94c26001d4370e63d3637fd5c06ef13f0496424a39a74bf498b7512b7d2b37b5",
+  "mission_journal_after_sha256": "3b53bd88eb00c4dbaaaec54126890ebfe1fa528d511205c7117d9d9a76c9976f",
+  "mission_journal_before_sha256": "3b53bd88eb00c4dbaaaec54126890ebfe1fa528d511205c7117d9d9a76c9976f",
+  "mission_journal_unchanged": true,
+  "verdict": "already_claimed"
+}

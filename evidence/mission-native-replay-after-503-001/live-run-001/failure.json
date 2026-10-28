@@ -1,0 +1,7 @@
+{
+  "cleanup_failure": null,
+  "error_detail": "Forgejo retried the failed delivery or receiver state changed before manual replay",
+  "error_type": "RuntimeError",
+  "stage": "verify_initial_receiver_overload_503",
+  "verdict": "failed"
+}

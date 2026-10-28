@@ -1,0 +1,86 @@
+$ python3 evidence/mission-native-replay-after-503-001/verify_append_only_indexes.py
+{"local_evidence_files_verified": 46, "parent_binds_current_worktree_index": true, "project_prefix_preserved": true, "worktree_prefix_preserved": true}
+$ sha256sum -c SHA256SUMS
+append_manifests.py: OK
+live-run-001/branch-protection-readback.json: OK
+live-run-001/failure.json: OK
+live-run-001/hook-readback.json: OK
+live-run-001/port-cleanup-readback.json: OK
+live-run-001/webhook-proxy-records.json: OK
+live-run-002/admission.json: OK
+live-run-002/automatic-retry-observation.json: OK
+live-run-002/branch-protection-readback.json: OK
+live-run-002/forgejo-task-binding.json: OK
+live-run-002/hook-readback.json: OK
+live-run-002/invalid-credential.json: OK
+live-run-002/native-replay-admission.json: OK
+live-run-002/native-replay-binding.json: OK
+live-run-002/port-cleanup-readback.json: OK
+live-run-002/provenance.json: OK
+live-run-002/receiver-overload-recovery.json: OK
+live-run-002/replay.json: OK
+live-run-002/result.json: OK
+live-run-002/webhook-event.json: OK
+live-run-002/webhook-proxy-records.json: OK
+local-run.md: OK
+manifest-prefix-before.json: OK
+runner-command-002.txt: OK
+runner-exit-code-002.txt: OK
+source-hashes.txt: OK
+tdd-red-parser.log: OK
+tdd-red.log: OK
+verification/cargo-license-state.log: OK
+verification/cargo-metadata-summary.json: OK
+verification/cargo-metadata.log: OK
+verification/current-diff-check.log: OK
+verification/diff-check.log: OK
+verification/failed-run-001-checksums.log: OK
+verification/final-exit-codes.json: OK
+verification/live-run-002-checksums.log: OK
+verification/mission-admission-tests.log: OK
+verification/native-replay-tests.log: OK
+verification/python-compile.log: OK
+verification/runtime-versions.txt: OK
+verification/saved-live-run-binding.log: OK
+verification/successful-run-002-checksums.log: OK
+verification/untracked-whitespace-check.log: OK
+verification/verification-exit-codes.json: OK
+verify_append_only_indexes.py: OK
+verify_live_run.py: OK
+
+[append-only-index-verification] $ python3 /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/mission-native-replay-after-503-001/verify_append_only_indexes.py
+{"local_evidence_files_verified": 71, "parent_binds_current_worktree_index": true, "project_prefix_preserved": true, "worktree_prefix_preserved": true}
+
+[live-run-003-receipts] $ sha256sum -c SHA256SUMS
+admission.json: OK
+automatic-retry-observation.json: OK
+branch-protection-readback.json: OK
+forgejo-task-binding.json: OK
+hook-readback.json: OK
+invalid-credential.json: OK
+native-replay-admission.json: OK
+native-replay-binding.json: OK
+port-cleanup-readback.json: OK
+provenance.json: OK
+receiver-overload-recovery.json: OK
+replay.json: OK
+result.json: OK
+webhook-event.json: OK
+webhook-proxy-records.json: OK
+
+[source-hashes] $ sha256sum -c evidence/mission-native-replay-after-503-001/source-hashes.txt
+Cargo.toml: OK
+Cargo.lock: OK
+scripts/run_forgejo_live_webhook_mission_admission.py: OK
+scripts/run_forgejo_live_webhook_native_replay_e2e.py: OK
+tests/test_forgejo_live_webhook_mission_admission.py: OK
+tests/test_forgejo_webhook_native_replay_e2e.py: OK
+docs/checkpoint.md: OK
+docs/refusal-evidence-matrix.md: OK
+evidence/mission-native-replay-after-503-001/local-run.md: OK
+evidence/mission-native-replay-after-503-001/live-run-001/failure.json: OK
+evidence/mission-native-replay-after-503-001/live-run-003/result.json: OK
+evidence/mission-native-replay-after-503-001/live-run-003/provenance.json: OK
+evidence/mission-native-replay-after-503-001/live-run-003/receiver-overload-recovery.json: OK
+evidence/mission-native-replay-after-503-001/live-run-003/native-replay-admission.json: OK
+/tmp/forgejo-17.0.0: OK
