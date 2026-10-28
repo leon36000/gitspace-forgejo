@@ -1,0 +1,12 @@
+GitLab preflight, 2026-10-28 (no credential sent)
+Target: https://pc4.tail0c55ff.ts.net/root/gitspace-forgejo.git
+Local remote name: pc4-gitlab
+Tailscale backend: Running; local self online
+Tailscale ping: pc4 answered
+MagicDNS lookup for pc4.tail0c55ff.ts.net: no address returned by getent
+HTTPS probe using the Tailscale peer address: HTTP 000, connection timeout before TLS
+TCP probes from this worker: 443=closed_or_filtered; 80=closed_or_filtered
+git ls-remote: failed with Could not resolve host before any TLS/HTTP request
+Remote refs read: none
+Commit/push/remote mutation: none
+Credential state: Gmail search excerpts displayed the dedicated agent token and initial GitLab root password in tool output. Neither was used or transmitted; revoke the token and change the root password before any retry.

@@ -1,0 +1,3 @@
+Command: cargo fmt --all -- --check
+Exit status: 0
+Result: clean after formatting the new process test; no repository-wide formatting edits were applied.

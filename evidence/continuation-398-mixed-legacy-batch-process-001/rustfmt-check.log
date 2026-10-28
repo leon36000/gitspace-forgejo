@@ -1,0 +1,11 @@
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:17709:
+         "reconciliation must not rewrite either legacy delivery"
+     );
+ 
+-    let value: Value = serde_json::from_slice(&output.stdout)
+-        .expect("mixed legacy batch returns structured JSON");
++    let value: Value =
++        serde_json::from_slice(&output.stdout).expect("mixed legacy batch returns structured JSON");
+     assert_reconcile_schema_version(&value);
+     assert_eq!(value["verdict"], "inconclusive");
+     assert_eq!(value["upstream_read_attempts"], 1);

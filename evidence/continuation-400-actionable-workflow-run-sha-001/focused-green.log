@@ -1,0 +1,4 @@
+TDD green run after adding the run.commit_sha action mapping
+Command: cargo test --offline --locked --test webhook_receiver_process_e2e actual_receiver_refuses_workflow_run_invalid_commit_sha_with_actionable_guidance_before_reserving_delivery -- --exact --nocapture
+Exit status: 0
+Result: 1 passed; 0 failed; 0 ignored; 190 filtered out

@@ -1,0 +1,5 @@
+After the final all-targets run:
+cargo fmt --all -- --check: exit 0
+git diff --check: exit 0
+python3 scripts/verify_cargo_license_state.py: exit 0
+The license guard result is preserved in license-state-final.json.

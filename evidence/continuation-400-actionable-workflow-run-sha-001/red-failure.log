@@ -1,0 +1,5 @@
+TDD red run, before src/webhook/http.rs change
+Command: cargo test --offline --locked --test webhook_receiver_process_e2e actual_receiver_refuses_workflow_run_invalid_commit_sha_with_actionable_guidance_before_reserving_delivery -- --exact --nocapture
+Exit status: 101
+Result: 0 passed; 1 failed; 190 filtered out
+Expected failure: the action assertion received only the generic text "inspect the event payload field against the event contract; preserve the journal and do not edit it directly".

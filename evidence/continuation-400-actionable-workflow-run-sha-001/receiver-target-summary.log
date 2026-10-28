@@ -1,0 +1,5 @@
+Receiver-process target after implementation
+Command: cargo test --offline --locked --test webhook_receiver_process_e2e -- --test-threads=1
+Exit status: 0
+Result: 43 passed; 0 failed; 148 ignored
+The new scenario actual_receiver_refuses_workflow_run_invalid_commit_sha_with_actionable_guidance_before_reserving_delivery passed. The ignored process tests were not run by this command.

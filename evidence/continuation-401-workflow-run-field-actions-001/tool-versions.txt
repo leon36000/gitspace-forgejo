@@ -1,0 +1,6 @@
+date=2026-10-28
+branch=local/WEBHOOK-005-canonical-links
+base_head=f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+cargo 1.95.0 (f2d3ce0bd 2026-03-21)
+rustc 1.95.0 (59807616e 2026-04-14)
+Python 3.12.3
