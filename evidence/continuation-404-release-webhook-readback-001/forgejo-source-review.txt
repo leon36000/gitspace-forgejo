@@ -1,0 +1,19 @@
+Forgejo official source reviewed read-only
+Repository: https://codeberg.org/forgejo/forgejo
+Version: v17.0.0
+Commit: 0d791421f85ca13a63b665053d81ea765fbbc571
+Scratch checkout: /tmp/forgejo-v17-base-cas-poc (dirty from unrelated preserved POCs; no source code copied)
+
+modules/structs/hook.go
+SHA-256: 42f951d98dbea6b78e70e595b8c2cc0f5931bee2d96b837d8d4e8f034b015a12
+Reviewed: HookReleaseAction allowed values published/updated/deleted; ReleasePayload shape.
+
+modules/structs/release.go
+SHA-256: bf5943408a36389b02dfcd7d6c1c8e1487f3cd1658cb266a8408c9d8e591b7a2
+Reviewed: Release response fields include id/tag/body/assets/draft/prerelease and no updated_at field.
+
+routers/api/v1/repo/release.go
+SHA-256: 1d85c709c10c238685eee9bfbb66bf74f833d69a9f86dbfe09843f60454d03a9
+Reviewed: repository-scoped GetRelease canonical route.
+
+Coverage is targeted to the release webhook/API types and route. No Go test suite, full Forgejo security review, or exhaustive API route review was performed in this lot. License terms were not re-evaluated here; source remains upstream and no Forgejo code was copied into the product.

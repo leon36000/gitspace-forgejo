@@ -1,0 +1,6 @@
+worktree_prefix_preserved lines=17891
+project_prefix_preserved lines=12451
+doc_hash_current docs/checkpoint.md
+doc_hash_current docs/implementation-plan.md
+doc_hash_current docs/refusal-evidence-matrix.md
+local_evidence_manifest_and_nested_index_current

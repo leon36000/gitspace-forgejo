@@ -1,0 +1,6 @@
+2026-10-28T12:47:49-04:00
+git version 2.43.0
+Python 3.12.3
+Linux 7.0.0-1019-nvidia aarch64 GNU/Linux
+f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+local/WEBHOOK-005-canonical-links

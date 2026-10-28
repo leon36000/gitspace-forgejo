@@ -1,0 +1,4 @@
+PYTHONDONTWRITEBYTECODE=1 python3 evidence/continuation-408-gitlab-export-preflight-001/audit_export.py
+Python source check: tests/test_mission_requirement_arbitration_cli_process.py for the url_userinfo pattern only; output is source-canary-check.txt
+Read-only transport preflight: tailscale status; getent hosts pc4.tail0c55ff.ts.net; curl anonymous HTTPS /users/sign_in; curl anonymous HTTPS with --resolve to the currently observed PC4 Tailscale address; GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null GIT_TERMINAL_PROMPT=0 GIT_ASKPASS=/bin/false git -c credential.helper= ls-remote pc4-gitlab
+No authentication, fetch, staging, commit, push, Tailscale configuration change, or remote mutation.

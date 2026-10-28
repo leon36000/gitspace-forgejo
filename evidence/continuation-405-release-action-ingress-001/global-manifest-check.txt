@@ -1,0 +1,1 @@
+PASS: final evidence and document hashes in worktree/project indexes; project binds current worktree index

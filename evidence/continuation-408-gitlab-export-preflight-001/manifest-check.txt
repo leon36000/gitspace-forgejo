@@ -1,0 +1,12 @@
+append_manifests.py: OK
+audit_export.py: OK
+commands.txt: OK
+environment.txt: OK
+export-scan.json: OK
+local-run.md: OK
+manifest-prefix-before.json: OK
+preflight-summary.txt: OK
+source-canary-check.txt: OK
+source-hashes.sha256: OK
+evidence/continuation-408-gitlab-export-preflight-001/audit_export.py: OK
+tests/test_mission_requirement_arbitration_cli_process.py: OK

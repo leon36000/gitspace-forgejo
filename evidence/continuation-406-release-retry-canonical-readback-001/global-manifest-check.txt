@@ -1,0 +1,1 @@
+PASS: evidence and three document hashes verified in append-only worktree/project indexes; project binds worktree index

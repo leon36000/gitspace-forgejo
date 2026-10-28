@@ -1,0 +1,1 @@
+{"project_index_binds_worktree_sha256": "83a1777438f3b8b50d738a583b0a71b88b16daaae0f1afd2a575f8cd0a66d879", "project_index_line_count": 12381}

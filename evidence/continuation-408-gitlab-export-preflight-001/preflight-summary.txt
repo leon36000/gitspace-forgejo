@@ -1,0 +1,9 @@
+observed_at=2026-10-28T12:47:21-04:00
+tailscale_status_exit=0
+pc4_peer_visible=True
+pc4_peer_state=idle
+magicdns=no_answer
+https_443=timeout_before_http
+anonymous_git_ls_remote=dns_resolution_failure_before_http
+authentication_or_remote_refs=not_attempted
+remote_write=not_attempted

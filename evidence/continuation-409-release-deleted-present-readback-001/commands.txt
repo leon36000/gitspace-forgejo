@@ -1,0 +1,7 @@
+PYTHONDONTWRITEBYTECODE=1 python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_keeps_deleted_release_present_when_current_api_returns_200 (runner called with its temp dir on /dev/shm)
+cargo fmt --all -- --check
+git diff --check
+PYTHONDONTWRITEBYTECODE=1 python3 scripts/verify_cargo_license_state.py
+cargo metadata --offline --locked --no-deps --format-version 1
+PYTHONDONTWRITEBYTECODE=1 python3 scripts/run_webhook_reconcile_cli_e2e.py runner AST/trailing-whitespace validation
+No network or external services used.
