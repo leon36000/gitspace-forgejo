@@ -1,5 +1,42 @@
 # Checkpoint — 28 octobre 2026
 
+## GITLAB-PC4-TRANSFER-011 — readback exact des preuves candidates — 28 octobre 2026
+
+Les 14 715 chemins du manifeste TRANSFER-006 ont été créés sur la branche privée PC4 et lus dans l’arbre GitLab du commit candidat `20af706fc820814aacd0a7c303c75bb3b66f2afb`. Comparaison des blob IDs et modes : 14 715/14 715 exacts, 0 absent, 0 divergent; arbre evidence paginé en 161 appels, 16 032 entrées (15 023 blobs). Les reçus TRANSFER-006/007/011, le manifeste de chemins, ce checkpoint et le manifeste SHA global sont regroupés dans le lot de contrôle final; le readback final de ces nouveaux chemins et une pipeline complète sans skip restent à vérifier sur son SHA. Aucun MR ni modification de la branche par défaut. Reçu : [TRANSFER-011](../evidence/gitlab-pc4-transfer-011/local-run.md).
+
+
+## GITLAB-PC4-TRANSFER-010 — import progress — 28 octobre 2026
+
+La branche de travail privée PC4 contient 11 000/14 715 fichiers du manifeste d’export, au commit `27756bc5cca9d9498b19bf735bc104167cd8c013` (110 commits create-only). Readback distant exact confirmé pour les 400 premières entrées uniquement; la comparaison complète attend la fin de l’import. Le pipeline 287 du SHA courant est `skipped`, et il faut lancer une CI complète au SHA final. Aucun MR ni changement de branche par défaut. [Reçu TRANSFER-010](../evidence/gitlab-pc4-transfer-007/progress-11000.md).
+
+
+## GITLAB-PC4-TRANSFER-009 — import progress — 28 octobre 2026
+
+La branche de travail privée PC4 contient maintenant 7 000/14 715 lignes candidates au commit `36c2c9fc3db051cd76d251a44b44d4ef37c9a88b`, par 70 commits create-only. Chaque lot est contrôlé localement avant envoi. Le readback distant exact est encore limité aux lignes 1–400; tous les blobs/modes restent à comparer. Les pipelines intermédiaires sont ignorés et le SHA final devra avoir un pipeline complet non ignoré. Pas de MR ni de changement de branche par défaut. [Reçu TRANSFER-009](../evidence/gitlab-pc4-transfer-007/progress-7000.md).
+
+
+## GITLAB-PC4-TRANSFER-008 — import progress — 28 octobre 2026
+
+La branche privée PC4 contient les 5 400 premières lignes des 14 715 preuves candidates au commit `8497dae116d25c1a98315e1b9342733b64e9c61d` (54 commits par lots de 100). Vérification locale des contenus/modes avant envoi pour tous ces fichiers; readback GitLab exact établi seulement pour les 400 premiers blobs. Le dernier pipeline observé (231, SHA courant) est `skipped`; un pipeline complet sans skip reste à lancer au SHA final. Le transfert et le readback restent en cours; aucune MR ni branche par défaut modifiée. [Reçu TRANSFER-008](../evidence/gitlab-pc4-transfer-007/progress-5400.md).
+
+
+## GITLAB-PC4-TRANSFER-007 — import progress — 28 octobre 2026
+
+La branche privée PC4 `codex/pc6-transfer-work-2026-10-28` contient les 1 400 premières lignes du manifeste d’export TRANSFER-006, par 14 commits create-only; tête observée `b180d1b1c354ead33fbd0b8af64a697357aef8c4`. Les 400 premières lignes ont un readback distant exact des blobs/modes; les 1 000 suivantes ont été vérifiées localement avant envoi mais attendent le readback distant. Les pipelines des pushes intermédiaires sont `skipped`; il faut une CI complète au SHA final. Reçu et prochaines actions : [GITLAB-PC4-TRANSFER-007](../evidence/gitlab-pc4-transfer-007/local-run.md). Aucun MR ni changement de branche par défaut.
+
+
+## GITLAB-PC4-TRANSFER-006 — inventaire du reliquat local avant transfert — 28 octobre 2026
+
+Le worktree PC6 a été comparé au tree GitLab de référence `796a6085cb71cd7d2ae4c3be7c53c3d401691448`: 370 blobs identiques et 14 715 chemins textuels absents, sans divergence parmi les candidats. Les absents sont exclusivement sous `evidence/`, pour 58 717 295 octets; six familles de secrets connues ont donné 0 correspondance. Les binaires, l’état local, les formats non UTF-8 et 108 snapshots source sous evidence sont écartés. Ce scan ne certifie pas l’absence de toute donnée privée ou extrait tiers. Le checkpoint et le manifeste global sont traités à part pour empêcher l’auto-référence. Reçu, vérificateur et manifeste de chemins (blob/mode/taille): [GITLAB-PC4-TRANSFER-006](../evidence/gitlab-pc4-transfer-006/local-run.md).
+
+Ces 14 715 preuves restent à transférer. Les fichiers sources/tests/docs déjà présents sauf ces deux fichiers de suivi correspondent aux blobs PC4. Importer par lots sur la branche privée de travail, puis vérifier tous les blobs/modes et la CI complète du SHA final. La branche par défaut, MR et merge restent hors portée. Aucun email/PAT; tests sur PC6, GitLab via API.
+
+## GITLAB-PC4-TRANSFER-006 — inventaire des preuves locales restant à synchroniser — 28 octobre 2026
+
+La comparaison du worktree avec le tree GitLab figé au commit `796a6085cb71cd7d2ae4c3be7c53c3d401691448` trouve 372 chemins textuels déjà identiques et 14 715 fichiers texte absents, sans divergence sur les chemins communs. Les absents sont uniquement sous `evidence/`, totalisent 58 717 295 octets et passent six filtres connus de secrets (0 correspondance). Les archives/binaries, états locaux et 108 snapshots source sous evidence sont exclus. Cela reste une heuristique, pas une analyse exhaustive de confidentialité ou de licence. Reçu, script, arbre source et manifeste détaillé: [GITLAB-PC4-TRANSFER-006](../evidence/gitlab-pc4-transfer-006/local-run.md).
+
+Les 14 715 preuves sont encore à transférer; elles n’ont pas été confondues avec le snapshot 80/80 de CONT-436. Poursuivre leur import par lots sur la seule branche de travail privée, faire un readback exact des blobs/modes, puis un pipeline complet au commit final. La branche par défaut, MR et merge restent hors portée. Le connecteur GitLab suffit; aucun email/PAT n’a été utilisé; l’exécution locale reste PC6.
+
 ## GITLAB-PC4-TRANSFER-005 — lecture vérifiée du reçu et de la CI — 28 octobre 2026
 
 Le suivi documentaire du transfert CONT-436 est synchronisé sur la branche de travail privée PC4 par le commit `20af77b68dcf6dd2cd8282a0011ec7f4b58ba9bb`. Le readback compare les 8 blobs et modes modifiés/créés à leurs IDs Git locaux: 8/8 identiques. Le pipeline exact 173 est `success` pour Gitleaks, Semgrep, Trivy et le fallback; pipeline 172 de la source CONT-436 était aussi `success`. Le reçu détaillé et les IDs: [GITLAB-PC4-TRANSFER-005](../evidence/gitlab-pc4-transfer-005/local-run.md).
