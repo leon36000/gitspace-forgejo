@@ -1,0 +1,58 @@
+$ /home/pc6/.cargo/bin/cargo test --offline --locked --test webhook_receiver_process_e2e --no-run
+   Compiling version_check v0.9.5
+   Compiling proc-macro2 v1.0.107
+   Compiling typenum v1.20.0
+   Compiling unicode-ident v1.0.26
+   Compiling quote v1.0.47
+   Compiling serde_core v1.0.228
+   Compiling libc v0.2.190
+   Compiling subtle v2.6.1
+   Compiling zmij v1.0.23
+   Compiling serde_json v1.0.150
+   Compiling serde v1.0.228
+   Compiling itoa v1.0.18
+   Compiling cfg-if v1.0.5
+   Compiling memchr v2.8.3
+   Compiling hex v0.4.3
+   Compiling generic-array v0.14.7
+   Compiling block-buffer v0.10.4
+   Compiling crypto-common v0.1.7
+   Compiling syn v2.0.117
+   Compiling digest v0.10.7
+   Compiling cpufeatures v0.2.17
+   Compiling hmac v0.12.1
+   Compiling sha2 v0.10.9
+   Compiling serde_derive v1.0.228
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 4.69s
+  Executable tests/webhook_receiver_process_e2e.rs (/tmp/webhook-reconcile-cli-e2e-v40cje0o/target/debug/deps/webhook_receiver_process_e2e-6caa738f5453f442)
+$ /usr/bin/bwrap --die-with-parent --unshare-net --ro-bind / / --dev-bind /dev /dev --proc /proc --tmpfs /tmp --ro-bind /tmp/webhook-reconcile-cli-e2e-v40cje0o/target /tmp/webhook-reconcile-cli-e2e-v40cje0o/target --clearenv --setenv PATH /usr/bin:/bin --setenv HOME /tmp --setenv TMPDIR /tmp --setenv RUST_TEST_THREADS 1 --chdir /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace /tmp/webhook-reconcile-cli-e2e-v40cje0o/target/debug/deps/webhook_receiver_process_e2e-6caa738f5453f442 actual_reconcile_cli_process_handles_invalid_and_http_date_retry_after --exact --ignored --nocapture
+
+running 1 test
+test actual_reconcile_cli_process_handles_invalid_and_http_date_retry_after ... 
+thread '<unnamed>' (1043322) panicked at tests/webhook_receiver_process_e2e.rs:721:29:
+reconciliation CLI made too few API requests or did not become quiet
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+diagnostic: retry-after="Sat, 24 Oct 2026 11:42:02 GMT", cli_status=exit status: 1, stdout={"api_version":"forgejo-rest-v1","delivery_id":"cli-retry-after-invalid-41","error":{"action":"restore local Forgejo availability, then retry within the caller's retry budget","code":"upstream_unavailable","details":{"upstream":"forgejo"},"retryable":true},"schema_version":2,"upstream_read_attempts":3,"verdict":"inconclusive"}
+
+
+thread 'actual_reconcile_cli_process_handles_invalid_and_http_date_retry_after' (1043276) panicked at tests/webhook_receiver_process_e2e.rs:1659:39:
+Retry-After fixture completed: Any { .. }
+FAILED
+
+failures:
+
+failures:
+    actual_reconcile_cli_process_handles_invalid_and_http_date_retry_after
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 13 filtered out; finished in 7.30s
+
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/scripts/run_webhook_reconcile_cli_e2e.py", line 108, in main
+    run(isolated_command, cwd=REPO, timeout_seconds=45)
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/scripts/run_webhook_reconcile_cli_e2e.py", line 37, in run
+    subprocess.run(command, cwd=cwd, env=env, check=True, timeout=timeout_seconds)
+  File "/usr/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/usr/bin/bwrap', '--die-with-parent', '--unshare-net', '--ro-bind', '/', '/', '--dev-bind', '/dev', '/dev', '--proc', '/proc', '--tmpfs', '/tmp', '--ro-bind', '/tmp/webhook-reconcile-cli-e2e-v40cje0o/target', '/tmp/webhook-reconcile-cli-e2e-v40cje0o/target', '--clearenv', '--setenv', 'PATH', '/usr/bin:/bin', '--setenv', 'HOME', '/tmp', '--setenv', 'TMPDIR', '/tmp', '--setenv', 'RUST_TEST_THREADS', '1', '--chdir', '/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace', '/tmp/webhook-reconcile-cli-e2e-v40cje0o/target/debug/deps/webhook_receiver_process_e2e-6caa738f5453f442', 'actual_reconcile_cli_process_handles_invalid_and_http_date_retry_after', '--exact', '--ignored', '--nocapture']' returned non-zero exit status 101.

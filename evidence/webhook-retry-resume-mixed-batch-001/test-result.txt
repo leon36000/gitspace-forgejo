@@ -1,0 +1,8 @@
+Final targeted run after formatting:
+
+running 1 test
+test actual_reconcile_cli_process_resumes_mixed_batch_after_transient_failure ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 44 filtered out; finished in 0.92s
+
+The run compiled the isolated source copy with `cargo test --offline --locked --test webhook_receiver_process_e2e --no-run`, then ran the single ignored process test under Bubblewrap (`--unshare-net --unshare-pid`) and `prlimit`. It exercised the actual receiver and reconcile CLI processes against a scripted loopback HTTP fixture. No runtime source was changed in this tranche.

@@ -1,0 +1,23 @@
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/reconcile_config_contract.rs:63:
+ 
+     assert_eq!(output.status.code(), Some(1));
+     assert!(output.stderr.is_empty());
+-    let value: serde_json::Value = serde_json::from_slice(&output.stdout)
+-        .expect("missing delivery returns structured JSON");
++    let value: serde_json::Value =
++        serde_json::from_slice(&output.stdout).expect("missing delivery returns structured JSON");
+     assert_eq!(value["schema_version"], 2);
+     assert_eq!(value["verdict"], "inconclusive");
+     assert_eq!(value["delivery_id"], "fixture-delivery");
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/reconcile_config_contract.rs:94:
+     assert_eq!(value["upstream_read_attempts"], 0);
+     assert_eq!(value["error"]["code"], "delivery_not_found");
+     assert_eq!(value["error"]["retryable"], false);
+-    assert_eq!(value["error"]["details"]["delivery_id"], "missing-delivery-a");
++    assert_eq!(
++        value["error"]["details"]["delivery_id"],
++        "missing-delivery-a"
++    );
+     assert!(!value["error"]["action"].as_str().unwrap().is_empty());
+ }
+ 

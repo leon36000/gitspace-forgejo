@@ -1,0 +1,35 @@
+{
+  "branch": "local/WEBHOOK-005-canonical-links",
+  "cargo": "cargo 1.95.0 (f2d3ce0bd 2026-03-21)",
+  "command": "CARGO_TARGET_DIR=/tmp/agent-forge-webhook-045-target cargo test --offline --locked --bin forgejo-reconcile-local batch_cache_keeps_issue_and_pull_request_with_same_number_separate_over_http -- --nocapture",
+  "exit_code": 0,
+  "fixture_boundary": "The test uses the actual LocalLoopbackForgejoApi and batch reconciliation path against a loopback HTTP fixture. It does not start Forgejo and does not claim live Forgejo behavior.",
+  "license_state": {
+    "decision": "unselected",
+    "license": null,
+    "license_file": null,
+    "publish": [],
+    "redistribution_rights": "not_assessed"
+  },
+  "milestone": "WEBHOOK-RESOURCE-KIND-CACHE-045",
+  "model": "not invoked; no tokens or model cost",
+  "production_logic_changed": false,
+  "repository_head": "f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0",
+  "rustc": "rustc 1.95.0 (59807616e 2026-04-14)",
+  "scenario": {
+    "assertions": [
+      "issue and pull request cached independently despite same repository and number",
+      "issue snapshot remains closed and has no PR fields",
+      "pull request snapshot remains open, unmerged and includes validated head/base SHAs"
+    ],
+    "issue_number": 19,
+    "issue_route": "/api/v1/repos/forge-admin/agent-forge-core/issues/19",
+    "observed_requests": 2,
+    "pull_request_number": 19,
+    "pull_request_route": "/api/v1/repos/forge-admin/agent-forge-core/pulls/19",
+    "repository": "forge-admin/agent-forge-core"
+  },
+  "schema_version": 1,
+  "source_sha256": "008fadc2d3267b6bc67d217d35ac17857facda2f5770a277c1e38e8b08548f4f",
+  "test_result": "1 passed; 0 failed; 0 ignored; 107 filtered out"
+}

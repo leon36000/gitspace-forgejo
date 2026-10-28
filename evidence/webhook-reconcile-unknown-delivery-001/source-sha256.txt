@@ -1,0 +1,2 @@
+84470cfa2f156dfec840356b27615bdd5434f4f89290bcaacdc69593784c86c1  src/bin/forgejo-reconcile-local.rs
+c431b95ad313f3a6cd012e5a90857336c7906222e813be46ee5f669d7f436bbd  tests/reconcile_config_contract.rs

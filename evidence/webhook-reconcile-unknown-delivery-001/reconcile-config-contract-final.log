@@ -1,0 +1,12 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.20s
+     Running tests/reconcile_config_contract.rs (target/debug/deps/reconcile_config_contract-9069dc04dad0536b)
+
+running 4 tests
+test batch_with_unknown_delivery_returns_structured_error_before_credential_read ... ok
+test canonical_config_is_loaded_before_the_inbox ... ok
+test config_rejects_other_repositories_versions_and_unknown_credentials ... ok
+test config_cannot_redirect_the_local_adapter ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+

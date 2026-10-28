@@ -1,0 +1,19 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.44s
+     Running tests/reconcile_config_contract.rs (target/debug/deps/reconcile_config_contract-9069dc04dad0536b)
+
+running 1 test
+
+thread 'canonical_config_is_loaded_before_the_inbox' (1847338) panicked at tests/reconcile_config_contract.rs:65:5:
+assertion failed: output.stderr.is_empty()
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test canonical_config_is_loaded_before_the_inbox ... FAILED
+
+failures:
+
+failures:
+    canonical_config_is_loaded_before_the_inbox
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 3 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `--test reconcile_config_contract`

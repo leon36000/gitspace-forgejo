@@ -1,0 +1,47 @@
+    Checking agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+error: this `if` statement can be collapsed
+   --> src/agent_runtime.rs:969:21
+    |
+969 | /                     if let Some((existing_policy_sha256, existing_budget_ms)) = ledger.policy {
+970 | |                         if existing_policy_sha256 != policy_sha256
+971 | |                             || existing_budget_ms != mission_cpu_budget_ms
+...   |
+979 | |                     }
+    | |_____________________^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#collapsible_if
+    = note: `-D clippy::collapsible-if` implied by `-D warnings`
+    = help: to override `-D warnings` add `#[allow(clippy::collapsible_if)]`
+help: collapse nested if block
+    |
+969 ~                     if let Some((existing_policy_sha256, existing_budget_ms)) = ledger.policy
+970 ~                         && (existing_policy_sha256 != policy_sha256
+971 ~                             || existing_budget_ms != mission_cpu_budget_ms)
+972 |                         {
+...
+977 |                             ));
+978 ~                         }
+    |
+
+error: this `if` statement can be collapsed
+    --> src/agent_runtime.rs:1748:17
+     |
+1748 | /                 if let Some(resolved) = resolved.as_ref() {
+1749 | |                     if resolved.resolution.is_terminal() {
+1750 | |                         return Ok(Some(resolved.resolution.clone()));
+1751 | |                     }
+1752 | |                 }
+     | |_________________^
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#collapsible_if
+help: collapse nested if block
+     |
+1748 ~                 if let Some(resolved) = resolved.as_ref()
+1749 ~                     && resolved.resolution.is_terminal() {
+1750 |                         return Ok(Some(resolved.resolution.clone()));
+1751 ~                     }
+     |
+
+error: could not compile `agent-forge-core` (lib) due to 2 previous errors
+warning: build failed, waiting for other jobs to finish...
+error: could not compile `agent-forge-core` (lib test) due to 2 previous errors

@@ -1,0 +1,7 @@
+# Depuis .runtime/webhook-005-workspace; exécuter une seule fixture isolée.
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_resumes_mixed_batch_after_transient_failure
+
+# Vérifications locales finales du code et de l’état de publication.
+cargo fmt --all -- --check
+git diff --check
+python3 scripts/verify_cargo_license_state.py

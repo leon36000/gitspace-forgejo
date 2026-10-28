@@ -1,0 +1,9 @@
+date_local=2026-10-25T00:02:09-04:00
+git_head=f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+git_branch=local/WEBHOOK-005-canonical-links
+rustc=1.95.0 (59807616e 2026-04-14)
+cargo=1.95.0 (f2d3ce0bd 2026-03-21)
+rust_host=aarch64-unknown-linux-gnu
+python=3.12.3
+bubblewrap=0.9.0
+platform=linux/aarch64
