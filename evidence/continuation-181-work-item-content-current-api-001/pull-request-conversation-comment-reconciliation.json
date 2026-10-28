@@ -1,0 +1,38 @@
+{
+  "api_version": "forgejo-rest-v1",
+  "canonical_state": {
+    "base_sha": "386620012f9c625d4f46fe4b6c89c14c4a3111d1",
+    "comment": {
+      "body": "Local Forgejo webhook adapter reconciliation fixture comment.",
+      "body_trust": "untrusted_user_content",
+      "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/2#issuecomment-4",
+      "id": 4,
+      "state": "present",
+      "updated_at": "2026-10-27T00:46:24-04:00"
+    },
+    "head_sha": "b1bfc9787e2a913ef260bc79c302d140e046c6eb",
+    "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/2",
+    "merge_commit_sha": null,
+    "merged": false,
+    "requested_reviewers": [],
+    "requested_reviewers_teams": [],
+    "state": "closed",
+    "updated_at": "2026-10-27T00:46:24-04:00",
+    "work_item_content": {
+      "body": "Verify that the live receiver journals and reconciles PR transitions.",
+      "source": "current_forgejo_pull_request_api",
+      "title": "Exercise emitted pull-request webhooks",
+      "trust": "untrusted_user_content"
+    }
+  },
+  "delivery_id": "176edd15-5c1b-43ae-86ee-119602f5c33c",
+  "resource": {
+    "kind": "pull_request",
+    "number": 2,
+    "owner": "forge-admin",
+    "repository": "agent-forge-core"
+  },
+  "schema_version": 8,
+  "upstream_read_attempts": 2,
+  "verdict": "current_state_read"
+}

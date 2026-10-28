@@ -1,0 +1,1 @@
+python3 scripts/run_forgejo_live_pr_merge_e2e.py --forgejo-binary /tmp/forgejo-17.0.0 --repo-root /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace --state-dir /tmp/forgejo-agent-cont180-state-010 --non-admin-merger --stdio-mcp-egress-during-merge

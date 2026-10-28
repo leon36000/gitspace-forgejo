@@ -1,0 +1,41 @@
+{
+  "all_targets_existing_log": {
+    "failed": 0,
+    "ignored": 121,
+    "passed": 651,
+    "result_groups": 36
+  },
+  "capabilities_e2e": {
+    "failed": 0,
+    "ignored": 2,
+    "passed": 3,
+    "result_groups": 1
+  },
+  "cargo_license_guard": {
+    "failed": 0,
+    "passed": 9
+  },
+  "post_assertion_contract": {
+    "failed": 0,
+    "ignored": 0,
+    "passed": 74,
+    "result_groups": 1
+  },
+  "python_emitted_and_native_replay": {
+    "failed": 0,
+    "passed": 158
+  },
+  "reconcile_cli": {
+    "failed": 0,
+    "ignored": 0,
+    "passed": 151,
+    "result_groups": 1
+  },
+  "static_checks": {
+    "cargo_fmt_check": "pass (exit 0)",
+    "cargo_license_state_guard": "pass (exit 0)",
+    "cargo_metadata_locked_offline_no_deps": "pass (exit 0)",
+    "git_diff_check": "pass (exit 0)",
+    "py_compile": "pass (exit 0)"
+  }
+}

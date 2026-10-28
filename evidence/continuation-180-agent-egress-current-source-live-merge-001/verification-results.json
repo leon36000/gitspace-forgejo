@@ -1,0 +1,86 @@
+{
+  "diff-check.log": {
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit_code": 0,
+    "output_bytes": 0
+  },
+  "egress-live-python.log": {
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_forgejo_agent_egress_live_e2e.py",
+      "-v"
+    ],
+    "exit_code": 0,
+    "output_bytes": 1757
+  },
+  "mcp-host-python.log": {
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_mission_012_egress_barrier_mcp_host.py",
+      "-v"
+    ],
+    "exit_code": 0,
+    "output_bytes": 498
+  },
+  "pr-merge-python.log": {
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_forgejo_live_pr_merge_e2e.py",
+      "-v"
+    ],
+    "exit_code": 0,
+    "output_bytes": 3076
+  },
+  "pycompile.log": {
+    "command": [
+      "python3",
+      "-m",
+      "py_compile",
+      "scripts/run_mission_012_stdio_mcp_egress_gate_e2e.py",
+      "scripts/run_forgejo_live_pr_merge_e2e.py",
+      "scripts/mission_012_egress_barrier_mcp_host.py",
+      "scripts/mission_012_sandboxed_test_adapter.py",
+      "tests/test_forgejo_live_pr_merge_e2e.py",
+      "tests/test_mission_012_egress_barrier_mcp_host.py"
+    ],
+    "exit_code": 0,
+    "output_bytes": 0
+  },
+  "sandbox-adapter-python.log": {
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_mission_012_sandboxed_test_adapter.py",
+      "-v"
+    ],
+    "exit_code": 0,
+    "output_bytes": 1714
+  }
+}

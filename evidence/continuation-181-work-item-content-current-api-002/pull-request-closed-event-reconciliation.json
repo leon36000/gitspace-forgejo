@@ -1,0 +1,31 @@
+{
+  "api_version": "forgejo-rest-v1",
+  "canonical_state": {
+    "base_sha": "7728c7eed83d48b1ec63c4aa5bf0d34d332da22d",
+    "comment": null,
+    "head_sha": "4b0da6c1a5b35c36b8c5dd113106eaad8dfbcf5a",
+    "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/2",
+    "merge_commit_sha": null,
+    "merged": false,
+    "requested_reviewers": [],
+    "requested_reviewers_teams": [],
+    "state": "closed",
+    "updated_at": "2026-10-27T00:50:15-04:00",
+    "work_item_content": {
+      "body": "Verify that the live receiver journals and reconciles PR transitions.",
+      "source": "current_forgejo_pull_request_api",
+      "title": "Exercise emitted pull-request webhooks",
+      "trust": "untrusted_user_content"
+    }
+  },
+  "delivery_id": "d92f5381-362f-4e4c-bb83-4c434a209174",
+  "resource": {
+    "kind": "pull_request",
+    "number": 2,
+    "owner": "forge-admin",
+    "repository": "agent-forge-core"
+  },
+  "schema_version": 8,
+  "upstream_read_attempts": 1,
+  "verdict": "current_state_read"
+}

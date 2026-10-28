@@ -1,0 +1,23 @@
+# Run effectué sur Forgejo local 17.0.0 (référence factuelle, l'état temporaire a été consommé puis arrêté).
+python3 scripts/run_forgejo_live_webhook_reconcile_emitted.py \
+  --forgejo-binary /tmp/forgejo-17.0.0 \
+  --repo-root /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace \
+  --state-dir /tmp/forgejo-agent-cont181-content-state-002 \
+  --evidence-dir /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/continuation-181-work-item-content-current-api-002
+
+# Revalidation ciblée après les dernières assertions de contrat.
+cargo test --locked --offline --test webhook_reconcile_contract -- --test-threads=1
+cargo test --locked --offline --bin forgejo-reconcile-local -- --test-threads=1
+cargo test --locked --offline --test forgejo_reconcile_capabilities_e2e -- --test-threads=1
+python3 -m unittest -v tests.test_forgejo_emitted_webhook_e2e tests.test_forgejo_webhook_native_replay_e2e
+python3 -m py_compile \
+  scripts/run_forgejo_live_webhook_reconcile_emitted.py \
+  scripts/run_forgejo_live_webhook_native_replay_e2e.py \
+  scripts/run_forgejo_native_branch_delete_webhook_reconcile.py \
+  scripts/run_forgejo_native_push_webhook_reconcile.py \
+  tests/test_forgejo_emitted_webhook_e2e.py \
+  tests/test_forgejo_webhook_native_replay_e2e.py
+cargo fmt --all -- --check
+git diff --check
+python3 scripts/verify_cargo_license_state.py
+python3 -m unittest -v scripts.test_cargo_license_state

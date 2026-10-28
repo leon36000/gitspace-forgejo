@@ -1,0 +1,3 @@
+First corrected discovery invocation: python3 -m unittest discover -s tests -p test_forgejo_live_pr_merge_e2e.py -k expected_mcp_protocol.
+Observed before implementing expected_mcp_methods: AttributeError: module run_mission_012_stdio_mcp_egress_gate_e2e has no attribute expected_mcp_methods.
+After implementation the same filtered test passes; then the full file passes 15/15. The failed attempt was a red-phase unit check, not a failed Forgejo run.

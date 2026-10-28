@@ -1,0 +1,17 @@
+{
+  "current_api_content": {
+    "body": "Editing a closed issue emits a notification; reconcile from Forgejo's current API state.",
+    "source": "current_forgejo_issue_api",
+    "title": "Forgejo-emitted reconciliation (edited)",
+    "trust": "untrusted_user_content"
+  },
+  "initial_and_current_content_differ": true,
+  "initial_webhook_content": {
+    "body": "The receiver must journal this real event.",
+    "title": "Forgejo-emitted reconciliation"
+  },
+  "old_delivery_reconciled_after_edit": true,
+  "reconciled_delivery_id": "f8ed1000-127e-4805-8fca-e21ccd22222d",
+  "reconciled_payload_state": "open",
+  "source_event": "Forgejo-emitted issues/opened event from the receiver journal"
+}

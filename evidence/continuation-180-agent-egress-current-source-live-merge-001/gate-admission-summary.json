@@ -1,0 +1,35 @@
+{
+  "main_head_sha": "29db6077dfe4f28e23941b17e96a53e6364b7786",
+  "merge_attempted": true,
+  "merge_authorized": true,
+  "merge_commit_sha": "29db6077dfe4f28e23941b17e96a53e6364b7786",
+  "postmerge_base_sha": "29db6077dfe4f28e23941b17e96a53e6364b7786",
+  "submitted_head_sha": "365fcc7924292c18cedd58db3cc7e4e9ce5ff60f",
+  "test_host_supervisor_issuance": {
+    "capability_sent_atomically": true,
+    "capability_sent_before_gate_exec": true,
+    "target": {
+      "base_branch": "main",
+      "origin": "http://127.0.0.1:3130",
+      "owner": "forge-admin",
+      "profile_selector": "merge-014-agent-forge-core",
+      "pull_request_number": 2,
+      "repository": "agent-forge-core"
+    }
+  },
+  "validated_base_sha": "58759efa8ee4fdb958a46124d41d5caf6ec6bd1f",
+  "verdict": "merged",
+  "writer_admission": {
+    "pre_post_revalidated": true,
+    "profile": "local_single_writer_sandbox",
+    "supervisor_policy_independently_verified": false,
+    "target": {
+      "base_branch": "main",
+      "origin": "http://127.0.0.1:3130",
+      "owner": "forge-admin",
+      "profile_selector": "merge-014-agent-forge-core",
+      "pull_request_number": 2,
+      "repository": "agent-forge-core"
+    }
+  }
+}

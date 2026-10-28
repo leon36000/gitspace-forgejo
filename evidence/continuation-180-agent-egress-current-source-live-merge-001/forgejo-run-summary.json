@@ -1,0 +1,55 @@
+{
+  "candidate_commit": "365fcc7924292c18cedd58db3cc7e4e9ce5ff60f",
+  "candidate_sha256": "6937c269b5a838c3eb28343721f59774b3d9a15bac9da5016d788fa8e0005c04",
+  "false_executor_status_refused": true,
+  "forgejo_binary_sha256": "e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7",
+  "forgejo_version": "17.0.0+gitea-1.22.0",
+  "green_acceptance": "9 passed; 0 failed",
+  "merge_commit_sha": "29db6077dfe4f28e23941b17e96a53e6364b7786",
+  "merge_http_status": 200,
+  "merged": true,
+  "non_admin_merge_account_tested": true,
+  "postmerge_behavior": {
+    "acceptance_exit_code": 0,
+    "failed_tests": 0,
+    "passed_tests": 9,
+    "tested_source_sha256": "6937c269b5a838c3eb28343721f59774b3d9a15bac9da5016d788fa8e0005c04",
+    "worker_sha256": "9adbf69e208741f61c3685bf128419c134775cbfb0854dc66000d405797467aa"
+  },
+  "pull_request_number": 2,
+  "red_acceptance": {
+    "exit_code": 1,
+    "failed_tests": [
+      "below_min_returns_min",
+      "above_max_returns_max",
+      "singleton_interval_clamps",
+      "i32_min_clamps",
+      "i32_max_clamps"
+    ],
+    "passing_tests": [
+      "in_range_is_preserved",
+      "equal_lower_bound_is_preserved",
+      "equal_upper_bound_is_preserved",
+      "negative_interval_clamps"
+    ]
+  },
+  "stdio_mcp_egress_during_merge": true,
+  "stdio_mcp_gate_barrier": {
+    "child_process_alive_during_gate_read": true,
+    "reached_on": "tools/call:mission_context after corrected acceptance",
+    "released_after_gate_operation": true,
+    "released_after_gate_read": false
+  },
+  "stdio_mcp_source_binding": {
+    "forgejo_candidate_commit": "365fcc7924292c18cedd58db3cc7e4e9ce5ff60f",
+    "forgejo_candidate_source_sha256": "6937c269b5a838c3eb28343721f59774b3d9a15bac9da5016d788fa8e0005c04",
+    "llm_invoked": false,
+    "mcp_source_sha256": "6937c269b5a838c3eb28343721f59774b3d9a15bac9da5016d788fa8e0005c04",
+    "merge_commit_sha": "29db6077dfe4f28e23941b17e96a53e6364b7786",
+    "merged_source_sha256": "6937c269b5a838c3eb28343721f59774b3d9a15bac9da5016d788fa8e0005c04",
+    "producer": "same stdio-MCP process using the explicitly named local-test-adapter",
+    "pull_request_head_after_restore": "365fcc7924292c18cedd58db3cc7e4e9ce5ff60f",
+    "same_process_alive_during_gate": true,
+    "same_process_released_after_merge_operation": true
+  }
+}

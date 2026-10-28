@@ -1,0 +1,64 @@
+[
+  {
+    "api_version": "forgejo-rest-v1",
+    "canonical_state": {
+      "base_sha": null,
+      "comment": null,
+      "head_sha": null,
+      "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/issues/1",
+      "merge_commit_sha": null,
+      "merged": null,
+      "requested_reviewers": null,
+      "requested_reviewers_teams": null,
+      "state": "closed",
+      "updated_at": "2026-10-27T00:50:13-04:00",
+      "work_item_content": {
+        "body": "Editing a closed issue emits a notification; reconcile from Forgejo's current API state.",
+        "source": "current_forgejo_issue_api",
+        "title": "Forgejo-emitted reconciliation (edited)",
+        "trust": "untrusted_user_content"
+      }
+    },
+    "delivery_id": "b7e09ae2-64eb-4132-83ee-78e32bd2e968",
+    "resource": {
+      "kind": "issue",
+      "number": 1,
+      "owner": "forge-admin",
+      "repository": "agent-forge-core"
+    },
+    "schema_version": 8,
+    "upstream_read_attempts": 1,
+    "verdict": "current_state_read"
+  },
+  {
+    "api_version": "forgejo-rest-v1",
+    "canonical_state": {
+      "base_sha": null,
+      "comment": null,
+      "head_sha": null,
+      "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/issues/1",
+      "merge_commit_sha": null,
+      "merged": null,
+      "requested_reviewers": null,
+      "requested_reviewers_teams": null,
+      "state": "closed",
+      "updated_at": "2026-10-27T00:50:13-04:00",
+      "work_item_content": {
+        "body": "Editing a closed issue emits a notification; reconcile from Forgejo's current API state.",
+        "source": "current_forgejo_issue_api",
+        "title": "Forgejo-emitted reconciliation (edited)",
+        "trust": "untrusted_user_content"
+      }
+    },
+    "delivery_id": "2fd1e374-7e13-4551-9dc2-ac0ad55596ee",
+    "resource": {
+      "kind": "issue",
+      "number": 1,
+      "owner": "forge-admin",
+      "repository": "agent-forge-core"
+    },
+    "schema_version": 8,
+    "upstream_read_attempts": 1,
+    "verdict": "current_state_read"
+  }
+]

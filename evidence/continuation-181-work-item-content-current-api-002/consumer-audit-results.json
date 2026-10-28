@@ -1,0 +1,19 @@
+{
+  "all_targets_fresh_after_boundary_test": false,
+  "boundary_test": {
+    "failed": 0,
+    "filtered": 33,
+    "passed": 1
+  },
+  "consumer_trace": "work_item_content is not referenced by mission_admission or agent_runtime; mission context builder takes protected requirements and pinned source only",
+  "full_all_targets_log_before_boundary_test": {
+    "failed": 0,
+    "ignored": 121,
+    "passed": 651,
+    "result_groups": 36
+  },
+  "limitations": [
+    "no LLM/AgentOS invocation",
+    "static source search and Rust unit test only"
+  ]
+}

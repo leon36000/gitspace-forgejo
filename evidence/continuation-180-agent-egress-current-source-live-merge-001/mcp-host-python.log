@@ -1,0 +1,7 @@
+test_second_context_read_is_stable_and_holds_only_after_acceptance (test_mission_012_egress_barrier_mcp_host.EgressBarrierMcpHostTests.test_second_context_read_is_stable_and_holds_only_after_acceptance) ... ok
+test_stdio_shutdown_returns_a_success_response_and_exits (test_mission_012_egress_barrier_mcp_host.EgressBarrierMcpHostTests.test_stdio_shutdown_returns_a_success_response_and_exits) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.038s
+
+OK
