@@ -1,0 +1,8 @@
+Initial focused-test attempt (before creating the empty inbox fixture):
+
+running 1 test
+thread 'actual_receiver_rejects_duplicate_host_fields_before_append' panicked at tests/webhook_receiver_process_e2e.rs:500:50:
+receiver created the inbox: Os { code: 2, kind: NotFound, message: "No such file or directory" }
+test actual_receiver_rejects_duplicate_host_fields_before_append ... FAILED
+
+This was a test-fixture setup assumption. The receiver allows an absent inbox at startup and does not create it until append; the test now pre-creates and syncs the empty inbox before starting the receiver.

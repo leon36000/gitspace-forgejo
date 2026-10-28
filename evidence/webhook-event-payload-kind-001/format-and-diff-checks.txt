@@ -1,0 +1,4 @@
+Command: rustfmt --edition 2024 --check src/webhook.rs src/webhook/http.rs src/webhook/reconcile.rs tests/webhook_handler_contract.rs tests/webhook_receiver_process_e2e.rs
+rustfmt exit: 0
+Command: git diff --check -- src/webhook.rs src/webhook/http.rs src/webhook/reconcile.rs tests/webhook_handler_contract.rs tests/webhook_receiver_process_e2e.rs
+diff-check exit: 0

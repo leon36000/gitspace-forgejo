@@ -1,0 +1,5 @@
+Observed command: python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_continues_mixed_batch_after_forbidden_resource
+Runner exit code: 0
+Selected process test: 1 passed, 0 failed, 0 ignored; 43 filtered out.
+The Cargo build used --offline --locked. The CLI returned exit code 1 as expected for a batch with an inconclusive 403; the test verified a sibling issue was reconciled.
+Observed fixture requests: GET /repos/forge-admin/agent-forge-core/issues/41, then GET /repos/forge-admin/agent-forge-core/issues/42. The repeated issue 41 caused no third request.

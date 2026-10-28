@@ -1,0 +1,3 @@
+Complete output: all-targets-tests.log
+Parsed 34 test-result groups: all report `ok`; 500 passed, 0 failed, 55 ignored.
+The suite ran before a formatting-only line-wrap adjustment to the new assertion. After that adjustment, the focused process test and cargo fmt check were rerun successfully against the final source.
