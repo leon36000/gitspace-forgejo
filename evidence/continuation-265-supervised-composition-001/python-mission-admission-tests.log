@@ -1,0 +1,67 @@
+test_503_native_replay_binding_rejects_journaled_failure_and_bad_retry (test_forgejo_live_webhook_mission_admission.LiveWebhookMissionAdmissionTests.test_503_native_replay_binding_rejects_journaled_failure_and_bad_retry) ... ok
+test_accepts_optional_mcp_host_build_flag (test_forgejo_live_webhook_mission_admission.LiveWebhookMissionAdmissionTests.test_accepts_optional_mcp_host_build_flag) ... ok
+test_admission_validator_binds_reconciled_proof_to_the_emitted_event (test_forgejo_live_webhook_mission_admission.LiveWebhookMissionAdmissionTests.test_admission_validator_binds_reconciled_proof_to_the_emitted_event) ... ok
+test_binds_issue_comment_task_to_the_real_journal_delivery (test_forgejo_live_webhook_mission_admission.LiveWebhookMissionAdmissionTests.test_binds_issue_comment_task_to_the_real_journal_delivery) ... ok
+test_binds_native_forgejo_replay_to_a_new_uuid_for_the_same_issue_payload (test_forgejo_live_webhook_mission_admission.LiveWebhookMissionAdmissionTests.test_binds_native_forgejo_replay_to_a_new_uuid_for_the_same_issue_payload) ... ok
+test_binds_native_issue_edit_task_to_the_edited_receiver_delivery (test_forgejo_live_webhook_mission_admission.LiveWebhookMissionAdmissionTests.test_binds_native_issue_edit_task_to_the_edited_receiver_delivery) ... ok
+test_binds_one_successful_forgejo_task_to_its_receiver_delivery (test_forgejo_live_webhook_mission_admission.LiveWebhookMissionAdmissionTests.test_binds_one_successful_forgejo_task_to_its_receiver_delivery) ... ok
+test_decodes_only_base64_forgejo_contents_readbacks (test_forgejo_live_webhook_mission_admission.LiveWebhookMissionAdmissionTests.test_decodes_only_base64_forgejo_contents_readbacks) ... ok
+test_delivery_cli_arguments_pin_the_receiver_attestation_key (test_forgejo_live_webhook_mission_admission.LiveWebhookMissionAdmissionTests.test_delivery_cli_arguments_pin_the_receiver_attestation_key) ... ok
+test_delivery_cli_arguments_reject_noncanonical_attestation_keys (test_forgejo_live_webhook_mission_admission.LiveWebhookMissionAdmissionTests.test_delivery_cli_arguments_reject_noncanonical_attestation_keys) ... ok
+test_derives_hook_target_and_listener_port_from_actual_receiver_address (test_forgejo_live_webhook_mission_admission.LiveWebhookMissionAdmissionTests.test_derives_hook_target_and_listener_port_from_actual_receiver_address) ... ok
+test_failed_503_then_native_replay_binds_one_admissible_event (test_forgejo_live_webhook_mission_admission.LiveWebhookMissionAdmissionTests.test_failed_503_then_native_replay_binds_one_admissible_event) ... ok
+test_failure_diagnostic_redacts_host_tokens_and_webhook_secret_encodings (test_forgejo_live_webhook_mission_admission.LiveWebhookMissionAdmissionTests.test_failure_diagnostic_redacts_host_tokens_and_webhook_secret_encodings) ... ok
+test_generates_one_ascii_hex_webhook_secret_for_both_receiver_and_forgejo (test_forgejo_live_webhook_mission_admission.LiveWebhookMissionAdmissionTests.test_generates_one_ascii_hex_webhook_secret_for_both_receiver_and_forgejo) ... ok
+test_hashes_the_complete_received_issue_payload (test_forgejo_live_webhook_mission_admission.LiveWebhookMissionAdmissionTests.test_hashes_the_complete_received_issue_payload) ... ok
+test_issue_comment_task_binding_rejects_unacknowledged_or_wrong_event (test_forgejo_live_webhook_mission_admission.LiveWebhookMissionAdmissionTests.test_issue_comment_task_binding_rejects_unacknowledged_or_wrong_event) ... ok
+test_issue_hook_deactivation_preserves_the_selected_event (test_forgejo_live_webhook_mission_admission.LiveWebhookMissionAdmissionTests.test_issue_hook_deactivation_preserves_the_selected_event) ... ok
+test_issue_hook_readback_rejects_wrong_configuration (test_forgejo_live_webhook_mission_admission.LiveWebhookMissionAdmissionTests.test_issue_hook_readback_rejects_wrong_configuration) ... ok
+test_issue_hook_readback_uses_forgejo_values_and_omits_secret (test_forgejo_live_webhook_mission_admission.LiveWebhookMissionAdmissionTests.test_issue_hook_readback_uses_forgejo_values_and_omits_secret) ... ok
+test_mcp_host_binary_hash_is_required_and_recorded_when_requested (test_forgejo_live_webhook_mission_admission.LiveWebhookMissionAdmissionTests.test_mcp_host_binary_hash_is_required_and_recorded_when_requested) ... ok
+test_mission_branch_protection_matches_the_reviewer_and_merge_authority (test_forgejo_live_webhook_mission_admission.LiveWebhookMissionAdmissionTests.test_mission_branch_protection_matches_the_reviewer_and_merge_authority) ... ok
+test_native_issue_comment_refusal_flag_is_opt_in (test_forgejo_live_webhook_mission_admission.LiveWebhookMissionAdmissionTests.test_native_issue_comment_refusal_flag_is_opt_in) ... ok
+test_native_issue_comment_refusal_rejects_state_change_and_wrong_error (test_forgejo_live_webhook_mission_admission.LiveWebhookMissionAdmissionTests.test_native_issue_comment_refusal_rejects_state_change_and_wrong_error) ... ok
+test_native_issue_comment_refusal_requires_unchanged_claim_and_requirement (test_forgejo_live_webhook_mission_admission.LiveWebhookMissionAdmissionTests.test_native_issue_comment_refusal_requires_unchanged_claim_and_requirement) ... ok
+test_native_issue_edit_conflict_flag_is_opt_in_and_exclusive (test_forgejo_live_webhook_mission_admission.LiveWebhookMissionAdmissionTests.test_native_issue_edit_conflict_flag_is_opt_in_and_exclusive) ... usage: python3 -m unittest [-h] --forgejo-binary FORGEJO_BINARY
+                           [--repo-root REPO_ROOT]
+                           [--source-git-dir SOURCE_GIT_DIR]
+                           [--source-git-work-tree SOURCE_GIT_WORK_TREE]
+                           --state-dir STATE_DIR --evidence-dir EVIDENCE_DIR
+                           [--allocation-id ALLOCATION_ID] [--build-mcp-host]
+                           [--build-test-crash-injection-host]
+                           [--native-replay-admission]
+                           [--receiver-overload-first-delivery]
+                           [--native-issue-comment-refusal]
+                           [--native-issue-edit-conflict]
+python3 -m unittest: error: --native-issue-edit-conflict must run without other native replay/refusal modes
+ok
+test_native_issue_edit_conflict_refusal_requires_unchanged_claim_and_inbox (test_forgejo_live_webhook_mission_admission.LiveWebhookMissionAdmissionTests.test_native_issue_edit_conflict_refusal_requires_unchanged_claim_and_inbox) ... ok
+test_native_issue_edit_conflict_rejects_wrong_event_error_or_mutation (test_forgejo_live_webhook_mission_admission.LiveWebhookMissionAdmissionTests.test_native_issue_edit_conflict_rejects_wrong_event_error_or_mutation) ... ok
+test_native_replay_admission_is_opt_in (test_forgejo_live_webhook_mission_admission.LiveWebhookMissionAdmissionTests.test_native_replay_admission_is_opt_in) ... ok
+test_native_replay_reuses_the_same_mission_claim_without_appending (test_forgejo_live_webhook_mission_admission.LiveWebhookMissionAdmissionTests.test_native_replay_reuses_the_same_mission_claim_without_appending) ... ok
+test_receiver_overload_recovery_mode_requires_native_replay (test_forgejo_live_webhook_mission_admission.LiveWebhookMissionAdmissionTests.test_receiver_overload_recovery_mode_requires_native_replay) ... usage: python3 -m unittest [-h] --forgejo-binary FORGEJO_BINARY
+                           [--repo-root REPO_ROOT]
+                           [--source-git-dir SOURCE_GIT_DIR]
+                           [--source-git-work-tree SOURCE_GIT_WORK_TREE]
+                           --state-dir STATE_DIR --evidence-dir EVIDENCE_DIR
+                           [--allocation-id ALLOCATION_ID] [--build-mcp-host]
+                           [--build-test-crash-injection-host]
+                           [--native-replay-admission]
+                           [--receiver-overload-first-delivery]
+                           [--native-issue-comment-refusal]
+                           [--native-issue-edit-conflict]
+python3 -m unittest: error: --receiver-overload-first-delivery requires --native-replay-admission
+ok
+test_refuses_mismatched_delivery_uuid_or_non_open_event (test_forgejo_live_webhook_mission_admission.LiveWebhookMissionAdmissionTests.test_refuses_mismatched_delivery_uuid_or_non_open_event) ... ok
+test_refuses_native_replay_that_changes_claim_or_persistent_state (test_forgejo_live_webhook_mission_admission.LiveWebhookMissionAdmissionTests.test_refuses_native_replay_that_changes_claim_or_persistent_state) ... ok
+test_refuses_task_without_receiver_acknowledgement (test_forgejo_live_webhook_mission_admission.LiveWebhookMissionAdmissionTests.test_refuses_task_without_receiver_acknowledgement) ... ok
+test_rejects_native_replay_with_changed_issue_or_payload (test_forgejo_live_webhook_mission_admission.LiveWebhookMissionAdmissionTests.test_rejects_native_replay_with_changed_issue_or_payload) ... ok
+test_rejects_received_replay_with_only_a_secondary_payload_field_changed (test_forgejo_live_webhook_mission_admission.LiveWebhookMissionAdmissionTests.test_rejects_received_replay_with_only_a_secondary_payload_field_changed) ... ok
+test_returns_terminal_http_failure_for_actionable_validation (test_forgejo_live_webhook_mission_admission.LiveWebhookMissionAdmissionTests.test_returns_terminal_http_failure_for_actionable_validation) ... ok
+test_test_crash_host_build_flag_is_explicit_and_requires_mcp_host (test_forgejo_live_webhook_mission_admission.LiveWebhookMissionAdmissionTests.test_test_crash_host_build_flag_is_explicit_and_requires_mcp_host) ... ok
+test_waits_until_forgejo_records_the_receiver_response (test_forgejo_live_webhook_mission_admission.LiveWebhookMissionAdmissionTests.test_waits_until_forgejo_records_the_receiver_response) ... ok
+
+----------------------------------------------------------------------
+Ran 38 tests in 0.048s
+
+OK

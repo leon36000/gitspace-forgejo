@@ -1,0 +1,17 @@
+# Commands ran from the worktree root. Exit status was 0 unless marked diagnostic red/initial green.
+cargo test --locked --offline --all-targets > evidence/continuation-267-batch-budget-source-binding-001/cargo-all-targets.log 2>&1
+cargo check --locked --offline --all-targets > evidence/continuation-267-batch-budget-source-binding-001/cargo-check-all-targets.log 2>&1
+cargo fmt --all -- --check > evidence/continuation-267-batch-budget-source-binding-001/cargo-fmt-final.log 2>&1
+python3 scripts/verify_cargo_license_state.py > evidence/continuation-267-batch-budget-source-binding-001/cargo-license-guard.log 2>&1
+python3 scripts/test_cargo_license_state.py > evidence/continuation-267-batch-budget-source-binding-001/cargo-license-tests.log 2>&1
+python3 -m unittest tests.test_forgejo_emitted_webhook_e2e tests.test_forgejo_live_org_team_reviewer_readback tests.test_forgejo_webhook_native_replay_e2e > evidence/continuation-267-batch-budget-source-binding-001/python-final.log 2>&1
+python3 -m py_compile scripts/run_forgejo_live_org_team_reviewer_readback.py scripts/run_forgejo_live_webhook_native_replay_e2e.py scripts/run_forgejo_native_branch_delete_webhook_reconcile.py scripts/run_forgejo_native_push_webhook_reconcile.py scripts/run_forgejo_live_webhook_reconcile_emitted.py tests/test_forgejo_emitted_webhook_e2e.py tests/test_forgejo_live_org_team_reviewer_readback.py tests/test_forgejo_webhook_native_replay_e2e.py > evidence/continuation-267-batch-budget-source-binding-001/python-compile-final.log 2>&1
+git diff --check > evidence/continuation-267-batch-budget-source-binding-001/git-diff-check.log 2>&1
+python3 -c 'import ast,pathlib; [ast.parse(pathlib.Path(p).read_text(encoding="utf-8"), filename=p) for p in ["evidence/continuation-267-batch-budget-source-binding-001/append_manifests.py", "evidence/continuation-267-batch-budget-source-binding-001/verify_manifests.py"]]' > evidence/continuation-267-batch-budget-source-binding-001/manifest-tools-ast.log 2>&1
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_refuses_repeated_comment_batch_output_budget > evidence/continuation-267-batch-budget-source-binding-001/process-budget-green2.log 2>&1
+python3 evidence/continuation-267-batch-budget-source-binding-001/append_manifests.py
+python3 evidence/continuation-267-batch-budget-source-binding-001/verify_manifests.py
+
+# The process runner invocation and output are retained in process-budget-green2.log (1 passed, 157 filtered).
+# Diagnostics from earlier TDD runs are process-budget-red.log (assertion type), process-budget-red-functional.log (schema 14 vs 15), and process-budget-green.log (old 16 KiB stdout bound).
+# cargo-focused-final2.log retains a successful focused run; the shell invocation was not captured, so the all-targets run is the reproducible suite command.

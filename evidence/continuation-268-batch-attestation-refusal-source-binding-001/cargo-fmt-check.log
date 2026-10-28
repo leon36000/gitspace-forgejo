@@ -1,0 +1,12 @@
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_quarantine_cli.rs:409:
+             assert_eq!(selected_sources.len(), 2);
+             for ((source, delivery_id), event) in selected_sources
+                 .iter()
+-                .zip([active_delivery_id.as_str(), second_active_delivery_id.as_str()])
++                .zip([
++                    active_delivery_id.as_str(),
++                    second_active_delivery_id.as_str(),
++                ])
+                 .zip(&events[2..])
+             {
+                 assert_eq!(source["delivery_id"].as_str(), Some(delivery_id));

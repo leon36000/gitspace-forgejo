@@ -1,0 +1,19 @@
+Worktree base HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+Network use in this lot: none; Cargo commands locked/offline; process scenario ran under Bubblewrap.
+
+PASS cargo test --locked --offline --bin forgejo-reconcile-local --test forgejo_reconcile_capabilities_e2e --test reconcile_config_contract --test webhook_quarantine_cli --test reconcile_journal_lock_timeout
+  159 unit; integration groups: 5 passed/2 ignored, 4 passed, 3 passed, 5 passed.
+PASS cargo check --locked --offline --all-targets
+PASS cargo fmt --all -- --check
+PASS python3 -m unittest tests.test_forgejo_live_org_team_reviewer_readback -v (29 tests)
+PASS python3 -m unittest tests.test_forgejo_webhook_native_replay_e2e -v (30 tests)
+PASS python3 -m unittest tests.test_forgejo_emitted_webhook_e2e -v (131 tests)
+PASS python3 -m py_compile scripts/run_forgejo_live_org_team_reviewer_readback.py scripts/run_forgejo_live_webhook_native_replay_e2e.py tests/test_forgejo_live_org_team_reviewer_readback.py tests/test_forgejo_webhook_native_replay_e2e.py tests/test_forgejo_emitted_webhook_e2e.py
+PASS python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_reads_private_workflow_run_with_host_credential_fd
+  Isolated child under Bubblewrap --unshare-net --unshare-pid; 1 selected test passed.
+PASS python3 scripts/verify_cargo_license_state.py
+  license=null, license_file=null, publish=[], no_license_selected, redistribution_rights=not_assessed, NOASSERTION.
+PASS python3 -m unittest discover -s scripts -p 'test_cargo_license_state.py' -v
+PASS git diff --check (tracked diff only; many workspace sources are untracked)
+PASS manual trailing-whitespace scan of Python scripts/tests and current Markdown docs
+PASS python3 -m unittest discover -s scripts -p 'test_cargo_license_state.py' -v\nPASS python3 evidence/continuation-266-per-delivery-reconcile-attestation-001/append_manifests.py (append-only)\nPASS python3 evidence/continuation-266-per-delivery-reconcile-attestation-001/verify_manifests.py\nPASS AST parse of append_manifests.py and verify_manifests.py\n

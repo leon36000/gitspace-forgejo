@@ -1,0 +1,8 @@
+test_host_restart_mode_omits_incompatible_gate_barrier (test_mission_012_supervised_private_netns_e2e.SupervisedMission012RunnerTests.test_host_restart_mode_omits_incompatible_gate_barrier) ... ok
+test_host_restart_verdict_requires_exact_checkpoint_and_new_fence (test_mission_012_supervised_private_netns_e2e.SupervisedMission012RunnerTests.test_host_restart_verdict_requires_exact_checkpoint_and_new_fence) ... ok
+test_success_path_keeps_same_host_gate_barrier (test_mission_012_supervised_private_netns_e2e.SupervisedMission012RunnerTests.test_success_path_keeps_same_host_gate_barrier) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.000s
+
+OK

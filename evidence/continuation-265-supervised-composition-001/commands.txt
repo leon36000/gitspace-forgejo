@@ -1,0 +1,10 @@
+# Workdir: .runtime/webhook-005-workspace
+PYTHONDONTWRITEBYTECODE=1 python3 scripts/run_mission_012_supervised_private_netns_e2e.py --state-dir /tmp/mission012-supervised-269-state --forgejo-binary /tmp/forgejo-17.0.0 --evidence-dir "$PWD/evidence/mission-012-live-agent-webhook-269-supervised" --execution-id live-mcp-269 --allocation-id mission012-supervised-269
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -p 'test_mission_012_live_mcp_agent_e2e.py' -v
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -p 'test_forgejo_live_webhook_mission_admission.py' -v
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -p 'test_mission_012_live_admission_e2e.py' -v
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -p 'test_mission_012_supervised_private_netns_e2e.py' -v
+git diff --check
+python3 evidence/continuation-265-supervised-composition-001/append_manifests.py
+python3 evidence/continuation-265-supervised-composition-001/verify_manifests.py
+git diff --check

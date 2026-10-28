@@ -1,0 +1,29 @@
+{
+  "canonical_state": {
+    "base_sha": "9d918ee61bf3d7ec2a90c54857334472e4f286d6",
+    "comment": null,
+    "head_sha": "c21d9d01688c2d7643d0356f647d890d8c5914a4",
+    "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/2",
+    "merge_commit_sha": null,
+    "merged": false,
+    "requested_reviewers": [],
+    "requested_reviewers_teams": [],
+    "state": "closed",
+    "updated_at": "2026-10-27T14:18:07-04:00",
+    "work_item_content": {
+      "body": "Verify that the live receiver journals and reconciles PR transitions.",
+      "source": "current_forgejo_pull_request_api",
+      "title": "Exercise emitted pull-request webhooks",
+      "trust": "untrusted_user_content"
+    }
+  },
+  "delivery_id": "09e5f80f-7509-4e2e-bf1f-6df0fbdeb256",
+  "resource": {
+    "kind": "pull_request",
+    "number": 2,
+    "owner": "forge-admin",
+    "repository": "agent-forge-core"
+  },
+  "review_notification": null,
+  "verdict": "current_state_read"
+}
