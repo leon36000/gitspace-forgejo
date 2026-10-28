@@ -1,0 +1,32 @@
+{
+  "host_validation": {
+    "file_type": "regular non-symlink",
+    "mode": "0600",
+    "parent_mode": "0700",
+    "parent_root": "/tmp",
+    "size_bytes": 32
+  },
+  "no_seed_bytes_or_seed_hash_recorded": true,
+  "probe": "webhook_attestation_seed",
+  "sandbox_checks": {
+    "credential_visible": false,
+    "direct_forgejo_routes_blocked": [
+      "api",
+      "web",
+      "git_receive_pack"
+    ],
+    "network_connected": false,
+    "open_fds": [
+      0,
+      1,
+      2
+    ],
+    "private_runtime_files_not_visible": [
+      "webhook_attestation_seed"
+    ],
+    "supervisor_observed_route_connections": 0
+  },
+  "sandbox_result": "open refused; only the probe label is reported",
+  "schema_version": 1,
+  "source": "actual webhook receiver Ed25519 signing seed for this Forgejo run"
+}

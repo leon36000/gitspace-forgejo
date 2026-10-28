@@ -1,0 +1,59 @@
+{
+  "acceptance": {
+    "baseline_actionable_failure": true,
+    "baseline_exit_code": 101,
+    "corrected_exit_code": 0,
+    "corrected_summary": "9 passed; 0 failed",
+    "postmerge_failed_tests": 0,
+    "postmerge_passed_tests": 9,
+    "postmerge_source_sha256": "6937c269b5a838c3eb28343721f59774b3d9a15bac9da5016d788fa8e0005c04"
+  },
+  "agent_adapter": "local-test-adapter",
+  "forgejo": {
+    "binary_sha256": "e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7",
+    "build_commit_established": false,
+    "candidate_commit": "c64994ac52b0748b09a4a916468817baa7302ad2",
+    "candidate_source_sha256": "6937c269b5a838c3eb28343721f59774b3d9a15bac9da5016d788fa8e0005c04",
+    "external_writers_excluded": false,
+    "main_head_after_merge": "a342878b15d157b81fbd25c1b328fddaea4754a8",
+    "merge_actor_is_admin": false,
+    "merge_commit": "a342878b15d157b81fbd25c1b328fddaea4754a8",
+    "merged": true,
+    "version": "17.0.0+gitea-1.22.0"
+  },
+  "llm_invoked": false,
+  "sample_size": 1,
+  "sandbox": {
+    "agent_alive_during_gate": true,
+    "credential_fd_inherited_by_agent": false,
+    "credential_persisted_to_file": false,
+    "credential_probe_refused_inside_pid_namespace": true,
+    "host_gate_http_status": 200,
+    "host_gate_verdict": "merged",
+    "merge_credential_visible": false,
+    "network_connected": false,
+    "open_fds": [
+      0,
+      1,
+      2
+    ],
+    "private_files_not_visible": [
+      "webhook_attestation_seed"
+    ],
+    "routes_blocked": [
+      "api",
+      "web",
+      "git_receive_pack"
+    ],
+    "supervisor_route_connections": 0
+  },
+  "schema_version": 1,
+  "webhook": {
+    "action": "closed",
+    "delivery_sequence": 4,
+    "enabled": true,
+    "merge_commit_matches": true,
+    "secret_recorded": false,
+    "verdict": "current_state_read"
+  }
+}

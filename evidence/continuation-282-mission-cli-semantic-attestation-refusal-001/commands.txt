@@ -1,0 +1,9 @@
+python3 scripts/run_forgejo_mission_delivery_process_e2e.py --only launched_cli_rejects_semantically_valid_rehashed_tampering_before_credential
+runner output: running 1 test; test launched_cli_rejects_semantically_valid_rehashed_tampering_before_credential ... ok
+test result: 1 passed; 0 failed; 0 ignored; 5 filtered out
+
+cargo fmt --all -- --check
+exit status: 0
+
+git diff --check
+exit status: 0

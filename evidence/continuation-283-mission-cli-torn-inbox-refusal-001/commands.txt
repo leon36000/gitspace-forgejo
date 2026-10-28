@@ -1,0 +1,15 @@
+Red test before the error mapping:
+  python3 scripts/run_forgejo_mission_delivery_process_e2e.py --only launched_cli_reports_torn_attested_journal_before_credential_without_repair
+Observed: process returned webhook_inbox_untrusted; assertion expected webhook_inbox_corrupt.
+
+Final process test:
+  python3 scripts/run_forgejo_mission_delivery_process_e2e.py --only launched_cli_reports_torn_attested_journal_before_credential_without_repair
+
+Rust unit suite:
+  cargo test --locked --offline --bin forgejo-mission-local
+
+Other checks:
+  cargo fmt --all -- --check
+  git diff --check
+  python3 -c 'import ast; ast.parse(open("scripts/run_forgejo_mission_delivery_process_e2e.py", encoding="utf-8").read())'
+  python3 scripts/verify_cargo_license_state.py

@@ -1,0 +1,5 @@
+TDD observation before the code change:
+  launched_cli_reports_torn_attested_journal_before_credential_without_repair failed because actual error code was webhook_inbox_untrusted while the test expected webhook_inbox_corrupt. The failure identified the generic inbox_read_error fallback; it was not an authentication acceptance or state mutation.
+
+First post-change attempt:
+  code and state assertions passed, then the test failed only because the test expected the phrase "preserve the inbox" while the actual recovery action says "preserve a copy of the inbox". The assertion was aligned with the emitted wording; the final isolated run passed.

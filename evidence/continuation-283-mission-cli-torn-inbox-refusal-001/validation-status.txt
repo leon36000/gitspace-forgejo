@@ -1,0 +1,4 @@
+rustfmt: exit=0
+diff-check: exit=0
+runner-python-ast: exit=0
+cargo-license-policy: exit=0

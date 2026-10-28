@@ -1,0 +1,43 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.01s
+     Running unittests src/bin/forgejo-mission-local.rs (target/debug/deps/forgejo_mission_local-5207f0c68a40622b)
+
+running 36 tests
+test tests::branch_snapshot_preserves_the_protection_flag_and_requires_a_full_commit ... ok
+test tests::current_issue_context_preserves_null_and_omits_missing_or_over_budget_body ... ok
+test tests::context_packet_pins_requirement_and_source_bytes_to_one_commit ... ok
+test tests::duration_context_extraction_does_not_match_a_prefix_function_name ... ok
+test tests::duration_context_extraction_ignores_a_commented_enum_decoy ... ok
+test tests::duration_context_extraction_accepts_multiline_signatures_and_ignores_signature_comments ... ok
+test tests::duration_context_extraction_ignores_braces_inside_strings_and_comments ... ok
+test tests::delivery_attestation_policy_requires_unique_canonical_ed25519_keys ... ok
+test tests::duration_context_extraction_ignores_items_inside_macro_token_groups ... ok
+test tests::duration_context_extraction_skips_a_function_declaration_inside_a_block_comment ... ok
+test tests::issue_snapshot_rejects_a_canonical_url_from_another_repository ... ok
+test tests::host_forgejo_token_is_bounded_and_curl_header_is_stdin_only ... ok
+test tests::issue_snapshot_requires_the_canonical_url_and_supported_state ... ok
+test tests::mission_arguments_require_a_stable_allocation_id_instead_of_a_generation_number ... ok
+test tests::mission_profile_selection_binds_the_issue_requirement_and_workspace ... ok
+test tests::fixed_inbox_must_already_be_a_private_receiver_journal ... ok
+test tests::mission_012_context_extracts_and_cites_the_pinned_clamp_function ... ok
+test tests::requirement_paths_cannot_escape_the_fixed_namespace ... ok
+test tests::host_credential_file_requires_private_regular_file_and_never_echoes_value ... ok
+test tests::mission_arguments_reject_duplicate_host_bindings ... ok
+test tests::delivery_mode_requires_a_host_pinned_requirement_digest_and_one_safe_delivery ... ok
+test tests::requirement_tree_rejects_symlinked_or_nested_requirement_json ... ok
+test tests::requirement_tree_limit_is_reported_as_a_bounded_refusal ... ok
+test tests::mission_journal_path_is_anchored_to_the_checkout ... ok
+test tests::delivery_admission_uses_current_forgejo_state_and_refuses_a_closed_issue ... ok
+test tests::delivery_admission_refuses_a_missing_delivery_before_any_forgejo_read ... ok
+test tests::delivery_admission_refuses_a_stale_requirement_digest_before_allocation ... ok
+test tests::branch_api_rejects_duplicate_protected_field_before_admission ... ok
+test tests::delivery_admission_refuses_a_pull_request_event_before_any_forgejo_read ... ok
+test tests::delivery_admission_refuses_another_issue_or_repository_before_any_forgejo_read ... ok
+test tests::raw_requirement_read_pins_commit_and_preserves_duplicate_json_fields ... ok
+test tests::oversized_raw_requirement_response_is_non_retryable_invalid_response ... ok
+test tests::requirement_tree_pagination_must_be_complete_and_ordered ... ok
+test tests::raw_requirement_reader_uses_http_status_before_body_utf8 ... ok
+test tests::delivery_admission_resumes_one_allocation_for_duplicate_and_replayed_deliveries ... ok
+test tests::non_utf8_raw_requirement_through_http_source_refuses_admission_before_claim ... ok
+
+test result: ok. 36 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+

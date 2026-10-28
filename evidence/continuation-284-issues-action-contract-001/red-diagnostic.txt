@@ -1,0 +1,19 @@
+CONTINUATION-284 red and integration diagnostics
+Base HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+
+Focused red before runtime change:
+
+Command: cargo test --locked --offline --test webhook_handler_contract issues_ingestion_requires_a_supported_forgejo_action_without_journaling_invalid_payloads -- --exact
+Observed: test failed at tests/webhook_handler_contract.rs:519 because response.status was 202, expected 400 for a validly HMAC-signed `issues` payload without `action`.
+
+Command: cargo test --locked --offline --test webhook_reconcile_contract issues_events_require_a_supported_forgejo_action -- --exact
+Observed: test failed at tests/webhook_reconcile_contract.rs:1341 because event_resource_ref returned Ok(ResourceRef { kind: Issue, ..., id: Number(41) }) for the same missing-action condition, expected InvalidEventPayloadField("action").
+
+Implementation integration diagnostics retained as separate all-targets logs:
+
+1. The first compile after adding event_contracts_v5 directly to the large `json!` capabilities macro hit the macro recursion limit. The field is now serialized to Value and inserted after the macro; no crate-wide recursion-limit change was needed.
+2. `all-targets-initial-fixture-failure.log`: a local `forgejo-reconcile-local` issue-versus-PR fixture lacked `action`; failure was at src/bin/forgejo-reconcile-local.rs:12866. The issue branch now uses `opened`; the PR fixture is unchanged.
+3. `all-targets-second-fixture-failure.log`: the concurrent mission journal test fixture lacked `action`; it now carries `opened`.
+4. `all-targets-third-fixture-failure.log`: the private-journal receiver process fixture lacked `action`; it now carries `opened`.
+
+The fourth full run is `all-targets.log`: 37 suites, 692 passed, 0 failed, 151 ignored. The ignored tests were not run by `--all-targets`.

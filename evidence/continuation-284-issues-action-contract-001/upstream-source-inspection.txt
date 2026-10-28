@@ -1,0 +1,20 @@
+Repository: official Forgejo source checkout in /tmp/forgejo-v17-base-cas-poc
+Commit: 0d791421f85ca13a63b665053d81ea765fbbc571 (v17.0.0 audit target)
+Read-only verification: git diff --exit-code -- modules/structs/hook.go services/webhook/notifier.go => exit 0
+
+modules/structs/hook.go:289-299
+  HookIssueAction values include opened, closed, reopened, edited, and a wider set shared with other issue-related event headers. The wider enum is not itself the contract for the `issues` event header.
+
+services/webhook/notifier.go:211-216
+  Non-PR issue title edit emits HookEventIssues with HookIssueEdited.
+
+services/webhook/notifier.go:261-265
+  Non-PR issue state changes emit HookEventIssues with HookIssueClosed or HookIssueReOpened.
+
+services/webhook/notifier.go:283-287
+  NewIssue emits HookEventIssues with HookIssueOpened.
+
+services/webhook/notifier.go:346-350
+  Non-PR issue body edit emits HookEventIssues with HookIssueEdited.
+
+The allowed action set is inferred from these inspected v17 notifier call sites for HookEventIssues, not from the larger shared enum. The source audit does not cover later Forgejo versions.

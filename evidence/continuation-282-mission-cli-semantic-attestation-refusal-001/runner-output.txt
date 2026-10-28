@@ -1,0 +1,12 @@
+evidence.git_head=f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+evidence.source_tree_sha256=e543085bbe8431d664ef2ef6168bfc7b84d06b704227a88ac2ba60e4efc7b8ad
+evidence.cargo_lock_sha256=459fef3749a42c989521901dcde61cb26e12ed4206c5d722e149426c2d3a5439
+evidence.runner_sha256=1dad7cabbf4c5699c6a7e2f051dfbf6c126edd4f7322196fd6348a3dad57222e
+evidence.registry_stage_sha256=1f73c6a919948c0af44acac0604f8bf4f6ff4888379605e02d3976f1baea6451
+evidence.rustc=rustc 1.95.0 (59807616e 2026-04-14)
+evidence.cargo=cargo 1.95.0 (f2d3ce0bd 2026-03-21)
+evidence.bwrap=bubblewrap 0.9.0
+evidence.platform=Linux-7.0.0-1019-nvidia-aarch64-with-glibc2.39
+running 1 test
+test launched_cli_rejects_semantically_valid_rehashed_tampering_before_credential ... ok
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 5 filtered out; finished in 0.01s

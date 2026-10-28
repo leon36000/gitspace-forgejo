@@ -1,0 +1,17 @@
+test_supervisor_observes_sandboxed_agent_namespaces_from_proc (test_forgejo_live_pr_merge_e2e.StdioMcpLiveFixtureTests.test_supervisor_observes_sandboxed_agent_namespaces_from_proc) ... ERROR
+
+======================================================================
+ERROR: test_supervisor_observes_sandboxed_agent_namespaces_from_proc (test_forgejo_live_pr_merge_e2e.StdioMcpLiveFixtureTests.test_supervisor_observes_sandboxed_agent_namespaces_from_proc)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/test_forgejo_live_pr_merge_e2e.py", line 98, in test_supervisor_observes_sandboxed_agent_namespaces_from_proc
+    process, child_report = runner.start_sandbox_probe_during_merge(
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/scripts/run_forgejo_live_pr_merge_e2e.py", line 2922, in start_sandbox_probe_during_merge
+    raise RuntimeError("held sandbox probe did not establish the expected isolation")
+RuntimeError: held sandbox probe did not establish the expected isolation
+
+----------------------------------------------------------------------
+Ran 1 test in 0.037s
+
+FAILED (errors=1)

@@ -1,0 +1,18 @@
+# Commands for CONTINUATION-286. Worktree root: .runtime/webhook-005-workspace
+# Initial TDD red, before the new label was admitted:
+python3 -m unittest discover -s tests -p 'test_mission_012_sandboxed_test_adapter.py' -k test_probe_process_remains_isolated_until_reprobe_and_release
+# It failed in bubblewrap_command with ValueError: private runtime file probe must identify an absolute private file.
+
+# Fresh Forgejo local integration; state is retained under /tmp and contains synthetic credentials:
+python3 scripts/run_forgejo_live_pr_merge_e2e.py --forgejo-binary /tmp/forgejo-17.0.0 --repo-root . --state-dir /tmp/forgejo-attestation-seed-probe-cont286-20261027-a --non-admin-merger --stdio-mcp-egress-during-merge --observe-pr-webhook
+
+# Final source tests:
+python3 -m unittest discover -s tests -p 'test_mission_012_sandboxed_test_adapter.py'
+python3 -m unittest discover -s tests -p 'test_mission_012_test_agent_adapter.py'
+python3 -m unittest discover -s tests -p 'test_forgejo_live_pr_merge_e2e.py'
+python3 -m py_compile scripts/mission_012_sandboxed_test_adapter.py scripts/mission_012_test_agent_adapter.py scripts/run_mission_012_stdio_mcp_egress_gate_e2e.py scripts/run_forgejo_live_pr_merge_e2e.py tests/test_mission_012_sandboxed_test_adapter.py
+git diff --check
+
+# Forgejo artifact identity:
+sha256sum /tmp/forgejo-17.0.0
+/tmp/forgejo-17.0.0 --version
