@@ -1,0 +1,31 @@
+Working directory: /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace
+
+Expected red before implementation:
+PYTHONPATH=tests python3 -m unittest test_forgejo_emitted_webhook_e2e.ReleaseWebhookBindingTests.test_main_runner_can_select_release_without_changing_default_hook_profile test_forgejo_emitted_webhook_e2e.ReleaseWebhookMainFlowTests
+
+Focused regression tests:
+PYTHONPATH=tests python3 -m unittest test_forgejo_emitted_webhook_e2e.ReleaseWebhookBindingTests test_forgejo_emitted_webhook_e2e.ReleaseReconciliationCompositionTests test_forgejo_emitted_webhook_e2e.ReleaseWebhookMainFlowTests
+
+Private reader credential process fixture:
+PYTHONPATH=tests python3 -m unittest test_forgejo_emitted_webhook_e2e.ReleaseReconciliationCompositionTests.test_scoped_release_reader_credential_reaches_only_the_private_child_fd test_forgejo_emitted_webhook_e2e.ReleaseWebhookMainFlowTests
+
+Changed runner suite:
+PYTHONPATH=tests python3 -m unittest discover -s tests -p 'test_forgejo_emitted_webhook_e2e.py'
+
+Cargo license metadata policy:
+python3 scripts/test_cargo_license_state.py
+python3 scripts/verify_cargo_license_state.py
+
+Static and command-line checks:
+python3 -m py_compile scripts/run_forgejo_live_webhook_reconcile_emitted.py tests/test_forgejo_emitted_webhook_e2e.py && git diff --check
+python3 scripts/run_forgejo_live_webhook_reconcile_emitted.py --help | rg -- '--release-webhook|Usage:'
+
+Environment availability (read-only):
+command -v forgejo || echo 'forgejo: absent from PATH'
+command -v go || echo 'go: absent from PATH'
+
+Append current source, documentation, and receipt fingerprints without rewriting the prior manifest:
+sha256sum Cargo.toml docs/architecture.md docs/checkpoint.md scripts/run_forgejo_live_webhook_reconcile_emitted.py tests/test_forgejo_emitted_webhook_e2e.py evidence/continuation-426-release-main-flow-001/local-run.md evidence/continuation-426-release-main-flow-001/commands.txt evidence/continuation-426-release-main-flow-001/environment.txt >> evidence/SHA256SUMS
+
+Check the last eight appended entries:
+tail -8 evidence/SHA256SUMS | sha256sum -c -

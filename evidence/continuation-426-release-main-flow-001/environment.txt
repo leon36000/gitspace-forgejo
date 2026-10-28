@@ -1,0 +1,13 @@
+Observed at: 2026-10-28 19:55:56 UTC
+Workspace: /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace
+Branch: local/WEBHOOK-005-canonical-links
+HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+Git status: 15137 short-status entries; pre-existing modified and untracked work preserved
+OS: Linux 7.0.0-1019-nvidia aarch64 GNU/Linux
+Python: 3.12.3
+Cargo: 1.95.0 (f2d3ce0bd 2026-03-21)
+rustc: 1.95.0 (59807616e 2026-04-14)
+Forgejo executable: absent from PATH
+Go executable: absent from PATH
+Disk /: 415 MB available at observation
+/dev/shm: 55 GB available at observation

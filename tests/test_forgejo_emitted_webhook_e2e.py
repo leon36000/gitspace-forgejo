@@ -4112,6 +4112,99 @@ class WorkItemContentProjectionTests(unittest.TestCase):
 
 
 class DuplicateDeliveryReplayTests(unittest.TestCase):
+    def test_opt_in_release_delivery_is_selected_for_duplicate_replay(self) -> None:
+        choose = getattr(driver, "select_duplicate_replay_event", None)
+        self.assertTrue(callable(choose), "duplicate replay target selector is missing")
+        issue_open = {
+            "delivery_id": "issue-open-001",
+            "event": "issues",
+            "action": "opened",
+            "sequence": 1,
+        }
+        pr_assigned = {
+            "delivery_id": "pr-assigned-001",
+            "event": "pull_request",
+            "action": "assigned",
+            "sequence": 7,
+        }
+        release_published = {
+            "delivery_id": "forgejo-release-duplicate-001",
+            "event": "release",
+            "action": "published",
+            "release_id": 610,
+            "sequence": 8,
+        }
+
+        self.assertIs(
+            choose(issue_open, [pr_assigned], release_event=release_published),
+            release_published,
+        )
+
+    def test_redelivery_sender_signs_captured_release_payload(self) -> None:
+        sender = getattr(driver, "send_redelivered_webhook", None)
+        self.assertTrue(callable(sender), "webhook redelivery sender is missing")
+        captured: dict[str, object] = {}
+        delivery_id = "forgejo-release-duplicate-001"
+        payload = {
+            "action": "published",
+            "repository": {"full_name": "forge-admin/agent-forge-core"},
+            "release": {"id": 610},
+        }
+
+        class ReleaseReceiverFixture(BaseHTTPRequestHandler):
+            def do_POST(self) -> None:
+                length = int(self.headers["Content-Length"])
+                captured["path"] = self.path
+                captured["body"] = self.rfile.read(length)
+                captured["delivery_id"] = self.headers.get("X-Forgejo-Delivery")
+                captured["event"] = self.headers.get("X-Forgejo-Event")
+                captured["signature"] = self.headers.get("X-Forgejo-Signature")
+                response = json.dumps(
+                    {
+                        "accepted": True,
+                        "duplicate": True,
+                        "delivery_id": delivery_id,
+                        "sequence": 8,
+                        "reconcile_required": True,
+                    }
+                ).encode()
+                self.send_response(202)
+                self.send_header("Content-Type", "application/json")
+                self.send_header("Content-Length", str(len(response)))
+                self.end_headers()
+                self.wfile.write(response)
+
+            def log_message(self, format: str, *args: object) -> None:
+                return
+
+        server = ThreadingHTTPServer(("127.0.0.1", 0), ReleaseReceiverFixture)
+        worker = threading.Thread(target=server.serve_forever, daemon=True)
+        worker.start()
+        secret = b"release-redelivery-fixture-secret"
+        try:
+            status, response = sender(
+                f"127.0.0.1:{server.server_port}",
+                secret,
+                delivery_id,
+                "release",
+                payload,
+            )
+        finally:
+            server.shutdown()
+            server.server_close()
+            worker.join(timeout=2)
+
+        self.assertEqual(status, 202)
+        self.assertIs(response["duplicate"], True)
+        self.assertEqual(captured["path"], "/forgejo/webhook")
+        self.assertEqual(captured["delivery_id"], delivery_id)
+        self.assertEqual(captured["event"], "release")
+        self.assertEqual(json.loads(captured["body"]), payload)
+        self.assertEqual(
+            captured["signature"],
+            hmac.new(secret, captured["body"], hashlib.sha256).hexdigest(),
+        )
+
     def test_live_assignee_scenario_prefers_its_first_pr_event_for_duplicate_replay(self) -> None:
         choose = getattr(driver, "select_duplicate_replay_event", None)
         self.assertTrue(callable(choose), "duplicate replay target selector is missing")
@@ -4257,6 +4350,12 @@ class PrivateAppConfigTests(unittest.TestCase):
 
 
 class ReleaseWebhookBindingTests(unittest.TestCase):
+    def test_main_runner_can_select_release_without_changing_default_hook_profile(self) -> None:
+        select = getattr(driver, "hook_event_selectors_for_scenarios", None)
+        self.assertTrue(callable(select), "main runner release hook selection is missing")
+        self.assertEqual(select(False), ("issues", "pull_request"))
+        self.assertEqual(select(True), ("issues", "pull_request", "release"))
+
     def test_release_selector_task_binding_and_readback_are_supported(self) -> None:
         self.assertEqual(driver.effective_hook_events(("release",)), frozenset({"release"}))
         self.assertEqual(
@@ -4627,12 +4726,63 @@ class ReleaseReconciliationCompositionTests(unittest.TestCase):
             self.assertNotIn("--host-credential-fd", args)
             self.assertEqual(args[-2:], [str(journal), "forgejo-release-composition-001"])
 
+    def test_scoped_release_reader_credential_reaches_only_the_private_child_fd(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            state = root / "state"
+            (state / "home").mkdir(parents=True)
+            (state / "tmp").mkdir()
+            journal = root / "inbox.jsonl"
+            journal.write_text("fixture journal is read-only here\n", encoding="utf-8")
+            captured_args = root / "args.json"
+            captured_credential = root / "credential.bin"
+            binary = root / "fake-reconciler"
+            output_json = json.dumps(self.result(), separators=(",", ":"))
+            binary.write_text(
+                "#!/usr/bin/python3\n"
+                "import json, os, pathlib, sys\n"
+                "args = sys.argv[1:]\n"
+                "fd = int(args[args.index('--host-credential-fd') + 1])\n"
+                f"pathlib.Path({str(captured_args)!r}).write_text(json.dumps(args), encoding='utf-8')\n"
+                f"pathlib.Path({str(captured_credential)!r}).write_bytes(os.read(fd, 1024))\n"
+                f"sys.stdout.write({output_json!r} + '\\n')\n",
+                encoding="utf-8",
+            )
+            binary.chmod(0o700)
+
+            credential = "fixture-read-only-release-token"
+            result = self.reconcile(
+                binary,
+                state,
+                journal,
+                self.record(),
+                owner="forge-admin",
+                repository="agent-forge-core",
+                release_id=610,
+                expected_action="updated",
+                credential=credential,
+                target_profile="merge-014-agent-forge-core",
+                trusted_attestation_public_key="a" * 64,
+            )
+
+            args = json.loads(captured_args.read_text(encoding="utf-8"))
+            self.assertIn("--host-credential-fd", args)
+            self.assertNotIn(credential, args)
+            self.assertEqual(captured_credential.read_bytes(), credential.encode())
+            self.assertNotIn(credential, json.dumps(result))
+
     def test_wrong_release_identity_refuses_before_cli(self) -> None:
         record = self.record(release_id=611)
         with patch.object(driver.helpers, "run_reconcile") as run:
             with self.assertRaisesRegex(ValueError, "release ID does not match"):
                 self.call(record)
         run.assert_not_called()
+
+    def test_canonical_readback_must_keep_the_created_release_tag(self) -> None:
+        output = self.result()
+        with patch.object(driver.helpers, "run_reconcile", return_value=(0, output)):
+            with self.assertRaisesRegex(ValueError, "current release projection"):
+                self.call(expected_tag_name="a-different-created-tag")
 
     def test_unverified_or_stale_cli_result_is_not_accepted(self) -> None:
         for change in (
@@ -4677,6 +4827,159 @@ class ReleaseReconciliationCompositionTests(unittest.TestCase):
                 with patch.object(driver.helpers, "run_reconcile", return_value=(0, output)):
                     with self.assertRaises(ValueError):
                         self.call()
+
+
+class ReleaseWebhookMainFlowTests(unittest.TestCase):
+    def test_publish_delivery_and_current_api_readback_are_one_main_flow(self) -> None:
+        flow = getattr(driver, "publish_and_reconcile_live_release", None)
+        self.assertTrue(callable(flow), "release publish-to-readback main flow is missing")
+        tag_name = "codex-e2e-release-0123456789"
+        delivery = ReleaseReconciliationCompositionTests.record(action="published")
+        record_json = json.dumps(delivery, sort_keys=True, separators=(",", ":"))
+
+        with tempfile.TemporaryDirectory(prefix="forgejo-release-flow-") as directory:
+            root = Path(directory)
+            journal = root / "inbox.jsonl"
+            journal.write_text('{"sequence":1}\n{"sequence":2}\n', encoding="utf-8")
+            captured: dict[str, object] = {}
+
+            class ReleaseApiFixture:
+                last_status: int | None = None
+
+                def request(self, method: str, path: str, body: dict) -> tuple[dict, dict]:
+                    captured["method"] = method
+                    captured["path"] = path
+                    captured["body"] = body
+                    self.last_status = 201
+                    with journal.open("a", encoding="utf-8") as output_file:
+                        output_file.write(record_json + "\n")
+                    return {"id": 610, "tag_name": body["tag_name"]}, {}
+
+            reconciler_result = ReleaseReconciliationCompositionTests.result()
+            reconciler_result["canonical_state"]["release"]["tag_name"] = tag_name
+            reconciler_result["canonical_state"]["html_url"] = (
+                f"{driver.ORIGIN}/forge-admin/agent-forge-core/releases/tag/{tag_name}"
+            )
+            with (
+                patch.object(driver.secrets, "token_hex", return_value="0123456789"),
+                patch.object(
+                    driver.helpers,
+                    "run_reconcile",
+                    return_value=(0, reconciler_result),
+                ) as run_reconcile,
+            ):
+                result = flow(
+                    ReleaseApiFixture(),
+                    Path("/fixture/forgejo-reconcile-local"),
+                    Path("/fixture/state"),
+                    journal,
+                    owner="forge-admin",
+                    repository="agent-forge-core",
+                    expected_record_count=3,
+                    credential="fixture-read-only-credential",
+                    trusted_attestation_public_key="a" * 64,
+                )
+
+        self.assertEqual(captured["method"], "POST")
+        self.assertEqual(
+            captured["path"], "/repos/forge-admin/agent-forge-core/releases"
+        )
+        self.assertEqual(captured["body"]["tag_name"], tag_name)
+        self.assertEqual(captured["body"]["draft"], False)
+        self.assertEqual(captured["body"]["prerelease"], True)
+        self.assertEqual(result["event"]["delivery_id"], "forgejo-release-composition-001")
+        self.assertEqual(result["reconciliation"], reconciler_result)
+        run_reconcile.assert_called_once_with(
+            Path("/fixture/forgejo-reconcile-local"),
+            Path("/fixture/state"),
+            journal,
+            "forgejo-release-composition-001",
+            "fixture-read-only-credential",
+            None,
+            trusted_attestation_public_key="a" * 64,
+        )
+
+    def test_mismatched_published_tag_or_event_refuses_reconciliation(self) -> None:
+        flow = getattr(driver, "publish_and_reconcile_live_release", None)
+        self.assertTrue(callable(flow), "release publish-to-readback main flow is missing")
+        delivery = ReleaseReconciliationCompositionTests.record()
+        delivery["payload"]["payload"]["action"] = "updated"
+
+        with tempfile.TemporaryDirectory(prefix="forgejo-release-mismatch-") as directory:
+            root = Path(directory)
+            journal = root / "inbox.jsonl"
+
+            class ReleaseApiFixture:
+                last_status: int | None = None
+
+                def request(self, method: str, path: str, body: dict) -> tuple[dict, dict]:
+                    self.last_status = 201
+                    journal.write_text(
+                        '{"sequence":1}\n{"sequence":2}\n'
+                        + json.dumps(delivery, sort_keys=True, separators=(",", ":"))
+                        + "\n",
+                        encoding="utf-8",
+                    )
+                    return {"id": 610, "tag_name": body["tag_name"]}, {}
+
+            with (
+                patch.object(driver.secrets, "token_hex", return_value="0123456789"),
+                patch.object(driver.helpers, "run_reconcile") as run_reconcile,
+            ):
+                with self.assertRaisesRegex(ValueError, "action does not match"):
+                    flow(
+                        ReleaseApiFixture(),
+                        Path("/fixture/forgejo-reconcile-local"),
+                        Path("/fixture/state"),
+                        journal,
+                        owner="forge-admin",
+                        repository="agent-forge-core",
+                        expected_record_count=3,
+                        credential=None,
+                        trusted_attestation_public_key="a" * 64,
+                    )
+            run_reconcile.assert_not_called()
+
+    def test_wrong_journal_append_sequence_refuses_before_cli(self) -> None:
+        flow = getattr(driver, "publish_and_reconcile_live_release", None)
+        self.assertTrue(callable(flow), "release publish-to-readback main flow is missing")
+        delivery = ReleaseReconciliationCompositionTests.record(action="published")
+        delivery["sequence"] = 4
+
+        with tempfile.TemporaryDirectory(prefix="forgejo-release-sequence-") as directory:
+            root = Path(directory)
+            journal = root / "inbox.jsonl"
+
+            class ReleaseApiFixture:
+                last_status: int | None = None
+
+                def request(self, method: str, path: str, body: dict) -> tuple[dict, dict]:
+                    self.last_status = 201
+                    journal.write_text(
+                        '{"sequence":1}\n{"sequence":2}\n'
+                        + json.dumps(delivery, sort_keys=True, separators=(",", ":"))
+                        + "\n",
+                        encoding="utf-8",
+                    )
+                    return {"id": 610, "tag_name": body["tag_name"]}, {}
+
+            with (
+                patch.object(driver.secrets, "token_hex", return_value="0123456789"),
+                patch.object(driver.helpers, "run_reconcile") as run_reconcile,
+            ):
+                with self.assertRaisesRegex(RuntimeError, "sequence does not match"):
+                    flow(
+                        ReleaseApiFixture(),
+                        Path("/fixture/forgejo-reconcile-local"),
+                        Path("/fixture/state"),
+                        journal,
+                        owner="forge-admin",
+                        repository="agent-forge-core",
+                        expected_record_count=3,
+                        credential=None,
+                        trusted_attestation_public_key="a" * 64,
+                    )
+            run_reconcile.assert_not_called()
 
 
 if __name__ == "__main__":

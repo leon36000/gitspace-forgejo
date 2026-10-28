@@ -103,6 +103,11 @@ def effective_hook_events(event_selectors: tuple[str, ...]) -> frozenset[str]:
     return frozenset().union(*(HOOK_EVENT_GROUPS[selector] for selector in event_selectors))
 
 
+def hook_event_selectors_for_scenarios(include_release: bool) -> tuple[str, ...]:
+    """Extend the regular disposable hook only for the opt-in release scenario."""
+    return (*HOOK_EVENT_SELECTORS, "release") if include_release else HOOK_EVENT_SELECTORS
+
+
 def ordinary_issue_comment_delivery_count(
     enabled: bool, *, edited: bool = False, deleted: bool = False
 ) -> int:
@@ -803,6 +808,7 @@ def validate_release_reconcile_readback(
     owner: str,
     repository: str,
     release_id: int,
+    expected_tag_name: str | None = None,
 ) -> None:
     """Accept only a verified single-delivery read of the configured current release."""
     if (
@@ -850,6 +856,7 @@ def validate_release_reconcile_readback(
         or canonical.get("updated_at") is not None
         or not isinstance(tag_name, str)
         or not tag_name
+        or (expected_tag_name is not None and tag_name != expected_tag_name)
         or any(ord(character) < 32 or ord(character) == 127 for character in tag_name)
         or type(release.get("id")) is not int
         or release.get("id") != release_id
@@ -880,6 +887,7 @@ def reconcile_live_release_delivery(
     repository: str,
     release_id: int,
     expected_action: str,
+    expected_tag_name: str | None = None,
     credential: str | None = None,
     target_profile: str | None = None,
     trusted_attestation_public_key: str | None = None,
@@ -908,8 +916,95 @@ def reconcile_live_release_delivery(
         owner=owner,
         repository=repository,
         release_id=release_id,
+        expected_tag_name=expected_tag_name,
     )
     return {"event": event, "reconciliation": result}
+
+
+def publish_and_reconcile_live_release(
+    owner_api: Any,
+    binary: Path,
+    state: Path,
+    journal: Path,
+    *,
+    owner: str,
+    repository: str,
+    expected_record_count: int,
+    credential: str | None,
+    trusted_attestation_public_key: str,
+    target_profile: str | None = None,
+) -> dict[str, Any]:
+    """Create one disposable release and bind its emitted delivery to current API state."""
+    if (
+        not isinstance(expected_record_count, int)
+        or isinstance(expected_record_count, bool)
+        or expected_record_count < 1
+    ):
+        raise ValueError("expected release journal record count is invalid")
+    tag_name = f"codex-e2e-release-{secrets.token_hex(5)}"
+    response, _ = owner_api.request(
+        "POST",
+        f"/repos/{quote(owner, safe='')}/{quote(repository, safe='')}/releases",
+        {
+            "tag_name": tag_name,
+            "target_commitish": "main",
+            "name": "Disposable Forgejo release webhook probe",
+            "body": "Synthetic test-only release notes; never used as canonical readback.",
+            "draft": False,
+            "prerelease": True,
+        },
+    )
+    release_id = response.get("id") if isinstance(response, dict) else None
+    if (
+        getattr(owner_api, "last_status", None) != 201
+        or not isinstance(release_id, int)
+        or isinstance(release_id, bool)
+        or release_id < 1
+        or response.get("tag_name") != tag_name
+    ):
+        raise RuntimeError("Forgejo did not confirm the disposable release creation")
+
+    records = wait_for_journal_count(journal, expected_record_count)
+    if len(records) != expected_record_count:
+        raise RuntimeError("Forgejo release delivery journal count is unexpected")
+    event_record = records[-1]
+    event = parse_live_release_delivery_record(
+        event_record,
+        owner=owner,
+        repository=repository,
+        release_id=release_id,
+        expected_action="published",
+    )
+    if event["sequence"] != expected_record_count:
+        raise RuntimeError("Forgejo release journal sequence does not match its append position")
+    delivery_id = event["delivery_id"]
+    if any(
+        isinstance(record.get("payload"), dict)
+        and record["payload"].get("delivery_id") == delivery_id
+        for record in records[:-1]
+    ):
+        raise RuntimeError("Forgejo release delivery ID was already journaled")
+    reconciled = reconcile_live_release_delivery(
+        binary,
+        state,
+        journal,
+        event_record,
+        owner=owner,
+        repository=repository,
+        release_id=release_id,
+        expected_action="published",
+        expected_tag_name=tag_name,
+        credential=credential,
+        target_profile=target_profile,
+        trusted_attestation_public_key=trusted_attestation_public_key,
+    )
+    return {
+        "http_status": owner_api.last_status,
+        "release_id": release_id,
+        "tag_name": tag_name,
+        "event": reconciled["event"],
+        "reconciliation": reconciled["reconciliation"],
+    }
 
 
 def parse_live_pull_request_delivery_record(
@@ -1841,14 +1936,29 @@ def normalize_requested_reviewer_teams_readback(
 
 
 def select_duplicate_replay_event(
-    fallback_event: dict[str, Any], preferred_events: list[dict[str, Any]]
+    fallback_event: dict[str, Any],
+    preferred_events: list[dict[str, Any]],
+    *,
+    release_event: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
-    """Use a scenario-specific event for duplicate replay, preserving the common fallback."""
+    """Use an opt-in release, then another scenario event, before the common fallback."""
     if not isinstance(fallback_event, dict) or not isinstance(preferred_events, list):
         raise ValueError("duplicate replay event selection is invalid")
     if any(not isinstance(event, dict) for event in preferred_events):
         raise ValueError("duplicate replay event list contains a malformed event")
-    event = preferred_events[0] if preferred_events else fallback_event
+    if release_event is not None and (
+        not isinstance(release_event, dict)
+        or release_event.get("event") != "release"
+        or release_event.get("action") not in {"published", "updated", "deleted"}
+    ):
+        raise ValueError("duplicate replay release event is malformed")
+    event = (
+        release_event
+        if release_event is not None
+        else preferred_events[0]
+        if preferred_events
+        else fallback_event
+    )
     if (
         not isinstance(event.get("delivery_id"), str)
         or not event.get("delivery_id")
@@ -2146,6 +2256,8 @@ def private_config_with_test_allowlist(state: Path) -> None:
 
 
 def run(args: argparse.Namespace) -> dict[str, Any]:
+    create_release_webhook = bool(getattr(args, "release_webhook", False))
+    hook_event_selectors = hook_event_selectors_for_scenarios(create_release_webhook)
     ordinary_issue_comment = bool(getattr(args, "ordinary_issue_comment", False))
     edit_ordinary_issue_comment = bool(
         getattr(args, "edit_ordinary_issue_comment", False)
@@ -2228,6 +2340,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         )
     expected_delivery_count = (
         7
+        + int(create_release_webhook)
         + int(synchronize_pull_request)
         + int(request_review)
         + int(remove_review_request)
@@ -2473,6 +2586,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     invalid_result: dict[str, Any] | None = None
     invalid_status: int | None = None
     duplicate_replay: dict[str, Any] | None = None
+    release_scenario: dict[str, Any] | None = None
     hook_tasks: list[dict[str, Any]] = []
 
     try:
@@ -2709,7 +2823,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
                     "content_type": "json",
                     "secret": webhook_secret,
                 },
-                "events": ["issues", "pull_request"],
+                "events": list(hook_event_selectors),
                 "active": True,
             },
         )
@@ -3201,6 +3315,25 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
                 or issue_reopened_event["sequence"] <= edited_events[-1]["sequence"]
             ):
                 raise RuntimeError("Forgejo issue reopen event is duplicated, stale, or out of order")
+
+        release_event: dict[str, Any] | None = None
+        if create_release_webhook:
+            stage = "publish_and_reconcile_release_event"
+            release_expected_record_count = (
+                issue_event_count_after_edits + int(reopen_issue) + 1
+            )
+            release_scenario = publish_and_reconcile_live_release(
+                owner_api,
+                reconcile_bin,
+                state,
+                journal_path,
+                owner=OWNER,
+                repository=REPOSITORY,
+                expected_record_count=release_expected_record_count,
+                credential=reader_token,
+                trusted_attestation_public_key=receiver_attestation_public_key,
+            )
+            release_event = release_scenario["event"]
 
         stage = "create_pull_request_candidate"
         branch_name = "agent/webhook-e2e"
@@ -4709,6 +4842,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
             closed_event,
             *edited_events,
             *([issue_reopened_event] if issue_reopened_event is not None else []),
+            *([release_event] if release_event is not None else []),
             pull_request_open_event,
             *([pull_request_sync_event] if pull_request_sync_event is not None else []),
             *(
@@ -4807,6 +4941,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         duplicate_event = select_duplicate_replay_event(
             open_event,
             pull_request_assignee_events if change_pull_request_assignees else [],
+            release_event=release_event,
         )
         matching_duplicate_records = [
             record
@@ -5910,12 +6045,17 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         owner_api.request(
             "PATCH",
             f"/repos/{OWNER}/{REPOSITORY}/hooks/{hook_id}",
-            hook_deactivation_patch(),
+            hook_deactivation_patch(hook_event_selectors),
         )
         hook_api_readback, _ = owner_api.request(
             "GET", f"/repos/{OWNER}/{REPOSITORY}/hooks/{hook_id}"
         )
-        hook_readback = hook_readback_record(hook_id, hook_api_readback, expected_hook_url)
+        hook_readback = hook_readback_record(
+            hook_id,
+            hook_api_readback,
+            expected_hook_url,
+            hook_event_selectors,
+        )
         hook_disabled = hook_readback["deactivation_readback_confirmed"] is True
         if not hook_disabled:
             raise RuntimeError("Forgejo hook readback did not confirm deactivation")
@@ -5981,6 +6121,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
                 "duplicate_replay": duplicate_replay,
                 "secret_recorded": False,
             },
+            "release": release_scenario,
             "issue": {
                 "number": issue_number,
                 "state_after_run": post_issue.get("state"),
@@ -6394,13 +6535,16 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
                 owner_api.request(
                     "PATCH",
                     f"/repos/{OWNER}/{REPOSITORY}/hooks/{hook_id}",
-                    hook_deactivation_patch(),
+                    hook_deactivation_patch(hook_event_selectors),
                 )
                 hook_api_readback, _ = owner_api.request(
                     "GET", f"/repos/{OWNER}/{REPOSITORY}/hooks/{hook_id}"
                 )
                 hook_readback = hook_readback_record(
-                    hook_id, hook_api_readback, expected_hook_url
+                    hook_id,
+                    hook_api_readback,
+                    expected_hook_url,
+                    hook_event_selectors,
                 )
                 hook_disabled = hook_readback["deactivation_readback_confirmed"] is True
                 if not hook_disabled:
@@ -6460,7 +6604,12 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     helpers.write_safe_json(evidence_dir / "port-cleanup-readback.json", cleanup_readback, tokens)
     helpers.write_safe_json(
         evidence_dir / "hook-readback.json",
-        hook_readback_record(hook_id, hook_api_readback, expected_hook_url),
+        hook_readback_record(
+            hook_id,
+            hook_api_readback,
+            expected_hook_url,
+            hook_event_selectors,
+        ),
         tokens,
     )
     helpers.write_safe_json(evidence_dir / "forgejo-hook-tasks.json", hook_tasks, tokens)
@@ -6866,6 +7015,12 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         pull_request_closed_reconciliation,
         tokens,
     )
+    if release_scenario is not None:
+        helpers.write_safe_json(
+            evidence_dir / "release-event-reconciliation.json",
+            release_scenario,
+            tokens,
+        )
     helpers.write_safe_json(
         evidence_dir / "invalid-credential-result.json",
         {"exit_status": invalid_status, "result": invalid_result},
@@ -6941,6 +7096,11 @@ def main() -> int:
     parser.add_argument("--repo-root", default=str(SCRIPT_DIR.parent))
     parser.add_argument("--state-dir", required=True)
     parser.add_argument("--evidence-dir", required=True)
+    parser.add_argument(
+        "--release-webhook",
+        action="store_true",
+        help="publish one disposable release and reconcile Forgejo's emitted release event against current API state",
+    )
     parser.add_argument(
         "--ordinary-issue-comment",
         action="store_true",

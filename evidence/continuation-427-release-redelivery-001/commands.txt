@@ -1,0 +1,23 @@
+Working directory: /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace
+
+Expected red before implementation:
+PYTHONPATH=tests python3 -m unittest test_forgejo_emitted_webhook_e2e.DuplicateDeliveryReplayTests.test_opt_in_release_delivery_is_selected_for_duplicate_replay test_forgejo_emitted_webhook_e2e.DuplicateDeliveryReplayTests.test_redelivery_sender_signs_captured_release_payload
+
+Focused replay tests:
+PYTHONPATH=tests python3 -m unittest test_forgejo_emitted_webhook_e2e.DuplicateDeliveryReplayTests
+
+Changed runner suite:
+PYTHONPATH=tests python3 -m unittest discover -s tests -p 'test_forgejo_emitted_webhook_e2e.py'
+
+Cargo metadata state:
+python3 scripts/test_cargo_license_state.py
+python3 scripts/verify_cargo_license_state.py
+
+Static and CLI checks:
+python3 -m py_compile scripts/run_forgejo_live_webhook_reconcile_emitted.py tests/test_forgejo_emitted_webhook_e2e.py
+git diff --check
+python3 scripts/run_forgejo_live_webhook_reconcile_emitted.py --help | rg -- '--release-webhook|Usage:'
+
+Append current source and receipt fingerprints:
+sha256sum Cargo.toml docs/architecture.md docs/checkpoint.md scripts/run_forgejo_live_webhook_reconcile_emitted.py tests/test_forgejo_emitted_webhook_e2e.py evidence/continuation-427-release-redelivery-001/local-run.md evidence/continuation-427-release-redelivery-001/commands.txt evidence/continuation-427-release-redelivery-001/environment.txt >> evidence/SHA256SUMS
+tail -8 evidence/SHA256SUMS | sha256sum -c -
