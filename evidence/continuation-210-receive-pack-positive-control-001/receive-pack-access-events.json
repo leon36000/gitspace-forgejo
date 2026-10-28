@@ -1,0 +1,22 @@
+[
+  {
+    "method": "GET",
+    "route": "/forge-team-org/team-review-readback.git/info/refs?service=git-receive-pack",
+    "status": "403 Forbidden"
+  },
+  {
+    "method": "POST",
+    "route": "/forge-team-org/team-review-readback.git/git-receive-pack",
+    "status": "403 Forbidden"
+  },
+  {
+    "method": "POST",
+    "route": "/forge-team-org/team-review-readback.git/git-receive-pack",
+    "status": "403 Forbidden"
+  },
+  {
+    "method": "POST",
+    "route": "/forge-team-org/team-review-readback.git/git-receive-pack",
+    "status": "200 OK"
+  }
+]

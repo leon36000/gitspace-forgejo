@@ -1,0 +1,9 @@
+{
+  "forgejo_access_log_mode": "console_info",
+  "platform": "linux",
+  "python": "3.12.3",
+  "receiver_kill_before_reconcile": true,
+  "stage": "read_only_rust_reconciliation",
+  "state_dir": "/tmp/forgejo-team-review-cont212-state-002",
+  "state_dir_mode": "0700"
+}

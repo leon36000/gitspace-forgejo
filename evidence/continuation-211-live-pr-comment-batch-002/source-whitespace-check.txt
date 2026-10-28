@@ -1,0 +1,2 @@
+PASS: checked Python sources, tests, receipt, commands, checkpoint and refusal matrix for final newline and trailing horizontal whitespace.
+git diff --check was run separately for tracked changes.

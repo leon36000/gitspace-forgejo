@@ -1,0 +1,16 @@
+{
+  "listeners_on_3130_after_stop": [],
+  "listeners_on_receiver_port_after_stop": [],
+  "receiver": {
+    "returncode": 0,
+    "started": true,
+    "stop_action": "terminate",
+    "stopped": true
+  },
+  "server": {
+    "returncode": 0,
+    "started": true,
+    "stop_action": "terminate",
+    "stopped": true
+  }
+}

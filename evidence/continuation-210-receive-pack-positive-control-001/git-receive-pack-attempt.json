@@ -1,0 +1,20 @@
+{
+  "authenticated_main_ref_observed": true,
+  "authenticated_read_exit_code": 0,
+  "empty_flush_post_status": 403,
+  "push_exit_code": 128,
+  "push_output_contains_credential": false,
+  "receive_pack_advertisement_http_403_observed": true,
+  "receive_pack_post_http_403_observed": true,
+  "receive_pack_route_log_lines": 3,
+  "target_ref_absent_after": true,
+  "target_ref_absent_before": true,
+  "valid_push_pack_bytes": 322,
+  "valid_push_pack_sha256": "07b9619c8a3e86cae0d25c5439a575ac04c5d83067352e4693f159dbb73b0b11",
+  "valid_push_packet_bytes": 469,
+  "valid_push_post_status": 403,
+  "writer_control_new_oid": "79222d6c2e20b4174f8e7010af0dd8cdf71ec663",
+  "writer_control_post_status": 200,
+  "writer_control_response_contains_report_status": true,
+  "writer_control_target_branch_present_after": true
+}

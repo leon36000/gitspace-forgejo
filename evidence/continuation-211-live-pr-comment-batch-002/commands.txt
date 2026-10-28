@@ -1,0 +1,22 @@
+# Test-first RED: helpers not implemented yet; expected import failure preserved separately.
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -p 'test_forgejo_live_org_team_reviewer_readback.py' -v
+
+# Focused final validator/normalizer unit suite.
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -p 'test_forgejo_live_org_team_reviewer_readback.py' -v
+
+# Syntax check.
+python3 -m py_compile scripts/run_forgejo_live_org_team_reviewer_readback.py scripts/run_forgejo_live_webhook_reconcile_e2e.py tests/test_forgejo_live_org_team_reviewer_readback.py
+
+# Live local integration (successful final run).
+python3 scripts/run_forgejo_live_org_team_reviewer_readback.py --forgejo-binary /tmp/forgejo-17.0.0 --state-dir /tmp/forgejo-team-review-cont211-state-002 --evidence-dir evidence/continuation-211-live-pr-comment-batch-002 --probe-pr-comment-batch
+
+# Tracked-file whitespace check (new Python files are untracked in this dirty worktree).
+git diff --check
+
+# Cargo redistribution metadata policy.
+python3 scripts/verify_cargo_license_state.py
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest -v scripts.test_cargo_license_state
+
+# Independent receipt and append-only manifest checks.
+python3 evidence/continuation-211-live-pr-comment-batch-002/verify_run_result.py
+python3 evidence/continuation-211-live-pr-comment-batch-002/verify_append_only_indexes.py

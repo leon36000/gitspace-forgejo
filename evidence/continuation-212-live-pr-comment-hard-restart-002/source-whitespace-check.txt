@@ -1,0 +1,2 @@
+PASS: Python sources/tests, read-only SQLite summary extractor, validators, report, commands, task acknowledgment summary, checkpoint and refusal matrix have final newline and no trailing horizontal whitespace.
+git diff --check is run separately.

@@ -1,0 +1,1 @@
+{"adapter_api_gets": 2, "comment_trust": "untrusted_user_content", "listeners_after_stop": 0, "llm_or_agent_invoked": false, "native_event_order": ["pull_request", "issue_comment"], "read_only_comment_write": 403, "verdict": "passed"}

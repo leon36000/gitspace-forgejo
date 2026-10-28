@@ -1,0 +1,10 @@
+{
+  "verdict": "consistent",
+  "access_events_match_saved_server_log": true,
+  "read_only_valid_post_denied": true,
+  "read_only_target_absent_before_after": true,
+  "write_enabled_control_accepted_and_read_back": true,
+  "server_and_receiver_stopped": true,
+  "state_dir_mode": "0700",
+  "agent_or_llm_invoked": false
+}

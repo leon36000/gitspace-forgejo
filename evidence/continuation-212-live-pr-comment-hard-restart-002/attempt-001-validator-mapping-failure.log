@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/scripts/run_forgejo_live_org_team_reviewer_readback.py", line 1578, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/scripts/run_forgejo_live_org_team_reviewer_readback.py", line 1571, in main
+    result = run(args)
+             ^^^^^^^^^
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/scripts/run_forgejo_live_org_team_reviewer_readback.py", line 1286, in run
+    receiver_restart_summary = validate_pr_comment_batch_receiver_restart(
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/scripts/run_forgejo_live_org_team_reviewer_readback.py", line 273, in validate_pr_comment_batch_receiver_restart
+    raise RuntimeError("receiver restart started before both Forgejo webhook tasks had HTTP 202 acknowledgements")
+RuntimeError: receiver restart started before both Forgejo webhook tasks had HTTP 202 acknowledgements

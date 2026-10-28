@@ -1,0 +1,259 @@
+{
+  "fixed_upstream": "127.0.0.1:3131",
+  "listen": "127.0.0.1:3130",
+  "records": [
+    {
+      "barrier": "none",
+      "forwarded": true,
+      "gate": "open_setup",
+      "method": "GET",
+      "path": "/api/healthz",
+      "reader_credential_match": false,
+      "status": 502
+    },
+    {
+      "barrier": "none",
+      "forwarded": true,
+      "gate": "open_setup",
+      "method": "GET",
+      "path": "/api/healthz",
+      "reader_credential_match": false,
+      "status": 502
+    },
+    {
+      "barrier": "none",
+      "forwarded": true,
+      "gate": "open_setup",
+      "method": "GET",
+      "path": "/api/healthz",
+      "reader_credential_match": false,
+      "status": 502
+    },
+    {
+      "barrier": "none",
+      "forwarded": true,
+      "gate": "open_setup",
+      "method": "GET",
+      "path": "/api/healthz",
+      "reader_credential_match": false,
+      "status": 200
+    },
+    {
+      "barrier": "none",
+      "forwarded": true,
+      "gate": "open_setup",
+      "method": "GET",
+      "path": "/api/v1/user",
+      "reader_credential_match": false,
+      "status": 200
+    },
+    {
+      "barrier": "none",
+      "forwarded": true,
+      "gate": "open_setup",
+      "method": "POST",
+      "path": "/api/v1/orgs",
+      "reader_credential_match": false,
+      "status": 201
+    },
+    {
+      "barrier": "none",
+      "forwarded": true,
+      "gate": "open_setup",
+      "method": "POST",
+      "path": "/api/v1/orgs/forge-team-org/teams",
+      "reader_credential_match": false,
+      "status": 201
+    },
+    {
+      "barrier": "none",
+      "forwarded": true,
+      "gate": "open_setup",
+      "method": "PUT",
+      "path": "/api/v1/teams/2/members/forge-reader",
+      "reader_credential_match": false,
+      "status": 204
+    },
+    {
+      "barrier": "none",
+      "forwarded": true,
+      "gate": "open_setup",
+      "method": "POST",
+      "path": "/api/v1/orgs/forge-team-org/repos",
+      "reader_credential_match": false,
+      "status": 201
+    },
+    {
+      "barrier": "none",
+      "forwarded": true,
+      "gate": "open_setup",
+      "method": "POST",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/branches",
+      "reader_credential_match": false,
+      "status": 201
+    },
+    {
+      "barrier": "none",
+      "forwarded": true,
+      "gate": "open_setup",
+      "method": "POST",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/contents/team-review-readback.md",
+      "reader_credential_match": false,
+      "status": 201
+    },
+    {
+      "barrier": "none",
+      "forwarded": true,
+      "gate": "open_setup",
+      "method": "POST",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/pulls",
+      "reader_credential_match": false,
+      "status": 201
+    },
+    {
+      "barrier": "none",
+      "forwarded": true,
+      "gate": "open_setup",
+      "method": "POST",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/hooks",
+      "reader_credential_match": false,
+      "status": 201
+    },
+    {
+      "barrier": "none",
+      "forwarded": true,
+      "gate": "open_setup",
+      "method": "GET",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/hooks/1",
+      "reader_credential_match": false,
+      "status": 200
+    },
+    {
+      "barrier": "none",
+      "forwarded": true,
+      "gate": "open_setup",
+      "method": "POST",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/pulls/1/requested_reviewers",
+      "reader_credential_match": false,
+      "status": 201
+    },
+    {
+      "barrier": "none",
+      "forwarded": true,
+      "gate": "open_setup",
+      "method": "GET",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/pulls/1",
+      "reader_credential_match": false,
+      "status": 200
+    },
+    {
+      "barrier": "none",
+      "forwarded": true,
+      "gate": "open_setup",
+      "method": "POST",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/issues/1/comments",
+      "reader_credential_match": false,
+      "status": 201
+    },
+    {
+      "barrier": "none",
+      "forwarded": true,
+      "gate": "open_setup",
+      "method": "GET",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/pulls/1",
+      "reader_credential_match": false,
+      "status": 200
+    },
+    {
+      "barrier": "none",
+      "forwarded": true,
+      "gate": "open_setup",
+      "method": "GET",
+      "path": "/api/v1/user",
+      "reader_credential_match": false,
+      "status": 200
+    },
+    {
+      "barrier": "none",
+      "forwarded": true,
+      "gate": "open_setup",
+      "method": "GET",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/issues/1/comments",
+      "reader_credential_match": false,
+      "status": 200
+    },
+    {
+      "barrier": "none",
+      "forwarded": true,
+      "gate": "open_setup",
+      "method": "POST",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/issues/1/comments",
+      "reader_credential_match": false,
+      "status": 403
+    },
+    {
+      "barrier": "none",
+      "forwarded": true,
+      "gate": "open_setup",
+      "method": "GET",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/issues/1/comments",
+      "reader_credential_match": false,
+      "status": 200
+    },
+    {
+      "barrier": "none",
+      "forwarded": true,
+      "gate": "open_setup",
+      "method": "GET",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/pulls/1",
+      "reader_credential_match": false,
+      "status": 200
+    },
+    {
+      "barrier": "not_allowlisted",
+      "forwarded": false,
+      "gate": "allowlisted",
+      "method": "POST",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/issues/comments/3",
+      "reader_credential_match": true,
+      "status": 403
+    },
+    {
+      "barrier": "none",
+      "forwarded": true,
+      "gate": "allowlisted",
+      "method": "GET",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/pulls/1",
+      "reader_credential_match": true,
+      "status": 200
+    },
+    {
+      "barrier": "cancelled_before_upstream",
+      "forwarded": false,
+      "gate": "allowlisted",
+      "method": "GET",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/issues/comments/3",
+      "reader_credential_match": true,
+      "status": 503
+    },
+    {
+      "barrier": "none",
+      "forwarded": true,
+      "gate": "allowlisted",
+      "method": "GET",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/pulls/1",
+      "reader_credential_match": true,
+      "status": 200
+    },
+    {
+      "barrier": "none",
+      "forwarded": true,
+      "gate": "allowlisted",
+      "method": "GET",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/issues/comments/3",
+      "reader_credential_match": true,
+      "status": 200
+    }
+  ],
+  "schema_version": 1
+}

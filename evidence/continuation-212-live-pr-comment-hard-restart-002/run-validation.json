@@ -1,0 +1,1 @@
+{"adapter_api_gets": 2, "comment_trust": "untrusted_user_content", "hook_task_statuses": [202, 202], "hook_tasks_acked": 2, "journal_unchanged": true, "llm_or_agent_invoked": false, "native_events": ["pull_request", "issue_comment"], "receiver_kill": "SIGKILL", "verdict": "passed"}

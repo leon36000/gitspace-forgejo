@@ -1,0 +1,15 @@
+# Live Forgejo run
+PYTHONPYCACHEPREFIX=/tmp/forgejo-cont210-pycache python3 scripts/run_forgejo_live_org_team_reviewer_readback.py --forgejo-binary /tmp/forgejo-17.0.0 --state-dir /tmp/forgejo-team-review-cont210-state-001 --evidence-dir evidence/continuation-210-receive-pack-positive-control-001 --probe-read-only-git-write
+
+# Focused Python module
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -p 'test_forgejo_live_org_team_reviewer_readback.py' -v
+
+# Syntax, Cargo metadata policy and locked offline metadata
+PYTHONPYCACHEPREFIX=/tmp/forgejo-cont210-pycache python3 -m py_compile scripts/run_forgejo_live_org_team_reviewer_readback.py tests/test_forgejo_live_org_team_reviewer_readback.py
+python3 scripts/verify_cargo_license_state.py
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest -v scripts.test_cargo_license_state
+cargo metadata --locked --offline --format-version 1 --no-deps
+
+# Tracked diff and source whitespace
+git diff --check
+python3 evidence/continuation-210-receive-pack-positive-control-001/verify_run_result.py

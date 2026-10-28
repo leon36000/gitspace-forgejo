@@ -1,0 +1,3 @@
+checked_files=9
+trailing_whitespace=0
+nul_bytes=0

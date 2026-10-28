@@ -1,0 +1,23 @@
+{
+  "rows": [
+    {
+      "event_type": "pull_request_review_request",
+      "hook_id": 1,
+      "is_delivered": true,
+      "is_succeed": true,
+      "response_status": 202,
+      "task_id": 1,
+      "uuid": "6a796e6b-998f-4c72-b9c3-5d9c7aef974d"
+    },
+    {
+      "event_type": "pull_request_comment",
+      "hook_id": 1,
+      "is_delivered": true,
+      "is_succeed": true,
+      "response_status": 202,
+      "task_id": 2,
+      "uuid": "d1c7e7f8-4f02-4958-9641-798f785ba302"
+    }
+  ],
+  "source": "read-only Forgejo SQLite hook_task projection; raw payloads omitted"
+}

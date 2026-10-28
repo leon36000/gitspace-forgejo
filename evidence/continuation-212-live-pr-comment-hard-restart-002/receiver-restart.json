@@ -1,0 +1,24 @@
+{
+  "both_hook_tasks_acked_202_before_kill": true,
+  "delivery_ids": [
+    "6a796e6b-998f-4c72-b9c3-5d9c7aef974d",
+    "d1c7e7f8-4f02-4958-9641-798f785ba302"
+  ],
+  "event_types": [
+    "pull_request",
+    "issue_comment"
+  ],
+  "forgejo_hook_task_event_types": [
+    "pull_request_review_request",
+    "pull_request_comment"
+  ],
+  "hook_task_count": 2,
+  "journal_byte_identical_after_restart": true,
+  "journal_sha256_after": "93cf415cdc74563ace8da8a797040e4425102e8d1fa97e8b28c2a5a77a45b3b5",
+  "journal_sha256_before": "93cf415cdc74563ace8da8a797040e4425102e8d1fa97e8b28c2a5a77a45b3b5",
+  "old_listener_absent_before_restart": true,
+  "receiver_kill_exit_code": -9,
+  "receiver_kill_signal": "SIGKILL",
+  "record_count_after_restart": 2,
+  "restarted_listener_owned": true
+}

@@ -1,0 +1,172 @@
+{
+  "forgejo_access_log_repo_api_events": 16,
+  "forgejo_comment_get_count": 1,
+  "forgejo_parent_get_count": 5,
+  "forgejo_rows": [
+    {
+      "method": "POST",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/branches",
+      "status": 201
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/contents/team-review-readback.md",
+      "status": 201
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/pulls",
+      "status": 201
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/hooks",
+      "status": 201
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/hooks/1",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/pulls/1/requested_reviewers",
+      "status": 201
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/pulls/1",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/issues/1/comments",
+      "status": 201
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/pulls/1",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/issues/1/comments",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/issues/1/comments",
+      "status": 403
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/issues/1/comments",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/pulls/1",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/pulls/1",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/pulls/1",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/issues/comments/3",
+      "status": 200
+    }
+  ],
+  "proxy_comment_get_count": 1,
+  "proxy_forwarded_repo_api_events": 16,
+  "proxy_forwarded_rows": [
+    {
+      "method": "POST",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/branches",
+      "status": 201
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/contents/team-review-readback.md",
+      "status": 201
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/pulls",
+      "status": 201
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/hooks",
+      "status": 201
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/hooks/1",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/pulls/1/requested_reviewers",
+      "status": 201
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/pulls/1",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/issues/1/comments",
+      "status": 201
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/pulls/1",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/issues/1/comments",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/issues/1/comments",
+      "status": 403
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/issues/1/comments",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/pulls/1",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/pulls/1",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/pulls/1",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/repos/forge-team-org/team-review-readback/issues/comments/3",
+      "status": 200
+    }
+  ],
+  "proxy_parent_get_count": 5
+}

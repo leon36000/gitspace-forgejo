@@ -1,0 +1,4 @@
+Forgejo binary SHA-256: e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7
+Forgejo version: 17.0.0+gitea-1.22.0 (release name 17.0.0), Go 1.26.9; build commit unknown.
+Python: 3.12.3; Rust/Cargo: 1.95.0; Bubblewrap: 0.9.0.
+Source file SHA-256 values are listed in `source-sha256.txt`.

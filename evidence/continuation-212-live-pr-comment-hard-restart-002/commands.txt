@@ -1,0 +1,21 @@
+# Test-first RED before adding the validator.
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -p 'test_forgejo_live_org_team_reviewer_readback.py' -v
+
+# Focused unit suite after implementation.
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -p 'test_forgejo_live_org_team_reviewer_readback.py' -v
+
+# Syntax check.
+PYTHONPYCACHEPREFIX=/tmp/forgejo-cont212-pycache python3 -m py_compile scripts/run_forgejo_live_org_team_reviewer_readback.py scripts/run_forgejo_live_webhook_native_replay_e2e.py tests/test_forgejo_live_org_team_reviewer_readback.py
+
+# Live Forgejo event delivery, task acknowledgment, SIGKILL/restart, and batch reconciliation.
+PYTHONPYCACHEPREFIX=/tmp/forgejo-cont212-pycache python3 scripts/run_forgejo_live_org_team_reviewer_readback.py --forgejo-binary /tmp/forgejo-17.0.0 --state-dir /tmp/forgejo-team-review-cont212-state-002 --evidence-dir evidence/continuation-212-live-pr-comment-hard-restart-002 --probe-pr-comment-batch --kill-receiver-before-reconcile
+
+# Cargo license metadata policy; no product license selection.
+python3 scripts/verify_cargo_license_state.py
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest -v scripts.test_cargo_license_state
+
+# Final receipt/manifest checks.
+python3 evidence/continuation-212-live-pr-comment-hard-restart-002/read_hook_task_summary.py
+python3 evidence/continuation-212-live-pr-comment-hard-restart-002/verify_run_result.py
+python3 evidence/continuation-212-live-pr-comment-hard-restart-002/verify_append_only_indexes.py
+git diff --check

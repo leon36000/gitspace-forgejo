@@ -1,0 +1,24 @@
+# Worktree base recorded for this run.
+git rev-parse HEAD
+
+# Test-first RED: absent barrier type before implementation.
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -p 'test_forgejo_live_org_team_reviewer_readback.py' -v
+
+# Focused Python tests after implementation.
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -p 'test_forgejo_live_org_team_reviewer_readback.py' -v
+
+# Python syntax and source formatting checks.
+PYTHONPYCACHEPREFIX=/tmp/forgejo-cont213-pycache python3 -m py_compile scripts/run_forgejo_live_org_team_reviewer_readback.py scripts/run_forgejo_live_webhook_native_replay_e2e.py tests/test_forgejo_live_org_team_reviewer_readback.py
+git diff --check
+
+# Live Forgejo run: 2 webhook deliveries, one CLI SIGKILL between PR and comment GET, same-journal resume.
+PYTHONPYCACHEPREFIX=/tmp/forgejo-cont213-pycache python3 scripts/run_forgejo_live_org_team_reviewer_readback.py --forgejo-binary /tmp/forgejo-17.0.0 --state-dir /tmp/forgejo-team-review-cont213-state-001 --evidence-dir evidence/continuation-213-live-pr-comment-interrupted-cli-resume-001/live-e2e-001 --probe-pr-comment-batch --interrupt-cli-between-parent-and-comment
+
+# Independent receipt and manifest metadata checks; Cargo license remains unselected.
+python3 evidence/continuation-213-live-pr-comment-interrupted-cli-resume-001/verify_run_result.py
+python3 scripts/verify_cargo_license_state.py
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest -v scripts.test_cargo_license_state
+python3 evidence/continuation-213-live-pr-comment-interrupted-cli-resume-001/append_manifests.py
+python3 evidence/continuation-213-live-pr-comment-interrupted-cli-resume-001/verify_append_only_indexes.py
+sha256sum -c evidence/continuation-213-live-pr-comment-interrupted-cli-resume-001/source-sha256.txt
+git diff --check

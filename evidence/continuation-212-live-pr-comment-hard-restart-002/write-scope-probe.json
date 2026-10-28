@@ -1,0 +1,18 @@
+{
+  "comment_ids_after": [
+    3
+  ],
+  "comment_ids_before": [
+    3
+  ],
+  "credential_scopes": [
+    "read:user",
+    "read:repository",
+    "read:issue"
+  ],
+  "http_method": "POST",
+  "http_status": 403,
+  "probe_marker_present_after": false,
+  "pull_request_binding_unchanged": true,
+  "route": "/repos/forge-team-org/team-review-readback/issues/1/comments"
+}

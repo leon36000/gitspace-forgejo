@@ -1,0 +1,8 @@
+{
+  "http_status": 200,
+  "receive_pack_report_status_ok": true,
+  "target_branch": "agent/read-write-control-probe",
+  "target_branch_readback_matches": true,
+  "target_oid": "79222d6c2e20b4174f8e7010af0dd8cdf71ec663",
+  "write_effect_confirmed": true
+}
