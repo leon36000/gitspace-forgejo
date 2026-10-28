@@ -1,0 +1,27 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.03s
+     Running unittests src/lib.rs (target/debug/deps/agent_forge_core-4f3c0a59eee64024)
+
+running 19 tests
+test tests::duration_parser_handles_units_and_errors ... ok
+test tests::context_and_mission_state_are_pinned_and_bounded ... ok
+test supervisor_capability::tests::refuses_wrong_target_and_expired_capabilities ... ok
+test supervisor_capability::tests::refuses_a_supervisor_that_disconnects_after_receipt ... ok
+test tests::stale_events_cancellation_and_expired_or_forbidden_capabilities_are_denied ... ok
+test tests::bounded_tail_repairs_refuse_a_replaced_symlink_path ... ok
+test supervisor_capability::tests::refuses_stream_sockets_malformed_packets_and_duplicate_packets ... ok
+test supervisor_capability::tests::refuses_wrong_process_bindings_and_namespaces ... ok
+test supervisor_capability::tests::accepts_one_live_peer_bound_capability_and_rechecks_it ... ok
+test tests::proof_requires_signature_pass_and_all_fresh_hashes ... ok
+test tests::target_bound_v2_mac_covers_each_target_field ... ok
+test tests::target_bound_v2_signer_and_verifier_reject_keys_shorter_than_32_bytes ... ok
+test tests::verifier_preserves_failure_and_inconclusive_outcomes ... ok
+test tests::bounded_replay_reads_a_valid_journal_without_write_permission ... ok
+test webhook::quarantine_tests::quarantine_refuses_a_torn_journal_tail_without_repairing_it ... ok
+test tests::target_bound_proof_v2_binds_target_and_evidence_without_changing_v1 ... ok
+test webhook::quarantine_tests::quarantine_is_bound_idempotent_and_never_reconciles_invalid_source ... ok
+test tests::parallel_test_temp_directories_are_unique ... ok
+test tests::journal_deduplicates_replays_and_serializes_concurrent_events ... ok
+
+test result: ok. 19 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.08s
+

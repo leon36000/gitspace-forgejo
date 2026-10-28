@@ -1,0 +1,13 @@
+Snapshot time: 2026-10-26T21:16:49Z
+Python: 3.12.3
+Git: 2.43.0
+OPSYS-AI commit: f0b89ccf86d6f6e50eb134de3257af91860e8091
+OPSYS-AI branch: codex/restructuration-2026-09-30 (54 commits behind its upstream tracking branch)
+OPSYS-AI tracked worktree status: clean; untracked paths were excluded from this status command
+OPSYS-AI Python package version: 2.0.0.dev0
+OPSYS-CORE OpenClaw package version: 2026.9.6
+uv.lock versions: mcp 2.2.0; mcp-types 2.2.0; anyio 4.15.1; httpx 0.28.1
+Local virtualenv entrypoints: opsys-mcp, opsys-metier, opsys-console present
+Global PATH entrypoints checked: opsys, opsys-metier, opsys-mcp, openclaw (none found)
+Listener snapshot: port 8765 absent; port 18789 absent; 127.0.0.1:9119 present, owner not identified
+No service or model was invoked.

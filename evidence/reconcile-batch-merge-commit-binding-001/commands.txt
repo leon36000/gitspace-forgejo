@@ -1,0 +1,9 @@
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_keeps_issue_and_pull_request_number_collision_separate
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_keeps_missing_merge_sha_inconclusive_in_mixed_batch
+cargo test --offline --locked --all-targets -- --test-threads=1
+cargo build --release --locked --offline
+cargo fmt --all -- --check
+git diff --check
+python3 scripts/verify_cargo_license_state.py
+python3 scripts/test_cargo_license_state.py
+(cd evidence/cargo-license-state-explicit-001 && sha256sum -c SHA256SUMS)

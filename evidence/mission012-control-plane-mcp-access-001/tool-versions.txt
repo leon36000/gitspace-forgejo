@@ -1,0 +1,11 @@
+# Local evidence environment, 2026-10-25
+HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+Branch: local/WEBHOOK-005-canonical-links
+rustc --version: rustc 1.95.0 (59807616 2026-04-14)
+cargo --version: cargo 1.95.0 (f2d3ce0bd 2026-03-21)
+python3 --version: Python 3.12.3
+git --version: git version 2.43.0
+uname -m: aarch64
+bubblewrap --version: bubblewrap 0.9.0
+systemd-run --version: systemd 255 (255.4-1ubuntu8.18)
+Focused command: cargo test --offline --locked --bin mission-012-verify-local verifier_cannot_read_host_control_file_or_write_candidate_snapshot -- --nocapture

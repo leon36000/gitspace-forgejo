@@ -1,0 +1,12 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.56s
+     Running tests/webhook_reconcile_pipeline.rs (target/debug/deps/webhook_reconcile_pipeline-059c903bd86c5636)
+
+running 4 tests
+test signed_branch_create_is_ingested_then_reconciled_to_current_branch_state ... ok
+test late_stale_notification_is_reconciled_to_current_forgejo_state ... ok
+test signed_webhook_journal_replay_reconciles_stale_payload_to_fixture_state ... ok
+test repeated_comment_deliveries_fail_closed_when_projected_batch_output_exceeds_budget ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.68s
+

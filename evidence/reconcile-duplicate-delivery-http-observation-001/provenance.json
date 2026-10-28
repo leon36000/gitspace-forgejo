@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "head": "f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0",
+  "branch": "local/WEBHOOK-005-canonical-links",
+  "tool_versions": {
+    "cargo": "cargo 1.95.0 (f2d3ce0bd 2026-03-21)",
+    "rustc": "rustc 1.95.0 (59807616e 2026-04-14)",
+    "python3": "Python 3.12.3",
+    "bubblewrap": "bubblewrap 0.9.0"
+  },
+  "commands": [
+    "PYTHONDONTWRITEBYTECODE=1 python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_refuses_duplicate_delivery_selection_before_credential_read (expected red after temporarily removing guard)",
+    "PYTHONDONTWRITEBYTECODE=1 python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_refuses_duplicate_delivery_selection_before_credential_read (green with guard restored)",
+    "cargo test --offline --locked --all-targets -- --test-threads=1",
+    "python3 scripts/verify_cargo_license_state.py",
+    "PYTHONDONTWRITEBYTECODE=1 python3 -m unittest scripts.test_cargo_license_state",
+    "cargo fmt --all -- --check",
+    "git diff --check"
+  ],
+  "all_targets": {
+    "groups": 34,
+    "passed": 526,
+    "failed": 0,
+    "ignored": 65
+  },
+  "cargo_license_state": {
+    "license": null,
+    "license_file": null,
+    "publish": [],
+    "decision": "no_license_selected",
+    "redistribution_rights": "not_assessed"
+  },
+  "external_services_used": false,
+  "external_network": "blocked in Bubblewrap process test; private loopback fixture only",
+  "model_invoked": false,
+  "new_spend": false,
+  "production_changed": false,
+  "source_sha256": {
+    "Cargo.toml": "0d7c833bce0634836404871cfe51b82ac00288bc0fb1b6e04c206b61340bae0a",
+    "Cargo.lock": "bf599559dd11ff21ecc4754aa8a693966b4a9ca401153d7d7caa1f18d8995fcc",
+    "src/bin/forgejo-reconcile-local.rs": "19805b59eff99045c38455d369b7160af20a9467189e8e4029cb3f6f7ffa2b69",
+    "tests/webhook_receiver_process_e2e.rs": "7924dfedef73f1b41129b4a3917e70909fe8b492dbf74c98163fcbd39c842d6f",
+    "scripts/run_webhook_reconcile_cli_e2e.py": "3e3e7820561532db64c6f24e027bad6b664b10270cc0b4a0eadc93d31c3be344",
+    "scripts/verify_cargo_license_state.py": "ee27068bc65141b97e363a62b890867832e571e638df052c3d208a447ce41556",
+    "scripts/test_cargo_license_state.py": "676e811afc3c1e3357bd17ef016d622a9d77454b3287c6b7e527fea7d42e91d8",
+    "docs/checkpoint.md": "4e273dc6e2bbc1f720ecf0ccfb132e27403cbdd0bb1ac0e19ed158ac65b9924e",
+    "docs/implementation-plan.md": "9c5453a4db05613e8327b4f8851142bc372c93f3b890478f024f0ffb13758f78",
+    "evidence/reconcile-duplicate-delivery-http-observation-001/local-run.md": "42fbfb278ed61d9708171eb531c2557d51659c2de20ac4401f3fd81df1d0ecc5"
+  }
+}

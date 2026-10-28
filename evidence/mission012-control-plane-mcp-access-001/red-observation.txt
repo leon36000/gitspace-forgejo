@@ -1,0 +1,15 @@
+Test initial avant correction :
+
+  cargo test --offline --locked --test mission_012_mcp_lifecycle \
+    mcp_tools_refuse_reads_and_writes_to_webhook_and_host_control_files -- --exact --nocapture
+
+Résultat : échec sur la requête MCP d'écriture id=6. Le host a renvoyé
+`tool_input_invalid`, alors que la tentative d'écriture vers
+`../webhook-inbox.jsonl` devait être classée `tool_path_denied`. Les quatre
+lectures avaient déjà été refusées. Le test s'est terminé avec 0 réussi, 1
+échoué et le code 101. La sortie complète de ce premier essai n'a pas été
+capturée dans un fichier séparé; ce relevé conserve l'assertion observée.
+
+Inspection du chemin d'appel : `preflight_workspace_write` convertissait
+toutes les variantes de `ToolRefusal` en `tool_input_invalid` avant le writer
+journalisé. Le correctif préserve `PathNotAllowed` comme `tool_path_denied`.

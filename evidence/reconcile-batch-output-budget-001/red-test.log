@@ -1,0 +1,27 @@
+COMMAND: cargo test --offline --locked --test webhook_reconcile_pipeline repeated_comment_deliveries_fail_closed_when_projected_batch_output_exceeds_budget -- --exact
+EXIT: 101
+--- stdout ---
+
+running 1 test
+test repeated_comment_deliveries_fail_closed_when_projected_batch_output_exceeds_budget ... FAILED
+
+failures:
+
+---- repeated_comment_deliveries_fail_closed_when_projected_batch_output_exceeds_budget stdout ----
+
+thread 'repeated_comment_deliveries_fail_closed_when_projected_batch_output_exceeds_budget' (954877) panicked at tests/webhook_reconcile_pipeline.rs:462:23:
+the batch must refuse repeated comment output instead of materializing 100 states
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    repeated_comment_deliveries_fail_closed_when_projected_batch_output_exceeds_budget
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 3 filtered out; finished in 0.45s
+
+
+--- stderr ---
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.40s
+     Running tests/webhook_reconcile_pipeline.rs (target/debug/deps/webhook_reconcile_pipeline-059c903bd86c5636)
+error: test failed, to rerun pass `--test webhook_reconcile_pipeline`

@@ -1,0 +1,10 @@
+$ python3 scripts/verify_cargo_license_state.py
+{
+  "license": null,
+  "license_decision": "no_license_selected",
+  "license_file": null,
+  "package": "agent-forge-core",
+  "publish": [],
+  "redistribution_rights": "not_assessed",
+  "status": "verified"
+}

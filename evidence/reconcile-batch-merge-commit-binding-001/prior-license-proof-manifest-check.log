@@ -1,0 +1,8 @@
+local-run.md: OK
+manifest-check.txt: OK
+metadata-readback.json: OK
+source-sha256.txt: OK
+tests-green.log: OK
+tests-red.log: OK
+tool-versions.txt: OK
+verification-checks.txt: OK
