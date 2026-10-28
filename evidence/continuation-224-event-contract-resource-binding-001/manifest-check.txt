@@ -1,0 +1,6 @@
+sha256sum -c SHA256SUMS: PASS (7 files)
+worktree append-only prefix: PASS (13329 original lines; 13339 current)
+project append-only prefix: PASS (7641 original lines; 7652 current)
+new worktree manifest entries: 10/10 recomputed and matched
+new project manifest entries: 11/11 recomputed and matched, including the binding to the final worktree evidence index
+The prefix-before values are stored in manifest-prefix-before.json.

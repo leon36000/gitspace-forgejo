@@ -1,0 +1,20 @@
+set -o pipefail
+cargo test --locked --offline --lib workflow_action_and_status_contracts_are_published_and_drive_payload_validation 2>&1 | tee evidence/continuation-227-workflow-action-refusal-001/unit-contract.log
+
+set -o pipefail
+cargo test --locked --offline --test webhook_handler_contract forgejo_v17_workflow 2>&1 | tee evidence/continuation-227-workflow-action-refusal-001/handler-contract.log
+
+set -o pipefail
+cargo test --locked --offline --test webhook_receiver_process_e2e actual_receiver_refuses_unknown_workflow_actions_without_journaling -- --exact --nocapture 2>&1 | tee evidence/continuation-227-workflow-action-refusal-001/receiver-process.log
+
+set -o pipefail
+cargo fmt --all -- --check 2>&1 | tee evidence/continuation-227-workflow-action-refusal-001/rustfmt.log
+
+set -o pipefail
+git diff --check 2>&1 | tee evidence/continuation-227-workflow-action-refusal-001/diff-check.log
+
+set -o pipefail
+python3 scripts/verify_cargo_license_state.py 2>&1 | tee evidence/continuation-227-workflow-action-refusal-001/cargo-license-state.log
+
+python3 evidence/continuation-227-workflow-action-refusal-001/append_manifests.py
+cd evidence/continuation-227-workflow-action-refusal-001 && sha256sum -c SHA256SUMS

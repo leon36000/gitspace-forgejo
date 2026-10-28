@@ -1,0 +1,22 @@
+Captured locally on 2026-10-27; no package installation or network access.
+
+$ git rev-parse HEAD
+f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+
+$ rustc -Vv
+rustc 1.95.0 (59807616e 2026-04-14)
+binary: rustc
+commit-hash: 59807616e1fa2540724bfbac14d7976d7e4a3860
+commit-date: 2026-04-14
+host: aarch64-unknown-linux-gnu
+release: 1.95.0
+LLVM version: 22.1.2
+
+$ cargo --version
+cargo 1.95.0 (f2d3ce0bd 2026-03-21)
+
+$ python3 --version
+Python 3.12.3
+
+$ uname -sm
+Linux aarch64

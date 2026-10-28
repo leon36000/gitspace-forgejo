@@ -1,0 +1,2 @@
+worktree full index: exit=1; ok=10671; failed=2680; missing=0; warnings=sha256sum: WARNING: 1 line is improperly formatted | sha256sum: WARNING: 2680 computed checksums did NOT match
+project full index: exit=1; ok=5712; failed=1958; missing=0; warnings=sha256sum: WARNING: 1958 computed checksums did NOT match

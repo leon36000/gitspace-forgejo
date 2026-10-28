@@ -1,0 +1,16 @@
+set -o pipefail
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_refuses_persisted_unknown_workflow_action_before_api_read 2>&1 | tee evidence/continuation-228-persisted-workflow-action-refusal-001/isolated-cli-process.log
+
+python3 -c 'import ast; from pathlib import Path; ast.parse(Path("scripts/run_webhook_reconcile_cli_e2e.py").read_text()); print("python syntax OK")' | tee evidence/continuation-228-persisted-workflow-action-refusal-001/runner-syntax.log
+
+set -o pipefail
+cargo fmt --all -- --check 2>&1 | tee evidence/continuation-228-persisted-workflow-action-refusal-001/rustfmt.log
+
+set -o pipefail
+git diff --check 2>&1 | tee evidence/continuation-228-persisted-workflow-action-refusal-001/diff-check.log
+
+set -o pipefail
+python3 scripts/verify_cargo_license_state.py 2>&1 | tee evidence/continuation-228-persisted-workflow-action-refusal-001/cargo-license-state.log
+
+python3 evidence/continuation-228-persisted-workflow-action-refusal-001/append_manifests.py
+cd evidence/continuation-228-persisted-workflow-action-refusal-001 && sha256sum -c SHA256SUMS

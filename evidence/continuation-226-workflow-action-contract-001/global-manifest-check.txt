@@ -1,0 +1,1 @@
+Latest CONT-226 process-test revision: local: prefix_unchanged=True; appended_entries=8/8; exit=0; worktree: prefix_unchanged=True; appended_entries=11/11; exit=0; project: prefix_unchanged=True; appended_entries=12/12; exit=0

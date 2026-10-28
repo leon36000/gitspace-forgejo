@@ -1,0 +1,16 @@
+append_manifests.py: OK
+cargo-license-state.json: OK
+cargo-license-tests.log: OK
+cli-capabilities.log: OK
+cli-unit.log: OK
+commands.txt: OK
+diff-check.log: OK
+handler-contract.log: OK
+local-run.md: OK
+manifest-prefix-before.json: OK
+receiver-process-capabilities.log: OK
+reconcile-contract.log: OK
+rustfmt.log: OK
+source-sha256.txt: OK
+tool-versions.txt: OK
+unit-contract.log: OK

@@ -1,0 +1,10 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.01s
+     Running unittests src/lib.rs (target/debug/deps/agent_forge_core-4f3c0a59eee64024)
+
+running 3 tests
+test webhook::reconcile::resource_kind_contract_tests::unknown_contract_resource_kind_fails_closed ... ok
+test webhook::reconcile::resource_kind_contract_tests::runtime_resource_mapping_matches_every_published_event_contract ... ok
+test webhook::reconcile::resource_kind_contract_tests::workflow_status_contract_is_published_and_drives_payload_validation ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 19 filtered out; finished in 0.00s
+

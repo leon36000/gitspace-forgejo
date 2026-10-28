@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "results": {
+    "resource_kind_contract_tests": "2 passed",
+    "webhook_reconcile_contract": "77 passed, 0 failed, 0 ignored",
+    "forgejo_reconcile_local_unit_tests": "157 passed, 0 failed, 0 ignored",
+    "receiver_journal_cli_process_e2e": "1 passed, 0 failed under bubblewrap with private network and PID namespaces",
+    "cargo_fmt_check": "exit 0",
+    "cargo_license_guard": "metadata_policy_verified; license=null; license_file=null; publish=[]; no_license_selected; redistribution_rights=not_assessed; NOASSERTION",
+    "cargo_license_guard_tests": "12 passed",
+    "git_diff_check": "exit 0"
+  },
+  "caveat": "The process test used a synthetic loopback HTTP API fixture, not a live Forgejo server."
+}
