@@ -869,9 +869,14 @@ def validate_release_reconcile_readback(
         or release.get("assets_included") is not False
     ):
         raise ValueError("current release projection is invalid or contains untrusted content")
+    # Forgejo util.PathEscapeSegments calls Go PathEscape per segment; preserve
+    # its path-segment reserved characters while retaining slash separators.
+    escaped_tag_segments = "/".join(
+        quote(segment, safe="$&+:@=") for segment in tag_name.split("/")
+    )
     expected_html_url = (
         f"{ORIGIN}/{quote(owner, safe='')}/{quote(repository, safe='')}"
-        f"/releases/tag/{quote(tag_name, safe='')}"
+        f"/releases/tag/{escaped_tag_segments}"
     )
     if canonical.get("html_url") != expected_html_url:
         raise ValueError("current release URL is not derived from the configured repository and tag")
@@ -941,7 +946,7 @@ def publish_and_reconcile_live_release(
         or expected_record_count < 1
     ):
         raise ValueError("expected release journal record count is invalid")
-    tag_name = f"codex-e2e-release-{secrets.token_hex(5)}"
+    tag_name = f"codex-e2e/release-{secrets.token_hex(5)}"
     response, _ = owner_api.request(
         "POST",
         f"/repos/{quote(owner, safe='')}/{quote(repository, safe='')}/releases",

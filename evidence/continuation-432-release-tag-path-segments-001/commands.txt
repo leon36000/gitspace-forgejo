@@ -1,0 +1,16 @@
+# CONTINUATION-432 focused local verification
+cargo test --offline --locked --test webhook_reconcile_contract release_tag_with_slash_matches_forgejo_path_escape_segments -- --exact
+cargo test --offline --locked --test webhook_reconcile_contract --test webhook_reconcile_pipeline --test webhook_contract --test webhook_handler_contract --test webhook_http_contract -- --test-threads=1
+rustfmt --edition 2024 --check src/forgejo.rs src/webhook/reconcile.rs tests/webhook_reconcile_contract.rs
+git diff --check -- src/forgejo.rs src/webhook/reconcile.rs tests/webhook_reconcile_contract.rs
+python3 -B scripts/verify_cargo_license_state.py
+python3 -B scripts/test_cargo_license_state.py
+python3 -B scripts/verify_latest_sha256_manifest.py evidence/SHA256SUMS --root .
+git -C /tmp/forgejo-v17-base-cas-poc rev-parse HEAD
+git -C /tmp/forgejo-v17-base-cas-poc show 0d791421f85ca13a63b665053d81ea765fbbc571:modules/util/url.go
+git -C /tmp/forgejo-v17-base-cas-poc show 0d791421f85ca13a63b665053d81ea765fbbc571:models/repo/release.go
+git -C /tmp/forgejo-v17-base-cas-poc show 0d791421f85ca13a63b665053d81ea765fbbc571:services/convert/release.go
+# Red reproduction: temporarily replace the unique expected_release_html_url call
+# from encode_url_path_segments(tag_name) to encode_url_path_segment(tag_name),
+# run the focused cargo test above, then restore the exact original expression.
+# red-source-check.txt records the red failure and identical restored SHA.

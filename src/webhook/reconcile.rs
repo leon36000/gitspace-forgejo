@@ -108,7 +108,7 @@ pub trait ForgejoCurrentState {
         }
         format!(
             "{collection_url}/tag/{}",
-            crate::forgejo::encode_url_path_segment(tag_name)
+            crate::forgejo::encode_url_path_segments(tag_name)
         )
     }
 }

@@ -1,5 +1,27 @@
 # Checkpoint — 28 octobre 2026
 
+## CONTINUATION-433 — URL de tag Release à segments dans le parcours natif — 28 octobre 2026
+
+La correction Rust de CONTINUATION-432 laissait un second encodeur incompatible dans le validateur de composition Python : quote(tag_name, safe="") échappait tout le tag. Le test composition a échoué avant correction pour feature/v1.0 avec « current release URL is not derived from the configured repository and tag ». Le code découpe désormais le tag sur /, quote chaque segment avec le jeu sûr Go $&+:@=, puis réassemble les segments. Les cas feature/v1.0, feature/a+b, feature/a;b et feature/café passent dans ReleaseReconciliationCompositionTests (9/9).
+
+Le runner natif utilise maintenant un tag jetable sous codex-e2e/release-<nonce>. Sur l’image locale Forgejo 17.0.0+gitea-1.22.0 (Go 1.26.9), le parcours a réussi : 8 deliveries natives en HTTP 202; Release published en séquence 5, ID 1; le vrai CLI Rust relit current_state_read/present et conserve le slash dans l’URL canonique. Le rejeu après redémarrage répond 202 duplicate=true avec journal identique sur 8 records, 61 844 octets et SHA-256. La PR reste fermée sans merge; hook désactivé, processus terminés et ports absents. Le binaire d’image est haché, mais son commit source exact n’est pas établi.
+
+La ligne obsolète de la matrice qui disait que le runner ne câblait pas l’émission Release a été remplacée par cette preuve. Contrôles de syntaxe Python, Cargo licence 12/12 et manifeste natif 19/19 passent. La licence Cargo reste non choisie (license=null, license_file=null, publish=[], droits non évalués, NOASSERTION). Reçu : [CONTINUATION-433](../evidence/continuation-433-release-tag-path-segments-native-001/local-run.md).
+
+Limites : n=1, instance Forgejo locale, pas AgentOS/LLM, RAG/mémoire, CI de référence, gate de fusion ni benchmark. Pas de code Forgejo/GitSpace copié; aucun accès distant n’a été utilisé.
+
+Suite : auditer puis traiter une lacune distincte de l’adaptateur ou de la réconciliation, sans rejouer cette matrice native sauf modification pertinente. Le projet reste incomplet.
+
+## CONTINUATION-432 — canonisation des tags Release contenant / — 28 octobre 2026
+
+Le reconciler Forgejo refusait une lecture Release valide si le nom du tag contenait / : son URL attendue encodait le tag comme un seul segment (feature%2Fv1.0), tandis que Forgejo v17 sépare le tag sur /, échappe chaque segment et conserve les séparateurs. Le code primaire audité est Forgejo v17.0.0 commit 0d791421f85ca13a63b665053d81ea765fbbc571, modules/util/url.go:12-20, models/repo/release.go:184-187 et services/convert/release.go:20-23; les trois fichiers étaient propres dans le scratch par rapport à ce commit.
+
+Le helper local encode_url_path_segments applique la même structure, et le reconciler l’utilise pour calculer l’URL canonique depuis sa configuration. Le test nouveau a échoué avant correction avec ResourceMismatch lors d’une substitution temporaire de l’ancien helper; le SHA-256 du fichier a été rétabli à l’identique après la reproduction. Après correction, le test dédié passe 1/1 et cinq suites webhook passent 154/154. rustfmt --check, git diff --check ciblé et les contrôles de politique Cargo (12/12) passent. Le reçu, commandes, logs et empreintes : [CONTINUATION-432](../evidence/continuation-432-release-tag-path-segments-001/local-run.md).
+
+Limite : le test de réconciliation utilise FixtureApi; Forgejo Go n’a pas été compilé et aucune instance live n’a été appelée. Pas de nouveau parcours LLM/AgentOS ni de comparaison. La licence produit reste indécise. Le worktree est fortement modifié; aucun changement d’historique ou d’état distant dans ce lot.
+
+Suite : reprendre une lacune locale distincte des contrats release/webhook et ne pas rejouer ces suites sans modification de code pertinente.
+
 ## CONTINUATION-431 — readback et réconciliation du manifeste PC4 — 28 octobre 2026
 
 Le readback GitLab du commit `d72f6077369853bb84256c45b455a856fe7a89a8` a retrouvé les 16 blobs du lot CONTINUATION-430 avec les mêmes identifiants Git que les fichiers locaux. Le scan du manifeste SHA-256 distant a trouvé des empreintes courantes pour les 14 fichiers de code et de reçu, mais des empreintes anciennes pour `docs/architecture.md` et `docs/checkpoint.md`. Le commit PC4 `c4a3a353c4e41ce756459045aa6fff0e711a8657` ajoute leurs empreintes actuelles à la fin du manifeste distant, sans réécriture d’historique; le readback a confirmé ces deux lignes.

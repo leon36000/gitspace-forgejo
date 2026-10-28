@@ -1,0 +1,6 @@
+Temporary red reproduction changed only the one call expression in src/webhook/reconcile.rs:
+  crate::forgejo::encode_url_path_segments(tag_name)
+to:
+  crate::forgejo::encode_url_path_segment(tag_name)
+The focused test returned 101 with ResourceMismatch. Exact restoration returned the file to the same SHA-256:
+33b87c15a2cf6ac2263095fa12b7e031d949d4aa84eaccdbfba3d2643f6dfa4f

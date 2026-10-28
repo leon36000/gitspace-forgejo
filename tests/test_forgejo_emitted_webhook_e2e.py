@@ -4852,6 +4852,32 @@ class ReleaseReconciliationCompositionTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "current release projection"):
                 self.call(expected_tag_name="a-different-created-tag")
 
+    def test_canonical_readback_preserves_slashes_between_escaped_tag_segments(self) -> None:
+        for tag_name, escaped_tag in (
+            ("feature/v1.0", "feature/v1.0"),
+            ("feature/a+b", "feature/a+b"),
+            ("feature/a;b", "feature/a%3Bb"),
+            ("feature/café", "feature/caf%C3%A9"),
+        ):
+            with self.subTest(tag_name=tag_name):
+                output = self.result()
+                output["canonical_state"]["html_url"] = (
+                    f"{driver.ORIGIN}/forge-admin/agent-forge-core/releases/tag/{escaped_tag}"
+                )
+                output["canonical_state"]["release"]["tag_name"] = tag_name
+
+                with patch.object(driver.helpers, "run_reconcile", return_value=(0, output)):
+                    result = self.call(expected_tag_name=tag_name)
+
+                self.assertEqual(
+                    result["reconciliation"]["canonical_state"]["html_url"],
+                    f"{driver.ORIGIN}/forge-admin/agent-forge-core/releases/tag/{escaped_tag}",
+                )
+                self.assertEqual(
+                    result["reconciliation"]["canonical_state"]["release"]["tag_name"],
+                    tag_name,
+                )
+
     def test_unverified_or_stale_cli_result_is_not_accepted(self) -> None:
         for change in (
             lambda value: value.update(schema_version=18),
@@ -4901,7 +4927,7 @@ class ReleaseWebhookMainFlowTests(unittest.TestCase):
     def test_publish_delivery_and_current_api_readback_are_one_main_flow(self) -> None:
         flow = getattr(driver, "publish_and_reconcile_live_release", None)
         self.assertTrue(callable(flow), "release publish-to-readback main flow is missing")
-        tag_name = "codex-e2e-release-0123456789"
+        tag_name = "codex-e2e/release-0123456789"
         delivery = ReleaseReconciliationCompositionTests.record(action="published")
         record_json = json.dumps(delivery, sort_keys=True, separators=(",", ":"))
 

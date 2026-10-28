@@ -1,0 +1,22 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.49s
+     Running tests/webhook_reconcile_contract.rs (target/debug/deps/webhook_reconcile_contract-3ce6f937d5fb0c8e)
+
+running 1 test
+test release_tag_with_slash_matches_forgejo_path_escape_segments ... FAILED
+
+failures:
+
+---- release_tag_with_slash_matches_forgejo_path_escape_segments stdout ----
+
+thread 'release_tag_with_slash_matches_forgejo_path_escape_segments' (1884922) panicked at tests/webhook_reconcile_contract.rs:664:10:
+Forgejo v17 preserves slashes between escaped tag path segments: ResourceMismatch
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    release_tag_with_slash_matches_forgejo_path_escape_segments
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 100 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `--test webhook_reconcile_contract`

@@ -1,0 +1,21 @@
+E
+======================================================================
+ERROR: test_canonical_readback_preserves_slashes_between_escaped_tag_segments (__main__.ReleaseReconciliationCompositionTests.test_canonical_readback_preserves_slashes_between_escaped_tag_segments)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/test_forgejo_emitted_webhook_e2e.py", line 4864, in test_canonical_readback_preserves_slashes_between_escaped_tag_segments
+    result = self.call(expected_tag_name=tag_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/test_forgejo_emitted_webhook_e2e.py", line 4735, in call
+    return self.reconcile(
+           ^^^^^^^^^^^^^^^
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/scripts/run_forgejo_live_webhook_reconcile_emitted.py", line 912, in reconcile_live_release_delivery
+    validate_release_reconcile_readback(
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/scripts/run_forgejo_live_webhook_reconcile_emitted.py", line 877, in validate_release_reconcile_readback
+    raise ValueError("current release URL is not derived from the configured repository and tag")
+ValueError: current release URL is not derived from the configured repository and tag
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (errors=1)

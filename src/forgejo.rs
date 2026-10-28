@@ -1291,6 +1291,22 @@ pub fn encode_url_path_segment(value: &str) -> String {
     encoded
 }
 
+/// Percent-encode each slash-delimited path segment while preserving the
+/// separators, matching Forgejo v17's `util.PathEscapeSegments` for release
+/// tag URLs.
+pub fn encode_url_path_segments(value: &str) -> String {
+    let mut segments = value.split('/');
+    let Some(first) = segments.next() else {
+        return String::new();
+    };
+    let mut encoded = encode_url_path_segment(first);
+    for segment in segments {
+        encoded.push('/');
+        encoded.push_str(&encode_url_path_segment(segment));
+    }
+    encoded
+}
+
 /// Check the Git ref constraints used by local Forgejo branch scopes.
 pub fn valid_branch(branch: &str) -> bool {
     !branch.is_empty()

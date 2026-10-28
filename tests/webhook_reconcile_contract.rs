@@ -627,6 +627,57 @@ fn release_webhook_reads_current_release_and_projects_only_bounded_identity_fiel
     }
 }
 
+#[test]
+fn release_tag_with_slash_matches_forgejo_path_escape_segments() {
+    let event = JournalEvent {
+        sequence: 1,
+        event_id: "fixture-release-slashed-tag".into(),
+        idempotency_key: "forgejo-delivery-v1:fixture-release-slashed-tag".into(),
+        kind: "forgejo.webhook.v1.release".into(),
+        payload: json!({
+            "schema_version": 1,
+            "provider": "forgejo",
+            "delivery_id": "fixture-release-slashed-tag",
+            "event": "release",
+            "payload": {
+                "action": "updated",
+                "repository": {"full_name": "forge-admin/agent-forge-core"},
+                "release": {"id": 611, "tag_name": "feature/v1.0"}
+            }
+        }),
+        previous_hash: "0".repeat(64),
+        receiver_attestation: None,
+        hash: "1".repeat(64),
+    };
+    let api = FixtureApi {
+        response: Ok(json!({
+            "id": 611,
+            "tag_name": "feature/v1.0",
+            "draft": false,
+            "prerelease": false,
+            "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/releases/tag/feature/v1.0"
+        })),
+        requests: Mutex::new(Vec::new()),
+    };
+
+    let reconciled = reconcile_inbox_event(&event, &api)
+        .expect("Forgejo v17 preserves slashes between escaped tag path segments");
+
+    assert_eq!(
+        reconciled.html_url,
+        "http://127.0.0.1:3130/forge-admin/agent-forge-core/releases/tag/feature/v1.0"
+    );
+    assert_eq!(
+        reconciled.release,
+        Some(ReconciledRelease {
+            id: 611,
+            tag_name: "feature/v1.0".into(),
+            draft: false,
+            prerelease: false,
+        })
+    );
+}
+
 fn workflow_job_event() -> JournalEvent {
     JournalEvent {
         sequence: 1,

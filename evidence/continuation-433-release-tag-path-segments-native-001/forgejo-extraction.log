@@ -1,0 +1,4 @@
+image=codeberg.org/forgejo/forgejo:17.0.0
+sha256:06d38310de496a10186d952bdad5ca764c153c8023ede8dfa0944c79a1dc5412 linux/arm64
+e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7  /tmp/forgejo-release-slash-001
+forgejo version 17.0.0+gitea-1.22.0 (release name 17.0.0) built with GNU Make 4.4.1, go1.26.9 : bindata, timetzdata, sqlite, sqlite_unlock_notify

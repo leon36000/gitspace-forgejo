@@ -1,0 +1,44 @@
+{
+  "blank_lines_ignored": 6,
+  "legacy_unhashed_records": 1,
+  "malformed_records": [],
+  "manifest": "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/SHA256SUMS",
+  "mismatched_path_count": 4,
+  "mismatched_paths": [
+    {
+      "actual": "43a635608d4f73f854699d8dabbea1732c674db3af38d2d45c356b7a5205c4f9",
+      "expected": "c28294f8ccd2981c4b84bbe17802cfb686e43c106df110c18c6e59c965d2e1c2",
+      "line": 18519,
+      "path": "docs/checkpoint.md"
+    },
+    {
+      "actual": "33b87c15a2cf6ac2263095fa12b7e031d949d4aa84eaccdbfba3d2643f6dfa4f",
+      "expected": "3d3a1b41046b984d28ebbdaca801d13eb67567e80dcf54358fab7b004721fa0c",
+      "line": 18384,
+      "path": "src/webhook/reconcile.rs"
+    },
+    {
+      "actual": "193728817f48065005331759a07020134cb1aa307c750dbabb76b9534a2a89b0",
+      "expected": "693ae8851098dfae829181bac3415797b9ec457e286eac8617933b4c3c7e5409",
+      "line": 18401,
+      "path": "tests/webhook_reconcile_contract.rs"
+    },
+    {
+      "actual": "45922b76f46d0826fbaffa269ffb6fd3c0b4c949dfb69616ebce1702e328e6a5",
+      "expected": "d891c4f0cc7f47b2550654c6a2bb83745bf302fd34df43891fc53eac461f12c6",
+      "line": 18415,
+      "path": "src/forgejo.rs"
+    }
+  ],
+  "missing_path_count": 0,
+  "missing_paths": [],
+  "passed": false,
+  "root": "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace",
+  "unhashed_path_count": 0,
+  "unhashed_paths": [],
+  "unique_paths": 13503,
+  "unsafe_path_count": 0,
+  "unsafe_paths": [],
+  "valid_records": 18515,
+  "verified_paths": 13499
+}

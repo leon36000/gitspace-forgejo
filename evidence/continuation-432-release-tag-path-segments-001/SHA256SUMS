@@ -1,0 +1,17 @@
+3bd604ea3251a41879058108fae273edfed476358628f1ce4b1d3cb40154a7e1  evidence/continuation-432-release-tag-path-segments-001/commands.txt
+9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa  evidence/continuation-432-release-tag-path-segments-001/focused.exit
+2452903c1822a064b939d11db149862962a3b6224a0e2b858d89d5c2006810da  evidence/continuation-432-release-tag-path-segments-001/focused.log
+aa04c038fe8135abaf3f3cac94ebff34251f8a903b65c9a91d084d23964b8014  evidence/continuation-432-release-tag-path-segments-001/license-checks.log
+3159bbfc6833a3d0627c62547df2fa83a1f02326481628bf90db41377d3308f2  evidence/continuation-432-release-tag-path-segments-001/local-run.md
+4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865  evidence/continuation-432-release-tag-path-segments-001/manifest-verify-before.exit
+4f240a8563f8c583be22578c475ac97fde87efa05fad1d6b33c443b377033e36  evidence/continuation-432-release-tag-path-segments-001/manifest-verify-before.json
+9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa  evidence/continuation-432-release-tag-path-segments-001/manifest-verify.exit
+403039e68d738e07bf457a89a7af29576e27bf815812e9a2dbae893fac54d9fe  evidence/continuation-432-release-tag-path-segments-001/manifest-verify.json
+6f856a0c835c7bb3b327a7e5844a4afb9f26ef546f7483c7341e14fe2164dd31  evidence/continuation-432-release-tag-path-segments-001/quality-checks.log
+95987a73e91f6b6e50fa963cc2bbe7f71b953e526dd453c94ece33b767e80417  evidence/continuation-432-release-tag-path-segments-001/red-failing-tests.log
+793bc7f364d375f10584352db7a36d063c206fe730c1e2a29f40a59981b99e12  evidence/continuation-432-release-tag-path-segments-001/red-source-check.txt
+39b8dc3fc8b44765c8e6f1adee04c5b465e555ab791cc42d0d9e810d5b64297c  evidence/continuation-432-release-tag-path-segments-001/red.exit
+9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa  evidence/continuation-432-release-tag-path-segments-001/regression.exit
+7a13913b0ee071e71b0b6cd4ac79cba9e7d8c0391113df1d015b962fdbe4c45d  evidence/continuation-432-release-tag-path-segments-001/regression.log
+34d47206dfb057ce58920572c7eaf12aa2f7479a33b3cc61ec0fe0a57de6e3ff  evidence/continuation-432-release-tag-path-segments-001/source-sha256.txt
+520c5e184e8ecd51888db4199d99406dea2e160eeb16270abcf9e8844cb98fd9  evidence/continuation-432-release-tag-path-segments-001/toolchain.txt

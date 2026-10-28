@@ -1,5 +1,9 @@
 # Plan du premier lot local
 
+## CONTINUATION-429 — vérifier la composition Release + labels sur Forgejo natif
+
+Un run local jetable ajoute au scénario natif Release les transitions de labels d’une issue et d’une PR. Forgejo émet 12 deliveries dans un ordre vérifié; les readbacks courants montrent les labels retirés, et un rejeu du Release après SIGKILL ne modifie pas le journal. Les 190 tests du runner et les 12 tests du garde Cargo passent. Aucun code runtime ne change, aucune licence n’est choisie. Reçu, versions et limites : [CONTINUATION-429](../evidence/continuation-429-forgejo-release-label-composition-001/local-run.md).
+
 ## CONTINUATION-421 — du refus issue/PR au readback courant
 
 Le scénario CONT-420 vérifiait le refus et le retry au receiver, mais ne traversait pas la frontière vers le reconciler. Le test processus existant compose maintenant ces étapes : livraison contradictoire refusée sans réserver son ID, même ID corrigé accepté en séquence 1, puis le binaire réel `forgejo-reconcile-local` lit l’issue et le commentaire par leurs routes distinctes. La fixture API fournit un état `closed` et un corps courant marqué `untrusted_user_content`; aucun Authorization n’est émis et le journal ne change pas. Exécution isolée **1/1**, 203 filtrés, sous Bubblewrap avec réseau/PID privés.

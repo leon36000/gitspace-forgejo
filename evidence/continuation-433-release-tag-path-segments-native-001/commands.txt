@@ -1,0 +1,20 @@
+# Test rouge du validateur de composition Python avant correction
+python3 -B tests/test_forgejo_emitted_webhook_e2e.py ReleaseReconciliationCompositionTests.test_canonical_readback_preserves_slashes_between_escaped_tag_segments
+
+# Suite de composition Python après correction
+python3 -B tests/test_forgejo_emitted_webhook_e2e.py ReleaseReconciliationCompositionTests
+
+# Extraction du binaire depuis l’image locale préexistante, sans réseau
+docker run --rm --network none --entrypoint /bin/cat codeberg.org/forgejo/forgejo:17.0.0 /app/gitea/gitea > /tmp/forgejo-release-slash-001
+/tmp/forgejo-release-slash-001 --version
+
+# E2E Forgejo local natif, staging de compilation sous tmpfs et build Cargo sans réseau
+python3 -B scripts/run_forgejo_live_webhook_reconcile_emitted.py --forgejo-binary /tmp/forgejo-release-slash-001 --repo-root /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace --state-dir /tmp/forgejo-native-release-slash-001-state --evidence-dir /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/continuation-433-release-tag-path-segments-native-001/native-run --release-webhook --build-staging-root /dev/shm
+
+# Vérifications supplémentaires
+python3 -B scripts/verify_cargo_license_state.py
+python3 -B scripts/test_cargo_license_state.py
+git diff --check -- scripts/run_forgejo_live_webhook_reconcile_emitted.py tests/test_forgejo_emitted_webhook_e2e.py docs/checkpoint.md docs/refusal-evidence-matrix.md
+python3 scripts/verify_latest_sha256_manifest.py evidence/SHA256SUMS --root .
+python3 scripts/verify_latest_sha256_manifest.py --root evidence/continuation-433-release-tag-path-segments-native-001/native-run evidence/continuation-433-release-tag-path-segments-native-001/native-run/SHA256SUMS
+python3 -B evidence/continuation-433-release-tag-path-segments-native-001/check_touched_whitespace.py
