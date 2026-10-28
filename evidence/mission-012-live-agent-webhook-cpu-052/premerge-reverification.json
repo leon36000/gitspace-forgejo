@@ -1,0 +1,26 @@
+{
+  "candidate_commit": "0e7aa7053963122571174a753f0fd641484d892c",
+  "cpu_accounting": {
+    "accounting_elapsed_ms": 282,
+    "base_commit": "fe9e8f5edd346b7d42e363565dadc7ec9d481ce5",
+    "candidate_commit": "0e7aa7053963122571174a753f0fd641484d892c",
+    "charged_cpu_upper_bound_ms": 2564,
+    "exit_code": 0,
+    "expected_failure": null,
+    "mission_id": "mission-v1-94c26001d4370e63d3637fd5c06ef13f0496424a39a74bf498b7512b7d2b37b5",
+    "output_sha256": "86f470d9b05870fcf43ab96ebd3f8dd95937f6ffc376afc3748147a2b552221a",
+    "output_truncated": false,
+    "policy_sha256": "f73785cb8eade278f2c14677c633ee34c391f2a7d7ff55e9e3e02a04b9307a50",
+    "reservation_id": "pr-premerge-green-b712bb92327c74f945c045cda3c2c7ab",
+    "reserved_cpu_ms": 240000,
+    "sandbox_elapsed_ms": 281,
+    "stage": "premerge-green",
+    "tested_commit": "0e7aa7053963122571174a753f0fd641484d892c",
+    "timed_out": false
+  },
+  "output_file": "premerge-reverification-cargo-test.log",
+  "output_sha256": "86f470d9b05870fcf43ab96ebd3f8dd95937f6ffc376afc3748147a2b552221a",
+  "policy_sha256": "e23907b5bd6b2c0f342c88ddcfa9f9a9be98065adcd24f9f7299dc796b5739eb",
+  "requirement_sha256": "3a3c444075c93a3bcfb2bec17d1a2e74ec0051effc2994e6b02ac095eb0dd431",
+  "verdict": "pass"
+}

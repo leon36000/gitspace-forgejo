@@ -1,0 +1,158 @@
+{
+  "base_commit": "fe9e8f5edd346b7d42e363565dadc7ec9d481ce5",
+  "candidate_commit": "0e7aa7053963122571174a753f0fd641484d892c",
+  "candidate_sha256": "173304ad7d32aabc1e8e1ee41eabda3398a8690798e68f906bcebc73cbcd6d15",
+  "changed_paths": [
+    "src/lib.rs"
+  ],
+  "competing_merge_http_status": 200,
+  "competing_pull_request": 3,
+  "competing_pull_request_merged": true,
+  "concurrent_base_advance": {
+    "base_before": "fe9e8f5edd346b7d42e363565dadc7ec9d481ce5",
+    "competing_head": "70f537e71da9ea5fe139efc5b7b2c807f882cfcd",
+    "competing_pull_request": 3,
+    "main_after": "8c7fade164a5c3533ea58a2d7c8f73bc87ec82fd",
+    "merge_commit_sha": "8c7fade164a5c3533ea58a2d7c8f73bc87ec82fd",
+    "merge_http_status": 200,
+    "merged": true,
+    "readme_marker_sha256": "455348f4af609c30eb422d45b1a437a5359d81a551ae616da1679c4ae4dfb7a8",
+    "review_id": 2,
+    "reviewer_login": "verifier-bot",
+    "schema_version": 1
+  },
+  "issue_state": "open",
+  "main_head_after_advance": "8c7fade164a5c3533ea58a2d7c8f73bc87ec82fd",
+  "main_head_before_advance": "fe9e8f5edd346b7d42e363565dadc7ec9d481ce5",
+  "main_source_sha256_after_refusal": "de0175e0fc5341a0ff3080f647ee16f4f4c1c45a205fc01ee8ec73899b3f9aa2",
+  "merge_attempted": false,
+  "merge_authority": "forgejo-reconcile-local-rust",
+  "merge_authorized": false,
+  "merge_gate_binary_sha256": "2e4fb192e7031a967cc5ecdf46ac443cb99607f9879bb98409ca545cd88e69f4",
+  "merge_gate_error_code": "invalid_review_base_binding",
+  "merge_gate_policy_sha256": "be5510865d791ceab8de3b2d44fb0dba4056cd3979218094b083ac33a9fce2c0",
+  "merge_gate_verdict": "rejected",
+  "policy_sha256": "e23907b5bd6b2c0f342c88ddcfa9f9a9be98065adcd24f9f7299dc796b5739eb",
+  "pre_review_merge_refusal_http": 405,
+  "pull_request": 2,
+  "requirement_sha256": "3a3c444075c93a3bcfb2bec17d1a2e74ec0051effc2994e6b02ac095eb0dd431",
+  "review_id": 1,
+  "reviewer": "verifier-bot",
+  "reviewer_merge_refusal_http": 405,
+  "schema_version": 1,
+  "status": "refused_after_concurrent_base_advance_before_merge",
+  "target_merge_commit": null,
+  "target_pull_request_base_sha_after_advance": "8c7fade164a5c3533ea58a2d7c8f73bc87ec82fd",
+  "target_pull_request_merged": false,
+  "target_pull_request_state": "open",
+  "verifier": "pass",
+  "verifier_cpu_accounting": {
+    "charged_cpu_measurement": "conservative upper bound from wall time multiplied by enforced CPUQuota, plus host margin, capped at reservation",
+    "final_ledger": {
+      "charged_cpu_ms": 12732,
+      "mission_cpu_budget_ms": 1200000,
+      "mission_id": "mission-v1-94c26001d4370e63d3637fd5c06ef13f0496424a39a74bf498b7512b7d2b37b5",
+      "policy_sha256": "f73785cb8eade278f2c14677c633ee34c391f2a7d7ff55e9e3e02a04b9307a50",
+      "remaining_cpu_ms": 1187268,
+      "reservations": [
+        {
+          "charged_cpu_ms": 2522,
+          "reservation_id": "verifier-8093c3ce6eb886ed5a70ada51b322716bfaefd566197af0d7689ad73993ee250",
+          "reserved_cpu_ms": 240000,
+          "resolved": true
+        },
+        {
+          "charged_cpu_ms": 2562,
+          "reservation_id": "verifier-7c113bccb6ccc1d8f7285aac2578e9ccb8a270c9fd32117b2e47fa858fa57d06",
+          "reserved_cpu_ms": 240000,
+          "resolved": true
+        },
+        {
+          "charged_cpu_ms": 2562,
+          "reservation_id": "pr-base-red-e2f1062aec75883762397117af9105bd",
+          "reserved_cpu_ms": 240000,
+          "resolved": true
+        },
+        {
+          "charged_cpu_ms": 2522,
+          "reservation_id": "pr-candidate-green-32702e0f9d60f983e54c4957761d8f25",
+          "reserved_cpu_ms": 240000,
+          "resolved": true
+        },
+        {
+          "charged_cpu_ms": 2564,
+          "reservation_id": "pr-premerge-green-b712bb92327c74f945c045cda3c2c7ab",
+          "reserved_cpu_ms": 240000,
+          "resolved": true
+        }
+      ]
+    },
+    "mission_cpu_budget_ms": 1200000,
+    "policy_sha256": "f73785cb8eade278f2c14677c633ee34c391f2a7d7ff55e9e3e02a04b9307a50",
+    "source": "mission execution journal; reservations and resolutions produced by the admission-provenance MCP host binary",
+    "steps": [
+      {
+        "accounting_elapsed_ms": 281,
+        "base_commit": "fe9e8f5edd346b7d42e363565dadc7ec9d481ce5",
+        "candidate_commit": "0e7aa7053963122571174a753f0fd641484d892c",
+        "charged_cpu_upper_bound_ms": 2562,
+        "exit_code": 101,
+        "expected_failure": {
+          "actual": "-2",
+          "assertion": "assertion `left == right` failed",
+          "expected": "10",
+          "summary": "1 passed; 1 failed",
+          "test_name": "values_outside_the_range_clamp_to_the_nearest_boundary"
+        },
+        "mission_id": "mission-v1-94c26001d4370e63d3637fd5c06ef13f0496424a39a74bf498b7512b7d2b37b5",
+        "output_b64": "CnJ1bm5pbmcgMCB0ZXN0cwoKdGVzdCByZXN1bHQ6IG9rLiAwIHBhc3NlZDsgMCBmYWlsZWQ7IDAgaWdub3JlZDsgMCBtZWFzdXJlZDsgMCBmaWx0ZXJlZCBvdXQ7IGZpbmlzaGVkIGluIDAuMDBzCgoKcnVubmluZyAyIHRlc3RzCnRlc3QgdmFsdWVzX2luc2lkZV90aGVfcmFuZ2VfYXJlX3VuY2hhbmdlZCAuLi4gb2sKdGVzdCB2YWx1ZXNfb3V0c2lkZV90aGVfcmFuZ2VfY2xhbXBfdG9fdGhlX25lYXJlc3RfYm91bmRhcnkgLi4uIEZBSUxFRAoKZmFpbHVyZXM6CgotLS0tIHZhbHVlc19vdXRzaWRlX3RoZV9yYW5nZV9jbGFtcF90b190aGVfbmVhcmVzdF9ib3VuZGFyeSBzdGRvdXQgLS0tLQoKdGhyZWFkICd2YWx1ZXNfb3V0c2lkZV90aGVfcmFuZ2VfY2xhbXBfdG9fdGhlX25lYXJlc3RfYm91bmRhcnknICg2OCkgcGFuaWNrZWQgYXQgdGVzdHMvYWNjZXB0YW5jZS5yczo2OjU6CmFzc2VydGlvbiBgbGVmdCA9PSByaWdodGAgZmFpbGVkCiAgbGVmdDogLTIKIHJpZ2h0OiAxMApub3RlOiBydW4gd2l0aCBgUlVTVF9CQUNLVFJBQ0U9MWAgZW52aXJvbm1lbnQgdmFyaWFibGUgdG8gZGlzcGxheSBhIGJhY2t0cmFjZQoKCmZhaWx1cmVzOgogICAgdmFsdWVzX291dHNpZGVfdGhlX3JhbmdlX2NsYW1wX3RvX3RoZV9uZWFyZXN0X2JvdW5kYXJ5Cgp0ZXN0IHJlc3VsdDogRkFJTEVELiAxIHBhc3NlZDsgMSBmYWlsZWQ7IDAgaWdub3JlZDsgMCBtZWFzdXJlZDsgMCBmaWx0ZXJlZCBvdXQ7IGZpbmlzaGVkIGluIDAuMDBzCgoKICAgQ29tcGlsaW5nIG1pc3Npb24wMTItY2xhbXAgdjAuMS4wICgvY2FuZGlkYXRlKQogICAgRmluaXNoZWQgYHRlc3RgIHByb2ZpbGUgW3Vub3B0aW1pemVkICsgZGVidWdpbmZvXSB0YXJnZXQocykgaW4gMC4yM3MKICAgICBSdW5uaW5nIHVuaXR0ZXN0cyBzcmMvbGliLnJzICgvdGFyZ2V0L2RlYnVnL2RlcHMvbWlzc2lvbjAxMl9jbGFtcC0yYWQ2MDYxZTE1ZjljZWJiKQogICAgIFJ1bm5pbmcgdGVzdHMvYWNjZXB0YW5jZS5ycyAoL3RhcmdldC9kZWJ1Zy9kZXBzL2FjY2VwdGFuY2UtMjZkOWRlNWQzYThmNTBlZikKZXJyb3I6IHRlc3QgZmFpbGVkLCB0byByZXJ1biBwYXNzIGAtLXRlc3QgYWNjZXB0YW5jZWAK",
+        "output_sha256": "33a7de0eba4393988bd4ed5fb5054bed4b3317b994631de744d47ab81d9eb493",
+        "output_truncated": false,
+        "policy_sha256": "f73785cb8eade278f2c14677c633ee34c391f2a7d7ff55e9e3e02a04b9307a50",
+        "reservation_id": "pr-base-red-e2f1062aec75883762397117af9105bd",
+        "reserved_cpu_ms": 240000,
+        "sandbox_elapsed_ms": 281,
+        "stage": "base-red",
+        "tested_commit": "fe9e8f5edd346b7d42e363565dadc7ec9d481ce5",
+        "timed_out": false
+      },
+      {
+        "accounting_elapsed_ms": 261,
+        "base_commit": "fe9e8f5edd346b7d42e363565dadc7ec9d481ce5",
+        "candidate_commit": "0e7aa7053963122571174a753f0fd641484d892c",
+        "charged_cpu_upper_bound_ms": 2522,
+        "exit_code": 0,
+        "expected_failure": null,
+        "mission_id": "mission-v1-94c26001d4370e63d3637fd5c06ef13f0496424a39a74bf498b7512b7d2b37b5",
+        "output_sha256": "f26913f5b5792514beb301de70939721e1f9b76ca6782b19ed75006b34d9b6a8",
+        "output_truncated": false,
+        "policy_sha256": "f73785cb8eade278f2c14677c633ee34c391f2a7d7ff55e9e3e02a04b9307a50",
+        "reservation_id": "pr-candidate-green-32702e0f9d60f983e54c4957761d8f25",
+        "reserved_cpu_ms": 240000,
+        "sandbox_elapsed_ms": 261,
+        "stage": "candidate-green",
+        "tested_commit": "0e7aa7053963122571174a753f0fd641484d892c",
+        "timed_out": false
+      },
+      {
+        "accounting_elapsed_ms": 282,
+        "base_commit": "fe9e8f5edd346b7d42e363565dadc7ec9d481ce5",
+        "candidate_commit": "0e7aa7053963122571174a753f0fd641484d892c",
+        "charged_cpu_upper_bound_ms": 2564,
+        "exit_code": 0,
+        "expected_failure": null,
+        "mission_id": "mission-v1-94c26001d4370e63d3637fd5c06ef13f0496424a39a74bf498b7512b7d2b37b5",
+        "output_sha256": "86f470d9b05870fcf43ab96ebd3f8dd95937f6ffc376afc3748147a2b552221a",
+        "output_truncated": false,
+        "policy_sha256": "f73785cb8eade278f2c14677c633ee34c391f2a7d7ff55e9e3e02a04b9307a50",
+        "reservation_id": "pr-premerge-green-b712bb92327c74f945c045cda3c2c7ab",
+        "reserved_cpu_ms": 240000,
+        "sandbox_elapsed_ms": 281,
+        "stage": "premerge-green",
+        "tested_commit": "0e7aa7053963122571174a753f0fd641484d892c",
+        "timed_out": false
+      }
+    ],
+    "verifier_binary_sha256": "5d72e9616d759b4b46858a8a9903f4f05d99cab3c14b0732d2ceaf485188c2ff"
+  }
+}

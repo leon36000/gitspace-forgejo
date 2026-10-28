@@ -1,0 +1,22 @@
+{
+  "api_version": "forgejo-rest-v1",
+  "error": {
+    "code": "invalid_review_base_binding",
+    "http_status": null,
+    "retryable": false
+  },
+  "external_writer_exclusion": "not_provided_by_cooperative_lock",
+  "merge_attempted": false,
+  "merge_authorized": false,
+  "operation": "local_test_merge_authority",
+  "pull_request_number": 2,
+  "schema_version": 1,
+  "target": {
+    "base_branch": "main",
+    "origin": "http://127.0.0.1:3132",
+    "owner": "forge-admin",
+    "repository": "mission-012-clamp",
+    "selector": "mission-012-clamp"
+  },
+  "verdict": "rejected"
+}
