@@ -1,0 +1,14 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.32s
+     Running tests/webhook_inbox_capacity.rs (target/debug/deps/webhook_inbox_capacity-352b9312506e15ee)
+
+running 6 tests
+test full_inbox_returns_actionable_http_error_without_creating_an_event ... ok
+test capabilities_disclose_the_total_inbox_limit_and_non_truncating_policy ... ok
+test reconcile_refuses_an_oversized_inbox_without_changing_it ... ok
+test replay_does_not_repair_an_unterminated_tail_past_the_configured_limit ... ok
+test duplicate_at_exact_limit_is_accepted_but_a_new_delivery_is_not_appended ... ok
+test receiver_refuses_an_oversized_inbox_before_binding ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+

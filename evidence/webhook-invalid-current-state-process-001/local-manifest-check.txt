@@ -1,0 +1,11 @@
+checks-status.txt: OK
+diff-check.log: OK
+local-run.md: OK
+process-e2e.log: OK
+process-e2e-final.log: OK
+python-syntax.log: OK
+rustfmt.log: OK
+source-hashes.txt: OK
+source-whitespace.log: OK
+tool-versions.txt: OK
+unit-contract.log: OK

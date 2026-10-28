@@ -1,0 +1,12 @@
+manifest_lines=3336
+well_formed_rows=3335
+rows_matching_current_file=3267
+historical_rows_missing_paths=0
+historical_rows_different_from_current=68
+unique_well_formed_paths=3194
+latest_entries_missing=0
+latest_entries_divergent=0
+malformed_lines=1
+malformed_details=[(2698, 'None  tests/test_mission_012_live_composed_e2e.py')]
+latest_mismatches=[]
+last_line='d825afbf4dfcd750af64b951f65c45be42d9276698e485a5bafdab28e0ea25bb  docs/checkpoint.md'

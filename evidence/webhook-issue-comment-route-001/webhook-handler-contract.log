@@ -1,0 +1,20 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 11.38s
+     Running tests/webhook_handler_contract.rs (target/debug/deps/webhook_handler_contract-627b310cb6f343c9)
+
+running 12 tests
+test body_over_limit_is_rejected_by_parser_before_allocation ... ok
+test forgejo_v17_pull_request_comment_event_requires_a_review_payload ... ok
+test invalid_signature_is_unauthorized_and_not_journaled ... ok
+test forgejo_review_type_value_is_not_mistaken_for_an_http_event_header ... ok
+test wrong_path_method_and_content_type_are_rejected ... ok
+test unsupported_event_is_rejected_without_journal_side_effect ... ok
+test unsigned_event_header_substitution_is_refused_when_payload_shape_disagrees ... ok
+test issue_comment_refuses_inconsistent_issue_pull_request_bindings ... ok
+test forgejo_v17_approved_review_event_is_accepted_and_bound_to_its_pull_request ... ok
+test valid_delivery_is_accepted_and_identical_retry_is_idempotent ... ok
+test forgejo_v17_issue_comment_wire_event_binds_issue_and_pull_request_comments ... ok
+test forgejo_v17_review_subtypes_are_journaled_as_pull_request_notifications ... ok
+
+test result: ok. 12 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.09s
+

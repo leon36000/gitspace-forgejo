@@ -1,0 +1,37 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+error[E0599]: no method named `repair_incomplete_tail` found for struct `EventJournal` in the current scope
+    --> src/lib.rs:1098:25
+     |
+ 422 | pub struct EventJournal {
+     | ----------------------- method `repair_incomplete_tail` not found for this struct
+...
+1098 |         assert!(journal.repair_incomplete_tail(&opened, 0).is_err());
+     |                         ^^^^^^^^^^^^^^^^^^^^^^ this is an associated function, not a method
+     |
+     = note: found the following associated functions; to be used as methods, functions must have a `self` parameter
+note: the candidate is defined in an impl for the type `EventJournal`
+    --> src/lib.rs:859:5
+     |
+ 859 |     fn repair_incomplete_tail(file: &mut File, valid_bytes: u64) -> Result<(), JournalError> {
+     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+help: use associated function syntax instead
+     |
+1098 -         assert!(journal.repair_incomplete_tail(&opened, 0).is_err());
+1098 +         assert!(EventJournal::repair_incomplete_tail(&opened, 0).is_err());
+     |
+
+error[E0599]: no method named `append_final_newline` found for struct `EventJournal` in the current scope
+    --> src/lib.rs:1100:14
+     |
+ 422 |   pub struct EventJournal {
+     |   ----------------------- method `append_final_newline` not found for this struct
+...
+1099 |           assert!(journal
+     |  _________________-
+1100 | |             .append_final_newline(&opened, b"partial record".len() as u64, 1024)
+     | |             -^^^^^^^^^^^^^^^^^^^^ method not found in `EventJournal`
+     | |_____________|
+     |
+
+For more information about this error, try `rustc --explain E0599`.
+error: could not compile `agent-forge-core` (lib test) due to 2 previous errors

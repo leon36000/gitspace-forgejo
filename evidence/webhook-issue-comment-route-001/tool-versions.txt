@@ -1,0 +1,10 @@
+# Local environment at test time: 2026-10-25
+HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+Branch: local/WEBHOOK-005-canonical-links
+rustc --version: rustc 1.95.0 (59807616e 2026-04-14)
+cargo --version: cargo 1.95.0 (f2d3ce0bd 2026-03-21)
+Python: 3.12.3
+Git: 2.43.0
+Bubblewrap: 0.9.0
+Architecture: aarch64
+E2E runner: python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_routes_issue_comment_to_issue_api
