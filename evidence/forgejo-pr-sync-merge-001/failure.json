@@ -1,0 +1,6 @@
+{
+  "cleanup_failure": null,
+  "error_type": "ValueError",
+  "stage": "synchronize_pull_request_candidate",
+  "verdict": "failed"
+}

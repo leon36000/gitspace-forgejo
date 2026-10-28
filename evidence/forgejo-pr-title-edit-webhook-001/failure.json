@@ -1,0 +1,6 @@
+{
+  "cleanup_failure": null,
+  "error_type": "RuntimeError",
+  "stage": "refuse_invalid_reader_credential",
+  "verdict": "failed"
+}

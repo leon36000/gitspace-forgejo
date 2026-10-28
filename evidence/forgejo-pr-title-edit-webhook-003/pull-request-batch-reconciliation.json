@@ -1,0 +1,160 @@
+{
+  "api_version": "forgejo-rest-v1",
+  "results": [
+    {
+      "canonical_state": {
+        "base_sha": "867b1c25147e7009f97321df0e0316de79a9fdc6",
+        "head_sha": "ea3f4ad01d725d2eb2df3c321a05141b7304d915",
+        "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/2",
+        "merge_commit_sha": null,
+        "merged": false,
+        "state": "closed",
+        "updated_at": "2026-10-25T20:17:33-04:00"
+      },
+      "delivery_id": "2dddf908-4e6e-4a6c-b190-a65e1cd74235",
+      "resource": {
+        "kind": "pull_request",
+        "number": 2,
+        "owner": "forge-admin",
+        "repository": "agent-forge-core"
+      },
+      "verdict": "current_state_read"
+    },
+    {
+      "canonical_state": {
+        "base_sha": "867b1c25147e7009f97321df0e0316de79a9fdc6",
+        "head_sha": "ea3f4ad01d725d2eb2df3c321a05141b7304d915",
+        "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/2",
+        "merge_commit_sha": null,
+        "merged": false,
+        "state": "closed",
+        "updated_at": "2026-10-25T20:17:33-04:00"
+      },
+      "delivery_id": "7bce8c6c-2dbc-4130-b9d9-ae0699120a8a",
+      "resource": {
+        "kind": "pull_request",
+        "number": 2,
+        "owner": "forge-admin",
+        "repository": "agent-forge-core"
+      },
+      "verdict": "current_state_read"
+    },
+    {
+      "canonical_state": {
+        "base_sha": "867b1c25147e7009f97321df0e0316de79a9fdc6",
+        "head_sha": "ea3f4ad01d725d2eb2df3c321a05141b7304d915",
+        "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/2",
+        "merge_commit_sha": null,
+        "merged": false,
+        "state": "closed",
+        "updated_at": "2026-10-25T20:17:33-04:00"
+      },
+      "delivery_id": "39077cd3-30d4-4e09-9985-a5628ebd6bcd",
+      "resource": {
+        "kind": "pull_request",
+        "number": 2,
+        "owner": "forge-admin",
+        "repository": "agent-forge-core"
+      },
+      "verdict": "current_state_read"
+    },
+    {
+      "canonical_state": {
+        "base_sha": "867b1c25147e7009f97321df0e0316de79a9fdc6",
+        "head_sha": "ea3f4ad01d725d2eb2df3c321a05141b7304d915",
+        "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/2",
+        "merge_commit_sha": null,
+        "merged": false,
+        "state": "closed",
+        "updated_at": "2026-10-25T20:17:33-04:00"
+      },
+      "delivery_id": "f21c287e-4559-44ee-95d2-429ad1f01230",
+      "resource": {
+        "kind": "pull_request",
+        "number": 2,
+        "owner": "forge-admin",
+        "repository": "agent-forge-core"
+      },
+      "verdict": "current_state_read"
+    },
+    {
+      "canonical_state": {
+        "base_sha": "867b1c25147e7009f97321df0e0316de79a9fdc6",
+        "head_sha": "ea3f4ad01d725d2eb2df3c321a05141b7304d915",
+        "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/2",
+        "merge_commit_sha": null,
+        "merged": false,
+        "state": "closed",
+        "updated_at": "2026-10-25T20:17:33-04:00"
+      },
+      "delivery_id": "2b6fd14f-d9fb-4dff-9303-4cd9f45aff88",
+      "resource": {
+        "kind": "pull_request",
+        "number": 2,
+        "owner": "forge-admin",
+        "repository": "agent-forge-core"
+      },
+      "verdict": "current_state_read"
+    },
+    {
+      "canonical_state": {
+        "base_sha": "867b1c25147e7009f97321df0e0316de79a9fdc6",
+        "head_sha": "ea3f4ad01d725d2eb2df3c321a05141b7304d915",
+        "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/2",
+        "merge_commit_sha": null,
+        "merged": false,
+        "state": "closed",
+        "updated_at": "2026-10-25T20:17:33-04:00"
+      },
+      "delivery_id": "06b9a1d5-8e5e-4210-93c3-7aace05177c1",
+      "resource": {
+        "kind": "pull_request",
+        "number": 2,
+        "owner": "forge-admin",
+        "repository": "agent-forge-core"
+      },
+      "verdict": "current_state_read"
+    },
+    {
+      "canonical_state": {
+        "base_sha": "867b1c25147e7009f97321df0e0316de79a9fdc6",
+        "head_sha": "ea3f4ad01d725d2eb2df3c321a05141b7304d915",
+        "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/2",
+        "merge_commit_sha": null,
+        "merged": false,
+        "state": "closed",
+        "updated_at": "2026-10-25T20:17:33-04:00"
+      },
+      "delivery_id": "661b911c-eea4-4163-94be-a6e343ef2fed",
+      "resource": {
+        "kind": "pull_request",
+        "number": 2,
+        "owner": "forge-admin",
+        "repository": "agent-forge-core"
+      },
+      "verdict": "current_state_read"
+    },
+    {
+      "canonical_state": {
+        "base_sha": "867b1c25147e7009f97321df0e0316de79a9fdc6",
+        "head_sha": "ea3f4ad01d725d2eb2df3c321a05141b7304d915",
+        "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/2",
+        "merge_commit_sha": null,
+        "merged": false,
+        "state": "closed",
+        "updated_at": "2026-10-25T20:17:33-04:00"
+      },
+      "delivery_id": "c3851798-718b-40a3-83c5-f856880bf69d",
+      "resource": {
+        "kind": "pull_request",
+        "number": 2,
+        "owner": "forge-admin",
+        "repository": "agent-forge-core"
+      },
+      "verdict": "current_state_read"
+    }
+  ],
+  "schema_version": 5,
+  "upstream_read_attempts": 1,
+  "verdict": "current_state_read"
+}

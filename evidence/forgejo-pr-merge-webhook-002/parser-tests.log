@@ -1,0 +1,13 @@
+test_accepts_issue_comment_wire_event_for_pull_request_conversation (tests.test_forgejo_emitted_webhook_e2e.ParseLivePullRequestDeliveryRecordTests.test_accepts_issue_comment_wire_event_for_pull_request_conversation) ... ok
+test_accepts_official_pull_request_review_comment_using_review_payload (tests.test_forgejo_emitted_webhook_e2e.ParseLivePullRequestDeliveryRecordTests.test_accepts_official_pull_request_review_comment_using_review_payload) ... ok
+test_extracts_expected_pull_request_transition_and_sha_bindings (tests.test_forgejo_emitted_webhook_e2e.ParseLivePullRequestDeliveryRecordTests.test_extracts_expected_pull_request_transition_and_sha_bindings) ... ok
+test_extracts_forgejo_v17_approved_review_notification_without_using_its_verdict (tests.test_forgejo_emitted_webhook_e2e.ParseLivePullRequestDeliveryRecordTests.test_extracts_forgejo_v17_approved_review_notification_without_using_its_verdict) ... ok
+test_extracts_merged_pull_request_commit_from_native_close_event (tests.test_forgejo_emitted_webhook_e2e.ParseLivePullRequestDeliveryRecordTests.test_extracts_merged_pull_request_commit_from_native_close_event) ... ok
+test_preserves_forgejo_v17_review_event_header_and_binds_review_type (tests.test_forgejo_emitted_webhook_e2e.ParseLivePullRequestDeliveryRecordTests.test_preserves_forgejo_v17_review_event_header_and_binds_review_type) ... ok
+test_refuses_merge_commit_on_an_unmerged_close_event (tests.test_forgejo_emitted_webhook_e2e.ParseLivePullRequestDeliveryRecordTests.test_refuses_merge_commit_on_an_unmerged_close_event) ... ok
+test_rejects_invalid_pull_request_sha_in_emitted_payload (tests.test_forgejo_emitted_webhook_e2e.ParseLivePullRequestDeliveryRecordTests.test_rejects_invalid_pull_request_sha_in_emitted_payload) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.000s
+
+OK
