@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-28",
+  "worktree": "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace",
+  "branch": "local/WEBHOOK-005-canonical-links",
+  "head": "f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0",
+  "rustc": "1.95.0 (59807616e 2026-04-14)",
+  "cargo": "1.95.0 (f2d3ce0bd 2026-03-21)",
+  "forgejo_source_version": "17.0.0",
+  "forgejo_source_commit": "0d791421f85ca13a63b665053d81ea765fbbc571",
+  "forgejo_source_file_modified": false,
+  "webhook_handler_contract": "30 passed, 0 failed",
+  "webhook_reconcile_contract": "98 passed, 0 failed",
+  "cargo_license_guard": "12 passed, 0 failed",
+  "cargo_license": null,
+  "cargo_license_file": null,
+  "cargo_publish": [],
+  "production_code_changed_in_this_lot": false,
+  "remote_service_used": false,
+  "llm_or_agent_used": false
+}

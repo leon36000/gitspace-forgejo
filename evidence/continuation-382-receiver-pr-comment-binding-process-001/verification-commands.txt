@@ -1,0 +1,8 @@
+cargo test --offline --locked --test webhook_receiver_process_e2e actual_receiver_refuses_pull_comment_without_pull_request_then_accepts_same_delivery -- --exact
+cargo test --offline --locked --test webhook_receiver_process_e2e
+cargo fmt --all -- --check
+git diff --check
+python3 scripts/test_cargo_license_state.py
+cargo metadata --offline --locked --no-deps --format-version 1
+
+The test starts only the local receiver process and sends fixture-signed HTTP over loopback. It does not access Forgejo, GitLab, email, or an LLM service.

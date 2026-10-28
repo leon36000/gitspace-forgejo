@@ -1,0 +1,72 @@
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:14995:
+             &serde_json::to_vec(&payload).expect("serialize incomplete pull-comment payload"),
+         ),
+     );
+-    assert_eq!(rejected_status, 400, "missing PR parent must be rejected: {rejected}");
++    assert_eq!(
++        rejected_status, 400,
++        "missing PR parent must be rejected: {rejected}"
++    );
+     assert_eq!(rejected["error"]["code"], "event_payload_invalid");
+     assert_eq!(rejected["error"]["retryable"], false);
+     assert!(
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:15036:
+     assert_eq!(events[0].kind, "forgejo.webhook.v1.issue_comment");
+     assert_eq!(events[0].payload["delivery_id"], delivery_id);
+     assert_eq!(events[0].payload["payload"]["is_pull"], true);
+-    assert_eq!(events[0].payload["payload"]["pull_request"]["number"], NUMBER);
++    assert_eq!(
++        events[0].payload["payload"]["pull_request"]["number"],
++        NUMBER
++    );
+     let journal_before = fs::read(&journal_path).expect("snapshot corrected-event journal");
+ 
+     let current_head = "1111111111111111111111111111111111111111";
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:15076:
+         .stdin(Stdio::null())
+         .output()
+         .expect("run actual reconciliation CLI for the corrected PR comment");
+-    let requests = fixture.join().expect("PR and comment API fixture completed");
++    let requests = fixture
++        .join()
++        .expect("PR and comment API fixture completed");
+     assert!(
+         output.status.success(),
+         "reconciliation CLI failed with status {:?}; stdout={}; stderr={}; requests={requests:?}",
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:15091:
+     assert!(requests[1].starts_with(&format!(
+         "GET /api/v1/repos/{OWNER}/{REPOSITORY}/issues/comments/{COMMENT_ID} HTTP/1.1\r\n"
+     )));
+-    assert!(requests.iter().all(|request| !request
+-        .lines()
+-        .any(|line| line.to_ascii_lowercase().starts_with("authorization:"))));
++    assert!(requests.iter().all(|request| {
++        !request
++            .lines()
++            .any(|line| line.to_ascii_lowercase().starts_with("authorization:"))
++    }));
+ 
+     let value: Value =
+         serde_json::from_slice(&output.stdout).expect("reconciliation CLI returns structured JSON");
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:15107:
+     assert_eq!(value["canonical_state"]["draft"], false);
+     assert_eq!(value["canonical_state"]["head_sha"], current_head);
+     assert_eq!(value["canonical_state"]["base_sha"], current_base);
+-    assert_ne!(value["canonical_state"]["draft"], payload["pull_request"]["draft"]);
+-    assert_ne!(value["canonical_state"]["head_sha"], payload["pull_request"]["head"]["sha"]);
+-    assert_ne!(value["canonical_state"]["base_sha"], payload["pull_request"]["base"]["sha"]);
++    assert_ne!(
++        value["canonical_state"]["draft"],
++        payload["pull_request"]["draft"]
++    );
++    assert_ne!(
++        value["canonical_state"]["head_sha"],
++        payload["pull_request"]["head"]["sha"]
++    );
++    assert_ne!(
++        value["canonical_state"]["base_sha"],
++        payload["pull_request"]["base"]["sha"]
++    );
+     assert_eq!(
+         value["canonical_state"]["comment"]["body"],
+         "canonical current PR conversation comment"

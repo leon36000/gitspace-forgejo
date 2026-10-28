@@ -1,0 +1,8 @@
+git status --porcelain=v1 -z --untracked-files=all
+git diff --stat --
+git count-objects -v
+git rev-list --all --count
+python3 <in-memory local scanner over modified/untracked paths, ZIP members and reachable Git blobs>
+find .claude -maxdepth 2 -type f -printf '%P %s bytes'
+
+The scanner checked glpat-, glrt-, gh[pousr]_, sk-proj-/sk-live-, AKIA, private-key PEM headers, and credential-bearing HTTP(S) URLs. It emitted only counts and candidate paths, never matched values. No test, stage, commit, or remote write was performed.

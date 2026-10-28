@@ -1,0 +1,7 @@
+Date: 2026-10-28T09:25:09-04:00
+OS: Linux 7.0.0-1019-nvidia aarch64
+Git: git version 2.43.0
+Python: Python 3.12.3
+Tailscale: 1.102.4
+Branch: local/WEBHOOK-005-canonical-links
+HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0

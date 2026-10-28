@@ -1,0 +1,10 @@
+cargo test --offline --locked --test webhook_handler_contract
+cargo test --offline --locked --test webhook_reconcile_contract
+cargo fmt --all -- --check
+git diff --check
+python3 scripts/test_cargo_license_state.py
+cargo metadata --offline --locked --no-deps --format-version 1
+git -C /tmp/forgejo-v17-base-cas-poc rev-parse HEAD
+git -C /tmp/forgejo-v17-base-cas-poc status --short -- modules/structs/hook.go
+
+The tests use synthetic HMAC and in-memory fixtures. No network, LLM, external service, stage, commit, or production mutation was used.

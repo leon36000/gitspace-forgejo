@@ -1,0 +1,9 @@
+Observed from PC6, 2026-10-28:
+- Tailscale backend Running.
+- Peer pc4 online; tailscale ping succeeds.
+- System DNS lookup for pc4.tail0c55ff.ts.net fails.
+- Anonymous HTTPS request by hostname fails before HTTP: could not resolve host.
+- Anonymous HTTPS with the current Tailscale peer address forced for the hostname times out during TCP connect, before TLS.
+- TCP 22, 80 and 443 to the peer are unreachable.
+- No credential was sent.
+- A bounded, anonymous git ls-remote attempt returned no refs before it was stopped.

@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-28",
+  "worktree": "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace",
+  "branch": "local/WEBHOOK-005-canonical-links",
+  "head": "f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0",
+  "git_version": "2.43.0",
+  "git_commits_reachable": 32,
+  "git_objects_reachable": 743,
+  "git_blobs_reachable_scanned": 637,
+  "status_entries": 14369,
+  "tracked_modified_paths": 19,
+  "untracked_files": 14350,
+  "worktree_payloads_scanned": 14368,
+  "zip_member_payloads_scanned": 2712,
+  "pattern_candidate_count": 1,
+  "pattern_candidate": "generated Python bytecode under tests/__pycache__; credential-URL pattern only",
+  "remote_refs_read": false,
+  "remote_authentication_attempted": false,
+  "remote_write_attempted": false,
+  "email_read": false,
+  "credential_used": false
+}

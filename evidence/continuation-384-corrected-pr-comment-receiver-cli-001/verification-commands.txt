@@ -1,0 +1,7 @@
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_reconciles_same_id_corrected_pr_comment_after_receiver_refusal
+cargo test --offline --locked --test webhook_receiver_process_e2e -- --test-threads=1
+cargo fmt --all -- --check
+git diff --check
+python3 scripts/test_cargo_license_state.py
+cargo metadata --offline --locked --no-deps --format-version 1
+python3 -c "from pathlib import Path; p=Path('scripts/run_webhook_reconcile_cli_e2e.py'); compile(p.read_text(), str(p), 'exec')"

@@ -1,0 +1,12 @@
+Read-only checks (no credentials):
+- git remote -v
+- git status --porcelain=v1 -z --untracked-files=all (counts only retained)
+- tailscale status --json (output filtered to backend state and peer pc4; peer address omitted)
+- tailscale ping --c 1 pc4 (private address omitted from retained evidence)
+- getent hosts pc4.tail0c55ff.ts.net
+- curl -sSIL --connect-timeout 4 --max-time 8 https://pc4.tail0c55ff.ts.net/users/sign_in
+- curl --resolve pc4.tail0c55ff.ts.net:443:<current-pc4-tailscale-ip> -sSIL --connect-timeout 5 --max-time 10 https://pc4.tail0c55ff.ts.net/users/sign_in
+- TCP connect checks to the current PC4 Tailscale address on ports 22, 80 and 443
+- GIT_TERMINAL_PROMPT=0; global/system Git config disabled; credential.helper empty; anonymous git ls-remote --heads
+
+No credentials, private peer IP, email body, or response payload is recorded. The ls-remote attempt stalled without refs and was stopped; it did not authenticate.

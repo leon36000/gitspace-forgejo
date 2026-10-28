@@ -1,0 +1,10 @@
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/forgejo_mission_delivery_process_e2e.rs:2361:
+     );
+     assert_eq!(response["verdict"], "inconclusive");
+     assert_eq!(
+-        response["error"]["code"],
+-        "mission_profile_requirement_mismatch",
++        response["error"]["code"], "mission_profile_requirement_mismatch",
+         "response: {response}; paths: {paths:?}"
+     );
+     assert!(

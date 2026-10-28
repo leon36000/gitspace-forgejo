@@ -1,0 +1,5 @@
+The user explicitly identified email as the location of GitLab access. Search was limited to recent messages mentioning the PC4 host and the target repository. Findings:
+- One PAT is described for two Nexora repositories; it is not for root/gitspace-forgejo and was not used.
+- Other matches contain initial administrator-account credentials; none were used.
+- No project-limited write_repository credential for root/gitspace-forgejo was found in the messages reviewed.
+- No email bodies or credential values are retained here.
