@@ -1,0 +1,9 @@
+{
+  "action": "opened",
+  "delivery_id": "cdffacab-f70a-413e-8720-90d817ec9c5a",
+  "event": "issues",
+  "issue_number": 1,
+  "payload_semantic_sha256": "0c74f6061bf9dfcc3b605b5840984bd2dfd3dc05ae93d7007daea066b332de9e",
+  "payload_state": "open",
+  "sequence": 1
+}

@@ -1,0 +1,23 @@
+{
+  "candidate_commit": "ad9a826b02783d69b74519b302179e10705975f9",
+  "cpu_accounting": {
+    "accounting_elapsed_ms": 282,
+    "base_commit": "44a64a1987a089a7918ffe7b118bd9f355ede7dd",
+    "candidate_commit": "ad9a826b02783d69b74519b302179e10705975f9",
+    "charged_cpu_upper_bound_ms": 2564,
+    "exit_code": 0,
+    "output_sha256": "d731d4998a1a533e1b318d477dc81dab69a025cbbdb6b32c2b3a40eb1ecfb67d",
+    "output_truncated": false,
+    "policy_sha256": "f73785cb8eade278f2c14677c633ee34c391f2a7d7ff55e9e3e02a04b9307a50",
+    "reservation_id": "pr-premerge-green-87ee1d9b789f1294c61583f7aa762833",
+    "reserved_cpu_ms": 240000,
+    "sandbox_elapsed_ms": 282,
+    "stage": "premerge-green",
+    "tested_commit": "ad9a826b02783d69b74519b302179e10705975f9",
+    "timed_out": false
+  },
+  "output_sha256": "d731d4998a1a533e1b318d477dc81dab69a025cbbdb6b32c2b3a40eb1ecfb67d",
+  "policy_sha256": "e23907b5bd6b2c0f342c88ddcfa9f9a9be98065adcd24f9f7299dc796b5739eb",
+  "requirement_sha256": "3a3c444075c93a3bcfb2bec17d1a2e74ec0051effc2994e6b02ac095eb0dd431",
+  "verdict": "pass"
+}
