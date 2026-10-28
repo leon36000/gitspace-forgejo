@@ -1,0 +1,70 @@
+{
+  "batch_result": {
+    "api_version": "forgejo-rest-v1",
+    "results": [
+      {
+        "delivery_id": "cb018ee2-3f4c-4362-94c8-7830fd6f8f51",
+        "error": {
+          "action": "verify the issue number and repository access; HTTP 404 does not distinguish a missing issue from an inaccessible repository",
+          "code": "resource_not_found",
+          "details": {
+            "resource": {
+              "kind": "issue",
+              "number": 1,
+              "owner": "forge-admin",
+              "repository": "agent-forge-core"
+            },
+            "upstream": "forgejo"
+          },
+          "retryable": false
+        },
+        "verdict": "inconclusive"
+      },
+      {
+        "delivery_id": "6fb1596a-4d54-455c-a2c9-86f72b43f756",
+        "error": {
+          "action": "verify the issue number and repository access; HTTP 404 does not distinguish a missing issue from an inaccessible repository",
+          "code": "resource_not_found",
+          "details": {
+            "resource": {
+              "kind": "issue",
+              "number": 1,
+              "owner": "forge-admin",
+              "repository": "agent-forge-core"
+            },
+            "upstream": "forgejo"
+          },
+          "retryable": false
+        },
+        "verdict": "inconclusive"
+      }
+    ],
+    "schema_version": 5,
+    "upstream_read_attempts": 1,
+    "verdict": "inconclusive"
+  },
+  "credential_consumed": true,
+  "credential_recorded": false,
+  "credential_source": "read_only_private_inherited_pipe_fd",
+  "delivery_ids": [
+    "cb018ee2-3f4c-4362-94c8-7830fd6f8f51",
+    "6fb1596a-4d54-455c-a2c9-86f72b43f756"
+  ],
+  "exit_status": 1,
+  "independent_api_observation": {
+    "credential_role": "read_only_non_admin",
+    "request_count": 1,
+    "requests": [
+      {
+        "method": "GET",
+        "path": "/api/v1/repos/forge-admin/agent-forge-core/issues/1",
+        "reader_credential_match": true,
+        "status": 404
+      }
+    ]
+  },
+  "journal_unchanged": true,
+  "owner_readback_confirms_issue_exists": true,
+  "permission_change": "owner_deleted_read_only_collaborator",
+  "validated_result_count": 2
+}

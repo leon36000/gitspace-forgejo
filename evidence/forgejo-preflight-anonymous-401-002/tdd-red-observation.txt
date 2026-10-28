@@ -1,0 +1,5 @@
+TDD red observation (annotation, not raw output)
+
+The focused actual-process test was run before the behavior correction. It failed at the new action-contract assertion because the 401 action still said to verify that a host-scoped Forgejo API credential was present, current, and accepted. The actual read-only preflight sends no Authorization header. This is the failure recorded in the active turn summary; the original process log was not retained, so this file is an explicit summary rather than a raw test transcript.
+
+After the correction, the same ignored process test passed under the isolated runner. See process-e2e-final.log and process-e2e-matrix.log.

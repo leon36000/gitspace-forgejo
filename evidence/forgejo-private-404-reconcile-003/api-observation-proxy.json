@@ -1,0 +1,29 @@
+{
+  "cleanup": {
+    "listener_addresses_after_stop": [],
+    "stop": {
+      "stopped": true
+    }
+  },
+  "credential_values_recorded": false,
+  "measurement": "forwarded_requests_between_adapter_and_local_forgejo",
+  "private_404_validated": true,
+  "records_for_private_404_window": [
+    {
+      "method": "GET",
+      "path": "/api/v1/repos/forge-admin/agent-forge-core/issues/1",
+      "reader_credential_match": true,
+      "status": 404
+    }
+  ],
+  "records_for_reconciliation_window": [
+    {
+      "method": "GET",
+      "path": "/api/v1/repos/forge-admin/agent-forge-core/issues/1",
+      "reader_credential_match": true,
+      "status": 200
+    }
+  ],
+  "schema_version": 1,
+  "validated": true
+}

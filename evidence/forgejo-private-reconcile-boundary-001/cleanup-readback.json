@@ -1,0 +1,11 @@
+{
+  "foreign_hook_disabled": true,
+  "forgejo_stopped": true,
+  "hook_disabled": true,
+  "receiver_stopped": true,
+  "tracked_ports": [
+    3130,
+    32967
+  ],
+  "unexpected_listeners": []
+}

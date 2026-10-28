@@ -1,0 +1,11 @@
+{
+  "license": null,
+  "license_file": null,
+  "licensing_metadata": {
+    "decision": "no_license_selected",
+    "redistribution_rights": "not_assessed"
+  },
+  "package": "agent-forge-core",
+  "publish": [],
+  "version": "0.1.0"
+}
