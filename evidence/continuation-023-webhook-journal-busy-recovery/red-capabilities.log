@@ -1,0 +1,21 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.44s
+     Running tests/webhook_receiver_process_e2e.rs (target/debug/deps/webhook_receiver_process_e2e-6caa738f5453f442)
+
+running 1 test
+
+thread 'capabilities_endpoint_describes_the_versioned_webhook_contract_without_mutating_inbox' (1909723) panicked at tests/webhook_receiver_process_e2e.rs:1511:5:
+assertion `left == right` failed
+  left: Object {"event_payload_invalid": Object {"details_field_path": String("payload.<field>"), "status": Number(400)}, "malformed_json": Object {"details_fields": Array [String("line"), String("column")], "error_code": String("payload_invalid"), "status": Number(400)}, "optional_error_fields": Array [String("details")], "required_error_fields": Array [String("code"), String("retryable"), String("action")], "schema_version": Number(1)}
+ right: Object {"event_payload_invalid": Object {"details_field_path": String("payload.<field>"), "status": Number(400)}, "journal_busy": Object {"action": String("retry the exact signed delivery after the active inbox operation completes; do not edit the inbox"), "retryable": Bool(true), "status": Number(503)}, "malformed_json": Object {"details_fields": Array [String("line"), String("column")], "error_code": String("payload_invalid"), "status": Number(400)}, "optional_error_fields": Array [String("details")], "required_error_fields": Array [String("code"), String("retryable"), String("action")], "schema_version": Number(1)}
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test capabilities_endpoint_describes_the_versioned_webhook_contract_without_mutating_inbox ... FAILED
+
+failures:
+
+failures:
+    capabilities_endpoint_describes_the_versioned_webhook_contract_without_mutating_inbox
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 83 filtered out; finished in 0.03s
+
+error: test failed, to rerun pass `--test webhook_receiver_process_e2e`

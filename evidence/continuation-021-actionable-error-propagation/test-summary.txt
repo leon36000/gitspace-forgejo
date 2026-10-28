@@ -1,0 +1,10 @@
+red adapter: generic supervisor exit 76; no cleanup action was surfaced
+red webhook handler: malformed delete.ref returned no details.field_path
+red webhook receiver process: missing create.ref_type returned no details.field_path
+python3 tests/test_mission_012_test_agent_adapter.py: 1 passed
+python3 tests/test_mission_012_sandboxed_test_adapter.py: 5 passed
+focused webhook handler test: 1 passed
+focused actual receiver process test: 1 passed
+cargo test --locked --offline --all-targets -- --test-threads=1: 34 groups, 551 passed, 0 failed, 76 ignored
+ignored tests were not executed
+python byte-compilation, rustfmt, diff-check and Cargo license guard: pass

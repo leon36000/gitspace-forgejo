@@ -1,0 +1,22 @@
+$ cargo test --locked --offline --test webhook_receiver_process_e2e actual_receiver_localizes_missing_branch_ref_type_before_durable_append -- --exact --nocapture
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.54s
+     Running tests/webhook_receiver_process_e2e.rs (target/debug/deps/webhook_receiver_process_e2e-6caa738f5453f442)
+
+running 1 test
+
+thread 'actual_receiver_localizes_missing_branch_ref_type_before_durable_append' (1862645) panicked at tests/webhook_receiver_process_e2e.rs:740:5:
+assertion `left == right` failed
+  left: Null
+ right: "payload.ref_type"
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test actual_receiver_localizes_missing_branch_ref_type_before_durable_append ... FAILED
+
+failures:
+
+failures:
+    actual_receiver_localizes_missing_branch_ref_type_before_durable_append
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 82 filtered out; finished in 0.04s
+
+error: test failed, to rerun pass `--test webhook_receiver_process_e2e`

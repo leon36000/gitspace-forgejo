@@ -1,0 +1,3 @@
+7b36e31b25e05551b562f27953a63c4b54922682dc41060e33d74ca2c6c0d8a1  src/bin/forgejo-reconcile-local.rs
+9252358f9f5aca1fdfcb886498de6a2370863ef30bef40bab3ba553ff5a6f847  docs/architecture.md
+84a8584e459791dd95b577ecd09fd84ef9eb3f24b3f0df8458c4614b4fcf00e6  docs/checkpoint.md

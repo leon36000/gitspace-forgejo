@@ -1,0 +1,8 @@
+=== RUN   TestPOCMergeWhitelistActorCannotEditOrDeleteBranchProtection
+    testlogger.go:408: 2026/10/26 01:48:08 ...eb/routing/logger.go:109:func1() [I] router: completed GET /api/v1/repos/user2/repo1/branches/master for test-mock:12345, 200 OK in 11.6ms @ repo/branch.go:30(repo.GetBranch)
+    testlogger.go:408: 2026/10/26 01:48:08 ...eb/routing/logger.go:109:func1() [I] router: completed PATCH /api/v1/repos/user2/repo1/branch_protections/master for test-mock:12345, 403 Forbidden in 3.6ms @ v1/api.go:357(v1.reqAdmin)
+    testlogger.go:408: 2026/10/26 01:48:08 ...eb/routing/logger.go:109:func1() [I] router: completed DELETE /api/v1/repos/user2/repo1/branch_protections/master for test-mock:12345, 403 Forbidden in 3.0ms @ v1/api.go:357(v1.reqAdmin)
+    testlogger.go:408: 2026/10/26 01:48:08 ...eb/routing/logger.go:109:func1() [I] router: completed GET /api/v1/repos/user2/repo1/branch_protections/master for test-mock:12345, 200 OK in 3.1ms @ repo/branch.go:464(repo.GetBranchProtection)
+    testlogger.go:408: 2026/10/26 01:48:08 ...eb/routing/logger.go:109:func1() [I] router: completed GET /api/v1/repos/user2/repo1/branches/master for test-mock:12345, 200 OK in 11.9ms @ repo/branch.go:30(repo.GetBranch)
+--- PASS: TestPOCMergeWhitelistActorCannotEditOrDeleteBranchProtection (0.29s)
+ok  	forgejo.org/tests/integration	0.761s

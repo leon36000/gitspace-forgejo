@@ -1,0 +1,5 @@
+Search scope: src/ and tests/ in the current product worktree.
+src/agent_runtime.rs:4492 declares the AgentRuntimeV1 trait.
+tests/agent_runtime_contract.rs:46 defines FixtureRuntime and line 50 implements AgentRuntimeV1.
+No product implementation of AgentRuntimeV1 was found in src/.
+The fixture is only a contract-test implementation, not an AgentOS or model runtime.

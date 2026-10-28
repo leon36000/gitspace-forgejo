@@ -1,0 +1,52 @@
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:162:
+     send_with_timeout(address, request, Duration::from_secs(3))
+ }
+ 
+-fn send_with_timeout(
+-    address: SocketAddr,
+-    request: &[u8],
+-    read_timeout: Duration,
+-) -> (u16, Value) {
++fn send_with_timeout(address: SocketAddr, request: &[u8], read_timeout: Duration) -> (u16, Value) {
+     let mut stream = TcpStream::connect(address).expect("connect to receiver subprocess");
+     stream
+         .set_read_timeout(Some(read_timeout))
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:517:
+     );
+     let inbox_before = fs::read(&journal_path).ok();
+ 
+-    let (status, busy) = send_with_timeout(
+-        address,
+-        &signed_request,
+-        Duration::from_secs(8),
+-    );
++    let (status, busy) = send_with_timeout(address, &signed_request, Duration::from_secs(8));
+     assert_eq!(status, 503);
+     assert_eq!(busy["error"]["code"], "journal_busy");
+     assert_eq!(busy["error"]["retryable"], true);
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:528:
+-    assert!(busy["error"]["action"]
+-        .as_str()
+-        .unwrap()
+-        .contains("retry the exact signed delivery"));
++    assert!(
++        busy["error"]["action"]
++            .as_str()
++            .unwrap()
++            .contains("retry the exact signed delivery")
++    );
+     assert_eq!(fs::read(&journal_path).ok(), inbox_before);
+ 
+     drop(lock_file);
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:544:
+         .replay_webhook_inbox()
+         .expect("replay the inbox after releasing the lock");
+     assert_eq!(inbox.len(), 1, "the busy attempt was not appended");
+-    assert_eq!(inbox[0].idempotency_key, "forgejo-delivery-v1:delivery-journal-busy-41");
++    assert_eq!(
++        inbox[0].idempotency_key,
++        "forgejo-delivery-v1:delivery-journal-busy-41"
++    );
+ }
+ 
+ #[test]

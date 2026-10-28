@@ -1,0 +1,28 @@
+Product HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+Branch: local/WEBHOOK-005-canonical-links
+
+# TDD red — busy response had no standard retry hint
+cargo test --locked --offline --test webhook_receiver_process_e2e actual_receiver_reports_retryable_journal_busy_and_accepts_same_delivery_after_release -- --exact --nocapture
+  exit 101; expected Retry-After=5, got no header (red-process.log)
+
+# Green — real receiver and capability contract
+cargo test --locked --offline --test webhook_receiver_process_e2e actual_receiver_reports_retryable_journal_busy_and_accepts_same_delivery_after_release -- --exact --nocapture
+  exit 0; 1 passed (green-process.log)
+cargo test --locked --offline --test webhook_receiver_process_e2e capabilities_endpoint_describes_the_versioned_webhook_contract_without_mutating_inbox -- --exact --nocapture
+  exit 0; 1 passed (green-capabilities.log)
+
+# Full product verification
+cargo test --locked --offline --all-targets -- --test-threads=1
+  exit 0; 552 passed, 0 failed, 76 ignored, 34 groups (all-targets.log)
+cargo fmt --all -- --check
+  exit 0 (rustfmt-check.log)
+git diff --check
+  exit 0 (diff-check.log)
+python3 scripts/verify_cargo_license_state.py
+  exit 0 (license-guard.log)
+cargo metadata --offline --locked --format-version 1 --no-deps
+  exit 0 (cargo-metadata.json)
+
+# Format application before the green verification
+cargo fmt --all
+  exit 0 (rustfmt-apply.log)

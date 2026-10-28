@@ -1,0 +1,19 @@
+Product HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+Branch: local/WEBHOOK-005-canonical-links
+
+python3 tests/test_mission_012_sandboxed_test_adapter.py SandboxedAdapterTests.test_supervisor_cleanup_failure_survives_full_mcp_sandbox_path
+  exit 0; 1 passed (focused-e2e.log)
+python3 tests/test_mission_012_sandboxed_test_adapter.py
+  exit 0; 6 passed (python-sandbox-adapter.log)
+python3 tests/test_mission_012_mcp_supervisor.py
+  exit 0; 15 passed (python-supervisor.log)
+python3 tests/test_mission_012_test_agent_adapter.py
+  exit 0; 1 passed (python-agent-adapter.log)
+cargo test --locked --offline --test mission_012_mcp_lifecycle mcp_supervisor_cancellation_terminates_the_in_flight_verifier_scope -- --exact --nocapture
+  exit 0; 1 passed (rust-cancellation-process.log)
+python3 -m py_compile scripts/mission_012_mcp_supervisor.py scripts/mission_012_sandboxed_test_adapter.py tests/test_mission_012_sandboxed_test_adapter.py
+  exit 0
+git diff --check
+  exit 0
+Direct trailing-whitespace check on the two scripts, changed test, architecture, checkpoint, and report
+  exit 0; 6 files checked

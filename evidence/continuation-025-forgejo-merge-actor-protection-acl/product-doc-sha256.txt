@@ -1,0 +1,2 @@
+b2575daf9acace9819f13444c3104475e1a8766eadb5a4eac199f1d2ac35e19f  docs/architecture.md
+1458dde39a2ee4645cfd6d3b28dd819bdf522f54de24d100f86d8050ee33cdac  docs/checkpoint.md

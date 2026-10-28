@@ -1,0 +1,5 @@
+# forgejo.org/tests/integration [forgejo.org/tests/integration.test]
+tests/integration/merge_whitelist_protection_policy_poc_test.go:12:2: "forgejo.org/models/git" imported and not used
+tests/integration/merge_whitelist_protection_policy_poc_test.go:15:2: "forgejo.org/models/unit" imported and not used
+FAIL	forgejo.org/tests/integration [build failed]
+FAIL
