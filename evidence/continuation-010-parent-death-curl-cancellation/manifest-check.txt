@@ -1,0 +1,2 @@
+Commande : sha256sum -c SHA256SUMS depuis ce dossier.
+Portée : tous les fichiers réguliers présents sauf SHA256SUMS lui-même.

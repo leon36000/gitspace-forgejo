@@ -1,0 +1,40 @@
+E...F.F
+======================================================================
+ERROR: test_accepts_explicit_no_license_selection_with_publication_disabled (__main__.CargoLicenseStateTests.test_accepts_explicit_no_license_selection_with_publication_disabled)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/scripts/test_cargo_license_state.py", line 32, in test_accepts_explicit_no_license_selection_with_publication_disabled
+    result = validate_metadata(self.metadata, "agent-forge-core")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/scripts/verify_cargo_license_state.py", line 43, in validate_metadata
+    raise ValueError("review metadata must declare unselected until the rights holder decides")
+ValueError: review metadata must declare unselected until the rights holder decides
+
+======================================================================
+FAIL: test_rejects_metadata_that_claims_a_license_choice_or_assessed_rights (__main__.CargoLicenseStateTests.test_rejects_metadata_that_claims_a_license_choice_or_assessed_rights)
+----------------------------------------------------------------------
+ValueError: review metadata must declare unselected until the rights holder decides
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/scripts/test_cargo_license_state.py", line 48, in test_rejects_metadata_that_claims_a_license_choice_or_assessed_rights
+    with self.assertRaisesRegex(ValueError, "review metadata must declare no_license_selected"):
+AssertionError: "review metadata must declare no_license_selected" does not match "review metadata must declare unselected until the rights holder decides"
+
+======================================================================
+FAIL: test_requires_explicit_no_license_selection_review_metadata (__main__.CargoLicenseStateTests.test_requires_explicit_no_license_selection_review_metadata)
+----------------------------------------------------------------------
+ValueError: review metadata must declare unselected until the rights holder decides
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/scripts/test_cargo_license_state.py", line 42, in test_requires_explicit_no_license_selection_review_metadata
+    with self.assertRaisesRegex(ValueError, "review metadata must declare no_license_selected"):
+AssertionError: "review metadata must declare no_license_selected" does not match "review metadata must declare unselected until the rights holder decides"
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.001s
+
+FAILED (failures=2, errors=1)

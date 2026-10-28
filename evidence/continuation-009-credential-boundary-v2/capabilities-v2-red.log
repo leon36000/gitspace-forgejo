@@ -1,0 +1,21 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.49s
+     Running tests/forgejo_reconcile_capabilities_e2e.rs (target/debug/deps/forgejo_reconcile_capabilities_e2e-79e71d1241083922)
+
+running 1 test
+
+thread 'actual_cli_discloses_versioned_local_test_capabilities' (893364) panicked at tests/forgejo_reconcile_capabilities_e2e.rs:72:5:
+assertion `left == right` failed
+  left: Number(1)
+ right: 2
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test actual_cli_discloses_versioned_local_test_capabilities ... FAILED
+
+failures:
+
+failures:
+    actual_cli_discloses_versioned_local_test_capabilities
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 2 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `--test forgejo_reconcile_capabilities_e2e`

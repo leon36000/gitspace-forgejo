@@ -1,0 +1,19 @@
+usage: run_mission_012_live_composed_e2e.py [-h] --state-dir STATE_DIR
+                                            --forgejo-binary FORGEJO_BINARY
+                                            --evidence-dir EVIDENCE_DIR
+                                            [--execution-id EXECUTION_ID]
+                                            [--allocation-id ALLOCATION_ID]
+                                            [--budget-cap-usd BUDGET_CAP_USD]
+                                            [--agent-adapter {claude,local-test-adapter}]
+                                            [--inject-concurrent-base-advance]
+
+options:
+  -h, --help            show this help message and exit
+  --state-dir STATE_DIR
+  --forgejo-binary FORGEJO_BINARY
+  --evidence-dir EVIDENCE_DIR
+  --execution-id EXECUTION_ID
+  --allocation-id ALLOCATION_ID
+  --budget-cap-usd BUDGET_CAP_USD
+  --agent-adapter {claude,local-test-adapter}
+  --inject-concurrent-base-advance

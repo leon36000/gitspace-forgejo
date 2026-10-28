@@ -1,0 +1,26 @@
+{
+  "capabilities_api_version": "forgejo-reconcile-capabilities-v1",
+  "cargo": {
+    "license": null,
+    "license_file": null,
+    "name": "agent-forge-core",
+    "publish": [],
+    "version": "0.1.0"
+  },
+  "credential_contract": {
+    "credential_flag": "--host-credential-fd",
+    "credential_value_in_argv_environment_journal_or_agent": false,
+    "private_resource_http_404": {
+      "interpretation": "resource_absent_or_private_visibility_not_granted",
+      "observed_in": "FORGEJO-V17-LIVE-PRIVATE-PR-READBACK-001",
+      "result": "inconclusive_no_canonical_state",
+      "retryable": false
+    },
+    "source": "optional_private_inherited_pipe_fd_bound_to_configured_origin"
+  },
+  "licensing_metadata": {
+    "decision": "no_license_selected",
+    "redistribution_rights": "not_assessed",
+    "spdx_package_license_declared": "NOASSERTION"
+  }
+}

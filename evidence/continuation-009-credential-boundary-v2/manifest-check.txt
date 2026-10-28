@@ -1,0 +1,2 @@
+Commande de vérification : `sha256sum -c SHA256SUMS` depuis ce dossier.
+Portée : tous les fichiers réguliers du dossier, à l’exception du manifeste lui-même.

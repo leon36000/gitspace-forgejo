@@ -1,0 +1,17 @@
+{
+  "api_version": "forgejo-reconcile-capabilities-v2",
+  "credential_boundary": {
+    "agent_process_isolation": "not_enforced_by_cli",
+    "required_caller_boundary": "invoke_credential_bearing_adapter_in_trusted_host_process_outside_agent_execution_scope",
+    "secret_bytes_in_argv_environment_journal_or_response": false,
+    "secret_material_resides_in": [
+      "adapter_process_memory",
+      "curl_child_stdin_and_memory"
+    ]
+  },
+  "operation_boundary_references": {
+    "local_test_merge_authority": "credential_boundary",
+    "reconcile_webhook_deliveries": "credential_boundary"
+  },
+  "schema_version": 2
+}

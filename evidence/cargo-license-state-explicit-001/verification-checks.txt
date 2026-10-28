@@ -1,0 +1,7 @@
+.......
+----------------------------------------------------------------------
+Ran 7 tests in 0.000s
+
+OK
+
+python3 -m py_compile scripts/verify_cargo_license_state.py scripts/test_cargo_license_state.py: passed
