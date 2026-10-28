@@ -1,0 +1,19 @@
+Forgejo officiel v17.0.0
+Remote observé: https://codeberg.org/forgejo/forgejo.git
+Commit: 0d791421f85ca13a63b665053d81ea765fbbc571
+Checkout local: /tmp/forgejo-v17-base-cas-poc (scratch globalement modifié par les POC CAS/LFS)
+Contrôle ciblé: `git diff --quiet -- services/webhook/notifier.go modules/structs/hook.go modules/webhook/type.go services/webhook/default.go` retourne 0.
+
+Blobs Git des fichiers examinés au commit ci-dessus:
+- services/webhook/notifier.go: 5aea521a0f2cb5d7513c98e9805d10e6a6b2901b
+- modules/structs/hook.go: 9c7f1deed1c38eeb435ab976bb8429c5458c7f2b
+- modules/webhook/type.go: ecb75083f54cbdf110a76a826fb59349cfd0716a
+- services/webhook/default.go: 386671831d203538c23c8c59b99c6b1f88474aef
+
+Constats ciblés:
+- `services/webhook/notifier.go::webhookNotifier.CreateRef` (lignes 770-783) construit `api.CreatePayload` avec `Ref=refFullName.String()`, `Sha=refID` et `RefType=refFullName.RefType()`.
+- `modules/structs/hook.go::CreatePayload` (lignes 131-143) sérialise `sha`, `ref`, `ref_type`, `repository` et `sender`.
+- `modules/webhook/type.go::HookEventType.Event` (lignes 55-60) émet l'en-tête `create` pour `HookEventCreate`.
+- `services/webhook/default.go::defaultHandler.NewRequest` (lignes 70-80) applique `substituteRefShortName` aux webhooks Gitea `create` et `delete`; le helper (lignes 142-155) réduit `ref` au nom court avant livraison HTTP.
+
+Couverture: lecture de quatre fichiers ciblés et corroboration du payload par un événement réellement émis par le binaire local. Le scratch Forgejo n'est pas traité comme un checkout propre dans son ensemble; aucun code Forgejo n'est copié ou adopté. Le commit de build du binaire local n'est pas établi.

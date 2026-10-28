@@ -1,0 +1,10 @@
+[
+  {
+    "event_type": "delete",
+    "is_delivered": true,
+    "is_succeed": true,
+    "response_status": 202,
+    "task_id": 1,
+    "uuid": "70ed022a-5c02-4b93-adba-5d492670e063"
+  }
+]

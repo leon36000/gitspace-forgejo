@@ -1,0 +1,6 @@
+{
+  "reader_permission": "read_only",
+  "remote_ref_absent_after_delete": true,
+  "response_body_recorded": false,
+  "status": "not_separately_read"
+}

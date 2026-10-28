@@ -1,0 +1,37 @@
+{
+  "attempt_003": {
+    "evidence": "../forgejo-native-branch-delete-inconclusive-003/result.json",
+    "stage": "read_deleted_branch_before_reconciliation",
+    "failure_type": "ValueError",
+    "interpretation": "The optional direct API observation stopped before invoking the reconciler. No response body was saved; the subsequent run removed this redundant probe and used the real reconciler as the single upstream reader.",
+    "cleanup_confirmed": true
+  },
+  "attempt_004": {
+    "evidence": "../forgejo-native-branch-delete-inconclusive-004/result.json",
+    "stage": "reconcile_native_delete_delivery",
+    "failure_type": "ValueError",
+    "interpretation": "The combined invocation/validation stage did not preserve the CLI response. Instrumentation then split the stage and persisted a safe structured reconciliation result.",
+    "cleanup_confirmed": true
+  },
+  "attempt_005": {
+    "evidence": "../forgejo-native-branch-delete-inconclusive-005/reconciliation-attempt.json",
+    "stage": "validate_native_delete_reconciliation_result",
+    "failure_type": "ValueError",
+    "observed_cli_result": {
+      "exit_status": 1,
+      "verdict": "inconclusive",
+      "error_code": "resource_not_found",
+      "retryable": false,
+      "resource_location": "error.details.resource",
+      "canonical_state_present": false
+    },
+    "diagnosis": "The validator incorrectly required a top-level resource on the inconclusive error result; the actual CLI schema carries the resource under error.details.resource. The validator and tests were corrected.",
+    "cleanup_confirmed": true
+  },
+  "attempt_006": {
+    "evidence": "result.json",
+    "exit_code": 0,
+    "verdict": "passed",
+    "cleanup_confirmed": true
+  }
+}

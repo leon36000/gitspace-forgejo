@@ -1,0 +1,12 @@
+# Full local Forgejo native delete → receiver → reconciliation run
+python3 scripts/run_forgejo_native_branch_delete_webhook_reconcile.py --forgejo-binary /tmp/forgejo-17.0.0 --state-dir /tmp/forgejo-native-branch-delete-20261025-006 --evidence-dir evidence/forgejo-native-branch-delete-inconclusive-006 --expect-branch-absent-after-delete
+
+# Tests and readbacks after the final runner/test change
+python3 -m unittest discover -s tests -p 'test_forgejo_emitted_webhook_e2e.py' -q
+python3 -m py_compile scripts/run_forgejo_native_branch_delete_webhook_reconcile.py tests/test_forgejo_emitted_webhook_e2e.py
+python3 scripts/verify_cargo_license_state.py
+cargo metadata --locked --offline --no-deps --format-version 1
+cargo fmt --all -- --check
+git diff --check
+
+# Build provenance recorded in result.json: Bubblewrap 0.9.0, --unshare-net --unshare-pid, cleared environment, staged source/toolchain read-only, Cargo --offline --locked.

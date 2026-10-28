@@ -1,0 +1,11 @@
+$ rg -n trait AgentRuntimeV1|impl .*AgentRuntimeV1|struct FixtureRuntime src tests
+src/agent_runtime.rs:4492:pub trait AgentRuntimeV1 {
+tests/agent_runtime_contract.rs:46:struct FixtureRuntime {
+tests/agent_runtime_contract.rs:50:impl AgentRuntimeV1 for FixtureRuntime {
+exit_code=0
+
+$ rg -n OPENAI_API_KEY|ANTHROPIC_API_KEY|OpenAI|Anthropic|Claude|AgentOS|Forge Code Cargo.toml src tests --glob !**/fixtures/**
+tests/test_mission_012_live_mcp_agent_e2e.py:18:        with mock.patch.object(driver.shutil, "which", side_effect=AssertionError("Claude lookup attempted")):
+src/bin/mission-012-mcp-host.rs:1260:    // intentionally omitted from tools/list and Claude's --tools set.
+exit_code=0
+Interprétation limitée: l’implémentation trouvée est exclusivement `FixtureRuntime` dans les tests; les deux correspondances du second scan sont un test qui interdit la recherche de Claude et un commentaire de liste d’outils, pas des connecteurs. Cela n’exclut pas des intégrations hors dépôt. Aucun environnement de secrets n’a été lu et aucun fournisseur n’a été appelé.

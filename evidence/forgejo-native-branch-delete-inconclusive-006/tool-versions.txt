@@ -1,0 +1,23 @@
+$ rustc --version
+exit_code=0
+rustc 1.95.0 (59807616e 2026-04-14)
+
+$ cargo --version
+exit_code=0
+cargo 1.95.0 (f2d3ce0bd 2026-03-21)
+
+$ python3 --version
+exit_code=0
+Python 3.12.3
+
+$ git --version
+exit_code=0
+git version 2.43.0
+
+$ bwrap --version
+exit_code=0
+bubblewrap 0.9.0
+
+$ /tmp/forgejo-17.0.0 --version
+exit_code=0
+forgejo version 17.0.0+gitea-1.22.0 (release name 17.0.0) built with GNU Make 4.4.1, go1.26.9 : bindata, timetzdata, sqlite, sqlite_unlock_notify

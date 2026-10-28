@@ -1,0 +1,24 @@
+{
+  "exit_status": 1,
+  "result": {
+    "api_version": "forgejo-rest-v1",
+    "delivery_id": "0d30d9e0-9418-4578-826c-aaf101e727a8",
+    "error": {
+      "action": "verify the branch name and repository access; HTTP 404 does not distinguish an absent branch from an inaccessible repository",
+      "code": "resource_not_found",
+      "details": {
+        "resource": {
+          "branch": "agent/native-delete-proof",
+          "kind": "branch",
+          "owner": "forge-admin",
+          "repository": "agent-forge-core"
+        },
+        "upstream": "forgejo"
+      },
+      "retryable": false
+    },
+    "schema_version": 4,
+    "upstream_read_attempts": 1,
+    "verdict": "inconclusive"
+  }
+}

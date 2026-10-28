@@ -1,0 +1,18 @@
+[
+  {
+    "event_type": "create",
+    "is_delivered": true,
+    "is_succeed": true,
+    "response_status": 202,
+    "task_id": 1,
+    "uuid": "1af9392a-82bc-47ce-8a9f-6bf2c7cb54f7"
+  },
+  {
+    "event_type": "delete",
+    "is_delivered": true,
+    "is_succeed": true,
+    "response_status": 202,
+    "task_id": 2,
+    "uuid": "239ab8d9-8905-4943-a796-500852400f01"
+  }
+]

@@ -1,0 +1,54 @@
+[
+  {
+    "event": "create",
+    "exit_status": 0,
+    "result": {
+      "api_version": "forgejo-rest-v1",
+      "canonical_state": {
+        "base_sha": null,
+        "head_sha": "3d23620a5e52cf6b7dde8275cf480392d0b497dd",
+        "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/src/branch/agent%2Fnative-delete-proof",
+        "merge_commit_sha": null,
+        "merged": null,
+        "state": "present",
+        "updated_at": "2026-10-25T18:29:58-04:00"
+      },
+      "delivery_id": "1af9392a-82bc-47ce-8a9f-6bf2c7cb54f7",
+      "resource": {
+        "branch": "agent/native-delete-proof",
+        "kind": "branch",
+        "owner": "forge-admin",
+        "repository": "agent-forge-core"
+      },
+      "schema_version": 4,
+      "upstream_read_attempts": 1,
+      "verdict": "current_state_read"
+    }
+  },
+  {
+    "event": "delete",
+    "exit_status": 0,
+    "result": {
+      "api_version": "forgejo-rest-v1",
+      "canonical_state": {
+        "base_sha": null,
+        "head_sha": "3d23620a5e52cf6b7dde8275cf480392d0b497dd",
+        "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/src/branch/agent%2Fnative-delete-proof",
+        "merge_commit_sha": null,
+        "merged": null,
+        "state": "present",
+        "updated_at": "2026-10-25T18:29:58-04:00"
+      },
+      "delivery_id": "239ab8d9-8905-4943-a796-500852400f01",
+      "resource": {
+        "branch": "agent/native-delete-proof",
+        "kind": "branch",
+        "owner": "forge-admin",
+        "repository": "agent-forge-core"
+      },
+      "schema_version": 4,
+      "upstream_read_attempts": 1,
+      "verdict": "current_state_read"
+    }
+  }
+]

@@ -1,0 +1,28 @@
+Working directory: /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace
+
+Forgejo source checkout identification:
+git -C /tmp/forgejo-v17-base-cas-poc rev-parse HEAD
+git -C /tmp/forgejo-v17-base-cas-poc remote get-url origin
+git -C /tmp/forgejo-v17-base-cas-poc diff --exit-code -- services/webhook/notifier.go services/webhook/default.go modules/structs/hook.go modules/git/ref.go
+
+Intentional red run; its state and artifacts are retained:
+python3 scripts/run_forgejo_native_branch_delete_webhook_reconcile.py --forgejo-binary /tmp/forgejo-17.0.0 --state-dir /tmp/forgejo-native-branch-delete-20261025-001 --evidence-dir evidence/forgejo-native-branch-delete-reconcile-001
+
+Focused verification after adapting to the observed Forgejo wire payload:
+cargo test --offline --locked --test webhook_handler_contract
+cargo test --offline --locked --test webhook_reconcile_contract
+python3 -m unittest discover -s tests -p 'test_forgejo_emitted_webhook_e2e.py' -q
+python3 -m py_compile scripts/run_forgejo_live_webhook_reconcile_emitted.py scripts/run_forgejo_native_branch_delete_webhook_reconcile.py tests/test_forgejo_emitted_webhook_e2e.py
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_reads_current_branch_after_native_delete_notification
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_keeps_native_delete_404_inconclusive
+
+Post-run action-message/comment verification:
+cargo fmt --all
+cargo fmt --all -- --check
+cargo test --offline --locked --test webhook_handler_contract
+cargo test --offline --locked --test webhook_http_contract
+cargo test --offline --locked --test webhook_reconcile_contract
+git diff --check
+
+Passing live local Forgejo run:
+python3 scripts/run_forgejo_native_branch_delete_webhook_reconcile.py --forgejo-binary /tmp/forgejo-17.0.0 --state-dir /tmp/forgejo-native-branch-delete-20261025-002 --evidence-dir evidence/forgejo-native-branch-delete-reconcile-002

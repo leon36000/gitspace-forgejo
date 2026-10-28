@@ -1,0 +1,9 @@
+{
+  "branch": "agent/native-delete-proof",
+  "delivery_id": "1af9392a-82bc-47ce-8a9f-6bf2c7cb54f7",
+  "event": "create",
+  "ref": "agent/native-delete-proof",
+  "ref_type": "branch",
+  "sequence": 1,
+  "sha": "636623f62faa7b2d799c6af255367be64eac9329"
+}

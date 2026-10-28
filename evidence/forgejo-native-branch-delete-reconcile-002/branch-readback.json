@@ -1,0 +1,36 @@
+{
+  "commit": {
+    "added": null,
+    "author": {
+      "email": "forgejo-native-delete@local.invalid",
+      "name": "Forgejo Native Delete E2E",
+      "username": ""
+    },
+    "committer": {
+      "email": "forgejo-native-delete@local.invalid",
+      "name": "Forgejo Native Delete E2E",
+      "username": ""
+    },
+    "id": "96f58c94395b1b5c0f6a2826749697c5d99f193a",
+    "message": "Add native branch-delete proof\n",
+    "modified": null,
+    "removed": null,
+    "timestamp": "2026-10-25T17:24:24-04:00",
+    "url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/commit/96f58c94395b1b5c0f6a2826749697c5d99f193a",
+    "verification": {
+      "payload": "",
+      "reason": "gpg.error.not_signed_commit",
+      "signature": "",
+      "signer": null,
+      "verified": false
+    }
+  },
+  "effective_branch_protection_name": "",
+  "enable_status_check": false,
+  "name": "agent/native-delete-proof",
+  "protected": false,
+  "required_approvals": 0,
+  "status_check_contexts": [],
+  "user_can_merge": false,
+  "user_can_push": false
+}

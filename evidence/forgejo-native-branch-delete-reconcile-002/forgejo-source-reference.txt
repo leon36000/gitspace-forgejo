@@ -1,0 +1,23 @@
+Forgejo official source inspected: https://codeberg.org/forgejo/forgejo.git
+Version tag: v17.0.0
+Commit: 0d791421f85ca13a63b665053d81ea765fbbc571
+Remote observed: https://codeberg.org/forgejo/forgejo.git
+Scratch checkout status for these four files: clean in `git diff --exit-code`.
+
+services/webhook/notifier.go:806-818
+webhookNotifier.DeleteRef builds `api.DeletePayload`; Ref is `refFullName.String()` and RefType is `refFullName.RefType()`.
+SHA-256: a67cca36f92104efe0feabf0c62e668e7543b979e5a7440e713ce93dd490004f
+
+modules/structs/hook.go:160-171
+DeletePayload serializes `Ref` as `ref`, `RefType` as `ref_type`; JSONPayload uses json.MarshalIndent.
+SHA-256: 42f951d98dbea6b78e70e595b8c2cc0f5931bee2d96b837d8d4e8f034b015a12
+
+services/webhook/default.go:68-75,142-156
+defaultHandler.NewRequest rewrites `ref` for GITEA create/delete hook tasks with substituteRefShortName. The helper unmarshals the payload and assigns `git.RefName(ref).ShortName()` before the HTTP body is formed.
+SHA-256: 87e8faaa71ae58cc572984700cd95f57a9d2e51142cf0f1b41d3d503c7fd2852
+
+modules/git/ref.go:84-87,145-156
+RefName.String returns its stored ref; RefName.ShortName removes the branch prefix for `refs/heads/` refs. This accounts for the distinction between the stored hook-task payload and the delivered Gitea HTTP body.
+SHA-256: fefe230636edae03730d2ae1d8f3860aa10d5b89adde437781e79f111380025f
+
+The live binary reports Forgejo 17.0.0+gitea-1.22.0, Go 1.26.9, SHA-256 e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7. Its build commit is not established by local binary metadata.

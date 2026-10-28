@@ -1,0 +1,11 @@
+# Reproduction and verification commands
+
+- `python3 -B scripts/run_forgejo_native_branch_delete_webhook_reconcile.py --forgejo-binary /tmp/forgejo-17.0.0 --repo-root /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace --state-dir /tmp/forgejo-native-branch-advance-retry-20261026-001 --evidence-dir evidence/forgejo-native-branch-delete-recreate-advance-retry-001/live-run --include-create --expect-branch-absent-after-delete --retry-after-recreate --advance-head-after-delete --branch-name agent/lifecycle/advance-retry-001`
+- `python3 -m unittest tests.test_forgejo_emitted_webhook_e2e.BranchRefBatchReconciliationValidationTests -v`
+- `python3 -m unittest tests.test_forgejo_emitted_webhook_e2e`
+- `python3 -m unittest scripts.test_cargo_license_state`
+- `python3 scripts/verify_cargo_license_state.py`
+- `python3 evidence/forgejo-native-branch-delete-recreate-advance-retry-001/verify_advance_retry.py`
+- `python3 -m py_compile scripts/run_forgejo_native_branch_delete_webhook_reconcile.py tests/test_forgejo_emitted_webhook_e2e.py`
+- `cargo fmt --all -- --check`
+- `git diff --check`

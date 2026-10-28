@@ -1,0 +1,8 @@
+{
+  "branch": "agent/native-delete-proof",
+  "delivery_id": "239ab8d9-8905-4943-a796-500852400f01",
+  "event": "delete",
+  "ref": "agent/native-delete-proof",
+  "ref_type": "branch",
+  "sequence": 2
+}

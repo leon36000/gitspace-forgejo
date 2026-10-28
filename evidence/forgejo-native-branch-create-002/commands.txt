@@ -1,0 +1,15 @@
+Parcours Forgejo natif sur instance jetable:
+python3 scripts/run_forgejo_native_branch_delete_webhook_reconcile.py --forgejo-binary /tmp/forgejo-17.0.0 --state-dir /tmp/forgejo-native-create-002 --evidence-dir evidence/forgejo-native-branch-create-002 --include-create
+
+Vérifications finales:
+cargo fmt --all -- --check
+git diff --check
+cargo test --offline --locked --all-targets -- --test-threads=1
+cargo test --offline --locked --test webhook_handler_contract
+cargo test --offline --locked --test webhook_reconcile_contract
+python3 -m unittest tests.test_forgejo_emitted_webhook_e2e
+python3 scripts/test_cargo_license_state.py
+python3 scripts/verify_cargo_license_state.py
+python3 -m py_compile scripts/run_forgejo_live_webhook_reconcile_emitted.py scripts/run_forgejo_native_branch_delete_webhook_reconcile.py tests/test_forgejo_emitted_webhook_e2e.py
+
+All commands above completed with exit code 0. The complete `--all-targets` output and focused/Python test logs are included in this evidence directory.

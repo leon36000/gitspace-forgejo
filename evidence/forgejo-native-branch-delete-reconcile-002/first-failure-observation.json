@@ -1,0 +1,34 @@
+{
+  "diagnosis": {
+    "behavior": "Gitea hook delivery rewrites create/delete payload ref through git.RefName.ShortName; the emitted delete ref is the branch name without refs/heads/.",
+    "prior_product_assumption": "delete.ref carried refs/heads/<branch> on the HTTP wire.",
+    "source_file": "services/webhook/default.go",
+    "symbols": [
+      "defaultHandler.NewRequest",
+      "substituteRefShortName"
+    ]
+  },
+  "failed_attempt": {
+    "actual_gitea_wire_ref": "agent/native-delete-proof",
+    "forgejo_database_sha256": "7ff4b903e969ca523f2f54e4a502abf42e08cb894d9a8a54b7ae53e50892d6de",
+    "forgejo_task_response_status": 400,
+    "payload_saved_before_delivery_ref": "refs/heads/agent/native-delete-proof",
+    "receiver_error_code": "event_payload_invalid",
+    "ref_type": "branch",
+    "repository": "forge-admin/agent-forge-core",
+    "run_result": {
+      "failure_type": "RuntimeError",
+      "stage": "delete_branch_and_capture_native_event",
+      "verdict": "failed"
+    },
+    "state_dir": "/tmp/forgejo-native-branch-delete-20261025-001"
+  },
+  "forgejo": {
+    "binary_sha256": "e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7",
+    "build_commit": "unknown",
+    "source_commit": "0d791421f85ca13a63b665053d81ea765fbbc571",
+    "version": "17.0.0+gitea-1.22.0"
+  },
+  "purpose": "Preserve the actionable first-run failure without webhook signatures, tokens, or full payloads.",
+  "schema_version": 1
+}

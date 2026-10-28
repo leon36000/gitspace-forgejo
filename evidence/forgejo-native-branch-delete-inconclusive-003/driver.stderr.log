@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/scripts/run_forgejo_native_branch_delete_webhook_reconcile.py", line 558, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/scripts/run_forgejo_native_branch_delete_webhook_reconcile.py", line 552, in main
+    result = run(parser.parse_args())
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/scripts/run_forgejo_native_branch_delete_webhook_reconcile.py", line 541, in run
+    raise RuntimeError(f"native branch-delete E2E failed at {stage} ({failure})")
+RuntimeError: native branch-delete E2E failed at read_deleted_branch_before_reconciliation (ValueError)

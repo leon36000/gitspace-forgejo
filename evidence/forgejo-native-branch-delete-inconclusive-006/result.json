@@ -1,0 +1,179 @@
+{
+  "branch": {
+    "commit_sha": "6075af74635f434bd06cf1668d70aabb72b3368e",
+    "current_api_sha": null,
+    "name": "agent/native-delete-proof",
+    "recreated_before_reconciliation": false,
+    "remote_ref_absent_after_delete": true
+  },
+  "cleanup": {
+    "cleanup_failure": null,
+    "forgejo": {
+      "listener_addresses_after_stop": [],
+      "stop": {
+        "returncode": 0,
+        "started": true,
+        "stop_action": "terminate",
+        "stopped": true
+      }
+    },
+    "hook_disabled": true,
+    "hook_readback": {
+      "active_after_run": false,
+      "api_hook_id": 1,
+      "configuration_matches_expected": true,
+      "content_type": "json",
+      "deactivation_readback_confirmed": true,
+      "events": [
+        "delete"
+      ],
+      "events_readback_valid": true,
+      "hook_id": 1,
+      "secret_value_recorded": false,
+      "target": "http://127.0.0.1:34587/forgejo/webhook",
+      "type": "gitea"
+    },
+    "private_state_dir": "/tmp/forgejo-native-branch-delete-20261025-006",
+    "receiver": {
+      "listener_addresses_after_stop": [],
+      "stop": {
+        "returncode": 0,
+        "started": true,
+        "stop_action": "terminate",
+        "stopped": true
+      }
+    }
+  },
+  "forgejo": {
+    "binary_sha256": "e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7",
+    "listener": "127.0.0.1:3130",
+    "version": "forgejo version 17.0.0+gitea-1.22.0 (release name 17.0.0) built with GNU Make 4.4.1, go1.26.9 : bindata, timetzdata, sqlite, sqlite_unlock_notify",
+    "webhook_allowlist": "127.0.0.1"
+  },
+  "limitations": [
+    "One disposable local Forgejo repository and one branch; no live service was contacted.",
+    "Forgejo source was inspected at the recorded v17.0.0 commit, but this binary's build commit is not established by the local binary metadata.",
+    "This proves native event capture and current-state reconciliation only; it does not prove an LLM, AgentOS, PR review, merge authority, or comparative productivity gain."
+  ],
+  "native_delete_delivery": {
+    "event": {
+      "branch": "agent/native-delete-proof",
+      "delivery_id": "70ed022a-5c02-4b93-adba-5d492670e063",
+      "event": "delete",
+      "ref": "agent/native-delete-proof",
+      "ref_type": "branch",
+      "sequence": 1
+    },
+    "forgejo_delivery_tasks": [
+      {
+        "event_type": "delete",
+        "is_delivered": true,
+        "is_succeed": true,
+        "response_status": 202,
+        "task_id": 1,
+        "uuid": "70ed022a-5c02-4b93-adba-5d492670e063"
+      }
+    ],
+    "hook": {
+      "active_after_run": false,
+      "api_hook_id": 1,
+      "configuration_matches_expected": true,
+      "content_type": "json",
+      "deactivation_readback_confirmed": true,
+      "events": [
+        "delete"
+      ],
+      "events_readback_valid": true,
+      "hook_id": 1,
+      "secret_value_recorded": false,
+      "target": "http://127.0.0.1:34587/forgejo/webhook",
+      "type": "gitea"
+    }
+  },
+  "provenance": {
+    "cargo_build": {
+      "bubblewrap_sha256": "cd6b143283b464baf078ab09ca19dadc5bcc2423b833c4f9dd7e83f9ba1b640b",
+      "bubblewrap_version": "bubblewrap 0.9.0",
+      "built_executable_sha256": {
+        "forgejo-reconcile-local": "3751ed48726b5f1e161f41a6d4c59a13e3e2fa22fb2ecf5b6c34c97fffa5b230",
+        "forgejo-webhook-local": "7e1bd395839572b38c374e743063322c00610f23a19292c0164a972aecf893de"
+      },
+      "cargo_sha256": "959e627e4d7b8d8b618d32ae7af795ce9f1544656822eb9d407b4fd76a4f53b0",
+      "policy": "Bubblewrap allowlist; --unshare-net and --unshare-pid; clear environment; read-only staged source, registry and Rust sysroot; --offline --locked",
+      "rustc_sha256": "db0c9200524653ed0ff20a2950b49402879887ad4932c4de18606df9de5cf3d9",
+      "staged_registry_tree_sha256": "a5ea9d0f4ab9d3e50cc22b0b22e0c5b93274462e61193b074e0a2173e5e46e30",
+      "staged_source_tree_sha256": "5f4d2d8b0fab30e099c757739a7b5dd6b680b3a3e9c6bd60e95aabce73e889d0",
+      "toolchain_versions": {
+        "cargo": "cargo 1.95.0 (f2d3ce0bd 2026-03-21)",
+        "rustc": "rustc 1.95.0 (59807616e 2026-04-14)"
+      }
+    },
+    "credentials_recorded": false,
+    "forgejo_binary_sha256": "e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7",
+    "receiver_sha256": "7e1bd395839572b38c374e743063322c00610f23a19292c0164a972aecf893de",
+    "reconcile_cli_sha256": "3751ed48726b5f1e161f41a6d4c59a13e3e2fa22fb2ecf5b6c34c97fffa5b230",
+    "source_sha256": {
+      "Cargo.lock": "bf599559dd11ff21ecc4754aa8a693966b4a9ca401153d7d7caa1f18d8995fcc",
+      "Cargo.toml": "0d7c833bce0634836404871cfe51b82ac00288bc0fb1b6e04c206b61340bae0a",
+      "scripts/run_forgejo_live_webhook_reconcile_e2e.py": "e326a1104e6a7a52f787a34625858a44b2fc2041ceaec6a4bd1e7f9e04cd4a8d",
+      "scripts/run_forgejo_live_webhook_reconcile_emitted.py": "f5c7dc055355782f67d116559b724de5124b0ec274600bbb212e837091da24a5",
+      "scripts/run_forgejo_native_branch_delete_webhook_reconcile.py": "220d73e39e08a00645dc92851e5c1a35ce44a6f4bb2a24998f65de4de6559816",
+      "src/agent_runtime.rs": "05da2d5c4d90b96a73f9ad955832cd396518d9b4fdae3ef45df262c15ccfbed0",
+      "src/bin/forgejo-mission-local.rs": "b3a31a33b02a215f121548e9004ac569b5bdd241512f60cb4dce4f4e83f5b672",
+      "src/bin/forgejo-reconcile-local.rs": "636262d55238df81fb6f983675718022017241ba155d64dc6fcc2dc8c5ea241e",
+      "src/bin/forgejo-webhook-local.rs": "7441ff13c76e3c98a3353d8e4a144e90857d0d54e9a92cbd48eea90c1e356d88",
+      "src/bin/gate.rs": "4366abaa55d4d5d539b10d48a3706afbf37702c9dd199466545963dbdc9d116d",
+      "src/bin/mission-012-mcp-host.rs": "23ef910a9d92e719c0f7bb22ce9e458024543849bcc4d5c3d60f6d8c9967ea46",
+      "src/bin/mission-012-verify-local.rs": "a920fe426e22fd292635d095f8f8775fafea2d5271b6be2945453f94e5d2a9bf",
+      "src/forgejo.rs": "7bba983f9f37256f1af3676593b2275c4ab3023ef832999d5a4cacda7a2f7ada",
+      "src/lib.rs": "30535d8afb3ce1e1cedc33d73f8ce9a87cfb8bf5a240164c0a7ab1ac1fa31008",
+      "src/main.rs": "53ad48c644c60c324924d1b8f446ca166b3efc0e2682d19111b36bc58e990a0a",
+      "src/mission_012_host.rs": "b1b3890b37463273eb011c22bc5494d90f2915a7ec9050cf48b84a25d78217fa",
+      "src/mission_admission.rs": "2cba1de794d67605de10c94fe1fa33266e66af0a7b4efc58e1253b98d00ebd8b",
+      "src/strict_json.rs": "8f17c240d2b16d3189e5099789c0b89aa2bfccdbe089e691870f42e8234c50d8",
+      "src/webhook.rs": "46a79df34b0ece6436818c4a089b9c1b241f2fcfbf2af79a67cc98731a72f296",
+      "src/webhook/http.rs": "50f0095985e105e97cf030987d94269ebbbd97ca3d552d7ef68fa70a8bf37778",
+      "src/webhook/reconcile.rs": "687a5b426cdad0ee012092f8433b790d4dd72740f2d1c1e2ab7675f294671356",
+      "tests/test_forgejo_emitted_webhook_e2e.py": "95ceab8353d46137219bd08f353de3b09286b1c2ae80c2161c0cfc9b50ec3a24"
+    },
+    "webhook_secret_recorded": false
+  },
+  "reconciliation": {
+    "credential_recorded": false,
+    "credential_source": "private_inherited_pipe_fd",
+    "exit_status": 1,
+    "journal_unchanged": true,
+    "result": {
+      "api_version": "forgejo-rest-v1",
+      "delivery_id": "70ed022a-5c02-4b93-adba-5d492670e063",
+      "error": {
+        "action": "verify the branch name and repository access; HTTP 404 does not distinguish an absent branch from an inaccessible repository",
+        "code": "resource_not_found",
+        "details": {
+          "resource": {
+            "branch": "agent/native-delete-proof",
+            "kind": "branch",
+            "owner": "forge-admin",
+            "repository": "agent-forge-core"
+          },
+          "upstream": "forgejo"
+        },
+        "retryable": false
+      },
+      "schema_version": 4,
+      "upstream_read_attempts": 1,
+      "verdict": "inconclusive"
+    }
+  },
+  "repository": {
+    "full_name": "forge-admin/agent-forge-core",
+    "private": true,
+    "reader_permission": {
+      "admin": false,
+      "pull": true,
+      "push": false
+    }
+  },
+  "schema_version": 1,
+  "verdict": "passed"
+}
