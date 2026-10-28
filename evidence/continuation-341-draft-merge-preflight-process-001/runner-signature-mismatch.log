@@ -1,0 +1,17 @@
+evidence.git_head=f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+evidence.source_tree_sha256=f6066e988acd4a783c004e1bfb29bd1373f956829a29b0e028eac1da09b353c4
+evidence.cargo_lock_sha256=459fef3749a42c989521901dcde61cb26e12ed4206c5d722e149426c2d3a5439
+evidence.runner_sha256=205cf583f1d6f5db2bbd367344cbd8b5e6d0a71e89bfd4a819d8600e44827632
+evidence.registry_stage_sha256=1f73c6a919948c0af44acac0604f8bf4f6ff4888379605e02d3976f1baea6451
+evidence.rustc=rustc 1.95.0 (59807616e 2026-04-14)
+evidence.cargo=cargo 1.95.0 (f2d3ce0bd 2026-03-21)
+evidence.bwrap=bubblewrap 0.9.0
+evidence.platform=Linux-7.0.0-1019-nvidia-aarch64-with-glibc2.39
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/scripts/run_forgejo_preflight_cli_e2e.py", line 169, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/scripts/run_forgejo_preflight_cli_e2e.py", line 143, in main
+    binaries = sandbox.compile_targets(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: compile_targets() missing 1 required positional argument: 'registry_cache'

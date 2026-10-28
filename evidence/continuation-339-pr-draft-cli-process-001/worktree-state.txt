@@ -1,0 +1,4 @@
+HEAD f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+branch local/WEBHOOK-005-canonical-links
+pre-receipt git status: 19 tracked entries modified; 1726 untracked entries
+The checkout was already heavily modified. No reset, clean, commit, push, or remote mutation was made.

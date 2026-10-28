@@ -1,0 +1,7 @@
+{
+  "cleanup_failure": null,
+  "error_message": "label webhook did not reconcile to the current empty Forgejo PR label set",
+  "error_type": "RuntimeError",
+  "stage": "reconcile_issue_and_pull_request_events",
+  "verdict": "failed"
+}

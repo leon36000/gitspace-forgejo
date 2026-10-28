@@ -1,0 +1,6 @@
+python3 scripts/run_forgejo_preflight_cli_e2e.py --scenario actual_preflight_cli_refuses_draft_pull_request_without_writes
+cargo test --offline --locked --test forgejo_merge_preflight -- --test-threads=1
+cargo fmt --all -- --check
+git diff --check
+python3 -m py_compile scripts/run_forgejo_preflight_cli_e2e.py
+python3 scripts/verify_cargo_license_state.py

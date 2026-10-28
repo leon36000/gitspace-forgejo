@@ -1,0 +1,33 @@
+[format] exit_code=0
+$ cargo fmt --all -- --check
+
+[whitespace] exit_code=0
+$ git diff --check
+
+[runner_pycompile] exit_code=0
+$ python3 -m py_compile scripts/run_forgejo_mission_delivery_process_e2e.py
+
+[license_policy] exit_code=0
+$ python3 scripts/verify_cargo_license_state.py
+{
+  "license": null,
+  "license_decision": "no_license_selected",
+  "license_file": null,
+  "package": "agent-forge-core",
+  "publish": [],
+  "redistribution_rights": "not_assessed",
+  "spdx_package_license_declared": "NOASSERTION",
+  "status": "metadata_policy_verified"
+}
+
+[license_policy_tests] exit_code=0
+$ python3 scripts/test_cargo_license_state.py
+............
+----------------------------------------------------------------------
+Ran 12 tests in 0.000s
+
+OK
+
+[cargo_metadata] exit_code=0
+$ cargo metadata --offline --locked --no-deps --format-version 1
+{"license": null, "license_file": null, "publish": []}

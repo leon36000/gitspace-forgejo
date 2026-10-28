@@ -1,0 +1,7 @@
+{
+  "cleanup_failure": null,
+  "error_message": "Forgejo task and receiver event counts do not match",
+  "error_type": "ValueError",
+  "stage": "read_forgejo_delivery_tasks",
+  "verdict": "failed"
+}
