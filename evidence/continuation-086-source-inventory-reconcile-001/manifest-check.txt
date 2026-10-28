@@ -1,0 +1,2 @@
+PASS: local SHA256SUMS verifies 10 run artifacts
+PASS: no self-report log is present in this evidence directory

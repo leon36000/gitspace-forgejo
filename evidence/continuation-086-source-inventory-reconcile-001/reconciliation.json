@@ -1,0 +1,26 @@
+{
+  "cargo_license_state": {
+    "license": null,
+    "license_decision": "no_license_selected",
+    "license_file": null,
+    "package": "agent-forge-core",
+    "publish": [],
+    "redistribution_rights": "not_assessed",
+    "spdx_package_license_declared": "NOASSERTION",
+    "status": "verified"
+  },
+  "cargo_lock_matches_dependency_inventory": true,
+  "cargo_lock_sha256": "bf599559dd11ff21ecc4754aa8a693966b4a9ca401153d7d7caa1f18d8995fcc",
+  "cargo_policy_tests": "9 passed",
+  "date": "2026-10-26",
+  "forgejo_v17_tag": "0d791421f85ca13a63b665053d81ea765fbbc571",
+  "gitspace_main_ref": "dcde1142cf76996a6ba0074cb7eab9d3c870c561",
+  "official_forgejo_release_page": "https://forgejo.org/releases/",
+  "official_gitspace_repository": "https://github.com/leon36000/GitSpace",
+  "scope_limits": [
+    "GitSpace ref was queried, but its full tree was not re-cloned or re-audited in this recheck.",
+    "Forgejo reference confirms the tag only; full source license review remains incomplete and the separate POC scratch remains dirty.",
+    "This recheck does not establish a legal compatibility or redistribution decision.",
+    "Previously missing archives were not searched again in this lot."
+  ]
+}

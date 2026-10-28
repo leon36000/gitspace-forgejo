@@ -1,0 +1,2 @@
+PASS: local SHA256SUMS verifies 14 run artifacts
+PASS: manifest-update.log is excluded to avoid self-reference and checked by its SHA-256 sidecar

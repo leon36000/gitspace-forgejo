@@ -1,0 +1,4 @@
+all-target test executables: 34
+passed: 597
+failed: 0
+ignored: 93

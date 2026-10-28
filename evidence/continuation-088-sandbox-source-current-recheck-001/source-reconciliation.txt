@@ -1,0 +1,45 @@
+Preserved live run: evidence/forgejo-agent-stdio-mcp-merge-001
+Preserved standalone live route run: evidence/forgejo-agent-egress-stdio-mcp-007
+The SHA256SUMS files in both directories verified successfully at this review.
+
+For forgejo-agent-stdio-mcp-merge-001, all 11 product source snapshots match the
+hashes in that run's provenance.json. Current workspace source still matches 4
+of those 11 hashes exactly. Seven current files differ from the captured run:
+  scripts/mission_012_egress_barrier_mcp_host.py
+  scripts/mission_012_sandboxed_test_adapter.py
+  scripts/mission_012_test_agent_adapter.py
+  scripts/run_forgejo_live_pr_merge_e2e.py
+  scripts/run_mission_012_stdio_mcp_egress_gate_e2e.py
+  tests/test_mission_012_sandboxed_test_adapter.py
+  tests/test_mission_012_test_agent_adapter.py
+
+The inspected diffs include fixture/source generalization, a broader baseline
+failure assertion, and reporting the exact route probe specifications. The
+current Bubblewrap command still uses --unshare-net, --unshare-pid, --clearenv,
+and mounts the adapter read-only. The current adapter unit tests below exercise
+the sandbox process and MCP fixture. This is a source-drift review, not a fresh
+Forgejo live merge run; the captured live result applies to its exact archived
+source snapshot, not automatically to current HEAD.
+
+The preserved live merge JSON records: separate network/PID namespaces;
+API, Web, and git-receive-pack probes blocked; no inherited gate credential or
+persisted credential file; only FDs 0, 1, and 2 in the child; refusal to read the
+parent memfd through /proc; and a successful trusted branch read and merge
+(HTTP 200) while the MCP child remained at its barrier. The verifier then read
+the merged source and passed 9 acceptance tests. It used local-test-adapter,
+not an LLM or AgentOS.
+
+Current-source verification commands:
+  PYTHONDONTWRITEBYTECODE=1 python3 -m unittest tests.test_mission_012_sandboxed_test_adapter -v
+  PYTHONDONTWRITEBYTECODE=1 python3 -m unittest tests.test_forgejo_agent_egress_live_e2e -v
+
+The first command passed 7/7, including a real Bubblewrap stdio-MCP child,
+network/PID isolation, credential-file refusal, and API/Web/receive-pack route
+specification checks. The second passed 9/9 validator tests. These current-source
+tests use a local synthetic listener/fixture; they do not rerun a live Forgejo
+gate. See the test logs in this directory.
+
+Scope remains one Linux host with Bubblewrap and a shared host UID. The run does
+not establish multi-tenant isolation, kernel-escape resistance, all possible
+egress paths, exclusion of external Forgejo writers, or the behavior of an
+authorized LLM/AgentOS runtime. The direct receive-pack probe was unauthenticated.

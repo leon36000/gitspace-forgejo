@@ -1,0 +1,15 @@
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:3456:
+     assert!(requests[0].starts_with(&format!(
+         "GET /api/v1/repos/{OWNER}/{REPOSITORY}/actions/runs/7001 HTTP/1.1\r\n"
+     )));
+-    assert!(!requests[0]
+-        .lines()
+-        .any(|line| line.to_ascii_lowercase().starts_with("authorization:")));
++    assert!(
++        !requests[0]
++            .lines()
++            .any(|line| line.to_ascii_lowercase().starts_with("authorization:"))
++    );
+ 
+     let value: Value = serde_json::from_slice(&output.stdout)
+         .expect("foreign workflow-run URL returns structured JSON");

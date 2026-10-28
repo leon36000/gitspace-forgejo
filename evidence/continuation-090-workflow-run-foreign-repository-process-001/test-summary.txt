@@ -1,0 +1,11 @@
+Focused isolated process scenario: PASS, 1 passed, 0 failed, 102 filtered.
+Command: python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_refuses_workflow_run_foreign_api_repository
+
+Offline locked Rust suite: PASS, 34 test executables, 597 passed, 0 failed, 95 ignored.
+Command: cargo test --offline --locked --all-targets -- --test-threads=1 --quiet
+
+cargo fmt --all -- --check: PASS
+git diff --check: PASS
+python3 -m py_compile scripts/run_webhook_reconcile_cli_e2e.py: PASS
+Cargo license policy tests: 9 passed, 0 failed.
+Cargo license state verifier: PASS; license=null, license_file=null, publish=[], no_license_selected, redistribution_rights=not_assessed, NOASSERTION.

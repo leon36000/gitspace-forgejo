@@ -1,0 +1,91 @@
+$ /usr/bin/bwrap --die-with-parent --unshare-net --unshare-pid --new-session --ro-bind /usr /usr --dir /etc --ro-bind /etc/alternatives /etc/alternatives --symlink usr/lib /lib --symlink usr/bin /bin --size 67108864 --tmpfs /home --dir /workspace --ro-bind /tmp/webhook-reconcile-cli-e2e-9ddvfd0i/source /workspace --dir /toolchain --ro-bind /home/pc6/.rustup/toolchains/1.95.0-aarch64-unknown-linux-gnu /toolchain --dev /dev --proc /proc --size 134217728 --tmpfs /tmp --dir /tmp/cargo-home --size 1073741824 --tmpfs /build --dir /build/target --size 67108864 --tmpfs /workspace/.runtime --chmod 0700 /workspace/.runtime --clearenv --setenv PATH /toolchain/bin:/usr/bin:/bin --setenv HOME /tmp --setenv TMPDIR /tmp --setenv CARGO_HOME /tmp/cargo-home --setenv CARGO_TARGET_DIR /build/target --setenv CARGO_NET_OFFLINE true --setenv CARGO_BUILD_JOBS 2 --setenv RUSTC /toolchain/bin/rustc --setenv RUST_TEST_THREADS 1 --setenv MISSION_E2E_RUST_SYSROOT /toolchain --setenv MISSION_E2E_RUST_BIN_DIR /toolchain/bin --setenv MISSION_E2E_MASKED_HOME /home/pc6 --chdir /workspace --dir /bootstrap --ro-bind /tmp/webhook-reconcile-cli-e2e-9ddvfd0i/cargo-registry /bootstrap/registry --size 134217728 --tmpfs /artifacts /usr/bin/prlimit --cpu=240 --as=4294967296 --nproc=384 --nofile=128 --fsize=67108864 -- /usr/bin/python3 -c 'import glob, json, os, shutil, subprocess, sys
+tests = json.loads(sys.argv[1])
+bins = json.loads(sys.argv[2])
+artifacts = json.loads(sys.argv[3])
+os.makedirs("/tmp/cargo-home/registry", exist_ok=True)
+shutil.copytree("/bootstrap/registry/index", "/tmp/cargo-home/registry/index")
+shutil.copytree("/bootstrap/registry/cache", "/tmp/cargo-home/registry/cache")
+def run_cargo(name):
+    process = subprocess.Popen([
+        "/toolchain/bin/cargo", "test", "--offline", "--locked",
+        "--test", name, "--no-run"
+    ], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    output = bytearray()
+    while chunk := process.stdout.read(65536):
+        output.extend(chunk)
+        if len(output) > 65536:
+            del output[:-65536]
+    status = process.wait()
+    if output:
+        sys.stderr.buffer.write(output)
+        sys.stderr.buffer.flush()
+    if status:
+        raise SystemExit(status)
+for name in tests:
+    run_cargo(name)
+total = 0
+for name in tests:
+    paths = [
+        path for path in glob.glob(f"/build/target/debug/deps/{name}-*")
+        if os.path.isfile(path) and os.access(path, os.X_OK)
+    ]
+    if len(paths) != 1:
+        raise SystemExit(f"expected one test executable for {name}, got {paths!r}")
+    size = os.path.getsize(paths[0])
+    if size > 67108864:
+        raise SystemExit(f"test executable exceeds per-file artifact limit: {name}")
+    shutil.copyfile(paths[0], f"/artifacts/{name}")
+    total += size
+for name in bins:
+    path = f"/build/target/debug/{name}"
+    if not os.path.isfile(path) or not os.access(path, os.X_OK):
+        raise SystemExit(f"Cargo binary target missing or not executable: {name}")
+    size = os.path.getsize(path)
+    if size > 67108864:
+        raise SystemExit(f"binary target exceeds per-file artifact limit: {name}")
+    shutil.copyfile(path, f"/artifacts/{name}")
+    total += size
+if total > 134217728:
+    raise SystemExit("total exported test and binary artifacts exceed 128 MiB")
+for name in artifacts:
+    path = f"/artifacts/{name}"
+    size = os.path.getsize(path)
+    sys.stdout.buffer.write(f"ARTIFACT {name} {size}\n".encode())
+    with open(path, "rb") as source:
+        shutil.copyfileobj(source, sys.stdout.buffer)
+    sys.stdout.buffer.flush()
+' '["webhook_receiver_process_e2e"]' '["forgejo-mission-local", "forgejo-reconcile-local", "forgejo-webhook-local", "mission-012-mcp-host", "mission-012-verify-local"]' '["webhook_receiver_process_e2e", "forgejo-mission-local", "forgejo-reconcile-local", "forgejo-webhook-local", "mission-012-mcp-host", "mission-012-verify-local"]'
+   Compiling version_check v0.9.5
+   Compiling proc-macro2 v1.0.107
+   Compiling typenum v1.20.0
+   Compiling generic-array v0.14.7
+   Compiling quote v1.0.47
+   Compiling unicode-ident v1.0.26
+   Compiling serde_core v1.0.228
+   Compiling libc v0.2.190
+   Compiling block-buffer v0.10.4
+   Compiling crypto-common v0.1.7
+   Compiling subtle v2.6.1
+   Compiling zmij v1.0.23
+   Compiling digest v0.10.7
+   Compiling syn v2.0.117
+   Compiling serde_json v1.0.150
+   Compiling serde v1.0.228
+   Compiling serde_derive v1.0.228
+   Compiling cpufeatures v0.2.17
+   Compiling cfg-if v1.0.5
+   Compiling itoa v1.0.18
+   Compiling memchr v2.8.3
+   Compiling sha2 v0.10.9
+   Compiling hmac v0.12.1
+   Compiling hex v0.4.3
+   Compiling agent-forge-core v0.1.0 (/workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 11.63s
+  Executable tests/webhook_receiver_process_e2e.rs (/build/target/debug/deps/webhook_receiver_process_e2e-6caa738f5453f442)
+$ /usr/bin/bwrap --die-with-parent --unshare-net --unshare-pid --new-session --ro-bind /usr /usr --dir /etc --ro-bind /etc/alternatives /etc/alternatives --symlink usr/lib /lib --symlink usr/bin /bin --size 67108864 --tmpfs /home --dir /workspace --ro-bind /tmp/webhook-reconcile-cli-e2e-9ddvfd0i/source /workspace --dir /toolchain --ro-bind /home/pc6/.rustup/toolchains/1.95.0-aarch64-unknown-linux-gnu /toolchain --dev /dev --proc /proc --size 134217728 --tmpfs /tmp --dir /tmp/cargo-home --size 1073741824 --tmpfs /build --dir /build/target --size 67108864 --tmpfs /workspace/.runtime --chmod 0700 /workspace/.runtime --clearenv --setenv PATH /toolchain/bin:/usr/bin:/bin --setenv HOME /tmp --setenv TMPDIR /tmp --setenv CARGO_HOME /tmp/cargo-home --setenv CARGO_TARGET_DIR /build/target --setenv CARGO_NET_OFFLINE true --setenv CARGO_BUILD_JOBS 2 --setenv RUSTC /toolchain/bin/rustc --setenv RUST_TEST_THREADS 1 --setenv MISSION_E2E_RUST_SYSROOT /toolchain --setenv MISSION_E2E_RUST_BIN_DIR /toolchain/bin --setenv MISSION_E2E_MASKED_HOME /home/pc6 --chdir /workspace --dir /build/target --dir /build/target/debug --ro-bind /tmp/webhook-reconcile-cli-e2e-9ddvfd0i/forgejo-mission-local /build/target/debug/forgejo-mission-local --ro-bind /tmp/webhook-reconcile-cli-e2e-9ddvfd0i/forgejo-reconcile-local /build/target/debug/forgejo-reconcile-local --ro-bind /tmp/webhook-reconcile-cli-e2e-9ddvfd0i/forgejo-webhook-local /build/target/debug/forgejo-webhook-local --ro-bind /tmp/webhook-reconcile-cli-e2e-9ddvfd0i/mission-012-mcp-host /build/target/debug/mission-012-mcp-host --ro-bind /tmp/webhook-reconcile-cli-e2e-9ddvfd0i/mission-012-verify-local /build/target/debug/mission-012-verify-local --ro-bind /tmp/webhook-reconcile-cli-e2e-9ddvfd0i/webhook_receiver_process_e2e /test-binary /usr/bin/prlimit --cpu=240 --as=4294967296 --nproc=384 --nofile=128 --fsize=67108864 -- /test-binary actual_reconcile_cli_process_refuses_workflow_run_null_api_commit_sha --exact --ignored --nocapture
+
+running 1 test
+test actual_reconcile_cli_process_refuses_workflow_run_null_api_commit_sha ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 103 filtered out; finished in 0.07s
+
