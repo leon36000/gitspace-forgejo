@@ -1,0 +1,8 @@
+python3 --version: Python 3.12.3
+Forgejo binary version: forgejo version 17.0.0+gitea-1.22.0 (release name 17.0.0) built with GNU Make 4.4.1, go1.26.9 : bindata, timetzdata, sqlite, sqlite_unlock_notify
+gpg --version: gpg (GnuPG) 2.4.4
+Bubblewrap version: bubblewrap 0.9.0
+systemd-run version: systemd 255 (255.4-1ubuntu8.18)
+Pinned Cargo version: cargo 1.95.0 (f2d3ce0bd 2026-03-21)
+Pinned rustc version: rustc 1.95.0 (59807616e 2026-04-14)
+Kernel / architecture: Linux gx10-e526 7.0.0-1019-nvidia #19~24.04.2-Ubuntu SMP PREEMPT_DYNAMIC Sun Sep  6 18:35:11 UTC 2 aarch64 aarch64 aarch64 GNU/Linux

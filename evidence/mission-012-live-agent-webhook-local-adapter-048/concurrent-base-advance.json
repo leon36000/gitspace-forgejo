@@ -1,0 +1,21 @@
+{
+  "base_before": "e908b55d8ca15fec1fe88eb4cb3a329ba7a1fbc3",
+  "changed_path": "src/lib.rs",
+  "competing_head": "337ada84db64e1fbcaa3b196c44bde6a2d3e6f99",
+  "competing_pull_request": 3,
+  "git_merge_conflict_paths": [
+    "src/lib.rs"
+  ],
+  "git_merge_tree_exit_code": 1,
+  "git_merge_tree_stdout_sha256": "70ff2c7665103539ab9d1711ce24e992e66710c1afbc98d6b0dbef85e726f9c3",
+  "main_after": "33832bb8692e0ee7cbe22b140c49a3ec1690560e",
+  "main_source_sha256": "15435b094b716996fa9928d0f20ca4362f9b4fad219bc1dd3c922d0c27ade37c",
+  "merge_commit_sha": "33832bb8692e0ee7cbe22b140c49a3ec1690560e",
+  "merge_http_status": 200,
+  "merged": true,
+  "readme_marker_sha256": null,
+  "review_id": 2,
+  "reviewer_login": "verifier-bot",
+  "same_file_conflict": true,
+  "schema_version": 1
+}

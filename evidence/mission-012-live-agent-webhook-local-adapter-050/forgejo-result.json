@@ -1,0 +1,169 @@
+{
+  "base_commit": "8822d3d360f1aa4bae39c9a4c319eac8f410577d",
+  "candidate_commit": "1cbe6a88152af40bf4ecdf744d3a914330a290d0",
+  "candidate_sha256": "173304ad7d32aabc1e8e1ee41eabda3398a8690798e68f906bcebc73cbcd6d15",
+  "changed_paths": [
+    "src/lib.rs"
+  ],
+  "competing_merge_http_status": 200,
+  "competing_pull_request": 3,
+  "competing_pull_request_merged": true,
+  "concurrent_base_advance": {
+    "base_before": "8822d3d360f1aa4bae39c9a4c319eac8f410577d",
+    "changed_path": "src/lib.rs",
+    "competing_head": "75b2d45b5ecf87dabcc464a5ea2b3785acc17d19",
+    "competing_pull_request": 3,
+    "git_merge_conflict_paths": [
+      "src/lib.rs"
+    ],
+    "git_merge_tree_exit_code": 1,
+    "git_merge_tree_stdout_sha256": "9069fd8d4f7f4498ad2949e27b5be0efc777eaad3c8b34c702bd61b294ca1d96",
+    "main_after": "4ef215c2cf349698dc77bf448d9cb3d904e5d095",
+    "main_source_sha256": "15435b094b716996fa9928d0f20ca4362f9b4fad219bc1dd3c922d0c27ade37c",
+    "merge_commit_sha": "4ef215c2cf349698dc77bf448d9cb3d904e5d095",
+    "merge_http_status": 200,
+    "merged": true,
+    "readme_marker_sha256": null,
+    "review_id": 2,
+    "reviewer_login": "verifier-bot",
+    "same_file_conflict": true,
+    "schema_version": 1
+  },
+  "issue_state": "open",
+  "main_head_after_advance": "4ef215c2cf349698dc77bf448d9cb3d904e5d095",
+  "main_head_before_advance": "8822d3d360f1aa4bae39c9a4c319eac8f410577d",
+  "main_source_sha256_after_refusal": "15435b094b716996fa9928d0f20ca4362f9b4fad219bc1dd3c922d0c27ade37c",
+  "merge_attempted": false,
+  "merge_authority": "forgejo-reconcile-local-rust",
+  "merge_authorized": false,
+  "merge_gate_binary_sha256": "c966aa48f0e2e373eb5b0f38e21a3f8dd131ac22e5cfaa6711651e9125e8cfad",
+  "merge_gate_error_code": "invalid_review_base_binding",
+  "merge_gate_policy_sha256": "be5510865d791ceab8de3b2d44fb0dba4056cd3979218094b083ac33a9fce2c0",
+  "merge_gate_verdict": "rejected",
+  "policy_sha256": "e23907b5bd6b2c0f342c88ddcfa9f9a9be98065adcd24f9f7299dc796b5739eb",
+  "pre_review_merge_refusal_http": 405,
+  "pull_request": 2,
+  "requirement_sha256": "3a3c444075c93a3bcfb2bec17d1a2e74ec0051effc2994e6b02ac095eb0dd431",
+  "review_id": 1,
+  "reviewer": "verifier-bot",
+  "reviewer_merge_refusal_http": 405,
+  "same_file_conflict": true,
+  "schema_version": 1,
+  "status": "refused_after_concurrent_code_conflict_before_merge",
+  "target_merge_commit": null,
+  "target_pull_request_base_sha_after_advance": "4ef215c2cf349698dc77bf448d9cb3d904e5d095",
+  "target_pull_request_merged": false,
+  "target_pull_request_state": "open",
+  "verifier": "pass",
+  "verifier_cpu_accounting": {
+    "charged_cpu_measurement": "conservative upper bound from wall time multiplied by enforced CPUQuota, plus host margin, capped at reservation",
+    "final_ledger": {
+      "charged_cpu_ms": 12694,
+      "mission_cpu_budget_ms": 1200000,
+      "mission_id": "mission-v1-94c26001d4370e63d3637fd5c06ef13f0496424a39a74bf498b7512b7d2b37b5",
+      "policy_sha256": "f73785cb8eade278f2c14677c633ee34c391f2a7d7ff55e9e3e02a04b9307a50",
+      "remaining_cpu_ms": 1187306,
+      "reservations": [
+        {
+          "charged_cpu_ms": 2522,
+          "reservation_id": "verifier-27280f24a9dcd770d3831b7372fb110bd05718f0be53cfba5fb4e435fcb86a0b",
+          "reserved_cpu_ms": 240000,
+          "resolved": true
+        },
+        {
+          "charged_cpu_ms": 2562,
+          "reservation_id": "verifier-b5252c8f3fb75e99a000b952763f570df907e2ee7d296654c370b41b803c0d2b",
+          "reserved_cpu_ms": 240000,
+          "resolved": true
+        },
+        {
+          "charged_cpu_ms": 2484,
+          "reservation_id": "pr-base-red-a5c84925ca8957c847b3d4f5ed501587",
+          "reserved_cpu_ms": 240000,
+          "resolved": true
+        },
+        {
+          "charged_cpu_ms": 2522,
+          "reservation_id": "pr-candidate-green-5ba8ea656f9974afb725f27c54b5dc6b",
+          "reserved_cpu_ms": 240000,
+          "resolved": true
+        },
+        {
+          "charged_cpu_ms": 2604,
+          "reservation_id": "pr-premerge-green-bff1320cb618a2c5f3dddf4bd862d668",
+          "reserved_cpu_ms": 240000,
+          "resolved": true
+        }
+      ]
+    },
+    "mission_cpu_budget_ms": 1200000,
+    "policy_sha256": "f73785cb8eade278f2c14677c633ee34c391f2a7d7ff55e9e3e02a04b9307a50",
+    "source": "mission execution journal; reservations and resolutions produced by the admission-provenance MCP host binary",
+    "steps": [
+      {
+        "accounting_elapsed_ms": 242,
+        "base_commit": "8822d3d360f1aa4bae39c9a4c319eac8f410577d",
+        "candidate_commit": "1cbe6a88152af40bf4ecdf744d3a914330a290d0",
+        "charged_cpu_upper_bound_ms": 2484,
+        "exit_code": 101,
+        "expected_failure": {
+          "actual": "-2",
+          "assertion": "assertion `left == right` failed",
+          "expected": "10",
+          "summary": "1 passed; 1 failed",
+          "test_name": "values_outside_the_range_clamp_to_the_nearest_boundary"
+        },
+        "mission_id": "mission-v1-94c26001d4370e63d3637fd5c06ef13f0496424a39a74bf498b7512b7d2b37b5",
+        "output_b64": "CnJ1bm5pbmcgMCB0ZXN0cwoKdGVzdCByZXN1bHQ6IG9rLiAwIHBhc3NlZDsgMCBmYWlsZWQ7IDAgaWdub3JlZDsgMCBtZWFzdXJlZDsgMCBmaWx0ZXJlZCBvdXQ7IGZpbmlzaGVkIGluIDAuMDBzCgoKcnVubmluZyAyIHRlc3RzCnRlc3QgdmFsdWVzX2luc2lkZV90aGVfcmFuZ2VfYXJlX3VuY2hhbmdlZCAuLi4gb2sKdGVzdCB2YWx1ZXNfb3V0c2lkZV90aGVfcmFuZ2VfY2xhbXBfdG9fdGhlX25lYXJlc3RfYm91bmRhcnkgLi4uIEZBSUxFRAoKZmFpbHVyZXM6CgotLS0tIHZhbHVlc19vdXRzaWRlX3RoZV9yYW5nZV9jbGFtcF90b190aGVfbmVhcmVzdF9ib3VuZGFyeSBzdGRvdXQgLS0tLQoKdGhyZWFkICd2YWx1ZXNfb3V0c2lkZV90aGVfcmFuZ2VfY2xhbXBfdG9fdGhlX25lYXJlc3RfYm91bmRhcnknICg2OCkgcGFuaWNrZWQgYXQgdGVzdHMvYWNjZXB0YW5jZS5yczo2OjU6CmFzc2VydGlvbiBgbGVmdCA9PSByaWdodGAgZmFpbGVkCiAgbGVmdDogLTIKIHJpZ2h0OiAxMApub3RlOiBydW4gd2l0aCBgUlVTVF9CQUNLVFJBQ0U9MWAgZW52aXJvbm1lbnQgdmFyaWFibGUgdG8gZGlzcGxheSBhIGJhY2t0cmFjZQoKCmZhaWx1cmVzOgogICAgdmFsdWVzX291dHNpZGVfdGhlX3JhbmdlX2NsYW1wX3RvX3RoZV9uZWFyZXN0X2JvdW5kYXJ5Cgp0ZXN0IHJlc3VsdDogRkFJTEVELiAxIHBhc3NlZDsgMSBmYWlsZWQ7IDAgaWdub3JlZDsgMCBtZWFzdXJlZDsgMCBmaWx0ZXJlZCBvdXQ7IGZpbmlzaGVkIGluIDAuMDBzCgoKICAgQ29tcGlsaW5nIG1pc3Npb24wMTItY2xhbXAgdjAuMS4wICgvY2FuZGlkYXRlKQogICAgRmluaXNoZWQgYHRlc3RgIHByb2ZpbGUgW3Vub3B0aW1pemVkICsgZGVidWdpbmZvXSB0YXJnZXQocykgaW4gMC4yMHMKICAgICBSdW5uaW5nIHVuaXR0ZXN0cyBzcmMvbGliLnJzICgvdGFyZ2V0L2RlYnVnL2RlcHMvbWlzc2lvbjAxMl9jbGFtcC0yYWQ2MDYxZTE1ZjljZWJiKQogICAgIFJ1bm5pbmcgdGVzdHMvYWNjZXB0YW5jZS5ycyAoL3RhcmdldC9kZWJ1Zy9kZXBzL2FjY2VwdGFuY2UtMjZkOWRlNWQzYThmNTBlZikKZXJyb3I6IHRlc3QgZmFpbGVkLCB0byByZXJ1biBwYXNzIGAtLXRlc3QgYWNjZXB0YW5jZWAK",
+        "output_sha256": "40e4a838ff81de34ae9592135106b66d0f7a9dafec9d6bde77e2d1798abcf1e9",
+        "output_truncated": false,
+        "policy_sha256": "f73785cb8eade278f2c14677c633ee34c391f2a7d7ff55e9e3e02a04b9307a50",
+        "reservation_id": "pr-base-red-a5c84925ca8957c847b3d4f5ed501587",
+        "reserved_cpu_ms": 240000,
+        "sandbox_elapsed_ms": 241,
+        "stage": "base-red",
+        "tested_commit": "8822d3d360f1aa4bae39c9a4c319eac8f410577d",
+        "timed_out": false
+      },
+      {
+        "accounting_elapsed_ms": 261,
+        "base_commit": "8822d3d360f1aa4bae39c9a4c319eac8f410577d",
+        "candidate_commit": "1cbe6a88152af40bf4ecdf744d3a914330a290d0",
+        "charged_cpu_upper_bound_ms": 2522,
+        "exit_code": 0,
+        "expected_failure": null,
+        "mission_id": "mission-v1-94c26001d4370e63d3637fd5c06ef13f0496424a39a74bf498b7512b7d2b37b5",
+        "output_b64": "CnJ1bm5pbmcgMCB0ZXN0cwoKdGVzdCByZXN1bHQ6IG9rLiAwIHBhc3NlZDsgMCBmYWlsZWQ7IDAgaWdub3JlZDsgMCBtZWFzdXJlZDsgMCBmaWx0ZXJlZCBvdXQ7IGZpbmlzaGVkIGluIDAuMDBzCgoKcnVubmluZyAyIHRlc3RzCnRlc3QgdmFsdWVzX2luc2lkZV90aGVfcmFuZ2VfYXJlX3VuY2hhbmdlZCAuLi4gb2sKdGVzdCB2YWx1ZXNfb3V0c2lkZV90aGVfcmFuZ2VfY2xhbXBfdG9fdGhlX25lYXJlc3RfYm91bmRhcnkgLi4uIG9rCgp0ZXN0IHJlc3VsdDogb2suIDIgcGFzc2VkOyAwIGZhaWxlZDsgMCBpZ25vcmVkOyAwIG1lYXN1cmVkOyAwIGZpbHRlcmVkIG91dDsgZmluaXNoZWQgaW4gMC4wMHMKCgpydW5uaW5nIDAgdGVzdHMKCnRlc3QgcmVzdWx0OiBvay4gMCBwYXNzZWQ7IDAgZmFpbGVkOyAwIGlnbm9yZWQ7IDAgbWVhc3VyZWQ7IDAgZmlsdGVyZWQgb3V0OyBmaW5pc2hlZCBpbiAwLjAwcwoKCiAgIENvbXBpbGluZyBtaXNzaW9uMDEyLWNsYW1wIHYwLjEuMCAoL2NhbmRpZGF0ZSkKICAgIEZpbmlzaGVkIGB0ZXN0YCBwcm9maWxlIFt1bm9wdGltaXplZCArIGRlYnVnaW5mb10gdGFyZ2V0KHMpIGluIDAuMjFzCiAgICAgUnVubmluZyB1bml0dGVzdHMgc3JjL2xpYi5ycyAoL3RhcmdldC9kZWJ1Zy9kZXBzL21pc3Npb24wMTJfY2xhbXAtMmFkNjA2MWUxNWY5Y2ViYikKICAgICBSdW5uaW5nIHRlc3RzL2FjY2VwdGFuY2UucnMgKC90YXJnZXQvZGVidWcvZGVwcy9hY2NlcHRhbmNlLTI2ZDlkZTVkM2E4ZjUwZWYpCiAgIERvYy10ZXN0cyBtaXNzaW9uMDEyX2NsYW1wCg==",
+        "output_sha256": "a5705fb3a6123ff466be24aca4934b6936f9558b086baf0499c6571f8a74b645",
+        "output_truncated": false,
+        "policy_sha256": "f73785cb8eade278f2c14677c633ee34c391f2a7d7ff55e9e3e02a04b9307a50",
+        "reservation_id": "pr-candidate-green-5ba8ea656f9974afb725f27c54b5dc6b",
+        "reserved_cpu_ms": 240000,
+        "sandbox_elapsed_ms": 261,
+        "stage": "candidate-green",
+        "tested_commit": "1cbe6a88152af40bf4ecdf744d3a914330a290d0",
+        "timed_out": false
+      },
+      {
+        "accounting_elapsed_ms": 302,
+        "base_commit": "8822d3d360f1aa4bae39c9a4c319eac8f410577d",
+        "candidate_commit": "1cbe6a88152af40bf4ecdf744d3a914330a290d0",
+        "charged_cpu_upper_bound_ms": 2604,
+        "exit_code": 0,
+        "expected_failure": null,
+        "mission_id": "mission-v1-94c26001d4370e63d3637fd5c06ef13f0496424a39a74bf498b7512b7d2b37b5",
+        "output_b64": "CnJ1bm5pbmcgMCB0ZXN0cwoKdGVzdCByZXN1bHQ6IG9rLiAwIHBhc3NlZDsgMCBmYWlsZWQ7IDAgaWdub3JlZDsgMCBtZWFzdXJlZDsgMCBmaWx0ZXJlZCBvdXQ7IGZpbmlzaGVkIGluIDAuMDBzCgoKcnVubmluZyAyIHRlc3RzCnRlc3QgdmFsdWVzX291dHNpZGVfdGhlX3JhbmdlX2NsYW1wX3RvX3RoZV9uZWFyZXN0X2JvdW5kYXJ5IC4uLiBvawp0ZXN0IHZhbHVlc19pbnNpZGVfdGhlX3JhbmdlX2FyZV91bmNoYW5nZWQgLi4uIG9rCgp0ZXN0IHJlc3VsdDogb2suIDIgcGFzc2VkOyAwIGZhaWxlZDsgMCBpZ25vcmVkOyAwIG1lYXN1cmVkOyAwIGZpbHRlcmVkIG91dDsgZmluaXNoZWQgaW4gMC4wMHMKCgpydW5uaW5nIDAgdGVzdHMKCnRlc3QgcmVzdWx0OiBvay4gMCBwYXNzZWQ7IDAgZmFpbGVkOyAwIGlnbm9yZWQ7IDAgbWVhc3VyZWQ7IDAgZmlsdGVyZWQgb3V0OyBmaW5pc2hlZCBpbiAwLjAwcwoKCiAgIENvbXBpbGluZyBtaXNzaW9uMDEyLWNsYW1wIHYwLjEuMCAoL2NhbmRpZGF0ZSkKICAgIEZpbmlzaGVkIGB0ZXN0YCBwcm9maWxlIFt1bm9wdGltaXplZCArIGRlYnVnaW5mb10gdGFyZ2V0KHMpIGluIDAuMjJzCiAgICAgUnVubmluZyB1bml0dGVzdHMgc3JjL2xpYi5ycyAoL3RhcmdldC9kZWJ1Zy9kZXBzL21pc3Npb24wMTJfY2xhbXAtMmFkNjA2MWUxNWY5Y2ViYikKICAgICBSdW5uaW5nIHRlc3RzL2FjY2VwdGFuY2UucnMgKC90YXJnZXQvZGVidWcvZGVwcy9hY2NlcHRhbmNlLTI2ZDlkZTVkM2E4ZjUwZWYpCiAgIERvYy10ZXN0cyBtaXNzaW9uMDEyX2NsYW1wCg==",
+        "output_sha256": "4db3cf2f2032e8bdd993cbdbb8a04c2be06b51d09399bf63878c87d727669a8f",
+        "output_truncated": false,
+        "policy_sha256": "f73785cb8eade278f2c14677c633ee34c391f2a7d7ff55e9e3e02a04b9307a50",
+        "reservation_id": "pr-premerge-green-bff1320cb618a2c5f3dddf4bd862d668",
+        "reserved_cpu_ms": 240000,
+        "sandbox_elapsed_ms": 302,
+        "stage": "premerge-green",
+        "tested_commit": "1cbe6a88152af40bf4ecdf744d3a914330a290d0",
+        "timed_out": false
+      }
+    ],
+    "verifier_binary_sha256": "2f504a3adf917198d1a473c60dc35efcf90265736ff6639ae0cb18fefb2af7cb"
+  }
+}

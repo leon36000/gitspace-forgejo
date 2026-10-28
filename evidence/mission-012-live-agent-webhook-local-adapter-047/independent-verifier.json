@@ -1,0 +1,141 @@
+{
+  "acceptance_sha256": "5d4727542ea32f61aa4500754556fcfd1f39b59b4131ede257cb736fab231dc2",
+  "base": {
+    "exit_code": 101,
+    "expected_failure": true,
+    "output_sha256": "8fa26459b08ab8addf319bde28838abe9c5ca24dc6941ed3f65d017cfab65c5c"
+  },
+  "base_commit": "5b9cb2c24ae7075677df51eb06353c3651191447",
+  "candidate": {
+    "acceptance_pass": true,
+    "exit_code": 0,
+    "output_sha256": "7744d3c730593e04c264d62fc35dc18db3b6690604c80374e4a4b07dd8990b56"
+  },
+  "candidate_commit": "3d668bfd7042750c8c0cacbbe80338914fdc6247",
+  "candidate_source_sha256": "173304ad7d32aabc1e8e1ee41eabda3398a8690798e68f906bcebc73cbcd6d15",
+  "changed_paths": [
+    "src/lib.rs"
+  ],
+  "cpu_accounting": {
+    "charged_cpu_measurement": "conservative upper bound from wall time multiplied by enforced CPUQuota, plus host margin, capped at reservation",
+    "final_ledger": {
+      "charged_cpu_ms": 18250,
+      "mission_cpu_budget_ms": 1200000,
+      "mission_id": "mission-v1-94c26001d4370e63d3637fd5c06ef13f0496424a39a74bf498b7512b7d2b37b5",
+      "policy_sha256": "f73785cb8eade278f2c14677c633ee34c391f2a7d7ff55e9e3e02a04b9307a50",
+      "remaining_cpu_ms": 1181750,
+      "reservations": [
+        {
+          "charged_cpu_ms": 3166,
+          "reservation_id": "verifier-cb7e2113cceda50a34a330c4f929f3e705cb290b218f296592d86d447e4f878d",
+          "reserved_cpu_ms": 240000,
+          "resolved": true
+        },
+        {
+          "charged_cpu_ms": 4840,
+          "reservation_id": "verifier-7b1a521a65c2ca5c5498dd0bed6ab85d35ebb5ba56469ed1e679def98289ca4c",
+          "reserved_cpu_ms": 240000,
+          "resolved": true
+        },
+        {
+          "charged_cpu_ms": 3516,
+          "reservation_id": "pr-base-red-23e6f77d37799dfba15d9349a6655dd6",
+          "reserved_cpu_ms": 240000,
+          "resolved": true
+        },
+        {
+          "charged_cpu_ms": 3166,
+          "reservation_id": "pr-candidate-green-7e641802a866763b28fb45742f5e52df",
+          "reserved_cpu_ms": 240000,
+          "resolved": true
+        },
+        {
+          "charged_cpu_ms": 3562,
+          "reservation_id": "pr-premerge-green-5bb3b270ff7f3398e5fb9c7375b3929d",
+          "reserved_cpu_ms": 240000,
+          "resolved": true
+        }
+      ]
+    },
+    "mission_cpu_budget_ms": 1200000,
+    "policy_sha256": "f73785cb8eade278f2c14677c633ee34c391f2a7d7ff55e9e3e02a04b9307a50",
+    "source": "mission execution journal; reservations and resolutions produced by the admission-provenance MCP host binary",
+    "steps": [
+      {
+        "accounting_elapsed_ms": 758,
+        "base_commit": "5b9cb2c24ae7075677df51eb06353c3651191447",
+        "candidate_commit": "3d668bfd7042750c8c0cacbbe80338914fdc6247",
+        "charged_cpu_upper_bound_ms": 3516,
+        "exit_code": 101,
+        "expected_failure": {
+          "actual": "-2",
+          "assertion": "assertion `left == right` failed",
+          "expected": "10",
+          "summary": "1 passed; 1 failed",
+          "test_name": "values_outside_the_range_clamp_to_the_nearest_boundary"
+        },
+        "mission_id": "mission-v1-94c26001d4370e63d3637fd5c06ef13f0496424a39a74bf498b7512b7d2b37b5",
+        "output_b64": "CnJ1bm5pbmcgMCB0ZXN0cwoKdGVzdCByZXN1bHQ6IG9rLiAwIHBhc3NlZDsgMCBmYWlsZWQ7IDAgaWdub3JlZDsgMCBtZWFzdXJlZDsgMCBmaWx0ZXJlZCBvdXQ7IGZpbmlzaGVkIGluIDAuMDBzCgoKcnVubmluZyAyIHRlc3RzCnRlc3QgdmFsdWVzX2luc2lkZV90aGVfcmFuZ2VfYXJlX3VuY2hhbmdlZCAuLi4gb2sKdGVzdCB2YWx1ZXNfb3V0c2lkZV90aGVfcmFuZ2VfY2xhbXBfdG9fdGhlX25lYXJlc3RfYm91bmRhcnkgLi4uIEZBSUxFRAoKZmFpbHVyZXM6CgotLS0tIHZhbHVlc19vdXRzaWRlX3RoZV9yYW5nZV9jbGFtcF90b190aGVfbmVhcmVzdF9ib3VuZGFyeSBzdGRvdXQgLS0tLQoKdGhyZWFkICd2YWx1ZXNfb3V0c2lkZV90aGVfcmFuZ2VfY2xhbXBfdG9fdGhlX25lYXJlc3RfYm91bmRhcnknICg2OCkgcGFuaWNrZWQgYXQgdGVzdHMvYWNjZXB0YW5jZS5yczo2OjU6CmFzc2VydGlvbiBgbGVmdCA9PSByaWdodGAgZmFpbGVkCiAgbGVmdDogLTIKIHJpZ2h0OiAxMApub3RlOiBydW4gd2l0aCBgUlVTVF9CQUNLVFJBQ0U9MWAgZW52aXJvbm1lbnQgdmFyaWFibGUgdG8gZGlzcGxheSBhIGJhY2t0cmFjZQoKCmZhaWx1cmVzOgogICAgdmFsdWVzX291dHNpZGVfdGhlX3JhbmdlX2NsYW1wX3RvX3RoZV9uZWFyZXN0X2JvdW5kYXJ5Cgp0ZXN0IHJlc3VsdDogRkFJTEVELiAxIHBhc3NlZDsgMSBmYWlsZWQ7IDAgaWdub3JlZDsgMCBtZWFzdXJlZDsgMCBmaWx0ZXJlZCBvdXQ7IGZpbmlzaGVkIGluIDAuMDBzCgoKICAgQ29tcGlsaW5nIG1pc3Npb24wMTItY2xhbXAgdjAuMS4wICgvY2FuZGlkYXRlKQogICAgRmluaXNoZWQgYHRlc3RgIHByb2ZpbGUgW3Vub3B0aW1pemVkICsgZGVidWdpbmZvXSB0YXJnZXQocykgaW4gMC42OHMKICAgICBSdW5uaW5nIHVuaXR0ZXN0cyBzcmMvbGliLnJzICgvdGFyZ2V0L2RlYnVnL2RlcHMvbWlzc2lvbjAxMl9jbGFtcC0yYWQ2MDYxZTE1ZjljZWJiKQogICAgIFJ1bm5pbmcgdGVzdHMvYWNjZXB0YW5jZS5ycyAoL3RhcmdldC9kZWJ1Zy9kZXBzL2FjY2VwdGFuY2UtMjZkOWRlNWQzYThmNTBlZikKZXJyb3I6IHRlc3QgZmFpbGVkLCB0byByZXJ1biBwYXNzIGAtLXRlc3QgYWNjZXB0YW5jZWAK",
+        "output_sha256": "8fa26459b08ab8addf319bde28838abe9c5ca24dc6941ed3f65d017cfab65c5c",
+        "output_truncated": false,
+        "policy_sha256": "f73785cb8eade278f2c14677c633ee34c391f2a7d7ff55e9e3e02a04b9307a50",
+        "reservation_id": "pr-base-red-23e6f77d37799dfba15d9349a6655dd6",
+        "reserved_cpu_ms": 240000,
+        "sandbox_elapsed_ms": 755,
+        "stage": "base-red",
+        "tested_commit": "5b9cb2c24ae7075677df51eb06353c3651191447",
+        "timed_out": false
+      },
+      {
+        "accounting_elapsed_ms": 583,
+        "base_commit": "5b9cb2c24ae7075677df51eb06353c3651191447",
+        "candidate_commit": "3d668bfd7042750c8c0cacbbe80338914fdc6247",
+        "charged_cpu_upper_bound_ms": 3166,
+        "exit_code": 0,
+        "expected_failure": null,
+        "mission_id": "mission-v1-94c26001d4370e63d3637fd5c06ef13f0496424a39a74bf498b7512b7d2b37b5",
+        "output_b64": "CnJ1bm5pbmcgMCB0ZXN0cwoKdGVzdCByZXN1bHQ6IG9rLiAwIHBhc3NlZDsgMCBmYWlsZWQ7IDAgaWdub3JlZDsgMCBtZWFzdXJlZDsgMCBmaWx0ZXJlZCBvdXQ7IGZpbmlzaGVkIGluIDAuMDBzCgoKcnVubmluZyAyIHRlc3RzCnRlc3QgdmFsdWVzX2luc2lkZV90aGVfcmFuZ2VfYXJlX3VuY2hhbmdlZCAuLi4gb2sKdGVzdCB2YWx1ZXNfb3V0c2lkZV90aGVfcmFuZ2VfY2xhbXBfdG9fdGhlX25lYXJlc3RfYm91bmRhcnkgLi4uIG9rCgp0ZXN0IHJlc3VsdDogb2suIDIgcGFzc2VkOyAwIGZhaWxlZDsgMCBpZ25vcmVkOyAwIG1lYXN1cmVkOyAwIGZpbHRlcmVkIG91dDsgZmluaXNoZWQgaW4gMC4wMHMKCgpydW5uaW5nIDAgdGVzdHMKCnRlc3QgcmVzdWx0OiBvay4gMCBwYXNzZWQ7IDAgZmFpbGVkOyAwIGlnbm9yZWQ7IDAgbWVhc3VyZWQ7IDAgZmlsdGVyZWQgb3V0OyBmaW5pc2hlZCBpbiAwLjAwcwoKCiAgIENvbXBpbGluZyBtaXNzaW9uMDEyLWNsYW1wIHYwLjEuMCAoL2NhbmRpZGF0ZSkKICAgIEZpbmlzaGVkIGB0ZXN0YCBwcm9maWxlIFt1bm9wdGltaXplZCArIGRlYnVnaW5mb10gdGFyZ2V0KHMpIGluIDAuNTFzCiAgICAgUnVubmluZyB1bml0dGVzdHMgc3JjL2xpYi5ycyAoL3RhcmdldC9kZWJ1Zy9kZXBzL21pc3Npb24wMTJfY2xhbXAtMmFkNjA2MWUxNWY5Y2ViYikKICAgICBSdW5uaW5nIHRlc3RzL2FjY2VwdGFuY2UucnMgKC90YXJnZXQvZGVidWcvZGVwcy9hY2NlcHRhbmNlLTI2ZDlkZTVkM2E4ZjUwZWYpCiAgIERvYy10ZXN0cyBtaXNzaW9uMDEyX2NsYW1wCg==",
+        "output_sha256": "7744d3c730593e04c264d62fc35dc18db3b6690604c80374e4a4b07dd8990b56",
+        "output_truncated": false,
+        "policy_sha256": "f73785cb8eade278f2c14677c633ee34c391f2a7d7ff55e9e3e02a04b9307a50",
+        "reservation_id": "pr-candidate-green-7e641802a866763b28fb45742f5e52df",
+        "reserved_cpu_ms": 240000,
+        "sandbox_elapsed_ms": 583,
+        "stage": "candidate-green",
+        "tested_commit": "3d668bfd7042750c8c0cacbbe80338914fdc6247",
+        "timed_out": false
+      },
+      {
+        "accounting_elapsed_ms": 781,
+        "base_commit": "5b9cb2c24ae7075677df51eb06353c3651191447",
+        "candidate_commit": "3d668bfd7042750c8c0cacbbe80338914fdc6247",
+        "charged_cpu_upper_bound_ms": 3562,
+        "exit_code": 0,
+        "expected_failure": null,
+        "mission_id": "mission-v1-94c26001d4370e63d3637fd5c06ef13f0496424a39a74bf498b7512b7d2b37b5",
+        "output_b64": "CnJ1bm5pbmcgMCB0ZXN0cwoKdGVzdCByZXN1bHQ6IG9rLiAwIHBhc3NlZDsgMCBmYWlsZWQ7IDAgaWdub3JlZDsgMCBtZWFzdXJlZDsgMCBmaWx0ZXJlZCBvdXQ7IGZpbmlzaGVkIGluIDAuMDBzCgoKcnVubmluZyAyIHRlc3RzCnRlc3QgdmFsdWVzX2luc2lkZV90aGVfcmFuZ2VfYXJlX3VuY2hhbmdlZCAuLi4gb2sKdGVzdCB2YWx1ZXNfb3V0c2lkZV90aGVfcmFuZ2VfY2xhbXBfdG9fdGhlX25lYXJlc3RfYm91bmRhcnkgLi4uIG9rCgp0ZXN0IHJlc3VsdDogb2suIDIgcGFzc2VkOyAwIGZhaWxlZDsgMCBpZ25vcmVkOyAwIG1lYXN1cmVkOyAwIGZpbHRlcmVkIG91dDsgZmluaXNoZWQgaW4gMC4wMHMKCgpydW5uaW5nIDAgdGVzdHMKCnRlc3QgcmVzdWx0OiBvay4gMCBwYXNzZWQ7IDAgZmFpbGVkOyAwIGlnbm9yZWQ7IDAgbWVhc3VyZWQ7IDAgZmlsdGVyZWQgb3V0OyBmaW5pc2hlZCBpbiAwLjAwcwoKCiAgIENvbXBpbGluZyBtaXNzaW9uMDEyLWNsYW1wIHYwLjEuMCAoL2NhbmRpZGF0ZSkKICAgIEZpbmlzaGVkIGB0ZXN0YCBwcm9maWxlIFt1bm9wdGltaXplZCArIGRlYnVnaW5mb10gdGFyZ2V0KHMpIGluIDAuNzBzCiAgICAgUnVubmluZyB1bml0dGVzdHMgc3JjL2xpYi5ycyAoL3RhcmdldC9kZWJ1Zy9kZXBzL21pc3Npb24wMTJfY2xhbXAtMmFkNjA2MWUxNWY5Y2ViYikKICAgICBSdW5uaW5nIHRlc3RzL2FjY2VwdGFuY2UucnMgKC90YXJnZXQvZGVidWcvZGVwcy9hY2NlcHRhbmNlLTI2ZDlkZTVkM2E4ZjUwZWYpCiAgIERvYy10ZXN0cyBtaXNzaW9uMDEyX2NsYW1wCg==",
+        "output_sha256": "234d7771128cf212a8dbda48ee7b4aed19624a91cc11484cc9af32f83bacd167",
+        "output_truncated": false,
+        "policy_sha256": "f73785cb8eade278f2c14677c633ee34c391f2a7d7ff55e9e3e02a04b9307a50",
+        "reservation_id": "pr-premerge-green-5bb3b270ff7f3398e5fb9c7375b3929d",
+        "reserved_cpu_ms": 240000,
+        "sandbox_elapsed_ms": 779,
+        "stage": "premerge-green",
+        "tested_commit": "3d668bfd7042750c8c0cacbbe80338914fdc6247",
+        "timed_out": false
+      }
+    ],
+    "verifier_binary_sha256": "a898477aed4a93b06fe4d46badb25be576bfc5404292d29abc6587b820aa51aa"
+  },
+  "environment": "trusted Rust host; systemd CPU/memory/task/deadline scope; Bubblewrap user/mount/PID/network namespaces with nested user namespaces disabled; commit snapshot read-only; fresh tmpfs Cargo target; host home and credentials absent; offline locked Cargo",
+  "limitation": "This minimal Forgejo fixture does not version policy/active.json or policy v4, so the verifier binds the pinned requirement and policy hashes from the host-owned admission fixture while testing the exact PR commits. CPU accounting is a conservative upper bound derived from the enforced cgroup quota and elapsed wall time, not direct cgroup CPU telemetry.",
+  "merge_gate_policy_revision": 4,
+  "merge_gate_policy_sha256": "be5510865d791ceab8de3b2d44fb0dba4056cd3979218094b083ac33a9fce2c0",
+  "policy_sha256": "e23907b5bd6b2c0f342c88ddcfa9f9a9be98065adcd24f9f7299dc796b5739eb",
+  "requirement_sha256": "3a3c444075c93a3bcfb2bec17d1a2e74ec0051effc2994e6b02ac095eb0dd431",
+  "schema_version": 1,
+  "source": "Forgejo API branch ref fetched into a host-owned trusted Git clone",
+  "toolchain": "/home/pc6/.rustup/toolchains/1.95.0-aarch64-unknown-linux-gnu/bin/cargo test --offline --locked",
+  "verdict": "pass",
+  "verifier_id": "mission-012-rust-isolated-cargo-acceptance-v2"
+}
