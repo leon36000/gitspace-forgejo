@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "id": "MISSION-012-CLAMP-001-POLICY",
+  "revision": 1,
+  "source_issue_number": 1,
+  "requirement_path": "requirements/MISSION-012-CLAMP-001.json",
+  "requirement_sha256": "3a3c444075c93a3bcfb2bec17d1a2e74ec0051effc2994e6b02ac095eb0dd431",
+  "verifier_identity": "verifier-bot",
+  "execution_identity": "host-controlled-local-runtime",
+  "agent_capabilities": {
+    "read_paths": [
+      "Cargo.toml",
+      "Cargo.lock",
+      "src/lib.rs",
+      "tests/acceptance.rs"
+    ],
+    "write_paths": [
+      "src/lib.rs"
+    ],
+    "model_tools": [
+      "workspace.read_text",
+      "workspace.write_text",
+      "cargo.test"
+    ],
+    "host_only_tools": [
+      "workspace.diff"
+    ],
+    "tool_call_limit": 12,
+    "timeout_ms": 300000,
+    "max_output_tokens": 4096
+  },
+  "candidate_policy": {
+    "allowed_changed_paths": [
+      "src/lib.rs"
+    ],
+    "protected_unchanged_paths": [
+      "requirements/MISSION-012-CLAMP-001.json",
+      "policy/MISSION-012-CLAMP-001-v1.json",
+      "tests/acceptance.rs",
+      "Cargo.toml",
+      "Cargo.lock"
+    ]
+  },
+  "verification": {
+    "command": [
+      "/usr/bin/cargo",
+      "test",
+      "--offline",
+      "--locked"
+    ],
+    "environment": "bubblewrap network, user, pid, ipc and uts namespaces; candidate read-only; private writable target; no Forgejo credentials or host home",
+    "timeout_ms": 120000,
+    "max_output_bytes": 65536,
+    "required_status": "agent-forge/independent-acceptance",
+    "required_approvals": 1
+  },
+  "merge_policy": {
+    "merge_identity": "forge-admin",
+    "recheck_issue_open": true,
+    "recheck_requirement_sha256": true,
+    "recheck_policy_sha256": true,
+    "recheck_base_commit": true,
+    "recheck_pull_request_head": true,
+    "recheck_approval_and_status": true,
+    "bind_merge_request_to_reviewed_head_commit": true
+  },
+  "limits": [
+    "This policy is a local sandbox fixture and is not a production trust configuration.",
+    "A hash or signature establishes integrity or provenance, not software correctness.",
+    "The local unauthenticated Ollama loopback peer can observe the request context.",
+    "Forgejo administration and the local host remain trusted and can bypass the sandbox policy."
+  ]
+}
