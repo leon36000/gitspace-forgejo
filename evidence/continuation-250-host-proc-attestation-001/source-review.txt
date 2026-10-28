@@ -1,0 +1,18 @@
+CONTINUATION-250 source review
+
+scripts/run_mission_012_stdio_mcp_egress_gate_e2e.py
+- Lines 128-170: `_read_process_binding` reads `/proc/<pid>/stat` twice and reads both namespace links twice; it fails closed if identity or namespaces change during observation.
+- Lines 173-192: `_process_children` enumerates child PIDs from each task's `/proc/.../children` entry and rejects malformed IDs.
+- Lines 195-269: `observe_sandbox_agent_process_tree` bounds traversal to 256 processes, requires exactly one descendant whose argv begins with `/usr/bin/python3 /opt/mission_012_test_agent_adapter.py`, and requires network and PID namespaces to differ from the trusted parent.
+- Lines 376-400 and 412-425: the parent observes the descendant before and after the trusted gate read/operation and rejects a changed PID, start-time, or namespace identity.
+- The legacy `process.poll()` check remains as a wrapper-liveness check; it is no longer the sole evidence that the agent child was alive.
+
+scripts/run_forgejo_live_pr_merge_e2e.py
+- Lines 4527-4595: the composition validator requires the two parent observations, checks exact adapter identity and namespace differences, binds the observation into `stdio_mcp_source_binding`, and verifies that the tested merged source hash matches the candidate source.
+- The emitted `external_writers_excluded` and `supervisor_policy_independently_verified` values remain false; the new observation does not certify universal writer exclusion or an independently verified supervisor policy.
+
+tests/test_forgejo_live_pr_merge_e2e.py
+- Lines 92-125: positive Bubblewrap probe compares the parent `/proc` observation to the child's namespace report.
+- Lines 127-143: a regular host Python process is rejected as a sandboxed agent descendant.
+
+Coverage is limited to the listed runner/validator code, these two focused tests and the one fresh local Forgejo composition. It is not a kernel/security audit or a general proof of Bubblewrap isolation.

@@ -1,0 +1,2 @@
+Command: python3 -m py_compile scripts/run_webhook_reconcile_cli_e2e.py
+Exit: 0

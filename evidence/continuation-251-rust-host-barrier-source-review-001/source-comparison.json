@@ -1,0 +1,77 @@
+{
+  "audit_type": "read_only_source_and_receipt_reconciliation",
+  "core_lifecycle_sources": {
+    "scripts/mission_012_mcp_supervisor.py": {
+      "current_sha256": "ac6a894a517d0b3bf01cc88cc4295a24aca6b03c134edec15b788b4fb668ac23",
+      "matches": true,
+      "recorded_sha256": "ac6a894a517d0b3bf01cc88cc4295a24aca6b03c134edec15b788b4fb668ac23"
+    },
+    "scripts/mission_012_sandboxed_test_adapter.py": {
+      "current_sha256": "34264dd1a9a62e0a02e5e966468291a15521339ba23450730582c54d7c81bebc",
+      "matches": true,
+      "recorded_sha256": "34264dd1a9a62e0a02e5e966468291a15521339ba23450730582c54d7c81bebc"
+    },
+    "scripts/mission_012_test_agent_adapter.py": {
+      "current_sha256": "317afac70b7103d379501276ee2eb2de621343162cbfe17cccc38385c24f78fb",
+      "matches": true,
+      "recorded_sha256": "317afac70b7103d379501276ee2eb2de621343162cbfe17cccc38385c24f78fb"
+    },
+    "scripts/run_mission_012_live_composed_e2e.py": {
+      "current_sha256": "cc5b1d3114e566006ce3ea8056096cac9498b187897af83cdac41be68614a064",
+      "matches": true,
+      "recorded_sha256": "cc5b1d3114e566006ce3ea8056096cac9498b187897af83cdac41be68614a064"
+    },
+    "scripts/run_mission_012_live_mcp_agent_e2e.py": {
+      "current_sha256": "815aba903b6b95ad22e71b937a30b81f4c4167791c4eda0a60dc2cc6f0c43266",
+      "matches": true,
+      "recorded_sha256": "815aba903b6b95ad22e71b937a30b81f4c4167791c4eda0a60dc2cc6f0c43266"
+    },
+    "src/mission_012_host.rs": {
+      "current_sha256": "4c3ab96d6eb1639f929403993414e1bbc162a61c685fbfe4c4f65599f0bc8bce",
+      "matches": true,
+      "recorded_sha256": "4c3ab96d6eb1639f929403993414e1bbc162a61c685fbfe4c4f65599f0bc8bce"
+    },
+    "tests/test_mission_012_mcp_supervisor.py": {
+      "current_sha256": "e6cdb8325afa35e4a42dede807284dc79a4f473a5473d9d7cd2b0fe6a52730b1",
+      "matches": true,
+      "recorded_sha256": "e6cdb8325afa35e4a42dede807284dc79a4f473a5473d9d7cd2b0fe6a52730b1"
+    },
+    "tests/test_mission_012_sandboxed_test_adapter.py": {
+      "current_sha256": "a2b699fdd1aa7b98a0a45e2aed9863bed19db736a2cdfcbd64c5334741092c03",
+      "matches": true,
+      "recorded_sha256": "a2b699fdd1aa7b98a0a45e2aed9863bed19db736a2cdfcbd64c5334741092c03"
+    },
+    "tests/test_mission_012_test_agent_adapter.py": {
+      "current_sha256": "71c00981a46850f80f4261e5b3006e70fda3d35cc76fadec73c510738c27eac0",
+      "matches": true,
+      "recorded_sha256": "71c00981a46850f80f4261e5b3006e70fda3d35cc76fadec73c510738c27eac0"
+    }
+  },
+  "core_lifecycle_sources_all_match": true,
+  "e2e_rerun": false,
+  "receipt": {
+    "acceptance_summary": "2 passed; 0 failed",
+    "host_binary_sha256": "8904b872f4624175ff51236cb63f51223fdea3103f2ea8f385de4d2bbc4fd0a1",
+    "independent_verifier_exit_code": 0,
+    "lifecycle_limit": "The same admitted Rust MCP child remained alive during this independent candidate acceptance gate. The supervisor then released shutdown and the agent stage finalized before the separate PR/merge stage; this receipt does not claim the child remained alive through Forgejo merge.",
+    "observed_while_mcp_host_alive": true,
+    "status": "passed_while_admitted_mcp_host_remained_alive"
+  },
+  "receipt_path": "evidence/continuation-245-same-host-gate-001/successful-composition.log",
+  "receipt_sha256": "af72d7828383d6f92fd38ec84dd47708a06307e5f9659f829ce359ff674b57c8",
+  "receipt_valid_for_core_lifecycle_claim": true,
+  "schema_version": 1,
+  "source_snapshot": {
+    "differing_from_current_tree": 5,
+    "differing_paths": [
+      "scripts/run_forgejo_live_pr_merge_e2e.py",
+      "scripts/run_mission_012_stdio_mcp_egress_gate_e2e.py",
+      "scripts/run_webhook_reconcile_cli_e2e.py",
+      "tests/test_forgejo_live_pr_merge_e2e.py",
+      "tests/webhook_receiver_process_e2e.rs"
+    ],
+    "entries": 114,
+    "full_snapshot_matches_current_tree": false,
+    "matching_current_tree": 109
+  }
+}

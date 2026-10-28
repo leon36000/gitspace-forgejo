@@ -1,0 +1,177 @@
+{
+  "adapter_event": {
+    "host_network_namespace": "net:[4026531833]",
+    "host_pid_namespace": "pid:[4026531836]",
+    "is_error": false,
+    "result": "ADAPTATEUR DE TEST LOCAL SANS LLM: contexte admis consomm\u00e9; \u00e9chec rouge observ\u00e9; src/lib.rs corrig\u00e9 par MCP; test prot\u00e9g\u00e9 vert; barri\u00e8re gate lib\u00e9r\u00e9e; h\u00f4te finalis\u00e9 avec re\u00e7u.",
+    "sandbox_checks": {
+      "credential_visible": false,
+      "direct_forgejo_routes_blocked": [
+        "api",
+        "web",
+        "git_receive_pack"
+      ],
+      "environment_keys": [
+        "HOME",
+        "LANG",
+        "LC_ALL",
+        "PATH",
+        "PWD",
+        "PYTHONDONTWRITEBYTECODE"
+      ],
+      "network_connected": false,
+      "network_namespace": "net:[4026536249]",
+      "open_fds": [
+        0,
+        1,
+        2
+      ],
+      "pid_namespace": "pid:[4026536248]",
+      "probe_target_port": 3130,
+      "route_probe_specs": [
+        {
+          "method": "GET",
+          "name": "api",
+          "path": "/api/v1/repos/forge-admin/agent-forge-core/pulls/2"
+        },
+        {
+          "method": "GET",
+          "name": "web",
+          "path": "/forge-admin/agent-forge-core/pulls/2"
+        },
+        {
+          "method": "POST",
+          "name": "git_receive_pack",
+          "path": "/forge-admin/agent-forge-core.git/git-receive-pack"
+        }
+      ],
+      "supervisor_observed_route_connections": 0
+    },
+    "subtype": "success",
+    "test_adapter_untrusted_work_item_observed": false,
+    "type": "result"
+  },
+  "mcp_barrier": {
+    "child_process_alive_during_gate_read": true,
+    "reached_on": "tools/call:mission_context after corrected acceptance",
+    "released_after_gate_operation": true,
+    "released_after_gate_read": false,
+    "sandbox_agent_process_observation": {
+      "after_gate": {
+        "agent_alive": true,
+        "agent_entrypoint": "mission_012_test_agent_adapter.py",
+        "agent_host_pid": 3928816,
+        "agent_network_namespace": "net:[4026536249]",
+        "agent_pid_namespace": "pid:[4026536248]",
+        "agent_start_time_ticks": 24733808,
+        "host_network_namespace": "net:[4026531833]",
+        "host_pid_namespace": "pid:[4026531836]",
+        "observed_by_parent_procfs": true
+      },
+      "before_gate": {
+        "agent_alive": true,
+        "agent_entrypoint": "mission_012_test_agent_adapter.py",
+        "agent_host_pid": 3928816,
+        "agent_network_namespace": "net:[4026536249]",
+        "agent_pid_namespace": "pid:[4026536248]",
+        "agent_start_time_ticks": 24733808,
+        "host_network_namespace": "net:[4026531833]",
+        "host_pid_namespace": "pid:[4026531836]",
+        "observed_by_parent_procfs": true
+      },
+      "observed_by": "trusted parent via /proc descendant tree"
+    }
+  },
+  "mcp_methods": [
+    "initialize",
+    "tools/list",
+    "tools/call:mission_context",
+    "tools/call:cargo_test",
+    "tools/call:workspace_read_text",
+    "tools/call:workspace_read_text",
+    "tools/call:workspace_write_text",
+    "tools/call:cargo_test",
+    "tools/call:mission_context",
+    "shutdown"
+  ],
+  "sandbox_checks": {
+    "credential_visible": false,
+    "direct_forgejo_routes_blocked": [
+      "api",
+      "web",
+      "git_receive_pack"
+    ],
+    "environment_keys": [
+      "HOME",
+      "LANG",
+      "LC_ALL",
+      "PATH",
+      "PWD",
+      "PYTHONDONTWRITEBYTECODE"
+    ],
+    "network_connected": false,
+    "network_namespace": "net:[4026536249]",
+    "open_fds": [
+      0,
+      1,
+      2
+    ],
+    "pid_namespace": "pid:[4026536248]",
+    "probe_target_port": 3130,
+    "route_probe_specs": [
+      {
+        "method": "GET",
+        "name": "api",
+        "path": "/api/v1/repos/forge-admin/agent-forge-core/pulls/2"
+      },
+      {
+        "method": "GET",
+        "name": "web",
+        "path": "/forge-admin/agent-forge-core/pulls/2"
+      },
+      {
+        "method": "POST",
+        "name": "git_receive_pack",
+        "path": "/forge-admin/agent-forge-core.git/git-receive-pack"
+      }
+    ],
+    "supervisor_observed_route_connections": 0
+  },
+  "source_changed_through_mcp": true,
+  "source_sha256": "6937c269b5a838c3eb28343721f59774b3d9a15bac9da5016d788fa8e0005c04",
+  "task_acceptance": {
+    "baseline_actionable_failure": true,
+    "baseline_exit_code": 101,
+    "baseline_log_sha256": "bc072c4b4369342936ce7ec2c685280cd69ca9803a270c2e251ff6df0ffe0792",
+    "corrected_acceptance_pass": true,
+    "corrected_exit_code": 0,
+    "corrected_log_sha256": "6bf169e539a51b025d327f4ceb1c72e0be9f7e55a428bd2220fe6b66cfc973d8",
+    "verification": "actual cargo test --offline --locked in the trusted MCP host"
+  },
+  "trusted_gate_operation": {
+    "http_status": 200,
+    "main_head_sha": "b4c4ac326f47e2d41ee89086af6071360b56d0e6",
+    "merge_attempted": true,
+    "merge_commit_sha": "b4c4ac326f47e2d41ee89086af6071360b56d0e6",
+    "process_exit_code": 0,
+    "submitted_head_sha": "0b0819d59c95a00ca47326f722b249d83d83635c",
+    "validated_base_sha": "9372c4a07cc5b81a7680a402aa23364748362e0c",
+    "verdict": "merged"
+  },
+  "trusted_gate_read": {
+    "branch_sha_before": "9372c4a07cc5b81a7680a402aa23364748362e0c",
+    "branch_sha_during_gate": "9372c4a07cc5b81a7680a402aa23364748362e0c",
+    "credential_fd_inherited_by_stdio_child": false,
+    "credential_not_serialized_to_mcp_config_command_or_environment": true,
+    "credential_probe_refused_inside_pid_namespace": true,
+    "credential_probe_target": "trusted runner's CLOEXEC memfd under its host /proc PID",
+    "merge_route_called": true,
+    "route": "GET /api/v1/repos/forge-admin/agent-forge-core/branches/main",
+    "scope": "read:user,read:issue,write:repository",
+    "status": 200,
+    "write_credential_created": true,
+    "write_credential_passed_to_stdio_child": false,
+    "write_credential_persisted_to_file": false
+  },
+  "wrapper_stderr_empty": true
+}

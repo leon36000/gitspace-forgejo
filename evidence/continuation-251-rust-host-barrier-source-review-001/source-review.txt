@@ -1,0 +1,10 @@
+CONTINUATION-251 source references
+
+- `scripts/mission_012_sandboxed_test_adapter.py:84-164` validates private ready/release paths and injects them into the trusted MCP supervisor command, rejecting barrier paths from the MCP config itself.
+- `scripts/mission_012_mcp_supervisor.py:292-360` binds the Rust host PID/start-time/executable, creates a nonce-bearing ready record and waits for a bounded release tied to a receipt hash.
+- `scripts/mission_012_mcp_supervisor.py:507-531` intercepts the first MCP `shutdown` request, publishes the host binding, waits for trusted release, and only then forwards shutdown to the host.
+- `scripts/run_mission_012_live_composed_e2e.py:1801-1965` verifies the admitted host identity before and after the credential-free acceptance command, binds the result to base/requirements/policy/candidate hashes, and releases the supervisor on success or failure.
+- `scripts/run_mission_012_live_composed_e2e.py:1972-2170` places that callback in the agent stage and requires a passing bound receipt before accepting the stage result.
+- `evidence/continuation-245-same-host-gate-001/successful-composition.log` is the prior live composed receipt with its 114-entry source snapshot; `source-comparison.json` records the current comparison without re-running the composition.
+
+This source review establishes how the tested barrier is wired. It does not independently establish the supervisor's overall policy or external-writer exclusion.

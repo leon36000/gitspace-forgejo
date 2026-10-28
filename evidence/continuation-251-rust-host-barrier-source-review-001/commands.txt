@@ -1,0 +1,9 @@
+# CONTINUATION-251 was a read-only source and receipt reconciliation.
+# Worktree: /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace
+
+python3 evidence/continuation-251-rust-host-barrier-source-review-001/reconcile_cont245_lifecycle_sources.py > evidence/continuation-251-rust-host-barrier-source-review-001/source-comparison.json
+sha256sum evidence/continuation-245-same-host-gate-001/successful-composition.log
+python3 evidence/continuation-251-rust-host-barrier-source-review-001/check_text_whitespace.py
+git diff --check
+python3 evidence/continuation-251-rust-host-barrier-source-review-001/append_manifests.py
+python3 evidence/continuation-251-rust-host-barrier-source-review-001/append_final_manifests.py

@@ -1,0 +1,37 @@
+{
+  "forgejo_candidate_commit": "0b0819d59c95a00ca47326f722b249d83d83635c",
+  "forgejo_candidate_source_sha256": "6937c269b5a838c3eb28343721f59774b3d9a15bac9da5016d788fa8e0005c04",
+  "host_observed_sandbox_agent": {
+    "after_gate": {
+      "agent_alive": true,
+      "agent_entrypoint": "mission_012_test_agent_adapter.py",
+      "agent_host_pid": 3928816,
+      "agent_network_namespace": "net:[4026536249]",
+      "agent_pid_namespace": "pid:[4026536248]",
+      "agent_start_time_ticks": 24733808,
+      "host_network_namespace": "net:[4026531833]",
+      "host_pid_namespace": "pid:[4026531836]",
+      "observed_by_parent_procfs": true
+    },
+    "before_gate": {
+      "agent_alive": true,
+      "agent_entrypoint": "mission_012_test_agent_adapter.py",
+      "agent_host_pid": 3928816,
+      "agent_network_namespace": "net:[4026536249]",
+      "agent_pid_namespace": "pid:[4026536248]",
+      "agent_start_time_ticks": 24733808,
+      "host_network_namespace": "net:[4026531833]",
+      "host_pid_namespace": "pid:[4026531836]",
+      "observed_by_parent_procfs": true
+    },
+    "observed_by": "trusted parent via /proc descendant tree"
+  },
+  "llm_invoked": false,
+  "mcp_source_sha256": "6937c269b5a838c3eb28343721f59774b3d9a15bac9da5016d788fa8e0005c04",
+  "merge_commit_sha": "b4c4ac326f47e2d41ee89086af6071360b56d0e6",
+  "merged_source_sha256": "6937c269b5a838c3eb28343721f59774b3d9a15bac9da5016d788fa8e0005c04",
+  "producer": "same stdio-MCP process using the explicitly named local-test-adapter",
+  "pull_request_head_after_restore": "0b0819d59c95a00ca47326f722b249d83d83635c",
+  "same_process_alive_during_gate": true,
+  "same_process_released_after_merge_operation": true
+}

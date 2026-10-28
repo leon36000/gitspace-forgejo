@@ -1,0 +1,13 @@
+rust-reconcile-unit: cargo test --offline --locked --bin forgejo-reconcile-local
+capabilities-contract: cargo test --offline --locked --test forgejo_reconcile_capabilities_e2e
+single-batch-process-contract: cargo test --offline --locked --test reconcile_config_contract
+quarantine-cli-versions: cargo test --offline --locked --test webhook_quarantine_cli
+journal-lock-cli-version: cargo test --offline --locked --test reconcile_journal_lock_timeout
+bubblewrap-batch-readback: /usr/bin/python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_shares_recovered_parent_issue_read_with_comment_batch
+python-emitted-consumers: /usr/bin/python3 -m unittest discover -s tests -p test_forgejo_emitted_webhook_e2e.py
+python-org-review-consumers: /usr/bin/python3 -m unittest discover -s tests -p test_forgejo_live_org_team_reviewer_readback.py
+python-native-replay-consumers: /usr/bin/python3 -m unittest discover -s tests -p test_forgejo_webhook_native_replay_e2e.py
+python-runner-syntax: /usr/bin/python3 -m py_compile scripts/run_forgejo_native_branch_delete_webhook_reconcile.py scripts/run_forgejo_live_webhook_reconcile_emitted.py scripts/run_forgejo_live_org_team_reviewer_readback.py scripts/run_forgejo_native_push_webhook_reconcile.py scripts/run_forgejo_live_webhook_native_replay_e2e.py
+rustfmt: cargo fmt --all -- --check
+diff-check: git diff --check
+cargo-license-policy: /usr/bin/python3 scripts/verify_cargo_license_state.py

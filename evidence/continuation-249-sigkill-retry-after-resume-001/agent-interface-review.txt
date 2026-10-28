@@ -1,0 +1,7 @@
+Revue locale passive du 27 octobre 2026; aucune requête adressée à un service.
+
+OPSYS-AI existe à /home/pc6/Documents/Codex/2026-10-05/github-plugin-github-openai-curated-remote-4/work/OPSYS-AI, HEAD f0b89ccf86d6f6e50eb134de3257af91860e8091, version Python `2.0.0.dev0`; aucun fichier suivi n’était modifié. `src/opsys/serveur_mcp.py::creer_serveur` fournit une interface MCP stdio/HTTP streamable et `pyproject.toml` expose `opsys-mcp`; aucun adaptateur compatible vers le trait `src/agent_runtime.rs::AgentRuntimeV1` n’a été trouvé dans la forge. Le seul runtime produit identifié reste `tests/agent_runtime_contract.rs::FixtureRuntime`.
+
+SHA-256 local des sources examinées : `src/opsys/serveur_mcp.py` = `63a936da0cb46b6d81e545c7dcf69925447962ee06f72cf17216fabc0827b4e4`; `pyproject.toml` = `52c28285c60781968a3182dc28414da8fb1e982dc3e821d7007142814e5fe5de`.
+
+`ss -H -ltn` sur les ports documentés 8765, 18789, 9119 et 11434 a donné seulement `LISTEN 127.0.0.1:9119`; le processus propriétaire n’a pas été identifié et le listener n’a pas été contacté. Les autres ports de ce relevé n’écoutaient pas. Ce constat ne révèle pas l’état de services sur d’autres ports ou transports, et ne constitue pas une autorisation d’intégration.

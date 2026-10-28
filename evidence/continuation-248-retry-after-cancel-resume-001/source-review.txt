@@ -1,0 +1,7 @@
+Reviewed test: tests/webhook_receiver_process_e2e.rs::interrupted_reconcile_during_retry_after_resumes_from_unchanged_journal. The test observes one signed inbox record, an actual receiver and actual Rust reconcile CLI, a loopback 429 with Retry-After: 5, process-group SIGTERM, bounded exit, unchanged journal bytes, no second request, then a new CLI process that reads 200 current state and leaves the same journal unchanged.
+
+Reviewed fixture: start_retry_after_wait_cancellation_fixture signals only after its complete 429 response body has been written and records further requests during a bounded drain window. The production request/retry implementation is unchanged in this lot.
+
+Reviewed runner: scripts/run_webhook_reconcile_cli_e2e.py includes this exact test in its selectable process-test allowlist; the runner builds offline and executes under Bubblewrap with network/PID namespaces unshared.
+
+Current Cargo license metadata was checked separately: no package license selected; publish disabled; redistribution rights unassessed. No AgentOS, Forge Code or model was invoked. The API response is a fixture, not Forgejo.

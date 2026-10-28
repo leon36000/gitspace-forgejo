@@ -1,0 +1,18 @@
+TDD red (before adding the probe interface):
+python3 -m unittest tests.test_mission_012_sandboxed_test_adapter.SandboxedAdapterTests.test_probe_process_remains_isolated_until_reprobe_and_release
+Observed: FAIL/TypeError because bubblewrap_command did not accept private_file_write_probes.
+
+Focused final test:
+python3 -m unittest tests.test_mission_012_sandboxed_test_adapter.SandboxedAdapterTests.test_private_webhook_write_probe_is_restricted_to_synthetic_probe_runs tests.test_mission_012_sandboxed_test_adapter.SandboxedAdapterTests.test_private_webhook_write_probe_positive_control_changes_only_synthetic_canary tests.test_mission_012_sandboxed_test_adapter.SandboxedAdapterTests.test_probe_process_remains_isolated_until_reprobe_and_release
+Result: 3 tests passed.
+
+Full affected test module:
+python3 -m unittest tests.test_mission_012_sandboxed_test_adapter
+Result: 11 tests passed.
+
+python3 -m py_compile scripts/mission_012_test_agent_adapter.py scripts/mission_012_sandboxed_test_adapter.py tests/test_mission_012_sandboxed_test_adapter.py
+python3 scripts/verify_cargo_license_state.py
+python3 -m unittest scripts/test_cargo_license_state.py
+cargo metadata --offline --locked --all-features --format-version 1 (summarized to dependency-license-recheck.json)
+cargo fmt --all -- --check
+git diff --check

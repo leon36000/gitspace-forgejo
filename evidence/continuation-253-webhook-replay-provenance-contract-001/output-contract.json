@@ -1,0 +1,17 @@
+{
+  "single_schema_version": 11,
+  "batch_schema_version": 12,
+  "capabilities_schema_version": 10,
+  "capabilities_api_version": "forgejo-reconcile-capabilities-v10",
+  "source_event_provenance_contract": {
+    "receiver_hmac_check": "performed_before_append_by_current_ingest_path",
+    "per_delivery_ingestion_attestation_persisted": false,
+    "raw_signature_persisted": false,
+    "replay_hmac_verification": "not_performed",
+    "journal_replay_contract": "validates_hash_chain_and_envelope_but_not_source_hmac",
+    "journal_hash_chain_authenticates_local_writer": false,
+    "source_authenticity_claim_for_selected_delivery": "not_made",
+    "trusted_boundary": "local_filesystem_writer",
+    "current_state_read_means": "canonical_api_read_only"
+  }
+}

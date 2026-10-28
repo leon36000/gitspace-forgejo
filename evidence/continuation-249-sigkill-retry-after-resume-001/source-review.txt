@@ -1,0 +1,6 @@
+HEAD de base du worktree produit: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0.
+
+Changements de code: tests/webhook_receiver_process_e2e.rs (factorisation du scénario Retry-After SIGTERM/SIGKILL et ajout du cas SIGKILL); scripts/run_webhook_reconcile_cli_e2e.py (allowlist explicite du nouveau test).
+Documentation: docs/checkpoint.md; docs/refusal-evidence-matrix.md.
+
+Aucun changement du runtime Rust, Cargo.toml/Cargo.lock, de Forgejo ou des critères d’acceptation. La cible de test compile contre les sources lockées et est lancée par le runner isolé.
