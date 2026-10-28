@@ -1,0 +1,9 @@
+{
+  "action": "opened",
+  "delivery_id": "1404f5aa-7582-4a91-a7b8-d87b9af4622f",
+  "event": "issues",
+  "issue_number": 1,
+  "payload_semantic_sha256": "db136c79d326ca6be77fcc6f645ebed60ac9dcb80e0a9d0b0f94d9f2499cb3b1",
+  "payload_state": "open",
+  "sequence": 1
+}
