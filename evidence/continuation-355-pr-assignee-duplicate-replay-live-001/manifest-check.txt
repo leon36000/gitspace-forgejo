@@ -1,0 +1,12 @@
+append_only_prefixes_preserved=true
+worktree_prefix_lines=16711
+project_prefix_lines=11204
+local_evidence_files=24
+local_entries_appended=24
+worktree_entries_appended=28
+project_entries_appended=29
+worktree_malformed_legacy_lines_ignored=7
+project_malformed_legacy_lines_ignored=2
+all_local_evidence_hashes_valid=true
+all_appended_global_latest_entries_valid=true
+project_tail_binds_current_worktree_index=true

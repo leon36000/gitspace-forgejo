@@ -1,0 +1,12 @@
+Commandes et résultats (lecture seule):
+- git status --porcelain=v1 -z --untracked-files=all : 19 suivis modifiés, 13857 non suivis.
+- git ls-files --cached --others --exclude-standard : inventaire de 13951 chemins; estimation 176109497 octets.
+- balayage de motifs usuels sur fichiers texte non binaires : zéro correspondance.
+- test ZIP Python en mémoire : 28 archives, 2712 membres; zéro correspondance.
+- tailscale ping --timeout=5s pc4 : pong.
+- getent ahostsv4 pc4.tail0c55ff.ts.net : aucune adresse.
+- curl --resolve pc4.tail0c55ff.ts.net:443:<IP Tailscale locale> ... /users/sign_in : timeout TCP après 5 s, HTTP 000.
+- curl --resolve pc4.tail0c55ff.ts.net:80:<IP Tailscale locale> ... /users/sign_in : timeout TCP après 5 s, HTTP 000.
+- probe TCP/22 : fermé.
+- git rev-list --left-right --count HEAD...origin/main : 0 7; aucune lecture de refs GitLab.
+Aucune commande d’authentification, de mutation, de staging, de commit ou de push.

@@ -1,0 +1,22 @@
+{
+  "branch": "local/WEBHOOK-005-canonical-links",
+  "base_head": "f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0",
+  "local_upstream": "origin/main",
+  "local_upstream_head": "6030e13e3887926f8629cbb22f785d5b4bab580a",
+  "ahead_behind": [0, 7],
+  "tracked_modified": 19,
+  "untracked_nonignored": 13857,
+  "candidate_paths": 13951,
+  "candidate_bytes": 176109497,
+  "zip_archives": 28,
+  "zip_members_scanned": 2712,
+  "text_secret_pattern_hits": 0,
+  "zip_secret_pattern_hits": 0,
+  "pattern_scan_is_heuristic": true,
+  "gitlab_endpoint_reachable": false,
+  "authenticated_requests": 0,
+  "remote_refs_read": false,
+  "staged": false,
+  "commit_created": false,
+  "push_performed": false
+}

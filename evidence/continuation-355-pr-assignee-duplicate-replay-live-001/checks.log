@@ -1,0 +1,9 @@
+python_ast: exit=0
+python_ast=ok
+cli_help: exit=0
+new_replay_scenario_flag=True
+git_diff_check: exit=0
+trailing_whitespace:scripts/run_forgejo_live_webhook_reconcile_emitted.py: exit=0
+lines=[]
+trailing_whitespace:tests/test_forgejo_emitted_webhook_e2e.py: exit=0
+lines=[]

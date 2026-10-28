@@ -1,0 +1,81 @@
+{
+  "built_executable_sha256": {
+    "forgejo-reconcile-local": "f3c4aceb6fd191561ba2409ab1ff7a8b90a9de318154077db8ba8d9d483b0e8b",
+    "forgejo-webhook-local": "ef5e7e10fef4a6abd6a9b25a31b5306f122213befcd09247d822b0dcd661b030"
+  },
+  "cargo_build": {
+    "bubblewrap_sha256": "cd6b143283b464baf078ab09ca19dadc5bcc2423b833c4f9dd7e83f9ba1b640b",
+    "bubblewrap_version": "bubblewrap 0.9.0",
+    "built_executable_sha256": {
+      "forgejo-reconcile-local": "f3c4aceb6fd191561ba2409ab1ff7a8b90a9de318154077db8ba8d9d483b0e8b",
+      "forgejo-webhook-local": "ef5e7e10fef4a6abd6a9b25a31b5306f122213befcd09247d822b0dcd661b030"
+    },
+    "cargo_sha256": "959e627e4d7b8d8b618d32ae7af795ce9f1544656822eb9d407b4fd76a4f53b0",
+    "policy": "Bubblewrap allowlist; --unshare-net and --unshare-pid; clear environment; read-only staged source, registry and Rust sysroot; --offline --locked",
+    "rustc_sha256": "db0c9200524653ed0ff20a2950b49402879887ad4932c4de18606df9de5cf3d9",
+    "staged_registry_tree_sha256": "1f73c6a919948c0af44acac0604f8bf4f6ff4888379605e02d3976f1baea6451",
+    "staged_source_tree_sha256": "8edc3b38412fbe0e2126221a222f5e5f2bd630e07713d67084349430fc8ac3e1",
+    "toolchain_versions": {
+      "cargo": "cargo 1.95.0 (f2d3ce0bd 2026-03-21)",
+      "rustc": "rustc 1.95.0 (59807616e 2026-04-14)"
+    }
+  },
+  "forgejo_binary_sha256": "e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7",
+  "head_commit": "f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0",
+  "hook_readback_sha256": "6550eed7d3af4b93a664cdab0557722c28ef9325106878a9ecb650be47cbb853",
+  "port_cleanup_readback_sha256": "bdb143c9aa666992971f74e18ef6ad6e3ecb5f9a5e878f91ca4faf606aef565f",
+  "private_state_dir": "/tmp/forgejo-cont-354-pr-assignee-state-002",
+  "private_state_dir_is_not_in_evidence": true,
+  "source_sha256": {
+    "Cargo.lock": "459fef3749a42c989521901dcde61cb26e12ed4206c5d722e149426c2d3a5439",
+    "Cargo.toml": "a2c1182d6e5cc272c50fb0ad5f16d210befcd452527d29e4dde6cd6b05206d09",
+    "scripts/run_forgejo_live_pr_merge_e2e.py": "5a48c1faa249e7b1deb0553ff0f2c1bf8c2e07601d9c04291dbd499dd75958e4",
+    "scripts/run_forgejo_live_webhook_reconcile_e2e.py": "06268802afab5216eae3d7e5cd4a3c8a33a23af98e0baabefac2eefd7db74e34",
+    "scripts/run_forgejo_live_webhook_reconcile_emitted.py": "5b5d373806ee73dbf7192ea9907e627e32b5afc2a309245c61b3fe5809bdfe36",
+    "scripts/run_forgejo_mission_delivery_process_e2e.py": "e836490f5e2c6d02efe6417c4a141d1dfe32e3989b1b50c33fd0d607d94743d8",
+    "src/agent_runtime.rs": "60f3fe92ed15e34fbb04d3aae5ed434e6bc1cb40095c05f7b1720f83dcab3459",
+    "src/bin/forgejo-mission-local.rs": "e8097b135e86f5775243cb259ced551c2b7af128bbf66a0b329e72038fbe9c8d",
+    "src/bin/forgejo-reconcile-local.rs": "96e9470051bfe23a4c20c34b8bcfec8bb385f495f5551e4b90d6bb570180492d",
+    "src/bin/forgejo-webhook-local.rs": "8812095ec843bde09fd90e64db8f0ca20824c31237bac643e87542a557ca9901",
+    "src/bin/gate.rs": "4366abaa55d4d5d539b10d48a3706afbf37702c9dd199466545963dbdc9d116d",
+    "src/bin/mission-012-mcp-host.rs": "60d0cd4a9bf2d2088479cee11bb4178bb58676087206b49ebdfcfb5de545350e",
+    "src/bin/mission-012-verify-local.rs": "a920fe426e22fd292635d095f8f8775fafea2d5271b6be2945453f94e5d2a9bf",
+    "src/forgejo.rs": "d891c4f0cc7f47b2550654c6a2bb83745bf302fd34df43891fc53eac461f12c6",
+    "src/lib.rs": "f93433d42bc05bef26184118797a9a1124a69d77e9f8b34731fb8d8d5ab1277c",
+    "src/main.rs": "53ad48c644c60c324924d1b8f446ca166b3efc0e2682d19111b36bc58e990a0a",
+    "src/mission_012_host.rs": "4c3ab96d6eb1639f929403993414e1bbc162a61c685fbfe4c4f65599f0bc8bce",
+    "src/mission_admission.rs": "5c56b192b3c402c283a6777a3afd57db12e269da805cd4f84792b3a94d4cf6e1",
+    "src/strict_json.rs": "8f17c240d2b16d3189e5099789c0b89aa2bfccdbe089e691870f42e8234c50d8",
+    "src/supervisor_capability.rs": "b9736909601c27a52da44101229682ba4a951fb501d43bc8de4ff184601d82ad",
+    "src/webhook.rs": "eeef64dbf1165f093efab2c484d9df6f6fbf20c5c5b21f55fdec812987658c41",
+    "src/webhook/http.rs": "46f3b8f1d17923fcba2110069f61e7e7f2961ee9a8a07e9cd1d017f322bbff40",
+    "src/webhook/reconcile.rs": "74df8f6672d4f9cd5bf3f9cd9a1d0de122aeaa69355ef31124e872482bb3354e",
+    "tests/test_forgejo_emitted_webhook_e2e.py": "51da325979972f5d17684e08e0c9e6e5f490d0a1481b443d3004e1d50ef5d0fe"
+  },
+  "source_worktree_status": [
+    " M Cargo.lock",
+    " M Cargo.toml",
+    " M src/bin/forgejo-reconcile-local.rs",
+    " M src/bin/forgejo-webhook-local.rs",
+    " M src/bin/gate.rs",
+    " M src/lib.rs",
+    " M src/webhook.rs",
+    " M src/webhook/http.rs",
+    " M src/webhook/reconcile.rs",
+    "?? scripts/run_forgejo_live_pr_merge_e2e.py",
+    "?? scripts/run_forgejo_live_webhook_reconcile_e2e.py",
+    "?? scripts/run_forgejo_live_webhook_reconcile_emitted.py",
+    "?? scripts/run_forgejo_mission_delivery_process_e2e.py",
+    "?? src/agent_runtime.rs",
+    "?? src/bin/forgejo-mission-local.rs",
+    "?? src/bin/mission-012-mcp-host.rs",
+    "?? src/bin/mission-012-verify-local.rs",
+    "?? src/forgejo.rs",
+    "?? src/mission_012_host.rs",
+    "?? src/mission_admission.rs",
+    "?? src/strict_json.rs",
+    "?? src/supervisor_capability.rs",
+    "?? tests/test_forgejo_emitted_webhook_e2e.py"
+  ],
+  "webhook_secret_recorded": false
+}

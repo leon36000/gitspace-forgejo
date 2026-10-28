@@ -1,0 +1,4 @@
+e6cb7890f1d7045b2423465d1e452b6f91c4d71c746957aefc9bade286d10006  /tmp/forgejo-v17-base-cas-poc/modules/structs/issue.go
+1472f689d9e80da512cc8edafa5d647daafccdf060dfba0d4a74d3be5cfe06e3  /tmp/forgejo-v17-base-cas-poc/modules/structs/pull.go
+a204a417bd519072ad5ac0e64fb804a0c2fc1fb4a0b39d71ee6d690d065877b8  /tmp/forgejo-v17-base-cas-poc/modules/structs/issue_milestone.go
+a85ec9a4567fb0a87b0af7756f3ddb2366c54375e9ad7471046c9c2fa4fd4776  /tmp/forgejo-v17-base-cas-poc/services/convert/issue.go

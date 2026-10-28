@@ -1,0 +1,4 @@
+append_manifests.py: OK
+local-run.md: OK
+manifest-prefix-before.json: OK
+verify_append_only_indexes.py: OK
