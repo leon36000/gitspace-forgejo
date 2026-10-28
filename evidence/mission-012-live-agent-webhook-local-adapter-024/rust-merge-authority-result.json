@@ -1,0 +1,39 @@
+{
+  "api_version": "forgejo-rest-v1",
+  "external_writer_exclusion": "not_provided_by_cooperative_lock",
+  "http_status": 200,
+  "issue_state": "closed",
+  "main_head_sha": "85d6e901b2c892bcc3fa80ef94219e4e7172f702",
+  "merge_attempted": true,
+  "merge_authorized": true,
+  "merge_commit_base_parent_sha": "b7004ef3f0f10ac228b083802ffd5e9acdf272b3",
+  "merge_commit_head_parent_sha": "f28c9c3264938bb0423daf9d6bbc6d32716521a9",
+  "merge_commit_sha": "85d6e901b2c892bcc3fa80ef94219e4e7172f702",
+  "merge_commit_tree_entries_sha256": "5acd4a07d65b213d48afbf510a23dd1cce043a3faa61212a4e4d61af48792e74",
+  "mission_admission": {
+    "admission_sha256": "169094b9254e6ee3385540b6da68735a54db92082787974cbe24b81ffa9387a2",
+    "allocation_id": "mission012-local-adapter-024",
+    "base_commit": "b7004ef3f0f10ac228b083802ffd5e9acdf272b3",
+    "execution_generation": 1,
+    "issue_number": 1,
+    "mission_id": "mission-v1-94c26001d4370e63d3637fd5c06ef13f0496424a39a74bf498b7512b7d2b37b5",
+    "request_sha256": "62d4572c49fc46fdde59bb6560e14f2c24e7eb5cc545b1fc6fe78a5ee158585a",
+    "requirement_sha256": "3a3c444075c93a3bcfb2bec17d1a2e74ec0051effc2994e6b02ac095eb0dd431",
+    "schema_version": 1
+  },
+  "operation": "local_test_merge_authority",
+  "postmerge_base_sha": "85d6e901b2c892bcc3fa80ef94219e4e7172f702",
+  "pull_request_number": 2,
+  "reviewed_candidate_tree_entries_sha256": "5acd4a07d65b213d48afbf510a23dd1cce043a3faa61212a4e4d61af48792e74",
+  "schema_version": 1,
+  "submitted_head_sha": "f28c9c3264938bb0423daf9d6bbc6d32716521a9",
+  "target": {
+    "base_branch": "main",
+    "origin": "http://127.0.0.1:3132",
+    "owner": "forge-admin",
+    "repository": "mission-012-clamp",
+    "selector": "mission-012-clamp"
+  },
+  "validated_base_sha": "b7004ef3f0f10ac228b083802ffd5e9acdf272b3",
+  "verdict": "merged"
+}
