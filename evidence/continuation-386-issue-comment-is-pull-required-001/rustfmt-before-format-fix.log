@@ -1,0 +1,38 @@
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_handler_contract.rs:148:
+         .iter()
+         .find(|contract| contract["event"] == "issue_comment")
+         .unwrap();
+-    assert!(!issue_comment_v7["required_payload_fields"]
+-        .as_array()
+-        .unwrap()
+-        .iter()
+-        .any(|field| field == "is_pull"));
++    assert!(
++        !issue_comment_v7["required_payload_fields"]
++            .as_array()
++            .unwrap()
++            .iter()
++            .any(|field| field == "is_pull")
++    );
+     let issue_comment_v8 = response.body["webhook_ingest"]["event_contracts_v8"]["contracts"]
+         .as_array()
+         .unwrap()
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_handler_contract.rs:159:
+         .iter()
+         .find(|contract| contract["event"] == "issue_comment")
+         .unwrap();
+-    assert!(issue_comment_v8["required_payload_fields"]
+-        .as_array()
+-        .unwrap()
+-        .iter()
+-        .any(|field| field == "is_pull"));
++    assert!(
++        issue_comment_v8["required_payload_fields"]
++            .as_array()
++            .unwrap()
++            .iter()
++            .any(|field| field == "is_pull")
++    );
+     assert_eq!(response.body["schema_version"], 8);
+     assert_eq!(
+         response.body["webhook_ingest"]["event_contracts"]["webhook_payload_is_authoritative"],

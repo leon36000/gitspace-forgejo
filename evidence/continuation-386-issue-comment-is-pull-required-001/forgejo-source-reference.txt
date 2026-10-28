@@ -1,0 +1,5 @@
+forgejo_v17_version=17.0.0
+forgejo_v17_commit=0d791421f85ca13a63b665053d81ea765fbbc571
+modules/structs/hook.go blob=9c7f1deed1c38eeb435ab976bb8429c5458c7f2b
+IssueCommentPayload.IsPull is json:"is_pull" (not omitempty), lines 204-213
+file was clean in the v17 scratch worktree; it was not modified or copied into this product

@@ -1,0 +1,16 @@
+append_manifests.py: OK
+diff-check-final.log: OK
+diff-check-red.log: OK
+diff-check.log: OK
+environment.txt: OK
+handler-contract-green.log: OK
+local-run.md: OK
+manifest-prefix-before.json: OK
+receiver-actionable-error-green.log: OK
+receiver-actionable-error-red.log: OK
+runner-ast.log: OK
+rustfmt-final.log: OK
+rustfmt-red.log: OK
+rustfmt.log: OK
+verification-commands.txt: OK
+verify_append_only_indexes.py: OK

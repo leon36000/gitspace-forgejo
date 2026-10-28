@@ -1,0 +1,1 @@
+cargo test --offline --locked --test webhook_receiver_process_e2e capabilities_endpoint_describes_the_versioned_webhook_contract_without_mutating_inbox -- --exact --test-threads=1

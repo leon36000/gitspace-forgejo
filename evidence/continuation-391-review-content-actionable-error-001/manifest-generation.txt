@@ -1,0 +1,1 @@
+{"local_evidence_files": 15, "prefixes_recorded": {"project": {"line_count": 12059, "sha256": "3ac82135710113bc3b6088a5544a1675173b5969a16f56a21857cc38b163ce96"}, "worktree": {"line_count": 17523, "sha256": "65b7c08cfa53cac4f584910a3f2bacc6ae81178679c844fd4df56f73e789988b"}}, "project_entries_appended": 22, "worktree_entries_appended": 21}

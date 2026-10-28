@@ -1,0 +1,3 @@
+cargo fmt --all -- --check
+git diff --check
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_receiver_restarts_after_missing_is_pull_and_accepts_corrected_same_delivery

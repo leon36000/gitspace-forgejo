@@ -1,0 +1,9 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.78s
+     Running tests/webhook_handler_contract.rs (target/debug/deps/webhook_handler_contract-3f813c02b258e567)
+
+running 1 test
+test issue_comment_refuses_inconsistent_issue_pull_request_bindings ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 29 filtered out; finished in 0.00s
+

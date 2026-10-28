@@ -1,0 +1,9 @@
+append_manifests.py: OK
+diff-check.log: OK
+environment.txt: OK
+local-run.md: OK
+manifest-prefix-before.json: OK
+rustfmt.log: OK
+test-output.txt: OK
+verification-commands.txt: OK
+verify_append_only_indexes.py: OK

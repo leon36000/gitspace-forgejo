@@ -1,0 +1,11 @@
+cargo fmt --all -- --check
+git diff --check
+cargo test --offline --locked --test webhook_handler_contract issue_comment_refuses_inconsistent_issue_pull_request_bindings -- --exact --test-threads=1
+cargo test --offline --locked --test webhook_reconcile_contract issue_comment_events_require_supported_action_and_positive_comment_id -- --exact --test-threads=1
+cargo test --offline --locked --test webhook_handler_contract capabilities_publish_machine_readable_contracts_for_every_supported_event -- --exact --test-threads=1
+cargo test --offline --locked --test forgejo_reconcile_capabilities_e2e actual_cli_discloses_versioned_local_test_capabilities -- --exact --test-threads=1
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_receiver_refuses_issue_comment_without_is_pull_before_reserving_delivery
+cargo test --offline --locked --test webhook_receiver_process_e2e actual_receiver_accepts_forgejo_v17_issue_comment_event_for_pull_request_conversation -- --exact --test-threads=1
+cargo metadata --offline --locked --no-deps --format-version 1
+python3 scripts/verify_cargo_license_state.py
+python3 -c 'import ast,pathlib; ast.parse(pathlib.Path("scripts/run_webhook_reconcile_cli_e2e.py").read_text())'

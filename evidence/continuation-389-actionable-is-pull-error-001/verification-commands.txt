@@ -1,0 +1,8 @@
+Red:
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_receiver_refuses_issue_comment_without_is_pull_before_reserving_delivery
+
+Green:
+cargo fmt --all -- --check
+git diff --check
+cargo test --offline --locked --test webhook_handler_contract issue_comment_refuses_inconsistent_issue_pull_request_bindings -- --exact --test-threads=1
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_receiver_refuses_issue_comment_without_is_pull_before_reserving_delivery

@@ -1,0 +1,15 @@
+append_manifests.py: OK
+diff-check-final.log: OK
+diff-check-green.log: OK
+diff-check-red.log: OK
+environment.txt: OK
+local-run.md: OK
+manifest-prefix-before.json: OK
+receiver-comment-id-green.log: OK
+receiver-comment-id-red.log: OK
+runner-ast.log: OK
+rustfmt-final.log: OK
+rustfmt-green.log: OK
+rustfmt-red.log: OK
+verification-commands.txt: OK
+verify_append_only_indexes.py: OK
