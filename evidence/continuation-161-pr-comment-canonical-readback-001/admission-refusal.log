@@ -1,0 +1,11 @@
+COMMAND: cargo test --offline --locked --test webhook_mission_admission_contract pull_request_conversation_comment_cannot_create_mission_from_comment_text
+EXIT_STATUS: 0
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.47s
+     Running tests/webhook_mission_admission_contract.rs (target/debug/deps/webhook_mission_admission_contract-970f84c8f68c75fe)
+
+running 1 test
+test pull_request_conversation_comment_cannot_create_mission_from_comment_text ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 14 filtered out; finished in 0.01s
+

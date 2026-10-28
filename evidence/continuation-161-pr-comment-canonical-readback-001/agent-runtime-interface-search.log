@@ -1,0 +1,5 @@
+$ rg -n impl.*AgentRuntimeV1|AgentRuntimeV1 src tests
+exit=0
+src/agent_runtime.rs:4490:pub trait AgentRuntimeV1 {
+tests/agent_runtime_contract.rs:3:    AgentRuntimeV1, AgentToolPortV1, AgentUsageV1, CandidateRefV1, ContextCitationV1,
+tests/agent_runtime_contract.rs:50:impl AgentRuntimeV1 for FixtureRuntime {

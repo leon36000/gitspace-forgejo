@@ -1,0 +1,14 @@
+Observed test output before changing src/bin/forgejo-webhook-local.rs:
+
+running 1 test
+test actual_receiver_rejects_case_variant_conflicting_content_lengths_before_append ... FAILED
+
+---- actual_receiver_rejects_case_variant_conflicting_content_lengths_before_append stdout ----
+
+assertion `left == right` failed
+  left: String("send one complete HTTP request with Content-Length")
+ right: "send a complete, well-formed request with at most one Content-Length, no Transfer-Encoding, and one Host for HTTP/1.1"
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 122 filtered out; finished in 0.03s
+
+This red phase was run from the same worktree before the runtime message edit. The final green stdout is process-test.log.

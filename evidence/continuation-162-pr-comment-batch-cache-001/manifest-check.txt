@@ -1,0 +1,3 @@
+COMMAND: python3 evidence/continuation-162-pr-comment-batch-cache-001/append_manifests.py
+EXIT_STATUS: 0
+{"local_entries_appended": 0, "local_files_verified": 14, "project_entries_appended": 0, "project_prefix_preserved": true, "worktree_entries_appended": 0, "worktree_prefix_preserved": true}

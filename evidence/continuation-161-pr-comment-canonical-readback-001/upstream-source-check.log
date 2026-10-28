@@ -1,0 +1,30 @@
+$ git -C /tmp/forgejo-v17-base-cas-poc remote get-url origin
+exit=0
+https://codeberg.org/forgejo/forgejo.git
+
+$ git -C /tmp/forgejo-v17-base-cas-poc rev-parse HEAD
+exit=0
+0d791421f85ca13a63b665053d81ea765fbbc571
+
+$ git -C /tmp/forgejo-v17-base-cas-poc rev-parse HEAD:routers/api/v1/api.go
+exit=0
+90b8638e10a1a19792e0936ff0e1ceb732e874d4
+
+$ git -C /tmp/forgejo-v17-base-cas-poc rev-parse HEAD:routers/api/v1/repo/issue_comment.go
+exit=0
+92d7d714a478d41b68580ef2cace698b74c7155c
+
+$ git -C /tmp/forgejo-v17-base-cas-poc rev-parse HEAD:services/convert/issue_comment.go
+exit=0
+2f9af9be7c71a81338d70b87cb2be19ee87569a0
+
+$ git -C /tmp/forgejo-v17-base-cas-poc rev-parse HEAD:modules/structs/issue_comment.go
+exit=0
+766442374d22a4158c7722c6e97213cdf4f31ef6
+
+$ git -C /tmp/forgejo-v17-base-cas-poc rev-parse HEAD:models/issues/comment.go
+exit=0
+8c94589ddff464c3a2b029469220e43fcb7321b0
+
+$ git -C /tmp/forgejo-v17-base-cas-poc diff --quiet HEAD -- routers/api/v1/api.go routers/api/v1/repo/issue_comment.go services/convert/issue_comment.go modules/structs/issue_comment.go models/issues/comment.go
+exit=0

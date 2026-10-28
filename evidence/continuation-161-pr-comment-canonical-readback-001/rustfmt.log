@@ -1,0 +1,202 @@
+COMMAND: cargo fmt --all -- --check
+EXIT_STATUS: 1
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/src/bin/forgejo-reconcile-local.rs:1842:
+                 "{}/{}/{}/issues/{issue_number}",
+                 self.config.origin, self.config.owner, self.config.repository
+             ),
+-            (
+-                ResourceKind::PullRequestComment,
+-                ResourceId::IssueComment { issue_number, .. },
+-            ) => format!(
+-                "{}/{}/{}/pulls/{issue_number}",
+-                self.config.origin, self.config.owner, self.config.repository
+-            ),
++            (ResourceKind::PullRequestComment, ResourceId::IssueComment { issue_number, .. }) => {
++                format!(
++                    "{}/{}/{}/pulls/{issue_number}",
++                    self.config.origin, self.config.owner, self.config.repository
++                )
++            }
+             (ResourceKind::PullRequest, ResourceId::Number(number)) => format!(
+                 "{}/{}/{}/pulls/{number}",
+                 self.config.origin, self.config.owner, self.config.repository
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/src/bin/forgejo-reconcile-local.rs:2305:
+             "issue_number": issue_number,
+             "comment_id": comment_id,
+         }),
+-        (
+-            ResourceKind::PullRequestComment,
+-            ResourceId::IssueComment {
+-                issue_number,
+-                ..
+-            },
+-        ) => json!({
+-            "kind": "pull_request",
+-            "owner": reconciled.resource.owner,
+-            "repository": reconciled.resource.repository,
+-            "number": issue_number,
+-        }),
++        (ResourceKind::PullRequestComment, ResourceId::IssueComment { issue_number, .. }) => {
++            json!({
++                "kind": "pull_request",
++                "owner": reconciled.resource.owner,
++                "repository": reconciled.resource.repository,
++                "number": issue_number,
++            })
++        }
+         (ResourceKind::Branch, ResourceId::Branch(branch)) => json!({
+             "kind": "branch",
+             "owner": reconciled.resource.owner,
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/src/webhook/reconcile.rs:253:
+         return Err(ReconcileError::ResourceMismatch);
+     }
+ 
+-    let (head_sha, base_sha, merged, merge_commit_sha) = if resource.kind == ResourceKind::PullRequest
+-    {
+-        let (head_sha, base_sha, merged, merge_commit_sha) =
+-            current_pull_request_fields(&current, &resource, state)?;
+-        (
+-            Some(head_sha),
+-            Some(base_sha),
+-            Some(merged),
+-            merge_commit_sha,
+-        )
+-    } else {
+-        (None, None, None, None)
+-    };
++    let (head_sha, base_sha, merged, merge_commit_sha) =
++        if resource.kind == ResourceKind::PullRequest {
++            let (head_sha, base_sha, merged, merge_commit_sha) =
++                current_pull_request_fields(&current, &resource, state)?;
++            (
++                Some(head_sha),
++                Some(base_sha),
++                Some(merged),
++                merge_commit_sha,
++            )
++        } else {
++            (None, None, None, None)
++        };
+ 
+     Ok(ReconciledState {
+         delivery_id: delivery_id.to_owned(),
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/src/webhook/reconcile.rs:529:
+             let current_parent_url = current_comment
+                 .get(expected_parent_field)
+                 .and_then(Value::as_str)
+-                .ok_or(ReconcileError::InvalidCurrentStateField(match resource.kind {
+-                    ResourceKind::IssueComment => "comment.issue_url",
+-                    ResourceKind::PullRequestComment => "comment.pull_request_url",
+-                    _ => "resource.kind",
+-                }))?;
++                .ok_or(ReconcileError::InvalidCurrentStateField(
++                    match resource.kind {
++                        ResourceKind::IssueComment => "comment.issue_url",
++                        ResourceKind::PullRequestComment => "comment.pull_request_url",
++                        _ => "resource.kind",
++                    },
++                ))?;
+             if current_parent_url != html_url {
+                 return Err(ReconcileError::ResourceMismatch);
+             }
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/src/webhook/reconcile.rs:542:
+                 Some(Value::String(value)) if value.is_empty() => {}
+                 Some(Value::String(_)) => return Err(ReconcileError::ResourceMismatch),
+                 Some(_) => {
+-                    return Err(ReconcileError::InvalidCurrentStateField(match resource.kind {
+-                        ResourceKind::IssueComment => "comment.pull_request_url",
+-                        ResourceKind::PullRequestComment => "comment.issue_url",
+-                        _ => "resource.kind",
+-                    }));
++                    return Err(ReconcileError::InvalidCurrentStateField(
++                        match resource.kind {
++                            ResourceKind::IssueComment => "comment.pull_request_url",
++                            ResourceKind::PullRequestComment => "comment.issue_url",
++                            _ => "resource.kind",
++                        },
++                    ));
+                 }
+             }
+             let comment_html_url = current_comment
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/src/webhook/reconcile.rs:1067:
+         })
+         .ok_or(ReconcileError::InvalidRepository)?;
+     validate_repository_identity(repository_payload, owner, repository)?;
+-    if matches!(kind, ResourceKind::PullRequest | ResourceKind::PullRequestComment) {
++    if matches!(
++        kind,
++        ResourceKind::PullRequest | ResourceKind::PullRequestComment
++    ) {
+         validate_pull_request_base_repository(payload, owner, repository, full_name)?;
+     }
+ 
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/src/webhook/reconcile.rs:1179:
+             let resource_name = match kind {
+                 ResourceKind::Issue => "issue",
+                 ResourceKind::PullRequest => "pull_request",
+-                ResourceKind::IssueComment | ResourceKind::PullRequestComment
++                ResourceKind::IssueComment
++                | ResourceKind::PullRequestComment
+                 | ResourceKind::Branch
+                 | ResourceKind::WorkflowRun
+                 | ResourceKind::WorkflowJob => unreachable!(),
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_mission_admission_contract.rs:151:
+     }
+ }
+ 
+-fn inbox_pull_request_comment(journal: &EventJournal, delivery_id: &str) -> JournaledWebhookEventV1 {
++fn inbox_pull_request_comment(
++    journal: &EventJournal,
++    delivery_id: &str,
++) -> JournaledWebhookEventV1 {
+     let body = serde_json::to_vec(&json!({
+         "action": "created",
+         "issue": {"number": 41, "state": "open"},
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:2855:
+ fn start_cli_http_fixture_responses(
+     responses: Vec<(u16, Value)>,
+ ) -> thread::JoinHandle<Vec<String>> {
+-    assert!(!responses.is_empty(), "fixture must have at least one response");
++    assert!(
++        !responses.is_empty(),
++        "fixture must have at least one response"
++    );
+     let listener = TcpListener::bind("127.0.0.1:3130")
+         .expect("private network namespace reserves the fixed local Forgejo endpoint");
+     listener
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_reconcile_contract.rs:702:
+     let comment = reconciled.comment.expect("current PR comment is returned");
+     assert_eq!(comment.id, 29);
+     assert_eq!(comment.state, "present");
+-    assert_eq!(comment.body.as_deref(), Some("canonical PR conversation comment"));
++    assert_eq!(
++        comment.body.as_deref(),
++        Some("canonical PR conversation comment")
++    );
+     assert_eq!(comment.body_trust, "untrusted_user_content");
+     let requests = api.requests.lock().unwrap();
+     assert_eq!(requests.len(), 2, "read the PR, then the current comment");
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_reconcile_contract.rs:721:
+ #[test]
+ fn pull_request_comment_requires_exact_parent_and_only_deleted_404_means_absent() {
+     let mut wrong_parent = pull_request_comment_api();
+-    wrong_parent.comment.as_mut().unwrap()["pull_request_url"] = json!(
+-        "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/12"
+-    );
++    wrong_parent.comment.as_mut().unwrap()["pull_request_url"] =
++        json!("http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/12");
+     assert_eq!(
+         reconcile_inbox_event(
+             &pull_request_comment_fixture_event("edited", 29, "ignored"),
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_reconcile_contract.rs:733:
+     );
+ 
+     let mut ambiguous_parent = pull_request_comment_api();
+-    ambiguous_parent.comment.as_mut().unwrap()["issue_url"] = json!(
+-        "http://127.0.0.1:3130/forge-admin/agent-forge-core/issues/11"
+-    );
++    ambiguous_parent.comment.as_mut().unwrap()["issue_url"] =
++        json!("http://127.0.0.1:3130/forge-admin/agent-forge-core/issues/11");
+     assert_eq!(
+         reconcile_inbox_event(
+             &pull_request_comment_fixture_event("edited", 29, "ignored"),

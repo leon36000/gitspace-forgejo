@@ -1,0 +1,3 @@
+$ git -C /tmp/forgejo-v17-base-cas-poc describe --tags --exact-match HEAD
+exit=0
+v17.0.0
