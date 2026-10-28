@@ -1,0 +1,7 @@
+base_head=f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+branch=local/WEBHOOK-005-canonical-links
+worktree_status=heavily_modified_and_uncommitted
+scope=local-test-adapter receiver and reconciliation CLI against a synthetic signed issue delivery and loopback API fixture
+no_live_forgejo_or_gitea=true
+no_production_or_external_service=true
+no_model_call=true

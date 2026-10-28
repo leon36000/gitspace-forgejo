@@ -1,0 +1,11 @@
+Read-only reconciliation (product worktree: .runtime/webhook-005-workspace)
+
+- `git rev-parse HEAD` -> f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+- `git rev-parse --abbrev-ref HEAD` -> local/WEBHOOK-005-canonical-links
+- `git status --short -- docs/architecture.md docs/checkpoint.md evidence/mission-012-live-agent-webhook-supervised-009` -> docs were already modified; run-009 evidence directory is untracked local work.
+- `python3 evidence/continuation-140-supervisor-run-source-reconcile-001/verify_source_snapshot.py` -> compares each saved source SHA-256 in run 009 against the current file; output is source-diff.json.
+- `rg -n "def _bwrap_command|def main|--unshare-user|--unshare-net|--agent-adapter|supervisor_policy_independently_verified" scripts/run_mission_012_supervised_private_netns_e2e.py` -> inspect the current harness without executing it.
+- `python3 evidence/mission-012-live-agent-webhook-supervised-009/verify_append_only_indexes.py` -> read-only verification of its local 24-entry evidence manifest and worktree/project append-only prefixes.
+- No Forgejo process, network route, model, test suite, or credential was invoked.
+
+Tool observed: Python 3.12.3. Historical run 009 reports Forgejo binary `17.0.0+gitea-1.22.0`, Bubblewrap 0.9.0, but its Forgejo upstream commit is unknown.

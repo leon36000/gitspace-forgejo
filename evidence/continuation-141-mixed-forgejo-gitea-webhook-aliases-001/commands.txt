@@ -1,0 +1,12 @@
+Executed from the product worktree at HEAD `f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0`, branch `local/WEBHOOK-005-canonical-links`:
+
+- `python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_reads_mixed_forgejo_gitea_aliases` — offline compile + exact ignored test in Bubblewrap; exit 0, 1 passed, 117 filtered. Full output is `focused-run.log`.
+- `cargo fmt --all -- --check` — final exit 0 (`rustfmt-final.log`); the earlier one-line format discrepancy is retained in `rustfmt.log`.
+- `python3 -c 'import ast; from pathlib import Path; p=Path("scripts/run_webhook_reconcile_cli_e2e.py"); ast.parse(p.read_text(), filename=str(p)); print("python syntax: ok")'` — exit 0.
+- `git diff --check` — exit 0.
+- `python3 scripts/verify_cargo_license_state.py` — exit 0; structured result is `cargo-license-guard.json`.
+- `cargo metadata --offline --locked --format-version 1 --no-deps` filtered to `agent-forge-core` — `cargo-license-metadata.json`.
+- `rg -n "impl .*AgentRuntimeV1" src tests --glob '*.rs'` — only `FixtureRuntime` in `tests/agent_runtime_contract.rs`.
+- `sha256sum tests/webhook_receiver_process_e2e.rs scripts/run_webhook_reconcile_cli_e2e.py Cargo.toml Cargo.lock` — `source-sha256.txt`.
+
+No live Forgejo/Gitea service, model CLI, external API, secret, production service, publication, or new access was used.

@@ -1,0 +1,18 @@
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:10998:
+         .stdin(Stdio::null())
+         .output()
+         .expect("run actual status snapshot CLI process");
+-    let (requests, _) = fixture
+-        .join()
+-        .expect("duplicate-header fixture completed");
++    let (requests, _) = fixture.join().expect("duplicate-header fixture completed");
+ 
+     assert_eq!(output.status.code(), Some(1));
+-    assert!(output.stdout.is_empty(), "invalid headers cannot produce a snapshot");
++    assert!(
++        output.stdout.is_empty(),
++        "invalid headers cannot produce a snapshot"
++    );
+     let stderr = String::from_utf8_lossy(&output.stderr);
+     assert!(
+         stderr.contains("Forgejo returned an invalid or mismatched status snapshot"),

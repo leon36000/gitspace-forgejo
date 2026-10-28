@@ -1,0 +1,32 @@
+{
+  "scenario": "actual_commit_status_snapshot_cli_refuses_duplicate_case_variant_total_count_headers",
+  "test_result": "passed",
+  "passed": 1,
+  "failed": 0,
+  "ignored": 0,
+  "filtered": 118,
+  "sandbox": {
+    "runtime": "bubblewrap",
+    "network_namespace": true,
+    "pid_namespace": true,
+    "offline_compile": true
+  },
+  "synthetic_response": {
+    "http_status": 200,
+    "headers": ["X-Total-Count: 1", "x-total-count: 1"],
+    "body_marker": "synthetic-duplicate-total-count-must-not-leak"
+  },
+  "observed": {
+    "cli_exit_code": 1,
+    "stdout_empty": true,
+    "explicit_invalid_snapshot_refusal_message": true,
+    "synthetic_body_marker_leaked": false,
+    "api_requests": 1,
+    "request_path": "/api/v1/repos/forge-admin/agent-forge-core/commits/<40-char-sha>/status?limit=50&page=1",
+    "authorization_header_sent": false,
+    "retry_after_invalid_response": false
+  },
+  "production_code_changed": false,
+  "forgejo_instance_used": false,
+  "llm_or_agent_runtime_used": false
+}

@@ -1,0 +1,14 @@
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:11680:
+         "the untrusted 429 body must not appear in the result"
+     );
+     assert_eq!(requests.len(), 1, "ambiguous Retry-After disables retries");
+-    assert!(requests[0].starts_with(
+-        "GET /api/v1/repos/forge-admin/agent-forge-core/issues/41 HTTP/1.1\r\n"
+-    ));
++    assert!(
++        requests[0]
++            .starts_with("GET /api/v1/repos/forge-admin/agent-forge-core/issues/41 HTTP/1.1\r\n")
++    );
+     assert!(
+         !requests[0]
+             .lines()

@@ -1,0 +1,5 @@
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_reads_gitea_alias_only_delivery
+cargo fmt --all -- --check
+python3 -m py_compile scripts/run_webhook_reconcile_cli_e2e.py
+git diff --check
+python3 evidence/continuation-138-gitea-alias-receiver-process-001/verify_append_only_indexes.py

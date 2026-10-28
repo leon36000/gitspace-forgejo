@@ -1,0 +1,11 @@
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_disables_retry_for_duplicate_retry_after_headers
+cargo fmt --all -- --check
+git diff --check
+cargo metadata --locked --offline --format-version 1 --no-deps
+python3 scripts/verify_cargo_license_state.py
+python3 scripts/test_cargo_license_state.py
+python3 -c 'import ast,pathlib; ast.parse(pathlib.Path("scripts/run_webhook_reconcile_cli_e2e.py").read_text()); print("python AST ok")'
+rg -n "impl .*AgentRuntimeV1" src tests --glob '*.rs'
+sha256sum Cargo.toml Cargo.lock docs/checkpoint.md docs/refusal-evidence-matrix.md docs/source-inventory.md scripts/run_webhook_reconcile_cli_e2e.py src/bin/forgejo-reconcile-local.rs tests/webhook_receiver_process_e2e.rs > evidence/continuation-143-duplicate-retry-after-process-001/source-sha256.txt
+python3 evidence/continuation-143-duplicate-retry-after-process-001/append_manifests.py > evidence/continuation-143-duplicate-retry-after-process-001/manifest-check.txt
+python3 evidence/continuation-143-duplicate-retry-after-process-001/verify_append_only_indexes.py > evidence/continuation-143-duplicate-retry-after-process-001/global-manifest-check.txt

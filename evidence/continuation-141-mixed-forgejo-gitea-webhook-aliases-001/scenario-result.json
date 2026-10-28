@@ -1,0 +1,38 @@
+{
+  "agentos_invoked": false,
+  "forgejo_instance_used": false,
+  "headers": {
+    "delivery": "X-Gitea-Delivery",
+    "event": "X-Forgejo-Event",
+    "signature": "X-Gitea-Signature"
+  },
+  "llm_invoked": false,
+  "network_namespace": "Bubblewrap --unshare-net; API loopback fixture only",
+  "pid_namespace": "Bubblewrap --unshare-pid",
+  "product_runtime_changed": false,
+  "receiver": {
+    "canonical_event": "forgejo.webhook.v1.issues",
+    "duplicate": false,
+    "http_status": 202,
+    "sequence": 1
+  },
+  "reconciliation": {
+    "authorization_header": false,
+    "current_api_state": "open",
+    "http_get_count": 1,
+    "journal_unchanged": true,
+    "route": "/api/v1/repos/forge-admin/agent-forge-core/issues/41",
+    "signed_payload_state": "closed",
+    "verdict": "current_state_read"
+  },
+  "runner": "scripts/run_webhook_reconcile_cli_e2e.py",
+  "runner_exit_code": 0,
+  "scenario": "actual_reconcile_cli_process_reads_mixed_forgejo_gitea_aliases",
+  "schema_version": 1,
+  "test_result": {
+    "failed": 0,
+    "filtered": 117,
+    "ignored": 0,
+    "passed": 1
+  }
+}

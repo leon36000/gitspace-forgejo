@@ -1,0 +1,38 @@
+{
+  "scenario": "actual_reconcile_cli_process_disables_retry_for_duplicate_retry_after_headers",
+  "result": {
+    "passed": 1,
+    "failed": 0,
+    "ignored": 0,
+    "filtered": 119
+  },
+  "sandbox": {
+    "bubblewrap": true,
+    "unshare_network": true,
+    "unshare_pid": true,
+    "compile_offline": true
+  },
+  "synthetic_upstream_response": {
+    "status": 429,
+    "headers": ["Retry-After: 0", "retry-after: 0"],
+    "body_marker": "synthetic-duplicate-retry-after-body-must-not-leak"
+  },
+  "observed": {
+    "receiver_status": 202,
+    "cli_exit_code": 1,
+    "verdict": "inconclusive",
+    "error_code": "upstream_http_status",
+    "http_status": 429,
+    "caller_retryable": true,
+    "retry_after_ms_present": false,
+    "canonical_state_present": false,
+    "upstream_read_attempts": 1,
+    "fixture_requests": 1,
+    "authorization_header_sent": false,
+    "body_marker_leaked": false,
+    "journal_unchanged": true
+  },
+  "production_code_changed": false,
+  "forgejo_instance_used": false,
+  "llm_or_agent_runtime_used": false
+}
