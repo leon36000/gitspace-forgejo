@@ -1,0 +1,23 @@
+Initial isolated process attempt (runner stopped before launching the test due to a missing required keyword argument):
+python3 -B scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_reads_sha256_current_branch_commit
+Output: process-e2e.log (TypeError from sandbox.run because test_name was omitted).
+
+After the one-line runner correction:
+python3 -B scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_reads_sha256_current_branch_commit
+Output: process-e2e-green.log (1 passed, 108 filtered).
+
+Focused contract:
+cargo test --offline --locked --test webhook_reconcile_contract branch_snapshot_accepts_nonzero_sha256_commit_id
+Full reconciliation contract:
+cargo test --offline --locked --test webhook_reconcile_contract -- --test-threads=1
+
+Cargo license guard tests:
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest -v scripts.test_cargo_license_state
+Cargo metadata license state:
+python3 scripts/verify_cargo_license_state.py
+
+Additional checks:
+cargo fmt --all -- --check
+git diff --check
+python3 -B scripts/run_webhook_reconcile_cli_e2e.py --help
+Python ast.parse for the changed runner and product test sources.

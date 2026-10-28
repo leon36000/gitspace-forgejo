@@ -1,0 +1,22 @@
+Product checkout: /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace
+Product HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+Branch: local/WEBHOOK-005-canonical-links
+Toolchain: rustc 1.95.0 (59807616e 2026-04-14); cargo 1.95.0 (f2d3ce0bd 2026-03-21)
+
+Focused new process-boundary test:
+cargo test --locked --offline --test webhook_receiver_process_e2e actual_receiver_rejects_zero_sha_branch_create_before_durable_append -- --exact --nocapture
+Result: 1 passed, 0 failed.
+
+A first full suite and one subsequent isolated run exposed the pre-existing/intermittent cancellation observation; both logs are retained here. The isolated rerun with diagnostic fields passed, then the full retry passed:
+cargo test --locked --offline --test mission_012_mcp_lifecycle mcp_supervisor_cancellation_terminates_the_in_flight_verifier_scope -- --exact --nocapture
+cargo test --locked --offline --all-targets -- --test-threads=1
+Result of the final all-target retry: 549 passed, 0 failed, 76 ignored across 34 groups.
+Three further isolated repetitions of the cancellation test passed 1/1 each; see cancellation-repeat-{1,2,3}.log.
+
+Final checks:
+cargo fmt --all -- --check
+git diff --check
+python3 scripts/verify_cargo_license_state.py
+cargo metadata --offline --locked --no-deps --format-version 1
+
+No Forgejo server, network service, LLM, paid model, external data, production, publication, or product-license selection was used.

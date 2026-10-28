@@ -1,0 +1,19 @@
+Product checkout: /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace
+Product HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+Branch: local/WEBHOOK-005-canonical-links
+Toolchain: rustc 1.95.0 (59807616e 2026-04-14); cargo 1.95.0 (f2d3ce0bd 2026-03-21)
+Forgejo source: v17.0.0, 0d791421f85ca13a63b665053d81ea765fbbc571
+
+TDD red before the production change:
+cargo test --offline --locked --test webhook_reconcile_contract branch_create_notifications_reject_zero_object_ids_before_api_calls -- --exact --nocapture
+Observed exit 101: got Ok(ReconciledState) for the zero SHA; expected Err(InvalidEnvelope).
+cargo test --offline --locked --test webhook_handler_contract forgejo_branch_create_refuses_tags_and_malformed_bindings_without_journaling -- --exact --nocapture
+Observed exit 101: signed create payload at case 3 was accepted with HTTP 202; test expected HTTP 400.
+
+Green verification after the production change:
+cargo test --locked --offline --all-targets -- --test-threads=1
+cargo fmt --all -- --check
+git diff --check
+python3 scripts/verify_cargo_license_state.py
+
+No live Forgejo instance, LLM, external service, paid model, production, publication, or Forgejo source modification was used in this tranche.

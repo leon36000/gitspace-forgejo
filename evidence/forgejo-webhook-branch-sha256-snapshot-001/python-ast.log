@@ -1,0 +1,2 @@
+Python AST parse passed for scripts/run_webhook_reconcile_cli_e2e.py and scripts/run_forgejo_mission_delivery_process_e2e.py.
+Rust test sources were compiled and executed by the recorded Cargo commands.

@@ -1,0 +1,12 @@
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:8573:
+ 
+     let (mut receiver, address) = start_ready_receiver(&secret, &journal_path);
+     let (status, accepted) = send(address, &request_event(DELIVERY_ID, "push", &body));
+-    assert_eq!(status, 202, "valid branch push should be accepted: {accepted}");
++    assert_eq!(
++        status, 202,
++        "valid branch push should be accepted: {accepted}"
++    );
+     assert_eq!(accepted["reconcile_required"], true);
+     assert!(stop_receiver(&mut receiver).success());
+     let journal_before = fs::read(&journal_path).expect("snapshot accepted branch journal");

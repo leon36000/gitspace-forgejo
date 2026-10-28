@@ -1,0 +1,14 @@
+Red regression test before the implementation change (expected status 101):
+cargo test --offline --locked --test webhook_reconcile_contract branch_snapshot_requires_the_requested_name_and_a_valid_commit -- --exact --nocapture
+
+Focused green contract target after the implementation change:
+cargo test --offline --locked --test webhook_reconcile_contract -- --test-threads=1
+
+Receiver -> reconciler process test in the isolated network/PID namespace:
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_refuses_zero_current_branch_commit
+
+Additional checks:
+cargo fmt --all -- --check
+git diff --check
+python3 -m py_compile scripts/run_webhook_reconcile_cli_e2e.py
+python3 scripts/verify_cargo_license_state.py

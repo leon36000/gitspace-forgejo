@@ -1,0 +1,25 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+error[E0004]: non-exhaustive patterns: `&agent_forge_core::webhook::reconcile::ReconcileError::InvalidEventPayloadField(_)` not covered
+    --> src/bin/forgejo-reconcile-local.rs:1927:52
+     |
+1927 |     let (code, retryable, action, details) = match error {
+     |                                                    ^^^^^ pattern `&agent_forge_core::webhook::reconcile::ReconcileError::InvalidEventPayloadField(_)` not covered
+     |
+note: `agent_forge_core::webhook::reconcile::ReconcileError` defined here
+    --> src/webhook/reconcile.rs:67:1
+     |
+  67 | pub enum ReconcileError {
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+...
+  70 |     InvalidEventPayloadField(&'static str),
+     |     ------------------------ not covered
+     = note: the matched value is of type `&agent_forge_core::webhook::reconcile::ReconcileError`
+help: ensure that all possible cases are being handled by adding a match arm with a wildcard pattern or an explicit pattern as shown
+     |
+2055 ~         ),
+2056 ~         &agent_forge_core::webhook::reconcile::ReconcileError::InvalidEventPayloadField(_) => todo!(),
+     |
+
+For more information about this error, try `rustc --explain E0004`.
+error: could not compile `agent-forge-core` (bin "forgejo-reconcile-local") due to 1 previous error
+warning: build failed, waiting for other jobs to finish...

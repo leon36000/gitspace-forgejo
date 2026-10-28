@@ -1,0 +1,18 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+     Running tests/mission_012_mcp_lifecycle.rs (target/debug/deps/mission_012_mcp_lifecycle-8222febbc3dbb2d9)
+
+running 1 test
+
+thread 'mcp_supervisor_cancellation_terminates_the_in_flight_verifier_scope' (1651102) panicked at tests/mission_012_mcp_lifecycle.rs:1728:5:
+supervisor cancellation left verifier scope /user.slice/user-1000.slice/user@1000.service/app.slice/run-re67c40dc45a94ce5b0f6415ee20150b7.scope alive after bounded cgroup cleanup grace: [1651216]
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test mcp_supervisor_cancellation_terminates_the_in_flight_verifier_scope ... FAILED
+
+failures:
+
+failures:
+    mcp_supervisor_cancellation_terminates_the_in_flight_verifier_scope
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 28 filtered out; finished in 17.78s
+
+error: test failed, to rerun pass `--test mission_012_mcp_lifecycle`
