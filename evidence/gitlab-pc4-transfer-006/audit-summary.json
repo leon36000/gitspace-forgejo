@@ -1,0 +1,30 @@
+{
+  "remote_tree_entries": 482,
+  "remote_blob_count": 446,
+  "counters": {
+    "status_entries": 15438,
+    "regular_files": 15297,
+    "text_candidates": 15085,
+    "remote_identical": 370,
+    "bookkeeping_file_excluded": 2,
+    "state_directory_excluded": 138,
+    "remote_missing": 14715,
+    "binary_or_archive_excluded": 98,
+    "third_party_source_snapshot_excluded": 108,
+    "nul_or_binary_excluded": 6,
+    "non_regular": 1
+  },
+  "known_secret_pattern_counts": {},
+  "candidate_bytes": 58717295,
+  "candidate_paths": 14715,
+  "candidate_top_level_counts": {
+    "evidence": 14715
+  },
+  "all_candidates_are_evidence": true,
+  "limitations": [
+    "heuristic filename/extension exclusions",
+    "known patterns only; not exhaustive",
+    "UTF-8 evidence can still contain private or third-party excerpts",
+    "inventory is a worktree status snapshot"
+  ]
+}

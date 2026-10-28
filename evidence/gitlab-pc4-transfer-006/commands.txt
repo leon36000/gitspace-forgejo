@@ -1,0 +1,6 @@
+- GitLab tree snapshot: list_repository_tree(project_id=4, ref=796a6085cb71cd7d2ae4c3be7c53c3d401691448, recursive=true), paginated; 482 entries / 446 blobs.
+- Local scanner: python3 evidence/gitlab-pc4-transfer-006/audit_export.py --root . --remote-tree evidence/gitlab-pc4-transfer-006/remote-tree-796.json --output evidence/gitlab-pc4-transfer-006
+- Python 3.12.3; Git 2.43.0.
+- GitLab official docs consulted 2026-10-28: https://docs.gitlab.com/ci/pipelines/ documents [skip ci] for push pipelines; policy may restrict it; final unsuppressed pipeline is required.
+- Scanner emits path, Git blob ID, expected Git mode and byte length only; it does not upload file contents.
+- No email, PAT, or credential value was read or copied.
