@@ -1,0 +1,28 @@
+{
+  "cleanup_failure": null,
+  "expected_tcp_listeners_absent": true,
+  "forgejo": {
+    "expected_address": "127.0.0.1:3132",
+    "listener_addresses_after_stop": [],
+    "listener_checked": true,
+    "stop": {
+      "returncode": 0,
+      "started": true,
+      "stop_action": "terminate",
+      "stopped": true
+    }
+  },
+  "hook_disabled_before_server_stop": true,
+  "receiver": {
+    "expected_address": "127.0.0.1:36023",
+    "listener_addresses_after_stop": [],
+    "listener_checked": true,
+    "stop": {
+      "returncode": 0,
+      "started": true,
+      "stop_action": "terminate",
+      "stopped": true
+    }
+  },
+  "tracked_processes_exited": true
+}

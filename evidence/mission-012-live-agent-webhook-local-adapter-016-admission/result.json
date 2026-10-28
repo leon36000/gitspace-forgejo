@@ -1,0 +1,319 @@
+{
+  "forgejo": {
+    "binary_sha256": "e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7",
+    "listener": "127.0.0.1:3132",
+    "test_only_webhook_allowlist": "127.0.0.1",
+    "version": "forgejo version 17.0.0+gitea-1.22.0 (release name 17.0.0) built with GNU Make 4.4.1, go1.26.9 : bindata, timetzdata, sqlite, sqlite_unlock_notify"
+  },
+  "limitations": [
+    "This run proves actual Forgejo webhook delivery through the receiver into versioned mission admission; it does not execute an agent, create a pull request, verify a candidate, or merge it.",
+    "No LLM, AgentOS, RAG, or memory integration was invoked; no productivity or token-cost comparison was measured.",
+    "Forgejo, receiver, and the trusted admission CLI share the host UID. Candidate code is stored as context but is not executed in this run.",
+    "Forgejo hook-task evidence uses its local v17 SQLite table and is not a supported public API.",
+    "The loopback webhook allowlist applies only to this disposable instance."
+  ],
+  "mission": {
+    "admission": {
+      "admission_mode": "webhook_delivery",
+      "agent_runtime_invoked": false,
+      "allocation_id": "mission012-local-adapter-016",
+      "allocation_replayed": false,
+      "base_commit": "a3b4c9e94803d5709901f02084566cf46437025a",
+      "claim": "claimed",
+      "execution_generation": 1,
+      "execution_request": {
+        "capabilities": {
+          "budget": {
+            "max_output_tokens": 4096,
+            "max_tool_calls": 12,
+            "timeout_ms": 300000
+          },
+          "read_paths": [
+            "Cargo.toml",
+            "Cargo.lock",
+            "requirements/MISSION-012-CLAMP-001.json",
+            "src/lib.rs",
+            "tests/acceptance.rs"
+          ],
+          "tools": [
+            "mission.context",
+            "workspace.read_text",
+            "workspace.write_text",
+            "cargo.test"
+          ],
+          "write_paths": [
+            "src/lib.rs"
+          ]
+        },
+        "context": {
+          "citations": [
+            {
+              "source_index": 0,
+              "text_end_byte": 927,
+              "text_start_byte": 0
+            },
+            {
+              "source_index": 1,
+              "text_end_byte": 1214,
+              "text_start_byte": 927
+            }
+          ],
+          "manifest": {
+            "estimated_tokens": 304,
+            "requirement_sha256": "3a3c444075c93a3bcfb2bec17d1a2e74ec0051effc2994e6b02ac095eb0dd431",
+            "schema_version": 1,
+            "source_commit": "a3b4c9e94803d5709901f02084566cf46437025a",
+            "sources": [
+              {
+                "file_sha256": "3a3c444075c93a3bcfb2bec17d1a2e74ec0051effc2994e6b02ac095eb0dd431",
+                "line_end": 15,
+                "line_start": 1,
+                "path": "requirements/MISSION-012-CLAMP-001.json",
+                "provenance": "git:a3b4c9e94803d5709901f02084566cf46437025a:requirements/MISSION-012-CLAMP-001.json#L1-L15"
+              },
+              {
+                "file_sha256": "de0175e0fc5341a0ff3080f647ee16f4f4c1c45a205fc01ee8ec73899b3f9aa2",
+                "line_end": 9,
+                "line_start": 1,
+                "path": "src/lib.rs",
+                "provenance": "git:a3b4c9e94803d5709901f02084566cf46437025a:src/lib.rs#L1-L9"
+              }
+            ],
+            "token_budget": 900
+          },
+          "text": "Protected requirement MISSION-012-CLAMP-001 revision 1\nRequest: Corriger clamp_to_range afin qu'une valeur sup\u00e9rieure \u00e0 maximum retourne maximum. Pr\u00e9server le comportement pour une valeur inf\u00e9rieure \u00e0 minimum et pour une valeur dans l'intervalle inclusif. Commencer par ex\u00e9cuter cargo.test sur le code inchang\u00e9 et examiner l'\u00e9chec de l'assertion prot\u00e9g\u00e9e sur la borne sup\u00e9rieure. Modifier uniquement src/lib.rs, puis relancer cargo.test jusqu'\u00e0 r\u00e9ussite; les tests d'acceptation prot\u00e9g\u00e9s font autorit\u00e9.\nAcceptance criteria:\n- Une valeur inf\u00e9rieure \u00e0 minimum retourne minimum.\n- Une valeur sup\u00e9rieure \u00e0 maximum retourne maximum.\n- Une valeur dans l'intervalle inclusif reste inchang\u00e9e.\n- Le premier cargo.test sur la base inchang\u00e9e r\u00e9v\u00e8le l'\u00e9chec de l'assertion prot\u00e9g\u00e9e de borne sup\u00e9rieure.\n- Seul src/lib.rs change; les tests prot\u00e9g\u00e9s restent inchang\u00e9s et cargo.test passe apr\u00e8s la correction.\nPinned source src/lib.rs lines 1-9:\npub fn clamp_to_range(value: i32, minimum: i32, maximum: i32) -> i32 {\n    if value < minimum {\n        minimum\n    } else if value > maximum {\n        minimum // BUG: values above the range should clamp to maximum.\n    } else {\n        value\n    }\n}\n"
+        },
+        "idempotency_key": "execution-v1-94c26001d4370e63d3637fd5c06ef13f0496424a39a74bf498b7512b7d2b37b5-1",
+        "mission_id": "mission-v1-94c26001d4370e63d3637fd5c06ef13f0496424a39a74bf498b7512b7d2b37b5",
+        "requirement_sha256": "3a3c444075c93a3bcfb2bec17d1a2e74ec0051effc2994e6b02ac095eb0dd431",
+        "requirements_json": "{\n  \"schema_version\": 2,\n  \"id\": \"MISSION-012-CLAMP-001\",\n  \"revision\": 1,\n  \"source_issue_number\": 1,\n  \"request\": \"Corriger clamp_to_range afin qu'une valeur sup\u00e9rieure \u00e0 maximum retourne maximum. Pr\u00e9server le comportement pour une valeur inf\u00e9rieure \u00e0 minimum et pour une valeur dans l'intervalle inclusif. Commencer par ex\u00e9cuter cargo.test sur le code inchang\u00e9 et examiner l'\u00e9chec de l'assertion prot\u00e9g\u00e9e sur la borne sup\u00e9rieure. Modifier uniquement src/lib.rs, puis relancer cargo.test jusqu'\u00e0 r\u00e9ussite; les tests d'acceptation prot\u00e9g\u00e9s font autorit\u00e9.\",\n  \"acceptance\": [\n    \"Une valeur inf\u00e9rieure \u00e0 minimum retourne minimum.\",\n    \"Une valeur sup\u00e9rieure \u00e0 maximum retourne maximum.\",\n    \"Une valeur dans l'intervalle inclusif reste inchang\u00e9e.\",\n    \"Le premier cargo.test sur la base inchang\u00e9e r\u00e9v\u00e8le l'\u00e9chec de l'assertion prot\u00e9g\u00e9e de borne sup\u00e9rieure.\",\n    \"Seul src/lib.rs change; les tests prot\u00e9g\u00e9s restent inchang\u00e9s et cargo.test passe apr\u00e8s la correction.\"\n  ],\n  \"ambiguities\": []\n}\n",
+        "schema_version": 1,
+        "workspace": {
+          "base_commit": "a3b4c9e94803d5709901f02084566cf46437025a",
+          "id": "mission-012-clamp-issue-1"
+        }
+      },
+      "host_admission": {
+        "allocation": {
+          "allocation_id": "mission012-local-adapter-016",
+          "execution_generation": 1,
+          "mission_id": "mission-v1-94c26001d4370e63d3637fd5c06ef13f0496424a39a74bf498b7512b7d2b37b5",
+          "requirement_sha256": "3a3c444075c93a3bcfb2bec17d1a2e74ec0051effc2994e6b02ac095eb0dd431",
+          "schema_version": 1
+        },
+        "base_commit": "a3b4c9e94803d5709901f02084566cf46437025a",
+        "issue_number": 1,
+        "request": {
+          "capabilities": {
+            "budget": {
+              "max_output_tokens": 4096,
+              "max_tool_calls": 12,
+              "timeout_ms": 300000
+            },
+            "read_paths": [
+              "Cargo.toml",
+              "Cargo.lock",
+              "requirements/MISSION-012-CLAMP-001.json",
+              "src/lib.rs",
+              "tests/acceptance.rs"
+            ],
+            "tools": [
+              "mission.context",
+              "workspace.read_text",
+              "workspace.write_text",
+              "cargo.test"
+            ],
+            "write_paths": [
+              "src/lib.rs"
+            ]
+          },
+          "context": {
+            "citations": [
+              {
+                "source_index": 0,
+                "text_end_byte": 927,
+                "text_start_byte": 0
+              },
+              {
+                "source_index": 1,
+                "text_end_byte": 1214,
+                "text_start_byte": 927
+              }
+            ],
+            "manifest": {
+              "estimated_tokens": 304,
+              "requirement_sha256": "3a3c444075c93a3bcfb2bec17d1a2e74ec0051effc2994e6b02ac095eb0dd431",
+              "schema_version": 1,
+              "source_commit": "a3b4c9e94803d5709901f02084566cf46437025a",
+              "sources": [
+                {
+                  "file_sha256": "3a3c444075c93a3bcfb2bec17d1a2e74ec0051effc2994e6b02ac095eb0dd431",
+                  "line_end": 15,
+                  "line_start": 1,
+                  "path": "requirements/MISSION-012-CLAMP-001.json",
+                  "provenance": "git:a3b4c9e94803d5709901f02084566cf46437025a:requirements/MISSION-012-CLAMP-001.json#L1-L15"
+                },
+                {
+                  "file_sha256": "de0175e0fc5341a0ff3080f647ee16f4f4c1c45a205fc01ee8ec73899b3f9aa2",
+                  "line_end": 9,
+                  "line_start": 1,
+                  "path": "src/lib.rs",
+                  "provenance": "git:a3b4c9e94803d5709901f02084566cf46437025a:src/lib.rs#L1-L9"
+                }
+              ],
+              "token_budget": 900
+            },
+            "text": "Protected requirement MISSION-012-CLAMP-001 revision 1\nRequest: Corriger clamp_to_range afin qu'une valeur sup\u00e9rieure \u00e0 maximum retourne maximum. Pr\u00e9server le comportement pour une valeur inf\u00e9rieure \u00e0 minimum et pour une valeur dans l'intervalle inclusif. Commencer par ex\u00e9cuter cargo.test sur le code inchang\u00e9 et examiner l'\u00e9chec de l'assertion prot\u00e9g\u00e9e sur la borne sup\u00e9rieure. Modifier uniquement src/lib.rs, puis relancer cargo.test jusqu'\u00e0 r\u00e9ussite; les tests d'acceptation prot\u00e9g\u00e9s font autorit\u00e9.\nAcceptance criteria:\n- Une valeur inf\u00e9rieure \u00e0 minimum retourne minimum.\n- Une valeur sup\u00e9rieure \u00e0 maximum retourne maximum.\n- Une valeur dans l'intervalle inclusif reste inchang\u00e9e.\n- Le premier cargo.test sur la base inchang\u00e9e r\u00e9v\u00e8le l'\u00e9chec de l'assertion prot\u00e9g\u00e9e de borne sup\u00e9rieure.\n- Seul src/lib.rs change; les tests prot\u00e9g\u00e9s restent inchang\u00e9s et cargo.test passe apr\u00e8s la correction.\nPinned source src/lib.rs lines 1-9:\npub fn clamp_to_range(value: i32, minimum: i32, maximum: i32) -> i32 {\n    if value < minimum {\n        minimum\n    } else if value > maximum {\n        minimum // BUG: values above the range should clamp to maximum.\n    } else {\n        value\n    }\n}\n"
+          },
+          "idempotency_key": "execution-v1-94c26001d4370e63d3637fd5c06ef13f0496424a39a74bf498b7512b7d2b37b5-1",
+          "mission_id": "mission-v1-94c26001d4370e63d3637fd5c06ef13f0496424a39a74bf498b7512b7d2b37b5",
+          "requirement_sha256": "3a3c444075c93a3bcfb2bec17d1a2e74ec0051effc2994e6b02ac095eb0dd431",
+          "requirements_json": "{\n  \"schema_version\": 2,\n  \"id\": \"MISSION-012-CLAMP-001\",\n  \"revision\": 1,\n  \"source_issue_number\": 1,\n  \"request\": \"Corriger clamp_to_range afin qu'une valeur sup\u00e9rieure \u00e0 maximum retourne maximum. Pr\u00e9server le comportement pour une valeur inf\u00e9rieure \u00e0 minimum et pour une valeur dans l'intervalle inclusif. Commencer par ex\u00e9cuter cargo.test sur le code inchang\u00e9 et examiner l'\u00e9chec de l'assertion prot\u00e9g\u00e9e sur la borne sup\u00e9rieure. Modifier uniquement src/lib.rs, puis relancer cargo.test jusqu'\u00e0 r\u00e9ussite; les tests d'acceptation prot\u00e9g\u00e9s font autorit\u00e9.\",\n  \"acceptance\": [\n    \"Une valeur inf\u00e9rieure \u00e0 minimum retourne minimum.\",\n    \"Une valeur sup\u00e9rieure \u00e0 maximum retourne maximum.\",\n    \"Une valeur dans l'intervalle inclusif reste inchang\u00e9e.\",\n    \"Le premier cargo.test sur la base inchang\u00e9e r\u00e9v\u00e8le l'\u00e9chec de l'assertion prot\u00e9g\u00e9e de borne sup\u00e9rieure.\",\n    \"Seul src/lib.rs change; les tests prot\u00e9g\u00e9s restent inchang\u00e9s et cargo.test passe apr\u00e8s la correction.\"\n  ],\n  \"ambiguities\": []\n}\n",
+          "schema_version": 1,
+          "workspace": {
+            "base_commit": "a3b4c9e94803d5709901f02084566cf46437025a",
+            "id": "mission-012-clamp-issue-1"
+          }
+        },
+        "requirement_path": "requirements/MISSION-012-CLAMP-001.json",
+        "requirement_sha256": "3a3c444075c93a3bcfb2bec17d1a2e74ec0051effc2994e6b02ac095eb0dd431",
+        "schema_version": 1,
+        "scope": {
+          "branch": "main",
+          "origin": "http://127.0.0.1:3132",
+          "owner": "forge-admin",
+          "repository": "mission-012-clamp"
+        }
+      },
+      "host_admission_file": "/tmp/mission012-composed-adapter-016/project/.runtime/host-admission.json",
+      "idempotency_key": "execution-v1-94c26001d4370e63d3637fd5c06ef13f0496424a39a74bf498b7512b7d2b37b5-1",
+      "issue_number": 1,
+      "mission_id": "mission-v1-94c26001d4370e63d3637fd5c06ef13f0496424a39a74bf498b7512b7d2b37b5",
+      "path_protection_readback": "branch protected flag observed; server-side requirements/** rule not independently read",
+      "profile_id": "mission-012-clamp",
+      "requirement_path": "requirements/MISSION-012-CLAMP-001.json",
+      "requirement_sha256": "3a3c444075c93a3bcfb2bec17d1a2e74ec0051effc2994e6b02ac095eb0dd431",
+      "sandbox_only": true,
+      "schema_version": 2,
+      "scope": "http://127.0.0.1:3132/forge-admin/mission-012-clamp@main",
+      "verdict": "claimed",
+      "webhook": {
+        "delivery_id": "89e9abdd-75ee-4708-b9d5-32cd52b20e9e",
+        "reconciled_state": "open",
+        "reconciled_updated_at": "2026-10-24T01:51:06-04:00",
+        "requirement_sha256_matches_cli_argument": true
+      }
+    },
+    "admission_file_mode": "0o600",
+    "admission_file_sha256": "681442fd11bdbded14339221bcfa1d9c06ca055b3bee73786f226b11e3cd5557",
+    "agent_runtime_invoked": false,
+    "allocation_id": "mission012-local-adapter-016",
+    "issue_number": 1,
+    "issue_state": "open",
+    "mission_journal_mode": "0o600",
+    "mission_journal_sha256": "21108ea04c17603a9d61ee22586d8af711ff715852c6f3db82b59915029a6ebb",
+    "profile_id": "mission-012-clamp",
+    "protected_base_commit": "a3b4c9e94803d5709901f02084566cf46437025a",
+    "requirement_path": "requirements/MISSION-012-CLAMP-001.json",
+    "requirement_sha256": "3a3c444075c93a3bcfb2bec17d1a2e74ec0051effc2994e6b02ac095eb0dd431"
+  },
+  "process_cleanup": {
+    "cleanup_failure": null,
+    "expected_tcp_listeners_absent": true,
+    "forgejo": {
+      "expected_address": "127.0.0.1:3132",
+      "listener_addresses_after_stop": [],
+      "listener_checked": true,
+      "stop": {
+        "returncode": 0,
+        "started": true,
+        "stop_action": "terminate",
+        "stopped": true
+      }
+    },
+    "hook_disabled_before_server_stop": true,
+    "receiver": {
+      "expected_address": "127.0.0.1:36023",
+      "listener_addresses_after_stop": [],
+      "listener_checked": true,
+      "stop": {
+        "returncode": 0,
+        "started": true,
+        "stop_action": "terminate",
+        "stopped": true
+      }
+    },
+    "tracked_processes_exited": true
+  },
+  "refusals": {
+    "invalid_host_credential": {
+      "admission_file_created": false,
+      "error_code": "mission_source_unauthorized",
+      "exit_status": 1,
+      "mission_journal_created": false
+    },
+    "replay": {
+      "admission_file_unchanged": true,
+      "allocation_replayed": true,
+      "mission_journal_unchanged": true,
+      "receiver_inbox_records": 1,
+      "verdict": "already_claimed"
+    }
+  },
+  "repository": {
+    "branch_protection_readback_verified": true,
+    "full_name": "forge-admin/mission-012-clamp",
+    "merge_whitelist_teams": [],
+    "merge_whitelist_usernames": [
+      "forge-admin"
+    ],
+    "private": true,
+    "reader": {
+      "admin": false,
+      "login": "forge-reader",
+      "pull": true,
+      "push": false,
+      "token_scopes": [
+        "read:repository",
+        "read:issue"
+      ]
+    },
+    "reviewer_login": "verifier-bot"
+  },
+  "schema_version": 1,
+  "source_head_commit": "f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0",
+  "verdict": "passed",
+  "webhook": {
+    "active_after_run": false,
+    "emitter": "Forgejo v17 actual issue hook task",
+    "event": {
+      "action": "opened",
+      "delivery_id": "89e9abdd-75ee-4708-b9d5-32cd52b20e9e",
+      "event": "issues",
+      "issue_number": 1,
+      "payload_state": "open",
+      "sequence": 1
+    },
+    "event_type": "issues",
+    "hook_id": 1,
+    "receiver_journal_records": 1,
+    "secret_recorded": false,
+    "target": "http://127.0.0.1:36023/forgejo/webhook",
+    "task_binding": {
+      "forgejo_delivery_uuid": "89e9abdd-75ee-4708-b9d5-32cd52b20e9e",
+      "receiver_delivery_id": "89e9abdd-75ee-4708-b9d5-32cd52b20e9e",
+      "receiver_sequence": 1,
+      "response_status": 202
+    },
+    "task_readback": [
+      {
+        "event_type": "issues",
+        "is_delivered": true,
+        "is_succeed": true,
+        "response_status": 202,
+        "task_id": 1,
+        "uuid": "89e9abdd-75ee-4708-b9d5-32cd52b20e9e"
+      }
+    ]
+  }
+}
