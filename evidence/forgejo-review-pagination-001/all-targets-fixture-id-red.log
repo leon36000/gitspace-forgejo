@@ -1,0 +1,218 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.93s
+     Running unittests src/lib.rs (target/debug/deps/agent_forge_core-4f3c0a59eee64024)
+
+running 11 tests
+test tests::bounded_replay_reads_a_valid_journal_without_write_permission ... ok
+test tests::bounded_tail_repairs_refuse_a_replaced_symlink_path ... ok
+test tests::context_and_mission_state_are_pinned_and_bounded ... ok
+test tests::duration_parser_handles_units_and_errors ... ok
+test tests::journal_deduplicates_replays_and_serializes_concurrent_events ... ok
+test tests::proof_requires_signature_pass_and_all_fresh_hashes ... ok
+test tests::stale_events_cancellation_and_expired_or_forbidden_capabilities_are_denied ... ok
+test tests::target_bound_proof_v2_binds_target_and_evidence_without_changing_v1 ... ok
+test tests::target_bound_v2_mac_covers_each_target_field ... ok
+test tests::target_bound_v2_signer_and_verifier_reject_keys_shorter_than_32_bytes ... ok
+test tests::verifier_preserves_failure_and_inconclusive_outcomes ... ok
+
+test result: ok. 11 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.10s
+
+     Running unittests src/main.rs (target/debug/deps/agent_forge_core-b9742ad16d453f0e)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/forgejo-mission-local.rs (target/debug/deps/forgejo_mission_local-07e6661870a4625d)
+
+running 29 tests
+test tests::branch_snapshot_preserves_the_protection_flag_and_requires_a_full_commit ... ok
+test tests::context_packet_pins_requirement_and_source_bytes_to_one_commit ... ok
+test tests::delivery_admission_refuses_a_missing_delivery_before_any_forgejo_read ... ok
+test tests::delivery_admission_refuses_a_pull_request_event_before_any_forgejo_read ... ok
+test tests::delivery_admission_refuses_a_stale_requirement_digest_before_allocation ... ok
+test tests::delivery_admission_refuses_another_issue_or_repository_before_any_forgejo_read ... ok
+test tests::delivery_admission_resumes_one_allocation_for_duplicate_and_replayed_deliveries ... ok
+test tests::delivery_admission_uses_current_forgejo_state_and_refuses_a_closed_issue ... ok
+test tests::delivery_mode_requires_a_host_pinned_requirement_digest_and_one_safe_delivery ... ok
+test tests::duration_context_extraction_accepts_multiline_signatures_and_ignores_signature_comments ... ok
+test tests::duration_context_extraction_does_not_match_a_prefix_function_name ... ok
+test tests::duration_context_extraction_ignores_a_commented_enum_decoy ... ok
+test tests::duration_context_extraction_ignores_braces_inside_strings_and_comments ... ok
+test tests::duration_context_extraction_ignores_items_inside_macro_token_groups ... ok
+test tests::duration_context_extraction_skips_a_function_declaration_inside_a_block_comment ... ok
+test tests::fixed_inbox_must_already_be_a_private_receiver_journal ... ok
+test tests::host_credential_file_requires_private_regular_file_and_never_echoes_value ... ok
+test tests::host_forgejo_token_is_bounded_and_curl_header_is_stdin_only ... ok
+test tests::issue_snapshot_rejects_a_canonical_url_from_another_repository ... ok
+test tests::issue_snapshot_requires_the_canonical_url_and_supported_state ... ok
+test tests::mission_012_context_extracts_and_cites_the_pinned_clamp_function ... ok
+test tests::mission_arguments_reject_duplicate_host_bindings ... ok
+test tests::mission_arguments_require_a_stable_allocation_id_instead_of_a_generation_number ... ok
+test tests::mission_journal_path_is_anchored_to_the_checkout ... ok
+test tests::mission_profile_selection_binds_the_issue_requirement_and_workspace ... ok
+test tests::requirement_paths_cannot_escape_the_fixed_namespace ... ok
+test tests::requirement_tree_limit_is_reported_as_a_bounded_refusal ... ok
+test tests::requirement_tree_pagination_must_be_complete_and_ordered ... ok
+test tests::requirement_tree_rejects_symlinked_or_nested_requirement_json ... ok
+
+test result: ok. 29 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+     Running unittests src/bin/forgejo-reconcile-local.rs (target/debug/deps/forgejo_reconcile_local-3e9fc5f7734f2ac5)
+
+running 107 tests
+test tests::ambiguous_merge_post_is_resolved_by_readback_without_retry ... ok
+test tests::ambiguous_merge_post_with_unavailable_readback_is_not_retried ... ok
+test tests::batch_cache_budget_failure_is_structured_and_nonretryable ... ok
+test tests::batch_cache_budget_is_enforced_across_signed_journal_and_loopback_http ... ok
+test tests::batch_level_failure_is_structured_and_inconclusive ... ok
+test tests::bounded_command_cleans_up_child_when_reader_thread_cannot_start ... ok
+test tests::bounded_command_is_cancelled_before_the_child_exits_naturally ... ok
+test tests::capabilities_list_exact_merge_target_profiles ... ok
+test tests::cli_profile_wiring_binds_api_scope_and_credential_to_the_same_profile ... ok
+test tests::command_reader_stops_an_unbounded_child_at_the_cap ... ok
+test tests::configured_repository_scopes_final_state_and_post_merge_readback_paths ... ok
+test tests::confirmed_merge_result_includes_matching_candidate_tree_manifest_bindings ... ok
+test tests::curl_timeout_rounds_down_to_whole_milliseconds ... ok
+test tests::default_profile_gate_requests_are_unchanged ... FAILED
+test tests::denied_batch_is_refused_before_host_credential_read ... ok
+test tests::duplicate_or_trailing_options_after_a_profile_are_refused_with_distinct_messages ... ok
+test tests::each_profile_has_its_own_merge_lock ... ok
+test tests::final_main_read_compares_the_live_branch_head_to_the_bound_base ... ok
+test tests::final_merge_state_refuses_an_advanced_base_without_a_merge_post ... ok
+test tests::forgejo_review_page_adapter_reports_changed_total_as_retryable_inconclusive ... ok
+test tests::forgejo_tree_manifest_accepts_v17_null_tree_only_for_an_empty_root ... ok
+test tests::forgejo_tree_manifest_reads_all_pages_with_v17_truncated_semantics ... ok
+test tests::forgejo_tree_manifest_refuses_a_missing_later_page ... ok
+test tests::gate_request_paths_cannot_mix_repositories_from_two_profiles ... ok
+test tests::gate_wrapper_refuses_a_credential_bound_to_another_origin_before_any_input ... ok
+test tests::gate_wrapper_refuses_an_api_scoped_to_another_profile_before_any_input ... ok
+test tests::host_credential_pipe_read_is_bounded_when_writer_stays_open ... ok
+test tests::host_credential_pipe_retries_when_duplicate_reader_drains_after_poll ... ok
+test tests::host_credential_reader_rejects_named_fifo ... ok
+test tests::host_merge_post_uses_bound_credential_stdin_and_parses_total_count ... ok
+test tests::invalid_host_credential_is_actionable_nonretryable_and_value_free ... ok
+test tests::invalid_snapshot_error_is_not_retryable_success ... ok
+test tests::legacy_v1_proof_is_rejected_before_any_forgejo_request_or_merge ... ok
+test tests::local_adapter_does_not_follow_redirects_with_host_credential ... ok
+test tests::local_adapter_does_not_retry_oversized_http_response ... ok
+test tests::local_adapter_does_not_retry_unauthorized_http_responses ... ok
+test tests::local_adapter_refuses_repositories_outside_the_sandbox_allowlist ... ok
+test tests::local_adapter_rejects_foreign_request_url_before_sending_host_credential ... ok
+test tests::local_adapter_respects_retry_after_when_server_delay_exceeds_remaining_budget ... ok
+test tests::local_adapter_retries_non_utf8_transient_http_body ... ok
+test tests::local_adapter_retries_rate_limit_response_within_the_read_budget ... ok
+test tests::local_adapter_retries_transient_http_failure_then_returns_current_state ... ok
+test tests::local_adapter_shares_one_deadline_across_reads ... ok
+test tests::local_adapter_stops_after_three_transient_http_attempts ... ok
+test tests::local_adapter_uses_host_credential_provider_for_loopback_request ... ok
+test tests::local_merge_gate_rechecks_branch_protection_immediately_before_merge_post ... FAILED
+test tests::local_merge_gate_refuses_additional_merge_whitelist_users ... ok
+test tests::local_merge_gate_refuses_branch_protection_without_team_whitelist_readback ... ok
+test tests::local_merge_gate_refuses_merge_whitelist_teams ... ok
+test tests::local_merge_gate_refuses_unprotected_file_patterns ... ok
+test tests::local_merge_gate_reports_invalid_final_branch_protection_as_inconclusive ... FAILED
+test tests::local_merge_gate_requires_unprotected_file_patterns_readback ... ok
+test tests::local_merge_gate_stops_before_merge_post_when_another_user_is_whitelisted ... ok
+test tests::malformed_selected_delivery_is_refused_before_host_credential_read ... ok
+test tests::malformed_target_bound_schema_is_rejected_before_any_forgejo_request ... ok
+test tests::merge_authority_api_refusal_reports_a_bounded_stage ... ok
+test tests::merge_authority_refuses_changed_review_total_before_any_merge_post ... ok
+test tests::merge_cli_without_profile_selection_keeps_the_default_target ... ok
+test tests::merge_commit_must_have_exact_validated_base_and_submitted_head_parents ... ok
+test tests::merge_gate_uses_separate_policy_reader_and_non_admin_merge_credentials ... FAILED
+test tests::merge_lock_root_is_stable_outside_tmpdir ... ok
+test tests::merge_policy_reader_allows_only_the_exact_branch_protection_get ... ok
+test tests::merge_preflight_keeps_failure_distinct_from_inconclusive ... ok
+test tests::merge_preflight_success_is_read_only_and_not_merge_authority ... ok
+test tests::merge_readback_refuses_divergent_commit_and_issue_state ... ok
+test tests::merged_readback_rejects_a_different_issue_number_after_fetching_the_issue ... ok
+test tests::merged_readback_rejects_a_different_pull_request_number_before_issue_read ... ok
+test tests::merged_readback_with_tree_mismatch_and_rejected_post_is_inconclusive ... ok
+test tests::mission_012_policy_v4_is_not_a_merge_gate_policy_document ... ok
+test tests::mission_012_profile_scopes_every_gate_request_to_one_repository ... FAILED
+test tests::mission_gate_rejects_a_base_that_differs_from_the_admitted_snapshot ... ok
+test tests::mission_gate_rejects_an_admission_digest_not_bound_to_the_host_review ... ok
+test tests::mission_gate_verifies_the_admission_digest_and_exact_durable_claim ... ok
+test tests::mission_merge_cli_requires_admission_and_journal_before_reading_credentials ... ok
+test tests::mixed_batch_reads_host_credential_only_for_in_scope_rows ... ok
+test tests::origin_bound_provider_withholds_token_for_a_different_origin ... ok
+test tests::out_of_scope_selected_delivery_is_refused_before_host_credential_read ... ok
+test tests::oversized_batch_is_rejected_before_host_credential_read ... ok
+test tests::postmerge_missing_tree_manifest_is_inconclusive ... ok
+test tests::postmerge_parent_mismatch_is_inconclusive_after_single_post ... ok
+test tests::postmerge_tree_mismatch_is_inconclusive_with_valid_merge_parents ... ok
+test tests::proof_signed_for_other_profile_is_rejected_before_any_forgejo_request ... ok
+test tests::readback_only_recovery_accepts_exact_merged_state ... ok
+test tests::readback_only_recovery_refuses_an_open_pr ... ok
+test tests::readback_only_recovery_refuses_each_changed_binding ... ok
+test tests::receiver_process_journal_reconciles_through_local_http_adapter ... ok
+test tests::reconcile_invocation_accepts_a_host_pipe_fd_and_fixed_config ... ok
+test tests::reconcile_invocation_accepts_the_mission_012_target_profile ... ok
+test tests::reconcile_invocation_rejects_ambiguous_or_unknown_target_profiles ... ok
+test tests::reconcile_invocation_rejects_duplicate_or_standard_credential_fds ... ok
+test tests::reconciliation_policy_rejects_write_method_and_nested_issue_route_before_network ... ok
+test tests::response_reader_accepts_the_exact_limit ... ok
+test tests::response_reader_stops_after_one_byte_over_the_limit ... ok
+test tests::retry_after_delay_conversion_saturates_without_overflow ... ok
+test tests::retry_after_http_error_exposes_only_a_bounded_structured_delay ... ok
+test tests::retry_after_parser_accepts_delta_seconds_and_http_date_formats ... ok
+test tests::short_verifier_key_is_refused_before_any_forgejo_request ... ok
+test tests::signed_journal_deliveries_reconcile_through_the_local_http_adapter ... ok
+test tests::single_reconciliation_failure_is_structured_and_inconclusive ... ok
+test tests::stale_merge_preflight_is_actionable_and_inconclusive ... ok
+test tests::synthetic_credential_is_not_added_to_curl_arguments_or_environment ... ok
+test tests::target_profile_selector_accepts_only_exact_literals ... ok
+test tests::target_profiles_bind_origin_owner_and_repository_as_one_literal_tuple ... ok
+test tests::token_parser_rejects_empty_oversized_and_header_injection_values ... ok
+test tests::unknown_or_malformed_profile_is_refused_before_credential_or_inputs_are_read ... ok
+test tests::unmerged_pull_request_readback_does_not_require_a_merge_commit ... ok
+test tests::valid_profile_selector_passes_parsing_and_reaches_the_credential_reader ... ok
+
+failures:
+
+---- tests::default_profile_gate_requests_are_unchanged stdout ----
+
+thread 'tests::default_profile_gate_requests_are_unchanged' (3182685) panicked at src/bin/forgejo-reconcile-local.rs:10248:9:
+assertion `left == right` failed: Merge014AgentForgeCore: result {"api_version":"forgejo-rest-v1","error":{"code":"review_policy_rejected","http_status":null,"retryable":false},"external_writer_exclusion":"not_provided_by_cooperative_lock","merge_attempted":false,"merge_authorized":false,"operation":"local_test_merge_authority","pull_request_number":23,"schema_version":1,"target":{"base_branch":"main","origin":"http://127.0.0.1:42925","owner":"forge-admin","repository":"agent-forge-core","selector":"merge-014-agent-forge-core"},"verdict":"rejected"}
+  left: ["GET /api/v1/repos/forge-admin/agent-forge-core/pulls/23 HTTP/1.1", "GET /api/v1/user HTTP/1.1", "GET /api/v1/repos/forge-admin/agent-forge-core/pulls/23/reviews?limit=50&page=1 HTTP/1.1", "GET /api/v1/repos/forge-admin/agent-forge-core/branch_protections HTTP/1.1", "GET /api/v1/users/verifier-bot HTTP/1.1", "GET /api/v1/repos/forge-admin/agent-forge-core/branches/main HTTP/1.1"]
+ right: ["GET /api/v1/repos/forge-admin/agent-forge-core/pulls/23 HTTP/1.1", "GET /api/v1/user HTTP/1.1", "GET /api/v1/repos/forge-admin/agent-forge-core/pulls/23/reviews?limit=50&page=1 HTTP/1.1", "GET /api/v1/repos/forge-admin/agent-forge-core/branch_protections HTTP/1.1", "GET /api/v1/users/verifier-bot HTTP/1.1", "GET /api/v1/repos/forge-admin/agent-forge-core/branches/main HTTP/1.1", "GET /api/v1/repos/forge-admin/agent-forge-core/pulls/23 HTTP/1.1", "GET /api/v1/repos/forge-admin/agent-forge-core/branches/main HTTP/1.1", "GET /api/v1/repos/forge-admin/agent-forge-core/branch_protections HTTP/1.1", "POST /api/v1/repos/forge-admin/agent-forge-core/pulls/23/merge HTTP/1.1", "GET /api/v1/repos/forge-admin/agent-forge-core/pulls/23 HTTP/1.1", "GET /api/v1/repos/forge-admin/agent-forge-core/git/commits/3333333333333333333333333333333333333333 HTTP/1.1", "GET /api/v1/repos/forge-admin/agent-forge-core/git/commits/2222222222222222222222222222222222222222 HTTP/1.1", "GET /api/v1/repos/forge-admin/agent-forge-core/branches/main HTTP/1.1", "GET /api/v1/repos/forge-admin/agent-forge-core/issues/23 HTTP/1.1", "GET /api/v1/repos/forge-admin/agent-forge-core/git/trees/3333333333333333333333333333333333333333?page=1&per_page=1000&recursive=false HTTP/1.1", "GET /api/v1/repos/forge-admin/agent-forge-core/git/trees/2222222222222222222222222222222222222222?page=1&per_page=1000&recursive=false HTTP/1.1"]
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+---- tests::local_merge_gate_rechecks_branch_protection_immediately_before_merge_post stdout ----
+
+thread 'tests::local_merge_gate_rechecks_branch_protection_immediately_before_merge_post' (3184900) panicked at src/bin/forgejo-reconcile-local.rs:10023:9:
+assertion `left == right` failed
+  left: String("review_policy_rejected")
+ right: "branch_protection_changed_during_gate"
+
+---- tests::local_merge_gate_reports_invalid_final_branch_protection_as_inconclusive stdout ----
+
+thread 'tests::local_merge_gate_reports_invalid_final_branch_protection_as_inconclusive' (3184922) panicked at src/bin/forgejo-reconcile-local.rs:10062:9:
+assertion `left == right` failed
+  left: String("rejected")
+ right: "inconclusive"
+
+---- tests::merge_gate_uses_separate_policy_reader_and_non_admin_merge_credentials stdout ----
+
+thread 'tests::merge_gate_uses_separate_policy_reader_and_non_admin_merge_credentials' (3184996) panicked at src/bin/forgejo-reconcile-local.rs:10425:9:
+{"api_version":"forgejo-rest-v1","error":{"code":"review_policy_rejected","http_status":null,"retryable":false},"external_writer_exclusion":"not_provided_by_cooperative_lock","merge_attempted":false,"merge_authorized":false,"operation":"local_test_merge_authority","pull_request_number":23,"schema_version":1,"target":{"base_branch":"main","origin":"http://127.0.0.1:39261","owner":"forge-admin","repository":"agent-forge-core","selector":"merge-014-agent-forge-core"},"verdict":"rejected"}
+
+---- tests::mission_012_profile_scopes_every_gate_request_to_one_repository stdout ----
+
+thread 'tests::mission_012_profile_scopes_every_gate_request_to_one_repository' (3185103) panicked at src/bin/forgejo-reconcile-local.rs:10248:9:
+assertion `left == right` failed: Mission012Clamp: result {"api_version":"forgejo-rest-v1","error":{"code":"review_policy_rejected","http_status":null,"retryable":false},"external_writer_exclusion":"not_provided_by_cooperative_lock","merge_attempted":false,"merge_authorized":false,"operation":"local_test_merge_authority","pull_request_number":23,"schema_version":1,"target":{"base_branch":"main","origin":"http://127.0.0.1:41317","owner":"forge-admin","repository":"mission-012-clamp","selector":"mission-012-clamp"},"verdict":"rejected"}
+  left: ["GET /api/v1/repos/forge-admin/mission-012-clamp/pulls/23 HTTP/1.1", "GET /api/v1/user HTTP/1.1", "GET /api/v1/repos/forge-admin/mission-012-clamp/pulls/23/reviews?limit=50&page=1 HTTP/1.1", "GET /api/v1/repos/forge-admin/mission-012-clamp/branch_protections HTTP/1.1", "GET /api/v1/users/verifier-bot HTTP/1.1", "GET /api/v1/repos/forge-admin/mission-012-clamp/branches/main HTTP/1.1"]
+ right: ["GET /api/v1/repos/forge-admin/mission-012-clamp/pulls/23 HTTP/1.1", "GET /api/v1/user HTTP/1.1", "GET /api/v1/repos/forge-admin/mission-012-clamp/pulls/23/reviews?limit=50&page=1 HTTP/1.1", "GET /api/v1/repos/forge-admin/mission-012-clamp/branch_protections HTTP/1.1", "GET /api/v1/users/verifier-bot HTTP/1.1", "GET /api/v1/repos/forge-admin/mission-012-clamp/branches/main HTTP/1.1", "GET /api/v1/repos/forge-admin/mission-012-clamp/pulls/23 HTTP/1.1", "GET /api/v1/repos/forge-admin/mission-012-clamp/branches/main HTTP/1.1", "GET /api/v1/repos/forge-admin/mission-012-clamp/branch_protections HTTP/1.1", "GET /api/v1/repos/forge-admin/mission-012-clamp/pulls/23 HTTP/1.1", "GET /api/v1/repos/forge-admin/mission-012-clamp/branches/main HTTP/1.1", "GET /api/v1/repos/forge-admin/mission-012-clamp/branch_protections HTTP/1.1", "POST /api/v1/repos/forge-admin/mission-012-clamp/pulls/23/merge HTTP/1.1", "GET /api/v1/repos/forge-admin/mission-012-clamp/pulls/23 HTTP/1.1", "GET /api/v1/repos/forge-admin/mission-012-clamp/git/commits/3333333333333333333333333333333333333333 HTTP/1.1", "GET /api/v1/repos/forge-admin/mission-012-clamp/git/commits/2222222222222222222222222222222222222222 HTTP/1.1", "GET /api/v1/repos/forge-admin/mission-012-clamp/branches/main HTTP/1.1", "GET /api/v1/repos/forge-admin/mission-012-clamp/issues/23 HTTP/1.1", "GET /api/v1/repos/forge-admin/mission-012-clamp/git/trees/3333333333333333333333333333333333333333?page=1&per_page=1000&recursive=false HTTP/1.1", "GET /api/v1/repos/forge-admin/mission-012-clamp/git/trees/2222222222222222222222222222222222222222?page=1&per_page=1000&recursive=false HTTP/1.1"]
+
+
+failures:
+    tests::default_profile_gate_requests_are_unchanged
+    tests::local_merge_gate_rechecks_branch_protection_immediately_before_merge_post
+    tests::local_merge_gate_reports_invalid_final_branch_protection_as_inconclusive
+    tests::merge_gate_uses_separate_policy_reader_and_non_admin_merge_credentials
+    tests::mission_012_profile_scopes_every_gate_request_to_one_repository
+
+test result: FAILED. 102 passed; 5 failed; 0 ignored; 0 measured; 0 filtered out; finished in 9.40s
+
+error: test failed, to rerun pass `--bin forgejo-reconcile-local`

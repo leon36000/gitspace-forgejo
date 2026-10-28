@@ -1,0 +1,66 @@
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/forgejo_reconcile_capabilities_e2e.rs:25:
+         json!(["http://127.0.0.1:3130"])
+     );
+     assert_eq!(value["configuration"]["repository"]["owner"], "forge-admin");
+-    assert_eq!(value["configuration"]["repository"]["name"], "agent-forge-core");
++    assert_eq!(
++        value["configuration"]["repository"]["name"],
++        "agent-forge-core"
++    );
+     assert_eq!(value["configuration"]["authentication"], "anonymous_only");
+ 
+     let operations = value["operations"].as_array().expect("operations array");
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/forgejo_reconcile_capabilities_e2e.rs:62:
+ 
+     assert!(!output.status.success());
+     assert!(output.stdout.is_empty());
+-    assert!(String::from_utf8_lossy(&output.stderr).contains("--capabilities accepts no additional arguments"));
++    assert!(
++        String::from_utf8_lossy(&output.stderr)
++            .contains("--capabilities accepts no additional arguments")
++    );
+ }
+ 
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:677:
+     .expect("serialize stale synthetic pull request webhook payload");
+ 
+     let (mut receiver, address) = start_ready_receiver(&secret, &journal_path);
+-    let (status, accepted) = send(
+-        address,
+-        &request_event("cli-pr-23", "pull_request", &body),
+-    );
++    let (status, accepted) = send(address, &request_event("cli-pr-23", "pull_request", &body));
+     assert_eq!(status, 202);
+     assert_eq!(accepted["accepted"], true);
+     assert_eq!(accepted["duplicate"], false);
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:716:
+         String::from_utf8_lossy(&output.stderr)
+     );
+     assert!(
+-        requests[0].starts_with(
+-            "GET /api/v1/repos/forge-admin/agent-forge-core/pulls/23 HTTP/1.1\r\n"
+-        ),
++        requests[0]
++            .starts_with("GET /api/v1/repos/forge-admin/agent-forge-core/pulls/23 HTTP/1.1\r\n"),
+         "unexpected request path: {requests:?}"
+     );
+     assert!(
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:742:
+         value["canonical_state"]["html_url"],
+         "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/23"
+     );
+-    assert_ne!(value["canonical_state"]["head_sha"], "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+-    assert_ne!(value["canonical_state"]["base_sha"], "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb");
++    assert_ne!(
++        value["canonical_state"]["head_sha"],
++        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
++    );
++    assert_ne!(
++        value["canonical_state"]["base_sha"],
++        "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
++    );
+ }
+ 
+ #[test]
+command=cargo fmt --all -- --check
+exit_code=1

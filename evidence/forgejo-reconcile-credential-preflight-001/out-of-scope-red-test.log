@@ -1,0 +1,22 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.16s
+     Running unittests src/bin/forgejo-reconcile-local.rs (target/debug/deps/forgejo_reconcile_local-3e9fc5f7734f2ac5)
+
+running 1 test
+test tests::out_of_scope_selected_delivery_is_refused_before_host_credential_read ... FAILED
+
+failures:
+
+---- tests::out_of_scope_selected_delivery_is_refused_before_host_credential_read stdout ----
+
+thread 'tests::out_of_scope_selected_delivery_is_refused_before_host_credential_read' (1766937) panicked at src/bin/forgejo-reconcile-local.rs:8502:9:
+out-of-scope resource must be refused before accessing the credential FD: Err("cannot secure the host credential descriptor")
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    tests::out_of_scope_selected_delivery_is_refused_before_host_credential_read
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 102 filtered out; finished in 0.01s
+
+error: test failed, to rerun pass `--bin forgejo-reconcile-local`

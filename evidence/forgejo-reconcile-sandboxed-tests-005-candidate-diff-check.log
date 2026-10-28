@@ -1,0 +1,3 @@
+worktree=candidate
+command=git diff --check
+exit_code=0

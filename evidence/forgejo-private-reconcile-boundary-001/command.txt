@@ -1,0 +1,21 @@
+Private local Forgejo end-to-end:
+PYTHONDONTWRITEBYTECODE=1 python3 scripts/run_forgejo_native_push_webhook_reconcile.py --forgejo-binary /tmp/forgejo-17.0.0 --state-dir /tmp/forgejo-private-reconcile-boundary-001-state --evidence-dir evidence/forgejo-private-reconcile-boundary-001
+
+Focused contract:
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -p 'test_forgejo_emitted_webhook_e2e.py' -k PrivateRepositoryAnonymousReadTests -v
+
+Full Python suite:
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -v
+
+Rust suite:
+cargo test --offline --locked --all-targets -- --test-threads=1
+
+Cargo no-license contract:
+python3 scripts/verify_cargo_license_state.py
+python3 scripts/test_cargo_license_state.py -v
+cargo metadata --locked --offline --format-version 1
+
+Hygiene:
+cargo fmt --all -- --check
+git diff --check
+python3 -m py_compile scripts/run_forgejo_native_push_webhook_reconcile.py tests/test_forgejo_emitted_webhook_e2e.py

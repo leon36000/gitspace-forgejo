@@ -1,0 +1,3 @@
+Both targeted ignored process tests: exit 0; 1 passed each, no failures.
+Bwrap boundary: network and PID namespaces unshared; root mounted read-only; /tmp private tmpfs; only the ignored Cargo target directory writable; cached Cargo registry mounted read-only; Cargo offline and locked.
+The tests create their API fixture and receiver within that network namespace; no host or external service is contacted.

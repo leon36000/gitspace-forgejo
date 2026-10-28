@@ -1,0 +1,45 @@
+{
+  "configured_repository": "forge-admin/agent-forge-core",
+  "credential_preserved": true,
+  "event_repository": "forge-admin/native-push-out-of-scope-proof",
+  "exit_status": 1,
+  "journal_unchanged": true,
+  "requested_delivery_ids": [
+    "e1b6e956-9478-4ad9-9a38-3bcdce007628",
+    "08078d1f-a03c-4b21-8bc9-46a27cdd8fee"
+  ],
+  "result": {
+    "api_version": "forgejo-rest-v1",
+    "results": [
+      {
+        "delivery_id": "e1b6e956-9478-4ad9-9a38-3bcdce007628",
+        "error": {
+          "action": "route this delivery to the matching configured repository adapter; do not retry it against this repository",
+          "code": "resource_out_of_scope",
+          "details": {
+            "configured_repository": "forge-admin/agent-forge-core",
+            "event_repository": "forge-admin/native-push-out-of-scope-proof"
+          },
+          "retryable": false
+        },
+        "verdict": "inconclusive"
+      },
+      {
+        "delivery_id": "08078d1f-a03c-4b21-8bc9-46a27cdd8fee",
+        "error": {
+          "action": "route this delivery to the matching configured repository adapter; do not retry it against this repository",
+          "code": "resource_out_of_scope",
+          "details": {
+            "configured_repository": "forge-admin/agent-forge-core",
+            "event_repository": "forge-admin/native-push-out-of-scope-proof"
+          },
+          "retryable": false
+        },
+        "verdict": "inconclusive"
+      }
+    ],
+    "schema_version": 5,
+    "upstream_read_attempts": 0,
+    "verdict": "inconclusive"
+  }
+}

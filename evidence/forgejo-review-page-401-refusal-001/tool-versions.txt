@@ -1,0 +1,9 @@
+Date: 2026-10-25
+Platform: Linux-7.0.0-1019-nvidia-aarch64-with-glibc2.39
+Python: 3.12.3
+Rust: rustc 1.95.0 (59807616e 2026-04-14)
+Cargo: cargo 1.95.0 (f2d3ce0bd 2026-03-21)
+Bubblewrap: 0.9.0
+Network: disabled inside test namespace; dependency build offline and locked
+LLM/model: not used
+Model tokens/cost: not applicable; no external model call

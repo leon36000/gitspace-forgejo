@@ -1,0 +1,5 @@
+RED was observed before adding validate_private_repository_anonymous_status:
+
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -p 'test_forgejo_emitted_webhook_e2e.py' -k PrivateRepositoryAnonymousReadTests -v
+
+Exit status: 1. All three new cases failed in setUp with the expected assertion that the private-repository privacy validator was missing. The raw command output was not saved separately; this is a concise observation, not a raw transcript.

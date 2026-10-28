@@ -1,0 +1,7 @@
+Repository: /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace
+HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+
+python3 scripts/run_forgejo_mission_delivery_process_e2e.py --only unauthorized_second_review_page_stops_merge_before_authority
+
+Capture run:
+set -o pipefail; python3 scripts/run_forgejo_mission_delivery_process_e2e.py --only unauthorized_second_review_page_stops_merge_before_authority 2>&1 | tee evidence/forgejo-review-page-401-refusal-001/runner.log

@@ -1,0 +1,8 @@
+runner exit status: 0
+test: unauthorized_second_review_page_stops_merge_before_authority
+result: 1 passed, 0 failed, 0 ignored, 5 filtered
+isolation: Bubblewrap; --unshare-net --unshare-pid
+build: cargo test --offline --locked
+cargo fmt --all -- --check: passed
+python3 -m py_compile scripts/run_forgejo_mission_delivery_process_e2e.py: passed
+git diff --check: passed
