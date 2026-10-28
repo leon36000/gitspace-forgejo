@@ -1,0 +1,16 @@
+$ bash -lc 'python3 scripts/verify_cargo_license_state.py && python3 -m unittest scripts.test_cargo_license_state'
+exit_status=0
+{
+  "license": null,
+  "license_decision": "no_license_selected",
+  "license_file": null,
+  "package": "agent-forge-core",
+  "publish": [],
+  "redistribution_rights": "not_assessed",
+  "status": "verified"
+}
+.......
+----------------------------------------------------------------------
+Ran 7 tests in 0.001s
+
+OK

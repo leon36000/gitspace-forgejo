@@ -1,0 +1,19 @@
+Initial live run (retained local state; exit 1 on an incorrect runner error-code assertion after the gate had already refused):
+PYTHONDONTWRITEBYTECODE=1 python3 scripts/run_forgejo_live_pr_merge_e2e.py --forgejo-binary /tmp/forgejo-17.0.0 --state-dir /tmp/forgejo-semantic-clean-merge-live-003 --semantic-clean-merge-canary
+
+Resume 1 (exit 1 at a stale-binding assertion incorrectly applied to a proof whose outcome was fail):
+PYTHONDONTWRITEBYTECODE=1 python3 scripts/resume_forgejo_semantic_clean_merge.py --forgejo-binary /tmp/forgejo-17.0.0 --state-dir /tmp/forgejo-semantic-clean-merge-live-003
+
+Resume 2 (exit 0; used retained corrected-candidate acceptance and performed proof, review, merge, and post-merge readback):
+PYTHONDONTWRITEBYTECODE=1 python3 scripts/resume_forgejo_semantic_clean_merge.py --forgejo-binary /tmp/forgejo-17.0.0 --state-dir /tmp/forgejo-semantic-clean-merge-live-003
+
+Verification after the code/doc update:
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -p 'test_*.py' -q  # 251 tests, OK
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s scripts -p 'test_*.py' -q  # 10 tests, OK
+PYTHONPYCACHEPREFIX=/tmp/forge-semantic-pycache python3 -m py_compile scripts/semantic_merge_canary.py scripts/run_forgejo_live_pr_merge_e2e.py scripts/resume_forgejo_semantic_clean_merge.py tests/test_semantic_merge_canary.py tests/test_forgejo_live_pr_merge_e2e.py  # exit 0
+git diff --check  # exit 0
+python3 scripts/verify_cargo_license_state.py  # verified; no license selected
+
+`python3 -m pytest -q scripts tests` could not start because pytest is not installed (`No module named pytest`); no dependency was installed. The two unittest discovery commands above cover the active test files.
+
+No API credential or verifier key was copied into this evidence folder. Raw local Forgejo state and the fixture verifier key remain only under the private /tmp state path.

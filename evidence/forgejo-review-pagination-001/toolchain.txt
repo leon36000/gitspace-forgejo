@@ -1,0 +1,13 @@
+Local run date: 2026-10-25T01:37:07-04:00
+Workspace: /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace
+HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+Branch: local/WEBHOOK-005-canonical-links
+Worktree state: dirty; pre-existing changes preserved, no commit created by this lot
+OS: Linux 7.0.0-1019-nvidia aarch64
+rustc: 1.95.0 (59807616e 2026-04-14)
+Cargo: 1.95.0 (f2d3ce0bd 2026-03-21)
+Python: 3.12.3
+Git: 2.43.0
+Cargo mode: offline, locked
+Forgejo instance/network: none; HTTP fixture bound to loopback only
+LLM/model: none

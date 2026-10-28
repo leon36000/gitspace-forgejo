@@ -1,0 +1,14 @@
+...........E.................................................................
+======================================================================
+ERROR: test_rejects_unrecognized_network_connect (tests.test_forgejo_emitted_webhook_e2e.EmittedWebhookRunnerCliTests.test_rejects_unrecognized_network_connect)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/test_forgejo_emitted_webhook_e2e.py", line 73, in test_rejects_unrecognized_network_connect
+    self.parse_trace(trace, expected_host="127.0.0.1", expected_port=3130)
+    ^^^^^^^^^^^^^^^^
+AttributeError: 'EmittedWebhookRunnerCliTests' object has no attribute 'parse_trace'
+
+----------------------------------------------------------------------
+Ran 77 tests in 0.569s
+
+FAILED (errors=1)

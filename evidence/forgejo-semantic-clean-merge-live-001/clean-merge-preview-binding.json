@@ -1,0 +1,68 @@
+{
+  "common_fixture_commit": "f2a9e5675a4e3c45c6a5a6682db7b6b885f272f5",
+  "expected_combined_source_sha256": "2d721ecf06742dc6a2cb22f9cef1d4ced57cf643b7555df29809ffe1f26930fb",
+  "lower_preupdate_commit": "8736177e5387303a06ee01caae5b2394be9ed573",
+  "mergeability_observations": [
+    {
+      "base_sha": "9cd64c9063feceaec6b0545133ff9ebc3f5c5b6d",
+      "elapsed_ms": 14,
+      "head_sha": "988543381714e06aefb6aa4788997b83cd8a3299",
+      "mergeable": false
+    },
+    {
+      "base_sha": "9cd64c9063feceaec6b0545133ff9ebc3f5c5b6d",
+      "elapsed_ms": 282,
+      "head_sha": "988543381714e06aefb6aa4788997b83cd8a3299",
+      "mergeable": false
+    },
+    {
+      "base_sha": "9cd64c9063feceaec6b0545133ff9ebc3f5c5b6d",
+      "elapsed_ms": 552,
+      "head_sha": "988543381714e06aefb6aa4788997b83cd8a3299",
+      "mergeable": false
+    },
+    {
+      "base_sha": "9cd64c9063feceaec6b0545133ff9ebc3f5c5b6d",
+      "elapsed_ms": 818,
+      "head_sha": "988543381714e06aefb6aa4788997b83cd8a3299",
+      "mergeable": true
+    },
+    {
+      "base_sha": "9cd64c9063feceaec6b0545133ff9ebc3f5c5b6d",
+      "elapsed_ms": 1088,
+      "head_sha": "988543381714e06aefb6aa4788997b83cd8a3299",
+      "mergeable": true
+    },
+    {
+      "base_sha": "9cd64c9063feceaec6b0545133ff9ebc3f5c5b6d",
+      "elapsed_ms": 1357,
+      "head_sha": "988543381714e06aefb6aa4788997b83cd8a3299",
+      "mergeable": false
+    },
+    {
+      "base_sha": "9cd64c9063feceaec6b0545133ff9ebc3f5c5b6d",
+      "elapsed_ms": 1628,
+      "head_sha": "988543381714e06aefb6aa4788997b83cd8a3299",
+      "mergeable": true
+    },
+    {
+      "base_sha": "9cd64c9063feceaec6b0545133ff9ebc3f5c5b6d",
+      "elapsed_ms": 1900,
+      "head_sha": "988543381714e06aefb6aa4788997b83cd8a3299",
+      "mergeable": true
+    },
+    {
+      "base_sha": "9cd64c9063feceaec6b0545133ff9ebc3f5c5b6d",
+      "elapsed_ms": 2172,
+      "head_sha": "988543381714e06aefb6aa4788997b83cd8a3299",
+      "mergeable": true
+    }
+  ],
+  "preview_base_commit": "9cd64c9063feceaec6b0545133ff9ebc3f5c5b6d",
+  "preview_candidate_commit": "988543381714e06aefb6aa4788997b83cd8a3299",
+  "preview_source_sha256": "2d721ecf06742dc6a2cb22f9cef1d4ced57cf643b7555df29809ffe1f26930fb",
+  "pull_request_mergeable": true,
+  "source_exactly_matches_branch_union": true,
+  "upper_branch_commit": "6683fc1d2cbe1a7376fc9af9682d6c15cf607308",
+  "upper_merge_commit": "9cd64c9063feceaec6b0545133ff9ebc3f5c5b6d"
+}

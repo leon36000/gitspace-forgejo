@@ -1,0 +1,21 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.90s
+     Running unittests src/bin/forgejo-reconcile-local.rs (target/debug/deps/forgejo_reconcile_local-3e9fc5f7734f2ac5)
+
+running 1 test
+
+thread 'tests::merge_authority_refuses_changed_review_total_before_any_merge_post' (3181233) panicked at src/bin/forgejo-reconcile-local.rs:10311:9:
+assertion `left == right` failed
+  left: String("upstream_invalid_response")
+ right: "review_pagination_inconsistent"
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test tests::merge_authority_refuses_changed_review_total_before_any_merge_post ... FAILED
+
+failures:
+
+failures:
+    tests::merge_authority_refuses_changed_review_total_before_any_merge_post
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 106 filtered out; finished in 0.04s
+
+error: test failed, to rerun pass `--bin forgejo-reconcile-local`

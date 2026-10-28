@@ -1,0 +1,13 @@
+692e08f7352834ee74db474711814d12d600cf6769e377a85969fa19010b0b7d  ../../docs/checkpoint.md
+ea57e29dd0bdf93c8680921b7dbc5915b4c17a9c53f379a3e62b3bf8ac51b103  ../../docs/implementation-plan.md
+2353b32f5223187adc2ec1e23cdcc58fbfb74033e78ecfb4f586e84c28df991c  ../../docs/source-inventory.md
+6d0d693fab20cd4f923c9cb156991a8e16d4ca59d7de4c225666b678afd64587  ../../scripts/run_forgejo_live_webhook_reconcile_emitted.py
+d35e0690f5085b0c9b953471d4eb3bbe6498e4dc743bf3b7089c15d67f33f79b  ../../tests/test_forgejo_emitted_webhook_e2e.py
+9f9947793656474d813007e0c7c90c254c1787c34bc2e24cac92f54ad80aa01d  cargo-license-tests.log
+468841e82161377ab6a5cecc86963b502c05fef7812be7f2a1c48bb136093ebe  cargo-license-verify.log
+189c06083729d58114e638d4632709fbcec0708c8189764fff17d54b3258c726  diff-check.log
+612349eff73db5668f60d5f97bc874837597b01b0f9bcd9fa1584a44cf624223  driver-tests.log
+3d4d50cd32af92c6d4df37c1df74a96622fca8cfb5643a155c91f034a42f2068  final-diff-check.log
+b6672a058527488c5cd0ea4e96832988863e858046cc007aad75462f8da77957  local-run.md
+2468b9f9ed8872a62af3615cf1865dc6f95f0e7df3831d365c750b65ced1cfbd  pycompile.log
+16f4248a5b6a2b5ac3e01a486fa12adf175940f4797f68157ffff730d3ab79e8  upstream-source-hashes.txt

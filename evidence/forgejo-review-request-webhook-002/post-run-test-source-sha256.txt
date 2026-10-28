@@ -1,0 +1,6 @@
+The E2E ran before relocation of one parser test into ParseLoopbackConnectTraceTests.
+The E2E provenance retains the exact pre-relocation test file hash; the E2E runner did not execute that Python test module.
+The final driver test file used for the 77/77 run has this SHA-256:
+30010bd2b7fa6a3ee6abaee834084d0c51d08a7378222a3d40d946659a2e68a9  tests/test_forgejo_emitted_webhook_e2e.py
+Pre-relocation hash captured by E2E provenance:
+ba4f5bb32c872cb0edcd26e2af5aec827b191ba5c73bd9acff71babffc9c5998  tests/test_forgejo_emitted_webhook_e2e.py
