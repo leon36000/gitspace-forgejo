@@ -1,0 +1,13 @@
+Red observations performed before changing validation:
+cargo test --offline --locked --test webhook_reconcile_contract merged_pull_request_with_zero_merge_commit_sha_is_not_canonical -- --exact
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_refuses_merged_pull_request_with_zero_merge_commit_sha
+cargo test --offline --locked --test webhook_reconcile_contract pull_request_reconciliation_rejects_zero_head_and_base_object_ids -- --exact
+
+Green runs captured in this directory:
+cargo test --offline --locked --test webhook_reconcile_contract -- --test-threads=1
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_refuses_merged_pull_request_with_zero_merge_commit_sha
+cargo fmt --all -- --check
+git diff --check
+python3 -m py_compile scripts/run_webhook_reconcile_cli_e2e.py
+python3 scripts/verify_cargo_license_state.py
+cargo metadata --locked --offline --no-deps --format-version=1

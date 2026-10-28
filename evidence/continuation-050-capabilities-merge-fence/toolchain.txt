@@ -1,0 +1,9 @@
+Date: 2026-10-26
+Worktree HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+Branch: local/WEBHOOK-005-canonical-links
+Python: 3.12.3
+Cargo: 1.95.0 (f2d3ce0bd 2026-03-21)
+Rustc: 1.95.0 (59807616e 2026-04-14)
+Platform: Linux 7.0.0-1019-nvidia aarch64, Ubuntu 24.04.2
+Forgejo instance: not started in this lot
+Bubblewrap: not invoked in this lot

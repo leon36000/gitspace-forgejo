@@ -1,0 +1,9 @@
+Observed on the real CLI process, before the descriptor change:
+
+running 1 test
+test actual_cli_discloses_versioned_local_test_capabilities ... FAILED
+assertion `left == right` failed
+left: Null
+right: Object {"external_writer_exclusion": "not_provided_by_cooperative_journal_fence", "scope": "normalized_origin_owner_repository_base_branch", "unresolved_intent_refusal": {"error_code": "execution_merge_target_unresolved", "verdict": "inconclusive", "retryable": true, ...}}
+
+The process test exited 101. The failure was specifically the absent machine-readable capability field. The error output is summarized from the captured command result in this task; this file is not the original Cargo stdout log.

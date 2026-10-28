@@ -1,0 +1,3 @@
+8993a90167f4d0f39afacc09bef3372176e69954504afc33de82695ca54f0758  src/bin/forgejo-reconcile-local.rs
+a16fdb7c39305364784da99cac22dd88a407980b15ce2d2a221058c07c163e61  tests/forgejo_reconcile_capabilities_e2e.rs
+3650809825f79a884fe7adbf3a483505a079de080504b1d24dd6d4a534773c80  evidence/continuation-049-cli-branch-scope-fence/local-run.md

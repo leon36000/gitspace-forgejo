@@ -1,0 +1,13 @@
+# Red phase before the capability descriptor was added:
+cargo test --offline --locked --test forgejo_reconcile_capabilities_e2e actual_cli_discloses_versioned_local_test_capabilities -- --exact
+# exit 101; actual CLI returned JSON null for merge_attempt_scope_fence while the test expected its structured refusal contract
+
+# Green phase and regression contracts:
+cargo test --offline --locked --test forgejo_reconcile_capabilities_e2e actual_cli_discloses_versioned_local_test_capabilities -- --exact
+cargo test --offline --locked --bin forgejo-reconcile-local capabilities_list_exact_merge_target_profiles
+cargo fmt --all -- --check
+git diff --check
+cargo metadata --offline --locked --no-deps --format-version 1
+
+# Existing process-boundary evidence reviewed only, not rerun:
+# evidence/forgejo-agent-egress-merge-001/local-run.md

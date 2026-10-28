@@ -1,0 +1,7 @@
+repository=Forgejo
+tag=v17.0.0
+commit=0d791421f85ca13a63b665053d81ea765fbbc571
+source=modules/structs/pull.go::PullRequest.MergedCommitID
+field_json=merge_commit_sha
+source_scratch=/tmp/forgejo-v17-base-cas-poc (dirty POC scratch)
+file_unchanged_in_scratch=yes

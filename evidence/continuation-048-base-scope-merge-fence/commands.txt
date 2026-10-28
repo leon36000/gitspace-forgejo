@@ -1,0 +1,14 @@
+Pre-fix reproduction observed before the code change in this work session:
+cargo test --offline --locked --test mission_execution_journal_contract unresolved_merge_intent_blocks_another_pull_request_on_the_same_base_branch -- --exact
+Observed: test failed because the second PR returned a successful rejected-resolution value instead of execution_merge_target_unresolved; its prepare/effect callbacks ran. The raw pre-fix console output was not separately archived.
+
+Final verification:
+cargo test --offline --locked --test mission_execution_journal_contract -- --test-threads=1
+cargo test --offline --locked --test mission_execution_journal_contract concurrent_merge_intents_for_different_prs_on_one_base_have_one_effect -- --exact  # repeated 20 times
+cargo fmt --all -- --check
+git diff --check
+python3 evidence/continuation-048-base-scope-merge-fence/verify_untracked_source_whitespace.py
+python3 scripts/verify_cargo_license_state.py
+cargo metadata --locked --offline --no-deps --format-version=1
+
+The test suite and 20-repeat command are captured in journal-suite.log and concurrency-repeat.log. Formatting, diff, Cargo metadata and license-guard logs are stored alongside this file.

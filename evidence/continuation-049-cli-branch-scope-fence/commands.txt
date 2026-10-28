@@ -1,0 +1,15 @@
+Final isolated process proof:
+cargo fmt --all
+python3 scripts/run_forgejo_mission_delivery_process_e2e.py --only unresolved_merge_on_same_base_refuses_another_pr_before_forgejo_reads
+
+Affected journal contract suite:
+cargo test --offline --locked --test mission_execution_journal_contract -- --test-threads=1
+
+Final checks:
+cargo fmt --all -- --check
+git diff --check
+python3 scripts/verify_cargo_license_state.py
+python3 -m py_compile scripts/run_forgejo_mission_delivery_process_e2e.py
+cargo metadata --locked --offline --no-deps --format-version=1
+
+The final runner execution is in final-run.log. The first setup attempt is retained in first-attempt.log; it failed because the synthetic blocker requirement still named issue 1 while the blocker claim used issue 2. The fixture was corrected to bind the synthetic requirement to issue 2.

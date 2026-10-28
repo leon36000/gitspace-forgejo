@@ -1,0 +1,9 @@
+Phase rouge — résultats observés avant la modification du validateur
+
+Commande : cargo test --offline --locked --test webhook_reconcile_contract pull_request_notification_rejects_any_review_member_before_api_calls -- --exact
+Résultat : exit 101, 0/1 réussi. Pour review=null, le code retournait Ok(ReconciledState { ... }) au lieu de UnexpectedEventPayloadField("review"); le scénario avait donc franchi la validation et atteint la lecture API.
+
+Commande : cargo test --offline --locked --test webhook_handler_contract pull_request_event_with_review_member_is_rejected_before_journaling -- --exact
+Résultat : exit 101, 0/1 réussi. Pour review=null, la réponse était HTTP 202 acceptée au lieu de HTTP 400; le receiver pouvait journaliser cet événement.
+
+Ce fichier est un compte rendu des sorties observées pendant l’exécution, pas une copie brute des terminaux. La preuve verte finale et la commande complète se trouvent dans ../continuation-052-merge-readback-base-identity/all-targets-green.log.

@@ -1,0 +1,9 @@
+Phase rouge — erreur observée avant la correction
+
+Commande isolée : cargo test --offline --locked --bin forgejo-reconcile-local tests::merge_readback_refuses_divergent_commit_and_issue_state -- --exact
+Résultat : exit 101, 0/1 réussi. Le test construisait une lecture post-fusion dont base.repo.full_name pointait vers other-owner/other-repository (puis un cas sans repo); les autres bindings restaient identiques. merge_readback_is_confirmed retournait true.
+
+Le même échec était apparu dans le premier cargo test --offline --locked --all-targets, enregistré dans ../continuation-051-pull-request-review-field/all-targets.log. Il s’agissait du seul échec déclaré de ce run.
+
+Test de contrat, avant ajout de la capacité : cargo test --offline --locked --bin forgejo-reconcile-local tests::capabilities_list_exact_merge_target_profiles -- --exact
+Résultat : exit 101; postmerge_pull_request_identity était absent (null).
