@@ -1,0 +1,37 @@
+[
+  {
+    "tag": "feature/../outside",
+    "git_check_ref_format_exit": 1,
+    "valid": false
+  },
+  {
+    "tag": "feature/./outside",
+    "git_check_ref_format_exit": 1,
+    "valid": false
+  },
+  {
+    "tag": "feature//outside",
+    "git_check_ref_format_exit": 1,
+    "valid": false
+  },
+  {
+    "tag": "feature/.hidden",
+    "git_check_ref_format_exit": 1,
+    "valid": false
+  },
+  {
+    "tag": "feature/release.lock",
+    "git_check_ref_format_exit": 1,
+    "valid": false
+  },
+  {
+    "tag": "-release-v1",
+    "git_check_ref_format_exit": 0,
+    "valid": true
+  },
+  {
+    "tag": "feature/v1.0",
+    "git_check_ref_format_exit": 0,
+    "valid": true
+  }
+]

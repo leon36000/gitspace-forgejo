@@ -1,0 +1,7 @@
+cargo test --offline --locked --test webhook_reconcile_contract release_rejects_invalid_current_git_tag_ref_names
+cargo test --offline --locked --test webhook_reconcile_contract
+cargo test --offline --locked --test forgejo_merge_readiness
+cargo fmt --all -- --check
+git diff --check -- src/forgejo.rs src/webhook/reconcile.rs tests/webhook_reconcile_contract.rs
+git check-ref-format refs/tags/<tag> for each value in git-refname-corpus.json
+python3 scripts/verify_latest_sha256_manifest.py evidence/SHA256SUMS

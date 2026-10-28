@@ -678,6 +678,66 @@ fn release_tag_with_slash_matches_forgejo_path_escape_segments() {
     );
 }
 
+#[test]
+fn release_rejects_invalid_current_git_tag_ref_names() {
+    for (index, tag_name) in [
+        "feature/../outside",
+        "feature/./outside",
+        "feature//outside",
+        "feature/.hidden",
+        "feature/release.lock",
+    ]
+    .into_iter()
+    .enumerate()
+    {
+        let release_id = 612 + index as u64;
+        let delivery_id = format!("fixture-release-invalid-ref-{index}");
+        let event = JournalEvent {
+            sequence: 1,
+            event_id: delivery_id.clone(),
+            idempotency_key: format!("forgejo-delivery-v1:{delivery_id}"),
+            kind: "forgejo.webhook.v1.release".into(),
+            payload: json!({
+                "schema_version": 1,
+                "provider": "forgejo",
+                "delivery_id": delivery_id,
+                "event": "release",
+                "payload": {
+                    "action": "updated",
+                    "repository": {"full_name": "forge-admin/agent-forge-core"},
+                    "release": {"id": release_id, "tag_name": tag_name}
+                }
+            }),
+            previous_hash: "0".repeat(64),
+            receiver_attestation: None,
+            hash: "1".repeat(64),
+        };
+        let api = FixtureApi {
+            response: Ok(json!({
+                "id": release_id,
+                "tag_name": tag_name,
+                "draft": false,
+                "prerelease": false,
+                "html_url": format!(
+                    "http://127.0.0.1:3130/forge-admin/agent-forge-core/releases/tag/{tag_name}"
+                )
+            })),
+            requests: Mutex::new(Vec::new()),
+        };
+
+        assert_eq!(
+            reconcile_inbox_event(&event, &api),
+            Err(ReconcileError::InvalidCurrentStateField("tag_name")),
+            "invalid Git tag ref {tag_name:?} must not produce a canonical release URL"
+        );
+    }
+
+    assert!(
+        agent_forge_core::forgejo::valid_tag_ref_name("-release-v1"),
+        "leading dashes are valid in tag refs even though branch CLI scopes reject them"
+    );
+}
+
 fn workflow_job_event() -> JournalEvent {
     JournalEvent {
         sequence: 1,

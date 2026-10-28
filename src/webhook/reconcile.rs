@@ -815,7 +815,7 @@ fn reconcile_release(
         .filter(|tag| {
             !tag.is_empty()
                 && tag.len() <= MAX_RECONCILED_RELEASE_TAG_NAME_BYTES
-                && !tag.chars().any(char::is_control)
+                && crate::forgejo::valid_tag_ref_name(tag)
         })
         .ok_or(ReconcileError::InvalidCurrentStateField("tag_name"))?;
     let draft = current

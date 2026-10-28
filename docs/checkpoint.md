@@ -1,5 +1,13 @@
 # Checkpoint — 28 octobre 2026
 
+## CONTINUATION-434 — validation des noms de tag Git à la lecture Release — 28 octobre 2026
+
+Le readback API acceptait `tag_name=feature/../outside` et construisait quand même une URL Release canonique avec ces segments. Le test rouge démontre l’acceptation. `valid_tag_ref_name` vérifie maintenant les contraintes de nom de ref sur chaque segment, tout en gardant les tags slashés et les tags valides commençant par `-`; `valid_branch` conserve sa règle spécifique sur les branches.
+
+Les vérifications passent : test ciblé 1/1, suite `webhook_reconcile_contract` 102/102, suite `forgejo_merge_readiness` 10/10, `cargo fmt --all -- --check`, `git diff --check`, et concordance du corpus de sept cas avec `git check-ref-format`. Reçu reproductible : [CONTINUATION-434](../evidence/continuation-434-release-tag-ref-validation-001/local-run.md); matrice refus actualisée.
+
+Limite : les réponses API sont des fixtures locales; aucun Forgejo live, LLM/AgentOS ou benchmark. Le delta CONTINUATION-434 est encore local; la branche GitLab PC4 était à `0a8774aa9405e6cc2f827c253f066b7c0984b9ee` après transfert 003, avec les pipelines 164/165 en attente ou en cours au dernier contrôle. Suite : synchroniser ce code et ses reçus sur la branche de travail PC4, lire le résultat CI final, puis continuer un lot distinct.
+
 ## GITLAB-PC4-TRANSFER-003 — synchronisation des lots 432/433 — 28 octobre 2026
 
 Le delta local a été synchronisé sur le projet privé `root/gitspace-forgejo` (ID 4), branche de travail `codex/pc6-transfer-work-2026-10-28`, par l’intégration GitLab connectée. Le commit `cfc7590beeafc54677fc32690c176cf0629fdfac` ajoute 54 fichiers et met à jour 9 fichiers (5 386 209 octets au total), dont les sources/docs modifiés et les reçus CONTINUATION-432/433. Le readback récursif vérifie les 63 Git blob IDs et modes contre les fichiers locaux : 63/63 identiques, 0 absent, 0 divergent. Reçu : [GITLAB-PC4-TRANSFER-003](../evidence/gitlab-pc4-transfer-003/local-run.md).

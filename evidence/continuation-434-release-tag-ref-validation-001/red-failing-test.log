@@ -1,0 +1,24 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.88s
+     Running tests/webhook_reconcile_contract.rs (target/debug/deps/webhook_reconcile_contract-3ce6f937d5fb0c8e)
+
+running 1 test
+test release_rejects_invalid_current_git_tag_ref_names ... FAILED
+
+failures:
+
+---- release_rejects_invalid_current_git_tag_ref_names stdout ----
+
+thread 'release_rejects_invalid_current_git_tag_ref_names' (1962368) panicked at tests/webhook_reconcile_contract.rs:728:9:
+assertion `left == right` failed: invalid Git tag ref "feature/../outside" must not produce a canonical release URL
+  left: Ok(ReconciledState { delivery_id: "fixture-release-invalid-ref-0", resource: ResourceRef { kind: Release, owner: "forge-admin", repository: "agent-forge-core", id: Release(612) }, state: "present", updated_at: "", html_url: "http://127.0.0.1:3130/forge-admin/agent-forge-core/releases/tag/feature/../outside", head_sha: None, parent_workflow_run: None, base_sha: None, merged: None, draft: None, merge_commit_sha: None, requested_reviewers: None, requested_reviewers_teams: None, labels: None, assignees: None, milestone: None, work_item_content: None, comment: None, review_notification: None, release: Some(ReconciledRelease { id: 612, tag_name: "feature/../outside", draft: false, prerelease: false }) })
+ right: Err(InvalidCurrentStateField("tag_name"))
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    release_rejects_invalid_current_git_tag_ref_names
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 101 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `--test webhook_reconcile_contract`

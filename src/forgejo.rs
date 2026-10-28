@@ -1307,25 +1307,31 @@ pub fn encode_url_path_segments(value: &str) -> String {
     encoded
 }
 
-/// Check the Git ref constraints used by local Forgejo branch scopes.
-pub fn valid_branch(branch: &str) -> bool {
-    !branch.is_empty()
-        && branch.trim() == branch
-        && !branch.starts_with('-')
-        && !branch.starts_with('/')
-        && !branch.ends_with('/')
-        && !branch.ends_with('.')
-        && !branch.contains("//")
-        && !branch.contains("..")
-        && !branch.contains("@{")
-        && !branch.chars().any(|character| {
+/// Check Git refname constraints for a tag name, including slash-delimited
+/// namespaces. Leading dashes remain valid for tags; callers that use a ref as
+/// a branch argument should apply the branch-specific restriction separately.
+pub fn valid_tag_ref_name(tag_name: &str) -> bool {
+    !tag_name.is_empty()
+        && tag_name.trim() == tag_name
+        && !tag_name.starts_with('/')
+        && !tag_name.ends_with('/')
+        && !tag_name.ends_with('.')
+        && !tag_name.contains("//")
+        && !tag_name.contains("..")
+        && !tag_name.contains("@{")
+        && !tag_name.chars().any(|character| {
             character.is_control()
                 || character.is_whitespace()
                 || matches!(character, '~' | '^' | ':' | '?' | '*' | '[' | '\\')
         })
-        && branch
+        && tag_name
             .split('/')
             .all(|part| !part.starts_with('.') && !part.ends_with(".lock"))
+}
+
+/// Check the Git ref constraints used by local Forgejo branch scopes.
+pub fn valid_branch(branch: &str) -> bool {
+    !branch.starts_with('-') && valid_tag_ref_name(branch)
 }
 
 fn prepare_lock_root(lock_root: &Path) -> Result<(), MergeLockError> {
