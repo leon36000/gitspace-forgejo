@@ -1,0 +1,14 @@
+test_host_runs_outside_supervisor_process_group (test_mission_012_mcp_supervisor.Mission012McpSupervisorTests.test_host_runs_outside_supervisor_process_group) ... FAIL
+
+======================================================================
+FAIL: test_host_runs_outside_supervisor_process_group (test_mission_012_mcp_supervisor.Mission012McpSupervisorTests.test_host_runs_outside_supervisor_process_group)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/test_mission_012_mcp_supervisor.py", line 134, in test_host_runs_outside_supervisor_process_group
+    self.assertEqual(host_pid, host_pgid)
+AssertionError: 3870356 != 3870342
+
+----------------------------------------------------------------------
+Ran 1 test in 0.065s
+
+FAILED (failures=1)

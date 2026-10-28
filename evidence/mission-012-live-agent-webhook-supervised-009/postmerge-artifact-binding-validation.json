@@ -1,0 +1,13 @@
+{
+  "cargo_test_repeated": false,
+  "forgejo_result_sha256": "2182625645ee06a8c6855a303c3b7a26450ba500d8759c00255e034b2add3bbb",
+  "forgejo_run_repeated": false,
+  "merge_commit": "0d9780667958d4c3d58f665e54aa99ffc5f165ea",
+  "output_matches_report_and_merge_binding": true,
+  "postmerge_log_bytes": 435,
+  "postmerge_log_sha256": "5ac6218912917f6483e8f6c62da2e353c657380115a206d4272293d666899fdf",
+  "postmerge_report_sha256": "f361f84528a08b7afeff523f124f188b0e6b4badd1a5ceaa3bb9155df36937bd",
+  "schema_version": 1,
+  "source": "read-only validation of the saved run-009 merge report and Cargo output by the strengthened supervisor artifact-binding predicate",
+  "verdict": "pass"
+}

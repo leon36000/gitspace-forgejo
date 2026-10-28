@@ -1,0 +1,6 @@
+test_parent_cancellation_allows_mcp_host_to_finalize (test_mission_012_mcp_supervisor.Mission012McpSupervisorTests.test_parent_cancellation_allows_mcp_host_to_finalize) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.134s
+
+OK

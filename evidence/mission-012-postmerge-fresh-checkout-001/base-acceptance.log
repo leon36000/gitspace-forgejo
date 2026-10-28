@@ -1,0 +1,25 @@
+   Compiling mission012-clamp v0.1.0 (/candidate)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.29s
+     Running tests/acceptance.rs (/target/debug/deps/acceptance-26d9de5d3a8f50ef)
+
+running 2 tests
+test values_inside_the_range_are_unchanged ... ok
+test values_outside_the_range_clamp_to_the_nearest_boundary ... FAILED
+
+failures:
+
+---- values_outside_the_range_clamp_to_the_nearest_boundary stdout ----
+
+thread 'values_outside_the_range_clamp_to_the_nearest_boundary' (52) panicked at tests/acceptance.rs:6:5:
+assertion `left == right` failed
+  left: -2
+ right: 10
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    values_outside_the_range_clamp_to_the_nearest_boundary
+
+test result: FAILED. 1 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `--test acceptance`

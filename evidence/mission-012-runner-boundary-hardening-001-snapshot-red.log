@@ -1,0 +1,25 @@
+test_build_snapshot_does_not_write_through_replaced_destination_directory (test_mission_012_live_admission_e2e.Mission012SignedWebhookTests.test_build_snapshot_does_not_write_through_replaced_destination_directory) ... FAIL
+test_build_snapshot_excludes_runtime_and_only_copies_build_inputs (test_mission_012_live_admission_e2e.Mission012SignedWebhookTests.test_build_snapshot_excludes_runtime_and_only_copies_build_inputs) ... ok
+test_build_snapshot_rejects_source_mutated_after_an_earlier_file_was_copied (test_mission_012_live_admission_e2e.Mission012SignedWebhookTests.test_build_snapshot_rejects_source_mutated_after_an_earlier_file_was_copied) ... FAIL
+test_build_snapshot_rejects_symlink_and_hardlinked_inputs (test_mission_012_live_admission_e2e.Mission012SignedWebhookTests.test_build_snapshot_rejects_symlink_and_hardlinked_inputs) ... ok
+
+======================================================================
+FAIL: test_build_snapshot_does_not_write_through_replaced_destination_directory (test_mission_012_live_admission_e2e.Mission012SignedWebhookTests.test_build_snapshot_does_not_write_through_replaced_destination_directory)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/test_mission_012_live_admission_e2e.py", line 132, in test_build_snapshot_does_not_write_through_replaced_destination_directory
+    with self.assertRaisesRegex(RuntimeError, "destination|snapshot"):
+AssertionError: RuntimeError not raised
+
+======================================================================
+FAIL: test_build_snapshot_rejects_source_mutated_after_an_earlier_file_was_copied (test_mission_012_live_admission_e2e.Mission012SignedWebhookTests.test_build_snapshot_rejects_source_mutated_after_an_earlier_file_was_copied)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/test_mission_012_live_admission_e2e.py", line 88, in test_build_snapshot_rejects_source_mutated_after_an_earlier_file_was_copied
+    with self.assertRaisesRegex(RuntimeError, "changed while creating the snapshot"):
+AssertionError: RuntimeError not raised
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.004s
+
+FAILED (failures=2)

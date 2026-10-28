@@ -1,0 +1,97 @@
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/.runtime/merge-016-target-bound-proof-sandbox/src/forgejo.rs:978:
+         || !valid_digest(expected_host_policy_sha256)
+         || crate::sha256(current_host_policy_bytes) != expected_host_policy_sha256
+     {
+-        return Err(MergeReadinessError::Approval(MergeApprovalError::StalePolicy));
++        return Err(MergeReadinessError::Approval(
++            MergeApprovalError::StalePolicy,
++        ));
+     }
+     let verifier_policy: crate::Policy = serde_json::from_slice(current_host_policy_bytes)
+         .map_err(|_| MergeReadinessError::Approval(MergeApprovalError::InvalidPolicy))?;
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/.runtime/merge-016-target-bound-proof-sandbox/src/forgejo.rs:987:
+         || verifier_policy.verifier_id.trim().is_empty()
+         || verifier_policy.timeout_seconds == 0
+     {
+-        return Err(MergeReadinessError::Approval(MergeApprovalError::InvalidPolicy));
++        return Err(MergeReadinessError::Approval(
++            MergeApprovalError::InvalidPolicy,
++        ));
+     }
+-    let policy = verifier_policy
+-        .merge_approval_policy
+-        .as_ref()
+-        .ok_or(MergeReadinessError::Approval(MergeApprovalError::NoApprovalPolicy))?;
++    let policy =
++        verifier_policy
++            .merge_approval_policy
++            .as_ref()
++            .ok_or(MergeReadinessError::Approval(
++                MergeApprovalError::NoApprovalPolicy,
++            ))?;
+     if verifier_policy.verifier_id != context.expected.verifier_id {
+-        return Err(MergeReadinessError::Approval(MergeApprovalError::VerifierMismatch));
++        return Err(MergeReadinessError::Approval(
++            MergeApprovalError::VerifierMismatch,
++        ));
+     }
+ 
+     evaluate_merge_approvals_with_policy(
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/.runtime/merge-016-target-bound-proof-sandbox/src/lib.rs:2044:
+         let policy = parsed_policy.unwrap();
+         assert_eq!(policy.verifier_id, "local-isolated-cargo-acceptance-v1");
+         let source = policy.protected_source_binding.unwrap();
+-        assert_eq!(source.policy_sha256, "e23907b5bd6b2c0f342c88ddcfa9f9a9be98065adcd24f9f7299dc796b5739eb");
+-        assert_eq!(source.requirement_sha256, "3a3c444075c93a3bcfb2bec17d1a2e74ec0051effc2994e6b02ac095eb0dd431");
++        assert_eq!(
++            source.policy_sha256,
++            "e23907b5bd6b2c0f342c88ddcfa9f9a9be98065adcd24f9f7299dc796b5739eb"
++        );
++        assert_eq!(
++            source.requirement_sha256,
++            "3a3c444075c93a3bcfb2bec17d1a2e74ec0051effc2994e6b02ac095eb0dd431"
++        );
+         assert_eq!(source.review_identity, "verifier-bot");
+         assert_eq!(source.merge_identity, "forge-admin");
+         assert_ne!(policy.verifier_id, source.review_identity);
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/.runtime/merge-016-target-bound-proof-sandbox/tests/webhook_receiver_process_e2e.rs:677:
+     .expect("serialize stale synthetic pull request webhook payload");
+ 
+     let (mut receiver, address) = start_ready_receiver(&secret, &journal_path);
+-    let (status, accepted) = send(
+-        address,
+-        &request_event("cli-pr-23", "pull_request", &body),
+-    );
++    let (status, accepted) = send(address, &request_event("cli-pr-23", "pull_request", &body));
+     assert_eq!(status, 202);
+     assert_eq!(accepted["accepted"], true);
+     assert_eq!(accepted["duplicate"], false);
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/.runtime/merge-016-target-bound-proof-sandbox/tests/webhook_receiver_process_e2e.rs:716:
+         String::from_utf8_lossy(&output.stderr)
+     );
+     assert!(
+-        requests[0].starts_with(
+-            "GET /api/v1/repos/forge-admin/agent-forge-core/pulls/23 HTTP/1.1\r\n"
+-        ),
++        requests[0]
++            .starts_with("GET /api/v1/repos/forge-admin/agent-forge-core/pulls/23 HTTP/1.1\r\n"),
+         "unexpected request path: {requests:?}"
+     );
+     assert!(
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/.runtime/merge-016-target-bound-proof-sandbox/tests/webhook_receiver_process_e2e.rs:742:
+         value["canonical_state"]["html_url"],
+         "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/23"
+     );
+-    assert_ne!(value["canonical_state"]["head_sha"], "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+-    assert_ne!(value["canonical_state"]["base_sha"], "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb");
++    assert_ne!(
++        value["canonical_state"]["head_sha"],
++        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
++    );
++    assert_ne!(
++        value["canonical_state"]["base_sha"],
++        "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
++    );
+ }
+ 
+ #[test]

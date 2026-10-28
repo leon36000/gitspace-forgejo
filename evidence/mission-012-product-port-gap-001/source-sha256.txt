@@ -1,0 +1,10 @@
+1948de1d635d9b7a436f2a3dfa470ffd2326d30fb92165c7d9d3a38baeb09030  src/agent_runtime.rs
+979fd75c7a6c056a99b92d1ec57fb45bbf352bf43696559d1ee365b930e55527  src/bin/mission-012-mcp-host.rs
+312d9bb7eb135fc9b6bb59c616d47451fbd11f98c9668a192a09f3af9dc5f7c4  src/mission_012_host.rs
+369fb9f75bf40b6d4d8f6bb1a6519e6b174678a1786a553901910ca52b640c37  src/lib.rs
+da39cf0b30e9a8bdaf95e81d39abeef48b56677b7951dc271de4acedf77c8f1e  tests/mission_012_mcp_lifecycle.rs
+d748e1be6c9e024693b8566938eb06fe6b13282ef0e944a439880bdcc540b64c  .runtime/mission-012-agent-pr-gate-004/src/agent_runtime.rs
+e4795806625b7a64293df1d1b7cc66c84e315008d79b864b4cb43b4be18bb20f  .runtime/mission-012-agent-pr-gate-004/src/bin/mission-012-mcp-host.rs
+65e80a7c4b26edcdfcc25f41b7c004613034107ef3af5c54c88234976a68e5f4  .runtime/mission-012-agent-pr-gate-004/src/mission_012_host.rs
+75d0c1f38194eea90ca20157e3e6e04c9d84ad679772f2917f161e5a1066fb02  .runtime/mission-012-agent-pr-gate-004/src/lib.rs
+f1e46ad2b822bf3033a928b9afc5f9e54947aae4a81c082be36338e1375135ae  .runtime/mission-012-agent-pr-gate-004/tests/mission_012_mcp_lifecycle.rs

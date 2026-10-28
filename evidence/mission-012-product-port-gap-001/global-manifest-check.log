@@ -1,0 +1,2 @@
+lines=2846 valid=2845 missing=0 divergent=0 malformed=1
+malformed:2698:None  tests/test_mission_012_live_composed_e2e.py

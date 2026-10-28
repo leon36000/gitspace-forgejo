@@ -1,0 +1,8 @@
+local-run.md: OK
+crash-feature-unavailable.log: OK
+product-mcp-lifecycle.log: OK
+product-red-intent-contract.log: OK
+diff-check.log: OK
+rustfmt.log: OK
+source-sha256.txt: OK
+versions.txt: OK

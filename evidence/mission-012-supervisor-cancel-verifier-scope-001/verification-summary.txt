@@ -1,0 +1,7 @@
+Focused supervisor cancellation case: 1 passed.
+Full process lifecycle suite: 28 passed, 0 failed, 1 ignored.
+Clippy strict: exits nonzero on ten existing diagnostics in sources outside this test (three too-many-arguments functions in agent_runtime.rs, one in forgejo.rs, two in mission_admission.rs, one in lib.rs, and two collapsible-if sites in agent_runtime.rs).
+Clippy with only the two pre-existing lint classes allowed: passes.
+Targeted rustfmt and whitespace inspection: pass.
+No production or supervisor implementation source changed in this slice.
+The measured assertion observes the systemd verifier cgroup empty before test cleanup guards run.

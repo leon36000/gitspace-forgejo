@@ -1,0 +1,34 @@
+{
+  "binary_sha256": {
+    "forgejo-reconcile-local": "4f5e6afa5e5aab5804c5e1e8b6a12c3c87abde0d4c55c580e104f78d1c61723e",
+    "gate": "47268336fdd5b584d33d2b220c8e676801a3b328c0e822941bd791c50defc48e"
+  },
+  "build_command": [
+    "/home/pc6/.rustup/toolchains/1.95.0-aarch64-unknown-linux-gnu/bin/cargo",
+    "build",
+    "--offline",
+    "--locked",
+    "--manifest-path",
+    "/run/worktree/Cargo.toml",
+    "--target-dir",
+    "/tmp/forgejo-supervised-netns-20261026-009/rust-merge-gate-target",
+    "--bin",
+    "gate",
+    "--bin",
+    "forgejo-reconcile-local"
+  ],
+  "build_exit_code": 0,
+  "build_log_sha256": "9231a7bcccc992c32f8037c9d14789e6c9e9b38190294ca7b466c6722ebe9358",
+  "cargo_home": "/home/pc6/.cargo",
+  "cargo_toolchain": "/home/pc6/.rustup/toolchains/1.95.0-aarch64-unknown-linux-gnu/bin/cargo",
+  "offline_locked": true,
+  "rustc_toolchain": "/home/pc6/.rustup/toolchains/1.95.0-aarch64-unknown-linux-gnu/bin/rustc",
+  "source_sha256": {
+    "Cargo.lock": "bf599559dd11ff21ecc4754aa8a693966b4a9ca401153d7d7caa1f18d8995fcc",
+    "Cargo.toml": "f9144c83c85369f40ecfd2255fdd0915ddb90a4d6c14e1705908febe9bb2b1a3",
+    "src/bin/forgejo-reconcile-local.rs": "be87e43d00fa02f56988e0e8360f1049b23b98687dcd072bdc6f4af0a97bfd76",
+    "src/bin/gate.rs": "4366abaa55d4d5d539b10d48a3706afbf37702c9dd199466545963dbdc9d116d",
+    "src/forgejo.rs": "3ec429b2cf9604d71a6037be52d61ed3a5d68d3b2aced1dacec965417b1858c7",
+    "src/lib.rs": "82e1f32eda0c3d181744c9b194bc7a416d99addf0657be8b5233b7b6dc3cd58e"
+  }
+}

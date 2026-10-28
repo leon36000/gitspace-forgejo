@@ -1,0 +1,6 @@
+test_host_runs_outside_supervisor_process_group (test_mission_012_mcp_supervisor.Mission012McpSupervisorTests.test_host_runs_outside_supervisor_process_group) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.065s
+
+OK

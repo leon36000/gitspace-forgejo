@@ -1,0 +1,20 @@
+test_parent_cancellation_allows_mcp_host_to_finalize (test_mission_012_mcp_supervisor.Mission012McpSupervisorTests.test_parent_cancellation_allows_mcp_host_to_finalize) ... ERROR
+
+======================================================================
+ERROR: test_parent_cancellation_allows_mcp_host_to_finalize (test_mission_012_mcp_supervisor.Mission012McpSupervisorTests.test_parent_cancellation_allows_mcp_host_to_finalize)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/test_mission_012_mcp_supervisor.py", line 176, in test_parent_cancellation_allows_mcp_host_to_finalize
+    status = process.wait(timeout=5)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 1264, in wait
+    return self._wait(timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 2045, in _wait
+    raise TimeoutExpired(self.args, timeout)
+subprocess.TimeoutExpired: Command '['/usr/bin/python3', '-c', "import pathlib,signal,sys; sys.path.insert(0,sys.argv[1]); signal.pthread_sigmask(signal.SIG_BLOCK,{signal.SIGTERM}); import run_mission_012_live_mcp_agent_e2e as module; result=module.run_bounded_cli([sys.executable,'-c',sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5],sys.argv[6]],cwd=pathlib.Path.cwd(), env={'PATH':'/usr/bin:/bin','HOME':'/nonexistent'},timeout=30); raise SystemExit(0 if result[3] else 1)", '/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/scripts', "import subprocess,sys,time; subprocess.Popen([sys.executable,sys.argv[1],'--',sys.executable,'-c',sys.argv[2],sys.argv[3],sys.argv[4]],stdin=subprocess.PIPE,stdout=subprocess.PIPE); time.sleep(60)", '/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/scripts/mission_012_mcp_supervisor.py', 'import pathlib,sys; pathlib.Path(sys.argv[1]).write_text(\'ready\'); sys.stdin.buffer.read(); pathlib.Path(sys.argv[2]).write_text(\'finalized\'); print(\'{"event":"host_finalization","outcome":"candidate_ready"}\',flush=True)', '/tmp/tmp34hqfxvl/host-ready', '/tmp/tmp34hqfxvl/host-finalized']' timed out after 5 seconds
+
+----------------------------------------------------------------------
+Ran 1 test in 5.082s
+
+FAILED (errors=1)

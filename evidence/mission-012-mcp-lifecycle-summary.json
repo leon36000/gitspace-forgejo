@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "source": "sanitized summary of the local MCP harness transcript; raw records remain under ignored .runtime/",
+  "protocol_transcript_sha256": "bf98d2c41b0166dadfe5c6f01d58e3e36334fe41c16155694326eb384de6029b",
+  "receipt_log_sha256": "2d7fe4ef748b98ba166ba762c1283c660b93459b141e1647043a8dc916e3afba",
+  "response_count": 6,
+  "initialized_protocol_version": "2025-06-18",
+  "post_shutdown_call_response": {
+    "id": 6,
+    "error": "server_shutting_down"
+  },
+  "tool_receipts": [
+    {
+      "tool_id": "cargo.test",
+      "success": true,
+      "error_code": null
+    },
+    {
+      "tool_id": "workspace.write_text",
+      "success": true,
+      "error_code": null
+    },
+    {
+      "tool_id": "cargo.test",
+      "success": true,
+      "error_code": null
+    }
+  ],
+  "host_finalization": {
+    "outcome": "candidate_ready",
+    "tool_id": "workspace.diff",
+    "success": true,
+    "changed_paths": [
+      "src/lib.rs"
+    ]
+  },
+  "reproducible_process_test": "tests/mission_012_mcp_lifecycle.rs"
+}

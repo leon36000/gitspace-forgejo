@@ -1,0 +1,4 @@
+cargo test --offline --locked --test mission_012_mcp_lifecycle
+cargo clippy --offline --locked --test mission_012_mcp_lifecycle -- -D warnings
+cargo clippy --offline --locked --test mission_012_mcp_lifecycle -- -D warnings -A clippy::too_many_arguments -A clippy::collapsible_if
+rustfmt --edition 2024 --check tests/mission_012_mcp_lifecycle.rs

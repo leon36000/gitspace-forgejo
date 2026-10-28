@@ -1,0 +1,14 @@
+test_sigterm_arriving_as_cleanup_starts_does_not_skip_group_termination (tests.test_mission_012_mcp_supervisor.Mission012McpSupervisorTests.test_sigterm_arriving_as_cleanup_starts_does_not_skip_group_termination) ... FAIL
+
+======================================================================
+FAIL: test_sigterm_arriving_as_cleanup_starts_does_not_skip_group_termination (tests.test_mission_012_mcp_supervisor.Mission012McpSupervisorTests.test_sigterm_arriving_as_cleanup_starts_does_not_skip_group_termination)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/mission012-cleanup-sigterm-red-vuu4lr7q/tests/test_mission_012_mcp_supervisor.py", line 262, in test_sigterm_arriving_as_cleanup_starts_does_not_skip_group_termination
+    self.assertEqual(status, 0)
+AssertionError: 1 != 0
+
+----------------------------------------------------------------------
+Ran 1 test in 0.665s
+
+FAILED (failures=1)

@@ -1,0 +1,57 @@
+{
+  "bubblewrap_version": "bubblewrap 0.9.0",
+  "checks": {
+    "composed_pipeline_result": true,
+    "forgejo_netns_differs_from_host": true,
+    "gate_capability_matches_live_processes": true,
+    "host_loopback_connection_refused": true,
+    "outer_output_within_bound": true,
+    "outer_runner_exit_zero": true,
+    "outer_runner_not_timed_out": true,
+    "pinned_forgejo_binary": true,
+    "postmerge_behavior_verified": true,
+    "postmerge_forgejo_readback": true,
+    "private_forgejo_observed": true,
+    "supervisor_policy_limit_explicit": true,
+    "supervisor_shares_forgejo_netns": true,
+    "unprivileged_namespace_join_denied": true
+  },
+  "failure_diagnostic": null,
+  "forgejo_binary_sha256": "e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7",
+  "forgejo_version": "17.0.0+gitea-1.22.0",
+  "gate_verdict": "merged",
+  "inner_exit_code": 0,
+  "inner_output_bytes": 25914,
+  "inner_output_sha256": "0fbcfadc0ee23a5665298386a799f4785c2c664d4cc7d804439558a182f03dfa",
+  "inner_timed_out": false,
+  "limits": [
+    "only the local deterministic test adapter ran; no LLM or AgentOS was used",
+    "Forgejo and the host supervisor share a rootless private network namespace; the gate and Forgejo share a PID namespace",
+    "the gate checks a live peer/process-bound capability, but its policy cannot independently prove that all writers were excluded",
+    "the model excludes root, privileged host actors, kernel compromise and namespace escape",
+    "the deterministic adapter probes the pinned API, Web and receive-pack routes only; this does not establish behavior for arbitrary routes, hostile LLM code, privileged actors or kernel escape",
+    "a single successful deterministic local run is not a controlled benchmark"
+  ],
+  "llm_invoked": false,
+  "merge_attempted": true,
+  "merge_authorized": true,
+  "model_cost_usd": 0,
+  "output_exceeded": false,
+  "scenario": "MISSION-012 local-test-adapter under supervised private Forgejo network namespace",
+  "schema_version": 1,
+  "supervised_private_service_observation": {
+    "forgejo_listener_owned_socket_inode": 50756203,
+    "forgejo_loopback_port": 3132,
+    "forgejo_network_namespace_inode": 4026535796,
+    "forgejo_pid": 1849482,
+    "host_loopback_probe_errno": 111,
+    "host_network_namespace": "net:[4026531833]",
+    "host_setns_probe": {
+      "status": "denied_operation_not_permitted"
+    },
+    "observed_while_forgejo_process_alive": true,
+    "supervisor_network_namespace_inode": 4026535796,
+    "supervisor_pid": 1848215
+  },
+  "verdict": "passed"
+}

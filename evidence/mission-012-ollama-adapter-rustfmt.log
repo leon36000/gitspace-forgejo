@@ -1,0 +1,3 @@
+COMMAND=rustfmt --edition 2024 --check /tmp/mission012-adapter-final-Dutmz3qH/src/agent_runtime/ollama.rs
+EXIT=0
+SOURCE_SHA256=bf4187ad7ba6f797814940c1c6c524fe9335ba89f246c68a7e3b5644bd5fe1fc
