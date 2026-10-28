@@ -1,0 +1,13 @@
+Reviewed current source files in the existing heavily modified worktree; base HEAD f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0.
+
+src/mission_admission.rs::prepare_admission:
+- parses and validates the protected Requirements document, issue binding, selected revision, and expected digest;
+- the new check is after those validations and before allocate_generation;
+- no requirement ambiguity text is copied to the structured refusal details;
+- the current result code is non-retryable and contains only the unresolved count and revision identity.
+
+Tests:
+tests/mission_admission_contract.rs adds unresolved_human_ambiguity_refuses_admission_before_generation_allocation. It uses the existing in-memory FakeSource and a real MissionExecutionJournalV1 in a temporary local directory. It checks that no allocation/claim event is written. The neighboring positive admission case remains in the same 19-test contract suite.
+
+Docs:
+docs/architecture.md records the policy and its limits; docs/checkpoint.md records the run; docs/refusal-evidence-matrix.md adds the refusal case. These files had existing local changes; only the named sections/row were added. No Forgejo source, external API, credential, Claude process or production instance was touched.

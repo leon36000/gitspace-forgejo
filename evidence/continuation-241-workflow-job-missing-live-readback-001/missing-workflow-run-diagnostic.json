@@ -1,0 +1,29 @@
+{
+  "api_http_status_after_cli": 404,
+  "exit_status": 1,
+  "journal_unchanged_during_reconciliation": true,
+  "result": {
+    "api_version": "forgejo-rest-v1",
+    "delivery_id": "live-missing-workflow-run-7001",
+    "error": {
+      "action": "verify the workflow run ID and repository access; HTTP 404 does not distinguish an absent run from an inaccessible repository",
+      "code": "resource_not_found",
+      "details": {
+        "journal_source_hash": "ced4410c59d182fe662f405dd9cd1a4161224739564b9992df8fc63c865311fb",
+        "journal_source_sequence": 2,
+        "resource": {
+          "index_in_repo": 41,
+          "kind": "workflow_run",
+          "owner": "forge-admin",
+          "repository": "agent-forge-core",
+          "run_id": 7001
+        },
+        "upstream": "forgejo"
+      },
+      "retryable": false
+    },
+    "schema_version": 10,
+    "upstream_read_attempts": 1,
+    "verdict": "inconclusive"
+  }
+}

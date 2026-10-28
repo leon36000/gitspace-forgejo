@@ -1,0 +1,14 @@
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:14657:
+     assert_eq!(value["delivery_id"], delivery_id);
+     assert_eq!(value["upstream_read_attempts"], 2);
+     assert_eq!(value["canonical_state"]["state"], "open");
+-    assert_eq!(value["canonical_state"]["html_url"], format!(
+-        "http://127.0.0.1:3130/{OWNER}/{REPOSITORY}/issues/{ISSUE_NUMBER}"
+-    ));
++    assert_eq!(
++        value["canonical_state"]["html_url"],
++        format!("http://127.0.0.1:3130/{OWNER}/{REPOSITORY}/issues/{ISSUE_NUMBER}")
++    );
+     assert!(value.get("error").is_none());
+ }
+ 

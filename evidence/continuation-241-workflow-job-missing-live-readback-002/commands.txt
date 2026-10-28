@@ -1,0 +1,10 @@
+python3 scripts/run_forgejo_live_webhook_reconcile_e2e.py --forgejo-binary /tmp/forgejo-17.0.0 --state-dir /tmp/forgejo-cont241-live-workflow-20261027-01 --evidence-dir evidence/continuation-241-workflow-job-missing-live-readback-001
+cargo test --offline --locked --all-targets --no-run
+cargo fmt --all -- --check
+git diff --check
+python3 AST parse of scripts/run_forgejo_live_webhook_reconcile_e2e.py (inline; output in python-ast-parse.log)
+cargo metadata --locked --offline --no-deps --format-version 1
+python3 scripts/verify_cargo_license_state.py
+(cd evidence/continuation-241-workflow-job-missing-live-readback-001 && sha256sum -c SHA256SUMS)
+git -C /tmp/forgejo-v17-base-cas-poc rev-parse HEAD
+git -C /tmp/forgejo-v17-base-cas-poc diff --quiet HEAD -- routers/api/v1/api.go routers/api/v1/repo/action.go

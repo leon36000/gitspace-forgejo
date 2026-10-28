@@ -1,0 +1,8 @@
+Forgejo source reference: /tmp/forgejo-v17-base-cas-poc, HEAD 0d791421f85ca13a63b665053d81ea765fbbc571, tag v17.0.0. Scratch tree has unrelated POC modifications.
+routers/api/v1/api.go:934-955 registers /actions/jobs/{job_id} -> repo.GetActionJob under reqRepoReader(unit.TypeActions).
+routers/api/v1/repo/action.go:1619-1688, GetActionJob: lookup by internal job ID, 404 for ErrNotExist, and 404 for a job owned by another repository.
+The two route files have no working-tree diff against the pinned HEAD.
+SHA256 routers/api/v1/api.go: 889589a7824613c3e55e4878e6002ef8429e69a1be2e2492dc1c97b3aac55e3a
+SHA256 routers/api/v1/repo/action.go: 187d719470c492148f5b13ac31a5422022e31ff6fbd9d1ae167a96debfce7b18
+Product route: src/bin/forgejo-reconcile-local.rs::LocalLoopbackForgejoApi::read_current, WorkflowJob path /api/v1/repos/{owner}/{repository}/actions/jobs/{job_id}; HTTP 404 -> ApiReadError::NotFound -> resource_not_found. A loopback process fixture in CONT-081 proves no parent GET after the job 404; the live Forgejo run itself reports one upstream read.
+No upstream source was copied.

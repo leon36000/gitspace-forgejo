@@ -1,0 +1,35 @@
+Date locale du run : 2026-10-27
+
+Plateforme : Linux-7.0.0-1019-nvidia-aarch64-with-glibc2.39
+
+HEAD : f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+
+$ rustc --version --verbose
+exit=0
+rustc 1.95.0 (59807616e 2026-04-14)
+binary: rustc
+commit-hash: 59807616e1fa2540724bfbac14d7976d7e4a3860
+commit-date: 2026-04-14
+host: aarch64-unknown-linux-gnu
+release: 1.95.0
+LLVM version: 22.1.2
+
+
+$ cargo --version
+exit=0
+cargo 1.95.0 (f2d3ce0bd 2026-03-21)
+
+
+$ python3 --version
+exit=0
+Python 3.12.3
+
+
+$ bwrap --version
+exit=0
+bubblewrap 0.9.0
+
+
+$ git --version
+exit=0
+git version 2.43.0

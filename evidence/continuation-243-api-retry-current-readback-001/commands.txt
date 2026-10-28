@@ -1,0 +1,19 @@
+# CONTINUATION-243 — commandes réellement utilisées
+
+# Première exécution dédiée (journal conservé; avant une correction de formatage sans changement sémantique)
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_recovers_from_in_budget_retry_after
+# résultat: process-e2e.log, exit 0
+
+# Exécution finale sur la source formatée
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_recovers_from_in_budget_retry_after
+# wrapper interne: cargo test --offline --locked --test webhook_receiver_process_e2e --no-run
+# puis le binaire de test sous Bubblewrap --unshare-net --unshare-pid:
+# actual_reconcile_cli_process_recovers_from_in_budget_retry_after --exact --ignored --nocapture
+# résultat: process-e2e-final.log, 1 passed, 0 failed, 148 filtered, exit 0
+
+# Vérifications finales
+cargo fmt --all -- --check
+# git diff --check
+# parse AST Python du runner
+python3 -c "import ast, pathlib; ast.parse(pathlib.Path('scripts/run_webhook_reconcile_cli_e2e.py').read_text())"
+# contrôle des espaces terminaux sur les quatre sources/docs de ce lot

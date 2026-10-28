@@ -1,0 +1,28 @@
+Base worktree HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+RED before production change:
+cargo test --offline --locked --test mission_admission_contract unresolved_human_ambiguity_refuses_admission_before_generation_allocation -- --exact
+Expected exit 101: old code returned generation 1 + Claimed.
+
+GREEN:
+cargo test --offline --locked --test mission_admission_contract unresolved_human_ambiguity_refuses_admission_before_generation_allocation -- --exact
+exit 0, 1 passed.
+
+Related contract:
+cargo test --offline --locked --test mission_admission_contract
+exit 0, 19 passed.
+
+All targets, serialized:
+cargo test --offline --locked --all-targets --quiet -- --test-threads=1
+exit 0, 676 passed, 0 failed, 134 ignored in 36 test-target blocks.
+
+Checks:
+cargo fmt --all -- --check
+exit 0.
+git diff --check -- docs/architecture.md docs/checkpoint.md
+exit 0.
+Python whitespace scan of src/mission_admission.rs, tests/mission_admission_contract.rs, docs/architecture.md, docs/checkpoint.md, docs/refusal-evidence-matrix.md
+exit 0.
+python3 scripts/verify_cargo_license_state.py
+exit 0; no license selected.
+
+An initial direct execution scripts/verify_cargo_license_state.py returned 126 (not executable); corrected by invoking the Python interpreter. See cargo-license-guard.log and cargo-license-guard-corrected.log.

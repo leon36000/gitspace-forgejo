@@ -1,0 +1,11 @@
+Forgejo live E2E with missing workflow job, missing workflow run, issue positive control, and invalid credential refusal: exit 0.
+Rust all-targets no-run compile: exit 0.
+Rustfmt check: exit 0.
+Git diff check at compile time: exit 0.
+Final Rustfmt and git diff checks after checkpoint/docs updates: exit 0.
+Python AST parse: exit 0.
+Final seven-file AST/whitespace check: exit 0.
+Cargo metadata license guard: exit 0.
+Runner raw evidence manifest: exit 0.
+Runner source SHA-256 matches the final live-run provenance: exit 0.
+Source snapshot sha256sum verification: exit 0.

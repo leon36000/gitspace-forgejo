@@ -1,0 +1,5 @@
+Expected TDD red observation, captured before the production guard was added.
+Command: cargo test --offline --locked --test mission_admission_contract unresolved_human_ambiguity_refuses_admission_before_generation_allocation -- --exact
+Exit: 101 (expected)
+Failure: called Result::unwrap_err() on an Ok value: MissionAdmissionReceiptV2; the receipt contained execution_generation=1 and claim=Claimed.
+This is a concise transcription of the command output, not a raw log. The raw tool output is in the active Codex turn history.
