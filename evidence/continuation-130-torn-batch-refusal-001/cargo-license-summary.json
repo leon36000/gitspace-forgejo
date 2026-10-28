@@ -1,0 +1,10 @@
+{
+  "decision": "no_license_selected",
+  "license": null,
+  "license_file": null,
+  "package": "agent-forge-core",
+  "publish": [],
+  "redistribution_rights": "not_assessed",
+  "spdx_export_marker": "NOASSERTION",
+  "version": "0.1.0"
+}

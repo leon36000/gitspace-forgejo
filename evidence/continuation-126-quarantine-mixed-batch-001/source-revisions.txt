@@ -1,0 +1,6 @@
+f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+local/WEBHOOK-005-canonical-links
+tests/webhook_quarantine_cli.rs:73:fn append_quarantine_disposition(
+tests/webhook_quarantine_cli.rs:266:fn real_cli_fails_closed_on_malformed_or_rebound_quarantine_dispositions() {
+tests/webhook_quarantine_cli.rs:283:        append_quarantine_disposition(
+src/bin/forgejo-reconcile-local.rs:12115:    fn mixed_reconciliation_batch_keeps_quarantine_inconclusive_and_reads_only_active_delivery() {

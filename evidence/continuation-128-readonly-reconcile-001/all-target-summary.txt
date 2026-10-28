@@ -1,0 +1,8 @@
+cargo test --offline --locked --all-targets: 622 passed, 0 failed, 106 ignored, 36 groups
+cargo test --offline --locked --test webhook_quarantine_cli: 3 passed
+cargo test --offline --locked --test reconcile_journal_lock_timeout: 3 passed
+cargo test --offline --locked --test reconcile_config_contract: 4 passed
+cargo fmt --all -- --check: passed
+git diff --check: passed
+python3 scripts/verify_cargo_license_state.py: passed
+Ignored tests were not executed by cargo test --all-targets.

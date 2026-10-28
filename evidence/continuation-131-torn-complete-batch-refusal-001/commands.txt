@@ -1,0 +1,4 @@
+cargo test --offline --locked --test webhook_quarantine_cli
+cargo fmt --all -- --check
+git diff --check
+bwrap --unshare-net --ro-bind / / --proc /proc --dev /dev -- python3 -c 'import socket; s=socket.socket(); s.settimeout(1); print(s.connect_ex(("127.0.0.1",3130)))'

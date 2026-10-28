@@ -1,0 +1,4 @@
+cargo test --offline --locked --bin mission-012-mcp-host host::tests::symlinked_candidate_source_or_source_directory_is_refused_without_touching_target -- --exact
+cargo test --offline --locked --bin mission-012-mcp-host
+cargo fmt --all -- --check
+git diff --check

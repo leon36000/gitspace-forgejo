@@ -1,0 +1,11 @@
+TDD red observation, captured during the tool run on 2026-10-26 (summary, not raw redirected stdout):
+
+Command:
+cargo test --offline --locked --test webhook_quarantine_cli real_cli_preserves_an_incomplete_tail_before_quarantine_validation -- --exact --nocapture
+
+Exit status: 101.
+Failing assertion: “the CLI must not repair or otherwise mutate an incomplete inbox”.
+Fixture before CLI: three valid newline-terminated hash-chain records followed by the unterminated bytes {"sequence":4,"payload":.
+Observed behavior: the CLI's previous EventJournal::replay() removed the incomplete suffix, then continued to the malformed-quarantine refusal. This is why the test compared the journal bytes before reading the response code. The failure established a mutation on the decision path; it was not an HTTP or Forgejo failure.
+
+The raw byte-array assertion output was too large and was not saved as a file. The final passing test and all-targets logs are retained separately.

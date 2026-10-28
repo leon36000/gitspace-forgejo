@@ -1,0 +1,19 @@
+Tracked working tree status at evidence capture (repository modifications from before and during this lot are included):
+M Cargo.toml
+ M README.md
+ M docs/architecture.md
+ M docs/checkpoint.md
+ M docs/implementation-plan.md
+ M docs/source-inventory.md
+ M evidence/SHA256SUMS
+ M src/bin/forgejo-reconcile-local.rs
+ M src/bin/forgejo-webhook-local.rs
+ M src/bin/gate.rs
+ M src/lib.rs
+ M src/webhook.rs
+ M src/webhook/http.rs
+ M src/webhook/reconcile.rs
+ M tests/webhook_contract.rs
+ M tests/webhook_handler_contract.rs
+ M tests/webhook_http_contract.rs
+ M tests/webhook_reconcile_contract.rs

@@ -1,0 +1,26 @@
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/src/bin/forgejo-reconcile-local.rs:12196:
+             results[1]["canonical_state"]["html_url"],
+             format!("{origin}/forge-admin/agent-forge-core/issues/41")
+         );
+-        assert!(!result.to_string().contains("synthetic-active-only-credential"));
++        assert!(
++            !result
++                .to_string()
++                .contains("synthetic-active-only-credential")
++        );
+         let request = server.join().unwrap();
+         assert!(
+             request
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_quarantine_cli.rs:78:
+     rebound_source_hash: bool,
+ ) {
+     let disposition_hash = if rebound_source_hash {
+-        let replacement = if source_hash.starts_with('0') { '1' } else { '0' };
++        let replacement = if source_hash.starts_with('0') {
++            '1'
++        } else {
++            '0'
++        };
+         format!("{replacement}{}", &source_hash[1..])
+     } else {
+         source_hash.to_owned()

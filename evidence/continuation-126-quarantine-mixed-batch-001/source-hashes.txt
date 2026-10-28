@@ -1,0 +1,4 @@
+f9053333add657d22d236b70cdfcf0d68f91749f3151b68af3ea3ab2e727d9e5  src/bin/forgejo-reconcile-local.rs
+b09b72be72be8e74d7ca5f05776aa1c9227f46d367afe637acc4bce211ea7e74  tests/webhook_quarantine_cli.rs
+816af869a0976a011acd32ce950fe296aa1544b6e74f36b7da55525ac112814f  docs/checkpoint.md
+97e90eeccbb160b01f211cd1c6867bd7fcbe3c298e059f8ed9adc21c7626f10a  docs/refusal-evidence-matrix.md

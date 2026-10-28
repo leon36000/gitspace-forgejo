@@ -1,0 +1,17 @@
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_quarantine_cli.rs:572:
+     assert_eq!(result["error"]["retryable"], false);
+     assert_eq!(result["error"]["details"]["canonical_state_created"], false);
+     assert_eq!(result["error"]["details"]["host_credential_read"], false);
+-    assert_eq!(result["error"]["details"]["upstream_calls_attempted"], false);
+-    assert_eq!(result["error"]["details"]["journal_repair_attempted"], false);
++    assert_eq!(
++        result["error"]["details"]["upstream_calls_attempted"],
++        false
++    );
++    assert_eq!(
++        result["error"]["details"]["journal_repair_attempted"],
++        false
++    );
+     let mut pipe_reader = unsafe { fs::File::from_raw_fd(pipe_fds[0]) };
+     let mut remaining = Vec::new();
+     pipe_reader

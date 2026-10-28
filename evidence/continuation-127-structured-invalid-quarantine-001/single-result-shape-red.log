@@ -1,0 +1,24 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.90s
+     Running tests/webhook_quarantine_cli.rs (target/debug/deps/webhook_quarantine_cli-0a1f0ab5bb28c329)
+
+running 1 test
+test real_cli_fails_closed_on_malformed_or_rebound_quarantine_dispositions ... FAILED
+
+failures:
+
+---- real_cli_fails_closed_on_malformed_or_rebound_quarantine_dispositions stdout ----
+
+thread 'real_cli_fails_closed_on_malformed_or_rebound_quarantine_dispositions' (2550603) panicked at tests/webhook_quarantine_cli.rs:356:9:
+assertion `left == right` failed
+  left: Null
+ right: 1
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    real_cli_fails_closed_on_malformed_or_rebound_quarantine_dispositions
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 1 filtered out; finished in 0.01s
+
+error: test failed, to rerun pass `--test webhook_quarantine_cli`

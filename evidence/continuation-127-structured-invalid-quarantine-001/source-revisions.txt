@@ -1,0 +1,9 @@
+f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+local/WEBHOOK-005-canonical-links
+tests/webhook_quarantine_cli.rs:126:fn append_active_issue_delivery(
+tests/webhook_quarantine_cli.rs:307:fn real_cli_fails_closed_on_malformed_or_rebound_quarantine_dispositions() {
+tests/webhook_quarantine_cli.rs:334:            append_active_issue_delivery(&inbox, &active_delivery_id, &disposition_hash, 3, 41);
+tests/webhook_quarantine_cli.rs:336:        append_active_issue_delivery(&inbox, &second_active_delivery_id, &active_hash, 4, 42);
+src/bin/forgejo-reconcile-local.rs:2752:fn invalid_quarantine_disposition_failure(delivery_ids: &[String]) -> (Value, bool) {
+src/bin/forgejo-reconcile-local.rs:6836:    let quarantines = match selected
+src/bin/forgejo-reconcile-local.rs:6843:            return Ok(invalid_quarantine_disposition_failure(

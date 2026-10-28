@@ -1,0 +1,20 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+error[E0382]: use of moved value: `hash`
+   --> tests/webhook_quarantine_cli.rs:162:5
+    |
+151 |     let hash = sha256(&serde_json::to_vec(&fields).expect("serialize active event hash material"));
+    |         ---- move occurs because `hash` has type `std::string::String`, which does not implement the `Copy` trait
+152 |     let mut row = fields;
+153 |     row["hash"] = Value::String(hash);
+    |                                 ---- value moved here
+...
+162 |     hash
+    |     ^^^^ value used here after move
+    |
+help: consider cloning the value if the performance cost is acceptable
+    |
+153 |     row["hash"] = Value::String(hash.clone());
+    |                                     ++++++++
+
+For more information about this error, try `rustc --explain E0382`.
+error: could not compile `agent-forge-core` (test "webhook_quarantine_cli") due to 1 previous error

@@ -1,0 +1,5 @@
+HEAD f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+branch local/WEBHOOK-005-canonical-links
+Worktree already dirty before this lot. No stage or commit.
+Runtime files src/webhook.rs and src/webhook/reconcile.rs were not changed by this lot.
+Changed by this lot: untracked tests/webhook_quarantine_cli.rs (existing local test file extended), docs/checkpoint.md, docs/refusal-evidence-matrix.md, and new evidence/continuation-131-torn-complete-batch-refusal-001/.

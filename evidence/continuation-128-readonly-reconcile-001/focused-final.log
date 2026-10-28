@@ -1,0 +1,10 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+     Running tests/webhook_quarantine_cli.rs (target/debug/deps/webhook_quarantine_cli-0a1f0ab5bb28c329)
+
+running 3 tests
+test real_cli_preserves_an_incomplete_tail_before_quarantine_validation ... ok
+test real_cli_fails_closed_on_malformed_or_rebound_quarantine_dispositions ... ok
+test real_cli_quarantines_only_the_exact_invalid_row_and_never_reports_success ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+

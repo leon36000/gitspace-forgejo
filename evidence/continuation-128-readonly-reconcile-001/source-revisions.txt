@@ -1,0 +1,3 @@
+HEAD (base examined): f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+branch: local/WEBHOOK-005-canonical-links
+working tree: modified before this lot and remains uncommitted

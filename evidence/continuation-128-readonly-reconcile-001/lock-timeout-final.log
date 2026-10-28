@@ -1,0 +1,10 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.01s
+     Running tests/reconcile_journal_lock_timeout.rs (target/debug/deps/reconcile_journal_lock_timeout-b4142bc5746006ba)
+
+running 3 tests
+test actual_cli_discloses_the_bounded_inbox_lock_wait ... ok
+test actual_cli_retries_when_the_lock_is_released_inside_the_wait_window ... ok
+test actual_cli_returns_journal_busy_before_the_held_lock_is_released ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 5.00s
+
