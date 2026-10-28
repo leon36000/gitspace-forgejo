@@ -1,0 +1,13 @@
+# Final run; each invocation used a distinct, new direct child of /tmp and evidence directory.
+python3 scripts/run_forgejo_live_webhook_reconcile_e2e.py --forgejo-binary /tmp/forgejo-17.0.0 --state-dir /tmp/forgejo-cont240-live-workflow-20261027-01 --evidence-dir evidence/continuation-240-workflow-run-missing-live-readback-001
+python3 scripts/run_forgejo_live_webhook_reconcile_e2e.py --forgejo-binary /tmp/forgejo-17.0.0 --state-dir /tmp/forgejo-cont240-live-workflow-20261027-02 --evidence-dir evidence/continuation-240-workflow-run-missing-live-readback-002
+python3 scripts/run_forgejo_live_webhook_reconcile_e2e.py --forgejo-binary /tmp/forgejo-17.0.0 --state-dir /tmp/forgejo-cont240-live-workflow-20261027-03 --evidence-dir evidence/continuation-240-workflow-run-missing-live-readback-003
+cargo test --offline --locked --all-targets --no-run
+cargo fmt --all -- --check
+git diff --check
+python3 AST parse of scripts/run_forgejo_live_webhook_reconcile_e2e.py (inline script in verification command)
+cargo metadata --locked --offline --no-deps --format-version 1
+python3 scripts/verify_cargo_license_state.py
+(cd evidence/continuation-240-workflow-run-missing-live-readback-003 && sha256sum -c SHA256SUMS)
+git -C /tmp/forgejo-v17-base-cas-poc rev-parse HEAD
+git -C /tmp/forgejo-v17-base-cas-poc diff --quiet HEAD -- routers/api/v1/api.go routers/api/v1/repo/action.go

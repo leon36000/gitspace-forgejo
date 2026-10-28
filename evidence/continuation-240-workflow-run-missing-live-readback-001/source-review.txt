@@ -1,0 +1,8 @@
+Forgejo source tree: /tmp/forgejo-v17-base-cas-poc
+Pinned HEAD: 0d791421f85ca13a63b665053d81ea765fbbc571 (Forgejo v17.0.0); full scratch tree has unrelated POC modifications.
+routers/api/v1/api.go:936-951 registers /actions/runs under reqRepoReader(unit.TypeActions), including GET /{run_id} -> repo.GetActionRun.
+routers/api/v1/repo/action.go:984-1020, GetActionRun: GetRunByID by internal ID, HTTP 404 on ErrNotExist, and HTTP 404 if the returned run belongs to another repository.
+SHA256 routers/api/v1/api.go: 889589a7824613c3e55e4878e6002ef8429e69a1be2e2492dc1c97b3aac55e3a
+SHA256 routers/api/v1/repo/action.go: 187d719470c492148f5b13ac31a5422022e31ff6fbd9d1ae167a96debfce7b18
+The two audited source files are unchanged from the pinned HEAD. No Forgejo source was copied into the product.
+Product mapping: src/bin/forgejo-reconcile-local.rs, LocalLoopbackForgejoApi::get_json maps HTTP 404 to ApiReadError::NotFound; forgejo_error_result maps it to resource_not_found; details enriches workflow run identity and explains the absence/visibility ambiguity.

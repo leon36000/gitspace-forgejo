@@ -1,0 +1,10 @@
+initial missing-parent-process.log: 1 (assertion exposed missing parent readback identity)
+unknown-parent-process.log: 0
+missing-parent-process-fixed.log: 0
+unknown-parent-process-fixed.log: 0
+all-targets-no-run.log: 0
+rustfmt.log: 0
+diff-check.log: 0
+pycompile.log: 0
+cargo-license-guard.log: 0
+metadata and whitespace checks: 0

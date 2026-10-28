@@ -1,0 +1,2 @@
+Exit code: 1.
+The added redacted diagnostic reports exit_status=1, verdict=inconclusive, code=resource_not_found, retryable=false, one upstream read, resource identity under error.details.resource, action naming the workflow run ID, and journal_unchanged=true. The remaining failing condition was the harness assertion reading result.resource instead of result.error.details.resource. The local Forgejo and receiver processes exited and listeners were absent.

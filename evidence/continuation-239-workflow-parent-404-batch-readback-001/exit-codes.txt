@@ -1,0 +1,12 @@
+CONT-238 local manifest readback: 0
+focused batch process scenario: 0
+all-targets no-run compile: 0
+rustfmt check: 0
+git diff check: 0
+Python compile before manifest helper creation: 1 (missing helper file; no code failure)
+Python compile of runner and manifest helper after creation: 0
+Cargo license guard: 0
+Cargo metadata readback: 0
+AgentRuntime implementation search: 0
+scoped whitespace scan: 0
+manifest append helper and local SHA256SUMS verification: 0

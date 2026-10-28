@@ -1,0 +1,11 @@
+{
+  "body": {
+    "accepted": true,
+    "delivery_id": "live-stale-issue-41",
+    "duplicate": true,
+    "reconcile_required": true,
+    "schema_version": 1,
+    "sequence": 1
+  },
+  "http_status": 202
+}

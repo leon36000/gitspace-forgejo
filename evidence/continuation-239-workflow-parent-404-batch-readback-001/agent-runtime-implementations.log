@@ -1,0 +1,18 @@
+tests/mission_execution_journal_contract.rs:236:    mut operation: impl FnMut() -> Result<T, agent_forge_core::agent_runtime::AgentRuntimeErrorV1>,
+src/bin/forgejo-reconcile-local.rs:3927:    before_post: impl FnOnce() -> Result<(), agent_forge_core::agent_runtime::AgentRuntimeErrorV1>,
+src/bin/forgejo-reconcile-local.rs:3974:    before_post: impl FnOnce() -> Result<(), agent_forge_core::agent_runtime::AgentRuntimeErrorV1>,
+src/bin/forgejo-reconcile-local.rs:4204:    before_post: impl FnOnce() -> Result<(), agent_forge_core::agent_runtime::AgentRuntimeErrorV1>,
+src/bin/forgejo-mission-local.rs:1855:    open_journal: impl FnOnce() -> Result<MissionExecutionJournalV1, AgentRuntimeErrorV1>,
+src/agent_runtime.rs:1749:        operation: impl FnOnce() -> Result<T, AgentRuntimeErrorV1>,
+src/agent_runtime.rs:2269:        effect: impl FnOnce(&MissionExecutionClaimVerificationV1) -> Result<T, AgentRuntimeErrorV1>,
+src/agent_runtime.rs:4589:impl AgentRuntimeErrorV1 {
+src/agent_runtime.rs:4638:pub trait AgentRuntimeV1 {
+src/mission_admission.rs:565:    allocate_generation: impl FnOnce(&str) -> Result<GenerationChoice, AgentRuntimeErrorV1>,
+tests/agent_runtime_contract.rs:47:struct FixtureRuntime {
+tests/agent_runtime_contract.rs:51:impl AgentRuntimeV1 for FixtureRuntime {
+tests/agent_runtime_contract.rs:809:    let mut runtime = FixtureRuntime::default();
+tests/agent_runtime_contract.rs:890:    let mut runtime = FixtureRuntime::default();
+tests/agent_runtime_contract.rs:916:    let mut runtime = FixtureRuntime::default();
+tests/agent_runtime_contract.rs:939:    let mut runtime = FixtureRuntime::default();
+tests/agent_runtime_contract.rs:955:    let mut runtime = FixtureRuntime::default();
+tests/agent_runtime_contract.rs:969:    let mut runtime = FixtureRuntime::default();

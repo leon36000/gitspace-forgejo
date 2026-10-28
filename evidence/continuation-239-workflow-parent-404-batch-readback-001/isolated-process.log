@@ -1,0 +1,5 @@
+Boundary: Bubblewrap 0.9.0 with --unshare-net --unshare-pid; read-only repository snapshot; local loopback API fixture.
+Scenario: actual_reconcile_cli_process_shares_missing_parent_run_readback_across_job_batch
+Result: 1 passed; 0 failed; 0 ignored; 147 filtered out; test runtime 0.09s.
+Assertions: two distinct accepted delivery IDs; exactly two API GETs (job then parent); two inconclusive per-delivery results; parent identity preserved; no auth header or response markers; no canonical state; journal byte-identical.
+Raw runner output: workflow-job-parent-404-batch-process.log

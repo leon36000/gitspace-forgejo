@@ -1,0 +1,13 @@
+Forgejo live E2E attempt 001: exit 1 (new harness assertion; captured in attempt-001.txt).
+Forgejo live E2E attempt 002: exit 1 (same harness assertion; structured diagnostic captured).
+Forgejo live E2E attempt 003: exit 0.
+Current all-targets compile-only: exit 0.
+Current rustfmt check: exit 0.
+Current git diff --check: exit 0.
+Python AST parse: exit 0.
+Auxiliary text probe requiring a terminal newline on the pre-existing runner: exit 1; see source-doc-whitespace.log.
+Auxiliary whitespace probe with an over-escaped tab literal: exit 1; false positive retained in source-doc-whitespace-tab-check-failure.txt.
+Corrected eight-file AST/whitespace probe: exit 0; see source-doc-whitespace-final.log.
+Current Cargo metadata license guard: exit 0.
+Current run 003 local SHA256SUMS: exit 0.
+Prior full append-only index sha256sum attempt: exit 1; see append-only-index-check.txt.

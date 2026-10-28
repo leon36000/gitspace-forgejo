@@ -1,0 +1,16 @@
+Sandbox runner: scripts/run_webhook_reconcile_cli_e2e.py
+Boundary: Bubblewrap 0.9.0, --unshare-net --unshare-pid, repository snapshot read-only; API fixture on isolated loopback.
+
+actual_reconcile_cli_process_refuses_missing_parent_run_after_valid_job_readback (corrected):
+running 1 test
+test ... ok
+test result: 1 passed; 0 failed; 0 ignored; 146 filtered out
+Full raw output: missing-parent-process-fixed.log
+
+actual_reconcile_cli_process_refuses_unknown_parent_run_status_after_valid_job_readback (adjacent regression control):
+running 1 test
+test ... ok
+test result: 1 passed; 0 failed; 0 ignored; 146 filtered out
+Full raw output: unknown-parent-process-fixed.log
+
+Initial missing-parent assertion before the diagnostic change: failed, because the result exposed resource.kind=workflow_job without the identity of the workflow_run endpoint that returned 404. Preserved in missing-parent-process.log.

@@ -1,0 +1,2 @@
+Exit code: 1.
+The first live run completed service teardown and port checks, then failed the new assertion for the missing-run result. At this point the runner did not persist the CLI JSON. The later safe diagnostic in attempt 002 identified the test expectation error: the resource identity is nested under error.details.resource. No Forgejo or reconciler behavior was changed.

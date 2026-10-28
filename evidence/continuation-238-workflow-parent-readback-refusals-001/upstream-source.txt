@@ -1,0 +1,1 @@
+No upstream source was inspected for this lot. The test exercises the local workflow reconciliation implementation against deterministic loopback HTTP responses; it makes no new claim about a live Forgejo endpoint, a runner, or a Forgejo source version. Existing Forgejo v17 audit evidence remains separate.

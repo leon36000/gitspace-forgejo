@@ -1,0 +1,52 @@
+{
+  "delivery_id": "live-missing-workflow-job-9001",
+  "diagnostic_file": "missing-workflow-job-diagnostic.json",
+  "event": "workflow_job_success",
+  "forgejo_actions_enabled": false,
+  "journal_unchanged_during_reconciliation": true,
+  "missing_job_api_body_before": {
+    "errors": [],
+    "message": "The target couldn't be found.",
+    "url": "http://127.0.0.1:3130/api/swagger"
+  },
+  "missing_job_api_http_status_after": 404,
+  "missing_job_api_http_status_before": 404,
+  "payload_origin": "synthetic local signed webhook; Forgejo sender was not configured",
+  "receiver": {
+    "body": {
+      "accepted": true,
+      "delivery_id": "live-missing-workflow-job-9001",
+      "duplicate": false,
+      "reconcile_required": true,
+      "schema_version": 1,
+      "sequence": 3
+    },
+    "http_status": 202
+  },
+  "reconciliation": {
+    "api_version": "forgejo-rest-v1",
+    "delivery_id": "live-missing-workflow-job-9001",
+    "error": {
+      "action": "verify the workflow job ID and repository access; HTTP 404 does not distinguish an absent job from an inaccessible repository",
+      "code": "resource_not_found",
+      "details": {
+        "journal_source_hash": "4c4e6a6bf73ac463c876f8290e3439c622b20efd494e5633af841edb4210c169",
+        "journal_source_sequence": 3,
+        "resource": {
+          "index_in_repo": 42,
+          "job_id": 9001,
+          "kind": "workflow_job",
+          "owner": "forge-admin",
+          "repository": "agent-forge-core",
+          "run_id": 7002
+        },
+        "upstream": "forgejo"
+      },
+      "retryable": false
+    },
+    "schema_version": 10,
+    "upstream_read_attempts": 1,
+    "verdict": "inconclusive"
+  },
+  "reconciliation_exit_status": 1
+}

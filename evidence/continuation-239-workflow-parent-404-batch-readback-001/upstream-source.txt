@@ -1,0 +1,1 @@
+No upstream source was inspected in this lot. The scenario exercises the current local Forgejo adapter/reconciliation code with synthetic loopback responses. It makes no claim about live Forgejo Actions API or runner behavior and copies no upstream code.

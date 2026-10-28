@@ -1,0 +1,2 @@
+Exit code: 1, auxiliary checker only.
+An over-escaped bytes literal caused the checker to strip the final `t` from `from contextlib import redirect_stdout` and report a false trailing-whitespace failure at line 13. The line bytes were inspected and end in `redirect_stdout` with no whitespace. A corrected checker using explicit space and tab byte values passes for all eight source/document files; see source-doc-whitespace-final.log. No source file was changed for this checker error.

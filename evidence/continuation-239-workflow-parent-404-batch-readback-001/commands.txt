@@ -1,0 +1,16 @@
+git status --short
+sha256sum -c evidence/continuation-238-workflow-parent-404-batch-readback-001/SHA256SUMS  # executed with that evidence directory as cwd
+cargo metadata --locked --offline --no-deps --format-version 1
+rg -n 'impl (AgentRuntime|.*AgentRuntime)|trait AgentRuntime|impl.*AgentRuntime for|FixtureRuntime' src tests scripts
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_shares_missing_parent_run_readback_across_job_batch
+cargo test --offline --locked --all-targets --no-run
+cargo fmt --all -- --check
+git diff --check
+python3 -m py_compile scripts/run_webhook_reconcile_cli_e2e.py evidence/continuation-239-workflow-parent-404-batch-readback-001/append_manifests.py  # initial attempt before helper creation: see pycompile.log
+python3 -m py_compile scripts/run_webhook_reconcile_cli_e2e.py evidence/continuation-239-workflow-parent-404-batch-readback-001/append_manifests.py  # corrected attempt: see pycompile-fixed.log
+python3 scripts/verify_cargo_license_state.py
+cargo metadata --locked --offline --no-deps --format-version 1
+python3 [scoped trailing-whitespace checker embedded in this evidence run]
+sha256sum Cargo.toml Cargo.lock scripts/verify_cargo_license_state.py src/webhook/reconcile.rs src/bin/forgejo-reconcile-local.rs tests/webhook_receiver_process_e2e.rs scripts/run_webhook_reconcile_cli_e2e.py docs/checkpoint.md docs/refusal-evidence-matrix.md evidence/continuation-239-workflow-parent-404-batch-readback-001/local-run.md
+python3 evidence/continuation-239-workflow-parent-404-batch-readback-001/append_manifests.py
+sha256sum -c SHA256SUMS  # executed with this evidence directory as cwd
