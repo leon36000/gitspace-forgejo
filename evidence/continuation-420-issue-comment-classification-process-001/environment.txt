@@ -1,0 +1,16 @@
+captured_date_local=2026-10-28
+timezone=America/Montreal
+os=Linux 7.0.0-1019-nvidia
+architecture=aarch64
+rustc=1.95.0 (59807616e 2026-04-14)
+cargo=1.95.0 (f2d3ce0bd 2026-03-21)
+bubblewrap=0.9.0
+python=3.12.3
+runner_network_isolation=Bubblewrap --unshare-net --unshare-pid; only the test process loopback listener is exercised
+runner_environment=--clearenv; PATH, HOME, TMPDIR, CARGO_HOME, CARGO_TARGET_DIR, CARGO_NET_OFFLINE and build variables set explicitly
+runner_workspace=read-only /workspace source; tmpfs /tmp, /build, /artifacts; toolchain read-only
+runner_cargo_target_dir=/build/target inside Bubblewrap
+host_runner_staging=/dev/shm for TemporaryDirectory requests originally directed to /tmp
+git_branch=local/WEBHOOK-005-canonical-links
+git_head=f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+worktree_status_path_count=1832 at the checkpoint re-read before evidence finalization

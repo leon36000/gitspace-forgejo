@@ -1,0 +1,22 @@
+local/WEBHOOK-005-canonical-links
+f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+## local/WEBHOOK-005-canonical-links...origin/main [behind 7]
+ M Cargo.lock
+ M Cargo.toml
+ M README.md
+ M docs/architecture.md
+ M docs/checkpoint.md
+ M docs/implementation-plan.md
+ M docs/source-inventory.md
+ M evidence/SHA256SUMS
+ M src/bin/forgejo-reconcile-local.rs
+ M src/bin/forgejo-webhook-local.rs
+ M src/bin/gate.rs
+ M src/lib.rs
+ M src/webhook.rs
+ M src/webhook/http.rs
+ M src/webhook/reconcile.rs
+ M tests/webhook_contract.rs
+ M tests/webhook_handler_contract.rs
+ M tests/webhook_http_contract.rs
+ M tests/webhook_reconcile_contract.rs

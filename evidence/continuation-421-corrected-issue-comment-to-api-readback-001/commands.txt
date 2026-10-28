@@ -1,0 +1,14 @@
+# Run only the composed process scenario; output is saved in focused.log.
+python3 evidence/continuation-421-corrected-issue-comment-to-api-readback-001/run_selected_test.py
+
+# Final source/document checks for this lot.
+cargo fmt --all -- --check
+git diff --check
+python3 scripts/verify_cargo_license_state.py
+python3 - <<'PY'
+import ast
+from pathlib import Path
+for name in ['scripts/run_webhook_reconcile_cli_e2e.py', 'evidence/continuation-421-corrected-issue-comment-to-api-readback-001/run_selected_test.py']:
+    ast.parse(Path(name).read_text(encoding='utf-8'), filename=name)
+    print(f'{name}: AST PASS')
+PY

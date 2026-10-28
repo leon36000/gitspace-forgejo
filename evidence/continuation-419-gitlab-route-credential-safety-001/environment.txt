@@ -1,0 +1,12 @@
+date=2026-10-28T14:23:27-04:00
+timezone=America/Montreal
+os=Linux (local Codex host)
+workspace=/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace
+branch=local/WEBHOOK-005-canonical-links
+head=f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+git_status_short_path_count=1830
+tailscale_backend=Running
+tailscale_peer_pc4=online
+dns_pc4_fqdn=unresolved
+tcp_pc4_443=timeout_after_3_seconds
+gitlab_authenticated_requests=0

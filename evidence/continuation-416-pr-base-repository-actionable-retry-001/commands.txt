@@ -1,0 +1,31 @@
+Révision observée : `f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0`, worktree fortement modifié. Toutes les commandes Cargo sont hors ligne/verrouillées; cible de compilation `/dev/shm`.
+
+Test processus:
+
+```sh
+CARGO_TARGET_DIR=/dev/shm cargo test --offline --locked --test webhook_receiver_process_e2e actual_receiver_binds_pull_request_base_repository_but_allows_fork_head -- --exact --test-threads=1
+```
+
+Contrats:
+
+```sh
+CARGO_TARGET_DIR=/dev/shm cargo test --offline --locked --test webhook_contract --test webhook_handler_contract --test webhook_http_contract --test webhook_reconcile_contract -- --test-threads=1
+```
+
+Contrôles:
+
+```sh
+rustfmt --edition 2024 --check src/webhook/reconcile.rs src/webhook/http.rs tests/webhook_receiver_process_e2e.rs
+git diff --check
+python3 scripts/verify_cargo_license_state.py
+cargo metadata --offline --locked --no-deps --format-version 1
+```
+
+Tentatives Bubblewrap (elles ont échoué avant le lancement du binaire; ne pas les compter comme tests):
+
+```sh
+/usr/bin/bwrap --unshare-net --unshare-pid --die-with-parent /dev/shm/debug/deps/webhook_receiver_process_e2e-a95dae827636a64e actual_receiver_binds_pull_request_base_repository_but_allows_fork_head --exact --test-threads=1
+/usr/bin/bwrap --die-with-parent --unshare-net --unshare-pid --new-session --dev /dev --dir /dev/shm --ro-bind /dev/shm/debug /dev/shm/debug --tmpfs /tmp /dev/shm/debug/deps/webhook_receiver_process_e2e-a95dae827636a64e actual_receiver_binds_pull_request_base_repository_but_allows_fork_head --exact --test-threads=1
+```
+
+Les erreurs exactes figurent dans `isolated-process.log` et `isolated-process-retry.log`. Aucun appel réseau externe n’a été effectué.

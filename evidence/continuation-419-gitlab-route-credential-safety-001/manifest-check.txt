@@ -1,0 +1,4 @@
+CONTINUATION-419 local evidence hashes: PASS
+worktree and project append-only prefixes: PASS
+checkpoint hash linked into both indexes: PASS
+local_evidence_files=5

@@ -1,0 +1,6 @@
+getent hosts pc4.tail0c55ff.ts.net
+tailscale status --json | python3 -c '<filter backend state and peer named pc4 only>'
+curl --head --silent --show-error --connect-timeout 3 --max-time 7 --resolve pc4.tail0c55ff.ts.net:443:<IP-du-pair> https://pc4.tail0c55ff.ts.net/ -o /dev/null -w 'http_status=%{http_code} connect=%{time_connect} tls=%{time_appconnect} total=%{time_total}\n'
+git -C .runtime/webhook-005-workspace status --short | wc -l
+git -C .runtime/webhook-005-workspace rev-parse --abbrev-ref HEAD
+git -C .runtime/webhook-005-workspace rev-parse HEAD

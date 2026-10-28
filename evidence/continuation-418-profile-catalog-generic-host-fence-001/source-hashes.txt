@@ -1,0 +1,5 @@
+62b05b53c032e310844ff3a1c3fd9f8d083f67721556962a059570516fa86fb1  src/mission_profile.rs
+b62921b3cc03e9d76193e7095bdc092124c5beb3e339648ebb0dc1ba69cdb9f8  src/lib.rs
+e58222dc28669b7e08d7c9685fb8996facae908caefac1be41dffb61cd2f8633  src/bin/forgejo-mission-local.rs
+cd4e03412966a15da658125413352b1d7c8402c8f953f4ecef9c530394f10917  src/bin/mission-012-mcp-host.rs
+f7646970cbc6c6d228c0cc60491c7d447a2558eba2631cc093d3ee8531e2539a  tests/mission_012_mcp_lifecycle.rs

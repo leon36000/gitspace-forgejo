@@ -1,0 +1,9 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.04s
+     Running unittests src/lib.rs (/dev/shm/debug/debug/deps/agent_forge_core-0710c9c4abf261b0)
+
+running 2 tests
+test mission_profile::tests::mcp_host_capabilities_are_the_admission_profile_capabilities ... ok
+test mission_profile::tests::demo_profile_catalog_has_unique_ids_and_exact_requirement_binding ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 23 filtered out; finished in 0.00s
+

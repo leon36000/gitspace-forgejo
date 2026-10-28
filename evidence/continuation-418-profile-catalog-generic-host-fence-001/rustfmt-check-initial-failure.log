@@ -1,0 +1,10 @@
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/src/bin/mission-012-mcp-host.rs:44:
+     EventJournal,
+     agent_runtime::{
+         AgentExecutionRequestV1, AgentRuntimeErrorV1, AgentToolPortV1, MissionExecutionJournalV1,
+-        MissionExecutionLeaseV1, RuntimeCapabilitiesV1, ToolCallReceiptV1,
+-        WorkspaceWriteIntentV1,
++        MissionExecutionLeaseV1, RuntimeCapabilitiesV1, ToolCallReceiptV1, WorkspaceWriteIntentV1,
+     },
+     forgejo::BaseBranchScope,
+     mission_admission::{MissionHostAdmissionV1, MissionHostAdmissionWebhookSourceV1},

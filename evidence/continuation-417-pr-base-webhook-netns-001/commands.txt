@@ -1,0 +1,20 @@
+État de base : HEAD `f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0`; Rust/Cargo 1.95.0, Linux aarch64, Bubblewrap 0.9.0. Les descripteurs 3 et 4 sont ouverts par le shell avant le lancement; ils référencent uniquement le test binaire et le receiver binaire locaux hashés dans `binary-hashes.sha256`.
+
+```sh
+exec 3</dev/shm/debug/deps/webhook_receiver_process_e2e-a95dae827636a64e
+exec 4</dev/shm/debug/forgejo-webhook-local
+/usr/bin/bwrap --die-with-parent --unshare-net --unshare-pid --new-session \
+  --ro-bind /usr /usr \
+  --dir /etc --ro-bind /etc/alternatives /etc/alternatives \
+  --symlink usr/lib /lib --symlink usr/bin /bin \
+  --dev /dev --proc /proc --tmpfs /tmp --tmpfs /home \
+  --dir /dev/shm --dir /dev/shm/debug --dir /dev/shm/debug/deps \
+  --ro-bind-fd 3 /dev/shm/debug/deps/webhook_receiver_process_e2e-a95dae827636a64e \
+  --ro-bind-fd 4 /dev/shm/debug/forgejo-webhook-local \
+  --clearenv \
+  /dev/shm/debug/deps/webhook_receiver_process_e2e-a95dae827636a64e \
+  actual_receiver_binds_pull_request_base_repository_but_allows_fork_head \
+  --exact --test-threads=1
+```
+
+Le test exact est lancé une seule fois dans ce namespace; l’observation directe de l’exécution réussie est archivée dans `isolated-process-final.log`.

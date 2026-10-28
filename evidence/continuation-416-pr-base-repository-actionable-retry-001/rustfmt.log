@@ -1,0 +1,21 @@
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:1956:
+         }
+     });
+     let mismatched_base_repository = serde_json::to_vec(&mismatched_base_payload)
+-    .expect("serialize pull request with conflicting base repository");
++        .expect("serialize pull request with conflicting base repository");
+     let (status, rejected) = send(
+         address,
+         &request_event(
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:2001:
+             &corrected_base_repository,
+         ),
+     );
+-    assert_eq!(status, 202, "corrected same-ID PR should be accepted: {corrected}");
++    assert_eq!(
++        status, 202,
++        "corrected same-ID PR should be accepted: {corrected}"
++    );
+     assert_eq!(corrected["accepted"], true);
+     assert_eq!(corrected["duplicate"], false);
+     assert_eq!(corrected["sequence"], 2);

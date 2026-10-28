@@ -1,0 +1,15 @@
+captured_date_local=2026-10-28
+timezone=America/Montreal
+os=Linux 7.0.0-1019-nvidia
+architecture=aarch64
+rustc=1.95.0 (59807616e 2026-04-14)
+cargo=1.95.0 (f2d3ce0bd 2026-03-21)
+bubblewrap=0.9.0
+python=3.12.3
+scenario_test=actual_receiver_refuses_issue_comment_marked_non_pull_with_pr_parent_then_accepts_same_delivery
+network_and_pid=Bubblewrap --unshare-net --unshare-pid; fixture endpoints are loopback only
+environment=--clearenv; offline Cargo; HOME=/tmp; CARGO_TARGET_DIR=/build/target inside the sandbox
+source_mount=/workspace is read-only; /tmp, /build, /artifacts are temporary mounts; test and CLI binaries are read-only
+host_staging=/dev/shm via selected-test wrapper to avoid filling the root filesystem
+git_branch=local/WEBHOOK-005-canonical-links
+git_head=f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
