@@ -1,0 +1,14 @@
+{
+  "commands": {
+    "head": "f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0",
+    "python": "Python 3.12.3"
+  },
+  "platform": "Linux-7.0.0-1019-nvidia-aarch64-with-glibc2.39",
+  "sha256": {
+    "docs/checkpoint.md": "f65c09513ba1f4e02a19e649b66b114cb2815865bb5253c1fd99de0abe82502b",
+    "docs/refusal-evidence-matrix.md": "3db4088a23227c88e2e48fd56c63c768594028ca8d6c7ccaec97338fb6cee7d8",
+    "scripts/run_mission_012_live_mcp_agent_e2e.py": "4dc3e6852cf01c2cbdee17934212b9c3e2326107ab6f21df9e742c5cafca7ff7",
+    "tests/test_mission_012_live_composed_e2e.py": "facd94bf66d161aeb0477f8412b28f313357f63f89a69bf737fad883d937a062",
+    "tests/test_mission_012_live_mcp_agent_e2e.py": "bbe10a2d08aa2c347d6fae4451fd8abf09e2be76df0b868932e33a4f5c83ef2f"
+  }
+}

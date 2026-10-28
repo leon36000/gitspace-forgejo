@@ -1,0 +1,9 @@
+{
+  "listeners_on_3130_after_stop": [],
+  "server": {
+    "returncode": 0,
+    "started": true,
+    "stop_action": "terminate",
+    "stopped": true
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "head": "f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0",
+  "kernel": "7.0.0-1019-nvidia",
+  "machine": "aarch64",
+  "python": "3.12.3",
+  "schema_version": 1,
+  "sha256": {
+    "docs/checkpoint.md": "eaf8fbab916c043e7fdcb37e44b5ce8eb97a060d0c6a30b458059b1d1382d8dd",
+    "docs/refusal-evidence-matrix.md": "594907b921441b03e6dac9ad9af3244484fccd3388c13562944a021ea71ec4e5",
+    "scripts/run_forgejo_private_netns_webhook_e2e.py": "e5f4b766446298a4d7e1086acc93d863d2a68f1fd9febf26b993ae9fbf568bea",
+    "scripts/run_mission_012_live_agent_pr_e2e.py": "baa13b48d5ab1337f774f754d11256b153a1901891aef7abe09f8caa4ed0352c",
+    "scripts/run_mission_012_live_composed_e2e.py": "d5d061a62721d6d009423f1591aa6a7a08ccec3d0af970d76029a9b4d52f6448",
+    "scripts/run_mission_012_live_mcp_agent_e2e.py": "4dc3e6852cf01c2cbdee17934212b9c3e2326107ab6f21df9e742c5cafca7ff7",
+    "scripts/run_mission_012_supervised_private_netns_e2e.py": "d3508423e94d2d877bd01e7e0224b182b703cc7fdcc3f3b13ae5c7cad7a975a7",
+    "tests/test_mission_012_live_composed_e2e.py": "76db8fbceb03d3421012e6036c07f3bb8de1881e93f1661894e98b57861e9b51",
+    "tests/test_mission_012_live_mcp_agent_e2e.py": "bbe10a2d08aa2c347d6fae4451fd8abf09e2be76df0b868932e33a4f5c83ef2f"
+  },
+  "systemd": "systemd 255 (255.4-1ubuntu8.18)",
+  "working_tree": "dirty; pre-existing modifications preserved"
+}

@@ -1,0 +1,9 @@
+test_accepts_exact_nonempty_team_projection_after_created_request (test_forgejo_live_org_team_reviewer_readback.ValidateTeamReadbackTests.test_accepts_exact_nonempty_team_projection_after_created_request) ... ok
+test_rejects_different_team_identity (test_forgejo_live_org_team_reviewer_readback.ValidateTeamReadbackTests.test_rejects_different_team_identity) ... ok
+test_rejects_empty_or_missing_live_team_readback (test_forgejo_live_org_team_reviewer_readback.ValidateTeamReadbackTests.test_rejects_empty_or_missing_live_team_readback) ... ok
+test_rejects_noncreated_request (test_forgejo_live_org_team_reviewer_readback.ValidateTeamReadbackTests.test_rejects_noncreated_request) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.000s
+
+OK

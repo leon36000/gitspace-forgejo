@@ -1,0 +1,30 @@
+test_composed_runner_refuses_real_provider_before_reading_inputs (test_mission_012_live_composed_e2e.Mission012LiveComposedTests.test_composed_runner_refuses_real_provider_before_reading_inputs) ... ERROR
+test_stage_builder_refuses_real_provider_before_other_validation (test_mission_012_live_composed_e2e.Mission012LiveComposedTests.test_stage_builder_refuses_real_provider_before_other_validation) ... FAIL
+
+======================================================================
+ERROR: test_composed_runner_refuses_real_provider_before_reading_inputs (test_mission_012_live_composed_e2e.Mission012LiveComposedTests.test_composed_runner_refuses_real_provider_before_reading_inputs)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/test_mission_012_live_composed_e2e.py", line 39, in test_composed_runner_refuses_real_provider_before_reading_inputs
+    composed.run(type("Args", (), {"agent_adapter": "claude"})())
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/scripts/run_mission_012_live_composed_e2e.py", line 2180, in run
+    state_dir = Path(args.state_dir)
+                     ^^^^^^^^^^^^^^
+AttributeError: 'Args' object has no attribute 'state_dir'
+
+======================================================================
+FAIL: test_stage_builder_refuses_real_provider_before_other_validation (test_mission_012_live_composed_e2e.Mission012LiveComposedTests.test_stage_builder_refuses_real_provider_before_other_validation)
+----------------------------------------------------------------------
+RuntimeError: model budget must be a positive decimal no higher than USD 0.20
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/test_mission_012_live_composed_e2e.py", line 42, in test_stage_builder_refuses_real_provider_before_other_validation
+    with self.assertRaisesRegex(
+AssertionError: "provider egress and filesystem isolation are not attested" does not match "model budget must be a positive decimal no higher than USD 0.20"
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.001s
+
+FAILED (failures=1, errors=1)

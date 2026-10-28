@@ -1,0 +1,13 @@
+{
+  "commands": {
+    "cargo": "cargo 1.95.0 (f2d3ce0bd 2026-03-21)",
+    "head": "f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0",
+    "python": "Python 3.12.3",
+    "rustc": "rustc 1.95.0 (59807616e 2026-04-14)"
+  },
+  "sha256": {
+    "Cargo.toml": "f9144c83c85369f40ecfd2255fdd0915ddb90a4d6c14e1705908febe9bb2b1a3",
+    "scripts/test_cargo_license_state.py": "825807ceca10299d038caa887fc4ae7a99c1821a7e4edce1392d400877b9b735",
+    "scripts/verify_cargo_license_state.py": "c6d4ec8736a1d25f17f692ee0f59fcb9882faf3c35966bac974484c1d2f3bb35"
+  }
+}

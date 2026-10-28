@@ -1,0 +1,22 @@
+{
+  "bubblewrap": "bubblewrap 0.9.0",
+  "cargo": "cargo 1.95.0 (f2d3ce0bd 2026-03-21)",
+  "cargo_lock_sha256": "bf599559dd11ff21ecc4754aa8a693966b4a9ca401153d7d7caa1f18d8995fcc",
+  "git_head": "f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0",
+  "platform": "Linux-7.0.0-1019-nvidia-aarch64-with-glibc2.39",
+  "python": "Python 3.12.3",
+  "refusal_matrix": {
+    "path": "docs/refusal-evidence-matrix.md",
+    "sha256": "d390dcf4f266db0801627960a89a76a14e3126dca4d3babba07653958b903bd9"
+  },
+  "runner_log_source_tree_sha256": "833979ed50416a526ccf372c1cec31024b07133f01f34749d48b9498df9acb17",
+  "runner_source": {
+    "path": "scripts/run_forgejo_mission_delivery_process_e2e.py",
+    "sha256": "e61082eb8b73ab87a156195e8128fbd6daec4805fe4216b1c44215c4d13f5166"
+  },
+  "rustc": "rustc 1.95.0 (59807616e 2026-04-14)",
+  "test_source": {
+    "path": "tests/forgejo_mission_delivery_process_e2e.rs",
+    "sha256": "900bfb806912015e01cc1cd33f3ef5b519a3c4685b3f042107e4c35570c72891"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "platform": "linux",
+  "python": "3.12.3",
+  "stage": "request_and_read_back_team_reviewer",
+  "state_dir": "/tmp/forgejo-team-review-cont203-state",
+  "state_dir_mode": "0700"
+}

@@ -1,0 +1,2 @@
+Initial append helper attempt correctly refused because a new lot had no local SHA256SUMS file yet. No global index was modified by that attempt.
+A second attempt found the new empty local prefix was not represented in manifest-prefix-before.json; it failed before any index append. The baseline was recorded as line_count=0 and SHA-256 of empty bytes, then append succeeded.

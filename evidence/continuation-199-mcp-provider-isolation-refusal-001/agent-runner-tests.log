@@ -1,0 +1,16 @@
+test_bounded_cli_rejects_success_when_same_group_child_outlives_cli (tests.test_mission_012_live_mcp_agent_e2e.AgentCommandTests.test_bounded_cli_rejects_success_when_same_group_child_outlives_cli) ... ok
+test_claude_command_refuses_unisolated_provider_before_cli_lookup (tests.test_mission_012_live_mcp_agent_e2e.AgentCommandTests.test_claude_command_refuses_unisolated_provider_before_cli_lookup) ... ok
+test_explicit_sandbox_option_routes_only_the_test_adapter_through_bwrap (tests.test_mission_012_live_mcp_agent_e2e.AgentCommandTests.test_explicit_sandbox_option_routes_only_the_test_adapter_through_bwrap) ... ok
+test_gate_barrier_is_refused_for_non_sandboxed_or_model_agents (tests.test_mission_012_live_mcp_agent_e2e.AgentCommandTests.test_gate_barrier_is_refused_for_non_sandboxed_or_model_agents) ... ok
+test_local_adapter_command_never_resolves_claude (tests.test_mission_012_live_mcp_agent_e2e.AgentCommandTests.test_local_adapter_command_never_resolves_claude) ... ok
+test_model_run_refuses_before_resolving_state_or_credentials (tests.test_mission_012_live_mcp_agent_e2e.AgentCommandTests.test_model_run_refuses_before_resolving_state_or_credentials) ... ok
+test_post_acceptance_barrier_paths_are_routed_only_to_the_sandbox_wrapper (tests.test_mission_012_live_mcp_agent_e2e.AgentCommandTests.test_post_acceptance_barrier_paths_are_routed_only_to_the_sandbox_wrapper) ... ok
+test_restart_fixture_can_capture_only_its_local_host_diagnostics (tests.test_mission_012_live_mcp_agent_e2e.AgentCommandTests.test_restart_fixture_can_capture_only_its_local_host_diagnostics) ... ok
+test_sandbox_option_is_rejected_for_model_adapter (tests.test_mission_012_live_mcp_agent_e2e.AgentCommandTests.test_sandbox_option_is_rejected_for_model_adapter) ... ok
+test_test_adapter_work_item_observation_must_be_explicit_and_match_admission (tests.test_mission_012_live_mcp_agent_e2e.AgentCommandTests.test_test_adapter_work_item_observation_must_be_explicit_and_match_admission) ... ok
+test_webhook_files_are_passed_only_as_bounded_sandbox_visibility_probes (tests.test_mission_012_live_mcp_agent_e2e.AgentCommandTests.test_webhook_files_are_passed_only_as_bounded_sandbox_visibility_probes) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.068s
+
+OK

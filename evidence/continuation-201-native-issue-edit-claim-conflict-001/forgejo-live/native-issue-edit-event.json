@@ -1,0 +1,16 @@
+{
+  "action": "edited",
+  "changes_title_from_matches_previous": true,
+  "current_title_sha256": "43a77306ffca9bc65c6b25d801734069bf305207a860dd4bc845cec0ea3a466f",
+  "delivery_id": "0b3b98c1-879b-4210-a9ed-8e7fcd2fdbd9",
+  "issue_number": 1,
+  "previous_title_sha256": "8337c6c42c8b91e42b90c337851cfbbff965c8f641107e4306770df8cee0cfc7",
+  "sequence": 2,
+  "task_binding": {
+    "forgejo_delivery_uuid": "0b3b98c1-879b-4210-a9ed-8e7fcd2fdbd9",
+    "issue_number": 1,
+    "receiver_delivery_id": "0b3b98c1-879b-4210-a9ed-8e7fcd2fdbd9",
+    "receiver_sequence": 2,
+    "response_status": 202
+  }
+}

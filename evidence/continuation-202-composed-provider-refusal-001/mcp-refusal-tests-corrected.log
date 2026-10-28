@@ -1,0 +1,7 @@
+test_claude_command_refuses_unisolated_provider_before_cli_lookup (test_mission_012_live_mcp_agent_e2e.AgentCommandTests.test_claude_command_refuses_unisolated_provider_before_cli_lookup) ... ok
+test_model_run_refuses_before_resolving_state_or_credentials (test_mission_012_live_mcp_agent_e2e.AgentCommandTests.test_model_run_refuses_before_resolving_state_or_credentials) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+OK

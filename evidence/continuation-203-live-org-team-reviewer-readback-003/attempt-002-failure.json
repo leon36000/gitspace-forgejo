@@ -1,0 +1,10 @@
+{
+  "attempt": "continuation-203-live-org-team-reviewer-readback-002",
+  "exit_code": 1,
+  "stage": "create_organization_and_team",
+  "error_type": "RuntimeError",
+  "message": "Forgejo did not create the expected review team",
+  "response_body_saved": false,
+  "cause_isolated": false,
+  "classification": "harness assertion failure; the combined team-response predicate did not identify which field differed"
+}

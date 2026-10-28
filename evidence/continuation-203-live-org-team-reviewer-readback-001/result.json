@@ -1,0 +1,43 @@
+{
+  "forgejo": {
+    "binary_sha256": "e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7",
+    "commit": "unknown",
+    "version": "forgejo version 17.0.0+gitea-1.22.0 (release name 17.0.0) built with GNU Make 4.4.1, go1.26.9 : bindata, timetzdata, sqlite, sqlite_unlock_notify"
+  },
+  "llm_or_agent_invoked": false,
+  "organization": {
+    "id": 3,
+    "name": "forge-team-org",
+    "visibility": "private"
+  },
+  "pull_request": {
+    "merged": false,
+    "number": 1,
+    "state": "open"
+  },
+  "receiver_invoked": false,
+  "repository": {
+    "full_name": "forge-team-org/team-review-readback",
+    "private": true
+  },
+  "rust_reconcile_cli_invoked": false,
+  "schema_version": 1,
+  "scope": "forgejo_live_rest_api_and_existing_python_projection_only",
+  "team": {
+    "id": 2,
+    "includes_all_repositories": true,
+    "name": "reviewers",
+    "reviewer_member_added": true
+  },
+  "team_review_request": {
+    "http_status": 201,
+    "readback": [
+      {
+        "id": 2,
+        "name": "reviewers"
+      }
+    ]
+  },
+  "verdict": "passed",
+  "webhook_emitted_or_observed": false
+}
