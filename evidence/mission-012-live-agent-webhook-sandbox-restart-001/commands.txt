@@ -1,0 +1,20 @@
+# Exécution locale isolée; aucun secret dans la ligne de commande.
+# Étape d’admission Forgejo live locale (exit 0).
+python3 scripts/run_forgejo_live_webhook_mission_admission.py \
+  --forgejo-binary /tmp/forgejo-17.0.0 \
+  --repo-root /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace \
+  --state-dir /tmp/mission012-agent-sandbox-restart-001 \
+  --evidence-dir /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/mission-012-live-agent-webhook-sandbox-restart-001-admission \
+  --allocation-id mission012-webhook-live-sandbox-restart-001 \
+  --build-mcp-host \
+  --build-test-crash-injection-host
+
+# Adaptateur de test isolé; le crash est injecté après effet (exit 0 global).
+python3 scripts/run_mission_012_live_mcp_agent_e2e.py \
+  --state-dir /tmp/mission012-agent-sandbox-restart-001 \
+  --execution-id live-mcp-102 \
+  --budget-cap-usd 0.01 \
+  --agent-adapter local-test-adapter \
+  --test-host-restart \
+  --admission-evidence-dir /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/mission-012-live-agent-webhook-sandbox-restart-001-admission \
+  --sandbox-test-adapter

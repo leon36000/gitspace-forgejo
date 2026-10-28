@@ -1,0 +1,7 @@
+{
+  "cleanup_failure": null,
+  "error_detail": "[Errno 28] No space left on device",
+  "error_type": "OSError",
+  "stage": "build_trusted_local_adapters",
+  "verdict": "failed"
+}

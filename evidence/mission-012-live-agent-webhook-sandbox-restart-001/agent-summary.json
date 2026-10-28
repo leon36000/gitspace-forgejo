@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "execution_id": "live-mcp-102",
+  "admission_evidence": "evidence/mission-012-live-agent-webhook-sandbox-restart-001-admission",
+  "admission_sha256": "85201a5b14481117d8c0e170a4f1dc309f9c284b56ea5bb26840ba5cec97b6f2",
+  "base_commit": "5982815302165da6043bfba334199d3f1d028ec0",
+  "status": "candidate_ready_for_independent_verification",
+  "agent_adapter": "local-test-adapter",
+  "model_invoked_during_run": false,
+  "input_tokens": null,
+  "output_tokens": null,
+  "reported_cost_usd": 0.0,
+  "budget_cap_usd": 0.01,
+  "execution_sandbox": "bubblewrap_stdio_mcp",
+  "sandbox_checks": {
+    "credential_visible": false,
+    "network_connected": false
+  },
+  "changed_paths": [
+    "src/lib.rs"
+  ],
+  "candidate_file_sha256": {
+    "src/lib.rs": "173304ad7d32aabc1e8e1ee41eabda3398a8690798e68f906bcebc73cbcd6d15"
+  },
+  "host_binary_sha256": "7336fad29703a37f178389333933a361c2a7ea5a2b253969a7e1b776eb38fd41",
+  "receipt_count": 13,
+  "receipt_sha256": "8e81dbb01f45f9b2cdd6975dc31e9a304ec4762fe91d89b7919627d502405955",
+  "agent_summary": "ADAPTATEUR DE TEST LOCAL SANS LLM: contexte admis consommé; échec rouge observé; checkpoint `unverified` dd8929cdf9e91f5bb050a31d923b4b13cc6672a201b659948f12c243f3acaf9b réappliqué par MCP; src/lib.rs corrigé par MCP; test protégé vert; hôte finalisé avec reçu.",
+  "restart_recovery": {
+    "crash_point": "after_effect",
+    "first_attempt_exit_code": 1,
+    "first_attempt_timed_out": false,
+    "first_attempt_output_exceeded": false,
+    "unresolved_intents_before_restart": 1,
+    "results_before_restart": 0,
+    "candidate_source_sha256_after_effect": "173304ad7d32aabc1e8e1ee41eabda3398a8690798e68f906bcebc73cbcd6d15",
+    "old_fencing_token": 1,
+    "new_fencing_token": 2,
+    "initial_lease_id": "mission012-live-mcp-102",
+    "recovery_lease_id": "mission012-live-mcp-102-recovery",
+    "lease_expiry_wait_ms": 10250,
+    "results_after_restart": 1,
+    "initial_receipt_count": 5,
+    "recovery_receipt_count": 8,
+    "initial_receipt_sha256": "a98992597ab44ede9542161ff038a527712236fceb52511fded743b378d95739",
+    "recovery_receipt_sha256": "cc0d254d7707b66d7a94e8aa81fb3ec9024e9185293e4b2fe37b51e51054a2f2",
+    "combined_receipt_sha256": "8e81dbb01f45f9b2cdd6975dc31e9a304ec4762fe91d89b7919627d502405955"
+  }
+}
