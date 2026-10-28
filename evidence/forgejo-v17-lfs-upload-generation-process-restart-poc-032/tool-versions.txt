@@ -1,0 +1,6 @@
+Forgejo official tag: v17.0.0
+Forgejo official commit: 0d791421f85ca13a63b665053d81ea765fbbc571
+Go: go1.27.3 linux/arm64
+XORM: code.forgejo.org/xorm/xorm v1.4.1
+SQLite driver: github.com/mattn/go-sqlite3 v1.14.52
+Host: Linux arm64

@@ -1,0 +1,6 @@
+# Test ciblé POC-075
+cd /tmp/forgejo-v17-base-cas-poc
+GOTOOLCHAIN=local GOPROXY=off /tmp/forgejo-v17-toolchain/go/bin/go test -count=1 -v -timeout=20m -tags sqlite,forgejo_poc_lfs_ack_order ./tests/integration -run '^TestPOCPullMergeCanMarkMergedAndPublishLFSAfterTargetRefMoves$'
+
+# Scan lexical complémentaire des chemins pouvant modifier des refs
+rg -l '"push"|AddArguments\("push"|NewCommand\([^\n]*"push"|WithExpectedBaseCommitID|update-ref|SetReference\(|RemoveReference\(|DeleteBranch\(|RenameBranch\(|git\.Push\(|t\.Push\(' routers services modules --glob '*.go' --glob '!**/*_test.go' | sort -u

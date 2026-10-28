@@ -1,0 +1,5 @@
+Go: go1.27.3 linux/arm64 (/tmp/forgejo-v17-toolchain/go/bin/go)
+Git: 2.43.0
+OS: Linux aarch64
+Integration database: SQLite (tests/sqlite.ini)
+GOTOOLCHAIN=local; GOPROXY=off; no modules downloaded for this run.

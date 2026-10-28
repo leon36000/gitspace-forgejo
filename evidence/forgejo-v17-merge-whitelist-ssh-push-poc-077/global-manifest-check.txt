@@ -1,0 +1,1 @@
+PASS: latest append-only global hashes match 11 current paths

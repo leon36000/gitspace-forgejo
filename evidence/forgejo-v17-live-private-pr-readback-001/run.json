@@ -1,0 +1,65 @@
+{
+  "forgejo": {
+    "health_http": 200,
+    "host_published_ports": false,
+    "image_id": "sha256:06d38310de496a10186d952bdad5ca764c153c8023ede8dfa0944c79a1dc5412",
+    "internal_network_id": "2485044f69b4d334d140dc0bc769697a20277988a6e6e53bf3ebfee401bfc136",
+    "version": "forgejo version 17.0.0+gitea-1.22.0 (release name 17.0.0) built with GNU Make 4.4.1, go1.26.9 : bindata, timetzdata, sqlite, sqlite_unlock_notify"
+  },
+  "live_reconciliation": {
+    "anonymous": {
+      "authorization_absent": true,
+      "canonical_state_absent": true,
+      "error": "resource_not_found",
+      "exit_code": 1,
+      "http_status": 404,
+      "one_target_get": true,
+      "verdict": "inconclusive"
+    },
+    "authenticated": {
+      "authorization_present": true,
+      "base_sha_matches_live_api": true,
+      "exit_code": 0,
+      "head_sha_matches_live_api": true,
+      "one_target_get": true,
+      "token_output_leak": false,
+      "upstream_read_attempts": 1,
+      "verdict": "current_state_read"
+    },
+    "delivery_id": "live-forgejo-pr-2-5fdb7782",
+    "inbox_unchanged_after_both_reads": true,
+    "webhook_status": 202
+  },
+  "merge": "not performed; this run does not establish a server-enforced CAS merge gate",
+  "repository": {
+    "full_name": "forge-admin/agent-forge-core",
+    "private": true
+  },
+  "request": {
+    "base_sha": "8bc9a151bf6a1ea387bd9609edded8eee03587a8",
+    "branch": "codex/live-readback-fd7eeb8cb6",
+    "corrected_source_sha": "203eec1396d4a07b38cb6d7e11bea5dd07d78085",
+    "head_sha": "1a81548a1fa6511513b6a8c61da840515928c23d",
+    "initial_source_sha": "d65d74a92dced762866cee9536cefe76c012b9f6",
+    "issue": 1,
+    "pr": 2,
+    "pr_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/2",
+    "requirement": "requirements/REQ-IDENTITY-001.v1.json",
+    "requirement_sha": "50dc5a809be31d937cfb77526dd961f874dde4a9"
+  },
+  "temporary_token_revoked": true,
+  "verification": {
+    "candidate_code_sandbox": "bubblewrap --unshare-net --unshare-pid, read-only source mount",
+    "corrected_exit": 0,
+    "corrected_output": [
+      "PASS: 2 valid and 5 invalid repository coordinates"
+    ],
+    "initial_failure_actionable": [
+      "FAIL: invalid coordinate accepted: 'alice /repo'",
+      "FAIL: invalid coordinate accepted: 'alice/repo '",
+      "FAIL: invalid coordinate accepted: 'alice/repo/extra'"
+    ],
+    "initial_failure_exit": 1
+  },
+  "worker": "local-test-adapter script; no LLM/AgentOS run"
+}

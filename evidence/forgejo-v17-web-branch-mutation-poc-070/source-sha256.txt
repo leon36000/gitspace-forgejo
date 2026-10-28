@@ -1,0 +1,14 @@
+Scratch base: Forgejo v17.0.0, commit 0d791421f85ca13a63b665053d81ea765fbbc571; scratch has other POC changes.
+
+b1fabc2fba70df89de19d450b028f7cad8d388302a58cd25221ab9c26143331d  scratch:tests/integration/branch_expected_base_web_bypass_poc_test.go
+23886cf5928edbe8d57e3d9e8ba80e0ec08a36e9ef787d12d7c83607f24756b3  scratch:routers/web/repo/branch.go
+23f568e28174bec0224834def8c8a776e2d7f69e562ee425be13bd91066d2671  scratch:routers/web/repo/setting/protected_branch.go
+080fdca033f43d9c2f7adc48551bfaf32cb2a7aeed0bdaedb94ad24b8524c70e  scratch:routers/private/hook_pre_receive.go
+456f3f5312c99a2303196f374371dc3202908bfaee5a6980403f30e1053778ad  scratch:services/repository/branch.go
+
+Relevant symbols in this scratch state:
+- routers/private/hook_pre_receive.go::assertExpectedBaseCommitID
+- routers/web/repo/setting/protected_branch.go::RenameBranchPost
+- routers/web/repo/branch.go::DeleteBranchPost
+- services/repository/branch.go::RenameBranch
+- services/repository/branch.go::DeleteBranch

@@ -1,0 +1,22 @@
+Scratch : /tmp/forgejo-v17-base-cas-poc
+HEAD officiel : 0d791421f85ca13a63b665053d81ea765fbbc571
+
+Test d’intégration ciblé final :
+GOTOOLCHAIN=local GOPROXY=off /tmp/forgejo-v17-toolchain/go/bin/go test -count=1 -v -timeout=20m -tags sqlite ./tests/integration -run '^TestPOCMergeWhitelistActorCannotSSHDirectPushToProtectedBranch$'
+Résultat : code 0, un test passé.
+
+Formatage :
+/tmp/forgejo-v17-toolchain/go/bin/gofmt -d tests/integration/merge_whitelist_ssh_push_poc_test.go
+Résultat : sortie vide.
+
+Contrôle des sources :
+git -C /tmp/forgejo-v17-base-cas-poc rev-parse HEAD
+git -C /tmp/forgejo-v17-base-cas-poc show HEAD:cmd/serv.go
+git -C /tmp/forgejo-v17-base-cas-poc show HEAD:routers/private/serv.go
+git -C /tmp/forgejo-v17-base-cas-poc show HEAD:routers/private/hook_pre_receive.go
+git diff --quiet HEAD -- cmd/serv.go routers/private/serv.go
+Résultat : code 0; les deux sources d’autorisation SSH sont inchangées depuis HEAD.
+git diff --unified=0 HEAD -- routers/private/hook_pre_receive.go
+Résultat : ajouts du contrôle expected-base et de son helper; le bloc ultérieur de permission de branche protégée est inchangé.
+
+Premier essai du harnais : l’URL SSH utilisait le namespace de l’acteur. Corrigé pour utiliser ownerAPI.GitPath(); la commande finale ci-dessus est le run corrigé.

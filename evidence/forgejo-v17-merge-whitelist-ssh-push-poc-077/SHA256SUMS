@@ -1,0 +1,7 @@
+56da40b1e032f2d3b6cbcc3535772d38836cf02c06591898edfe35d3c1400450  ./commands.txt
+da6cec43e1f9057dc0cd9b9b083ec5673a2d4df8ff63c59f870ad507a2fe66e5  ./local-run.md
+14cdc3b82a4ec6a92f901d3e2fb1807d013c3a99e2bdfd7e288e1b0328cd590a  ./source-objects.txt
+17efa206ff50b3ba04fd181367308f05583af2990ec7a1633aa1c6177bd3b20c  ./source-sha256.txt
+a9a9a359b04ac62d9cf84e457c271bfbe6d9b847293aafff723f5e2459ddf14b  ./test-summary.log
+df00b1e8526fd3793a43b6616dd41be8008a89fc898619e8c1830476cc1de434  ./tool-versions.txt
+bbf68d79ba3daeaab8fd27223fd9713e74bdc6ebe8d3ecd6186c13c95f6ddfa0  ./verify_global_manifest.py

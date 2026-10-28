@@ -1,0 +1,10 @@
+1c03ad9d4732fde7ec5c4fd1ca475d3e37c53a2ceb8fb49a6557c7e7a471f0af  run.json
+6d77f64dfc8c5325b90fdbe05d8be367bdd578bcccec24f275c5ffee7d03dd6e  build.log
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  stderr.log
+095c7367ad9988ced8f0f87b8850124c712f97b805e6dfb6eeca1ae7639f6e5a  local-run.md
+425df29e6b8420033ce7722c059fd6869aad407c32d347f4b8243e42bd5de1c3  ../../scripts/run_local_forgejo_v17_private_pr_readback.py
+4b998554550104d885e9827520d4868f9d639e344a5c3888e46f9fe31ad61761  ../../target/debug/forgejo-webhook-local
+8fb1b2fd1548d2d3aeab9fc4f38c9b39a8d7318cb11d10326ac9f77fe573cec3  ../../target/debug/forgejo-reconcile-local
+75120acf1a9eafb01d855e3677078e98a1e4f491f38297913260401030e8c2bd  ../../docs/checkpoint.md
+6fbdc04751a307142c9a32e886e6b07943b3bcfdd2b205ca5d2a127f43a7c96b  ../../docs/architecture.md
+592b302f498ea21c846831548f169a89188e9fa5a3f1fe64788fe4ad117a2c3d  ../../docs/source-inventory.md

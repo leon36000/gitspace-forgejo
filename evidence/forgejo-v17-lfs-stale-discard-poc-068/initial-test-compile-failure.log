@@ -1,0 +1,10 @@
+# forgejo.org/services/pull [forgejo.org/services/pull.test]
+services/pull/lfs_recovery_stale_discard_poc_test.go:15:2: "forgejo.org/models/db" imported and not used
+services/pull/lfs_recovery_stale_discard_poc_test.go:75:19: cannot use 2nd function result (value of interface type error) as "forgejo.org/modules/git".RunStdError value in multiple assignment: error does not implement "forgejo.org/modules/git".RunStdError (missing method Stderr)
+services/pull/lfs_recovery_stale_discard_poc_test.go:79:11: cannot use 2nd function result (value of interface type error) as "forgejo.org/modules/git".RunStdError value in multiple assignment: error does not implement "forgejo.org/modules/git".RunStdError (missing method Stderr)
+services/pull/lfs_recovery_stale_discard_poc_test.go:81:16: cannot use 2nd function result (value of interface type error) as "forgejo.org/modules/git".RunStdError value in multiple assignment: error does not implement "forgejo.org/modules/git".RunStdError (missing method Stderr)
+services/pull/lfs_recovery_stale_discard_poc_test.go:95:11: cannot use 2nd function result (value of interface type error) as "forgejo.org/modules/git".RunStdError value in multiple assignment: error does not implement "forgejo.org/modules/git".RunStdError (missing method Stderr)
+services/pull/lfs_recovery_stale_discard_poc_test.go:97:15: cannot use 2nd function result (value of interface type error) as "forgejo.org/modules/git".RunStdError value in multiple assignment: error does not implement "forgejo.org/modules/git".RunStdError (missing method Stderr)
+services/pull/lfs_recovery_stale_discard_poc_test.go:100:20: cannot use 3rd function result (value of interface type error) as "forgejo.org/modules/git".RunStdError value in multiple assignment: error does not implement "forgejo.org/modules/git".RunStdError (missing method Stderr)
+FAIL	forgejo.org/services/pull [build failed]
+FAIL

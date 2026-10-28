@@ -1,0 +1,8 @@
+Date: 2026-10-26
+Forgejo source ref: v17.0.0
+Forgejo source commit: 0d791421f85ca13a63b665053d81ea765fbbc571
+Go: go1.27.3 linux/arm64
+Git: 2.43.0
+Git source HEAD: 0d791421f85ca13a63b665053d81ea765fbbc571
+Test mode: Go integration package, -tags sqlite, local in-process server, SQLite fixtures
+Dependency mode: GOPROXY=off, GOTOOLCHAIN=local

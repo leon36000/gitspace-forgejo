@@ -1,0 +1,6 @@
+Scratch source: Forgejo tag v17.0.0, HEAD 0d791421f85ca13a63b665053d81ea765fbbc571
+Go: go1.27.3
+GOOS/GOARCH: linux/arm64
+Git: 2.43.0 (Forgejo integration-test environment log)
+Build/test DB: SQLite integration harness; one local test process
+Network dependencies: GOPROXY=off, GOTOOLCHAIN=local

@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "official_repository": "forgejo/forgejo",
+  "official_source_commit": "0d791421f85ca13a63b665053d81ea765fbbc571",
+  "scratch_head": "0d791421f85ca13a63b665053d81ea765fbbc571",
+  "scratch_worktree_state": {
+    "modified_or_added_tracked_paths": 18,
+    "untracked_paths": 28,
+    "deleted_paths": 0,
+    "git_diff_stat": "18 files changed, 887 insertions(+), 75 deletions(-)",
+    "diff_check": "pass"
+  },
+  "current_scratch_file_sha256": {
+    "cmd/hook.go": "c03b264a65d6b914d72c7e2f83875456e5c985e9d7b1bf8678a489e6ad13048b",
+    "models/repo/repo_unit.go": "0c299df82bf423549af0ad5c78a83df26be96cb392c9f3abb64d0740410456fb",
+    "modules/private/hook.go": "c7413c866aa393f93faf57f07895dd1ef353110156c7dc6f4c3501b491c4334c",
+    "modules/repository/env.go": "de8c547cc6db6904de7961e93085365cbb5febaab1ca4c788132395e83768503",
+    "routers/private/hook_pre_receive.go": "080fdca033f43d9c2f7adc48551bfaf32cb2a7aeed0bdaedb94ad24b8524c70e",
+    "services/pull/merge.go": "c6e724ffbf8f2ab76712b44f8d0674ebf2ef2fe59e5a3e0114042dcbe42d933e",
+    "services/pull/merge_manual.go": "b62e9d23a3d530402dd1842fb60aa3fdff2e41c914459578349fb04ece53aa69",
+    "services/pull/update_rebase.go": "69a74bf7e345fe751c0b39bb31bddd5ff3353bd87258164e6a7239ab448d79a6",
+    "services/pull/lfs_recovery.go": "b19836f10d733b9ac7ef31e7b9d5ef74686930b7f6a627dc7da5cd45a7d57cbc",
+    "services/pull/lfs_recovery_test.go": "47a9f9d10215b8a072369dfb2804932a32cc3817c3b227e3a9f9f483cf9077b0",
+    "tests/integration/pull_merge_test.go": "5ffdf1eb3cfa01bfb8e34225442430c01173604946849ca6c150d777e2bd56a9",
+    "tests/integration/git_push_test.go": "b5c0f61fb37812d2fea0680db50460d8379b796a51e5613c3957feb661ee9288"
+  },
+  "historical_cas_test_source_sha256": "6144e757036a6341e494e9ba7eca81f53d37b60a813afa22cd2e802e34501fec",
+  "historical_cas_test_log_sha256": "17a524a582e71cea4aa7639b10df35d281b7e39690c3c905a9d58777665fbc8b"
+}

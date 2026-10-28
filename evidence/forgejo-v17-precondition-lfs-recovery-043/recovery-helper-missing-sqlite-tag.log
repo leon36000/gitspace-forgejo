@@ -1,0 +1,4 @@
+Error creating test engine: sqlite3 requires: import _ "github.com/mattn/go-sqlite3" or -tags sqlite,sqlite_unlock_notify
+sql: unknown driver "sqlite3" (forgotten import?)
+FAIL	forgejo.org/services/pull	0.076s
+FAIL

@@ -1,0 +1,21 @@
+# Examination baseline and reproducible static scans
+cd /tmp/forgejo-v17-base-cas-poc
+git rev-parse HEAD
+git show -s --format=%cs HEAD
+git status --short
+git diff HEAD --name-only -- '*.go'
+rg -l '\"push\"|AddArguments\(\"push\"|NewCommand\([^\n]*\"push\"|WithExpectedBaseCommitID|update-ref|SetReference\(|RemoveReference\(|DeleteBranch\(|RenameBranch\(|git\.Push\(|t\.Push\(' routers services modules --glob '*.go' --glob '!**/*_test.go' | sort -u
+git grep -n -E 'func (CreateBranch|UpdateBranch|DeleteBranch|DeleteBranchPost|RestoreBranchPost|CreateNewBranchFromCommit|RenameBranch|DeleteBranch|ChangeRepoFiles|SyncFork)|RepoWriter|InternalPushingEnvironment|SetReference\(|RemoveReference\(|update-ref|git\.Push\(|\"push\"' HEAD -- routers/api/v1/api.go routers/api/v1/repo/branch.go routers/web/repo/branch.go routers/web/repo/setting/protected_branch.go routers/web/repo/pull.go services/repository/branch.go services/repository/files services/repository/init.go services/repository/sync_fork.go services/pull services/issue/issue.go services/mirror/mirror_push.go services/packages/cargo/index.go services/wiki/wiki.go services/migrations modules/git/repo.go modules/git/repo_branch.go modules/git/repo_commit.go modules/repository/env.go cmd/hook.go
+
+# Supplemental route registration audit, 25 October 2026
+cd /tmp/forgejo-v17-base-cas-poc
+git show HEAD:routers/api/v1/api.go | nl -ba | sed -n '895,901p'
+git show HEAD:routers/api/v1/repo/branch.go | nl -ba | sed -n '169,247p'
+git show HEAD:routers/web/web.go | nl -ba | sed -n '1510,1518p'
+git show HEAD:routers/web/repo/branch.go | nl -ba | sed -n '88,166p'
+git show HEAD:services/repository/branch.go | nl -ba | sed -n '342,505p'
+git rev-parse HEAD:routers/web/web.go HEAD:routers/api/v1/api.go
+git cat-file blob HEAD:routers/web/web.go | sha256sum
+git cat-file blob HEAD:routers/api/v1/api.go | sha256sum
+git show HEAD:routers/api/v1/repo/branch.go | nl -ba | sed -n '392,455p'
+git show HEAD:services/repository/branch.go | nl -ba | sed -n '368,455p'

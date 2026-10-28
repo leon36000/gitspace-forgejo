@@ -1,0 +1,6 @@
+Forgejo base commit: 0d791421f85ca13a63b665053d81ea765fbbc571 (v17.0.0)
+Base services/lfs/server.go SHA-256: 93bbdc51698e2b87b8c6a260faea06fcfa1f6a618e48ac3912ddfe861722034d
+Scratch-modified services/lfs/server.go SHA-256: da7ee8ac809d8dd573d04d8304ab012d9f54a500041b475c47f30ee6629f16ac
+Scratch test services/lfs/versioned_download_poc_test.go SHA-256: e8a3711187c6b9cc7d41ac63e138f77a2bde5221111b0c89b603a3a986a694db
+Scratch integration test tests/integration/lfs_generation_stream_poc_test.go SHA-256: 6d5a3491bc3dd7cfd487ef9bc709a8be1d9c6f26c92c9d5d546d08a5b7f9f0db
+Forgejo source is not copied into this evidence folder.

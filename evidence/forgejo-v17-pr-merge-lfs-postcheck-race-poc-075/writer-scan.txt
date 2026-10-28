@@ -1,0 +1,18 @@
+# Refs/writers lexical follow-up — POC-075
+
+The command and full 35-path output are in commands.txt and writer-scan-paths.txt. This broader expression includes direct git.NewCommand(..., "push") and expected-base markers omitted by the first scan. It matches 35 files, but the count is intentionally not a count of writers: false positives include webhook event strings, API schemas, mail labels, generic environment helpers and Git wrappers. The earlier 22-path expression was underinclusive for direct push call sites; the follow-up identifies at least these additional implementation files:
+- services/pull/merge.go: server-side pull request merge push to the base branch.
+- services/pull/update_rebase.go: force push to the pull request head branch, not the target branch.
+- services/repository/init.go: initial branch push while creating a repository, not an existing target-branch mutation.
+- modules/git/repo.go: generic Git push command wrapper, not itself a policy boundary.
+
+Selected code review:
+- services/pull/merge.go:360-404 stages PR-scoped LFS metadata and pushes the merge result to refs/heads/<BaseBranch> with the expected base in the pre-receive environment.
+- services/pull/merge.go:437-440 promotes the staged LFS operation after the push returns.
+- routers/private/hook_post_receive.go:187-199 reads the branch commit, then promotes LFS later without a shared ref/DB fence. The test-only seam runs between the read and promotion.
+- routers/private/hook_post_receive.go:205-208, 410-445 handles a PR merge from push update metadata and stores that candidate as MergedCommitID.
+- routers/private/hook_post_receive.go:247-259 promotes the PR-scoped LFS operation from update metadata without another target-ref read.
+
+The integration test runs the real web merge route, PR merge service, pre/post receive hooks, SQLite LFS staging and PR state updates. At the deterministic seam, git update-ref moves the base branch back to its prior commit after the hook read. The HTTP merge response is 200; the stored PR is merged with a different MergedCommitID; the branch still points to the prior commit; LFS metadata is active although the base tree lacks the file. This identifies stale merge state and LFS association publication in the experimental scratch.
+
+Scope: one SQLite integration process and a test seam, no actual second concurrent server process, PostgreSQL, cluster, production, or upstream-clean checkout. The test characterizes this modified scratch patch and is not evidence that unmodified upstream Forgejo has this defect. The 35 lexical matches require classification by ref type and mutation effect; this does not complete an exhaustive writer audit.

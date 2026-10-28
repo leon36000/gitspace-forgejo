@@ -1,0 +1,10 @@
+Toolchain: go version go1.27.3 linux/arm64
+Base: Forgejo v17.0.0 / 0d791421f85ca13a63b665053d81ea765fbbc571
+
+--- PASS: TestPOCExpectedBasePolicyDoesNotGateWebBranchMutationRoutes (tests/integration/git_helper_for_declarative_test.go:67)
+    branch_expected_base_web_bypass_poc_test.go:90: web_rename_observed_base=65f1bf27bc3bf70f64657658635e66094edbcb4d live_base=c2762e85f5be644bdacb1e59c88704cbce3f9c5f renamed_commit=c2762e85f5be644bdacb1e59c88704cbce3f9c5f
+    branch_expected_base_web_bypass_poc_test.go:98: web_delete_observed_base=65f1bf27bc3bf70f64657658635e66094edbcb4d live_base_before_delete=b6d585aa5751f80ae446b62bd555672ab93a16a7
+PASS
+ok  forgejo.org/tests/integration  1.880s
+
+Note: this is the result excerpt visible without truncation in the Codex terminal output. The full initial output was not written to a raw file.

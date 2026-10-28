@@ -1,0 +1,11 @@
+Scratch directory: /tmp/forgejo-v17-base-cas-poc
+Scratch base HEAD: 0d791421f85ca13a63b665053d81ea765fbbc571 (Forgejo v17.0.0)
+The scratch working tree contains local experimental changes; this test is diagnostic-only and build-tagged.
+
+Final targeted run:
+GOTOOLCHAIN=local GOPROXY=off /tmp/forgejo-v17-toolchain/go/bin/go test -count=1 -v -timeout=20m -tags sqlite,forgejo_poc_lfs_stale_cleanup ./services/pull -run '^TestPOCStaleMissingCandidateDiscardCanBlockLaterPromotion$'
+
+Formatting check:
+/tmp/forgejo-v17-toolchain/go/bin/gofmt -d services/pull/lfs_recovery_stale_discard_poc_test.go
+
+Initial build attempt failed on the test file only; see initial-test-compile-failure.log. It was corrected before the final targeted run.

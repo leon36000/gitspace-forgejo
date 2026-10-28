@@ -1,0 +1,5 @@
+Forgejo official HEAD: 0d791421f85ca13a63b665053d81ea765fbbc571
+POC-031 compared the actual UploadHandler body with that official HEAD and recorded exact match: true.
+UploadHandler SHA-256 from that comparison: d1da3740e3ebbb9e0b6eca03c7ff7257925abb096308f5080d0cf14b9c058986
+POC-032 test source is the complete tagged scratch test file; its current SHA-256 is recorded by the local manifest.
+The route, ContentStore and storage interface are exercised through Forgejo's integration router. The generation adapter, tables, process exit seam and retry mapping are POC-only test code.

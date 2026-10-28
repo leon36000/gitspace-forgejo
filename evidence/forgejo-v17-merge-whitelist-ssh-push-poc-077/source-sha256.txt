@@ -1,0 +1,8 @@
+Official Forgejo source blobs (SHA-256 of git show HEAD:<path>):
+db7fdec994c38561ca09729adc34f2b50ae182e94d1ee163def2acb262075e97  cmd/serv.go
+afa05813879608db42a48fea2b0a48757377eaf98e200cc3d2f2e4f6ad3dc9e0  routers/private/serv.go
+c628d1bbb7a80f3524b58fcd4c845b7137b61da6c1491bbbd18e03e569ecd91c  routers/private/hook_pre_receive.go
+
+Scratch-only test and raw run log:
+db2c692c45e6ccc6b72067803ac494b18ea83a76fdfff2012866191a5c60ae4d  /tmp/forgejo-v17-base-cas-poc/tests/integration/merge_whitelist_ssh_push_poc_test.go
+95810c771d24d30efd08a10ce56214dcf4fc45ae1cbe8ed6ac40c4fc6a2f89df  /tmp/forgejo-v17-base-cas-poc/evidence/forgejo-v17-merge-whitelist-ssh-push-poc-077/test.log

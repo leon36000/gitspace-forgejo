@@ -1,0 +1,20 @@
+Forgejo official source ref: v17.0.0
+Forgejo official commit: 0d791421f85ca13a63b665053d81ea765fbbc571
+
+cmd/serv.go
+  HEAD blob: e4ddc256edcdda89d2f2aa19b2abc01ca5d43aa6
+  Relevant symbols: allowedCommands, runServ
+  Working tree: unchanged from HEAD
+
+routers/private/serv.go
+  HEAD blob: a63e5ea86d4734a75cee43230be0b28c69ace56
+  Relevant symbol: ServCommand
+  Working tree: unchanged from HEAD
+
+routers/private/hook_pre_receive.go
+  HEAD blob: 0c603d0c4b0793b1878c37face67c9dd9c0e80e5
+  Relevant symbols: preReceiveBranch, assertCanWriteCodeToBranch
+  Scratch diff: adds experimental expected-base assertion at entry to preReceiveBranch and its helper; the later protected-branch permission block is unchanged. The test disables the expected-base policy for the SSH probe.
+
+Scratch-only test:
+/tmp/forgejo-v17-base-cas-poc/tests/integration/merge_whitelist_ssh_push_poc_test.go

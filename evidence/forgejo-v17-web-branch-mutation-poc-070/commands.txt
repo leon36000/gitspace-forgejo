@@ -1,0 +1,21 @@
+Scratch:
+/tmp/forgejo-v17-base-cas-poc
+
+Base source:
+git rev-parse HEAD
+# 0d791421f85ca13a63b665053d81ea765fbbc571
+
+Toolchain:
+/tmp/forgejo-v17-toolchain/go/bin/go version
+# go version go1.27.3 linux/arm64
+
+Format check:
+/tmp/forgejo-v17-toolchain/go/bin/gofmt -w tests/integration/branch_expected_base_web_bypass_poc_test.go
+
+Targeted integration test:
+GOTOOLCHAIN=local GOPROXY=off /tmp/forgejo-v17-toolchain/go/bin/go test -count=1 -v -timeout=20m -tags sqlite ./tests/integration -run '^TestPOCExpectedBasePolicyDoesNotGateWebBranchMutationRoutes$'
+
+Final observed result:
+--- PASS: TestPOCExpectedBasePolicyDoesNotGateWebBranchMutationRoutes (tests/integration/git_helper_for_declarative_test.go:67)
+PASS
+ok  forgejo.org/tests/integration  1.880s

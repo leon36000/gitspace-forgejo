@@ -1,0 +1,38 @@
+scratch_HEAD=0d791421f85ca13a63b665053d81ea765fbbc571
+scratch_status_rows=35
+tracked_or_untracked_status:
+ M cmd/hook.go
+ M models/git/lfs.go
+ M models/git/lfs_test.go
+ M models/repo/repo_unit.go
+ M modules/private/hook.go
+ M modules/repository/env.go
+ M routers/private/hook_post_receive.go
+ M routers/private/hook_pre_receive.go
+ M services/lfs/server.go
+ M services/pull/lfs.go
+ M services/pull/merge.go
+ M services/pull/merge_manual.go
+ M services/pull/update_rebase.go
+ M services/repository/delete.go
+ M services/repository/delete_test.go
+ M services/repository/lfs_test.go
+ M tests/integration/git_push_test.go
+ M tests/integration/pull_merge_test.go
+?? evidence/
+?? models/git/lfs_generation_mapping_poc_test.go
+?? models/git/lfs_generation_process_recovery_poc_test.go
+?? modules/lfs/content_store_generation_poc_test.go
+?? modules/storage/local_generation_delete_poc_test.go
+?? modules/storage/minio_version_delete_poc_test.go
+?? services/lfs/versioned_download_poc_test.go
+?? services/lfs/versioned_download_sqlite_poc_test.go
+?? services/pull/lfs_recovery.go
+?? services/pull/lfs_recovery_test.go
+?? services/repository/delete_lfs_active_race_poc_test.go
+?? services/repository/delete_lfs_race_poc_test.go
+?? services/repository/lfs_stale_delete_poc_test.go
+?? tests/integration/lfs_doctor_generation_path_poc_test.go
+?? tests/integration/lfs_generation_stream_poc_test.go
+?? tests/integration/lfs_sqlite_generation_route_poc_test.go
+?? tests/integration/lfs_sqlite_generation_upload_route_poc_test.go

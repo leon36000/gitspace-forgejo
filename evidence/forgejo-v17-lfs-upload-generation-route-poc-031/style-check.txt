@@ -1,0 +1,2 @@
+trailing_whitespace_lines=[]
+conflict_marker_lines=[]

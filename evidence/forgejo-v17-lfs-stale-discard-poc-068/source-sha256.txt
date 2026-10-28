@@ -1,0 +1,11 @@
+Forgejo official baseline: v17.0.0, commit 0d791421f85ca13a63b665053d81ea765fbbc571
+Scratch worktree status: modified; the baseline commit does not include the experimental changes.
+Test build tag: forgejo_poc_lfs_stale_cleanup
+ef3402e6a8d905e4c2037e5691b526332f61f1461d745bc3af2feddbbee22154  /tmp/forgejo-v17-base-cas-poc/models/git/lfs.go
+bb3f76bf664d95e4eb8786e37f29abb6e66f71994636b7955913d9cee100abe4  /tmp/forgejo-v17-base-cas-poc/services/pull/lfs_recovery.go
+3002b6d18c48698d0f71becef0289fe557587ce4be43e8b19f8b13d1034457df  /tmp/forgejo-v17-base-cas-poc/services/pull/lfs_recovery_stale_discard_poc_test.go
+b91d2a3344b3e6c495166c32305138cbbf1330b92b821bec3f3ee017a01509bf  /tmp/forgejo-v17-base-cas-poc/services/repository/files/update.go
+ea2c94b794db8c28ccc3f0bf4cf354b6afcbe7e4e713fc5777241a6337f4f07b  /tmp/forgejo-v17-base-cas-poc/routers/private/hook_post_receive.go
+c6e724ffbf8f2ab76712b44f8d0674ebf2ef2fe59e5a3e0114042dcbe42d933e  /tmp/forgejo-v17-base-cas-poc/services/pull/merge.go
+69a74bf7e345fe751c0b39bb31bddd5ff3353bd87258164e6a7239ab448d79a6  /tmp/forgejo-v17-base-cas-poc/services/pull/update_rebase.go
+827dc7e805103833124aa7050d76339c4974487b209bdfc7b856d915fe82e5ca  /tmp/forgejo-v17-base-cas-poc/modules/storage/storage.go

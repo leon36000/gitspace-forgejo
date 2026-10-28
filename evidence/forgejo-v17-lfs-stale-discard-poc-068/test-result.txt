@@ -1,0 +1,9 @@
+Final command exit status: 0
+Test: TestPOCStaleMissingCandidateDiscardCanBlockLaterPromotion
+Result: PASS; 1 passed, 0 failed, 0 skipped
+Package: forgejo.org/services/pull
+Elapsed: 0.573 s
+Build tags: sqlite,forgejo_poc_lfs_stale_cleanup
+Formatting: gofmt -d produced no diff
+Initial compile attempt: exit 1 due test-authoring errors; corrected before final run
+Classification: diagnostic hypothetical interleaving; not an active cleanup worker or live Forgejo service

@@ -1,0 +1,5 @@
+Forgejo source baseline: official v17.0.0 commit 0d791421f85ca13a63b665053d81ea765fbbc571.
+Scratch path: /tmp/forgejo-v17-base-cas-poc (detached HEAD).
+The scratch checkout was already heavily modified by experimental POCs before this test; selected dirty files include routers/private/hook_post_receive.go and services/pull/merge.go. The test file is untracked in the scratch.
+Product repository HEAD at start of this lot: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0.
+No Forgejo implementation code was copied into the product repository.

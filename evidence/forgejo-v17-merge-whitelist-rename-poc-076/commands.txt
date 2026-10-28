@@ -1,0 +1,8 @@
+# Scratch Forgejo v17.0.0 — POC-076
+
+cd /tmp/forgejo-v17-base-cas-poc
+/tmp/forgejo-v17-toolchain/go/bin/go version
+/tmp/forgejo-v17-toolchain/go/bin/gofmt -d tests/integration/merge_whitelist_branch_rename_bypass_poc_test.go
+GOTOOLCHAIN=local GOPROXY=off /tmp/forgejo-v17-toolchain/go/bin/go test -tags sqlite ./tests/integration -run '^TestPOCMergeWhitelistActorCanRenameProtectedBranch$' -count=1
+
+# The last command was run again with stdout/stderr redirected to this evidence folder's test.log.
