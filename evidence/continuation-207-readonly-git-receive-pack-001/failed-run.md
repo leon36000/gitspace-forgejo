@@ -1,0 +1,7 @@
+# CONTINUATION-207 / run 001 — essai inconclusif conservé
+
+Le premier essai a lancé la même tentative Git push sur l’instance privée à `/tmp/forgejo-team-review-cont207-state-001`. Il a confirmé une lecture Git authentifiée, un `git push` non nul, l’absence de la branche cible dans les readbacks et l’absence du credential dans la sortie. Il n’a pas capturé de ligne d’access log permettant d’établir le statut serveur de la route receive-pack; le validateur a donc terminé en erreur. Ce run **ne prouve pas** que Forgejo a refusé la route par HTTP 403.
+
+Cause d’instrumentation: la fixture utilisait les logs fichier au niveau Warn alors que le validateur inspectait stdout du serveur. Le run final 002 configure, uniquement dans l’app.ini privée du bac, `MODE=console` et `LEVEL=Info`, puis exige un 403 explicite dans l’access log et les readbacks sans effet. Les logs prouvent le refus sur la requête `GET` d’annonce receive-pack, pas sur un `POST /git-receive-pack`.
+
+L’état partiel est gardé dans ce dossier et l’état local en mode 0700 est conservé à `/tmp/forgejo-team-review-cont207-state-001`. `cleanup.json` confirme les processus lancés par ce harnais sortis code 0 et aucun listener résiduel. La source du runner de cet essai n’a pas été hachée séparément; l’empreinte du snapshot source construit est dans `build-provenance.json`. Aucun résultat manquant n’est inféré à partir de cette empreinte. Aucune donnée privée ou credential n’est inclus dans les artefacts.

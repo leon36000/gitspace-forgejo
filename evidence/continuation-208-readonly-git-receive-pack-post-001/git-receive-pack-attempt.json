@@ -1,0 +1,12 @@
+{
+  "authenticated_main_ref_observed": true,
+  "authenticated_read_exit_code": 0,
+  "direct_post_status": 403,
+  "push_exit_code": 128,
+  "push_output_contains_credential": false,
+  "receive_pack_advertisement_http_403_observed": true,
+  "receive_pack_post_http_403_observed": true,
+  "receive_pack_route_log_lines": 2,
+  "target_ref_absent_after": true,
+  "target_ref_absent_before": true
+}

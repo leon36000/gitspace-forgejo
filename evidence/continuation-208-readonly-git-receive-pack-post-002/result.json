@@ -1,0 +1,111 @@
+{
+  "forgejo": {
+    "binary_sha256": "e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7",
+    "commit": "unknown",
+    "version": "forgejo version 17.0.0+gitea-1.22.0 (release name 17.0.0) built with GNU Make 4.4.1, go1.26.9 : bindata, timetzdata, sqlite, sqlite_unlock_notify"
+  },
+  "llm_or_agent_invoked": false,
+  "organization": {
+    "id": 3,
+    "name": "forge-team-org",
+    "visibility": "private"
+  },
+  "pull_request": {
+    "merged": false,
+    "number": 1,
+    "state": "open"
+  },
+  "read_only_git_receive_pack_probe": {
+    "authenticated_git_read_confirmed": true,
+    "credential_absent_from_git_output": true,
+    "receive_pack_advertisement_http_status": 403,
+    "receive_pack_post_http_status": 403,
+    "target_ref_absent_after": true,
+    "target_ref_absent_before": true,
+    "write_effect": "denied"
+  },
+  "read_only_write_probe": {
+    "comments_unchanged": true,
+    "http_status": 403,
+    "probe_marker_absent": true,
+    "pull_request_binding_unchanged": true,
+    "write_effect": "denied"
+  },
+  "repository": {
+    "full_name": "forge-team-org/team-review-readback",
+    "private": true
+  },
+  "rust_reconciliation": {
+    "canonical_state": {
+      "base_sha": "a857bfa17147f93dc19320b474a94540ec4dd998",
+      "comment": null,
+      "head_sha": "afe5c8e4786738db2fab0eae1d5f7ce6f846945a",
+      "html_url": "http://127.0.0.1:3130/forge-team-org/team-review-readback/pulls/1",
+      "merge_commit_sha": null,
+      "merged": false,
+      "requested_reviewers": [],
+      "requested_reviewers_teams": [
+        {
+          "id": 2,
+          "name": "reviewers"
+        }
+      ],
+      "state": "open",
+      "updated_at": "2026-10-27T05:38:15-04:00",
+      "work_item_content": {
+        "body": "Disposable local API integration fixture.",
+        "source": "current_forgejo_pull_request_api",
+        "title": "Verify organization team reviewer readback",
+        "trust": "untrusted_user_content"
+      }
+    },
+    "exit_status": 0,
+    "inbox_unchanged_by_read": true,
+    "invoked": true,
+    "read_only_credential_scopes": [
+      "read:user",
+      "read:repository",
+      "read:issue"
+    ],
+    "resource": {
+      "kind": "pull_request",
+      "number": 1,
+      "owner": "forge-team-org",
+      "repository": "team-review-readback"
+    },
+    "verdict": "current_state_read"
+  },
+  "schema_version": 1,
+  "scope": "forgejo_live_webhook_receiver_and_rust_read_only_reconciliation_cli",
+  "team": {
+    "id": 2,
+    "includes_all_repositories": true,
+    "name": "reviewers",
+    "reviewer_member_added": true
+  },
+  "team_review_request": {
+    "http_status": 201,
+    "readback": [
+      {
+        "id": 2,
+        "name": "reviewers"
+      }
+    ]
+  },
+  "verdict": "passed",
+  "webhook": {
+    "active_loopback_target_readback": true,
+    "hook_id": 1,
+    "journal_record": {
+      "action": "review_requested",
+      "base_sha": "a857bfa17147f93dc19320b474a94540ec4dd998",
+      "delivery_id": "61226098-d6dd-4e90-9650-c8daf2938706",
+      "event": "pull_request",
+      "head_sha": "afe5c8e4786738db2fab0eae1d5f7ce6f846945a",
+      "pull_request_number": 1,
+      "requested_team": null,
+      "sequence": 1
+    },
+    "receiver_invoked": true
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "platform": "linux",
+  "python": "3.12.3",
+  "stage": "probe_read_only_git_receive_pack_write_refusal",
+  "state_dir": "/tmp/forgejo-team-review-cont207-state-001",
+  "state_dir_mode": "0700"
+}

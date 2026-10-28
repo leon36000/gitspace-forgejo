@@ -1,0 +1,16 @@
+{
+  "authenticated_main_ref_observed": true,
+  "authenticated_read_exit_code": 0,
+  "empty_flush_post_status": 403,
+  "push_exit_code": 128,
+  "push_output_contains_credential": false,
+  "receive_pack_advertisement_http_403_observed": true,
+  "receive_pack_post_http_403_observed": true,
+  "receive_pack_route_log_lines": 3,
+  "target_ref_absent_after": true,
+  "target_ref_absent_before": true,
+  "valid_push_pack_bytes": 321,
+  "valid_push_pack_sha256": "80ce339c66400b8e902cc00b8791afe9af328a8eb0b54439da9114e8929d95bd",
+  "valid_push_packet_bytes": 468,
+  "valid_push_post_status": 403
+}

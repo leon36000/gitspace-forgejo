@@ -1,0 +1,3 @@
+# Reproduction attempt 001 — wrapper input error
+
+The first offline pack reproduction wrapper exited 1 because its `git pack-objects --stdout --revs` subprocess returned 128. It supplied the commit revision with an over-escaped newline, so Git did not receive the same newline-terminated revision input. The failed stdout log is preserved as the empty `pack-reproduction-final.log`; it is not used as evidence. A corrected invocation is preserved in `pack-reproduction-retry-002.log`; it matches the live pack SHA-256, byte count, new OID and full request SHA-256. This wrapper error does not change the already completed Forgejo run, whose own invocation returned 403 and passed its ref readback.

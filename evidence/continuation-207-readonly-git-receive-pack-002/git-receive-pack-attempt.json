@@ -1,0 +1,10 @@
+{
+  "authenticated_main_ref_observed": true,
+  "authenticated_read_exit_code": 0,
+  "push_exit_code": 128,
+  "push_output_contains_credential": false,
+  "receive_pack_http_403_observed": true,
+  "receive_pack_route_log_lines": 1,
+  "target_ref_absent_after": true,
+  "target_ref_absent_before": true
+}

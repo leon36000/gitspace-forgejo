@@ -1,0 +1,13 @@
+# Parcours TDD
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest -v tests.test_forgejo_live_org_team_reviewer_readback.ValidateReadOnlyGitReceivePackProbeTests
+# avant implémentation : code 1, direct_post_status inattendu; après : 2/2 pass
+
+# Vérifications finales
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -p 'test_forgejo_live_org_team_reviewer_readback.py' -v
+PYTHONPYCACHEPREFIX=/tmp/cont208b-pycache python3 -m py_compile scripts/run_forgejo_live_org_team_reviewer_readback.py tests/test_forgejo_live_org_team_reviewer_readback.py
+python3 scripts/verify_cargo_license_state.py
+python3 -m unittest -v scripts.test_cargo_license_state
+cargo metadata --locked --offline --format-version 1 --no-deps
+git diff --check
+
+# Run live final : voir le bloc de commande dans local-run.md

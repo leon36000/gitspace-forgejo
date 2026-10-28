@@ -1,0 +1,10 @@
+# Run Forgejo live avec POST direct valide construit localement
+python3 scripts/run_forgejo_live_org_team_reviewer_readback.py --forgejo-binary /tmp/forgejo-17.0.0 --state-dir /tmp/forgejo-team-review-cont209-state-001 --evidence-dir evidence/continuation-209-valid-receive-pack-write-refusal-001 --probe-read-only-git-write
+
+# Tests finaux
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -p 'test_forgejo_live_org_team_reviewer_readback.py' -v
+PYTHONPYCACHEPREFIX=/tmp/cont209-final-pycache python3 -m py_compile scripts/run_forgejo_live_org_team_reviewer_readback.py tests/test_forgejo_live_org_team_reviewer_readback.py
+python3 scripts/verify_cargo_license_state.py
+python3 -m unittest -v scripts.test_cargo_license_state
+cargo metadata --locked --offline --format-version 1 --no-deps
+git diff --check

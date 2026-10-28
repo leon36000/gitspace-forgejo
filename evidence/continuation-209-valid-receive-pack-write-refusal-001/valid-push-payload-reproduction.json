@@ -1,0 +1,9 @@
+{
+  "git_pack_reproduction_matches_live_run": true,
+  "new_oid": "df68c71d0fe68aa8a24f2044f183913acefd3ae7",
+  "pack_bytes": 321,
+  "pack_sha256": "80ce339c66400b8e902cc00b8791afe9af328a8eb0b54439da9114e8929d95bd",
+  "request_bytes": 468,
+  "request_sha256": "2f05fbc27ad26d350118687ee821e437fd0c48431c086f1125418f578a3409c4",
+  "target_ref": "refs/heads/agent/read-only-git-write-probe"
+}

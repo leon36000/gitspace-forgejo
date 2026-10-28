@@ -1,0 +1,13 @@
+{
+  "authenticated_git_read_confirmed": true,
+  "credential_absent_from_git_output": true,
+  "git_push_exit_code": 128,
+  "git_read_exit_code": 0,
+  "git_read_main_ref_observed": true,
+  "receive_pack_http_status": 403,
+  "repository": "forge-team-org/team-review-readback",
+  "target_branch": "agent/read-only-git-write-probe",
+  "target_ref_absent_after": true,
+  "target_ref_absent_before": true,
+  "write_effect": "denied"
+}

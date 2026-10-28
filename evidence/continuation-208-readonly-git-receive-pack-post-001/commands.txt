@@ -1,0 +1,4 @@
+# Commande de caractérisation initiale
+python3 scripts/run_forgejo_live_org_team_reviewer_readback.py --forgejo-binary /tmp/forgejo-17.0.0 --state-dir /tmp/forgejo-team-review-cont208-state-001 --evidence-dir evidence/continuation-208-readonly-git-receive-pack-post-001 --probe-read-only-git-write
+
+Le statut direct POST `403` est conservé dans `git-receive-pack-write-probe.json` et `result.json`. L’implémentation de transport de ce run est remplacée par la version loopback stricte du run 002.

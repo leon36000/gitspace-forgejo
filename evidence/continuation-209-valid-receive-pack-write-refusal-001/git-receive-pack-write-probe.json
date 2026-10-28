@@ -1,0 +1,20 @@
+{
+  "authenticated_git_read_confirmed": true,
+  "credential_absent_from_git_output": true,
+  "direct_empty_flush_post_http_status": 403,
+  "direct_valid_push_post_http_status": 403,
+  "empty_flush_post_http_status": 403,
+  "git_push_exit_code": 128,
+  "git_read_exit_code": 0,
+  "git_read_main_ref_observed": true,
+  "receive_pack_advertisement_http_status": 403,
+  "repository": "forge-team-org/team-review-readback",
+  "target_branch": "agent/read-only-git-write-probe",
+  "target_ref_absent_after": true,
+  "target_ref_absent_before": true,
+  "valid_push_pack_bytes": 321,
+  "valid_push_pack_sha256": "80ce339c66400b8e902cc00b8791afe9af328a8eb0b54439da9114e8929d95bd",
+  "valid_push_packet_bytes": 468,
+  "valid_push_post_http_status": 403,
+  "write_effect": "denied"
+}
