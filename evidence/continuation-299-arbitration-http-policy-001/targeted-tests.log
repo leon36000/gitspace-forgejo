@@ -1,0 +1,132 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.03s
+     Running unittests src/bin/forgejo-mission-local.rs (target/debug/deps/forgejo_mission_local-5207f0c68a40622b)
+
+running 43 tests
+test tests::branch_snapshot_preserves_the_protection_flag_and_requires_a_full_commit ... ok
+test tests::current_issue_context_preserves_null_and_omits_missing_or_over_budget_body ... ok
+test tests::context_packet_pins_requirement_and_source_bytes_to_one_commit ... ok
+test tests::duration_context_extraction_does_not_match_a_prefix_function_name ... ok
+test tests::duration_context_extraction_accepts_multiline_signatures_and_ignores_signature_comments ... ok
+test tests::duration_context_extraction_ignores_braces_inside_strings_and_comments ... ok
+test tests::duration_context_extraction_ignores_items_inside_macro_token_groups ... ok
+test tests::duration_context_extraction_ignores_a_commented_enum_decoy ... ok
+test tests::duration_context_extraction_skips_a_function_declaration_inside_a_block_comment ... ok
+test tests::issue_snapshot_rejects_a_canonical_url_from_another_repository ... ok
+test tests::host_forgejo_token_is_bounded_and_curl_header_is_stdin_only ... ok
+test tests::loopback_arbitration_source_refuses_scope_mismatch_before_network_access ... ok
+test tests::issue_snapshot_requires_the_canonical_url_and_supported_state ... ok
+test tests::fixed_inbox_must_already_be_a_private_receiver_journal ... ok
+test tests::delivery_attestation_policy_requires_unique_canonical_ed25519_keys ... ok
+test tests::mission_012_context_extracts_and_cites_the_pinned_clamp_function ... ok
+test tests::mission_arguments_require_a_stable_allocation_id_instead_of_a_generation_number ... ok
+test tests::mission_cli_does_not_accept_an_agent_selected_arbitration_policy_path ... ok
+test tests::mission_profile_selection_binds_the_issue_requirement_and_workspace ... ok
+test tests::delivery_mode_requires_a_host_pinned_requirement_digest_and_one_safe_delivery ... ok
+test tests::requirement_paths_cannot_escape_the_fixed_namespace ... ok
+test tests::requirement_tree_limit_is_reported_as_a_bounded_refusal ... ok
+test tests::host_credential_file_requires_private_regular_file_and_never_echoes_value ... ok
+test tests::requirement_tree_rejects_symlinked_or_nested_requirement_json ... ok
+test tests::host_arbitration_policy_loader_uses_fixed_profile_path_and_private_scope_binding ... ok
+test tests::mission_arguments_reject_duplicate_host_bindings ... ok
+test tests::delivery_admission_refuses_a_missing_delivery_before_any_forgejo_read ... ok
+test tests::raw_requirement_read_pins_commit_and_preserves_duplicate_json_fields ... ok
+test tests::oversized_raw_requirement_response_is_non_retryable_invalid_response ... ok
+test tests::branch_api_rejects_duplicate_protected_field_before_admission ... ok
+test tests::loopback_arbitration_source_rejects_pull_request_from_another_repository ... ok
+test tests::mission_journal_path_is_anchored_to_the_checkout ... ok
+test tests::delivery_admission_refuses_a_pull_request_event_before_any_forgejo_read ... ok
+test tests::delivery_admission_uses_current_forgejo_state_and_refuses_a_closed_issue ... ok
+test tests::delivery_admission_refuses_a_stale_requirement_digest_before_allocation ... ok
+test tests::loopback_arbitration_source_binds_pr_and_collects_all_review_pages_from_headers ... ok
+test tests::requirement_tree_pagination_must_be_complete_and_ordered ... ok
+test tests::loopback_arbitration_source_rejects_missing_or_duplicated_total_count ... ok
+test tests::loopback_arbitration_source_rejects_changed_total_and_oversized_review_count ... ok
+test tests::raw_requirement_reader_uses_http_status_before_body_utf8 ... ok
+test tests::non_utf8_raw_requirement_through_http_source_refuses_admission_before_claim ... ok
+test tests::delivery_admission_refuses_another_issue_or_repository_before_any_forgejo_read ... ok
+test tests::delivery_admission_resumes_one_allocation_for_duplicate_and_replayed_deliveries ... ok
+
+test result: ok. 43 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+     Running tests/agent_runtime_contract.rs (target/debug/deps/agent_runtime_contract-63c65ec9a52b9cd0)
+
+running 12 tests
+test request_validation_binds_the_requirements_document_to_its_hash ... ok
+test request_validation_rejects_invalid_or_unlinked_context_citations ... ok
+test request_validation_rejects_nonportable_or_non_normalized_paths ... ok
+test fixture_runtime_rejects_context_from_another_base_before_tool_use ... ok
+test untrusted_current_issue_context_is_bounded_hashed_and_separate_from_requirements ... ok
+test claim_of_superseded_generation_is_rejected ... ok
+test replay_of_claimed_generation_remains_idempotent_after_newer_allocation ... ok
+test superseded_generation_replay_after_reopen_is_idempotent_but_cannot_be_leased ... ok
+test result_from_an_earlier_generation_is_rejected_when_mission_id_is_stable ... ok
+test fixture_runtime_consumes_context_calls_tools_and_runs_generated_code_idempotently ... ok
+test runtime_claimed_zero_usage_is_not_a_host_usage_receipt ... ok
+test fixture_tool_port_denies_unlisted_tools_and_enforces_call_budget ... ok
+
+test result: ok. 12 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.21s
+
+     Running tests/mission_admission_contract.rs (target/debug/deps/mission_admission_contract-5c6b290004bd3cb2)
+
+running 19 tests
+test issue_body_is_not_part_of_the_binding_contract ... ok
+test duplicate_acceptance_json_field_is_refused_before_generation_allocation ... ok
+test duplicate_requirement_binding_is_refused_before_generation_allocation ... ok
+test invalid_utf8_requirement_is_refused_before_generation_allocation ... ok
+test malformed_unrelated_requirement_blocks_uniqueness_decision ... ok
+test requirement_issue_binding_is_checked_before_generation_allocation ... ok
+test incomplete_requirement_inventory_is_refused_before_generation_allocation ... ok
+test version_2_rejects_invalid_allocation_ids_before_reading_the_source ... ok
+test legacy_and_unbound_requirement_documents_are_not_admitted ... ok
+test secondary_v2_requirement_without_issue_binding_blocks_allocation ... ok
+test unresolved_human_ambiguity_refuses_admission_before_generation_allocation ... ok
+test admission_refuses_untrusted_or_stale_bindings_before_claiming ... ok
+test failed_context_validation_can_resume_with_the_same_reserved_generation ... ok
+test issue_context_that_does_not_fit_the_token_budget_is_omitted ... ok
+test explicit_host_binding_loads_exact_requirement_from_protected_commit_and_claims_it ... ok
+test duplicate_delivery_or_fresh_uuid_replay_claims_the_same_semantic_mission_once ... ok
+test admission_attaches_current_issue_text_without_changing_protected_requirements ... ok
+test changed_protected_requirement_revision_creates_a_distinct_claim_identity ... ok
+test version_2_admission_allocates_generation_and_recovers_the_same_allocation ... ok
+
+test result: ok. 19 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running tests/mission_requirement_arbitration_contract.rs (target/debug/deps/mission_requirement_arbitration_contract-f25252c684e98e61)
+
+running 12 tests
+test schema_v2_admission_cannot_bypass_the_schema_v3_review_gate ... ok
+test duplicated_review_identity_refuses_the_complete_snapshot ... ok
+test changed_review_pages_between_complete_reads_refuse_admission ... ok
+test stale_or_missing_pr_merge_bytes_refuse_before_generation_allocation ... ok
+test incomplete_review_pages_refuse_even_when_the_visible_page_has_approval ... ok
+test unmerged_source_pr_refuses_even_when_its_review_is_approved ... ok
+test host_arbitration_policy_for_another_fixed_scope_refuses_before_allocation ... ok
+test stale_policy_digest_refuses_before_any_generation_is_allocated ... ok
+test stale_review_on_an_old_pr_head_does_not_authorize_the_decision ... ok
+test missing_authorized_review_refuses_before_generation_allocation ... ok
+test pr_ref_change_during_review_pagination_makes_the_decision_inconclusive ... ok
+test merged_requirement_pr_and_current_authorized_review_are_recorded_before_admission ... ok
+
+test result: ok. 12 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests/webhook_mission_admission_contract.rs (target/debug/deps/webhook_mission_admission_contract-e182f8b9a8dc0cf6)
+
+running 15 tests
+test generic_journal_apis_cannot_forge_webhook_inbox_events ... ok
+test ordinary_issue_comment_cannot_create_mission_from_comment_text ... ok
+test pull_request_conversation_comment_cannot_create_mission_from_comment_text ... ok
+test pull_request_notification_cannot_create_issue_admission ... ok
+test host_binding_for_another_issue_is_rejected_before_admission ... ok
+test adapter_with_another_canonical_origin_is_rejected_before_api_read ... ok
+test closed_reconciled_issue_is_rejected_before_mission_admission ... ok
+test issue_from_another_repository_is_rejected_even_when_its_api_url_is_canonical ... ok
+test admission_rechecks_open_issue_after_reconciliation_to_close_the_stale_read_gap ... ok
+test webhook_event_lookup_refuses_incomplete_tail_without_repairing_inbox ... ok
+test same_revision_with_changed_requirement_bytes_is_rejected_before_allocation ... ok
+test reconciled_open_issue_uses_host_binding_and_ignores_delivery_id_and_payload_state ... ok
+test signed_http_delivery_replays_reconciles_then_admits_and_resumes_idempotently ... ok
+test a_new_delivery_id_for_the_same_issue_reuses_the_host_allocation_and_claim ... ok
+test webhook_source_receipt_revalidates_exact_event_without_changing_stable_handoff ... ok
+
+test result: ok. 15 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+

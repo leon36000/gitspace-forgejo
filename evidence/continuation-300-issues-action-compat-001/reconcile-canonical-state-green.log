@@ -1,0 +1,10 @@
+$ cargo test --locked --offline --test webhook_reconcile_contract forgejo_issue_label_action_reconciles_from_current_api_state
+exit=0
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.03s
+     Running tests/webhook_reconcile_contract.rs (target/debug/deps/webhook_reconcile_contract-3ce6f937d5fb0c8e)
+
+running 1 test
+test forgejo_issue_label_action_reconciles_from_current_api_state ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 79 filtered out; finished in 0.00s
+

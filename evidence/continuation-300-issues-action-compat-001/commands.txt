@@ -1,0 +1,25 @@
+# Commandes exécutées pour CONTINUATION-300
+
+Rouges avant modification (exit 101 attendu) :
+- cargo test --locked --offline --test webhook_handler_contract issues_ingestion_requires_a_supported_forgejo_action_without_journaling_invalid_payloads
+- cargo test --locked --offline --test webhook_handler_contract capabilities_publish_machine_readable_contracts_for_every_supported_event
+- cargo test --locked --offline --test webhook_reconcile_contract issues_events_require_a_supported_forgejo_action
+- cargo test --locked --offline --test forgejo_reconcile_capabilities_e2e actual_cli_discloses_versioned_local_test_capabilities
+
+Ciblées vertes :
+- mêmes quatre tests ci-dessus
+- cargo test --locked --offline --test webhook_reconcile_contract forgejo_issue_label_action_reconciles_from_current_api_state
+- cargo test --locked --offline --test webhook_receiver_process_e2e capabilities_endpoint_describes_the_versioned_webhook_contract_without_mutating_inbox
+- cargo test --locked --offline --test webhook_receiver_process_e2e actual_receiver_rejects_invalid_issue_actions_before_append_and_accepts_forgejo_v17_actions
+
+Vérification finale :
+- cargo test --locked --offline --all-targets
+- cargo check --locked --offline --all-targets
+- cargo fmt --all -- --check
+- git diff --check
+- python3 scripts/verify_cargo_license_state.py
+
+Audit amont ciblé :
+- git -C /tmp/forgejo-v17-base-cas-poc rev-parse HEAD
+- git -C /tmp/forgejo-v17-base-cas-poc diff --exit-code HEAD -- services/webhook/notifier.go models/webhook/webhook.go modules/webhook/type.go modules/structs/hook.go
+- sha256sum sur ces quatre fichiers

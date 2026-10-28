@@ -1,0 +1,5 @@
+rustc 1.95.0 (59807616e 2026-04-14)
+cargo 1.95.0 (f2d3ce0bd 2026-03-21)
+Linux gx10-e526 7.0.0-1019-nvidia #19~24.04.2-Ubuntu SMP PREEMPT_DYNAMIC Sun Sep  6 18:35:11 UTC 2 aarch64 aarch64 aarch64 GNU/Linux
+a88cbaaf306753a0d16b3d3093b49fafbe5633e13e3c5f6eef61b7a5bdd2e21d  target/debug/forgejo-webhook-local
+2833f0e41224cbb64e5bce0edc75e383db760f57376bd80fc5cb88b6f6888c95  target/debug/deps/webhook_receiver_process_e2e-a95dae827636a64e

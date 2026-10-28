@@ -1,0 +1,7 @@
+test_successful_v3_process_and_missing_policy_refusal (__main__.MissionV3CliProcessTest.test_successful_v3_process_and_missing_policy_refusal) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 6.288s
+
+OK
+PROCESS_EVIDENCE {"accepted_exit_code": 0, "admission_schema_version": 3, "agent_runtime_invoked": false, "authorized_fixture_reviewer_ids": [9001], "binary_manifest_root": "temporary copy of Cargo.toml, Cargo.lock, src/", "fixture_only": true, "journal_unchanged_on_refusal": true, "missing_policy_error": "mission_arbitration_policy_missing", "missing_policy_routes": ["/api/v1/repos/forge-admin/agent-forge-core/branches/main", "/forge-admin/agent-forge-core/raw/commit/1111111111111111111111111111111111111111/requirements/REQ-001.json"], "requirement_sha256": "13e235d9e33949921e804adde4d53bfd53b87989a3e2413399e54d9a97297b24", "review_snapshot_reads": {"pull_request": 2, "reviews": 2}, "schema_version": 1, "synthetic_ids_are_not_human_identity_evidence": true, "temporary_source_change": "fixed profile origin changed only to this test's ephemeral loopback port", "test_profile_origin": "http://127.0.0.1:34551"}

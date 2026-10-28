@@ -1,0 +1,8 @@
+test_successful_v3_process_and_missing_policy_refusal (__main__.MissionV3CliProcessTest.test_successful_v3_process_and_missing_policy_refusal) ... skipped 'fixed fixture loopback port 3130 is occupied: [Errno 98] Address already in use'
+<frozen posixpath>:82: ResourceWarning: unclosed <socket.socket fd=3, family=2, type=1, proto=0, laddr=('0.0.0.0', 0)>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+
+----------------------------------------------------------------------
+Ran 1 test in 6.460s
+
+OK (skipped=1)

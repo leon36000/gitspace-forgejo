@@ -1,0 +1,20 @@
+Forgejo official source checkout: /tmp/forgejo-v17-base-cas-poc
+Claimed official release: v17.0.0
+Verified local HEAD: 0d791421f85ca13a63b665053d81ea765fbbc571
+Targeted files clean versus HEAD: git diff --exit-code returned 0.
+Scope: 4 files; EventCheckers, HookEventType.Event, four issue notifier paths, HookIssueAction/IssuePayload. No Go tests or Forgejo server run.
+
+SHA-256:
+a67cca36f92104efe0feabf0c62e668e7543b979e5a7440e713ce93dd490004f  services/webhook/notifier.go
+b9aa14aef0e51db99556ca9c953fa8510e104eb02e8b857161b1cdfaabe9f4a6  models/webhook/webhook.go
+ca6a94e1574be77bc4f5da1ee01a3e59147a148342b958577d12544dbd6d820c  modules/webhook/type.go
+42f951d98dbea6b78e70e595b8c2cc0f5931bee2d96b837d8d4e8f034b015a12  modules/structs/hook.go
+
+Observed mapping:
+- EventCheckers lines 388-391 subscribes to issues/assign/label/milestone independently.
+- HookEventType.Event lines 66-67 maps all four categories to `issues`.
+- IssueChangeAssignee lines 145-185 emits assigned/unassigned.
+- IssueClearLabels lines 42-76 emits label_cleared.
+- IssueChangeLabels lines 515-559 emits label_updated.
+- IssueChangeMilestone lines 561-601 emits milestoned/demilestoned.
+- HookIssueAction lines 289-323 includes both issue and PR-related enum values; enum membership alone does not assign an action to a wire event.

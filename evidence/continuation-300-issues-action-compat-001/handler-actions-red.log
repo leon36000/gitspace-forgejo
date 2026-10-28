@@ -1,0 +1,25 @@
+$ cargo test --locked --offline --test webhook_handler_contract issues_ingestion_requires_a_supported_forgejo_action_without_journaling_invalid_payloads
+exit=101
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+     Running tests/webhook_handler_contract.rs (target/debug/deps/webhook_handler_contract-3f813c02b258e567)
+
+running 1 test
+test issues_ingestion_requires_a_supported_forgejo_action_without_journaling_invalid_payloads ... FAILED
+
+failures:
+
+---- issues_ingestion_requires_a_supported_forgejo_action_without_journaling_invalid_payloads stdout ----
+
+thread 'issues_ingestion_requires_a_supported_forgejo_action_without_journaling_invalid_payloads' (2826620) panicked at tests/webhook_handler_contract.rs:613:9:
+assertion `left == right` failed: Forgejo issues action assigned
+  left: 400
+ right: 202
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    issues_ingestion_requires_a_supported_forgejo_action_without_journaling_invalid_payloads
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 28 filtered out; finished in 0.01s
+
+error: test failed, to rerun pass `--test webhook_handler_contract`

@@ -1,0 +1,1 @@
+{"bwrap": "bubblewrap 0.9.0", "candidate_exit_code": 0, "candidate_stderr": "", "host_policy_exists": true, "limit": "same-uid processes outside this namespace are not isolated by this bind layout", "probe": "sandbox mounts candidate_dir only and cannot stat the host policy path", "status": "passed"}

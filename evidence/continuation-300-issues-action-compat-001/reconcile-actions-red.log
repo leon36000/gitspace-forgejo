@@ -1,0 +1,23 @@
+$ cargo test --locked --offline --test webhook_reconcile_contract issues_events_require_a_supported_forgejo_action
+exit=101
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.01s
+     Running tests/webhook_reconcile_contract.rs (target/debug/deps/webhook_reconcile_contract-3ce6f937d5fb0c8e)
+
+running 1 test
+test issues_events_require_a_supported_forgejo_action ... FAILED
+
+failures:
+
+---- issues_events_require_a_supported_forgejo_action stdout ----
+
+thread 'issues_events_require_a_supported_forgejo_action' (2826632) panicked at tests/webhook_reconcile_contract.rs:1341:40:
+called `Result::unwrap()` on an `Err` value: InvalidEventPayloadField("action")
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    issues_events_require_a_supported_forgejo_action
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 78 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `--test webhook_reconcile_contract`

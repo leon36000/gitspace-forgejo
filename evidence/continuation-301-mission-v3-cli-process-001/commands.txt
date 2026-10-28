@@ -1,0 +1,17 @@
+Base examined: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0 (dirty working tree; no new commit)
+
+Process fixture:
+  python3 -m py_compile tests/test_mission_requirement_arbitration_cli_process.py
+  python3 tests/test_mission_requirement_arbitration_cli_process.py -v
+  Temporary package build inside the test:
+    cargo build --locked --offline --bin forgejo-mission-local
+  CLI invocation inside the test:
+    forgejo-mission-local --profile duration-parser --issue 41 --requirement REQ-001 --revision 1 --allocation-id fixture-allocation-001 --workspace-id local-demo
+  Refusal invocations repeat with allocation IDs fixture-allocation-002 (policy absent) and fixture-allocation-003 (reviewer 9002 not allowlisted).
+
+Focused current worktree verification:
+  cargo test --locked --offline --bin forgejo-mission-local
+  cargo fmt --all -- --check
+  git diff --check
+  python3 scripts/verify_cargo_license_state.py
+  sha256sum -c evidence/continuation-301-mission-v3-cli-process-001/source-sha256.txt

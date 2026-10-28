@@ -1,0 +1,6 @@
+test_successful_v3_process_and_missing_policy_refusal (__main__.MissionV3CliProcessTest.test_successful_v3_process_and_missing_policy_refusal) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 5.984s
+
+OK

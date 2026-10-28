@@ -1,0 +1,16 @@
+Command:
+cargo test --locked --offline --test webhook_reconcile_contract issue_and_pull_request_root_numbers_must_match_nested_numbers -- --exact
+
+Expected pre-fix result: exit 101. The issue branch silently selected nested issue number 41 despite root number 42:
+
+running 1 test
+test issue_and_pull_request_root_numbers_must_match_nested_numbers ... FAILED
+
+---- issue_and_pull_request_root_numbers_must_match_nested_numbers stdout ----
+thread 'issue_and_pull_request_root_numbers_must_match_nested_numbers' panicked at tests/webhook_reconcile_contract.rs:1385:5:
+assertion left == right failed
+  left: Ok(ResourceRef { kind: Issue, owner: "forge-admin", repository: "agent-forge-core", id: Number(41) })
+ right: Err(ResourceMismatch)
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 80 filtered out
+error: test failed, to rerun pass to see this output

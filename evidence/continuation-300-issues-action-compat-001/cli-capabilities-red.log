@@ -1,0 +1,26 @@
+$ cargo test --locked --offline --test forgejo_reconcile_capabilities_e2e actual_cli_discloses_versioned_local_test_capabilities
+exit=101
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.51s
+     Running tests/forgejo_reconcile_capabilities_e2e.rs (target/debug/deps/forgejo_reconcile_capabilities_e2e-c64f35efa7049e66)
+
+running 1 test
+test actual_cli_discloses_versioned_local_test_capabilities ... FAILED
+
+failures:
+
+---- actual_cli_discloses_versioned_local_test_capabilities stdout ----
+
+thread 'actual_cli_discloses_versioned_local_test_capabilities' (2826751) panicked at tests/forgejo_reconcile_capabilities_e2e.rs:293:5:
+assertion `left == right` failed
+  left: Number(18)
+ right: 19
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    actual_cli_discloses_versioned_local_test_capabilities
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 6 filtered out; finished in 0.01s
+
+error: test failed, to rerun pass `--test forgejo_reconcile_capabilities_e2e`

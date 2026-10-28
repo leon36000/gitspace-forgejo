@@ -1,0 +1,4 @@
+Linux aarch64
+Worktree HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+Worktree état: fortement modifié; aucune réinitialisation, suppression, commit ou publication dans ce lot.
+Scratch Forgejo: /tmp/forgejo-v17-base-cas-poc, lui-même modifié par des POC antérieurs; les quatre fichiers source ciblés sont sans diff au HEAD audité.
