@@ -1,0 +1,135 @@
+{
+  "acceptance_sha256": "5d4727542ea32f61aa4500754556fcfd1f39b59b4131ede257cb736fab231dc2",
+  "base": {
+    "exit_code": 101,
+    "expected_failure": true,
+    "output_sha256": "f88187c14c23d4207460bd82507a58cb4fb9b78b5ea9345b1dd84c91f304e4c5"
+  },
+  "base_commit": "3913109befe490dc3d221b0ae90e372404943f0b",
+  "candidate": {
+    "acceptance_pass": true,
+    "exit_code": 0,
+    "output_sha256": "0c1c13778d07a3cc85b98ce897b2449832aa102b60fd7100c2ba9d2392e2beab"
+  },
+  "candidate_commit": "f6349a764e674fd8f8bda03c4bb165f80ea867c9",
+  "candidate_source_sha256": "173304ad7d32aabc1e8e1ee41eabda3398a8690798e68f906bcebc73cbcd6d15",
+  "changed_paths": [
+    "src/lib.rs"
+  ],
+  "cpu_accounting": {
+    "charged_cpu_measurement": "conservative upper bound from wall time multiplied by enforced CPUQuota, plus host margin, capped at reservation",
+    "final_ledger": {
+      "charged_cpu_ms": 12658,
+      "mission_cpu_budget_ms": 1200000,
+      "mission_id": "mission-v1-94c26001d4370e63d3637fd5c06ef13f0496424a39a74bf498b7512b7d2b37b5",
+      "policy_sha256": "f73785cb8eade278f2c14677c633ee34c391f2a7d7ff55e9e3e02a04b9307a50",
+      "remaining_cpu_ms": 1187342,
+      "reservations": [
+        {
+          "charged_cpu_ms": 2522,
+          "reservation_id": "verifier-08b228a4e95690f35a0b2452e4c628f8cd6cae1b6fede7c662bc91c2722e8cd0",
+          "reserved_cpu_ms": 240000,
+          "resolved": true
+        },
+        {
+          "charged_cpu_ms": 2526,
+          "reservation_id": "verifier-554d83a12a715e3170624f8126b47d0dd4b0253518105d213dfd18140e9d14d5",
+          "reserved_cpu_ms": 240000,
+          "resolved": true
+        },
+        {
+          "charged_cpu_ms": 2482,
+          "reservation_id": "pr-base-red-75b7ab4176e541d51984e558e6121678",
+          "reserved_cpu_ms": 240000,
+          "resolved": true
+        },
+        {
+          "charged_cpu_ms": 2564,
+          "reservation_id": "pr-candidate-green-c2e5330e5b09297067e4ff5e73900081",
+          "reserved_cpu_ms": 240000,
+          "resolved": true
+        },
+        {
+          "charged_cpu_ms": 2564,
+          "reservation_id": "pr-premerge-green-94708e3adfbf62498e979ac3bf1eb237",
+          "reserved_cpu_ms": 240000,
+          "resolved": true
+        }
+      ]
+    },
+    "mission_cpu_budget_ms": 1200000,
+    "policy_sha256": "f73785cb8eade278f2c14677c633ee34c391f2a7d7ff55e9e3e02a04b9307a50",
+    "source": "mission execution journal; reservations and resolutions produced by the admission-provenance MCP host binary",
+    "steps": [
+      {
+        "accounting_elapsed_ms": 241,
+        "base_commit": "3913109befe490dc3d221b0ae90e372404943f0b",
+        "candidate_commit": "f6349a764e674fd8f8bda03c4bb165f80ea867c9",
+        "charged_cpu_upper_bound_ms": 2482,
+        "exit_code": 101,
+        "expected_failure": {
+          "actual": "-2",
+          "assertion": "assertion `left == right` failed",
+          "expected": "10",
+          "summary": "1 passed; 1 failed",
+          "test_name": "values_outside_the_range_clamp_to_the_nearest_boundary"
+        },
+        "output_sha256": "f88187c14c23d4207460bd82507a58cb4fb9b78b5ea9345b1dd84c91f304e4c5",
+        "output_truncated": false,
+        "policy_sha256": "f73785cb8eade278f2c14677c633ee34c391f2a7d7ff55e9e3e02a04b9307a50",
+        "reservation_id": "pr-base-red-75b7ab4176e541d51984e558e6121678",
+        "reserved_cpu_ms": 240000,
+        "sandbox_elapsed_ms": 241,
+        "stage": "base-red",
+        "tested_commit": "3913109befe490dc3d221b0ae90e372404943f0b",
+        "timed_out": false
+      },
+      {
+        "accounting_elapsed_ms": 282,
+        "base_commit": "3913109befe490dc3d221b0ae90e372404943f0b",
+        "candidate_commit": "f6349a764e674fd8f8bda03c4bb165f80ea867c9",
+        "charged_cpu_upper_bound_ms": 2564,
+        "exit_code": 0,
+        "expected_failure": null,
+        "output_sha256": "0c1c13778d07a3cc85b98ce897b2449832aa102b60fd7100c2ba9d2392e2beab",
+        "output_truncated": false,
+        "policy_sha256": "f73785cb8eade278f2c14677c633ee34c391f2a7d7ff55e9e3e02a04b9307a50",
+        "reservation_id": "pr-candidate-green-c2e5330e5b09297067e4ff5e73900081",
+        "reserved_cpu_ms": 240000,
+        "sandbox_elapsed_ms": 281,
+        "stage": "candidate-green",
+        "tested_commit": "f6349a764e674fd8f8bda03c4bb165f80ea867c9",
+        "timed_out": false
+      },
+      {
+        "accounting_elapsed_ms": 282,
+        "base_commit": "3913109befe490dc3d221b0ae90e372404943f0b",
+        "candidate_commit": "f6349a764e674fd8f8bda03c4bb165f80ea867c9",
+        "charged_cpu_upper_bound_ms": 2564,
+        "exit_code": 0,
+        "expected_failure": null,
+        "output_sha256": "a5705fb3a6123ff466be24aca4934b6936f9558b086baf0499c6571f8a74b645",
+        "output_truncated": false,
+        "policy_sha256": "f73785cb8eade278f2c14677c633ee34c391f2a7d7ff55e9e3e02a04b9307a50",
+        "reservation_id": "pr-premerge-green-94708e3adfbf62498e979ac3bf1eb237",
+        "reserved_cpu_ms": 240000,
+        "sandbox_elapsed_ms": 281,
+        "stage": "premerge-green",
+        "tested_commit": "f6349a764e674fd8f8bda03c4bb165f80ea867c9",
+        "timed_out": false
+      }
+    ],
+    "verifier_binary_sha256": "4cf4bd91bc95835ea7b9bc2576b98139b70cb3ea863494315a97f956fff11aa7"
+  },
+  "environment": "trusted Rust host; systemd CPU/memory/task/deadline scope; Bubblewrap user/mount/PID/network namespaces with nested user namespaces disabled; commit snapshot read-only; fresh tmpfs Cargo target; host home and credentials absent; offline locked Cargo",
+  "limitation": "This minimal Forgejo fixture does not version policy/active.json or policy v4, so the verifier binds the pinned requirement and policy hashes from the host-owned admission fixture while testing the exact PR commits. CPU accounting is a conservative upper bound derived from the enforced cgroup quota and elapsed wall time, not direct cgroup CPU telemetry.",
+  "merge_gate_policy_revision": 4,
+  "merge_gate_policy_sha256": "be5510865d791ceab8de3b2d44fb0dba4056cd3979218094b083ac33a9fce2c0",
+  "policy_sha256": "e23907b5bd6b2c0f342c88ddcfa9f9a9be98065adcd24f9f7299dc796b5739eb",
+  "requirement_sha256": "3a3c444075c93a3bcfb2bec17d1a2e74ec0051effc2994e6b02ac095eb0dd431",
+  "schema_version": 1,
+  "source": "Forgejo API branch ref fetched into a host-owned trusted Git clone",
+  "toolchain": "/home/pc6/.rustup/toolchains/1.95.0-aarch64-unknown-linux-gnu/bin/cargo test --offline --locked",
+  "verdict": "pass",
+  "verifier_id": "mission-012-rust-isolated-cargo-acceptance-v2"
+}
