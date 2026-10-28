@@ -1,0 +1,12 @@
+{
+  "all_current": true,
+  "files": {
+    "scripts/mission_012_egress_barrier_mcp_host.py": true,
+    "scripts/mission_012_sandboxed_test_adapter.py": true,
+    "scripts/mission_012_test_agent_adapter.py": true,
+    "scripts/run_forgejo_agent_egress_live_e2e.py": true,
+    "scripts/run_forgejo_live_pr_merge_e2e.py": true,
+    "scripts/run_mission_012_stdio_mcp_egress_gate_e2e.py": true,
+    "tests/test_mission_012_sandboxed_test_adapter.py": true
+  }
+}

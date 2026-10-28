@@ -1,0 +1,8 @@
+green-rust-issue-null.log	exit=0
+green-rust-pr-null-boundary.log	exit=0
+green-rust-capabilities-unit.log	exit=0
+green-rust-capabilities-e2e.log	exit=0
+green-rust-reconcile-contract.log	exit=0
+green-python-assignee-class.log	exit=0
+green-format.log	exit=0
+green-cargo-license-state.log	exit=0

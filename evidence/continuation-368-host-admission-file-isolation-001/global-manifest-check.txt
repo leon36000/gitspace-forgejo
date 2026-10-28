@@ -1,0 +1,1 @@
+Append-only index check: pass. Local evidence SHA256SUMS: 9 of 9 entries pass. Worktree and project prefixes preserved; project index binds current worktree index.

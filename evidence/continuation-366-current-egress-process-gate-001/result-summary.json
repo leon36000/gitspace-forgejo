@@ -1,0 +1,183 @@
+{
+  "agent_sandbox_checks": {
+    "credential_visible": false,
+    "direct_forgejo_route_probe_errors": [
+      {
+        "errno": 111,
+        "error_category": "os_error",
+        "name": "api",
+        "phase": "connect"
+      },
+      {
+        "errno": 111,
+        "error_category": "os_error",
+        "name": "web",
+        "phase": "connect"
+      },
+      {
+        "errno": 111,
+        "error_category": "os_error",
+        "name": "git_receive_pack",
+        "phase": "connect"
+      }
+    ],
+    "direct_forgejo_routes_blocked": [
+      "api",
+      "web",
+      "git_receive_pack"
+    ],
+    "environment_keys": [
+      "HOME",
+      "LANG",
+      "LC_ALL",
+      "PATH",
+      "PWD",
+      "PYTHONDONTWRITEBYTECODE"
+    ],
+    "host_systemd_bus_visible": false,
+    "network_connected": false,
+    "network_namespace": "net:[4026536628]",
+    "open_fds": [
+      0,
+      1,
+      2
+    ],
+    "pid_namespace": "pid:[4026536627]",
+    "probe_target_port": 3130,
+    "route_probe_specs": [
+      {
+        "method": "GET",
+        "name": "api",
+        "path": "/api/v1/repos/forge-admin/mission-012-clamp/pulls/1"
+      },
+      {
+        "method": "GET",
+        "name": "web",
+        "path": "/forge-admin/mission-012-clamp/pulls/1"
+      },
+      {
+        "method": "POST",
+        "name": "git_receive_pack",
+        "path": "/forge-admin/mission-012-clamp.git/git-receive-pack"
+      }
+    ],
+    "supervisor_observed_route_connections": 0
+  },
+  "branch": "local/WEBHOOK-005-canonical-links",
+  "cleanup": {
+    "forgejo_exited": true,
+    "listener_absent": true,
+    "returncode": 0
+  },
+  "current_source_hashes_match_provenance": {
+    "scripts/mission_012_egress_barrier_mcp_host.py": true,
+    "scripts/mission_012_sandboxed_test_adapter.py": true,
+    "scripts/mission_012_test_agent_adapter.py": true,
+    "scripts/run_forgejo_agent_egress_live_e2e.py": true,
+    "scripts/run_forgejo_live_pr_merge_e2e.py": true,
+    "scripts/run_mission_012_stdio_mcp_egress_gate_e2e.py": true,
+    "tests/test_mission_012_sandboxed_test_adapter.py": true
+  },
+  "forgejo": {
+    "binary_sha256": "e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7",
+    "listener": "127.0.0.1:3130",
+    "version": "forgejo version 17.0.0+gitea-1.22.0 (release name 17.0.0) built with GNU Make 4.4.1, go1.26.9 : bindata, timetzdata, sqlite, sqlite_unlock_notify"
+  },
+  "forgejo_routes": [
+    {
+      "host_status": 404,
+      "host_statuses": [
+        404
+      ],
+      "method": "GET",
+      "name": "api",
+      "path": "/api/v1/repos/forge-admin/mission-012-clamp/pulls/1"
+    },
+    {
+      "host_status": 404,
+      "host_statuses": [
+        404
+      ],
+      "method": "GET",
+      "name": "web",
+      "path": "/forge-admin/mission-012-clamp/pulls/1"
+    },
+    {
+      "host_status": 401,
+      "host_statuses": [
+        401,
+        403
+      ],
+      "method": "POST",
+      "name": "git_receive_pack",
+      "path": "/forge-admin/mission-012-clamp.git/git-receive-pack"
+    }
+  ],
+  "head": "f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0",
+  "host_route_controls": [
+    {
+      "method": "GET",
+      "name": "health",
+      "path": "/api/healthz",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "name": "api_repository",
+      "path": "/api/v1/repos/forge-admin/mission-012-clamp",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "name": "web_repository",
+      "path": "/forge-admin/mission-012-clamp",
+      "status": 200
+    }
+  ],
+  "limitations": [
+    "The MCP task process is the local-test-adapter, not an LLM or AgentOS runtime.",
+    "The gate operation is a trusted read-only Forgejo API call; this run does not merge a PR.",
+    "A local Forgejo token with write:repository scope stayed in the trusted runner and a CLOEXEC memfd; it was not persisted or passed to the task child. The gate made a read-only branch request, not a merge.",
+    "The MCP fixture is local and allowlisted; this run does not establish multi-tenant isolation or kernel escape resistance.",
+    "The host and disposable Forgejo process share the local user identity."
+  ],
+  "mcp_methods": [
+    "initialize",
+    "tools/list",
+    "tools/call:mission_context",
+    "tools/call:cargo_test",
+    "tools/call:workspace_read_text",
+    "tools/call:workspace_read_text",
+    "tools/call:workspace_write_text",
+    "tools/call:cargo_test",
+    "tools/call:mission_context",
+    "shutdown"
+  ],
+  "schema_version": 1,
+  "source_changed_through_mcp": true,
+  "task_acceptance": {
+    "baseline_actionable_failure": true,
+    "baseline_exit_code": 101,
+    "baseline_log_sha256": "8769a270c8f2433c812936c862d8c64788c50aac864db0b1b2dabbc398a160fb",
+    "corrected_acceptance_pass": true,
+    "corrected_exit_code": 0,
+    "corrected_log_sha256": "73172fd083dde1c24e6d11f187da5f11fd07f82d7765f4b6ec45117f4469fbf3",
+    "verification": "actual cargo test --offline --locked in the trusted MCP host"
+  },
+  "trusted_gate_read": {
+    "branch_sha_before": "b672e4456ed378c957cffc543ae5405d9a84a156",
+    "branch_sha_during_gate": "b672e4456ed378c957cffc543ae5405d9a84a156",
+    "credential_fd_inherited_by_stdio_child": false,
+    "credential_not_serialized_to_mcp_config_command_or_environment": true,
+    "credential_probe_refused_inside_pid_namespace": true,
+    "credential_probe_target": "trusted runner's CLOEXEC memfd under its host /proc PID",
+    "merge_route_called": false,
+    "route": "GET /api/v1/repos/forge-admin/mission-012-clamp/branches/main",
+    "scope": "read:user,read:issue,read:repository,write:issue,write:repository",
+    "status": 200,
+    "write_credential_created": true,
+    "write_credential_passed_to_stdio_child": false,
+    "write_credential_persisted_to_file": false
+  },
+  "verdict": "passed"
+}

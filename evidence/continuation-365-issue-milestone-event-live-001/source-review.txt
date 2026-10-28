@@ -1,0 +1,12 @@
+Forgejo scratch: /tmp/forgejo-v17-base-cas-poc
+Audited commit: 0d791421f85ca13a63b665053d81ea765fbbc571
+The following seven source paths had no diff against that commit:
+  services/webhook/notifier.go
+  services/issue/milestone.go
+  modules/structs/issue.go
+  modules/structs/issue_milestone.go
+  routers/api/v1/repo/issue.go
+  routers/api/v1/repo/milestone.go
+  modules/webhook/type.go
+
+Scope: read-only inspection of IssueChangeMilestone, ChangeMilestoneAssign, Issue.Milestone/EditIssueOption.Milestone, Milestone, EditIssue, CreateMilestone, and HookEventType.Event. No Go tests or upstream build run; the scratch contains unrelated experimental modifications, none from this task.

@@ -1,0 +1,2 @@
+$ python3 /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/continuation-367-issue-null-assignee-known-empty-001/verify_append_only_indexes.py
+{"local_evidence_files_verified": 40, "parent_binds_current_worktree_index": true, "project_prefix_preserved": true, "worktree_prefix_preserved": true}

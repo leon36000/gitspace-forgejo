@@ -1,0 +1,7 @@
+Observation time: 2026-10-28 (America/Montreal)
+Method: anonymous DNS resolution and TCP connect with a 3-second timeout; no HTTP request and no credential.
+DNS pc4.tail0c55ff.ts.net: gaierror, name/service not known.
+TCP pc4.tail0c55ff.ts.net:22 and :443: DNS failure.
+TCP 100.76.101.48:22: timeout.
+TCP 100.76.101.48:443: timeout.
+No GitLab refs were read; no login, remote mutation, commit, or push occurred.

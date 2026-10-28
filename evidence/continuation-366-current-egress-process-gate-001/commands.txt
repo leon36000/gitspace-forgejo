@@ -1,0 +1,12 @@
+# Local-only evidence commands (no GitLab authentication, refs or push)
+$ python3 scripts/run_mission_012_stdio_mcp_egress_gate_e2e.py --help
+$ sha256sum /tmp/forgejo-17.0.0
+$ /tmp/forgejo-17.0.0 --version
+$ python3 scripts/run_mission_012_stdio_mcp_egress_gate_e2e.py --forgejo-binary /tmp/forgejo-17.0.0 --state-dir /tmp/forgejo-cont-366-current-egress-state-001 --evidence-dir <workspace>/evidence/continuation-366-current-egress-process-gate-001
+# First attempt stopped in preflight because the new evidence directory did not exist; no state directory or Forgejo process was created.
+$ mkdir -m 700 evidence/continuation-366-current-egress-process-gate-001
+$ python3 scripts/run_mission_012_stdio_mcp_egress_gate_e2e.py --forgejo-binary /tmp/forgejo-17.0.0 --state-dir /tmp/forgejo-cont-366-current-egress-state-001 --evidence-dir <workspace>/evidence/continuation-366-current-egress-process-gate-001
+$ PYTHONDONTWRITEBYTECODE=1 python3 tests/test_forgejo_live_pr_merge_e2e.py ComposedStdioFixtureConsistencyTests ForgejoActionsConfigurationTests NativeActionsDeliveryBindingTests
+$ git diff --check
+# Independent anonymous socket observation, no HTTP request or credential:
+$ python3 socket probe for pc4.tail0c55ff.ts.net and Tailscale IP 100.76.101.48, ports 22 and 443

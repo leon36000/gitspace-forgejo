@@ -1,0 +1,7 @@
+Test-first observations before the implementation was added:
+
+1. `EmittedWebhookRunnerCliTests.test_exposes_live_issue_milestone_transition_scenario` failed because `--change-issue-milestones` was absent from `--help`.
+2. The two milestone parser subtests raised `ValueError: webhook action does not match the expected transition` for `milestoned` and `demilestoned`.
+3. `IssueMilestoneSnapshotTests` failed because `validate_live_issue_milestone_clear_snapshot` did not exist.
+
+The malformed/missing-field parser assertions also could not pass before the parser accepted milestone actions. These were expected red checks; after implementation the focused five tests and the full 160-test module passed.

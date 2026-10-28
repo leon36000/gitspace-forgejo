@@ -1,0 +1,46 @@
+[
+  {
+    "exit_code": 0,
+    "file": "final-issue-null.log"
+  },
+  {
+    "exit_code": 0,
+    "file": "final-pr-null.log"
+  },
+  {
+    "exit_code": 0,
+    "file": "final-issue-comment-parent.log"
+  },
+  {
+    "exit_code": 0,
+    "file": "final-pr-comment-parent.log"
+  },
+  {
+    "exit_code": 0,
+    "file": "final-capabilities-unit.log"
+  },
+  {
+    "exit_code": 0,
+    "file": "final-capabilities-cli-e2e.log"
+  },
+  {
+    "exit_code": 0,
+    "file": "final-reconcile-contract.log"
+  },
+  {
+    "exit_code": 0,
+    "file": "final-python-module.log"
+  },
+  {
+    "exit_code": 0,
+    "file": "final-cargo-fmt.log"
+  },
+  {
+    "exit_code": 0,
+    "file": "final-git-diff-check.log"
+  },
+  {
+    "exit_code": 0,
+    "file": "final-license-policy.log"
+  }
+]

@@ -1,0 +1,5 @@
+$ python3 -m unittest -q test_forgejo_emitted_webhook_e2e.IssueAssigneeSnapshotTests.test_current_issue_api_null_means_empty_only_when_field_is_present
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK

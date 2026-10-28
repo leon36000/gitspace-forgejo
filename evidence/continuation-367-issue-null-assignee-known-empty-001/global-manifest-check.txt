@@ -1,0 +1,2 @@
+Append-only global indexes check after local next-step note
+{"local_evidence_files_verified": 40, "parent_binds_current_worktree_index": true, "project_prefix_preserved": true, "worktree_prefix_preserved": true}

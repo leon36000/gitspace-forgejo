@@ -1,0 +1,5 @@
+Note : ce script de capture a été lancé après l’implémentation. Tous les exit=0 ci-dessous sont des résultats verts; malgré les noms de fichiers `red-*`, ils ne représentent pas le passage test-first rouge.
+red-issue-null-is-known-empty.log	exit=0
+red-capabilities-v26.log	exit=0
+red-python-current-api-null.log	exit=0
+control-pr-null-remains-unknown.log	exit=0

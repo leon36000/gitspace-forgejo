@@ -1,0 +1,2 @@
+git diff --exit-code HEAD -- services/webhook/notifier.go services/issue/milestone.go modules/structs/issue.go modules/structs/issue_milestone.go modules/webhook/type.go routers/api/v1/repo/issue.go routers/api/v1/repo/milestone.go
+exit=0; targeted files equal audited HEAD

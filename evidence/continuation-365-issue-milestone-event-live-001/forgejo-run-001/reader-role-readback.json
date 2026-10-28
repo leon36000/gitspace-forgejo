@@ -1,0 +1,12 @@
+{
+  "is_admin": false,
+  "login": "forge-reader",
+  "repo_permission_admin": false,
+  "repo_permission_pull": true,
+  "repo_permission_push": false,
+  "requested_token_scopes": [
+    "read:user",
+    "read:repository",
+    "read:issue"
+  ]
+}

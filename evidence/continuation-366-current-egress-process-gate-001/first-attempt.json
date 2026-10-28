@@ -1,0 +1,12 @@
+{
+  "cause": "strict evidence-directory resolution failed because the new output directory had not been created",
+  "result": {
+    "error_type": "FileNotFoundError",
+    "verdict": "failed"
+  },
+  "side_effects": {
+    "forgejo_started": false,
+    "state_directory_created": false
+  },
+  "stage": "preflight"
+}

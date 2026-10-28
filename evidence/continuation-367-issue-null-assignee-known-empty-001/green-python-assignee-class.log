@@ -1,0 +1,5 @@
+$ python3 -m unittest -q test_forgejo_emitted_webhook_e2e.IssueAssigneeSnapshotTests
+----------------------------------------------------------------------
+Ran 4 tests in 0.000s
+
+OK

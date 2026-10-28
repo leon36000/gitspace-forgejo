@@ -1,0 +1,1 @@
+syntax ok: scripts/run_forgejo_live_webhook_reconcile_emitted.py, tests/test_forgejo_emitted_webhook_e2e.py, evidence/continuation-365-issue-milestone-event-live-001/append_manifests.py, evidence/continuation-365-issue-milestone-event-live-001/verify_append_only_indexes.py
