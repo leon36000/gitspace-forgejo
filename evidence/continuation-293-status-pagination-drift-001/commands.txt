@@ -1,0 +1,13 @@
+HEAD and working tree inspection: git rev-parse HEAD; git status --short -- src/bin/forgejo-reconcile-local.rs tests/forgejo_reconcile_capabilities_e2e.rs docs/checkpoint.md docs/refusal-evidence-matrix.md
+Test-first expected failure: cargo test --locked --offline --bin forgejo-reconcile-local commit_status_snapshot_rejects_constant_total_status_drift_between_pages
+Initial implementation compile check (fixed u64 slice index): cargo test --locked --offline --bin forgejo-reconcile-local commit_status_snapshot
+Initial fail-fast request-count assertion (expected 4, observed 3; fixture corrected): cargo test --locked --offline --bin forgejo-reconcile-local commit_status_snapshot
+Final pagination tests: cargo test --locked --offline --bin forgejo-reconcile-local commit_status_snapshot
+Status-comparison mutation check (temporarily removed individual-page equality; expected failure; source restored): cargo test --locked --offline --bin forgejo-reconcile-local commit_status_snapshot_rejects_constant_total_status_drift_between_pages
+Capability contract tests: cargo test --locked --offline --test forgejo_reconcile_capabilities_e2e
+Full workspace tests: cargo test --locked --offline --all-targets
+Formatting: rustfmt --edition 2024 --config skip_children=true src/bin/forgejo-reconcile-local.rs tests/forgejo_reconcile_capabilities_e2e.rs; rustfmt --check --edition 2024 --config skip_children=true src/bin/forgejo-reconcile-local.rs tests/forgejo_reconcile_capabilities_e2e.rs; cargo fmt --all -- --check
+Diff validation: git diff --check
+Cargo license metadata policy: python3 scripts/verify_cargo_license_state.py
+Source digest capture: sha256sum Cargo.toml Cargo.lock scripts/verify_cargo_license_state.py src/bin/forgejo-reconcile-local.rs tests/forgejo_reconcile_capabilities_e2e.rs docs/checkpoint.md docs/refusal-evidence-matrix.md
+Append and verify local/worktree/project manifests: python3 evidence/continuation-293-status-pagination-drift-001/append_manifests.py

@@ -1,0 +1,4 @@
+continuation-285-current-stdio-mcp-webhook-boundary-001: 15 local evidence hashes OK
+continuation-286-webhook-attestation-seed-sandbox-probe-001: 14 local evidence hashes OK
+CONT-286 runtime scripts/tests: 5 current hashes OK
+CONT-286 checkpoint and refusal-matrix hashes differ after later documented updates, as expected

@@ -1,0 +1,8 @@
+Worktree: /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace
+
+cargo test --locked --offline --test mission_requirement_arbitration_contract
+cargo test --locked --offline --test mission_requirement_arbitration_contract --test mission_admission_contract --test webhook_mission_admission_contract --test agent_runtime_contract
+cargo check --locked --offline --all-targets
+cargo fmt --all -- --check
+git diff --check
+python3 scripts/verify_cargo_license_state.py

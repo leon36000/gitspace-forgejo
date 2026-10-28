@@ -1,0 +1,6 @@
+Git: git version 2.43.0
+Python: Python 3.12.3 (used only to hash `git show HEAD:<path>` outputs)
+GNU coreutils: sha256sum 9.4
+Forgejo source: tag v17.0.0, commit 0d791421f85ca13a63b665053d81ea765fbbc571
+Product worktree base: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+No Go build/test, Cargo build/test, Forgejo service, or HTTP request was run in this source-only audit.

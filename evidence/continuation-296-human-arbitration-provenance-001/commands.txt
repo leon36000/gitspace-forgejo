@@ -1,0 +1,16 @@
+Date de travail : 2026-10-27
+Worktree : .runtime/webhook-005-workspace
+HEAD : f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+
+Read-only inspection:
+  nl -ba src/lib.rs | sed -n '55,75p'
+  nl -ba src/mission_admission.rs | sed -n '65,115p;630,700p'
+  nl -ba src/forgejo.rs | sed -n '480,570p'
+  sed -n '338,366p' tests/mission_admission_contract.rs
+
+Prior egress evidence integrity and source revalidation:
+  (cd evidence/continuation-285-current-stdio-mcp-webhook-boundary-001 && sha256sum -c SHA256SUMS)
+  (cd evidence/continuation-286-webhook-attestation-seed-sandbox-probe-001 && sha256sum -c SHA256SUMS)
+  sha256sum -c evidence/continuation-286-webhook-attestation-seed-sandbox-probe-001/source-sha256.txt
+
+No code tests or live services were run for CONTINUATION-296.

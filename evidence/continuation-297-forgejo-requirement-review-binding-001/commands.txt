@@ -1,0 +1,52 @@
+Worktree: /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace
+Worktree HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+Forgejo scratch: /tmp/forgejo-v17-base-cas-poc
+
+git -C /tmp/forgejo-v17-base-cas-poc describe --tags --exact-match HEAD
+=> v17.0.0
+git -C /tmp/forgejo-v17-base-cas-poc rev-parse HEAD
+=> 0d791421f85ca13a63b665053d81ea765fbbc571
+git -C /tmp/forgejo-v17-base-cas-poc diff --quiet HEAD -- routers/api/v1/api.go routers/api/v1/repo/pull.go routers/api/v1/repo/pull_review.go routers/api/v1/repo/commits.go modules/structs/pull.go modules/structs/pull_review.go modules/structs/user.go services/convert/pull.go services/convert/pull_review.go models/issues/pull.go models/issues/review.go models/user/user.go services/pull/pull.go
+=> exit 0 (les fichiers source officiels ciblés n’ont pas de diff de travail)
+
+git -C /tmp/forgejo-v17-base-cas-poc show HEAD:<path>
+=> lecture des sources officielles ciblées; `HEAD:` évite les modifications du scratch.
+git -C /tmp/forgejo-v17-base-cas-poc grep -n -E '<symboles API/DTO/modèle ciblés>' HEAD -- <chemins ciblés>
+=> repérage des routes et symboles rapportés; liste exacte dans le rapport.
+rg -n 'MissionAdmissionSourceV1|LocalLoopbackForgejoSource|Requirements|prepare_admission' src/lib.rs src/mission_admission.rs src/bin/forgejo-mission-local.rs
+=> le code courant comprend un adaptateur HTTP local pour issue/branche/exigences/inventaire; aucune méthode PR/revue n’y apparaît.
+
+python3 - <<'PY'
+import hashlib, subprocess
+repo='/tmp/forgejo-v17-base-cas-poc'
+for path in [
+    'routers/api/v1/api.go',
+    'routers/api/v1/repo/pull.go',
+    'routers/api/v1/repo/pull_review.go',
+    'routers/api/v1/repo/commits.go',
+    'modules/structs/pull.go',
+    'modules/structs/pull_review.go',
+    'modules/structs/user.go',
+    'services/convert/pull.go',
+    'services/convert/pull_review.go',
+    'models/issues/pull.go',
+    'models/issues/review.go',
+    'models/user/user.go',
+    'services/pull/pull.go',
+]:
+    data=subprocess.check_output(['git','-C',repo,'show',f'HEAD:{path}'])
+    print(hashlib.sha256(data).hexdigest(), subprocess.check_output(['git','-C',repo,'rev-parse',f'HEAD:{path}'],text=True).strip(), path)
+PY
+=> les résultats sont conservés dans forgejo-v17-source-sha256.txt.
+
+python3 - <<'PY'
+import subprocess
+from pathlib import Path
+result=subprocess.run(['git','diff','--check'],text=True,capture_output=True)
+Path('evidence/continuation-297-forgejo-requirement-review-binding-001/git-diff-check.log').write_text(result.stdout+result.stderr+f'exit_code={result.returncode}\n')
+print(result.stdout+result.stderr+f'exit_code={result.returncode}\n',end='')
+raise SystemExit(result.returncode)
+PY
+=> résultat dans git-diff-check.log.
+
+Aucun serveur, API, credential, test ou commande de build n’a été utilisé.

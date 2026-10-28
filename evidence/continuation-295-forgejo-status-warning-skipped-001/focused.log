@@ -1,0 +1,18 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 2.68s
+     Running unittests src/bin/forgejo-reconcile-local.rs (target/debug/deps/forgejo_reconcile_local-1cabf43e3a16c18e)
+
+running 10 tests
+test tests::commit_status_snapshot_keeps_forgejo_success_consultative ... ok
+test tests::reconciliation_policy_allows_only_exact_commit_status_snapshot_route ... ok
+test tests::commit_status_snapshot_rejects_duplicate_contexts_in_a_page ... ok
+test tests::commit_status_snapshot_marks_truncated_page_inconclusive_and_rejects_wrong_scope ... ok
+test tests::commit_status_snapshot_preserves_warning_and_skipped_as_consultative_states ... ok
+test tests::commit_status_snapshot_uses_the_exact_sha_scoped_read_route ... ok
+test tests::commit_status_snapshot_rejects_total_count_drift_between_pages ... ok
+test tests::commit_status_snapshot_reads_all_bounded_pages_without_claiming_atomicity ... ok
+test tests::commit_status_snapshot_rejects_constant_total_status_drift_between_pages ... ok
+test tests::commit_status_snapshot_stops_at_the_maximum_page_budget ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 153 filtered out; finished in 0.13s
+

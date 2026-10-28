@@ -1,0 +1,7 @@
+date: 2026-10-27
+rustc: rustc 1.95.0 (59807616e 2026-04-14)
+cargo: cargo 1.95.0 (f2d3ce0bd 2026-03-21)
+platform: Linux aarch64
+crate: agent-forge-core 0.1.0
+dependency resolution: Cargo.lock, locked and offline
+Cargo license verifier: status metadata_policy_verified; license=null; license_file=null; publish=[]; no_license_selected; redistribution_rights=not_assessed; NOASSERTION

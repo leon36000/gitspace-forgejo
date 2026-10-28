@@ -1,0 +1,32 @@
+{
+  "commit_status_symbols": [
+    8,
+    19,
+    20,
+    21,
+    22,
+    28,
+    31,
+    75,
+    80
+  ],
+  "head": "0d791421f85ca13a63b665053d81ea765fbbc571",
+  "official_repo": "Forgejo source scratch",
+  "relevant_paths": {
+    "modules/structs/commit_status.go": {
+      "staged_diff": false,
+      "working_tree_diff": false
+    },
+    "services/convert/status.go": {
+      "staged_diff": false,
+      "working_tree_diff": false
+    }
+  },
+  "scope_note": "Only the two named source files were checked clean; the scratch contains unrelated experimental POC changes.",
+  "scratch_status_entries": 63,
+  "scratch_worktree_dirty": true,
+  "source_sha256": {
+    "modules/structs/commit_status.go": "f39f2debf45c2fd8a6005d68b2e326e0f862f21d991b0c2143ff6a6ea3881fdc",
+    "services/convert/status.go": "7260a43f7cca1d47d3bc1f5e8e49d91c1a6e37453c4f07c7ec74244f7a18ef65"
+  }
+}
