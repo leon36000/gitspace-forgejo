@@ -1,0 +1,358 @@
+{
+  "format": "base64 text parts containing deterministic gzip tar",
+  "archive_sha256": "e9b0c75d2228bac0aa68221250f35e5677e5f30b7dc2809ad18b06ce49a4705c",
+  "archive_bytes": 12979847,
+  "archive_base64_bytes": 17306464,
+  "part_size_chars": 256000,
+  "parts": [
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0001.b64",
+      "size": 256000,
+      "sha256": "8c2a1e6b5ff8a90266113bfcaf62520501935fda1c03726b2e22d4994576c3a0"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0002.b64",
+      "size": 256000,
+      "sha256": "e476055b2fb5ceb377d5e06c9eaf587a829c5af705fb52b4c06203d15b11a509"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0003.b64",
+      "size": 256000,
+      "sha256": "942cc764029fe5e6ab4c67d79fa25f529f04b724259e156a016f669bf084d5dc"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0004.b64",
+      "size": 256000,
+      "sha256": "c870b12be88af809989320a5f599f10d5c857b234821a0697128ba65871a637b"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0005.b64",
+      "size": 256000,
+      "sha256": "9335e13e556c77426fe97c513346c618b2b042e3dd7cdc9ad16dc67d3901aa13"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0006.b64",
+      "size": 256000,
+      "sha256": "245597724ef650da7844a8157ef76178368d1d0e522c36ff0ad21a205cdeb171"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0007.b64",
+      "size": 256000,
+      "sha256": "c502fb9b46872511fe7ea9d75bc103af93f42c4dba4e7feb9c9ea689f88d6db7"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0008.b64",
+      "size": 256000,
+      "sha256": "457e6abda378dbf118a7c4f6031bd8e0e37288279e8718a31a166233bd01d09f"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0009.b64",
+      "size": 256000,
+      "sha256": "220a6bde5202b5ff0ddc71d3e217f144a1d0d5c96c8e3336880232561a932d8e"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0010.b64",
+      "size": 256000,
+      "sha256": "8d67f463b647ea39c2d294c0f7b5d61ead034523e4691a9c97d92bb8611bbc3f"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0011.b64",
+      "size": 256000,
+      "sha256": "f6dc86c993648c07a23d45ac365a4699c64417795213dec3a1e3909ea508f824"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0012.b64",
+      "size": 256000,
+      "sha256": "33748cbea46260485ae5a03bdc7735c93627db40977c437d6284bc8841fe4530"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0013.b64",
+      "size": 256000,
+      "sha256": "74cc9e4b82ff108787c1a9d09cea4b7abda61ceaf5a49180cf63f0106b3e8c34"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0014.b64",
+      "size": 256000,
+      "sha256": "6adc7fd96a1dc42071a255383d85566eea4dc5e2e0ebcd8c37415584808dc19c"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0015.b64",
+      "size": 256000,
+      "sha256": "4c6c6f721d9318482092ec8a9baac75f7433e0e7e51275903149440af6b88ada"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0016.b64",
+      "size": 256000,
+      "sha256": "df8f03ccaaee19bf8cae8f6fceb9c7be362c79cc6928740bcf2b447c385aac52"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0017.b64",
+      "size": 256000,
+      "sha256": "512c50676d986ff7556d6abb7b5fd8c79f1e4bae63399dc0ffc0e5db786acd90"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0018.b64",
+      "size": 256000,
+      "sha256": "3bd4dc6c3589bc67b20b4fb2cfa9f036cb3e9906e8e5755002ce46cf59de171c"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0019.b64",
+      "size": 256000,
+      "sha256": "b4cf3a68d1a023d4278a6348f8c7e70b30b7a60fac608cadcf5e5a949403ca21"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0020.b64",
+      "size": 256000,
+      "sha256": "69583cce156a246971e9eef6ac24993052ee69eb91bb061242e4cc861905bb41"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0021.b64",
+      "size": 256000,
+      "sha256": "016b79cbee17072a84d2f5b605d25d4f9f7a2b5d2979cdd6be069583fb953250"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0022.b64",
+      "size": 256000,
+      "sha256": "f2395fdbaa9adf7c8aa875dcc122d1b2d4c36f1d8f6729fe1c06ba457726e9a4"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0023.b64",
+      "size": 256000,
+      "sha256": "ca3c533d4a5e44edb9949493c3538bc7a0c893205c7c8deae0a4d5bcab131bae"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0024.b64",
+      "size": 256000,
+      "sha256": "c28eb4cc3396d86f2a52fd710c1817e127e8f053ee2f22786da341d2c0ad90d0"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0025.b64",
+      "size": 256000,
+      "sha256": "8bf1d935fce61cfcafe9c2a62b179f7366a812431ab425cca6457d5b434d432a"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0026.b64",
+      "size": 256000,
+      "sha256": "8358221847220c4f561f1243741191a2f2994aee07469f5dc4fe8770d8aa7264"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0027.b64",
+      "size": 256000,
+      "sha256": "f429d4d23918409af32985585184b6f5429c3c681b372cc18a9f4f374834bac0"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0028.b64",
+      "size": 256000,
+      "sha256": "a9e4746ba62b3a7e28c83c8790a2529a8fb12e4a80087f01fef03b50928167e3"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0029.b64",
+      "size": 256000,
+      "sha256": "b5f4708f520a0d8d6bb5b0909df85218c1c46489448dcaedf340eee1d751bfd8"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0030.b64",
+      "size": 256000,
+      "sha256": "c932fd6dddefbbdf24dbeeef7cbe01725ad96934f925947e27440af81ab2a14b"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0031.b64",
+      "size": 256000,
+      "sha256": "aa6df26d7339bf1959d0a66227c47c46b80d2cc314d84b7347ffdd07aae0b3f2"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0032.b64",
+      "size": 256000,
+      "sha256": "70a9e05f51fc8bec2dbd2358a52b132dd1eca9a3513e8e65b102fc830e8aefc5"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0033.b64",
+      "size": 256000,
+      "sha256": "f5023b106af41c614473e4f97e636c0d82a704ff53fef65b82b168b69f823404"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0034.b64",
+      "size": 256000,
+      "sha256": "2db71580edd263055cd4b94adcdc1850b290398e03d7c2ae35195123dbf98532"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0035.b64",
+      "size": 256000,
+      "sha256": "5f31374fca7b5e6a731307f31a89a731e5f4c9990f7f7cf2322ed77eedb9aa78"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0036.b64",
+      "size": 256000,
+      "sha256": "c0afceb474cbd4c9dca998310f42f046ce75c785830141f7e58de6d500f6a4d0"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0037.b64",
+      "size": 256000,
+      "sha256": "487dafa30cf91ceed6942c3961576d5053a421fe8179923cc0542b19eb142de9"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0038.b64",
+      "size": 256000,
+      "sha256": "fc75f59fd88d88379d36cce51f64a62a3fe7cb6cf61aa027900567c00c26d670"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0039.b64",
+      "size": 256000,
+      "sha256": "7baea56d515e2d3282226cba132b3b1903cdec51a54d09e6669c2a2167c4c4d3"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0040.b64",
+      "size": 256000,
+      "sha256": "b39e55d1e820e46f2e4185f72cb3e92ba6d226123f93720748de4ee02c5139e4"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0041.b64",
+      "size": 256000,
+      "sha256": "279e6b8fa38d31b82012a38cf029bb1e06505ccacdd342a470bdf3350264fa84"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0042.b64",
+      "size": 256000,
+      "sha256": "08376096b4909c0bd85708d917224f3b016316451b9b18f33817d06068edc745"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0043.b64",
+      "size": 256000,
+      "sha256": "1309d3e2ea29655c9fac46134ef5d38c7588fa35285e82ce0c87eb997246943b"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0044.b64",
+      "size": 256000,
+      "sha256": "38ffa4de57e9e5b0dc3d82571f58c07229ddc227fbffefd94890f6938ce0ee7e"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0045.b64",
+      "size": 256000,
+      "sha256": "01766ed445ec99a556a978a06be21825d1bccae7473d5cbea6518ef660aa6133"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0046.b64",
+      "size": 256000,
+      "sha256": "476d47a51e11bc2f4a385a95fab24eba5d660e34e880a274d0d80070ceae6e8b"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0047.b64",
+      "size": 256000,
+      "sha256": "a5376db11c6d8784e82a808f8198f38964217be9798124d1ae4532f964aff535"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0048.b64",
+      "size": 256000,
+      "sha256": "e87ea79dd971469a21dc12e0a3909e0a5bdb105c990b8030c2f89d406f070f59"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0049.b64",
+      "size": 256000,
+      "sha256": "599ebc6f1048244f2af3c414a2c0a019d57449da412d6d8221da4f14509bf3d4"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0050.b64",
+      "size": 256000,
+      "sha256": "ba211ef1199bedd27baeb236346e38b1166f0e4ae545f5f6dc0ceef3db6c02fa"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0051.b64",
+      "size": 256000,
+      "sha256": "8279dd6cbca8efb546f90df5d36e0deaf1a1da4f802b1977d3620f6ee0238409"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0052.b64",
+      "size": 256000,
+      "sha256": "53278b1e4e6891c8a406063a04c798b7e5a5f850a037c36457dbc5c43e7ca763"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0053.b64",
+      "size": 256000,
+      "sha256": "cd8a597e8f1262046a0050cb338b76fa938f93840455631c5342565668e0af3b"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0054.b64",
+      "size": 256000,
+      "sha256": "a30310542af08c716a49ff2220c13476bc4f972722116972d27c4747f3724ecc"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0055.b64",
+      "size": 256000,
+      "sha256": "a27efd55c0005494f2816f9802e204bf2a0da8881381ee6200329854a2d7b74d"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0056.b64",
+      "size": 256000,
+      "sha256": "4c5766e37f3997c1dfcd4f83598a6ff5b03de5671a8299cfee7f3314bb4f88dd"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0057.b64",
+      "size": 256000,
+      "sha256": "a9cf2060d1d623e7a7feda4b8998a0bcfb359156afd64a5a2e466497f43b559b"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0058.b64",
+      "size": 256000,
+      "sha256": "71ad9688b7f3a3af8ee22dbb0d199f49d92662ba1c9189c60f86130b9721dd78"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0059.b64",
+      "size": 256000,
+      "sha256": "38456f8c0a9e0dfee3bf7823b4c79e4ddbe1ff1ed634a72f98a424717ae72821"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0060.b64",
+      "size": 256000,
+      "sha256": "fef990f5c9de784aa44ccf1f14b94f4040111d9935cc7f6da60494b2a213218a"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0061.b64",
+      "size": 256000,
+      "sha256": "ed6f6d709fbc0e368a6ab49cb233f3223b448dcd570fcb3c0447508a663c2e6a"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0062.b64",
+      "size": 256000,
+      "sha256": "34c2e9454c76d938a4fdfd7a4c9cb85c7748ab252cd70fac9e98886ed1a11f4a"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0063.b64",
+      "size": 256000,
+      "sha256": "424aabf7a861770bd04795a7b7fa3d1dc468522aa07bde9e9c66b80c0a8ad820"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0064.b64",
+      "size": 256000,
+      "sha256": "15d09a1cc64f50b50064463b2c0e7e492f0b3b023008915cd1a83e2ae814683f"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0065.b64",
+      "size": 256000,
+      "sha256": "af8bb9e5173391811d648c3df38883df4029682238ebdc9f299e1d21ab410178"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0066.b64",
+      "size": 256000,
+      "sha256": "aced835a82d59388997da1972d5522bbc74cfa9455a5baf400bd5cf0465bea9d"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0067.b64",
+      "size": 256000,
+      "sha256": "20cd52309ba3b35684d6bb7a562826a6db7c043da5504c91c8e47d0b2beddbb9"
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-002/payload-0068.b64",
+      "size": 154464,
+      "sha256": "2414814b50ab7eab23d321e65ba2d1f795aad1eae11fd5537a8933bc5bfb8530"
+    }
+  ],
+  "evidence_files": 14887,
+  "evidence_uncompressed_bytes": 60571312,
+  "contents_manifest_member": "evidence/gitlab-pc4-transfer-002/CONTENTS.jsonl",
+  "excluded_from_bundle": [
+    "evidence/SHA256SUMS; synchronized separately",
+    "binary ZIP/source snapshots and binary/non-UTF8 files",
+    "embedded Git object stores and Forgejo source copies",
+    "ignored runtime, local agent state, caches/build outputs"
+  ]
+}
