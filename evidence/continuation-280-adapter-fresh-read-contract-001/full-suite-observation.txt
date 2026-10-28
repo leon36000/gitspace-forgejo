@@ -1,0 +1,8 @@
+Post-CONTINUATION-280 full Rust target verification
+
+Command: cargo test --locked --offline --all-targets
+Observed outer command exit code: 0
+
+Cargo completed all non-ignored test targets successfully. The visible direct output includes 78 passed for webhook_reconcile_contract, 4 passed for webhook_reconcile_pipeline, and 38 passed / 125 ignored for webhook_receiver_process_e2e. The ignored tests are not part of this result and require their dedicated local isolation runners.
+
+The orchestration tool truncated the full multi-target stdout; no aggregate test count is claimed. This check is Rust-only and does not demonstrate Forgejo live, AgentOS/LLM, or a benchmark.

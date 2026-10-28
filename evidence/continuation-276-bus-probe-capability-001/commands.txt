@@ -1,0 +1,10 @@
+Base HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+
+Pré-implémentation (TDD rouge, sortie observée):
+python3 -m unittest -v tests.test_mission_012_sandboxed_test_adapter.SandboxedAdapterTests.test_probe_process_remains_isolated_until_reprobe_and_release tests.test_forgejo_agent_egress_live_e2e.LiveForgejoEgressEvidenceTests.test_rejects_visible_or_unattested_systemd_bus_in_v2
+
+Final:
+python3 -m unittest -v tests.test_mission_012_sandboxed_test_adapter tests.test_forgejo_agent_egress_live_e2e
+python3 -m py_compile scripts/mission_012_test_agent_adapter.py scripts/mission_012_sandboxed_test_adapter.py scripts/run_forgejo_agent_egress_live_e2e.py tests/test_mission_012_sandboxed_test_adapter.py tests/test_forgejo_agent_egress_live_e2e.py
+git diff --check
+python3 evidence/continuation-276-bus-probe-capability-001/verify_manifests.py

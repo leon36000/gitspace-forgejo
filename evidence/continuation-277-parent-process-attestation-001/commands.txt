@@ -1,0 +1,33 @@
+Base HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+
+TDD red, first run:
+python3 -m unittest -v tests.test_mission_012_sandboxed_test_adapter.SandboxedAdapterTests.test_stdio_adapter_uses_only_trusted_mcp_pipe_and_refuses_host_network_and_file
+Observed: exit 1; the returned result had no `host_observed_agent_process_tree` field.
+
+TDD red, validator contract:
+python3 -m unittest -v tests.test_mission_012_live_mcp_agent_e2e.AgentCommandTests.test_gate_requires_parent_observation_of_the_live_agent_process_tree
+Observed: exit 1 before the validator existed.
+
+Final focused modules:
+python3 -m unittest -v tests.test_mission_012_sandboxed_test_adapter tests.test_mission_012_live_mcp_agent_e2e
+Observed: exit 0; 29 passed.
+
+Final composition contracts:
+python3 -m unittest -v tests.test_mission_012_live_composed_e2e
+Observed: exit 0; 18 passed.
+
+Parent-side process probe, held/reprobed/released under Bubblewrap:
+python3 evidence/continuation-277-parent-process-attestation-001/run_parent_procfs_probe.py
+Observed: exit 0; see process-observation.json.
+
+Syntax check and tracked-file whitespace check:
+python3 -m py_compile scripts/mission_012_sandboxed_test_adapter.py scripts/run_mission_012_live_mcp_agent_e2e.py scripts/run_mission_012_live_composed_e2e.py tests/test_mission_012_sandboxed_test_adapter.py tests/test_mission_012_live_mcp_agent_e2e.py evidence/continuation-277-parent-process-attestation-001/run_parent_procfs_probe.py && git diff --check
+Observed: exit 0. A separate eight-file whitespace scan includes untracked sources; see whitespace-check.json.
+
+Cargo license metadata:
+python3 scripts/verify_cargo_license_state.py
+Observed: exit 0; license=null, license_file=null, publish=[], no_license_selected, redistribution not_assessed, NOASSERTION.
+
+Historical CONT-276 verifier recheck:
+python3 evidence/continuation-276-bus-probe-capability-001/verify_manifests.py
+Observed: exit 1 with `source hash mismatch: scripts/mission_012_sandboxed_test_adapter.py`, expected after this source changed. CONT-277 records the new source hash and verifies current latest-index values while preserving both historical index prefixes.

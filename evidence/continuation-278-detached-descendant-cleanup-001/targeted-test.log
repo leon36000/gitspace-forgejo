@@ -1,0 +1,6 @@
+test_process_group_cleanup_kills_detached_bubblewrap_descendant (tests.test_mission_012_sandboxed_test_adapter.SandboxedAdapterTests.test_process_group_cleanup_kills_detached_bubblewrap_descendant) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.074s
+
+OK

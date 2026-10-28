@@ -1,0 +1,6 @@
+test_probe_process_remains_isolated_until_reprobe_and_release (tests.test_mission_012_sandboxed_test_adapter.SandboxedAdapterTests.test_probe_process_remains_isolated_until_reprobe_and_release) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.056s
+
+OK

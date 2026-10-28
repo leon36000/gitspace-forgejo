@@ -1,0 +1,6 @@
+test_credential_probe_rejects_unexpected_read_errors_as_inconclusive (tests.test_mission_012_sandboxed_test_adapter.SandboxedAdapterTests.test_credential_probe_rejects_unexpected_read_errors_as_inconclusive) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+OK

@@ -1,0 +1,14 @@
+Final verification, from the worktree root, with dependency/network access disabled for Cargo:
+
+1. `cargo test --locked --offline --test webhook_reconcile_contract --test webhook_reconcile_pipeline`
+2. `cargo fmt --all -- --check`
+3. `git diff --check`
+4. `cargo metadata --locked --offline --format-version 1 --no-deps` (readback summarized to metadata-readback.json)
+5. `python3 scripts/verify_cargo_license_state.py`
+6. `python3 -m unittest -v scripts.test_cargo_license_state`
+
+TDD red observation, before the production change:
+
+`cargo test --locked --offline --test webhook_reconcile_contract batch_deleted_pr_comment_404_preserves_adapter_fresh_read_contract -- --exact`
+
+It failed on the intended contract assertion: stale parent state was returned as canonical instead of the source's `NotFound` from `read_current_fresh`.

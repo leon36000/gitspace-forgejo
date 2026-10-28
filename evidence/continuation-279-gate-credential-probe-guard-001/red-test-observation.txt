@@ -1,0 +1,5 @@
+Command: python3 -m unittest -v tests.test_mission_012_sandboxed_test_adapter.SandboxedAdapterTests.test_credential_probe_rejects_unexpected_read_errors_as_inconclusive
+Observed before implementation: exit 1, test failure.
+The output reported:
+  AssertionError: RuntimeError not raised
+The patched Path.read_bytes raised OSError(errno.EIO) for the credential canary; the previous implementation treated it as inaccessible and proceeded.

@@ -1,0 +1,26 @@
+HEAD observé : f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+
+TDD rouge avant correction :
+python3 -m unittest -v tests.test_mission_012_sandboxed_test_adapter.SandboxedAdapterTests.test_credential_probe_rejects_unexpected_read_errors_as_inconclusive
+Résultat observé : exit 1; l’assertion montrait que l’ancien probe retournait au lieu de lever l’erreur inconclusive. Voir red-test-observation.txt.
+
+Test EIO après correction :
+python3 -m unittest -v tests.test_mission_012_sandboxed_test_adapter.SandboxedAdapterTests.test_credential_probe_rejects_unexpected_read_errors_as_inconclusive
+Résultat : exit 0, 1 test réussi; eio-refusal-test.log.
+
+Probe memfd pendant la barrière de reprobe :
+python3 -m unittest -v tests.test_mission_012_sandboxed_test_adapter.SandboxedAdapterTests.test_probe_process_remains_isolated_until_reprobe_and_release
+Résultat : exit 0, 1 test réussi; memfd-held-probe-test.log.
+
+Suites ciblées finales :
+python3 -m unittest -v tests.test_mission_012_sandboxed_test_adapter tests.test_forgejo_agent_egress_live_e2e
+Résultat : exit 0, 29 tests réussis; final-tests.log.
+
+Syntaxe et diff :
+PYTHONPYCACHEPREFIX=/tmp/mission-012-cont279-pycache python3 -m py_compile scripts/mission_012_test_agent_adapter.py scripts/mission_012_sandboxed_test_adapter.py scripts/mission_012_mcp_supervisor.py scripts/run_mission_012_stdio_mcp_egress_gate_e2e.py scripts/run_mission_012_live_agent_pr_e2e.py tests/test_mission_012_sandboxed_test_adapter.py
+git diff --check
+Résultat : exit 0; pycompile.log et git-diff-check.log.
+
+Manifestes :
+python3 evidence/continuation-279-gate-credential-probe-guard-001/append_manifests.py
+python3 evidence/continuation-279-gate-credential-probe-guard-001/verify_manifests.py

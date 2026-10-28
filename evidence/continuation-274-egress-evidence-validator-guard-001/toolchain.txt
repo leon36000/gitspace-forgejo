@@ -1,0 +1,6 @@
+Date observed: 2026-10-27
+Python: 3.12.3
+Platform: Linux; errno allowlist uses Linux networking errors.
+Git base HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+Forgejo: not started in this lot; one previously archived result was read and validated.
+Agent: no LLM; archived fixture identified as local-test-adapter.

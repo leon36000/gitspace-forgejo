@@ -1,0 +1,10 @@
+Base HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+
+TDD rouge (classe corrigée avant le run rouge):
+python3 -m unittest -v tests.test_mission_012_sandboxed_test_adapter.SandboxedAdapterTests.test_agent_bubblewrap_masks_run_inherited_from_supervisor
+
+Vérification finale:
+python3 -m unittest -v tests.test_mission_012_sandboxed_test_adapter
+python3 -m py_compile scripts/mission_012_sandboxed_test_adapter.py scripts/mission_012_test_agent_adapter.py tests/test_mission_012_sandboxed_test_adapter.py
+git diff --check
+python3 evidence/continuation-275-agent-bus-mount-mask-001/verify_manifests.py

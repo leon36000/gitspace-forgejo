@@ -1,0 +1,10 @@
+Base HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+
+Pré-implémentation (TDD rouge, sortie observée dans l’exécution):
+python3 -m unittest -v tests.test_forgejo_agent_egress_live_e2e.LiveForgejoEgressEvidenceTests.test_rejects_non_network_errno_as_isolation_evidence tests.test_forgejo_agent_egress_live_e2e.LiveForgejoEgressEvidenceTests.test_rejects_inconsistent_duplicate_route_error_evidence
+
+Final:
+python3 -m unittest -v tests.test_forgejo_agent_egress_live_e2e
+python3 -c 'import importlib.util,json,pathlib,hashlib; p=pathlib.Path("scripts/run_forgejo_agent_egress_live_e2e.py"); s=importlib.util.spec_from_file_location("egress_runner",p); m=importlib.util.module_from_spec(s); s.loader.exec_module(m); f=pathlib.Path("evidence/forgejo-agent-egress-live-001/result.json"); r=json.loads(f.read_text()); print(json.dumps({"historical_live_artifact_accepted":m.validate_live_egress_result(r),"schema_version":r["schema_version"],"result_sha256":hashlib.sha256(f.read_bytes()).hexdigest()},sort_keys=True))'
+python3 -m py_compile scripts/run_forgejo_agent_egress_live_e2e.py tests/test_forgejo_agent_egress_live_e2e.py
+git diff --check

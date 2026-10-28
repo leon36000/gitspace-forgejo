@@ -1,0 +1,26 @@
+HEAD observé : f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+
+Test ciblé :
+python3 -m unittest -v tests.test_mission_012_sandboxed_test_adapter.SandboxedAdapterTests.test_process_group_cleanup_kills_detached_bubblewrap_descendant
+Résultat : exit 0; 1 test réussi; sortie dans targeted-test.log.
+
+Module sandbox :
+python3 -m unittest -v tests.test_mission_012_sandboxed_test_adapter
+Résultat : exit 0; 13 tests réussis.
+
+Probe reproductible :
+python3 evidence/continuation-278-detached-descendant-cleanup-001/run_detached_child_probe.py > evidence/continuation-278-detached-descendant-cleanup-001/process-cleanup-observation.json
+Résultat : exit 0; enfant détaché observé avant SIGTERM, aucun PID/start-time observé après nettoyage.
+
+Syntaxe :
+PYTHONPYCACHEPREFIX=/tmp/mission-012-cont278-pycache python3 -m py_compile tests/test_mission_012_sandboxed_test_adapter.py evidence/continuation-278-detached-descendant-cleanup-001/run_detached_child_probe.py
+Résultat : exit 0; voir pycompile.log.
+
+Espaces finaux et diff :
+python3 - (scan de tests/test_mission_012_sandboxed_test_adapter.py et run_detached_child_probe.py)
+git diff --check
+Résultat : exit 0; voir whitespace-check.json et git-diff-check.log.
+
+Manifestes append-only :
+python3 evidence/continuation-278-detached-descendant-cleanup-001/append_manifests.py
+python3 evidence/continuation-278-detached-descendant-cleanup-001/verify_manifests.py

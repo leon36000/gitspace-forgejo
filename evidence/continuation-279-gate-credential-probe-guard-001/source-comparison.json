@@ -1,0 +1,30 @@
+[
+  {
+    "archived": "evidence/forgejo-agent-egress-stdio-mcp-006/source/runner.py",
+    "archived_sha256": "caae9b23cec3c75566116b112992b87884ac4da5318e8b44df1342127192c866",
+    "identical": false,
+    "live": "scripts/run_mission_012_stdio_mcp_egress_gate_e2e.py",
+    "live_sha256": "9df8d6b269d5438f2ce9cba033aea0f9d0adc8e24562d602994b794bffaba401"
+  },
+  {
+    "archived": "evidence/forgejo-agent-egress-stdio-mcp-006/source/sandbox-wrapper.py",
+    "archived_sha256": "0b6e9473fa5ffdf4535cbac1922f36c6eb1fc3a79f81f293ad15490573250fcc",
+    "identical": false,
+    "live": "scripts/mission_012_sandboxed_test_adapter.py",
+    "live_sha256": "41026ce7f51d5ba3b5d25b0014332edab441b8e2cd2eb274414472b47863fbd4"
+  },
+  {
+    "archived": "evidence/forgejo-agent-egress-stdio-mcp-006/source/task-adapter.py",
+    "archived_sha256": "fe55edf666fff23e0e4c488947c87c51100d9fa9ba222a71f001c6e4458788ec",
+    "identical": false,
+    "live": "scripts/mission_012_test_agent_adapter.py",
+    "live_sha256": "85ac7827f0ac7ccc44cff3331aedbd7972e84766b354cf2557d6dd217c4b34ac"
+  },
+  {
+    "archived": "evidence/forgejo-agent-egress-stdio-mcp-006/source/mcp-host.py",
+    "archived_sha256": "5803710c95ce0d4c96bf3766ebec01efc101d592b531dd615a6872569b5d8f30",
+    "identical": false,
+    "live": "scripts/mission_012_egress_barrier_mcp_host.py",
+    "live_sha256": "ce3e2153db82e575793e13d014728ab784ccbcdab9883e34800a6529fb496ed8"
+  }
+]

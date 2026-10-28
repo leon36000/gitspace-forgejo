@@ -1,0 +1,7 @@
+Date: 2026-10-27
+Platform: Linux local
+Python: 3.12.3
+Bubblewrap: 0.9.0
+Git base HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+No Forgejo service was started in this lot.
+The host systemd-user socket positive control is in CONTINUATION-275 host-bus-readback.json.
