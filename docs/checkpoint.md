@@ -1,5 +1,13 @@
 # Checkpoint — 28 octobre 2026
 
+## GITLAB-PC4-TRANSFER-005 — lecture vérifiée du reçu et de la CI — 28 octobre 2026
+
+Le suivi documentaire du transfert CONT-436 est synchronisé sur la branche de travail privée PC4 par le commit `20af77b68dcf6dd2cd8282a0011ec7f4b58ba9bb`. Le readback compare les 8 blobs et modes modifiés/créés à leurs IDs Git locaux: 8/8 identiques. Le pipeline exact 173 est `success` pour Gitleaks, Semgrep, Trivy et le fallback; pipeline 172 de la source CONT-436 était aussi `success`. Le reçu détaillé et les IDs: [GITLAB-PC4-TRANSFER-005](../evidence/gitlab-pc4-transfer-005/local-run.md).
+
+La branche par défaut protégée `codex/pc6-transfer-2026-10-28` a été relue à `6c6ffa3d7d37d48b9d7877acb982d73a2c49a14f` et n’a pas été modifiée. Aucun email ni PAT n’a été utilisé. Les tests et le worktree restent sur PC6; l’écriture GitLab se fait via connecteur API, sans shell PC4.
+
+L’inventaire local a montré 15 425 entrées `git status`; après exclusion des seuls répertoires d’état, 15 294 fichiers réguliers totalisent 199 859 219 octets. Ce n’est pas un compte de delta distant et ces fichiers ne sont pas tous classés par contenu. La synchronisation du snapshot 80/80 chemins de CONT-436 et du suivi 8/8 n’est donc pas une affirmation de transfert exhaustif. Ne pas envoyer en masse avant comparaison locale/distante et classement des binaires, bundles, snapshots tiers, traces et données sensibles. Prochaine action: réconcilier les paths/blobs de manière paginée, auditer les restes exportables, puis transférer des lots vérifiés sans secret ni code tiers non autorisé.
+
 ## CONTINUATION-436 — compatibilité des refs de branche commençant par un tiret — 28 octobre 2026
 
 Le validateur qui protège les portées de fusion contre les options de ligne de commande était aussi utilisé pour les lectures webhook/API. Il refusait donc une branche Git valide **-release-v1**. **valid_branch_ref_name** valide maintenant les refs projetées dans une URL; **valid_branch** conserve la règle stricte réservée aux portées locales/arguments de commande. La réconciliation, les URLs et la politique de chemin API utilisent le validateur adapté.

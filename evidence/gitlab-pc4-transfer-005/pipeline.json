@@ -1,0 +1,31 @@
+{
+  "pipeline_id": 173,
+  "sha": "20af77b68dcf6dd2cd8282a0011ec7f4b58ba9bb",
+  "status": "success",
+  "url": "https://pc4.tail0c55ff.ts.net/root/gitspace-forgejo/-/pipelines/173",
+  "jobs": [
+    {
+      "id": 614,
+      "name": "pc4_gitleaks",
+      "status": "success"
+    },
+    {
+      "id": 615,
+      "name": "pc4_semgrep",
+      "status": "success"
+    },
+    {
+      "id": 616,
+      "name": "pc4_trivy",
+      "status": "success"
+    },
+    {
+      "id": 617,
+      "name": "pc4_ci_fallback",
+      "status": "success"
+    }
+  ],
+  "created_at": "2026-10-28T18:33:53.657-04:00",
+  "updated_at": "2026-10-28T18:35:51.586-04:00",
+  "observed_at_utc": "2026-10-28 22:36:18 UTC"
+}

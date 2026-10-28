@@ -1,0 +1,10 @@
+Read-only/commit operations via authenticated GitLab connector; no email/PAT:
+- list_commits(project_id=4, ref_name=codex/pc6-transfer-work-2026-10-28, first=1) -> guarded base 984a938551759226a4275666adb4eed35e3ddc26
+- add_commit(branch=codex/pc6-transfer-work-2026-10-28, message="docs: record PC4 CONT-436 transfer and readback", 8 UTF-8 text actions) -> 20af77b68dcf6dd2cd8282a0011ec7f4b58ba9bb
+- list_repository_tree(ref=20af..., path=docs) -> checkpoint blob 1910ac1cc17771c83309681f5c6f0ea59a7e60be
+- list_repository_tree(ref=20af..., path=evidence) -> SHA256SUMS blob d50454a9fa44610bda7f3e3a7c36e72171a7c0d2
+- list_repository_tree(ref=20af..., path=evidence/gitlab-pc4-transfer-004) -> six expected blobs, recorded in readback.json
+- get_commit(20af..., include=diff, diff_detail=stats) -> 8 paths; +749/-1
+- get_pipeline(id=4, pipeline_id=173, include=jobs) -> success; jobs 614–617 success
+- list_commits(project_id=4, ref_name=codex/pc6-transfer-2026-10-28, first=1) -> protected default branch head 6c6ffa3d7d37d48b9d7877acb982d73a2c49a14f, unchanged by this operation
+- local inventory: git status --porcelain -uall; regular-file counts exclude only .git/.runtime/.claude/target/.venv/cache dirs; inventory is not a secret scan or complete local-vs-remote diff

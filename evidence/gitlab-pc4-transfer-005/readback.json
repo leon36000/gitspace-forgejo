@@ -1,0 +1,64 @@
+{
+  "project": "root/gitspace-forgejo",
+  "project_id": 4,
+  "branch": "codex/pc6-transfer-work-2026-10-28",
+  "commit": "20af77b68dcf6dd2cd8282a0011ec7f4b58ba9bb",
+  "files": [
+    {
+      "path": "docs/checkpoint.md",
+      "local_blob": "1910ac1cc17771c83309681f5c6f0ea59a7e60be",
+      "remote_blob": "1910ac1cc17771c83309681f5c6f0ea59a7e60be",
+      "mode": "100644",
+      "match": true
+    },
+    {
+      "path": "evidence/SHA256SUMS",
+      "local_blob": "d50454a9fa44610bda7f3e3a7c36e72171a7c0d2",
+      "remote_blob": "d50454a9fa44610bda7f3e3a7c36e72171a7c0d2",
+      "mode": "100644",
+      "match": true
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-004/SHA256SUMS",
+      "local_blob": "6d28024dff945187ffa562516b77b86cf2a41ce5",
+      "remote_blob": "6d28024dff945187ffa562516b77b86cf2a41ce5",
+      "mode": "100644",
+      "match": true
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-004/append_global_manifest.py",
+      "local_blob": "ce1ca0bbd30f6fe18a84162f79000b78eb2e0543",
+      "remote_blob": "ce1ca0bbd30f6fe18a84162f79000b78eb2e0543",
+      "mode": "100644",
+      "match": true
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-004/commands.txt",
+      "local_blob": "954fbe0e3999686aae51385104ee9e836aea66e9",
+      "remote_blob": "954fbe0e3999686aae51385104ee9e836aea66e9",
+      "mode": "100644",
+      "match": true
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-004/local-run.md",
+      "local_blob": "bc0ed109ca2ccfcd6a6f95065f25d357c177a51a",
+      "remote_blob": "bc0ed109ca2ccfcd6a6f95065f25d357c177a51a",
+      "mode": "100644",
+      "match": true
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-004/pipeline.json",
+      "local_blob": "4513bd22d9ed4ba69cd9964408958cb71777edfc",
+      "remote_blob": "4513bd22d9ed4ba69cd9964408958cb71777edfc",
+      "mode": "100644",
+      "match": true
+    },
+    {
+      "path": "evidence/gitlab-pc4-transfer-004/readback.json",
+      "local_blob": "331930076555cb46c84e8c4a3e1dc28638597677",
+      "remote_blob": "331930076555cb46c84e8c4a3e1dc28638597677",
+      "mode": "100644",
+      "match": true
+    }
+  ]
+}
