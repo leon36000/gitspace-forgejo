@@ -1,0 +1,5 @@
+Scoped status; pre-existing unrelated worktree changes were preserved.
+ M docs/checkpoint.md
+?? evidence/continuation-152-batch-comment-cache-process-001/
+?? scripts/run_webhook_reconcile_cli_e2e.py
+?? tests/webhook_receiver_process_e2e.rs

@@ -1,0 +1,4 @@
+cargo test --offline --locked --test webhook_receiver_process_e2e actual_receiver_rejects_case_variant_conflicting_content_lengths_before_append -- --exact
+rustfmt --edition 2024 --check tests/webhook_receiver_process_e2e.rs
+git diff --check
+python3 scripts/verify_cargo_license_state.py

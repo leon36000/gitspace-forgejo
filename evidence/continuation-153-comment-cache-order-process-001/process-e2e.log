@@ -1,0 +1,9 @@
+$ python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_shares_current_comment_read_across_create_delete_batch
+exit_code=0
+runner sandbox: /usr/bin/bwrap --unshare-net --unshare-pid (loopback-only fixture); Rust 1.95.0; Cargo 1.95.0
+compiled test target: webhook_receiver_process_e2e
+running 1 test
+test actual_reconcile_cli_process_shares_current_comment_read_across_create_delete_batch ... ok
+test result: ok. 1 passed; 0 failed; 0 ignored; 120 filtered out
+the test executed both forward and reverse CLI delivery-ID orders with fresh fixtures
+duration: 0.32s test; 12.78s command including isolated build

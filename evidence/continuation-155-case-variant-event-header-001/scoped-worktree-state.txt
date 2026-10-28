@@ -1,0 +1,10 @@
+Scoped status; pre-existing worktree changes were preserved.
+ M Cargo.toml
+ M docs/checkpoint.md
+ M src/webhook.rs
+ M src/webhook/http.rs
+ M tests/webhook_handler_contract.rs
+ M tests/webhook_http_contract.rs
+?? docs/refusal-evidence-matrix.md
+?? evidence/continuation-155-case-variant-event-header-001/
+?? tests/webhook_receiver_process_e2e.rs

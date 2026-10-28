@@ -1,0 +1,2 @@
+exit_code=0
+{"local_entries_appended": 1, "local_files_verified": 13, "project_entries_appended": 3, "project_prefix_preserved": true, "worktree_entries_appended": 2, "worktree_prefix_preserved": true}

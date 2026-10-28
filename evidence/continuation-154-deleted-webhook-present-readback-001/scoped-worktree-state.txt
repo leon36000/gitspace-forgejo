@@ -1,0 +1,8 @@
+Scoped status; pre-existing worktree changes were preserved.
+ M Cargo.toml
+ M docs/checkpoint.md
+ M src/webhook/reconcile.rs
+?? docs/refusal-evidence-matrix.md
+?? evidence/continuation-154-deleted-webhook-present-readback-001/
+?? scripts/run_webhook_reconcile_cli_e2e.py
+?? tests/webhook_receiver_process_e2e.rs

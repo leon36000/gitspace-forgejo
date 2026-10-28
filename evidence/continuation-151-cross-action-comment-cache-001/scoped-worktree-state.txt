@@ -1,0 +1,6 @@
+HEAD recorded in toolchain-and-head.txt.
+Scoped worktree status:
+ M docs/architecture.md
+ M docs/checkpoint.md
+ M src/webhook/reconcile.rs
+ M tests/webhook_reconcile_contract.rs

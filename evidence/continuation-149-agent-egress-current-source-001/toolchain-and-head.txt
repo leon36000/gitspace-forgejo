@@ -1,0 +1,5 @@
+HEAD=f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+date=2026-10-26T21:10:44-04:00
+python=Python 3.12.3
+bubblewrap=bubblewrap 0.9.0
+forgejo=forgejo version 17.0.0+gitea-1.22.0 (release name 17.0.0) built with GNU Make 4.4.1, go1.26.9 : bindata, timetzdata, sqlite, sqlite_unlock_notify
