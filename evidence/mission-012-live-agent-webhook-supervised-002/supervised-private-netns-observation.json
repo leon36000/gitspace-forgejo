@@ -1,0 +1,43 @@
+{
+  "bubblewrap_version": "bubblewrap 0.9.0",
+  "checks": {
+    "composed_pipeline_result": false,
+    "forgejo_netns_differs_from_host": false,
+    "gate_capability_matches_live_processes": false,
+    "host_loopback_connection_refused": false,
+    "outer_output_within_bound": true,
+    "outer_runner_exit_zero": false,
+    "outer_runner_not_timed_out": true,
+    "pinned_forgejo_binary": true,
+    "postmerge_forgejo_readback": false,
+    "private_forgejo_observed": false,
+    "supervisor_policy_limit_explicit": false,
+    "supervisor_shares_forgejo_netns": true,
+    "unprivileged_namespace_join_denied": false
+  },
+  "failure_diagnostic": "FAIL-CLOSED: Command '['git', 'rev-parse', 'HEAD']' returned non-zero exit status 128.",
+  "forgejo_binary_sha256": "e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7",
+  "forgejo_version": "17.0.0+gitea-1.22.0",
+  "gate_verdict": null,
+  "inner_exit_code": 1,
+  "inner_output_bytes": 87,
+  "inner_output_sha256": "f0a7c7c2429c33b789e1325d0db293e298b326904a56af8f0dd860df79c2ab30",
+  "inner_timed_out": false,
+  "limits": [
+    "only the local deterministic test adapter ran; no LLM or AgentOS was used",
+    "Forgejo and the host supervisor share a rootless private network namespace; the gate and Forgejo share a PID namespace",
+    "the gate checks a live peer/process-bound capability, but its policy cannot independently prove that all writers were excluded",
+    "the model excludes root, privileged host actors, kernel compromise and namespace escape",
+    "previous agent API/Web/receive-pack egress evidence is complementary and is not repeated by this run",
+    "a single successful deterministic local run is not a controlled benchmark"
+  ],
+  "llm_invoked": false,
+  "merge_attempted": null,
+  "merge_authorized": null,
+  "model_cost_usd": 0,
+  "output_exceeded": false,
+  "scenario": "MISSION-012 local-test-adapter under supervised private Forgejo network namespace",
+  "schema_version": 1,
+  "supervised_private_service_observation": null,
+  "verdict": "inconclusive"
+}

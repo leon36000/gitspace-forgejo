@@ -1,0 +1,14 @@
+[package]
+name = "agent-forge-core"
+version = "0.1.0"
+edition = "2024"
+description = "Minimal requirements, evidence, and event-journal core for an agent-oriented forge prototype"
+publish = false
+
+[dependencies]
+hex = "=0.4.3"
+hmac = "=0.12.1"
+libc = "=0.2.190"
+serde = { version = "=1.0.228", features = ["derive"] }
+serde_json = "=1.0.150"
+sha2 = "=0.10.9"

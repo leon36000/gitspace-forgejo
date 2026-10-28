@@ -1,0 +1,38 @@
+{
+  "capability_packet_bytes": 726,
+  "capability_packet_sha256": "1027b1bc355a5069ea624938519f5cce797be2617f151155d0c32a785e2580cc",
+  "capability_sent_before_gate_exec": true,
+  "forgejo": {
+    "network_namespace": "net:[4026535793]",
+    "pid": 1827852,
+    "pid_namespace": "pid:[4026531836]",
+    "start_time_ticks": 17756641
+  },
+  "gate": {
+    "network_namespace": "net:[4026535793]",
+    "pid": 1828666,
+    "pid_namespace": "pid:[4026531836]",
+    "start_time_ticks": 17756950
+  },
+  "gate_socket_peer_pid_expected": 1826808,
+  "host_network_namespace": "net:[4026531833]",
+  "merge_credential_pipe_fd_passed_only_to_gate_exec": true,
+  "policy_limit": "the gate validates channel/process bindings; this trusted runner supplies the namespace exclusion policy",
+  "private_network_differs_from_host": true,
+  "schema_version": 1,
+  "supervisor": {
+    "network_namespace": "net:[4026535793]",
+    "pid": 1826808,
+    "pid_namespace": "pid:[4026531836]",
+    "start_time_ticks": 17756077
+  },
+  "supervisor_network_namespace": "net:[4026535793]",
+  "target": {
+    "base_branch": "main",
+    "origin": "http://127.0.0.1:3132",
+    "owner": "forge-admin",
+    "profile_selector": "mission-012-clamp",
+    "pull_request_number": 2,
+    "repository": "mission-012-clamp"
+  }
+}

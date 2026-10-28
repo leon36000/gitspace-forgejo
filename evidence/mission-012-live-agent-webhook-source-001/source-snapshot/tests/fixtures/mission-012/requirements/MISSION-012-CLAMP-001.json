@@ -1,0 +1,15 @@
+{
+  "schema_version": 2,
+  "id": "MISSION-012-CLAMP-001",
+  "revision": 1,
+  "source_issue_number": 1,
+  "request": "Corriger clamp_to_range afin qu'une valeur supérieure à maximum retourne maximum. Préserver le comportement pour une valeur inférieure à minimum et pour une valeur dans l'intervalle inclusif. Commencer par exécuter cargo.test sur le code inchangé et examiner l'échec de l'assertion protégée sur la borne supérieure. Modifier uniquement src/lib.rs, puis relancer cargo.test jusqu'à réussite; les tests d'acceptation protégés font autorité.",
+  "acceptance": [
+    "Une valeur inférieure à minimum retourne minimum.",
+    "Une valeur supérieure à maximum retourne maximum.",
+    "Une valeur dans l'intervalle inclusif reste inchangée.",
+    "Le premier cargo.test sur la base inchangée révèle l'échec de l'assertion protégée de borne supérieure.",
+    "Seul src/lib.rs change; les tests protégés restent inchangés et cargo.test passe après la correction."
+  ],
+  "ambiguities": []
+}
