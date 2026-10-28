@@ -1,0 +1,10 @@
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/src/bin/forgejo-reconcile-local.rs:8993:
+ 
+     #[test]
+     fn merge_preflight_unauthorized_error_identifies_host_credential_action() {
+-        let (value, exit_success) =
+-            merge_preflight_api_failure(23, 1, ApiReadError::Unauthorized);
++        let (value, exit_success) = merge_preflight_api_failure(23, 1, ApiReadError::Unauthorized);
+ 
+         assert!(!exit_success);
+         assert_eq!(value["verdict"], "inconclusive");

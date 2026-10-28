@@ -1,0 +1,40 @@
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:1651:
+     assert!(stop_receiver(&mut receiver).success());
+ 
+     let fixture = start_scripted_cli_http_fixture(
+-        vec![(
+-            401,
+-            json!({"message": BODY_MARKER}),
+-            Vec::new(),
+-        )],
++        vec![(401, json!({"message": BODY_MARKER}), Vec::new())],
+         Duration::from_millis(200),
+     );
+     let mut descriptors = [-1; 2];
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:1685:
+     let requests = fixture.join().expect("401 API fixture completed");
+ 
+     assert_eq!(output.status.code(), Some(1));
+-    assert_eq!(requests.len(), 1, "401 is terminal and duplicate resources share one read");
++    assert_eq!(
++        requests.len(),
++        1,
++        "401 is terminal and duplicate resources share one read"
++    );
+     assert!(requests[0].starts_with(&format!(
+         "GET /api/v1/repos/{OWNER}/{REPOSITORY}/issues/{ISSUE_NUMBER} HTTP/1.1\r\n"
+     )));
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:1713:
+         assert_eq!(result["verdict"], "inconclusive");
+         assert_eq!(result["error"]["code"], "upstream_unauthorized");
+         assert_eq!(result["error"]["retryable"], false);
+-        assert!(result["error"]["action"].as_str().unwrap().contains("credential"));
++        assert!(
++            result["error"]["action"]
++                .as_str()
++                .unwrap()
++                .contains("credential")
++        );
+         assert!(result.get("canonical_state").is_none());
+     }
+ }

@@ -1,0 +1,12 @@
+test_accepts_unselected_license_with_publication_disabled (scripts.test_cargo_license_state.CargoLicenseStateTests.test_accepts_unselected_license_with_publication_disabled) ... ok
+test_rejects_enabled_publication (scripts.test_cargo_license_state.CargoLicenseStateTests.test_rejects_enabled_publication) ... ok
+test_rejects_license_file (scripts.test_cargo_license_state.CargoLicenseStateTests.test_rejects_license_file) ... ok
+test_rejects_license_identifier (scripts.test_cargo_license_state.CargoLicenseStateTests.test_rejects_license_identifier) ... ok
+test_rejects_metadata_that_claims_a_license_choice_or_assessed_rights (scripts.test_cargo_license_state.CargoLicenseStateTests.test_rejects_metadata_that_claims_a_license_choice_or_assessed_rights) ... ok
+test_rejects_missing_or_ambiguous_package (scripts.test_cargo_license_state.CargoLicenseStateTests.test_rejects_missing_or_ambiguous_package) ... ok
+test_requires_explicit_unselected_review_metadata (scripts.test_cargo_license_state.CargoLicenseStateTests.test_requires_explicit_unselected_review_metadata) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.000s
+
+OK

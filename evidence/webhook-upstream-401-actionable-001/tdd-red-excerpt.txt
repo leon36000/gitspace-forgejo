@@ -1,0 +1,10 @@
+Premier run TDD (extrait de la sortie du runner; ce fichier n'est pas le journal brut complet)
+
+Commande:
+PYTHONDONTWRITEBYTECODE=1 python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_reports_actionable_upstream_401_without_leaking_credential
+
+Observation avant correction:
+thread ... panicked at tests/webhook_receiver_process_e2e.rs:1716:9:
+assertion failed: result["error"]["action"].as_str().unwrap().contains("credential")
+
+La commande a échoué comme attendu sur le conseil absent. Les assertions précédentes de ce scénario avaient déjà confirmé une seule requête 401, un refus inconclusive non retryable, et l'absence du token synthétique et du corps amont dans stdout/stderr. La relance verte complète est dans process-e2e.log.
