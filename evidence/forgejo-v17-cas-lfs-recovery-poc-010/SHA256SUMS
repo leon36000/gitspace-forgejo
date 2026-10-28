@@ -1,0 +1,4 @@
+5f639035578d5234b9f222a4ac98b27ef7ee901c5c2b5040f70fc8ae056502d1  local-run.md
+ac020e1f4d4b52c6f1a20e6e2517ca96df41e40643ee5c08f8012ac02ea8f9c9  services-pull-test.log
+fd905caffcd2939b7aadd66737afc9303786fbc9f6167a30065c05c33b2c930a  models-git-test.log
+5c6949c141cff0b6a8c5bfe6ca753e965e3de48334c78c2c2a9b909c879ffff3  scratch-touched-files.sha256

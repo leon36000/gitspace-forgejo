@@ -1,0 +1,505 @@
+Environment variable $PROJECT_CONF not set, use default: tests/sqlite.ini
+2026/10/24 11:33:41 ...s/storage/storage.go:157:initAttachments() [I] Initialising Attachment storage with type: local
+2026/10/24 11:33:41 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/attachments
+2026/10/24 11:33:41 ...s/storage/storage.go:147:initAvatars() [I] Initialising Avatar storage with type: local
+2026/10/24 11:33:41 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/avatars
+2026/10/24 11:33:41 ...s/storage/storage.go:174:initRepoAvatars() [I] Initialising Repository Avatar storage with type: local
+2026/10/24 11:33:41 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/repo-avatars
+2026/10/24 11:33:41 ...s/storage/storage.go:168:initLFS() [I] Initialising LFS storage with type: local
+2026/10/24 11:33:41 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/lfs
+2026/10/24 11:33:41 ...s/storage/storage.go:180:initRepoArchives() [I] Initialising Repository Archive storage with type: local
+2026/10/24 11:33:41 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/repo-archive
+2026/10/24 11:33:41 ...s/storage/storage.go:190:initPackages() [I] Initialising Packages storage with type: local
+2026/10/24 11:33:41 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/packages
+2026/10/24 11:33:41 ...s/storage/storage.go:201:initActions() [I] Initialising Actions storage with type: local
+2026/10/24 11:33:41 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/actions_log
+2026/10/24 11:33:41 ...s/storage/storage.go:205:initActions() [I] Initialising ActionsArtifacts storage with type: local
+2026/10/24 11:33:41 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/actions_artifacts
+2026/10/24 11:33:41 modules/git/git.go:122:checkInit() [W] git module has been initialized already, duplicate init may work but it's better to fix it
+2026/10/24 11:33:41 routers/init.go:109:InitWebInstalled() [I] Git version: 2.43.0 (home: /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/home)
+??? [TestLogger] 2026/10/24 11:33:41 ...s/storage/storage.go:157:initAttachments() [I] Initialising Attachment storage with type: local
+??? [TestLogger] 2026/10/24 11:33:41 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/attachments
+??? [TestLogger] 2026/10/24 11:33:41 ...s/storage/storage.go:147:initAvatars() [I] Initialising Avatar storage with type: local
+??? [TestLogger] 2026/10/24 11:33:41 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/avatars
+??? [TestLogger] 2026/10/24 11:33:41 ...s/storage/storage.go:174:initRepoAvatars() [I] Initialising Repository Avatar storage with type: local
+??? [TestLogger] 2026/10/24 11:33:41 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/repo-avatars
+??? [TestLogger] 2026/10/24 11:33:41 ...s/storage/storage.go:168:initLFS() [I] Initialising LFS storage with type: local
+??? [TestLogger] 2026/10/24 11:33:41 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/lfs
+??? [TestLogger] 2026/10/24 11:33:41 ...s/storage/storage.go:180:initRepoArchives() [I] Initialising Repository Archive storage with type: local
+??? [TestLogger] 2026/10/24 11:33:41 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/repo-archive
+??? [TestLogger] 2026/10/24 11:33:41 ...s/storage/storage.go:190:initPackages() [I] Initialising Packages storage with type: local
+??? [TestLogger] 2026/10/24 11:33:41 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/packages
+??? [TestLogger] 2026/10/24 11:33:41 ...s/storage/storage.go:201:initActions() [I] Initialising Actions storage with type: local
+??? [TestLogger] 2026/10/24 11:33:41 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/actions_log
+??? [TestLogger] 2026/10/24 11:33:41 ...s/storage/storage.go:205:initActions() [I] Initialising ActionsArtifacts storage with type: local
+??? [TestLogger] 2026/10/24 11:33:41 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/actions_artifacts
+??? [TestLogger] 2026/10/24 11:33:41 routers/init.go:129:InitWebInstalled() [I] SQLite3 support is enabled
+??? [TestLogger] 2026/10/24 11:33:41 routers/common/db.go:23:InitDBEngine() [I] Beginning ORM engine initialization.
+??? [TestLogger] 2026/10/24 11:33:41 routers/common/db.go:30:InitDBEngine() [I] ORM engine initialization attempt #1/10...
+??? [TestLogger] 2026/10/24 11:33:41 routers/init.go:135:InitWebInstalled() [I] ORM engine initialization successful!
+??? [TestLogger] 2026/10/24 11:33:41 ...er/issues/indexer.go:80:func1() [I] PID 2386548: Initializing Issue Indexer: bleve
+??? [TestLogger] 2026/10/24 11:33:41 ...exer/code/indexer.go:169:func3() [I] PID: 2386548 Initializing Repository Indexer at: /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/indexers/repos.bleve
+??? [TestLogger] 2026/10/24 11:33:41 routers/init.go:84:syncAppConfForGit() [I] AppPath changed from '' to '/dev/shm/go-build4208001114/b001/integration.test'
+??? [TestLogger] 2026/10/24 11:33:41 routers/init.go:89:syncAppConfForGit() [I] CustomConf changed from '' to '/tmp/forgejo-v17-base-cas-poc/tests/sqlite.ini'
+??? [TestLogger] 2026/10/24 11:33:41 ...xer/stats/indexer.go:41:populateRepoIndexer() [I] Populating the repo stats indexer with existing repositories
+??? [TestLogger] 2026/10/24 11:33:41 modules/ssh/ssh.go:345:Listen() [I] Adding SSH host key: /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/ssh/gitea.rsa
+??? [TestLogger] 2026/10/24 11:33:41 modules/ssh/init.go:30:Init() [I] SSH server started on localhost:2203. Cipher list ([chacha20-poly1305@openssh.com aes128-ctr aes192-ctr aes256-ctr aes128-gcm@openssh.com aes256-gcm@openssh.com]), key exchange algorithms ([mlkem768x25519-sha256 curve25519-sha256 ecdh-sha2-nistp256 ecdh-sha2-nistp384 ecdh-sha2-nistp521 diffie-hellman-group14-sha256 diffie-hellman-group14-sha1]), MACs ([hmac-sha2-256-etm@openssh.com hmac-sha2-256 hmac-sha1])
+??? [TestLogger] 2026/10/24 11:33:41 ...s/graceful/server.go:50:NewServer() [I] Starting new SSH server: tcp:localhost:2203 on PID: 2386548
+??? [TestLogger] 2026/10/24 11:33:41 ...er/cleanup_sha256.go:27:CleanupSHA256() [I] Start to cleanup dangling images with a sha256:* version
+??? [TestLogger] 2026/10/24 11:33:41 ...er/cleanup_sha256.go:106:cleanupSHA256() [I] Nothing to cleanup
+??? [TestLogger] 2026/10/24 11:33:41 ...er/cleanup_sha256.go:29:CleanupSHA256() [I] Finished to cleanup dangling images with a sha256:* version
+??? [TestLogger] 2026/10/24 11:33:41 ...er/issues/indexer.go:160:func2() [I] Issue Indexer Initialization took 23.722397ms
+??? [TestLogger] 2026/10/24 11:33:41 ...exer/code/indexer.go:265:func4() [I] Repository Indexer Initialization took 25.236655ms
+??? [TestLogger] 2026/10/24 11:33:41 ...exer/code/indexer.go:291:populateRepoIndexer() [I] Populating the repo indexer with existing repositories
+=== RUN   TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule
+=== TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule (tests/integration/git_helper_for_declarative_test.go:67)
+    test_utils.go:276: PrepareTestEnv:Process "CodeIndexer batch" cancelled
+    test_utils.go:276: PrepareTestEnv:Process "/usr/bin/git cat-file --batch [repo_path: /dev/shm/TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge3322428020/001/user2/repo59.git] (modules/git/repo_base.go:124)" cancelled
+    test_utils.go:276: PrepareTestEnv:Process "Stats.DB Index Repo[63]" cancelled
+    test_utils.go:276: PrepareTestEnv:Process "/usr/bin/git cat-file --batch-check [repo_path: /dev/shm/TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge3322428020/001/user2/test_action_run_search.git] (modules/git/repo_base.go:153)" cancelled
+    test_utils.go:276: PrepareTestEnv:Process "/usr/bin/git cat-file --batch [repo_path: /dev/shm/TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge3322428020/001/user2/test_action_run_search.git] (modules/git/repo_base.go:124)" cancelled
+    testlogger.go:408: 2026/10/24 11:33:42 ...xer/stats/indexer.go:87:populateRepoIndexer() [I] Done (re)populating the repo stats indexer with existing repositories
+    test_utils.go:302: PrepareTestEnv: all processes cancelled within 775.575543ms
+    testlogger.go:408: 2026/10/24 11:33:42 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/gitea-lfs-meta
+    testlogger.go:408: 2026/10/24 11:33:42 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974.git/info/refs?service=git-upload-pack for 127.0.0.1:32870, 200 OK in 1.8ms @ repo/githttp.go:509(repo.GetInfoRefs)
+    testlogger.go:408: 2026/10/24 11:33:42 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974.git/git-upload-pack for 127.0.0.1:32870, 200 OK in 1.5ms @ repo/githttp.go:469(repo.ServiceUploadPack)
+    testlogger.go:408: 2026/10/24 11:33:42 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974.git/git-upload-pack for 127.0.0.1:32870, 200 OK in 3.8ms @ repo/githttp.go:469(repo.ServiceUploadPack)
+    testlogger.go:408: 2026/10/24 11:33:42 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974.git/info/refs?service=git-receive-pack for 127.0.0.1:32880, 401 Unauthorized in 0.6ms @ repo/githttp.go:509(repo.GetInfoRefs)
+    testlogger.go:408: 2026/10/24 11:33:42 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974.git/info/refs?service=git-receive-pack for 127.0.0.1:32880, 200 OK in 1.6ms @ repo/githttp.go:509(repo.GetInfoRefs)
+    testlogger.go:408: 2026/10/24 11:33:42 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/pre-receive/user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974 for 127.0.0.1:0, 200 OK in 0.9ms @ private/hook_pre_receive.go:204(private.HookPreReceive)
+    testlogger.go:408: 2026/10/24 11:33:43 ...odels/user/avatar.go:59:GenerateRandomAvatar() [I] New random avatar created: 308
+    testlogger.go:408: 2026/10/24 11:33:43 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/post-receive/user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974 for 127.0.0.1:0, 200 OK in 118.4ms @ private/hook_post_receive.go:46(private.HookPostReceive)
+    testlogger.go:408: 2026/10/24 11:33:43 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974.git/git-receive-pack for 127.0.0.1:32880, 200 OK in 286.3ms @ repo/githttp.go:477(repo.ServiceReceivePack)
+    testlogger.go:408: 2026/10/24 11:33:43 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974.git/info/refs?service=git-receive-pack for 127.0.0.1:32908, 401 Unauthorized in 0.7ms @ repo/githttp.go:509(repo.GetInfoRefs)
+    testlogger.go:408: 2026/10/24 11:33:43 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974.git/info/refs?service=git-receive-pack for 127.0.0.1:32908, 200 OK in 2.1ms @ repo/githttp.go:509(repo.GetInfoRefs)
+    testlogger.go:408: 2026/10/24 11:33:43 ...exer/code/indexer.go:343:populateRepoIndexer() [I] Done (re)populating the repo indexer with existing repositories
+    testlogger.go:408: 2026/10/24 11:33:43 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/pre-receive/user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974 for 127.0.0.1:0, 200 OK in 1.2ms @ private/hook_pre_receive.go:204(private.HookPreReceive)
+    testlogger.go:408: 2026/10/24 11:33:43 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/post-receive/user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974 for 127.0.0.1:0, 200 OK in 61.7ms @ private/hook_post_receive.go:46(private.HookPostReceive)
+    testlogger.go:408: 2026/10/24 11:33:43 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974.git/git-receive-pack for 127.0.0.1:32908, 200 OK in 217.5ms @ repo/githttp.go:477(repo.ServiceReceivePack)
+    testlogger.go:408: 2026/10/24 11:33:43 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/login for test-mock:12345, 303 See Other in 8.0ms @ auth/auth.go:208(auth.SignInPost)
+    testlogger.go:408: 2026/10/24 11:33:43 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/settings/applications/tokens/new for test-mock:12345, 303 See Other in 8.8ms @ setting/access_token.go:220(setting.AccessTokenCreatePost)
+    testlogger.go:408: 2026/10/24 11:33:43 ...s/setting/setting.go:65:initialAppDocsVer() [W] Doclinks will fallback to version 'latest' due to err: Malformed version: dev
+    testlogger.go:408: 2026/10/24 11:33:43 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user/settings/applications for test-mock:12345, 200 OK in 3.2ms @ setting/applications.go:24(setting.Applications)
+    testlogger.go:408: 2026/10/24 11:33:43 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/login for test-mock:12345, 303 See Other in 8.2ms @ auth/auth.go:208(auth.SignInPost)
+    testlogger.go:408: 2026/10/24 11:33:43 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/settings/applications/tokens/new for test-mock:12345, 303 See Other in 6.6ms @ setting/access_token.go:220(setting.AccessTokenCreatePost)
+    testlogger.go:408: 2026/10/24 11:33:43 ...odels/user/avatar.go:59:GenerateRandomAvatar() [I] New random avatar created: 309
+    testlogger.go:408: 2026/10/24 11:33:43 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user/settings/applications for test-mock:12345, 200 OK in 7.1ms @ setting/applications.go:24(setting.Applications)
+    testlogger.go:408: 2026/10/24 11:33:43 ...ces/mailer/mailer.go:384:Send() [I] Mail From: sqlite-integration-test@gitea.io To: [user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb@test.forgejo.org] Body: Mime-Version: 1.0
+        X-Gitea-Sender: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-bf8d6a11
+        X-GitLab-Issue-IID: 1
+        X-GitLab-Project-Path: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974
+        X-Mailer: Forgejo
+        X-Forgejo-Sender: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-bf8d6a11
+        List-Archive: <http://localhost:3003/user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974>
+        X-GitLab-NotificationReason: pull
+        Message-ID: <user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974/pulls/1@localhost>
+        List-ID: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974
+         <repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974.user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb.localhost>
+        References: <user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974/pulls/1@localhost>
+        X-Forgejo-Recipient: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb
+        X-Gitea-Recipient-Address: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb@test.forgejo.org
+        X-Forgejo-Recipient-Address: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb@test.forgejo.org
+        X-Gitea-Issue-Link: http://localhost:3003/user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974/pulls/1
+        Date: Sat, 24 Oct 2026 11:33:43 -0400
+        In-Reply-To: <user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974/pulls/1@localhost>
+        X-Forgejo-Issue-ID: 1
+        X-Forgejo-Repository: repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974
+        X-Forgejo-Repository-Path: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974
+        From: "user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-bf8d6a11"
+         <sqlite-integration-test@gitea.io>
+        X-GitHub-Recipient-Address: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb@test.forgejo.org
+        X-Gitea-Issue-ID: 1
+        List-Unsubscribe: <http://localhost:3003/user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974/pulls/1>
+        X-GitLab-Project: repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974
+        X-Forgejo-Issue-Link: http://localhost:3003/user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974/pulls/1
+        Subject: [user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974]
+         create a pr from replace-schedule-target to main (PR #1)
+        X-GitHub-Sender: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-bf8d6a11
+        X-Gitea-Reason: pull
+        X-GitHub-Reason: pull
+        X-Gitea-Repository: repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974
+        X-Forgejo-Repository-Link: http://localhost:3003/user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974
+        X-Auto-Response-Suppress: All
+        To: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb@test.forgejo.org
+        X-GitHub-Recipient: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb
+        X-Gitea-Recipient: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb
+        X-Gitea-Repository-Link: http://localhost:3003/user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974
+        X-Forgejo-Reason: pull
+        X-Gitea-Repository-Path: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974
+        Content-Type: multipart/alternative;
+         boundary=7e16d5f2f9ee8daa831222aa61f1fc57b52ade5675869aa289a0b8cc4119
+        
+        --7e16d5f2f9ee8daa831222aa61f1fc57b52ade5675869aa289a0b8cc4119
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/plain; charset=UTF-8
+        
+        *@user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-bf=
+        8d6a11* created #1.
+        
+        ---
+        View it on Forgejo ( http://localhost:3003/user-TestPullMergeStaleAutoMerge=
+        WorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoM=
+        ergeWorkerCannotConsumeReplacementSchedule-b4e3e974/pulls/1 ).
+        --7e16d5f2f9ee8daa831222aa61f1fc57b52ade5675869aa289a0b8cc4119
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/html; charset=UTF-8
+        
+        <!DOCTYPE html>
+        <html>
+        <head>
+        	<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+        
+        	<style>
+        		blockquote { padding-left: 1em; margin: 1em 0; border-left: 1px solid gre=
+        y; color: #777}
+        		.footer { font-size:small; color:#666;}
+        	=09
+        	</style>
+        
+        </head>
+        
+        <body>
+        =09
+        =09
+        	<p>
+        	=09
+        		=09
+        				<b>@user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSched=
+        ule-bf8d6a11</b> created #1.
+        		=09
+        	=09
+        	</p>
+        	<div class=3D"footer">
+        	<p>
+        		---
+        		<br>
+        		<a href=3D"http://localhost:3003/user-TestPullMergeStaleAutoMergeWorkerCa=
+        nnotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWork=
+        erCannotConsumeReplacementSchedule-b4e3e974/pulls/1">View it on Forgejo</a>=
+        .
+        	</p>
+        	</div>
+        </body>
+        </html>
+        
+        --7e16d5f2f9ee8daa831222aa61f1fc57b52ade5675869aa289a0b8cc4119--
+    testlogger.go:408: 2026/10/24 11:33:43 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/v1/repos/user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974/pulls for test-mock:12345, 201 Created in 166.2ms @ repo/pull.go:404(repo.CreatePullRequest)
+    testlogger.go:408: 2026/10/24 11:33:43 ...ces/mailer/mailer.go:384:Send() [I] Mail From: sqlite-integration-test@gitea.io To: [user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb@test.forgejo.org] Body: Mime-Version: 1.0
+        X-Forgejo-Sender: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-bf8d6a11
+        X-Forgejo-Issue-ID: 2
+        X-Forgejo-Recipient-Address: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb@test.forgejo.org
+        X-Gitea-Recipient-Address: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb@test.forgejo.org
+        X-Gitea-Repository-Link: http://localhost:3003/user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974
+        X-Forgejo-Repository: repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974
+        From: "user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-bf8d6a11"
+         <sqlite-integration-test@gitea.io>
+        X-Gitea-Sender: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-bf8d6a11
+        Message-ID: <user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974/pulls/2@localhost>
+        X-Gitea-Recipient: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb
+        X-Mailer: Forgejo
+        List-Archive: <http://localhost:3003/user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974>
+        References: <user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974/pulls/2@localhost>
+        X-Forgejo-Repository-Link: http://localhost:3003/user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974
+        X-GitHub-Recipient: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb
+        Subject: [user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974]
+         create a pr from replace-schedule-competitor to main (PR #2)
+        X-GitLab-Issue-IID: 2
+        Date: Sat, 24 Oct 2026 11:33:43 -0400
+        To: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb@test.forgejo.org
+        X-Gitea-Issue-Link: http://localhost:3003/user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974/pulls/2
+        In-Reply-To: <user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974/pulls/2@localhost>
+        List-Unsubscribe: <http://localhost:3003/user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974/pulls/2>
+        X-Gitea-Repository: repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974
+        X-Forgejo-Reason: pull
+        X-Gitea-Reason: pull
+        List-ID: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974
+         <repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974.user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb.localhost>
+        X-GitHub-Recipient-Address: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb@test.forgejo.org
+        X-GitHub-Sender: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-bf8d6a11
+        X-Forgejo-Recipient: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb
+        X-GitLab-NotificationReason: pull
+        X-Forgejo-Repository-Path: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974
+        X-Forgejo-Issue-Link: http://localhost:3003/user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974/pulls/2
+        X-GitLab-Project: repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974
+        X-Gitea-Issue-ID: 2
+        X-Auto-Response-Suppress: All
+        X-GitHub-Reason: pull
+        X-GitLab-Project-Path: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974
+        X-Gitea-Repository-Path: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974
+        Content-Type: multipart/alternative;
+         boundary=3d3ad8f79d16022f54e610e5ac97d20c799509e9c93309df4947b2899434
+        
+        --3d3ad8f79d16022f54e610e5ac97d20c799509e9c93309df4947b2899434
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/plain; charset=UTF-8
+        
+        *@user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-bf=
+        8d6a11* created #2.
+        
+        ---
+        View it on Forgejo ( http://localhost:3003/user-TestPullMergeStaleAutoMerge=
+        WorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoM=
+        ergeWorkerCannotConsumeReplacementSchedule-b4e3e974/pulls/2 ).
+        --3d3ad8f79d16022f54e610e5ac97d20c799509e9c93309df4947b2899434
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/html; charset=UTF-8
+        
+        <!DOCTYPE html>
+        <html>
+        <head>
+        	<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+        
+        	<style>
+        		blockquote { padding-left: 1em; margin: 1em 0; border-left: 1px solid gre=
+        y; color: #777}
+        		.footer { font-size:small; color:#666;}
+        	=09
+        	</style>
+        
+        </head>
+        
+        <body>
+        =09
+        =09
+        	<p>
+        	=09
+        		=09
+        				<b>@user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSched=
+        ule-bf8d6a11</b> created #2.
+        		=09
+        	=09
+        	</p>
+        	<div class=3D"footer">
+        	<p>
+        		---
+        		<br>
+        		<a href=3D"http://localhost:3003/user-TestPullMergeStaleAutoMergeWorkerCa=
+        nnotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWork=
+        erCannotConsumeReplacementSchedule-b4e3e974/pulls/2">View it on Forgejo</a>=
+        .
+        	</p>
+        	</div>
+        </body>
+        </html>
+        
+        --3d3ad8f79d16022f54e610e5ac97d20c799509e9c93309df4947b2899434--
+    testlogger.go:408: 2026/10/24 11:33:43 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/v1/repos/user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974/pulls for test-mock:12345, 201 Created in 158.6ms @ repo/pull.go:404(repo.CreatePullRequest)
+    testlogger.go:408: 2026/10/24 11:33:43 ...eb/routing/logger.go:109:func1() [I] router: completed GET /api/v1/repos/user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974/pulls/1 for test-mock:12345, 200 OK in 26.0ms @ repo/pull.go:205(repo.GetPullRequest)
+    testlogger.go:408: 2026/10/24 11:33:43 ...eb/routing/logger.go:109:func1() [I] router: completed GET /api/v1/repos/user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974/pulls/2 for test-mock:12345, 200 OK in 35.6ms @ repo/pull.go:205(repo.GetPullRequest)
+    testlogger.go:408: 2026/10/24 11:33:43 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/v1/repos/user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974/pulls/1/merge for test-mock:12345, 201 Created in 28.7ms @ repo/pull.go:869(repo.MergePullRequest)
+    testlogger.go:408: 2026/10/24 11:33:43 ...eb/routing/logger.go:109:func1() [I] router: completed DELETE /api/v1/repos/user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974/pulls/1/merge for test-mock:12345, 204 No Content in 10.7ms @ repo/pull.go:1394(repo.CancelScheduledAutoMerge)
+    testlogger.go:408: 2026/10/24 11:33:43 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/v1/repos/user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974/pulls/1/merge for test-mock:12345, 201 Created in 15.7ms @ repo/pull.go:869(repo.MergePullRequest)
+    testlogger.go:408: 2026/10/24 11:33:44 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/pre-receive/user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974 for 127.0.0.1:0, 200 OK in 0.7ms @ private/hook_pre_receive.go:204(private.HookPreReceive)
+    testlogger.go:408: 2026/10/24 11:33:44 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/post-receive/user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974 for 127.0.0.1:0, 200 OK in 109.8ms @ private/hook_post_receive.go:46(private.HookPostReceive)
+    testlogger.go:408: 2026/10/24 11:33:44 ...ces/mailer/mailer.go:384:Send() [I] Mail From: sqlite-integration-test@gitea.io To: [user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb@test.forgejo.org] Body: Mime-Version: 1.0
+        X-Forgejo-Recipient-Address: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb@test.forgejo.org
+        X-Forgejo-Sender: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb
+        References: <user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974/pulls/1@localhost>
+        From: "user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb"
+         <sqlite-integration-test@gitea.io>
+        X-Forgejo-Issue-ID: 1
+        X-GitHub-Recipient: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb
+        X-Gitea-Repository: repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974
+        X-Forgejo-Issue-Link: http://localhost:3003/user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974/pulls/1
+        X-Forgejo-Repository-Path: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974
+        X-Gitea-Reason: pull
+        To: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb@test.forgejo.org
+        X-Forgejo-Reason: pull
+        X-GitLab-Issue-IID: 1
+        X-GitLab-Project: repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974
+        Subject: Re:
+         [user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974]
+         create a pr from replace-schedule-target to main (PR #1)
+        X-Gitea-Issue-ID: 1
+        List-Archive: <http://localhost:3003/user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974>
+        List-ID: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974
+         <repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974.user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb.localhost>
+        X-Gitea-Repository-Link: http://localhost:3003/user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974
+        X-Mailer: Forgejo
+        List-Unsubscribe: <http://localhost:3003/user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974/pulls/1>
+        X-Gitea-Recipient: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb
+        X-Forgejo-Repository: repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974
+        In-Reply-To: <user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974/pulls/1@localhost>
+        X-GitHub-Reason: pull
+        X-Gitea-Issue-Link: http://localhost:3003/user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974/pulls/1
+        X-Gitea-Repository-Path: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974
+        Date: Sat, 24 Oct 2026 11:33:44 -0400
+        X-Auto-Response-Suppress: All
+        X-Gitea-Recipient-Address: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb@test.forgejo.org
+        Message-ID: <user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974/pulls/1/merge/1792856024336@localhost>
+        X-Gitea-Sender: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb
+        X-GitLab-Project-Path: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974
+        X-Forgejo-Recipient: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb
+        X-GitHub-Recipient-Address: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb@test.forgejo.org
+        X-Forgejo-Repository-Link: http://localhost:3003/user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974
+        X-GitHub-Sender: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb
+        X-GitLab-NotificationReason: pull
+        Content-Type: multipart/alternative;
+         boundary=c91edb741b99b71715aae4be7da4e446802da3799cd087ff1a25dfffb835
+        
+        --c91edb741b99b71715aae4be7da4e446802da3799cd087ff1a25dfffb835
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/plain; charset=UTF-8
+        
+        *@user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c=
+        643eb* merged #1 into main.
+        
+        ---
+        View it on Forgejo ( http://localhost:3003/user-TestPullMergeStaleAutoMerge=
+        WorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoM=
+        ergeWorkerCannotConsumeReplacementSchedule-b4e3e974/pulls/1 ).
+        --c91edb741b99b71715aae4be7da4e446802da3799cd087ff1a25dfffb835
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/html; charset=UTF-8
+        
+        <!DOCTYPE html>
+        <html>
+        <head>
+        	<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+        
+        	<style>
+        		blockquote { padding-left: 1em; margin: 1em 0; border-left: 1px solid gre=
+        y; color: #777}
+        		.footer { font-size:small; color:#666;}
+        	=09
+        	</style>
+        
+        </head>
+        
+        <body>
+        =09
+        =09
+        	<p>
+        	=09
+        			<b>@user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedu=
+        le-3c643eb</b> merged #1 into main.
+        	=09
+        		=09
+        	=09
+        	</p>
+        	<div class=3D"footer">
+        	<p>
+        		---
+        		<br>
+        		<a href=3D"http://localhost:3003/user-TestPullMergeStaleAutoMergeWorkerCa=
+        nnotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWork=
+        erCannotConsumeReplacementSchedule-b4e3e974/pulls/1">View it on Forgejo</a>=
+        .
+        	</p>
+        	</div>
+        </body>
+        </html>
+        
+        --c91edb741b99b71715aae4be7da4e446802da3799cd087ff1a25dfffb835--
+    testlogger.go:408: 2026/10/24 11:33:44 ...ces/mailer/mailer.go:384:Send() [I] Mail From: sqlite-integration-test@gitea.io To: [user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-bf8d6a11@test.forgejo.org] Body: Mime-Version: 1.0
+        X-Gitea-Repository: repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974
+        X-Forgejo-Recipient: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-bf8d6a11
+        X-Gitea-Repository-Link: http://localhost:3003/user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974
+        X-Forgejo-Sender: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb
+        List-ID: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974
+         <repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974.user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb.localhost>
+        X-Forgejo-Repository: repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974
+        X-Auto-Response-Suppress: All
+        To: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-bf8d6a11@test.forgejo.org
+        X-GitHub-Recipient: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-bf8d6a11
+        X-GitLab-Issue-IID: 1
+        X-Gitea-Issue-Link: http://localhost:3003/user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974/pulls/1
+        Date: Sat, 24 Oct 2026 11:33:44 -0400
+        From: "user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb"
+         <sqlite-integration-test@gitea.io>
+        X-Forgejo-Repository-Path: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974
+        X-Gitea-Recipient: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-bf8d6a11
+        X-GitHub-Reason: pull
+        X-Gitea-Repository-Path: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974
+        X-Forgejo-Issue-ID: 1
+        X-Forgejo-Reason: pull
+        X-Mailer: Forgejo
+        X-Forgejo-Repository-Link: http://localhost:3003/user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974
+        In-Reply-To: <user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974/pulls/1@localhost>
+        List-Unsubscribe: <http://localhost:3003/user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974/pulls/1>
+        X-GitLab-NotificationReason: pull
+        X-Gitea-Sender: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb
+        Subject: Re:
+         [user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974]
+         create a pr from replace-schedule-target to main (PR #1)
+        X-GitHub-Sender: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb
+        X-GitLab-Project: repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974
+        X-Forgejo-Recipient-Address: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-bf8d6a11@test.forgejo.org
+        List-Archive: <http://localhost:3003/user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974>
+        X-Forgejo-Issue-Link: http://localhost:3003/user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974/pulls/1
+        References: <user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974/pulls/1@localhost>
+        X-GitHub-Recipient-Address: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-bf8d6a11@test.forgejo.org
+        X-GitLab-Project-Path: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974
+        X-Gitea-Reason: pull
+        X-Gitea-Recipient-Address: user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-bf8d6a11@test.forgejo.org
+        Message-ID: <user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-b4e3e974/pulls/1/merge/1792856024336@localhost>
+        X-Gitea-Issue-ID: 1
+        Content-Type: multipart/alternative;
+         boundary=38a998238c92b2a8b529ffadf8981911c15771f617052f1427c5398dccdf
+        
+        --38a998238c92b2a8b529ffadf8981911c15771f617052f1427c5398dccdf
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/plain; charset=UTF-8
+        
+        *@user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule-3c=
+        643eb* merged #1 into main.
+        
+        ---
+        View it on Forgejo ( http://localhost:3003/user-TestPullMergeStaleAutoMerge=
+        WorkerCannotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoM=
+        ergeWorkerCannotConsumeReplacementSchedule-b4e3e974/pulls/1 ).
+        --38a998238c92b2a8b529ffadf8981911c15771f617052f1427c5398dccdf
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/html; charset=UTF-8
+        
+        <!DOCTYPE html>
+        <html>
+        <head>
+        	<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+        
+        	<style>
+        		blockquote { padding-left: 1em; margin: 1em 0; border-left: 1px solid gre=
+        y; color: #777}
+        		.footer { font-size:small; color:#666;}
+        	=09
+        	</style>
+        
+        </head>
+        
+        <body>
+        =09
+        =09
+        	<p>
+        	=09
+        			<b>@user-TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedu=
+        le-3c643eb</b> merged #1 into main.
+        	=09
+        		=09
+        	=09
+        	</p>
+        	<div class=3D"footer">
+        	<p>
+        		---
+        		<br>
+        		<a href=3D"http://localhost:3003/user-TestPullMergeStaleAutoMergeWorkerCa=
+        nnotConsumeReplacementSchedule-3c643eb/repo-TestPullMergeStaleAutoMergeWork=
+        erCannotConsumeReplacementSchedule-b4e3e974/pulls/1">View it on Forgejo</a>=
+        .
+        	</p>
+        	</div>
+        </body>
+        </html>
+        
+        --38a998238c92b2a8b529ffadf8981911c15771f617052f1427c5398dccdf--
+    pull_merge_freshness_race_test.go:760: 
+        	Error Trace:	/tmp/forgejo-v17-base-cas-poc/tests/integration/pull_merge_freshness_race_test.go:760
+        	            				/tmp/forgejo-v17-base-cas-poc/tests/integration/git_helper_for_declarative_test.go:99
+        	            				/tmp/forgejo-v17-base-cas-poc/tests/integration/pull_merge_freshness_race_test.go:695
+        	Error:      	Should be true
+        	Test:       	TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule
+        	Messages:   	the stale worker must leave a replacement schedule untouched
+??? [TestLogger] 2026/10/24 11:33:45 ...s/actions/cleanup.go:184:CleanupEphemeralRunnersByPickedTaskOfRepo() [I] Removed 0 runners
+--- FAIL: TestPullMergeStaleAutoMergeWorkerCannotConsumeReplacementSchedule (3.38s)
+FAIL
+FAIL	forgejo.org/tests/integration	3.801s
+FAIL

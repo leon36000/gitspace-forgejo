@@ -1,0 +1,6 @@
+# forgejo.org/services/pull [forgejo.org/services/pull.test]
+services/pull/merge_test.go:205:123: not enough arguments in call to Merge
+	have ("context".Context, *"forgejo.org/models/issues".PullRequest, *"forgejo.org/models/user".User, *"forgejo.org/modules/git".Repository, repo.MergeStyle, string, string, string, bool)
+	want ("context".Context, *"forgejo.org/models/issues".PullRequest, *"forgejo.org/models/user".User, *"forgejo.org/modules/git".Repository, repo.MergeStyle, string, string, string, string, bool)
+FAIL	forgejo.org/services/pull [build failed]
+FAIL

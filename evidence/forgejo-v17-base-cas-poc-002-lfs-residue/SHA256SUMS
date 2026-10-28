@@ -1,0 +1,6 @@
+17a524a582e71cea4aa7639b10df35d281b7e39690c3c905a9d58777665fbc8b  cas-regressions-final.log
+fc80a7b269648c341f132d64544b4fa42cc44f6bab8c06f5addf8ec12e1260d4  lfs-residue-download-test.log
+dc24f3b721ec3924818d9c58159edb84843ff6217f281a486c8779c58fe69e69  lfs-residue-test-source.go
+0f092010ee8074fa4309ce9666c7d48593b746540473b679642f1ea229ed8e10  local-run.md
+d3569a07eaafaa1e53ad0d7b0c76938629fd61bd46b8ae3eb47bebbdb39a5ac3  missing-client-base-token.log
+6144e757036a6341e494e9ba7eca81f53d37b60a813afa22cd2e802e34501fec  pull-merge-freshness-race-test-source.go

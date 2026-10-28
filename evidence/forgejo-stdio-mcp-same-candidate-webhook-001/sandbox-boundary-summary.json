@@ -1,0 +1,20 @@
+{
+  "blocked_forgejo_surfaces": [
+    "api",
+    "web",
+    "git_receive_pack"
+  ],
+  "child_alive_during_gate_read": true,
+  "child_released_after_merge_operation": true,
+  "credential_probe_refused_in_child_namespace": true,
+  "credential_visible_to_child": false,
+  "gate_merge_http_status": 200,
+  "gate_merge_verdict": "merged",
+  "gate_read_http_status": 200,
+  "network_connected_from_child": false,
+  "supervisor_observed_route_connections": 0,
+  "write_credential_created_for_gate": true,
+  "write_credential_fd_inherited_by_child": false,
+  "write_credential_passed_to_child": false,
+  "write_credential_persisted_to_file": false
+}

@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "forgejo_version": "17.0.0+gitea-1.22.0",
+  "forgejo_binary_sha256": "e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7",
+  "base_commit": "56eaec118bc1f577f5f9c947da1d6f14f91a872c",
+  "candidate_commit": "88350d6f323139cfb3e9d0252a6f35f3e2d64ff9",
+  "candidate_sha256": "78cc4a0a2cafa1d15b62adc8782af05445e1708268d618bf970de3b2340d407a",
+  "pull_request_number": 2,
+  "requirement_sha256": "878086cb92e6ee91331204e51ecacb4900448537620ba6e108f8db8cca984af6",
+  "policy_sha256": "bfa4222a96cd14a471b500ba7dc9350a20fe825968fa9903594666e7bb20ea30",
+  "red_acceptance": {
+    "exit_code": 1,
+    "failed_tests": [
+      "below_min_returns_min",
+      "above_max_returns_max",
+      "singleton_interval_clamps",
+      "i32_min_clamps",
+      "i32_max_clamps"
+    ],
+    "passing_tests": [
+      "in_range_is_preserved",
+      "equal_lower_bound_is_preserved",
+      "equal_upper_bound_is_preserved",
+      "negative_interval_clamps"
+    ]
+  },
+  "green_acceptance": "9 passed; 0 failed",
+  "fresh_premerge_verdict": "proof_current",
+  "merge_http_status": 200,
+  "merged": true,
+  "merge_commit_sha": "9bc4d0f0eb51d16553c17e7587689695145b069b",
+  "main_head_after_merge": "9bc4d0f0eb51d16553c17e7587689695145b069b",
+  "issue_state_after_merge": "closed",
+  "postmerge_behavior": {
+    "acceptance_exit_code": 0,
+    "failed_tests": 0,
+    "passed_tests": 9,
+    "tested_source_sha256": "78cc4a0a2cafa1d15b62adc8782af05445e1708268d618bf970de3b2340d407a",
+    "worker_sha256": "94347097f1c48eb26b881b494475284b2c9b924281f1b50571641a0ddaff4dd6"
+  },
+  "agent": "deterministic local test adapter; no LLM configured or invoked",
+  "authority": "Rust CLI carries the merge request; local test profile only",
+  "external_writers_excluded": false,
+  "same_run_webhook_reconciliation": {
+    "action": "closed",
+    "delivery_id": "6320ce74-4a6d-4a4e-b420-9abe2c3795ea",
+    "delivery_sequence": 4,
+    "duplicate_replay": {
+      "accepted": true,
+      "after_receiver_restart": true,
+      "delivery_id": "6320ce74-4a6d-4a4e-b420-9abe2c3795ea",
+      "duplicate": true,
+      "http_status": 202,
+      "journal_record_count": 4,
+      "journal_unchanged": true,
+      "payload_sha256": "52833f0eeed336d412899fc036811020a91f4a80491fce509b65baddff14ecde",
+      "reconcile_required": true,
+      "replay_kind": "test-driver re-signing of the accepted native Forgejo payload",
+      "secret_recorded": false,
+      "sequence": 4
+    },
+    "enabled": true,
+    "forgejo_task_http_202": true,
+    "head_sha": "88350d6f323139cfb3e9d0252a6f35f3e2d64ff9",
+    "hook_deactivated": true,
+    "merge_commit_sha": "9bc4d0f0eb51d16553c17e7587689695145b069b",
+    "receiver_restart": {
+      "after_process_id": 4090131,
+      "before_process": {
+        "exit_code": 0,
+        "process_id": 4088247,
+        "stop_signal": "SIGTERM",
+        "stopped": true
+      },
+      "delivery_id": "6320ce74-4a6d-4a4e-b420-9abe2c3795ea",
+      "delivery_id_recovered_once": true,
+      "journal_record_count_after": 4,
+      "journal_record_count_before": 4,
+      "journal_reused": true,
+      "journal_sha256_after": "9c3ffa9887c80633e286fb40ca4873b477052977f492342f0e1811923f335434",
+      "journal_sha256_before": "9c3ffa9887c80633e286fb40ca4873b477052977f492342f0e1811923f335434",
+      "journal_unchanged_during_restart": true,
+      "same_loopback_address": true,
+      "same_private_secret_path": true
+    },
+    "reconciled_merge_commit_sha": "9bc4d0f0eb51d16553c17e7587689695145b069b",
+    "reconciled_verdict": "current_state_read",
+    "secret_recorded": false
+  }
+}

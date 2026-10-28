@@ -1,0 +1,7 @@
+{
+  "Cargo.lock": "bf599559dd11ff21ecc4754aa8a693966b4a9ca401153d7d7caa1f18d8995fcc",
+  "Cargo.toml": "f9144c83c85369f40ecfd2255fdd0915ddb90a4d6c14e1705908febe9bb2b1a3",
+  "Forgejo binary /tmp/forgejo-17.0.0": "e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7",
+  "scripts/run_forgejo_live_pr_merge_e2e.py": "be6eac54f35b95f6a9fed4fb57abee03ceeb86968fae40431603c358efe6231f",
+  "tests/test_forgejo_live_pr_merge_e2e.py": "bcdcfe2f8a25b8527f6fa8e61bc83cd92962f2ebef25896775b56922f52caa21"
+}

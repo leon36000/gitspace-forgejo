@@ -1,0 +1,10 @@
+{
+  "Cargo.lock": "bf599559dd11ff21ecc4754aa8a693966b4a9ca401153d7d7caa1f18d8995fcc",
+  "Forgejo v17.0.0 modules/structs/hook.go blob": "9c7f1deed1c38eeb435ab976bb8429c5458c7f2b",
+  "scripts/run_forgejo_live_pr_merge_e2e.py": "f6f5c1ef4be932111f9360cf60ca0fc47ba5340325803faaba4e8c92787e63ff",
+  "src/webhook.rs": "5039a05aaa8b7ed939436539a8128ae39389b8e85d6b3f2275ccf95145497b68",
+  "src/webhook/reconcile.rs": "17f509c3afbc97b5ae06f7a783c29e3262a555ccdd074c3f16b668bc43c52bff",
+  "tests/test_forgejo_live_pr_merge_e2e.py": "937b89140d06e8eb59b0653d03d626efbb863aa1dbdbabb3066546a931d1824b",
+  "tests/webhook_handler_contract.rs": "474581f5b143d70d784bf5f3d8a469b42d3fa27e18d2ffdedebf2ed0c271b6ed",
+  "tests/webhook_reconcile_contract.rs": "16cbaa5a4c5200670ae12f9b01e1f967316a0e429d8c1369c251982421909d49"
+}

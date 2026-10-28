@@ -1,0 +1,300 @@
+Environment variable $PROJECT_CONF not set, use default: tests/sqlite.ini
+2026/10/24 11:26:13 ...s/storage/storage.go:157:initAttachments() [I] Initialising Attachment storage with type: local
+2026/10/24 11:26:13 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/attachments
+2026/10/24 11:26:13 ...s/storage/storage.go:147:initAvatars() [I] Initialising Avatar storage with type: local
+2026/10/24 11:26:13 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/avatars
+2026/10/24 11:26:13 ...s/storage/storage.go:174:initRepoAvatars() [I] Initialising Repository Avatar storage with type: local
+2026/10/24 11:26:13 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/repo-avatars
+2026/10/24 11:26:13 ...s/storage/storage.go:168:initLFS() [I] Initialising LFS storage with type: local
+2026/10/24 11:26:13 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/lfs
+2026/10/24 11:26:13 ...s/storage/storage.go:180:initRepoArchives() [I] Initialising Repository Archive storage with type: local
+2026/10/24 11:26:13 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/repo-archive
+2026/10/24 11:26:13 ...s/storage/storage.go:190:initPackages() [I] Initialising Packages storage with type: local
+2026/10/24 11:26:13 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/packages
+2026/10/24 11:26:13 ...s/storage/storage.go:201:initActions() [I] Initialising Actions storage with type: local
+2026/10/24 11:26:13 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/actions_log
+2026/10/24 11:26:13 ...s/storage/storage.go:205:initActions() [I] Initialising ActionsArtifacts storage with type: local
+2026/10/24 11:26:13 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/actions_artifacts
+2026/10/24 11:26:13 modules/git/git.go:122:checkInit() [W] git module has been initialized already, duplicate init may work but it's better to fix it
+2026/10/24 11:26:13 routers/init.go:109:InitWebInstalled() [I] Git version: 2.43.0 (home: /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/home)
+??? [TestLogger] 2026/10/24 11:26:13 ...s/storage/storage.go:157:initAttachments() [I] Initialising Attachment storage with type: local
+??? [TestLogger] 2026/10/24 11:26:13 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/attachments
+??? [TestLogger] 2026/10/24 11:26:13 ...s/storage/storage.go:147:initAvatars() [I] Initialising Avatar storage with type: local
+??? [TestLogger] 2026/10/24 11:26:13 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/avatars
+??? [TestLogger] 2026/10/24 11:26:13 ...s/storage/storage.go:174:initRepoAvatars() [I] Initialising Repository Avatar storage with type: local
+??? [TestLogger] 2026/10/24 11:26:13 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/repo-avatars
+??? [TestLogger] 2026/10/24 11:26:13 ...s/storage/storage.go:168:initLFS() [I] Initialising LFS storage with type: local
+??? [TestLogger] 2026/10/24 11:26:13 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/lfs
+??? [TestLogger] 2026/10/24 11:26:13 ...s/storage/storage.go:180:initRepoArchives() [I] Initialising Repository Archive storage with type: local
+??? [TestLogger] 2026/10/24 11:26:13 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/repo-archive
+??? [TestLogger] 2026/10/24 11:26:13 ...s/storage/storage.go:190:initPackages() [I] Initialising Packages storage with type: local
+??? [TestLogger] 2026/10/24 11:26:13 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/packages
+??? [TestLogger] 2026/10/24 11:26:13 ...s/storage/storage.go:201:initActions() [I] Initialising Actions storage with type: local
+??? [TestLogger] 2026/10/24 11:26:13 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/actions_log
+??? [TestLogger] 2026/10/24 11:26:13 ...s/storage/storage.go:205:initActions() [I] Initialising ActionsArtifacts storage with type: local
+??? [TestLogger] 2026/10/24 11:26:13 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/actions_artifacts
+??? [TestLogger] 2026/10/24 11:26:13 routers/init.go:129:InitWebInstalled() [I] SQLite3 support is enabled
+??? [TestLogger] 2026/10/24 11:26:13 routers/common/db.go:23:InitDBEngine() [I] Beginning ORM engine initialization.
+??? [TestLogger] 2026/10/24 11:26:13 routers/common/db.go:30:InitDBEngine() [I] ORM engine initialization attempt #1/10...
+??? [TestLogger] 2026/10/24 11:26:13 routers/init.go:135:InitWebInstalled() [I] ORM engine initialization successful!
+??? [TestLogger] 2026/10/24 11:26:13 ...er/issues/indexer.go:80:func1() [I] PID 2344523: Initializing Issue Indexer: bleve
+??? [TestLogger] 2026/10/24 11:26:13 ...exer/code/indexer.go:169:func3() [I] PID: 2344523 Initializing Repository Indexer at: /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/indexers/repos.bleve
+??? [TestLogger] 2026/10/24 11:26:13 ...xer/stats/indexer.go:41:populateRepoIndexer() [I] Populating the repo stats indexer with existing repositories
+??? [TestLogger] 2026/10/24 11:26:13 ...exer/code/indexer.go:265:func4() [I] Repository Indexer Initialization took 1.112883ms
+??? [TestLogger] 2026/10/24 11:26:13 ...er/issues/indexer.go:160:func2() [I] Issue Indexer Initialization took 1.208739ms
+??? [TestLogger] 2026/10/24 11:26:13 routers/init.go:84:syncAppConfForGit() [I] AppPath changed from '' to '/dev/shm/go-build1642615081/b001/integration.test'
+??? [TestLogger] 2026/10/24 11:26:13 routers/init.go:89:syncAppConfForGit() [I] CustomConf changed from '' to '/tmp/forgejo-v17-base-cas-poc/tests/sqlite.ini'
+??? [TestLogger] 2026/10/24 11:26:13 modules/ssh/ssh.go:345:Listen() [I] Adding SSH host key: /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/ssh/gitea.rsa
+??? [TestLogger] 2026/10/24 11:26:13 modules/ssh/init.go:30:Init() [I] SSH server started on localhost:2203. Cipher list ([chacha20-poly1305@openssh.com aes128-ctr aes192-ctr aes256-ctr aes128-gcm@openssh.com aes256-gcm@openssh.com]), key exchange algorithms ([mlkem768x25519-sha256 curve25519-sha256 ecdh-sha2-nistp256 ecdh-sha2-nistp384 ecdh-sha2-nistp521 diffie-hellman-group14-sha256 diffie-hellman-group14-sha1]), MACs ([hmac-sha2-256-etm@openssh.com hmac-sha2-256 hmac-sha1])
+??? [TestLogger] 2026/10/24 11:26:13 ...s/graceful/server.go:50:NewServer() [I] Starting new SSH server: tcp:localhost:2203 on PID: 2344523
+??? [TestLogger] 2026/10/24 11:26:13 ...er/cleanup_sha256.go:27:CleanupSHA256() [I] Start to cleanup dangling images with a sha256:* version
+??? [TestLogger] 2026/10/24 11:26:13 ...er/cleanup_sha256.go:106:cleanupSHA256() [I] Nothing to cleanup
+??? [TestLogger] 2026/10/24 11:26:13 ...er/cleanup_sha256.go:29:CleanupSHA256() [I] Finished to cleanup dangling images with a sha256:* version
+=== RUN   TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge
+=== TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge (tests/integration/git_helper_for_declarative_test.go:67)
+    test_utils.go:276: PrepareTestEnv:Process "Stats.DB Index Repo[58]" cancelled
+    test_utils.go:276: PrepareTestEnv:Process "/usr/bin/git cat-file --batch-check [repo_path: /dev/shm/TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge3322428020/001/user2/commitsonpr.git] (modules/git/repo_base.go:153)" cancelled
+    test_utils.go:276: PrepareTestEnv:Process "/usr/bin/git cat-file --batch [repo_path: /dev/shm/TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge3322428020/001/user2/commitsonpr.git] (modules/git/repo_base.go:124)" cancelled
+    test_utils.go:276: PrepareTestEnv:Process "git(dir:/dev/shm/TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge3322428020/001/user2/commitsonpr.git): /usr/bin/git -c credential.helper= -c filter.lfs.required= -c filter.lfs.smudge= -c filter.lfs.clean= ls-tree -t -r --long 4b860706d3eec5858324d4ba00db0423ca4cbf50" cancelled
+    test_utils.go:302: PrepareTestEnv: all processes cancelled within 802.85µs
+    testlogger.go:408: 2026/10/24 11:26:14 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/gitea-lfs-meta
+    testlogger.go:408: 2026/10/24 11:26:14 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943/repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70.git/info/refs?service=git-upload-pack for 127.0.0.1:57116, 200 OK in 1.3ms @ repo/githttp.go:509(repo.GetInfoRefs)
+    testlogger.go:408: 2026/10/24 11:26:14 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943/repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70.git/git-upload-pack for 127.0.0.1:57116, 200 OK in 1.9ms @ repo/githttp.go:469(repo.ServiceUploadPack)
+    testlogger.go:408: 2026/10/24 11:26:14 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943/repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70.git/git-upload-pack for 127.0.0.1:57116, 200 OK in 3.6ms @ repo/githttp.go:469(repo.ServiceUploadPack)
+    testlogger.go:408: 2026/10/24 11:26:14 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943/repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70.git/info/refs?service=git-receive-pack for 127.0.0.1:57132, 401 Unauthorized in 0.6ms @ repo/githttp.go:509(repo.GetInfoRefs)
+    testlogger.go:408: 2026/10/24 11:26:14 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943/repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70.git/info/refs?service=git-receive-pack for 127.0.0.1:57132, 200 OK in 3.0ms @ repo/githttp.go:509(repo.GetInfoRefs)
+    testlogger.go:408: 2026/10/24 11:26:14 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/pre-receive/user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943/repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70 for 127.0.0.1:0, 200 OK in 4.9ms @ private/hook_pre_receive.go:204(private.HookPreReceive)
+    testlogger.go:408: 2026/10/24 11:26:14 ...odels/user/avatar.go:59:GenerateRandomAvatar() [I] New random avatar created: 261
+    testlogger.go:408: 2026/10/24 11:26:14 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/post-receive/user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943/repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70 for 127.0.0.1:0, 200 OK in 109.5ms @ private/hook_post_receive.go:46(private.HookPostReceive)
+    testlogger.go:408: 2026/10/24 11:26:14 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943/repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70.git/git-receive-pack for 127.0.0.1:57132, 200 OK in 294.4ms @ repo/githttp.go:477(repo.ServiceReceivePack)
+    testlogger.go:408: 2026/10/24 11:26:14 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943/repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70.git/info/refs?service=git-receive-pack for 127.0.0.1:57162, 401 Unauthorized in 0.4ms @ repo/githttp.go:509(repo.GetInfoRefs)
+    testlogger.go:408: 2026/10/24 11:26:14 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943/repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70.git/info/refs?service=git-receive-pack for 127.0.0.1:57162, 200 OK in 2.7ms @ repo/githttp.go:509(repo.GetInfoRefs)
+    testlogger.go:408: 2026/10/24 11:26:14 ...xer/stats/indexer.go:87:populateRepoIndexer() [I] Done (re)populating the repo stats indexer with existing repositories
+    testlogger.go:408: 2026/10/24 11:26:14 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/pre-receive/user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943/repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70 for 127.0.0.1:0, 200 OK in 0.8ms @ private/hook_pre_receive.go:204(private.HookPreReceive)
+    testlogger.go:408: 2026/10/24 11:26:14 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/post-receive/user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943/repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70 for 127.0.0.1:0, 200 OK in 62.3ms @ private/hook_post_receive.go:46(private.HookPostReceive)
+    testlogger.go:408: 2026/10/24 11:26:14 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943/repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70.git/git-receive-pack for 127.0.0.1:57162, 200 OK in 242.7ms @ repo/githttp.go:477(repo.ServiceReceivePack)
+    testlogger.go:408: 2026/10/24 11:26:14 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/login for test-mock:12345, 303 See Other in 9.2ms @ auth/auth.go:208(auth.SignInPost)
+    testlogger.go:408: 2026/10/24 11:26:15 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/settings/applications/tokens/new for test-mock:12345, 303 See Other in 9.3ms @ setting/access_token.go:220(setting.AccessTokenCreatePost)
+    testlogger.go:408: 2026/10/24 11:26:15 ...s/setting/setting.go:65:initialAppDocsVer() [W] Doclinks will fallback to version 'latest' due to err: Malformed version: dev
+    testlogger.go:408: 2026/10/24 11:26:15 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user/settings/applications for test-mock:12345, 200 OK in 3.5ms @ setting/applications.go:24(setting.Applications)
+    testlogger.go:408: 2026/10/24 11:26:15 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/login for test-mock:12345, 303 See Other in 7.8ms @ auth/auth.go:208(auth.SignInPost)
+    testlogger.go:408: 2026/10/24 11:26:15 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/settings/applications/tokens/new for test-mock:12345, 303 See Other in 7.3ms @ setting/access_token.go:220(setting.AccessTokenCreatePost)
+    testlogger.go:408: 2026/10/24 11:26:15 ...odels/user/avatar.go:59:GenerateRandomAvatar() [I] New random avatar created: 262
+    testlogger.go:408: 2026/10/24 11:26:15 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user/settings/applications for test-mock:12345, 200 OK in 9.5ms @ setting/applications.go:24(setting.Applications)
+    testlogger.go:408: 2026/10/24 11:26:15 ...ces/mailer/mailer.go:384:Send() [I] Mail From: sqlite-integration-test@gitea.io To: [user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943@test.forgejo.org] Body: Mime-Version: 1.0
+        List-ID: user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943/repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70
+         <repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70.user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943.localhost>
+        X-Forgejo-Sender: user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d9a9807e
+        X-GitHub-Reason: pull
+        X-Forgejo-Recipient-Address: user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943@test.forgejo.org
+        X-GitHub-Recipient: user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943
+        X-Mailer: Forgejo
+        X-Forgejo-Repository-Link: http://localhost:3003/user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943/repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70
+        X-GitLab-Project-Path: user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943/repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70
+        X-Gitea-Reason: pull
+        X-Gitea-Repository: repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70
+        X-GitLab-Project: repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70
+        X-Forgejo-Recipient: user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943
+        Subject: [user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943/repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70]
+         create a pr from racing-policy-target to main (PR #1)
+        From: "user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d9a9807e"
+         <sqlite-integration-test@gitea.io>
+        To: user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943@test.forgejo.org
+        X-Gitea-Repository-Path: user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943/repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70
+        X-Forgejo-Issue-Link: http://localhost:3003/user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943/repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70/pulls/1
+        X-Forgejo-Issue-ID: 1
+        X-Forgejo-Repository-Path: user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943/repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70
+        X-Gitea-Issue-Link: http://localhost:3003/user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943/repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70/pulls/1
+        In-Reply-To: <user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943/repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70/pulls/1@localhost>
+        List-Unsubscribe: <http://localhost:3003/user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943/repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70/pulls/1>
+        X-Gitea-Issue-ID: 1
+        X-GitLab-Issue-IID: 1
+        X-Gitea-Recipient-Address: user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943@test.forgejo.org
+        X-Gitea-Repository-Link: http://localhost:3003/user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943/repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70
+        X-GitHub-Recipient-Address: user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943@test.forgejo.org
+        X-GitLab-NotificationReason: pull
+        Date: Sat, 24 Oct 2026 11:26:15 -0400
+        List-Archive: <http://localhost:3003/user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943/repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70>
+        Message-ID: <user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943/repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70/pulls/1@localhost>
+        References: <user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943/repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70/pulls/1@localhost>
+        X-Auto-Response-Suppress: All
+        X-Forgejo-Repository: repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70
+        X-Forgejo-Reason: pull
+        X-GitHub-Sender: user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d9a9807e
+        X-Gitea-Recipient: user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943
+        X-Gitea-Sender: user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d9a9807e
+        Content-Type: multipart/alternative;
+         boundary=7eb9f86a816b39f307fe68aac531896c3ea97fdf359ea1999086845c85c5
+        
+        --7eb9f86a816b39f307fe68aac531896c3ea97fdf359ea1999086845c85c5
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/plain; charset=UTF-8
+        
+        *@user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d9a9807=
+        e* created #1.
+        
+        ---
+        View it on Forgejo ( http://localhost:3003/user-TestPullMergeRepositoryPoli=
+        cyRacePreservesScheduledAutoMerge-d8e82943/repo-TestPullMergeRepositoryPoli=
+        cyRacePreservesScheduledAutoMerge-8682e70/pulls/1 ).
+        --7eb9f86a816b39f307fe68aac531896c3ea97fdf359ea1999086845c85c5
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/html; charset=UTF-8
+        
+        <!DOCTYPE html>
+        <html>
+        <head>
+        	<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+        
+        	<style>
+        		blockquote { padding-left: 1em; margin: 1em 0; border-left: 1px solid gre=
+        y; color: #777}
+        		.footer { font-size:small; color:#666;}
+        	=09
+        	</style>
+        
+        </head>
+        
+        <body>
+        =09
+        =09
+        	<p>
+        	=09
+        		=09
+        				<b>@user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d=
+        9a9807e</b> created #1.
+        		=09
+        	=09
+        	</p>
+        	<div class=3D"footer">
+        	<p>
+        		---
+        		<br>
+        		<a href=3D"http://localhost:3003/user-TestPullMergeRepositoryPolicyRacePr=
+        eservesScheduledAutoMerge-d8e82943/repo-TestPullMergeRepositoryPolicyRacePr=
+        eservesScheduledAutoMerge-8682e70/pulls/1">View it on Forgejo</a>.
+        	</p>
+        	</div>
+        </body>
+        </html>
+        
+        --7eb9f86a816b39f307fe68aac531896c3ea97fdf359ea1999086845c85c5--
+    testlogger.go:408: 2026/10/24 11:26:15 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/v1/repos/user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943/repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70/pulls for test-mock:12345, 201 Created in 175.5ms @ repo/pull.go:404(repo.CreatePullRequest)
+    testlogger.go:408: 2026/10/24 11:26:15 ...ces/mailer/mailer.go:384:Send() [I] Mail From: sqlite-integration-test@gitea.io To: [user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943@test.forgejo.org] Body: Mime-Version: 1.0
+        X-Gitea-Issue-Link: http://localhost:3003/user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943/repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70/pulls/2
+        List-Unsubscribe: <http://localhost:3003/user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943/repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70/pulls/2>
+        X-GitLab-Project: repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70
+        List-ID: user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943/repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70
+         <repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70.user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943.localhost>
+        X-GitHub-Reason: pull
+        To: user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943@test.forgejo.org
+        X-Forgejo-Reason: pull
+        References: <user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943/repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70/pulls/2@localhost>
+        X-Forgejo-Repository: repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70
+        In-Reply-To: <user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943/repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70/pulls/2@localhost>
+        X-Forgejo-Repository-Link: http://localhost:3003/user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943/repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70
+        X-GitLab-NotificationReason: pull
+        Subject: [user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943/repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70]
+         create a pr from racing-policy-competitor to main (PR #2)
+        Date: Sat, 24 Oct 2026 11:26:15 -0400
+        X-Mailer: Forgejo
+        X-Gitea-Reason: pull
+        X-Gitea-Recipient-Address: user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943@test.forgejo.org
+        X-Auto-Response-Suppress: All
+        X-Gitea-Sender: user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d9a9807e
+        X-Gitea-Issue-ID: 2
+        X-Gitea-Repository: repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70
+        X-Forgejo-Repository-Path: user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943/repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70
+        X-GitHub-Recipient: user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943
+        X-Forgejo-Issue-ID: 2
+        X-Forgejo-Issue-Link: http://localhost:3003/user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943/repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70/pulls/2
+        Message-ID: <user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943/repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70/pulls/2@localhost>
+        X-Gitea-Recipient: user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943
+        X-Forgejo-Recipient-Address: user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943@test.forgejo.org
+        X-GitLab-Issue-IID: 2
+        X-Gitea-Repository-Path: user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943/repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70
+        X-Forgejo-Sender: user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d9a9807e
+        List-Archive: <http://localhost:3003/user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943/repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70>
+        X-GitHub-Recipient-Address: user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943@test.forgejo.org
+        From: "user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d9a9807e"
+         <sqlite-integration-test@gitea.io>
+        X-Forgejo-Recipient: user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943
+        X-Gitea-Repository-Link: http://localhost:3003/user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943/repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70
+        X-GitHub-Sender: user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d9a9807e
+        X-GitLab-Project-Path: user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943/repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70
+        Content-Type: multipart/alternative;
+         boundary=612fc3254b57460b39055f618c37d3fb2ded056adcbc0380a87e057fa089
+        
+        --612fc3254b57460b39055f618c37d3fb2ded056adcbc0380a87e057fa089
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/plain; charset=UTF-8
+        
+        *@user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d9a9807=
+        e* created #2.
+        
+        ---
+        View it on Forgejo ( http://localhost:3003/user-TestPullMergeRepositoryPoli=
+        cyRacePreservesScheduledAutoMerge-d8e82943/repo-TestPullMergeRepositoryPoli=
+        cyRacePreservesScheduledAutoMerge-8682e70/pulls/2 ).
+        --612fc3254b57460b39055f618c37d3fb2ded056adcbc0380a87e057fa089
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/html; charset=UTF-8
+        
+        <!DOCTYPE html>
+        <html>
+        <head>
+        	<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+        
+        	<style>
+        		blockquote { padding-left: 1em; margin: 1em 0; border-left: 1px solid gre=
+        y; color: #777}
+        		.footer { font-size:small; color:#666;}
+        	=09
+        	</style>
+        
+        </head>
+        
+        <body>
+        =09
+        =09
+        	<p>
+        	=09
+        		=09
+        				<b>@user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d=
+        9a9807e</b> created #2.
+        		=09
+        	=09
+        	</p>
+        	<div class=3D"footer">
+        	<p>
+        		---
+        		<br>
+        		<a href=3D"http://localhost:3003/user-TestPullMergeRepositoryPolicyRacePr=
+        eservesScheduledAutoMerge-d8e82943/repo-TestPullMergeRepositoryPolicyRacePr=
+        eservesScheduledAutoMerge-8682e70/pulls/2">View it on Forgejo</a>.
+        	</p>
+        	</div>
+        </body>
+        </html>
+        
+        --612fc3254b57460b39055f618c37d3fb2ded056adcbc0380a87e057fa089--
+    testlogger.go:408: 2026/10/24 11:26:15 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/v1/repos/user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943/repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70/pulls for test-mock:12345, 201 Created in 168.1ms @ repo/pull.go:404(repo.CreatePullRequest)
+    testlogger.go:408: 2026/10/24 11:26:15 ...eb/routing/logger.go:109:func1() [I] router: completed GET /api/v1/repos/user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943/repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70/pulls/1 for test-mock:12345, 200 OK in 33.6ms @ repo/pull.go:205(repo.GetPullRequest)
+    testlogger.go:408: 2026/10/24 11:26:15 ...eb/routing/logger.go:109:func1() [I] router: completed GET /api/v1/repos/user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943/repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70/pulls/2 for test-mock:12345, 200 OK in 24.3ms @ repo/pull.go:205(repo.GetPullRequest)
+    testlogger.go:408: 2026/10/24 11:26:15 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/v1/repos/user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943/repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70/pulls/1/merge for test-mock:12345, 201 Created in 27.7ms @ repo/pull.go:869(repo.MergePullRequest)
+    testlogger.go:408: 2026/10/24 11:26:15 ...eb/routing/logger.go:109:func1() [I] router: completed PATCH /api/v1/repos/user-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-d8e82943/repo-TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge-8682e70 for test-mock:12345, 200 OK in 15.9ms @ repo/repo.go:639(repo.Edit)
+    testlogger.go:408: 2026/10/24 11:26:15 ...tomerge/automerge.go:251:handlePullRequestAutoMerge() [E] pull_service.Merge: repository requires the client's verified base commit
+    pull_merge_freshness_race_test.go:616: 
+        	Error Trace:	/tmp/forgejo-v17-base-cas-poc/tests/integration/pull_merge_freshness_race_test.go:616
+        	            				/tmp/forgejo-v17-base-cas-poc/tests/integration/git_helper_for_declarative_test.go:99
+        	            				/tmp/forgejo-v17-base-cas-poc/tests/integration/pull_merge_freshness_race_test.go:566
+        	Error:      	Should be true
+        	Test:       	TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge
+        	Messages:   	a policy refusal racing with AutoMerge must retain the schedule for cancellation
+testlogger.go:recordError() FATAL ERROR: log.Error has been called: // TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge
+	"2026/10/24 11:26:15 ...tomerge/automerge.go:251:handlePullRequestAutoMerge() [E] pull_service.Merge: repository requires the client's verified base commit",
+??? [TestLogger] 2026/10/24 11:26:15 ...s/actions/cleanup.go:184:CleanupEphemeralRunnersByPickedTaskOfRepo() [I] Removed 0 runners
+--- FAIL: TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge (1.64s)
+FAIL
+FAIL	forgejo.org/tests/integration	2.131s
+FAIL

@@ -1,0 +1,12 @@
+{
+  "action": "closed",
+  "base_sha": "9bc4d0f0eb51d16553c17e7587689695145b069b",
+  "delivery_id": "6320ce74-4a6d-4a4e-b420-9abe2c3795ea",
+  "event": "pull_request",
+  "head_sha": "88350d6f323139cfb3e9d0252a6f35f3e2d64ff9",
+  "merge_commit_sha": "9bc4d0f0eb51d16553c17e7587689695145b069b",
+  "payload_merged": true,
+  "payload_state": "closed",
+  "pull_request_number": 2,
+  "sequence": 4
+}

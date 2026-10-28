@@ -1,0 +1,30 @@
+[
+  {
+    "action": "opened",
+    "delivered": true,
+    "event_type": "pull_request",
+    "review_json_type": "null",
+    "succeeded": true
+  },
+  {
+    "action": "synchronized",
+    "delivered": true,
+    "event_type": "pull_request_sync",
+    "review_json_type": "null",
+    "succeeded": true
+  },
+  {
+    "action": "reviewed",
+    "delivered": true,
+    "event_type": "pull_request_review_approved",
+    "review_json_type": "object",
+    "succeeded": true
+  },
+  {
+    "action": "closed",
+    "delivered": true,
+    "event_type": "pull_request",
+    "review_json_type": "null",
+    "succeeded": true
+  }
+]

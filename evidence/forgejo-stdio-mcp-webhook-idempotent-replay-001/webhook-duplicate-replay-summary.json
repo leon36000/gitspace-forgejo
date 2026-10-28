@@ -1,0 +1,13 @@
+{
+  "accepted": true,
+  "delivery_id": "d5c1fe9a-9c9e-4fe6-9d4b-5564b120b157",
+  "duplicate": true,
+  "http_status": 202,
+  "journal_record_count": 4,
+  "journal_unchanged": true,
+  "payload_sha256": "440f1d7ac4127472abd88b9e863d3432e2b472115d44bae81b2b6825c1eea81b",
+  "reconcile_required": true,
+  "replay_kind": "test-driver re-signing of the accepted native Forgejo payload",
+  "secret_recorded": false,
+  "sequence": 4
+}

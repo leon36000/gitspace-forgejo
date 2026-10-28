@@ -1,0 +1,80 @@
+
+==================================== ERRORS ====================================
+_ ERROR collecting evidence/forgejo-agent-postmerge-001/source/test_mission_012_sandboxed_test_adapter.py _
+import file mismatch:
+imported module 'test_mission_012_sandboxed_test_adapter' has this __file__ attribute:
+  /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/forgejo-agent-egress-merge-001/source/test_mission_012_sandboxed_test_adapter.py
+which is not the same as the test file we want to collect:
+  /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/forgejo-agent-postmerge-001/source/test_mission_012_sandboxed_test_adapter.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting evidence/forgejo-agent-stdio-mcp-merge-001/source/tests/test_mission_012_sandboxed_test_adapter.py _
+import file mismatch:
+imported module 'test_mission_012_sandboxed_test_adapter' has this __file__ attribute:
+  /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/forgejo-agent-egress-merge-001/source/test_mission_012_sandboxed_test_adapter.py
+which is not the same as the test file we want to collect:
+  /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/forgejo-agent-stdio-mcp-merge-001/source/tests/test_mission_012_sandboxed_test_adapter.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting evidence/mission-012-live-agent-webhook-source-001/source-snapshot/tests/test_forgejo_webhook_native_replay_e2e.py _
+ImportError while importing test module '/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/mission-012-live-agent-webhook-source-001/source-snapshot/tests/test_forgejo_webhook_native_replay_e2e.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+evidence/mission-012-live-agent-webhook-source-001/source-snapshot/tests/test_forgejo_webhook_native_replay_e2e.py:12: in <module>
+    import run_forgejo_live_webhook_native_replay_e2e as driver
+evidence/mission-012-live-agent-webhook-source-001/source-snapshot/scripts/run_forgejo_live_webhook_native_replay_e2e.py:30: in <module>
+    import run_forgejo_live_webhook_reconcile_e2e as helpers  # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+evidence/mission-012-live-agent-webhook-source-001/source-snapshot/scripts/run_forgejo_live_webhook_reconcile_e2e.py:33: in <module>
+    import run_forgejo_live_pr_merge_e2e as forgejo_helpers  # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+evidence/forgejo-agent-stdio-mcp-merge-001/source/scripts/run_forgejo_live_pr_merge_e2e.py:33: in <module>
+    import run_forgejo_mission_delivery_process_e2e as process_e2e
+E   ModuleNotFoundError: No module named 'run_forgejo_mission_delivery_process_e2e'
+_____________ ERROR collecting scripts/test_cargo_license_state.py _____________
+import file mismatch:
+imported module 'test_cargo_license_state' has this __file__ attribute:
+  /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/cargo-license-state-unselected-008/source/test_cargo_license_state.py
+which is not the same as the test file we want to collect:
+  /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/scripts/test_cargo_license_state.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+____ ERROR collecting tests/test_forgejo_live_webhook_mission_admission.py _____
+import file mismatch:
+imported module 'test_forgejo_live_webhook_mission_admission' has this __file__ attribute:
+  /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/mission-012-live-agent-webhook-source-001/source-snapshot/tests/test_forgejo_live_webhook_mission_admission.py
+which is not the same as the test file we want to collect:
+  /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/test_forgejo_live_webhook_mission_admission.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+______ ERROR collecting tests/test_mission_012_egress_barrier_mcp_host.py ______
+import file mismatch:
+imported module 'test_mission_012_egress_barrier_mcp_host' has this __file__ attribute:
+  /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/forgejo-agent-stdio-mcp-merge-001/source/tests/test_mission_012_egress_barrier_mcp_host.py
+which is not the same as the test file we want to collect:
+  /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/test_mission_012_egress_barrier_mcp_host.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+______ ERROR collecting tests/test_mission_012_sandboxed_test_adapter.py _______
+import file mismatch:
+imported module 'test_mission_012_sandboxed_test_adapter' has this __file__ attribute:
+  /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/forgejo-agent-egress-merge-001/source/test_mission_012_sandboxed_test_adapter.py
+which is not the same as the test file we want to collect:
+  /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/test_mission_012_sandboxed_test_adapter.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+________ ERROR collecting tests/test_mission_012_test_agent_adapter.py _________
+import file mismatch:
+imported module 'test_mission_012_test_agent_adapter' has this __file__ attribute:
+  /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/forgejo-agent-stdio-mcp-merge-001/source/tests/test_mission_012_test_agent_adapter.py
+which is not the same as the test file we want to collect:
+  /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/test_mission_012_test_agent_adapter.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+=========================== short test summary info ============================
+ERROR evidence/forgejo-agent-postmerge-001/source/test_mission_012_sandboxed_test_adapter.py
+ERROR evidence/forgejo-agent-stdio-mcp-merge-001/source/tests/test_mission_012_sandboxed_test_adapter.py
+ERROR evidence/mission-012-live-agent-webhook-source-001/source-snapshot/tests/test_forgejo_webhook_native_replay_e2e.py
+ERROR scripts/test_cargo_license_state.py
+ERROR tests/test_forgejo_live_webhook_mission_admission.py
+ERROR tests/test_mission_012_egress_barrier_mcp_host.py
+ERROR tests/test_mission_012_sandboxed_test_adapter.py
+ERROR tests/test_mission_012_test_agent_adapter.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 8 errors during collection !!!!!!!!!!!!!!!!!!!!
+8 errors in 0.98s

@@ -1,0 +1,2 @@
+python3 scripts/run_forgejo_live_pr_merge_e2e.py --forgejo-binary /tmp/forgejo-17.0.0 --state-dir /tmp/forgejo-mcp-webhook-restart-replay-002 --observe-pr-webhook --replay-pr-webhook --restart-pr-webhook-before-replay
+exit_code=0

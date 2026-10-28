@@ -1,0 +1,19 @@
+{
+  "after_process_id": 4090131,
+  "before_process": {
+    "exit_code": 0,
+    "process_id": 4088247,
+    "stop_signal": "SIGTERM",
+    "stopped": true
+  },
+  "delivery_id": "6320ce74-4a6d-4a4e-b420-9abe2c3795ea",
+  "delivery_id_recovered_once": true,
+  "journal_record_count_after": 4,
+  "journal_record_count_before": 4,
+  "journal_reused": true,
+  "journal_sha256_after": "9c3ffa9887c80633e286fb40ca4873b477052977f492342f0e1811923f335434",
+  "journal_sha256_before": "9c3ffa9887c80633e286fb40ca4873b477052977f492342f0e1811923f335434",
+  "journal_unchanged_during_restart": true,
+  "same_loopback_address": true,
+  "same_private_secret_path": true
+}

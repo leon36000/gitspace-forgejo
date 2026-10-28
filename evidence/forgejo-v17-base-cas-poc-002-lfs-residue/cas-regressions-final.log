@@ -1,0 +1,1836 @@
+Environment variable $PROJECT_CONF not set, use default: tests/sqlite.ini
+2026/10/24 10:50:44 ...s/storage/storage.go:157:initAttachments() [I] Initialising Attachment storage with type: local
+2026/10/24 10:50:44 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/attachments
+2026/10/24 10:50:44 ...s/storage/storage.go:147:initAvatars() [I] Initialising Avatar storage with type: local
+2026/10/24 10:50:44 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/avatars
+2026/10/24 10:50:44 ...s/storage/storage.go:174:initRepoAvatars() [I] Initialising Repository Avatar storage with type: local
+2026/10/24 10:50:44 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/repo-avatars
+2026/10/24 10:50:44 ...s/storage/storage.go:168:initLFS() [I] Initialising LFS storage with type: local
+2026/10/24 10:50:44 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/lfs
+2026/10/24 10:50:44 ...s/storage/storage.go:180:initRepoArchives() [I] Initialising Repository Archive storage with type: local
+2026/10/24 10:50:44 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/repo-archive
+2026/10/24 10:50:44 ...s/storage/storage.go:190:initPackages() [I] Initialising Packages storage with type: local
+2026/10/24 10:50:44 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/packages
+2026/10/24 10:50:44 ...s/storage/storage.go:201:initActions() [I] Initialising Actions storage with type: local
+2026/10/24 10:50:44 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/actions_log
+2026/10/24 10:50:44 ...s/storage/storage.go:205:initActions() [I] Initialising ActionsArtifacts storage with type: local
+2026/10/24 10:50:44 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/actions_artifacts
+2026/10/24 10:50:44 modules/git/git.go:122:checkInit() [W] git module has been initialized already, duplicate init may work but it's better to fix it
+2026/10/24 10:50:44 routers/init.go:109:InitWebInstalled() [I] Git version: 2.43.0 (home: /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/home)
+??? [TestLogger] 2026/10/24 10:50:45 ...s/storage/storage.go:157:initAttachments() [I] Initialising Attachment storage with type: local
+??? [TestLogger] 2026/10/24 10:50:45 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/attachments
+??? [TestLogger] 2026/10/24 10:50:45 ...s/storage/storage.go:147:initAvatars() [I] Initialising Avatar storage with type: local
+??? [TestLogger] 2026/10/24 10:50:45 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/avatars
+??? [TestLogger] 2026/10/24 10:50:45 ...s/storage/storage.go:174:initRepoAvatars() [I] Initialising Repository Avatar storage with type: local
+??? [TestLogger] 2026/10/24 10:50:45 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/repo-avatars
+??? [TestLogger] 2026/10/24 10:50:45 ...s/storage/storage.go:168:initLFS() [I] Initialising LFS storage with type: local
+??? [TestLogger] 2026/10/24 10:50:45 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/lfs
+??? [TestLogger] 2026/10/24 10:50:45 ...s/storage/storage.go:180:initRepoArchives() [I] Initialising Repository Archive storage with type: local
+??? [TestLogger] 2026/10/24 10:50:45 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/repo-archive
+??? [TestLogger] 2026/10/24 10:50:45 ...s/storage/storage.go:190:initPackages() [I] Initialising Packages storage with type: local
+??? [TestLogger] 2026/10/24 10:50:45 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/packages
+??? [TestLogger] 2026/10/24 10:50:45 ...s/storage/storage.go:201:initActions() [I] Initialising Actions storage with type: local
+??? [TestLogger] 2026/10/24 10:50:45 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/actions_log
+??? [TestLogger] 2026/10/24 10:50:45 ...s/storage/storage.go:205:initActions() [I] Initialising ActionsArtifacts storage with type: local
+??? [TestLogger] 2026/10/24 10:50:45 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/actions_artifacts
+??? [TestLogger] 2026/10/24 10:50:45 routers/init.go:129:InitWebInstalled() [I] SQLite3 support is enabled
+??? [TestLogger] 2026/10/24 10:50:45 routers/common/db.go:23:InitDBEngine() [I] Beginning ORM engine initialization.
+??? [TestLogger] 2026/10/24 10:50:45 routers/common/db.go:30:InitDBEngine() [I] ORM engine initialization attempt #1/10...
+??? [TestLogger] 2026/10/24 10:50:45 routers/init.go:135:InitWebInstalled() [I] ORM engine initialization successful!
+??? [TestLogger] 2026/10/24 10:50:45 ...xer/stats/indexer.go:41:populateRepoIndexer() [I] Populating the repo stats indexer with existing repositories
+??? [TestLogger] 2026/10/24 10:50:45 ...exer/code/indexer.go:169:func3() [I] PID: 2127480 Initializing Repository Indexer at: /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/indexers/repos.bleve
+??? [TestLogger] 2026/10/24 10:50:45 ...er/issues/indexer.go:80:func1() [I] PID 2127480: Initializing Issue Indexer: bleve
+??? [TestLogger] 2026/10/24 10:50:45 ...exer/code/indexer.go:291:populateRepoIndexer() [I] Populating the repo indexer with existing repositories
+??? [TestLogger] 2026/10/24 10:50:45 ...exer/code/indexer.go:265:func4() [I] Repository Indexer Initialization took 2.71823ms
+??? [TestLogger] 2026/10/24 10:50:45 ...er/issues/indexer.go:160:func2() [I] Issue Indexer Initialization took 3.149111ms
+??? [TestLogger] 2026/10/24 10:50:45 ...xer/stats/indexer.go:87:populateRepoIndexer() [I] Done (re)populating the repo stats indexer with existing repositories
+??? [TestLogger] 2026/10/24 10:50:45 routers/init.go:84:syncAppConfForGit() [I] AppPath changed from '' to '/tmp/go-build4135858254/b001/integration.test'
+??? [TestLogger] 2026/10/24 10:50:45 routers/init.go:89:syncAppConfForGit() [I] CustomConf changed from '' to '/tmp/forgejo-v17-base-cas-poc/tests/sqlite.ini'
+??? [TestLogger] 2026/10/24 10:50:45 modules/ssh/ssh.go:345:Listen() [I] Adding SSH host key: /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/ssh/gitea.rsa
+??? [TestLogger] 2026/10/24 10:50:45 modules/ssh/init.go:30:Init() [I] SSH server started on localhost:2203. Cipher list ([chacha20-poly1305@openssh.com aes128-ctr aes192-ctr aes256-ctr aes128-gcm@openssh.com aes256-gcm@openssh.com]), key exchange algorithms ([mlkem768x25519-sha256 curve25519-sha256 ecdh-sha2-nistp256 ecdh-sha2-nistp384 ecdh-sha2-nistp521 diffie-hellman-group14-sha256 diffie-hellman-group14-sha1]), MACs ([hmac-sha2-256-etm@openssh.com hmac-sha2-256 hmac-sha1])
+??? [TestLogger] 2026/10/24 10:50:45 ...s/graceful/server.go:50:NewServer() [I] Starting new SSH server: tcp:localhost:2203 on PID: 2127480
+??? [TestLogger] 2026/10/24 10:50:45 ...er/cleanup_sha256.go:27:CleanupSHA256() [I] Start to cleanup dangling images with a sha256:* version
+??? [TestLogger] 2026/10/24 10:50:45 ...er/cleanup_sha256.go:106:cleanupSHA256() [I] Nothing to cleanup
+??? [TestLogger] 2026/10/24 10:50:45 ...er/cleanup_sha256.go:29:CleanupSHA256() [I] Finished to cleanup dangling images with a sha256:* version
+??? [TestLogger] 2026/10/24 10:50:45 ...exer/code/indexer.go:343:populateRepoIndexer() [I] Done (re)populating the repo indexer with existing repositories
+=== RUN   TestPullMergeRejectsStaleClientBase
+=== TestPullMergeRejectsStaleClientBase (tests/integration/git_helper_for_declarative_test.go:67)
+    testlogger.go:408: 2026/10/24 10:50:45 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/gitea-lfs-meta
+    testlogger.go:408: 2026/10/24 10:50:45 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b.git/info/refs?service=git-upload-pack for 127.0.0.1:52720, 200 OK in 1.7ms @ repo/githttp.go:509(repo.GetInfoRefs)
+    testlogger.go:408: 2026/10/24 10:50:45 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b.git/git-upload-pack for 127.0.0.1:52720, 200 OK in 2.1ms @ repo/githttp.go:469(repo.ServiceUploadPack)
+    testlogger.go:408: 2026/10/24 10:50:45 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b.git/git-upload-pack for 127.0.0.1:52720, 200 OK in 4.1ms @ repo/githttp.go:469(repo.ServiceUploadPack)
+    testlogger.go:408: 2026/10/24 10:50:45 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b.git/info/refs?service=git-receive-pack for 127.0.0.1:52734, 401 Unauthorized in 0.3ms @ repo/githttp.go:509(repo.GetInfoRefs)
+    testlogger.go:408: 2026/10/24 10:50:45 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b.git/info/refs?service=git-receive-pack for 127.0.0.1:52734, 200 OK in 2.0ms @ repo/githttp.go:509(repo.GetInfoRefs)
+    testlogger.go:408: 2026/10/24 10:50:45 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/pre-receive/user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b for 127.0.0.1:0, 200 OK in 0.7ms @ private/hook_pre_receive.go:204(private.HookPreReceive)
+    testlogger.go:408: 2026/10/24 10:50:45 ...odels/user/avatar.go:59:GenerateRandomAvatar() [I] New random avatar created: 143
+    testlogger.go:408: 2026/10/24 10:50:45 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/post-receive/user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b for 127.0.0.1:0, 200 OK in 59.4ms @ private/hook_post_receive.go:46(private.HookPostReceive)
+    testlogger.go:408: 2026/10/24 10:50:45 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b.git/git-receive-pack for 127.0.0.1:52734, 200 OK in 257.1ms @ repo/githttp.go:477(repo.ServiceReceivePack)
+    testlogger.go:408: 2026/10/24 10:50:45 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b.git/info/refs?service=git-receive-pack for 127.0.0.1:52760, 401 Unauthorized in 0.4ms @ repo/githttp.go:509(repo.GetInfoRefs)
+    testlogger.go:408: 2026/10/24 10:50:45 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b.git/info/refs?service=git-receive-pack for 127.0.0.1:52760, 200 OK in 1.6ms @ repo/githttp.go:509(repo.GetInfoRefs)
+    testlogger.go:408: 2026/10/24 10:50:45 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/pre-receive/user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b for 127.0.0.1:0, 200 OK in 0.7ms @ private/hook_pre_receive.go:204(private.HookPreReceive)
+    testlogger.go:408: 2026/10/24 10:50:46 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/post-receive/user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b for 127.0.0.1:0, 200 OK in 40.3ms @ private/hook_post_receive.go:46(private.HookPostReceive)
+    testlogger.go:408: 2026/10/24 10:50:46 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b.git/git-receive-pack for 127.0.0.1:52760, 200 OK in 217.8ms @ repo/githttp.go:477(repo.ServiceReceivePack)
+    testlogger.go:408: 2026/10/24 10:50:46 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/login for test-mock:12345, 303 See Other in 2.5ms @ auth/auth.go:208(auth.SignInPost)
+    testlogger.go:408: 2026/10/24 10:50:46 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/settings/applications/tokens/new for test-mock:12345, 303 See Other in 5.9ms @ setting/access_token.go:220(setting.AccessTokenCreatePost)
+    testlogger.go:408: 2026/10/24 10:50:46 ...s/setting/setting.go:65:initialAppDocsVer() [W] Doclinks will fallback to version 'latest' due to err: Malformed version: dev
+    testlogger.go:408: 2026/10/24 10:50:46 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user/settings/applications for test-mock:12345, 200 OK in 6.1ms @ setting/applications.go:24(setting.Applications)
+    testlogger.go:408: 2026/10/24 10:50:46 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/login for test-mock:12345, 303 See Other in 2.7ms @ auth/auth.go:208(auth.SignInPost)
+    testlogger.go:408: 2026/10/24 10:50:46 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/settings/applications/tokens/new for test-mock:12345, 303 See Other in 5.4ms @ setting/access_token.go:220(setting.AccessTokenCreatePost)
+    testlogger.go:408: 2026/10/24 10:50:46 ...odels/user/avatar.go:59:GenerateRandomAvatar() [I] New random avatar created: 144
+    testlogger.go:408: 2026/10/24 10:50:46 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user/settings/applications for test-mock:12345, 200 OK in 8.4ms @ setting/applications.go:24(setting.Applications)
+    testlogger.go:408: 2026/10/24 10:50:46 ...ces/mailer/mailer.go:384:Send() [I] Mail From: sqlite-integration-test@gitea.io To: [user-TestPullMergeRejectsStaleClientBase-e8418bf2@test.forgejo.org] Body: Mime-Version: 1.0
+        X-Gitea-Issue-ID: 1
+        X-Forgejo-Repository: repo-TestPullMergeRejectsStaleClientBase-e34f4b6b
+        Message-ID: <user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b/pulls/1@localhost>
+        X-Mailer: Forgejo
+        X-Forgejo-Issue-Link: http://localhost:3003/user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b/pulls/1
+        In-Reply-To: <user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b/pulls/1@localhost>
+        To: user-TestPullMergeRejectsStaleClientBase-e8418bf2@test.forgejo.org
+        X-GitLab-Project-Path: user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b
+        X-Gitea-Reason: pull
+        X-GitHub-Reason: pull
+        X-Gitea-Recipient: user-TestPullMergeRejectsStaleClientBase-e8418bf2
+        X-Gitea-Repository: repo-TestPullMergeRejectsStaleClientBase-e34f4b6b
+        X-Forgejo-Sender: user-TestPullMergeRejectsStaleClientBase-e7247d72
+        X-Auto-Response-Suppress: All
+        From: "user-TestPullMergeRejectsStaleClientBase-e7247d72"
+         <sqlite-integration-test@gitea.io>
+        X-Gitea-Sender: user-TestPullMergeRejectsStaleClientBase-e7247d72
+        X-Forgejo-Recipient-Address: user-TestPullMergeRejectsStaleClientBase-e8418bf2@test.forgejo.org
+        X-Gitea-Issue-Link: http://localhost:3003/user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b/pulls/1
+        Date: Sat, 24 Oct 2026 10:50:46 -0400
+        List-Archive: <http://localhost:3003/user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b>
+        X-Gitea-Repository-Path: user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b
+        X-Forgejo-Issue-ID: 1
+        X-GitHub-Recipient-Address: user-TestPullMergeRejectsStaleClientBase-e8418bf2@test.forgejo.org
+        X-GitLab-Issue-IID: 1
+        X-Gitea-Recipient-Address: user-TestPullMergeRejectsStaleClientBase-e8418bf2@test.forgejo.org
+        References: <user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b/pulls/1@localhost>
+        List-ID: user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b
+         <repo-TestPullMergeRejectsStaleClientBase-e34f4b6b.user-TestPullMergeRejectsStaleClientBase-e8418bf2.localhost>
+        X-GitLab-Project: repo-TestPullMergeRejectsStaleClientBase-e34f4b6b
+        X-GitLab-NotificationReason: pull
+        List-Unsubscribe: <http://localhost:3003/user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b/pulls/1>
+        X-Forgejo-Repository-Link: http://localhost:3003/user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b
+        X-GitHub-Recipient: user-TestPullMergeRejectsStaleClientBase-e8418bf2
+        X-GitHub-Sender: user-TestPullMergeRejectsStaleClientBase-e7247d72
+        X-Gitea-Repository-Link: http://localhost:3003/user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b
+        X-Forgejo-Repository-Path: user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b
+        X-Forgejo-Reason: pull
+        Subject: [user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b]
+         create a pr from stale-client-base-target to main (PR #1)
+        X-Forgejo-Recipient: user-TestPullMergeRejectsStaleClientBase-e8418bf2
+        Content-Type: multipart/alternative;
+         boundary=cffac00d5d90ec82fc843b009c7bb91e8fd4dfe32105c3871bef058a12f3
+        
+        --cffac00d5d90ec82fc843b009c7bb91e8fd4dfe32105c3871bef058a12f3
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/plain; charset=UTF-8
+        
+        *@user-TestPullMergeRejectsStaleClientBase-e7247d72* created #1.
+        
+        ---
+        View it on Forgejo ( http://localhost:3003/user-TestPullMergeRejectsStaleCl=
+        ientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b/pulls/1=
+         ).
+        --cffac00d5d90ec82fc843b009c7bb91e8fd4dfe32105c3871bef058a12f3
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/html; charset=UTF-8
+        
+        <!DOCTYPE html>
+        <html>
+        <head>
+        	<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+        
+        	<style>
+        		blockquote { padding-left: 1em; margin: 1em 0; border-left: 1px solid gre=
+        y; color: #777}
+        		.footer { font-size:small; color:#666;}
+        	=09
+        	</style>
+        
+        </head>
+        
+        <body>
+        =09
+        =09
+        	<p>
+        	=09
+        		=09
+        				<b>@user-TestPullMergeRejectsStaleClientBase-e7247d72</b> created #1.
+        		=09
+        	=09
+        	</p>
+        	<div class=3D"footer">
+        	<p>
+        		---
+        		<br>
+        		<a href=3D"http://localhost:3003/user-TestPullMergeRejectsStaleClientBase=
+        -e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b/pulls/1">View i=
+        t on Forgejo</a>.
+        	</p>
+        	</div>
+        </body>
+        </html>
+        
+        --cffac00d5d90ec82fc843b009c7bb91e8fd4dfe32105c3871bef058a12f3--
+    testlogger.go:408: 2026/10/24 10:50:46 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/v1/repos/user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b/pulls for test-mock:12345, 201 Created in 134.4ms @ repo/pull.go:404(repo.CreatePullRequest)
+    testlogger.go:408: 2026/10/24 10:50:46 ...ces/mailer/mailer.go:384:Send() [I] Mail From: sqlite-integration-test@gitea.io To: [user-TestPullMergeRejectsStaleClientBase-e8418bf2@test.forgejo.org] Body: Mime-Version: 1.0
+        From: "user-TestPullMergeRejectsStaleClientBase-e7247d72"
+         <sqlite-integration-test@gitea.io>
+        X-GitHub-Recipient-Address: user-TestPullMergeRejectsStaleClientBase-e8418bf2@test.forgejo.org
+        X-GitLab-NotificationReason: pull
+        X-Gitea-Reason: pull
+        X-GitLab-Issue-IID: 2
+        List-ID: user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b
+         <repo-TestPullMergeRejectsStaleClientBase-e34f4b6b.user-TestPullMergeRejectsStaleClientBase-e8418bf2.localhost>
+        X-Gitea-Recipient-Address: user-TestPullMergeRejectsStaleClientBase-e8418bf2@test.forgejo.org
+        To: user-TestPullMergeRejectsStaleClientBase-e8418bf2@test.forgejo.org
+        X-Forgejo-Issue-Link: http://localhost:3003/user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b/pulls/2
+        X-GitHub-Reason: pull
+        List-Unsubscribe: <http://localhost:3003/user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b/pulls/2>
+        In-Reply-To: <user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b/pulls/2@localhost>
+        Date: Sat, 24 Oct 2026 10:50:46 -0400
+        X-GitHub-Sender: user-TestPullMergeRejectsStaleClientBase-e7247d72
+        X-Forgejo-Repository: repo-TestPullMergeRejectsStaleClientBase-e34f4b6b
+        List-Archive: <http://localhost:3003/user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b>
+        X-Forgejo-Sender: user-TestPullMergeRejectsStaleClientBase-e7247d72
+        X-Gitea-Repository-Link: http://localhost:3003/user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b
+        X-Gitea-Issue-ID: 2
+        References: <user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b/pulls/2@localhost>
+        Subject: [user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b]
+         create a pr from stale-client-base-competitor to main (PR #2)
+        X-Forgejo-Reason: pull
+        X-Gitea-Sender: user-TestPullMergeRejectsStaleClientBase-e7247d72
+        X-Mailer: Forgejo
+        X-GitHub-Recipient: user-TestPullMergeRejectsStaleClientBase-e8418bf2
+        X-Forgejo-Recipient: user-TestPullMergeRejectsStaleClientBase-e8418bf2
+        X-GitLab-Project: repo-TestPullMergeRejectsStaleClientBase-e34f4b6b
+        X-GitLab-Project-Path: user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b
+        X-Forgejo-Recipient-Address: user-TestPullMergeRejectsStaleClientBase-e8418bf2@test.forgejo.org
+        X-Gitea-Repository-Path: user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b
+        X-Gitea-Issue-Link: http://localhost:3003/user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b/pulls/2
+        Message-ID: <user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b/pulls/2@localhost>
+        X-Forgejo-Repository-Link: http://localhost:3003/user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b
+        X-Forgejo-Issue-ID: 2
+        X-Gitea-Repository: repo-TestPullMergeRejectsStaleClientBase-e34f4b6b
+        X-Forgejo-Repository-Path: user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b
+        X-Gitea-Recipient: user-TestPullMergeRejectsStaleClientBase-e8418bf2
+        X-Auto-Response-Suppress: All
+        Content-Type: multipart/alternative;
+         boundary=9060660ef712470203c63dc8463aeee8216b3f2ae5fbfe75213ad1912afa
+        
+        --9060660ef712470203c63dc8463aeee8216b3f2ae5fbfe75213ad1912afa
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/plain; charset=UTF-8
+        
+        *@user-TestPullMergeRejectsStaleClientBase-e7247d72* created #2.
+        
+        ---
+        View it on Forgejo ( http://localhost:3003/user-TestPullMergeRejectsStaleCl=
+        ientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b/pulls/2=
+         ).
+        --9060660ef712470203c63dc8463aeee8216b3f2ae5fbfe75213ad1912afa
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/html; charset=UTF-8
+        
+        <!DOCTYPE html>
+        <html>
+        <head>
+        	<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+        
+        	<style>
+        		blockquote { padding-left: 1em; margin: 1em 0; border-left: 1px solid gre=
+        y; color: #777}
+        		.footer { font-size:small; color:#666;}
+        	=09
+        	</style>
+        
+        </head>
+        
+        <body>
+        =09
+        =09
+        	<p>
+        	=09
+        		=09
+        				<b>@user-TestPullMergeRejectsStaleClientBase-e7247d72</b> created #2.
+        		=09
+        	=09
+        	</p>
+        	<div class=3D"footer">
+        	<p>
+        		---
+        		<br>
+        		<a href=3D"http://localhost:3003/user-TestPullMergeRejectsStaleClientBase=
+        -e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b/pulls/2">View i=
+        t on Forgejo</a>.
+        	</p>
+        	</div>
+        </body>
+        </html>
+        
+        --9060660ef712470203c63dc8463aeee8216b3f2ae5fbfe75213ad1912afa--
+    testlogger.go:408: 2026/10/24 10:50:46 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/v1/repos/user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b/pulls for test-mock:12345, 201 Created in 132.7ms @ repo/pull.go:404(repo.CreatePullRequest)
+    testlogger.go:408: 2026/10/24 10:50:46 ...eb/routing/logger.go:109:func1() [I] router: completed GET /api/v1/repos/user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b/pulls/1 for test-mock:12345, 200 OK in 20.7ms @ repo/pull.go:205(repo.GetPullRequest)
+    testlogger.go:408: 2026/10/24 10:50:46 ...eb/routing/logger.go:109:func1() [I] router: completed GET /api/v1/repos/user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b/pulls/2 for test-mock:12345, 200 OK in 19.5ms @ repo/pull.go:205(repo.GetPullRequest)
+=== RUN   TestPullMergeRejectsStaleClientBase/automerge_rejects_expected_base_contract
+=== NAME  TestPullMergeRejectsStaleClientBase
+    testlogger.go:408: 2026/10/24 10:50:46 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/v1/repos/user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b/pulls/1/merge for test-mock:12345, 409 Conflict in 7.4ms @ repo/pull.go:869(repo.MergePullRequest)
+    testlogger.go:408: 2026/10/24 10:50:46 ...eb/routing/logger.go:109:func1() [I] router: completed GET /api/v1/repos/user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b/pulls/1 for test-mock:12345, 200 OK in 16.4ms @ repo/pull.go:205(repo.GetPullRequest)
+=== RUN   TestPullMergeRejectsStaleClientBase/manual_rejects_expected_base_contract
+=== NAME  TestPullMergeRejectsStaleClientBase
+    testlogger.go:408: 2026/10/24 10:50:46 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/v1/repos/user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b/pulls/1/merge for test-mock:12345, 409 Conflict in 3.5ms @ repo/pull.go:869(repo.MergePullRequest)
+    testlogger.go:408: 2026/10/24 10:50:46 ...eb/routing/logger.go:109:func1() [I] router: completed GET /api/v1/repos/user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b/pulls/1 for test-mock:12345, 200 OK in 18.2ms @ repo/pull.go:205(repo.GetPullRequest)
+    testlogger.go:408: 2026/10/24 10:50:46 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/pre-receive/user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b for 127.0.0.1:0, 200 OK in 0.7ms @ private/hook_pre_receive.go:204(private.HookPreReceive)
+    testlogger.go:408: 2026/10/24 10:50:46 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/post-receive/user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b for 127.0.0.1:0, 200 OK in 74.3ms @ private/hook_post_receive.go:46(private.HookPostReceive)
+    testlogger.go:408: 2026/10/24 10:50:46 ...ces/mailer/mailer.go:384:Send() [I] Mail From: sqlite-integration-test@gitea.io To: [user-TestPullMergeRejectsStaleClientBase-e7247d72@test.forgejo.org] Body: Mime-Version: 1.0
+        X-Gitea-Recipient-Address: user-TestPullMergeRejectsStaleClientBase-e7247d72@test.forgejo.org
+        X-Forgejo-Reason: pull
+        X-GitLab-NotificationReason: pull
+        X-Gitea-Repository-Link: http://localhost:3003/user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b
+        From: "user-TestPullMergeRejectsStaleClientBase-e8418bf2"
+         <sqlite-integration-test@gitea.io>
+        X-GitHub-Reason: pull
+        List-ID: user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b
+         <repo-TestPullMergeRejectsStaleClientBase-e34f4b6b.user-TestPullMergeRejectsStaleClientBase-e8418bf2.localhost>
+        X-GitLab-Issue-IID: 2
+        X-Gitea-Repository: repo-TestPullMergeRejectsStaleClientBase-e34f4b6b
+        X-Forgejo-Repository-Path: user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b
+        To: user-TestPullMergeRejectsStaleClientBase-e7247d72@test.forgejo.org
+        X-GitLab-Project: repo-TestPullMergeRejectsStaleClientBase-e34f4b6b
+        X-Gitea-Repository-Path: user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b
+        X-GitHub-Recipient-Address: user-TestPullMergeRejectsStaleClientBase-e7247d72@test.forgejo.org
+        List-Archive: <http://localhost:3003/user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b>
+        X-Forgejo-Repository: repo-TestPullMergeRejectsStaleClientBase-e34f4b6b
+        X-Forgejo-Recipient: user-TestPullMergeRejectsStaleClientBase-e7247d72
+        X-Gitea-Issue-Link: http://localhost:3003/user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b/pulls/2
+        X-GitHub-Sender: user-TestPullMergeRejectsStaleClientBase-e8418bf2
+        Subject: Re:
+         [user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b]
+         create a pr from stale-client-base-competitor to main (PR #2)
+        X-Forgejo-Recipient-Address: user-TestPullMergeRejectsStaleClientBase-e7247d72@test.forgejo.org
+        X-Gitea-Reason: pull
+        X-GitLab-Project-Path: user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b
+        X-Forgejo-Sender: user-TestPullMergeRejectsStaleClientBase-e8418bf2
+        X-Auto-Response-Suppress: All
+        X-Forgejo-Repository-Link: http://localhost:3003/user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b
+        X-GitHub-Recipient: user-TestPullMergeRejectsStaleClientBase-e7247d72
+        X-Gitea-Sender: user-TestPullMergeRejectsStaleClientBase-e8418bf2
+        X-Gitea-Issue-ID: 2
+        Date: Sat, 24 Oct 2026 10:50:46 -0400
+        List-Unsubscribe: <http://localhost:3003/user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b/pulls/2>
+        Message-ID: <user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b/pulls/2/merge/1792853446807@localhost>
+        X-Mailer: Forgejo
+        X-Forgejo-Issue-ID: 2
+        References: <user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b/pulls/2@localhost>
+        X-Forgejo-Issue-Link: http://localhost:3003/user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b/pulls/2
+        X-Gitea-Recipient: user-TestPullMergeRejectsStaleClientBase-e7247d72
+        In-Reply-To: <user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b/pulls/2@localhost>
+        Content-Type: multipart/alternative;
+         boundary=49b458cfd778b6699de40e714f8ba8f8e5bd5cc53e0b51feafe1e678f442
+        
+        --49b458cfd778b6699de40e714f8ba8f8e5bd5cc53e0b51feafe1e678f442
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/plain; charset=UTF-8
+        
+        *@user-TestPullMergeRejectsStaleClientBase-e8418bf2* merged #2 into main.
+        
+        ---
+        View it on Forgejo ( http://localhost:3003/user-TestPullMergeRejectsStaleCl=
+        ientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b/pulls/2=
+         ).
+        --49b458cfd778b6699de40e714f8ba8f8e5bd5cc53e0b51feafe1e678f442
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/html; charset=UTF-8
+        
+        <!DOCTYPE html>
+        <html>
+        <head>
+        	<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+        
+        	<style>
+        		blockquote { padding-left: 1em; margin: 1em 0; border-left: 1px solid gre=
+        y; color: #777}
+        		.footer { font-size:small; color:#666;}
+        	=09
+        	</style>
+        
+        </head>
+        
+        <body>
+        =09
+        =09
+        	<p>
+        	=09
+        			<b>@user-TestPullMergeRejectsStaleClientBase-e8418bf2</b> merged #2 into=
+         main.
+        	=09
+        		=09
+        	=09
+        	</p>
+        	<div class=3D"footer">
+        	<p>
+        		---
+        		<br>
+        		<a href=3D"http://localhost:3003/user-TestPullMergeRejectsStaleClientBase=
+        -e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b/pulls/2">View i=
+        t on Forgejo</a>.
+        	</p>
+        	</div>
+        </body>
+        </html>
+        
+        --49b458cfd778b6699de40e714f8ba8f8e5bd5cc53e0b51feafe1e678f442--
+    testlogger.go:408: 2026/10/24 10:50:46 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/v1/repos/user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b/pulls/2/merge for test-mock:12345, 200 OK in 384.5ms @ repo/pull.go:869(repo.MergePullRequest)
+    testlogger.go:408: 2026/10/24 10:50:46 ...eb/routing/logger.go:109:func1() [I] router: completed GET /api/v1/repos/user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b/pulls/1 for test-mock:12345, 200 OK in 17.7ms @ repo/pull.go:205(repo.GetPullRequest)
+    pull_merge_freshness_race_test.go:195: client checked base=b3d694ffaf1f9edc5027bddd0ef0c3a7baa75d85, current base=4d6fedb83068cceba94d725b5f7fb5ad7cde1711, target merge response=409 body={"message":"base branch no longer matches the verified commit","url":"http://localhost:3003/api/swagger"}
+    testlogger.go:408: 2026/10/24 10:50:46 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/v1/repos/user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b/pulls/1/merge for test-mock:12345, 409 Conflict in 3.8ms @ repo/pull.go:869(repo.MergePullRequest)
+    testlogger.go:408: 2026/10/24 10:50:46 ...eb/routing/logger.go:109:func1() [I] router: completed GET /api/v1/repos/user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b/pulls/1 for test-mock:12345, 200 OK in 18.1ms @ repo/pull.go:205(repo.GetPullRequest)
+    pull_merge_freshness_race_test.go:209: web route stale external base response=400 body={"errorMessage":"base branch no longer matches the verified commit","renderFormat":"text"}
+    testlogger.go:408: 2026/10/24 10:50:46 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b/pulls/1/merge for test-mock:12345, 400 Bad Request in 10.9ms @ repo/pull.go:1375(repo.MergePullRequest)
+    testlogger.go:408: 2026/10/24 10:50:46 ...eb/routing/logger.go:109:func1() [I] router: completed GET /api/v1/repos/user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b/pulls/1 for test-mock:12345, 200 OK in 16.8ms @ repo/pull.go:205(repo.GetPullRequest)
+    testlogger.go:408: 2026/10/24 10:50:47 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/pre-receive/user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b for 127.0.0.1:0, 200 OK in 0.6ms @ private/hook_pre_receive.go:204(private.HookPreReceive)
+    testlogger.go:408: 2026/10/24 10:50:47 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/post-receive/user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b for 127.0.0.1:0, 200 OK in 64.0ms @ private/hook_post_receive.go:46(private.HookPostReceive)
+    testlogger.go:408: 2026/10/24 10:50:47 ...ces/mailer/mailer.go:384:Send() [I] Mail From: sqlite-integration-test@gitea.io To: [user-TestPullMergeRejectsStaleClientBase-e7247d72@test.forgejo.org] Body: Mime-Version: 1.0
+        X-Gitea-Repository-Path: user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b
+        To: user-TestPullMergeRejectsStaleClientBase-e7247d72@test.forgejo.org
+        X-GitHub-Sender: user-TestPullMergeRejectsStaleClientBase-e8418bf2
+        X-Forgejo-Sender: user-TestPullMergeRejectsStaleClientBase-e8418bf2
+        In-Reply-To: <user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b/pulls/1@localhost>
+        List-ID: user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b
+         <repo-TestPullMergeRejectsStaleClientBase-e34f4b6b.user-TestPullMergeRejectsStaleClientBase-e8418bf2.localhost>
+        X-Gitea-Sender: user-TestPullMergeRejectsStaleClientBase-e8418bf2
+        Message-ID: <user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b/pulls/1/merge/1792853447252@localhost>
+        X-Gitea-Recipient: user-TestPullMergeRejectsStaleClientBase-e7247d72
+        X-Forgejo-Repository-Path: user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b
+        X-GitHub-Recipient-Address: user-TestPullMergeRejectsStaleClientBase-e7247d72@test.forgejo.org
+        X-Forgejo-Issue-Link: http://localhost:3003/user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b/pulls/1
+        X-Gitea-Issue-Link: http://localhost:3003/user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b/pulls/1
+        X-GitHub-Reason: pull
+        List-Archive: <http://localhost:3003/user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b>
+        X-Gitea-Repository: repo-TestPullMergeRejectsStaleClientBase-e34f4b6b
+        X-Gitea-Repository-Link: http://localhost:3003/user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b
+        Date: Sat, 24 Oct 2026 10:50:47 -0400
+        X-Gitea-Recipient-Address: user-TestPullMergeRejectsStaleClientBase-e7247d72@test.forgejo.org
+        X-GitLab-Project-Path: user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b
+        X-GitHub-Recipient: user-TestPullMergeRejectsStaleClientBase-e7247d72
+        X-Gitea-Issue-ID: 1
+        X-Forgejo-Issue-ID: 1
+        From: "user-TestPullMergeRejectsStaleClientBase-e8418bf2"
+         <sqlite-integration-test@gitea.io>
+        X-Gitea-Reason: pull
+        X-Forgejo-Recipient-Address: user-TestPullMergeRejectsStaleClientBase-e7247d72@test.forgejo.org
+        X-Mailer: Forgejo
+        Subject: Re:
+         [user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b]
+         create a pr from stale-client-base-target to main (PR #1)
+        References: <user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b/pulls/1@localhost>
+        X-GitLab-NotificationReason: pull
+        X-Forgejo-Reason: pull
+        X-GitLab-Project: repo-TestPullMergeRejectsStaleClientBase-e34f4b6b
+        List-Unsubscribe: <http://localhost:3003/user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b/pulls/1>
+        X-Forgejo-Repository: repo-TestPullMergeRejectsStaleClientBase-e34f4b6b
+        X-GitLab-Issue-IID: 1
+        X-Forgejo-Repository-Link: http://localhost:3003/user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b
+        X-Forgejo-Recipient: user-TestPullMergeRejectsStaleClientBase-e7247d72
+        X-Auto-Response-Suppress: All
+        Content-Type: multipart/alternative;
+         boundary=c0ee65ef14375a2601f2731f155a09c904bb3c37960b66bae1f794d74c79
+        
+        --c0ee65ef14375a2601f2731f155a09c904bb3c37960b66bae1f794d74c79
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/plain; charset=UTF-8
+        
+        *@user-TestPullMergeRejectsStaleClientBase-e8418bf2* merged #1 into main.
+        
+        ---
+        View it on Forgejo ( http://localhost:3003/user-TestPullMergeRejectsStaleCl=
+        ientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b/pulls/1=
+         ).
+        --c0ee65ef14375a2601f2731f155a09c904bb3c37960b66bae1f794d74c79
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/html; charset=UTF-8
+        
+        <!DOCTYPE html>
+        <html>
+        <head>
+        	<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+        
+        	<style>
+        		blockquote { padding-left: 1em; margin: 1em 0; border-left: 1px solid gre=
+        y; color: #777}
+        		.footer { font-size:small; color:#666;}
+        	=09
+        	</style>
+        
+        </head>
+        
+        <body>
+        =09
+        =09
+        	<p>
+        	=09
+        			<b>@user-TestPullMergeRejectsStaleClientBase-e8418bf2</b> merged #1 into=
+         main.
+        	=09
+        		=09
+        	=09
+        	</p>
+        	<div class=3D"footer">
+        	<p>
+        		---
+        		<br>
+        		<a href=3D"http://localhost:3003/user-TestPullMergeRejectsStaleClientBase=
+        -e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b/pulls/1">View i=
+        t on Forgejo</a>.
+        	</p>
+        	</div>
+        </body>
+        </html>
+        
+        --c0ee65ef14375a2601f2731f155a09c904bb3c37960b66bae1f794d74c79--
+    testlogger.go:408: 2026/10/24 10:50:47 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/v1/repos/user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b/pulls/1/merge for test-mock:12345, 200 OK in 370.9ms @ repo/pull.go:869(repo.MergePullRequest)
+    testlogger.go:408: 2026/10/24 10:50:47 ...eb/routing/logger.go:109:func1() [I] router: completed GET /api/v1/repos/user-TestPullMergeRejectsStaleClientBase-e8418bf2/repo-TestPullMergeRejectsStaleClientBase-e34f4b6b/pulls/1 for test-mock:12345, 200 OK in 22.6ms @ repo/pull.go:205(repo.GetPullRequest)
+    pull_merge_freshness_race_test.go:227: stale external proof: checked base=b3d694ffaf1f9edc5027bddd0ef0c3a7baa75d85; current base=4d6fedb83068cceba94d725b5f7fb5ad7cde1711; client token absent; legacy status=200; merged parents=4d6fedb83068cceba94d725b5f7fb5ad7cde1711 f61395c8fa24219f307b091eeb5b84f358ac6c37
+??? [TestLogger] 2026/10/24 10:50:47 ...s/actions/cleanup.go:184:CleanupEphemeralRunnersByPickedTaskOfRepo() [I] Removed 0 runners
+--- PASS: TestPullMergeRejectsStaleClientBase (2.40s)
+    --- PASS: TestPullMergeRejectsStaleClientBase/automerge_rejects_expected_base_contract (0.03s)
+    --- PASS: TestPullMergeRejectsStaleClientBase/manual_rejects_expected_base_contract (0.03s)
+=== RUN   TestPullMergeWebRouteAcceptsMissingExpectedBase
+=== TestPullMergeWebRouteAcceptsMissingExpectedBase (tests/integration/git_helper_for_declarative_test.go:67)
+    testlogger.go:408: 2026/10/24 10:50:47 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/gitea-lfs-meta
+    testlogger.go:408: 2026/10/24 10:50:47 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7.git/info/refs?service=git-upload-pack for 127.0.0.1:52834, 200 OK in 2.3ms @ repo/githttp.go:509(repo.GetInfoRefs)
+    testlogger.go:408: 2026/10/24 10:50:47 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7.git/git-upload-pack for 127.0.0.1:52834, 200 OK in 1.9ms @ repo/githttp.go:469(repo.ServiceUploadPack)
+    testlogger.go:408: 2026/10/24 10:50:47 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7.git/git-upload-pack for 127.0.0.1:52834, 200 OK in 4.5ms @ repo/githttp.go:469(repo.ServiceUploadPack)
+    testlogger.go:408: 2026/10/24 10:50:47 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7.git/info/refs?service=git-receive-pack for 127.0.0.1:52842, 401 Unauthorized in 0.4ms @ repo/githttp.go:509(repo.GetInfoRefs)
+    testlogger.go:408: 2026/10/24 10:50:47 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7.git/info/refs?service=git-receive-pack for 127.0.0.1:52842, 200 OK in 1.5ms @ repo/githttp.go:509(repo.GetInfoRefs)
+    testlogger.go:408: 2026/10/24 10:50:48 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/pre-receive/user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7 for 127.0.0.1:0, 200 OK in 1.3ms @ private/hook_pre_receive.go:204(private.HookPreReceive)
+    testlogger.go:408: 2026/10/24 10:50:48 ...odels/user/avatar.go:59:GenerateRandomAvatar() [I] New random avatar created: 145
+    testlogger.go:408: 2026/10/24 10:50:48 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/post-receive/user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7 for 127.0.0.1:0, 200 OK in 57.4ms @ private/hook_post_receive.go:46(private.HookPostReceive)
+    testlogger.go:408: 2026/10/24 10:50:48 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7.git/git-receive-pack for 127.0.0.1:52842, 200 OK in 248.2ms @ repo/githttp.go:477(repo.ServiceReceivePack)
+    testlogger.go:408: 2026/10/24 10:50:48 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7.git/info/refs?service=git-receive-pack for 127.0.0.1:52852, 401 Unauthorized in 0.3ms @ repo/githttp.go:509(repo.GetInfoRefs)
+    testlogger.go:408: 2026/10/24 10:50:48 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7.git/info/refs?service=git-receive-pack for 127.0.0.1:52852, 200 OK in 1.4ms @ repo/githttp.go:509(repo.GetInfoRefs)
+    testlogger.go:408: 2026/10/24 10:50:48 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/pre-receive/user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7 for 127.0.0.1:0, 200 OK in 1.1ms @ private/hook_pre_receive.go:204(private.HookPreReceive)
+    testlogger.go:408: 2026/10/24 10:50:48 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/post-receive/user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7 for 127.0.0.1:0, 200 OK in 42.2ms @ private/hook_post_receive.go:46(private.HookPostReceive)
+    testlogger.go:408: 2026/10/24 10:50:48 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7.git/git-receive-pack for 127.0.0.1:52852, 200 OK in 229.0ms @ repo/githttp.go:477(repo.ServiceReceivePack)
+    testlogger.go:408: 2026/10/24 10:50:48 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/login for test-mock:12345, 303 See Other in 2.3ms @ auth/auth.go:208(auth.SignInPost)
+    testlogger.go:408: 2026/10/24 10:50:48 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/settings/applications/tokens/new for test-mock:12345, 303 See Other in 5.1ms @ setting/access_token.go:220(setting.AccessTokenCreatePost)
+    testlogger.go:408: 2026/10/24 10:50:48 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user/settings/applications for test-mock:12345, 200 OK in 2.7ms @ setting/applications.go:24(setting.Applications)
+    testlogger.go:408: 2026/10/24 10:50:48 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/login for test-mock:12345, 303 See Other in 1.9ms @ auth/auth.go:208(auth.SignInPost)
+    testlogger.go:408: 2026/10/24 10:50:48 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/settings/applications/tokens/new for test-mock:12345, 303 See Other in 5.0ms @ setting/access_token.go:220(setting.AccessTokenCreatePost)
+    testlogger.go:408: 2026/10/24 10:50:48 ...odels/user/avatar.go:59:GenerateRandomAvatar() [I] New random avatar created: 146
+    testlogger.go:408: 2026/10/24 10:50:48 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user/settings/applications for test-mock:12345, 200 OK in 9.2ms @ setting/applications.go:24(setting.Applications)
+    testlogger.go:408: 2026/10/24 10:50:48 ...ces/mailer/mailer.go:384:Send() [I] Mail From: sqlite-integration-test@gitea.io To: [user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17@test.forgejo.org] Body: Mime-Version: 1.0
+        X-Forgejo-Reason: pull
+        X-GitLab-NotificationReason: pull
+        References: <user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7/pulls/1@localhost>
+        X-Gitea-Recipient: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17
+        X-Gitea-Repository: repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7
+        X-Auto-Response-Suppress: All
+        X-Forgejo-Repository-Path: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7
+        X-Gitea-Issue-ID: 1
+        X-GitLab-Issue-IID: 1
+        List-Unsubscribe: <http://localhost:3003/user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7/pulls/1>
+        X-Forgejo-Issue-Link: http://localhost:3003/user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7/pulls/1
+        X-Forgejo-Repository: repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7
+        X-GitLab-Project-Path: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7
+        X-Forgejo-Recipient: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17
+        X-Forgejo-Issue-ID: 1
+        X-Forgejo-Recipient-Address: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17@test.forgejo.org
+        X-GitLab-Project: repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7
+        X-Gitea-Issue-Link: http://localhost:3003/user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7/pulls/1
+        X-Forgejo-Repository-Link: http://localhost:3003/user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7
+        X-GitHub-Recipient-Address: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17@test.forgejo.org
+        Subject: [user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7]
+         create a pr from missing-web-base-target to main (PR #1)
+        X-Gitea-Recipient-Address: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17@test.forgejo.org
+        X-Gitea-Repository-Link: http://localhost:3003/user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7
+        In-Reply-To: <user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7/pulls/1@localhost>
+        List-ID: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7
+         <repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7.user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17.localhost>
+        X-Gitea-Reason: pull
+        X-GitHub-Recipient: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17
+        Date: Sat, 24 Oct 2026 10:50:48 -0400
+        From: "user-TestPullMergeWebRouteAcceptsMissingExpectedBase-f878ecbf"
+         <sqlite-integration-test@gitea.io>
+        To: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17@test.forgejo.org
+        X-Gitea-Repository-Path: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7
+        X-Gitea-Sender: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-f878ecbf
+        X-Forgejo-Sender: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-f878ecbf
+        X-GitHub-Sender: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-f878ecbf
+        Message-ID: <user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7/pulls/1@localhost>
+        X-GitHub-Reason: pull
+        X-Mailer: Forgejo
+        List-Archive: <http://localhost:3003/user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7>
+        Content-Type: multipart/alternative;
+         boundary=20c7200ab294923673315777bf4a0d320f28cc41bd43cc0d5a2aa3e6bc71
+        
+        --20c7200ab294923673315777bf4a0d320f28cc41bd43cc0d5a2aa3e6bc71
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/plain; charset=UTF-8
+        
+        *@user-TestPullMergeWebRouteAcceptsMissingExpectedBase-f878ecbf* created #1=
+        .
+        
+        ---
+        View it on Forgejo ( http://localhost:3003/user-TestPullMergeWebRouteAccept=
+        sMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpec=
+        tedBase-c6c4e2b7/pulls/1 ).
+        --20c7200ab294923673315777bf4a0d320f28cc41bd43cc0d5a2aa3e6bc71
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/html; charset=UTF-8
+        
+        <!DOCTYPE html>
+        <html>
+        <head>
+        	<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+        
+        	<style>
+        		blockquote { padding-left: 1em; margin: 1em 0; border-left: 1px solid gre=
+        y; color: #777}
+        		.footer { font-size:small; color:#666;}
+        	=09
+        	</style>
+        
+        </head>
+        
+        <body>
+        =09
+        =09
+        	<p>
+        	=09
+        		=09
+        				<b>@user-TestPullMergeWebRouteAcceptsMissingExpectedBase-f878ecbf</b> c=
+        reated #1.
+        		=09
+        	=09
+        	</p>
+        	<div class=3D"footer">
+        	<p>
+        		---
+        		<br>
+        		<a href=3D"http://localhost:3003/user-TestPullMergeWebRouteAcceptsMissing=
+        ExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-=
+        c6c4e2b7/pulls/1">View it on Forgejo</a>.
+        	</p>
+        	</div>
+        </body>
+        </html>
+        
+        --20c7200ab294923673315777bf4a0d320f28cc41bd43cc0d5a2aa3e6bc71--
+    testlogger.go:408: 2026/10/24 10:50:48 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/v1/repos/user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7/pulls for test-mock:12345, 201 Created in 122.7ms @ repo/pull.go:404(repo.CreatePullRequest)
+    testlogger.go:408: 2026/10/24 10:50:48 ...ces/mailer/mailer.go:384:Send() [I] Mail From: sqlite-integration-test@gitea.io To: [user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17@test.forgejo.org] Body: Mime-Version: 1.0
+        X-Gitea-Repository: repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7
+        Message-ID: <user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7/pulls/2@localhost>
+        X-Gitea-Repository-Path: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7
+        X-Forgejo-Sender: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-f878ecbf
+        X-Gitea-Recipient-Address: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17@test.forgejo.org
+        List-Unsubscribe: <http://localhost:3003/user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7/pulls/2>
+        In-Reply-To: <user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7/pulls/2@localhost>
+        X-Forgejo-Issue-ID: 2
+        Date: Sat, 24 Oct 2026 10:50:48 -0400
+        X-Forgejo-Repository-Path: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7
+        X-Forgejo-Repository-Link: http://localhost:3003/user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7
+        X-Mailer: Forgejo
+        X-Forgejo-Recipient-Address: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17@test.forgejo.org
+        X-GitLab-Issue-IID: 2
+        X-GitLab-Project: repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7
+        X-Gitea-Reason: pull
+        List-ID: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7
+         <repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7.user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17.localhost>
+        From: "user-TestPullMergeWebRouteAcceptsMissingExpectedBase-f878ecbf"
+         <sqlite-integration-test@gitea.io>
+        To: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17@test.forgejo.org
+        X-Gitea-Sender: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-f878ecbf
+        X-GitHub-Reason: pull
+        List-Archive: <http://localhost:3003/user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7>
+        Subject: [user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7]
+         create a pr from missing-web-base-competitor to main (PR #2)
+        X-Forgejo-Reason: pull
+        X-GitLab-NotificationReason: pull
+        X-Gitea-Repository-Link: http://localhost:3003/user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7
+        X-Forgejo-Repository: repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7
+        X-GitHub-Recipient-Address: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17@test.forgejo.org
+        X-GitHub-Sender: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-f878ecbf
+        X-Gitea-Recipient: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17
+        References: <user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7/pulls/2@localhost>
+        X-Forgejo-Issue-Link: http://localhost:3003/user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7/pulls/2
+        X-Forgejo-Recipient: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17
+        X-Gitea-Issue-Link: http://localhost:3003/user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7/pulls/2
+        X-GitHub-Recipient: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17
+        X-GitLab-Project-Path: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7
+        X-Gitea-Issue-ID: 2
+        X-Auto-Response-Suppress: All
+        Content-Type: multipart/alternative;
+         boundary=ffe02626bf490a244a3a3bbd7100e7783a31b5a632154d8b9944f4e4cec7
+        
+        --ffe02626bf490a244a3a3bbd7100e7783a31b5a632154d8b9944f4e4cec7
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/plain; charset=UTF-8
+        
+        *@user-TestPullMergeWebRouteAcceptsMissingExpectedBase-f878ecbf* created #2=
+        .
+        
+        ---
+        View it on Forgejo ( http://localhost:3003/user-TestPullMergeWebRouteAccept=
+        sMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpec=
+        tedBase-c6c4e2b7/pulls/2 ).
+        --ffe02626bf490a244a3a3bbd7100e7783a31b5a632154d8b9944f4e4cec7
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/html; charset=UTF-8
+        
+        <!DOCTYPE html>
+        <html>
+        <head>
+        	<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+        
+        	<style>
+        		blockquote { padding-left: 1em; margin: 1em 0; border-left: 1px solid gre=
+        y; color: #777}
+        		.footer { font-size:small; color:#666;}
+        	=09
+        	</style>
+        
+        </head>
+        
+        <body>
+        =09
+        =09
+        	<p>
+        	=09
+        		=09
+        				<b>@user-TestPullMergeWebRouteAcceptsMissingExpectedBase-f878ecbf</b> c=
+        reated #2.
+        		=09
+        	=09
+        	</p>
+        	<div class=3D"footer">
+        	<p>
+        		---
+        		<br>
+        		<a href=3D"http://localhost:3003/user-TestPullMergeWebRouteAcceptsMissing=
+        ExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-=
+        c6c4e2b7/pulls/2">View it on Forgejo</a>.
+        	</p>
+        	</div>
+        </body>
+        </html>
+        
+        --ffe02626bf490a244a3a3bbd7100e7783a31b5a632154d8b9944f4e4cec7--
+    testlogger.go:408: 2026/10/24 10:50:48 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/v1/repos/user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7/pulls for test-mock:12345, 201 Created in 120.4ms @ repo/pull.go:404(repo.CreatePullRequest)
+    testlogger.go:408: 2026/10/24 10:50:48 ...eb/routing/logger.go:109:func1() [I] router: completed GET /api/v1/repos/user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7/pulls/1 for test-mock:12345, 200 OK in 18.3ms @ repo/pull.go:205(repo.GetPullRequest)
+    testlogger.go:408: 2026/10/24 10:50:48 ...eb/routing/logger.go:109:func1() [I] router: completed GET /api/v1/repos/user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7/pulls/2 for test-mock:12345, 200 OK in 16.9ms @ repo/pull.go:205(repo.GetPullRequest)
+    testlogger.go:408: 2026/10/24 10:50:48 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/pre-receive/user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7 for 127.0.0.1:0, 200 OK in 0.7ms @ private/hook_pre_receive.go:204(private.HookPreReceive)
+    testlogger.go:408: 2026/10/24 10:50:49 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/post-receive/user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7 for 127.0.0.1:0, 200 OK in 56.0ms @ private/hook_post_receive.go:46(private.HookPostReceive)
+    testlogger.go:408: 2026/10/24 10:50:49 ...ces/mailer/mailer.go:384:Send() [I] Mail From: sqlite-integration-test@gitea.io To: [user-TestPullMergeWebRouteAcceptsMissingExpectedBase-f878ecbf@test.forgejo.org] Body: Mime-Version: 1.0
+        X-Gitea-Reason: pull
+        From: "user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17"
+         <sqlite-integration-test@gitea.io>
+        To: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-f878ecbf@test.forgejo.org
+        X-Gitea-Recipient: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-f878ecbf
+        List-ID: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7
+         <repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7.user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17.localhost>
+        X-Gitea-Issue-Link: http://localhost:3003/user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7/pulls/2
+        Message-ID: <user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7/pulls/2/merge/1792853449122@localhost>
+        Subject: Re:
+         [user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7]
+         create a pr from missing-web-base-competitor to main (PR #2)
+        X-Gitea-Repository-Link: http://localhost:3003/user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7
+        X-Forgejo-Repository-Path: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7
+        X-Forgejo-Recipient: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-f878ecbf
+        X-GitLab-Project-Path: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7
+        X-Auto-Response-Suppress: All
+        List-Archive: <http://localhost:3003/user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7>
+        X-Forgejo-Reason: pull
+        X-Gitea-Sender: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17
+        In-Reply-To: <user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7/pulls/2@localhost>
+        List-Unsubscribe: <http://localhost:3003/user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7/pulls/2>
+        Date: Sat, 24 Oct 2026 10:50:49 -0400
+        X-Gitea-Repository: repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7
+        X-GitLab-NotificationReason: pull
+        X-GitHub-Reason: pull
+        X-Mailer: Forgejo
+        X-Forgejo-Recipient-Address: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-f878ecbf@test.forgejo.org
+        X-GitLab-Issue-IID: 2
+        X-Forgejo-Issue-Link: http://localhost:3003/user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7/pulls/2
+        X-Forgejo-Sender: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17
+        X-GitHub-Recipient: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-f878ecbf
+        X-GitHub-Recipient-Address: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-f878ecbf@test.forgejo.org
+        X-Forgejo-Issue-ID: 2
+        X-GitLab-Project: repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7
+        X-Gitea-Recipient-Address: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-f878ecbf@test.forgejo.org
+        X-Gitea-Issue-ID: 2
+        X-Gitea-Repository-Path: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7
+        X-Forgejo-Repository-Link: http://localhost:3003/user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7
+        X-Forgejo-Repository: repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7
+        References: <user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7/pulls/2@localhost>
+        X-GitHub-Sender: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17
+        Content-Type: multipart/alternative;
+         boundary=2b2dd76762ad1b663b6ff2e711aed562761b9374419e01cdcaeea52e090d
+        
+        --2b2dd76762ad1b663b6ff2e711aed562761b9374419e01cdcaeea52e090d
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/plain; charset=UTF-8
+        
+        *@user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17* merged #2 =
+        into main.
+        
+        ---
+        View it on Forgejo ( http://localhost:3003/user-TestPullMergeWebRouteAccept=
+        sMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpec=
+        tedBase-c6c4e2b7/pulls/2 ).
+        --2b2dd76762ad1b663b6ff2e711aed562761b9374419e01cdcaeea52e090d
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/html; charset=UTF-8
+        
+        <!DOCTYPE html>
+        <html>
+        <head>
+        	<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+        
+        	<style>
+        		blockquote { padding-left: 1em; margin: 1em 0; border-left: 1px solid gre=
+        y; color: #777}
+        		.footer { font-size:small; color:#666;}
+        	=09
+        	</style>
+        
+        </head>
+        
+        <body>
+        =09
+        =09
+        	<p>
+        	=09
+        			<b>@user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17</b> me=
+        rged #2 into main.
+        	=09
+        		=09
+        	=09
+        	</p>
+        	<div class=3D"footer">
+        	<p>
+        		---
+        		<br>
+        		<a href=3D"http://localhost:3003/user-TestPullMergeWebRouteAcceptsMissing=
+        ExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-=
+        c6c4e2b7/pulls/2">View it on Forgejo</a>.
+        	</p>
+        	</div>
+        </body>
+        </html>
+        
+        --2b2dd76762ad1b663b6ff2e711aed562761b9374419e01cdcaeea52e090d--
+    testlogger.go:408: 2026/10/24 10:50:49 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/v1/repos/user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7/pulls/2/merge for test-mock:12345, 200 OK in 385.0ms @ repo/pull.go:869(repo.MergePullRequest)
+    testlogger.go:408: 2026/10/24 10:50:49 ...eb/routing/logger.go:109:func1() [I] router: completed GET /api/v1/repos/user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7/pulls/1 for test-mock:12345, 200 OK in 16.7ms @ repo/pull.go:205(repo.GetPullRequest)
+    testlogger.go:408: 2026/10/24 10:50:49 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7/pulls/1/merge for test-mock:12345, 400 Bad Request in 13.8ms @ repo/pull.go:1375(repo.MergePullRequest)
+    testlogger.go:408: 2026/10/24 10:50:49 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7/pulls/1/merge for test-mock:12345, 400 Bad Request in 13.4ms @ repo/pull.go:1375(repo.MergePullRequest)
+    testlogger.go:408: 2026/10/24 10:50:49 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/pre-receive/user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7 for 127.0.0.1:0, 200 OK in 1.3ms @ private/hook_pre_receive.go:204(private.HookPreReceive)
+    testlogger.go:408: 2026/10/24 10:50:49 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/post-receive/user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7 for 127.0.0.1:0, 200 OK in 67.2ms @ private/hook_post_receive.go:46(private.HookPostReceive)
+    testlogger.go:408: 2026/10/24 10:50:49 ...ces/mailer/mailer.go:384:Send() [I] Mail From: sqlite-integration-test@gitea.io To: [user-TestPullMergeWebRouteAcceptsMissingExpectedBase-f878ecbf@test.forgejo.org] Body: Mime-Version: 1.0
+        From: "user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17"
+         <sqlite-integration-test@gitea.io>
+        X-Gitea-Reason: pull
+        X-Gitea-Sender: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17
+        X-Forgejo-Sender: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17
+        X-Mailer: Forgejo
+        X-Forgejo-Issue-Link: http://localhost:3003/user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7/pulls/1
+        X-Forgejo-Repository-Path: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7
+        X-GitLab-NotificationReason: pull
+        List-ID: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7
+         <repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7.user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17.localhost>
+        In-Reply-To: <user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7/pulls/1@localhost>
+        References: <user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7/pulls/1@localhost>
+        X-GitHub-Recipient: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-f878ecbf
+        X-Gitea-Repository-Link: http://localhost:3003/user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7
+        X-GitHub-Reason: pull
+        X-Gitea-Repository-Path: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7
+        List-Unsubscribe: <http://localhost:3003/user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7/pulls/1>
+        X-Gitea-Issue-Link: http://localhost:3003/user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7/pulls/1
+        X-GitLab-Issue-IID: 1
+        List-Archive: <http://localhost:3003/user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7>
+        X-Forgejo-Repository: repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7
+        X-GitHub-Sender: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17
+        X-Forgejo-Issue-ID: 1
+        X-Forgejo-Reason: pull
+        Subject: Re:
+         [user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7]
+         create a pr from missing-web-base-target to main (PR #1)
+        X-Auto-Response-Suppress: All
+        X-Gitea-Issue-ID: 1
+        X-Gitea-Recipient-Address: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-f878ecbf@test.forgejo.org
+        X-Forgejo-Recipient: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-f878ecbf
+        X-GitLab-Project-Path: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7
+        X-Forgejo-Repository-Link: http://localhost:3003/user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7
+        X-Forgejo-Recipient-Address: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-f878ecbf@test.forgejo.org
+        Message-ID: <user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7/pulls/1/merge/1792853449619@localhost>
+        X-Gitea-Repository: repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7
+        To: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-f878ecbf@test.forgejo.org
+        X-GitHub-Recipient-Address: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-f878ecbf@test.forgejo.org
+        X-Gitea-Recipient: user-TestPullMergeWebRouteAcceptsMissingExpectedBase-f878ecbf
+        X-GitLab-Project: repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7
+        Date: Sat, 24 Oct 2026 10:50:49 -0400
+        Content-Type: multipart/alternative;
+         boundary=8e8a9f391497a4eecedf94356c98ac368eaa6e9b2b6671919bbd5a043f18
+        
+        --8e8a9f391497a4eecedf94356c98ac368eaa6e9b2b6671919bbd5a043f18
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/plain; charset=UTF-8
+        
+        *@user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17* merged #1 =
+        into main.
+        
+        ---
+        View it on Forgejo ( http://localhost:3003/user-TestPullMergeWebRouteAccept=
+        sMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpec=
+        tedBase-c6c4e2b7/pulls/1 ).
+        --8e8a9f391497a4eecedf94356c98ac368eaa6e9b2b6671919bbd5a043f18
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/html; charset=UTF-8
+        
+        <!DOCTYPE html>
+        <html>
+        <head>
+        	<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+        
+        	<style>
+        		blockquote { padding-left: 1em; margin: 1em 0; border-left: 1px solid gre=
+        y; color: #777}
+        		.footer { font-size:small; color:#666;}
+        	=09
+        	</style>
+        
+        </head>
+        
+        <body>
+        =09
+        =09
+        	<p>
+        	=09
+        			<b>@user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17</b> me=
+        rged #1 into main.
+        	=09
+        		=09
+        	=09
+        	</p>
+        	<div class=3D"footer">
+        	<p>
+        		---
+        		<br>
+        		<a href=3D"http://localhost:3003/user-TestPullMergeWebRouteAcceptsMissing=
+        ExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-=
+        c6c4e2b7/pulls/1">View it on Forgejo</a>.
+        	</p>
+        	</div>
+        </body>
+        </html>
+        
+        --8e8a9f391497a4eecedf94356c98ac368eaa6e9b2b6671919bbd5a043f18--
+    testlogger.go:408: 2026/10/24 10:50:49 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7/pulls/1/merge for test-mock:12345, 200 OK in 350.5ms @ repo/pull.go:1375(repo.MergePullRequest)
+    testlogger.go:408: 2026/10/24 10:50:49 ...eb/routing/logger.go:109:func1() [I] router: completed GET /api/v1/repos/user-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6813f17/repo-TestPullMergeWebRouteAcceptsMissingExpectedBase-c6c4e2b7/pulls/1 for test-mock:12345, 200 OK in 22.6ms @ repo/pull.go:205(repo.GetPullRequest)
+    pull_merge_freshness_race_test.go:308: web request omitted expected_base_commit_id: checked base=90a734933a770d6b120a311a708afea720c81aeb; current base=06ecdec100d477598378785858160dd60f281147; status=200; merge parents=06ecdec100d477598378785858160dd60f281147 9aa3745689db3d23181ff34fac5c6395166907ce
+??? [TestLogger] 2026/10/24 10:50:49 ...s/actions/cleanup.go:184:CleanupEphemeralRunnersByPickedTaskOfRepo() [I] Removed 0 runners
+--- PASS: TestPullMergeWebRouteAcceptsMissingExpectedBase (2.30s)
+=== RUN   TestPullMergeSpecialRoutesAcceptMissingExpectedBase
+=== RUN   TestPullMergeSpecialRoutesAcceptMissingExpectedBase/AutoMerge
+=== TestPullMergeSpecialRoutesAcceptMissingExpectedBase/AutoMerge (tests/integration/git_helper_for_declarative_test.go:67)
+    testlogger.go:408: 2026/10/24 10:50:49 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/gitea-lfs-meta
+    testlogger.go:408: 2026/10/24 10:50:50 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e.git/info/refs?service=git-upload-pack for 127.0.0.1:52926, 200 OK in 1.2ms @ repo/githttp.go:509(repo.GetInfoRefs)
+    testlogger.go:408: 2026/10/24 10:50:50 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e.git/git-upload-pack for 127.0.0.1:52926, 200 OK in 2.2ms @ repo/githttp.go:469(repo.ServiceUploadPack)
+    testlogger.go:408: 2026/10/24 10:50:50 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e.git/git-upload-pack for 127.0.0.1:52926, 200 OK in 4.4ms @ repo/githttp.go:469(repo.ServiceUploadPack)
+    testlogger.go:408: 2026/10/24 10:50:50 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e.git/info/refs?service=git-receive-pack for 127.0.0.1:52940, 401 Unauthorized in 0.4ms @ repo/githttp.go:509(repo.GetInfoRefs)
+    testlogger.go:408: 2026/10/24 10:50:50 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e.git/info/refs?service=git-receive-pack for 127.0.0.1:52940, 200 OK in 2.9ms @ repo/githttp.go:509(repo.GetInfoRefs)
+    testlogger.go:408: 2026/10/24 10:50:50 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/pre-receive/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e for 127.0.0.1:0, 200 OK in 0.6ms @ private/hook_pre_receive.go:204(private.HookPreReceive)
+    testlogger.go:408: 2026/10/24 10:50:50 ...odels/user/avatar.go:59:GenerateRandomAvatar() [I] New random avatar created: 147
+    testlogger.go:408: 2026/10/24 10:50:50 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/post-receive/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e for 127.0.0.1:0, 200 OK in 57.8ms @ private/hook_post_receive.go:46(private.HookPostReceive)
+    testlogger.go:408: 2026/10/24 10:50:50 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e.git/git-receive-pack for 127.0.0.1:52940, 200 OK in 252.9ms @ repo/githttp.go:477(repo.ServiceReceivePack)
+    testlogger.go:408: 2026/10/24 10:50:50 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e.git/info/refs?service=git-receive-pack for 127.0.0.1:52976, 401 Unauthorized in 0.4ms @ repo/githttp.go:509(repo.GetInfoRefs)
+    testlogger.go:408: 2026/10/24 10:50:50 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e.git/info/refs?service=git-receive-pack for 127.0.0.1:52976, 200 OK in 2.1ms @ repo/githttp.go:509(repo.GetInfoRefs)
+    testlogger.go:408: 2026/10/24 10:50:50 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/pre-receive/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e for 127.0.0.1:0, 200 OK in 0.7ms @ private/hook_pre_receive.go:204(private.HookPreReceive)
+    testlogger.go:408: 2026/10/24 10:50:50 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/post-receive/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e for 127.0.0.1:0, 200 OK in 47.1ms @ private/hook_post_receive.go:46(private.HookPostReceive)
+    testlogger.go:408: 2026/10/24 10:50:50 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e.git/git-receive-pack for 127.0.0.1:52976, 200 OK in 226.5ms @ repo/githttp.go:477(repo.ServiceReceivePack)
+    testlogger.go:408: 2026/10/24 10:50:50 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/login for test-mock:12345, 303 See Other in 2.1ms @ auth/auth.go:208(auth.SignInPost)
+    testlogger.go:408: 2026/10/24 10:50:50 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/settings/applications/tokens/new for test-mock:12345, 303 See Other in 3.0ms @ setting/access_token.go:220(setting.AccessTokenCreatePost)
+    testlogger.go:408: 2026/10/24 10:50:50 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user/settings/applications for test-mock:12345, 200 OK in 1.5ms @ setting/applications.go:24(setting.Applications)
+    testlogger.go:408: 2026/10/24 10:50:50 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/login for test-mock:12345, 303 See Other in 1.2ms @ auth/auth.go:208(auth.SignInPost)
+    testlogger.go:408: 2026/10/24 10:50:50 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/settings/applications/tokens/new for test-mock:12345, 303 See Other in 5.2ms @ setting/access_token.go:220(setting.AccessTokenCreatePost)
+    testlogger.go:408: 2026/10/24 10:50:50 ...odels/user/avatar.go:59:GenerateRandomAvatar() [I] New random avatar created: 148
+    testlogger.go:408: 2026/10/24 10:50:50 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user/settings/applications for test-mock:12345, 200 OK in 8.2ms @ setting/applications.go:24(setting.Applications)
+    testlogger.go:408: 2026/10/24 10:50:50 ...ces/mailer/mailer.go:384:Send() [I] Mail From: sqlite-integration-test@gitea.io To: [user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492@test.forgejo.org] Body: Mime-Version: 1.0
+        X-Gitea-Reason: pull
+        X-GitHub-Recipient-Address: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492@test.forgejo.org
+        X-GitHub-Reason: pull
+        X-Forgejo-Recipient-Address: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492@test.forgejo.org
+        X-GitLab-Project-Path: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e
+        X-GitLab-NotificationReason: pull
+        X-Forgejo-Repository: repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e
+        X-Gitea-Repository: repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e
+        X-Forgejo-Issue-ID: 1
+        X-Gitea-Repository-Path: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e
+        X-Auto-Response-Suppress: All
+        From: "user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-c17cc355"
+         <sqlite-integration-test@gitea.io>
+        To: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492@test.forgejo.org
+        X-GitLab-Project: repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e
+        In-Reply-To: <user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e/pulls/1@localhost>
+        References: <user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e/pulls/1@localhost>
+        List-Unsubscribe: <http://localhost:3003/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e/pulls/1>
+        X-Gitea-Repository-Link: http://localhost:3003/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e
+        X-GitLab-Issue-IID: 1
+        X-Gitea-Recipient: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492
+        X-Gitea-Issue-ID: 1
+        Date: Sat, 24 Oct 2026 10:50:50 -0400
+        X-Mailer: Forgejo
+        X-Gitea-Sender: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-c17cc355
+        List-ID: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e
+         <repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e.user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492.localhost>
+        X-Gitea-Issue-Link: http://localhost:3003/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e/pulls/1
+        X-Forgejo-Repository-Link: http://localhost:3003/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e
+        Subject: [user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e]
+         create a pr from missing-auto-target to main (PR #1)
+        X-GitHub-Recipient: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492
+        X-Forgejo-Recipient: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492
+        X-Forgejo-Issue-Link: http://localhost:3003/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e/pulls/1
+        X-Forgejo-Repository-Path: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e
+        X-Forgejo-Reason: pull
+        X-Gitea-Recipient-Address: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492@test.forgejo.org
+        List-Archive: <http://localhost:3003/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e>
+        Message-ID: <user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e/pulls/1@localhost>
+        X-Forgejo-Sender: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-c17cc355
+        X-GitHub-Sender: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-c17cc355
+        Content-Type: multipart/alternative;
+         boundary=eb7fc273ee6d9e52e8ee5cef57d53d043b8c03fc0bb5117fe0ba17824897
+        
+        --eb7fc273ee6d9e52e8ee5cef57d53d043b8c03fc0bb5117fe0ba17824897
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/plain; charset=UTF-8
+        
+        *@user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-c17cc3=
+        55* created #1.
+        
+        ---
+        View it on Forgejo ( http://localhost:3003/user-TestPullMergeSpecialRoutesA=
+        cceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutes=
+        AcceptMissingExpectedBase_AutoMerge-7f76766e/pulls/1 ).
+        --eb7fc273ee6d9e52e8ee5cef57d53d043b8c03fc0bb5117fe0ba17824897
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/html; charset=UTF-8
+        
+        <!DOCTYPE html>
+        <html>
+        <head>
+        	<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+        
+        	<style>
+        		blockquote { padding-left: 1em; margin: 1em 0; border-left: 1px solid gre=
+        y; color: #777}
+        		.footer { font-size:small; color:#666;}
+        	=09
+        	</style>
+        
+        </head>
+        
+        <body>
+        =09
+        =09
+        	<p>
+        	=09
+        		=09
+        				<b>@user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-=
+        c17cc355</b> created #1.
+        		=09
+        	=09
+        	</p>
+        	<div class=3D"footer">
+        	<p>
+        		---
+        		<br>
+        		<a href=3D"http://localhost:3003/user-TestPullMergeSpecialRoutesAcceptMis=
+        singExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMi=
+        ssingExpectedBase_AutoMerge-7f76766e/pulls/1">View it on Forgejo</a>.
+        	</p>
+        	</div>
+        </body>
+        </html>
+        
+        --eb7fc273ee6d9e52e8ee5cef57d53d043b8c03fc0bb5117fe0ba17824897--
+    testlogger.go:408: 2026/10/24 10:50:50 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/v1/repos/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e/pulls for test-mock:12345, 201 Created in 123.6ms @ repo/pull.go:404(repo.CreatePullRequest)
+    testlogger.go:408: 2026/10/24 10:50:50 ...ces/mailer/mailer.go:384:Send() [I] Mail From: sqlite-integration-test@gitea.io To: [user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492@test.forgejo.org] Body: Mime-Version: 1.0
+        Message-ID: <user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e/pulls/2@localhost>
+        Subject: [user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e]
+         create a pr from missing-auto-competitor to main (PR #2)
+        X-Forgejo-Repository: repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e
+        X-Forgejo-Repository-Link: http://localhost:3003/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e
+        X-Forgejo-Recipient: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492
+        List-Archive: <http://localhost:3003/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e>
+        X-Forgejo-Repository-Path: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e
+        X-Gitea-Repository: repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e
+        X-GitLab-Project-Path: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e
+        X-Gitea-Reason: pull
+        X-Gitea-Repository-Link: http://localhost:3003/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e
+        Date: Sat, 24 Oct 2026 10:50:50 -0400
+        From: "user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-c17cc355"
+         <sqlite-integration-test@gitea.io>
+        To: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492@test.forgejo.org
+        X-Forgejo-Issue-Link: http://localhost:3003/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e/pulls/2
+        In-Reply-To: <user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e/pulls/2@localhost>
+        X-GitHub-Reason: pull
+        X-GitLab-Issue-IID: 2
+        X-Gitea-Recipient-Address: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492@test.forgejo.org
+        X-Gitea-Issue-ID: 2
+        X-GitHub-Recipient: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492
+        X-Auto-Response-Suppress: All
+        List-ID: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e
+         <repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e.user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492.localhost>
+        X-Forgejo-Sender: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-c17cc355
+        X-GitLab-Project: repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e
+        X-Forgejo-Recipient-Address: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492@test.forgejo.org
+        X-GitHub-Recipient-Address: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492@test.forgejo.org
+        X-Gitea-Issue-Link: http://localhost:3003/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e/pulls/2
+        X-Gitea-Sender: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-c17cc355
+        X-Mailer: Forgejo
+        X-Forgejo-Issue-ID: 2
+        X-Gitea-Recipient: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492
+        List-Unsubscribe: <http://localhost:3003/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e/pulls/2>
+        References: <user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e/pulls/2@localhost>
+        X-Forgejo-Reason: pull
+        X-Gitea-Repository-Path: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e
+        X-GitHub-Sender: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-c17cc355
+        X-GitLab-NotificationReason: pull
+        Content-Type: multipart/alternative;
+         boundary=1cedbefac284b3dc3f1945ddc93f68aad4fce01dcba3debea996a3b2c78f
+        
+        --1cedbefac284b3dc3f1945ddc93f68aad4fce01dcba3debea996a3b2c78f
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/plain; charset=UTF-8
+        
+        *@user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-c17cc3=
+        55* created #2.
+        
+        ---
+        View it on Forgejo ( http://localhost:3003/user-TestPullMergeSpecialRoutesA=
+        cceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutes=
+        AcceptMissingExpectedBase_AutoMerge-7f76766e/pulls/2 ).
+        --1cedbefac284b3dc3f1945ddc93f68aad4fce01dcba3debea996a3b2c78f
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/html; charset=UTF-8
+        
+        <!DOCTYPE html>
+        <html>
+        <head>
+        	<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+        
+        	<style>
+        		blockquote { padding-left: 1em; margin: 1em 0; border-left: 1px solid gre=
+        y; color: #777}
+        		.footer { font-size:small; color:#666;}
+        	=09
+        	</style>
+        
+        </head>
+        
+        <body>
+        =09
+        =09
+        	<p>
+        	=09
+        		=09
+        				<b>@user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-=
+        c17cc355</b> created #2.
+        		=09
+        	=09
+        	</p>
+        	<div class=3D"footer">
+        	<p>
+        		---
+        		<br>
+        		<a href=3D"http://localhost:3003/user-TestPullMergeSpecialRoutesAcceptMis=
+        singExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMi=
+        ssingExpectedBase_AutoMerge-7f76766e/pulls/2">View it on Forgejo</a>.
+        	</p>
+        	</div>
+        </body>
+        </html>
+        
+        --1cedbefac284b3dc3f1945ddc93f68aad4fce01dcba3debea996a3b2c78f--
+    testlogger.go:408: 2026/10/24 10:50:51 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/v1/repos/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e/pulls for test-mock:12345, 201 Created in 133.6ms @ repo/pull.go:404(repo.CreatePullRequest)
+    testlogger.go:408: 2026/10/24 10:50:51 ...eb/routing/logger.go:109:func1() [I] router: completed GET /api/v1/repos/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e/pulls/1 for test-mock:12345, 200 OK in 17.3ms @ repo/pull.go:205(repo.GetPullRequest)
+    testlogger.go:408: 2026/10/24 10:50:51 ...eb/routing/logger.go:109:func1() [I] router: completed GET /api/v1/repos/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e/pulls/2 for test-mock:12345, 200 OK in 22.0ms @ repo/pull.go:205(repo.GetPullRequest)
+    testlogger.go:408: 2026/10/24 10:50:51 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/pre-receive/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e for 127.0.0.1:0, 200 OK in 0.7ms @ private/hook_pre_receive.go:204(private.HookPreReceive)
+    testlogger.go:408: 2026/10/24 10:50:51 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/post-receive/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e for 127.0.0.1:0, 200 OK in 64.4ms @ private/hook_post_receive.go:46(private.HookPostReceive)
+    testlogger.go:408: 2026/10/24 10:50:51 ...ces/mailer/mailer.go:384:Send() [I] Mail From: sqlite-integration-test@gitea.io To: [user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-c17cc355@test.forgejo.org] Body: Mime-Version: 1.0
+        X-Forgejo-Recipient: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-c17cc355
+        X-Forgejo-Repository-Path: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e
+        X-GitHub-Sender: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492
+        X-GitLab-Issue-IID: 2
+        Subject: Re:
+         [user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e]
+         create a pr from missing-auto-competitor to main (PR #2)
+        X-Mailer: Forgejo
+        X-Gitea-Sender: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492
+        References: <user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e/pulls/2@localhost>
+        X-Forgejo-Recipient-Address: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-c17cc355@test.forgejo.org
+        X-Auto-Response-Suppress: All
+        X-Gitea-Issue-Link: http://localhost:3003/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e/pulls/2
+        List-Archive: <http://localhost:3003/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e>
+        X-Forgejo-Reason: pull
+        X-Forgejo-Repository-Link: http://localhost:3003/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e
+        X-GitLab-Project: repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e
+        X-Gitea-Repository: repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e
+        X-GitLab-Project-Path: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e
+        X-Gitea-Repository-Path: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e
+        Message-ID: <user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e/pulls/2/merge/1792853451409@localhost>
+        X-Gitea-Repository-Link: http://localhost:3003/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e
+        Date: Sat, 24 Oct 2026 10:50:51 -0400
+        In-Reply-To: <user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e/pulls/2@localhost>
+        X-Forgejo-Sender: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492
+        X-Forgejo-Repository: repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e
+        X-GitHub-Recipient-Address: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-c17cc355@test.forgejo.org
+        X-GitHub-Recipient: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-c17cc355
+        X-Gitea-Recipient: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-c17cc355
+        X-GitHub-Reason: pull
+        X-Gitea-Recipient-Address: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-c17cc355@test.forgejo.org
+        X-Forgejo-Issue-Link: http://localhost:3003/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e/pulls/2
+        X-GitLab-NotificationReason: pull
+        To: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-c17cc355@test.forgejo.org
+        X-Gitea-Issue-ID: 2
+        X-Gitea-Reason: pull
+        List-ID: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e
+         <repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e.user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492.localhost>
+        X-Forgejo-Issue-ID: 2
+        From: "user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492"
+         <sqlite-integration-test@gitea.io>
+        List-Unsubscribe: <http://localhost:3003/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e/pulls/2>
+        Content-Type: multipart/alternative;
+         boundary=c77f2504cc3bc629d325c517eac6aebe0e46225925d4ff6b246009c9da7f
+        
+        --c77f2504cc3bc629d325c517eac6aebe0e46225925d4ff6b246009c9da7f
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/plain; charset=UTF-8
+        
+        *@user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a3174=
+        92* merged #2 into main.
+        
+        ---
+        View it on Forgejo ( http://localhost:3003/user-TestPullMergeSpecialRoutesA=
+        cceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutes=
+        AcceptMissingExpectedBase_AutoMerge-7f76766e/pulls/2 ).
+        --c77f2504cc3bc629d325c517eac6aebe0e46225925d4ff6b246009c9da7f
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/html; charset=UTF-8
+        
+        <!DOCTYPE html>
+        <html>
+        <head>
+        	<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+        
+        	<style>
+        		blockquote { padding-left: 1em; margin: 1em 0; border-left: 1px solid gre=
+        y; color: #777}
+        		.footer { font-size:small; color:#666;}
+        	=09
+        	</style>
+        
+        </head>
+        
+        <body>
+        =09
+        =09
+        	<p>
+        	=09
+        			<b>@user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3=
+        a317492</b> merged #2 into main.
+        	=09
+        		=09
+        	=09
+        	</p>
+        	<div class=3D"footer">
+        	<p>
+        		---
+        		<br>
+        		<a href=3D"http://localhost:3003/user-TestPullMergeSpecialRoutesAcceptMis=
+        singExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMi=
+        ssingExpectedBase_AutoMerge-7f76766e/pulls/2">View it on Forgejo</a>.
+        	</p>
+        	</div>
+        </body>
+        </html>
+        
+        --c77f2504cc3bc629d325c517eac6aebe0e46225925d4ff6b246009c9da7f--
+    testlogger.go:408: 2026/10/24 10:50:51 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/v1/repos/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e/pulls/2/merge for test-mock:12345, 200 OK in 368.3ms @ repo/pull.go:869(repo.MergePullRequest)
+    testlogger.go:408: 2026/10/24 10:50:51 ...eb/routing/logger.go:109:func1() [I] router: completed GET /api/v1/repos/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e/pulls/1 for test-mock:12345, 200 OK in 22.3ms @ repo/pull.go:205(repo.GetPullRequest)
+    testlogger.go:408: 2026/10/24 10:50:51 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/v1/repos/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e/pulls/1/merge for test-mock:12345, 405 Method Not Allowed in 5.2ms @ repo/pull.go:869(repo.MergePullRequest)
+    testlogger.go:408: 2026/10/24 10:50:51 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/v1/repos/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e/pulls/1/merge for test-mock:12345, 201 Created in 16.6ms @ repo/pull.go:869(repo.MergePullRequest)
+    testlogger.go:408: 2026/10/24 10:50:51 ...eb/routing/logger.go:109:func1() [I] router: completed GET /api/v1/repos/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-3a317492/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_AutoMerge-7f76766e/pulls/1 for test-mock:12345, 200 OK in 17.7ms @ repo/pull.go:205(repo.GetPullRequest)
+    pull_merge_freshness_race_test.go:368: AutoMerge accepted absent expected_base_commit_id after base advance: checked=8ff8e42fef331182d557af22163bcd0e9b730d06 current=7860ff66751ec9453a46ed4c00a969c3e8d28006 response=201
+??? [TestLogger] 2026/10/24 10:50:51 ...s/actions/cleanup.go:184:CleanupEphemeralRunnersByPickedTaskOfRepo() [I] Removed 0 runners
+=== RUN   TestPullMergeSpecialRoutesAcceptMissingExpectedBase/ManuallyMerged
+=== TestPullMergeSpecialRoutesAcceptMissingExpectedBase/ManuallyMerged (tests/integration/git_helper_for_declarative_test.go:67)
+    testlogger.go:408: 2026/10/24 10:50:51 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/gitea-lfs-meta
+    testlogger.go:408: 2026/10/24 10:50:52 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67.git/info/refs?service=git-upload-pack for 127.0.0.1:53028, 200 OK in 2.2ms @ repo/githttp.go:509(repo.GetInfoRefs)
+    testlogger.go:408: 2026/10/24 10:50:52 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67.git/git-upload-pack for 127.0.0.1:53028, 200 OK in 1.8ms @ repo/githttp.go:469(repo.ServiceUploadPack)
+    testlogger.go:408: 2026/10/24 10:50:52 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67.git/git-upload-pack for 127.0.0.1:53028, 200 OK in 4.0ms @ repo/githttp.go:469(repo.ServiceUploadPack)
+    testlogger.go:408: 2026/10/24 10:50:52 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67.git/info/refs?service=git-receive-pack for 127.0.0.1:53032, 401 Unauthorized in 0.6ms @ repo/githttp.go:509(repo.GetInfoRefs)
+    testlogger.go:408: 2026/10/24 10:50:52 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67.git/info/refs?service=git-receive-pack for 127.0.0.1:53032, 200 OK in 2.0ms @ repo/githttp.go:509(repo.GetInfoRefs)
+    testlogger.go:408: 2026/10/24 10:50:52 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/pre-receive/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67 for 127.0.0.1:0, 200 OK in 0.7ms @ private/hook_pre_receive.go:204(private.HookPreReceive)
+    testlogger.go:408: 2026/10/24 10:50:52 ...odels/user/avatar.go:59:GenerateRandomAvatar() [I] New random avatar created: 149
+    testlogger.go:408: 2026/10/24 10:50:52 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/post-receive/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67 for 127.0.0.1:0, 200 OK in 60.0ms @ private/hook_post_receive.go:46(private.HookPostReceive)
+    testlogger.go:408: 2026/10/24 10:50:52 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67.git/git-receive-pack for 127.0.0.1:53032, 200 OK in 226.9ms @ repo/githttp.go:477(repo.ServiceReceivePack)
+    testlogger.go:408: 2026/10/24 10:50:52 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67.git/info/refs?service=git-receive-pack for 127.0.0.1:53054, 401 Unauthorized in 0.4ms @ repo/githttp.go:509(repo.GetInfoRefs)
+    testlogger.go:408: 2026/10/24 10:50:52 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67.git/info/refs?service=git-receive-pack for 127.0.0.1:53054, 200 OK in 3.1ms @ repo/githttp.go:509(repo.GetInfoRefs)
+    testlogger.go:408: 2026/10/24 10:50:52 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/pre-receive/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67 for 127.0.0.1:0, 200 OK in 1.2ms @ private/hook_pre_receive.go:204(private.HookPreReceive)
+    testlogger.go:408: 2026/10/24 10:50:52 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/post-receive/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67 for 127.0.0.1:0, 200 OK in 43.4ms @ private/hook_post_receive.go:46(private.HookPostReceive)
+    testlogger.go:408: 2026/10/24 10:50:52 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67.git/git-receive-pack for 127.0.0.1:53054, 200 OK in 257.6ms @ repo/githttp.go:477(repo.ServiceReceivePack)
+    testlogger.go:408: 2026/10/24 10:50:52 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/login for test-mock:12345, 303 See Other in 3.3ms @ auth/auth.go:208(auth.SignInPost)
+    testlogger.go:408: 2026/10/24 10:50:52 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/settings/applications/tokens/new for test-mock:12345, 303 See Other in 5.6ms @ setting/access_token.go:220(setting.AccessTokenCreatePost)
+    testlogger.go:408: 2026/10/24 10:50:52 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user/settings/applications for test-mock:12345, 200 OK in 2.9ms @ setting/applications.go:24(setting.Applications)
+    testlogger.go:408: 2026/10/24 10:50:52 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/login for test-mock:12345, 303 See Other in 2.4ms @ auth/auth.go:208(auth.SignInPost)
+    testlogger.go:408: 2026/10/24 10:50:52 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/settings/applications/tokens/new for test-mock:12345, 303 See Other in 5.1ms @ setting/access_token.go:220(setting.AccessTokenCreatePost)
+    testlogger.go:408: 2026/10/24 10:50:52 ...odels/user/avatar.go:59:GenerateRandomAvatar() [I] New random avatar created: 150
+    testlogger.go:408: 2026/10/24 10:50:52 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user/settings/applications for test-mock:12345, 200 OK in 7.9ms @ setting/applications.go:24(setting.Applications)
+    testlogger.go:408: 2026/10/24 10:50:52 ...ces/mailer/mailer.go:384:Send() [I] Mail From: sqlite-integration-test@gitea.io To: [user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd@test.forgejo.org] Body: Mime-Version: 1.0
+        From: "user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-73b7c9af"
+         <sqlite-integration-test@gitea.io>
+        To: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd@test.forgejo.org
+        X-GitLab-Project-Path: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67
+        List-ID: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67
+         <repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67.user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd.localhost>
+        Date: Sat, 24 Oct 2026 10:50:52 -0400
+        X-Gitea-Recipient-Address: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd@test.forgejo.org
+        X-Gitea-Repository: repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67
+        Message-ID: <user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67/pulls/1@localhost>
+        X-Forgejo-Issue-ID: 1
+        X-GitHub-Sender: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-73b7c9af
+        List-Archive: <http://localhost:3003/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67>
+        X-Gitea-Issue-ID: 1
+        X-Forgejo-Repository-Link: http://localhost:3003/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67
+        X-Gitea-Repository-Link: http://localhost:3003/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67
+        X-Gitea-Repository-Path: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67
+        X-Mailer: Forgejo
+        X-GitHub-Recipient-Address: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd@test.forgejo.org
+        X-Gitea-Issue-Link: http://localhost:3003/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67/pulls/1
+        X-Forgejo-Recipient-Address: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd@test.forgejo.org
+        X-Forgejo-Sender: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-73b7c9af
+        X-Gitea-Reason: pull
+        X-GitLab-Issue-IID: 1
+        Subject: [user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67]
+         create a pr from missing-manual-target to main (PR #1)
+        X-Auto-Response-Suppress: All
+        X-Forgejo-Reason: pull
+        X-GitHub-Reason: pull
+        In-Reply-To: <user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67/pulls/1@localhost>
+        X-Forgejo-Issue-Link: http://localhost:3003/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67/pulls/1
+        X-Forgejo-Repository: repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67
+        References: <user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67/pulls/1@localhost>
+        List-Unsubscribe: <http://localhost:3003/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67/pulls/1>
+        X-Gitea-Sender: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-73b7c9af
+        X-Forgejo-Repository-Path: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67
+        X-GitHub-Recipient: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd
+        X-GitLab-Project: repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67
+        X-Forgejo-Recipient: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd
+        X-GitLab-NotificationReason: pull
+        X-Gitea-Recipient: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd
+        Content-Type: multipart/alternative;
+         boundary=25efd2be9cd326a5e89bc72b8bc63dd70e2592466db3849b2c8894ff3659
+        
+        --25efd2be9cd326a5e89bc72b8bc63dd70e2592466db3849b2c8894ff3659
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/plain; charset=UTF-8
+        
+        *@user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-7=
+        3b7c9af* created #1.
+        
+        ---
+        View it on Forgejo ( http://localhost:3003/user-TestPullMergeSpecialRoutesA=
+        cceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialR=
+        outesAcceptMissingExpectedBase_ManuallyMerged-ce986b67/pulls/1 ).
+        --25efd2be9cd326a5e89bc72b8bc63dd70e2592466db3849b2c8894ff3659
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/html; charset=UTF-8
+        
+        <!DOCTYPE html>
+        <html>
+        <head>
+        	<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+        
+        	<style>
+        		blockquote { padding-left: 1em; margin: 1em 0; border-left: 1px solid gre=
+        y; color: #777}
+        		.footer { font-size:small; color:#666;}
+        	=09
+        	</style>
+        
+        </head>
+        
+        <body>
+        =09
+        =09
+        	<p>
+        	=09
+        		=09
+        				<b>@user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMe=
+        rged-73b7c9af</b> created #1.
+        		=09
+        	=09
+        	</p>
+        	<div class=3D"footer">
+        	<p>
+        		---
+        		<br>
+        		<a href=3D"http://localhost:3003/user-TestPullMergeSpecialRoutesAcceptMis=
+        singExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcc=
+        eptMissingExpectedBase_ManuallyMerged-ce986b67/pulls/1">View it on Forgejo<=
+        /a>.
+        	</p>
+        	</div>
+        </body>
+        </html>
+        
+        --25efd2be9cd326a5e89bc72b8bc63dd70e2592466db3849b2c8894ff3659--
+    testlogger.go:408: 2026/10/24 10:50:52 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/v1/repos/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67/pulls for test-mock:12345, 201 Created in 133.7ms @ repo/pull.go:404(repo.CreatePullRequest)
+    testlogger.go:408: 2026/10/24 10:50:53 ...ces/mailer/mailer.go:384:Send() [I] Mail From: sqlite-integration-test@gitea.io To: [user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd@test.forgejo.org] Body: Mime-Version: 1.0
+        X-Gitea-Repository-Link: http://localhost:3003/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67
+        X-GitLab-Project-Path: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67
+        Message-ID: <user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67/pulls/2@localhost>
+        In-Reply-To: <user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67/pulls/2@localhost>
+        X-GitHub-Sender: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-73b7c9af
+        X-GitLab-Project: repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67
+        X-Gitea-Repository-Path: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67
+        X-Gitea-Reason: pull
+        X-GitLab-Issue-IID: 2
+        X-Gitea-Recipient-Address: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd@test.forgejo.org
+        Subject: [user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67]
+         create a pr from missing-manual-competitor to main (PR #2)
+        Date: Sat, 24 Oct 2026 10:50:53 -0400
+        References: <user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67/pulls/2@localhost>
+        X-GitHub-Reason: pull
+        X-GitHub-Recipient-Address: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd@test.forgejo.org
+        To: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd@test.forgejo.org
+        X-Forgejo-Reason: pull
+        X-Gitea-Recipient: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd
+        X-Auto-Response-Suppress: All
+        List-Unsubscribe: <http://localhost:3003/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67/pulls/2>
+        X-Forgejo-Issue-Link: http://localhost:3003/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67/pulls/2
+        X-Gitea-Sender: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-73b7c9af
+        X-Forgejo-Repository: repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67
+        X-Forgejo-Sender: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-73b7c9af
+        X-GitLab-NotificationReason: pull
+        From: "user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-73b7c9af"
+         <sqlite-integration-test@gitea.io>
+        X-Forgejo-Repository-Path: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67
+        X-Forgejo-Recipient: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd
+        X-GitHub-Recipient: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd
+        X-Mailer: Forgejo
+        X-Forgejo-Issue-ID: 2
+        X-Gitea-Issue-Link: http://localhost:3003/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67/pulls/2
+        X-Gitea-Repository: repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67
+        List-Archive: <http://localhost:3003/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67>
+        X-Forgejo-Recipient-Address: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd@test.forgejo.org
+        X-Gitea-Issue-ID: 2
+        List-ID: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67
+         <repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67.user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd.localhost>
+        X-Forgejo-Repository-Link: http://localhost:3003/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67
+        Content-Type: multipart/alternative;
+         boundary=d8abda6542f8d8600c0f111c3c8a92a7b5b4761ded1b4499f41ab880e44b
+        
+        --d8abda6542f8d8600c0f111c3c8a92a7b5b4761ded1b4499f41ab880e44b
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/plain; charset=UTF-8
+        
+        *@user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-7=
+        3b7c9af* created #2.
+        
+        ---
+        View it on Forgejo ( http://localhost:3003/user-TestPullMergeSpecialRoutesA=
+        cceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialR=
+        outesAcceptMissingExpectedBase_ManuallyMerged-ce986b67/pulls/2 ).
+        --d8abda6542f8d8600c0f111c3c8a92a7b5b4761ded1b4499f41ab880e44b
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/html; charset=UTF-8
+        
+        <!DOCTYPE html>
+        <html>
+        <head>
+        	<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+        
+        	<style>
+        		blockquote { padding-left: 1em; margin: 1em 0; border-left: 1px solid gre=
+        y; color: #777}
+        		.footer { font-size:small; color:#666;}
+        	=09
+        	</style>
+        
+        </head>
+        
+        <body>
+        =09
+        =09
+        	<p>
+        	=09
+        		=09
+        				<b>@user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMe=
+        rged-73b7c9af</b> created #2.
+        		=09
+        	=09
+        	</p>
+        	<div class=3D"footer">
+        	<p>
+        		---
+        		<br>
+        		<a href=3D"http://localhost:3003/user-TestPullMergeSpecialRoutesAcceptMis=
+        singExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcc=
+        eptMissingExpectedBase_ManuallyMerged-ce986b67/pulls/2">View it on Forgejo<=
+        /a>.
+        	</p>
+        	</div>
+        </body>
+        </html>
+        
+        --d8abda6542f8d8600c0f111c3c8a92a7b5b4761ded1b4499f41ab880e44b--
+    testlogger.go:408: 2026/10/24 10:50:53 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/v1/repos/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67/pulls for test-mock:12345, 201 Created in 145.5ms @ repo/pull.go:404(repo.CreatePullRequest)
+    testlogger.go:408: 2026/10/24 10:50:53 ...eb/routing/logger.go:109:func1() [I] router: completed GET /api/v1/repos/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67/pulls/1 for test-mock:12345, 200 OK in 18.9ms @ repo/pull.go:205(repo.GetPullRequest)
+    testlogger.go:408: 2026/10/24 10:50:53 ...eb/routing/logger.go:109:func1() [I] router: completed GET /api/v1/repos/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67/pulls/2 for test-mock:12345, 200 OK in 21.0ms @ repo/pull.go:205(repo.GetPullRequest)
+    testlogger.go:408: 2026/10/24 10:50:53 ...eb/routing/logger.go:109:func1() [I] router: completed PATCH /api/v1/repos/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67 for test-mock:12345, 200 OK in 9.0ms @ repo/repo.go:639(repo.Edit)
+    testlogger.go:408: 2026/10/24 10:50:53 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/pre-receive/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67 for 127.0.0.1:0, 200 OK in 1.3ms @ private/hook_pre_receive.go:204(private.HookPreReceive)
+    testlogger.go:408: 2026/10/24 10:50:53 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/post-receive/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67 for 127.0.0.1:0, 200 OK in 55.0ms @ private/hook_post_receive.go:46(private.HookPostReceive)
+    testlogger.go:408: 2026/10/24 10:50:53 ...ces/mailer/mailer.go:384:Send() [I] Mail From: sqlite-integration-test@gitea.io To: [user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-73b7c9af@test.forgejo.org] Body: Mime-Version: 1.0
+        X-Gitea-Issue-Link: http://localhost:3003/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67/pulls/2
+        List-Unsubscribe: <http://localhost:3003/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67/pulls/2>
+        X-Forgejo-Reason: pull
+        X-Mailer: Forgejo
+        X-GitHub-Recipient: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-73b7c9af
+        X-Gitea-Reason: pull
+        Date: Sat, 24 Oct 2026 10:50:53 -0400
+        X-GitHub-Reason: pull
+        X-Gitea-Repository-Path: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67
+        Subject: Re:
+         [user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67]
+         create a pr from missing-manual-competitor to main (PR #2)
+        X-Auto-Response-Suppress: All
+        Message-ID: <user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67/pulls/2/merge/1792853453468@localhost>
+        In-Reply-To: <user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67/pulls/2@localhost>
+        X-Gitea-Repository: repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67
+        From: "user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd"
+         <sqlite-integration-test@gitea.io>
+        X-Forgejo-Sender: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd
+        X-Gitea-Sender: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd
+        List-ID: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67
+         <repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67.user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd.localhost>
+        X-Gitea-Repository-Link: http://localhost:3003/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67
+        X-GitLab-Project: repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67
+        X-Gitea-Recipient: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-73b7c9af
+        X-Forgejo-Issue-Link: http://localhost:3003/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67/pulls/2
+        X-Gitea-Recipient-Address: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-73b7c9af@test.forgejo.org
+        References: <user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67/pulls/2@localhost>
+        X-GitHub-Sender: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd
+        X-Forgejo-Repository: repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67
+        List-Archive: <http://localhost:3003/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67>
+        X-GitLab-Issue-IID: 2
+        To: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-73b7c9af@test.forgejo.org
+        X-Forgejo-Issue-ID: 2
+        X-Forgejo-Repository-Link: http://localhost:3003/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67
+        X-GitLab-NotificationReason: pull
+        X-GitLab-Project-Path: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67
+        X-Forgejo-Recipient-Address: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-73b7c9af@test.forgejo.org
+        X-Forgejo-Repository-Path: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67
+        X-Gitea-Issue-ID: 2
+        X-GitHub-Recipient-Address: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-73b7c9af@test.forgejo.org
+        X-Forgejo-Recipient: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-73b7c9af
+        Content-Type: multipart/alternative;
+         boundary=56e3fd0feadd70d51568e07c2e83c0260823340e86eb5e65a13c5cfa6b26
+        
+        --56e3fd0feadd70d51568e07c2e83c0260823340e86eb5e65a13c5cfa6b26
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/plain; charset=UTF-8
+        
+        *@user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2=
+        f55adbd* merged #2 into main.
+        
+        ---
+        View it on Forgejo ( http://localhost:3003/user-TestPullMergeSpecialRoutesA=
+        cceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialR=
+        outesAcceptMissingExpectedBase_ManuallyMerged-ce986b67/pulls/2 ).
+        --56e3fd0feadd70d51568e07c2e83c0260823340e86eb5e65a13c5cfa6b26
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/html; charset=UTF-8
+        
+        <!DOCTYPE html>
+        <html>
+        <head>
+        	<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+        
+        	<style>
+        		blockquote { padding-left: 1em; margin: 1em 0; border-left: 1px solid gre=
+        y; color: #777}
+        		.footer { font-size:small; color:#666;}
+        	=09
+        	</style>
+        
+        </head>
+        
+        <body>
+        =09
+        =09
+        	<p>
+        	=09
+        			<b>@user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMer=
+        ged-2f55adbd</b> merged #2 into main.
+        	=09
+        		=09
+        	=09
+        	</p>
+        	<div class=3D"footer">
+        	<p>
+        		---
+        		<br>
+        		<a href=3D"http://localhost:3003/user-TestPullMergeSpecialRoutesAcceptMis=
+        singExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcc=
+        eptMissingExpectedBase_ManuallyMerged-ce986b67/pulls/2">View it on Forgejo<=
+        /a>.
+        	</p>
+        	</div>
+        </body>
+        </html>
+        
+        --56e3fd0feadd70d51568e07c2e83c0260823340e86eb5e65a13c5cfa6b26--
+    testlogger.go:408: 2026/10/24 10:50:53 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/v1/repos/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67/pulls/2/merge for test-mock:12345, 200 OK in 347.9ms @ repo/pull.go:869(repo.MergePullRequest)
+    testlogger.go:408: 2026/10/24 10:50:53 ...eb/routing/logger.go:109:func1() [I] router: completed GET /api/v1/repos/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67/pulls/1 for test-mock:12345, 200 OK in 16.8ms @ repo/pull.go:205(repo.GetPullRequest)
+    testlogger.go:408: 2026/10/24 10:50:53 ...ces/mailer/mailer.go:384:Send() [I] Mail From: sqlite-integration-test@gitea.io To: [user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-73b7c9af@test.forgejo.org] Body: Mime-Version: 1.0
+        X-GitHub-Reason: pull
+        X-Forgejo-Recipient: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-73b7c9af
+        X-Gitea-Repository-Path: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67
+        X-Gitea-Reason: pull
+        X-Gitea-Recipient-Address: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-73b7c9af@test.forgejo.org
+        Date: Sat, 24 Oct 2026 10:50:53 -0400
+        X-Mailer: Forgejo
+        List-ID: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67
+         <repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67.user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd.localhost>
+        References: <user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67/pulls/1@localhost>
+        From: "user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd"
+         <sqlite-integration-test@gitea.io>
+        Subject: Re:
+         [user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67]
+         create a pr from missing-manual-target to main (PR #1)
+        List-Unsubscribe: <http://localhost:3003/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67/pulls/1>
+        X-Gitea-Recipient: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-73b7c9af
+        X-GitHub-Recipient-Address: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-73b7c9af@test.forgejo.org
+        X-GitLab-NotificationReason: pull
+        In-Reply-To: <user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67/pulls/1@localhost>
+        List-Archive: <http://localhost:3003/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67>
+        X-Gitea-Repository: repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67
+        X-Forgejo-Issue-ID: 1
+        X-Gitea-Issue-ID: 1
+        X-Gitea-Sender: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd
+        X-Forgejo-Issue-Link: http://localhost:3003/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67/pulls/1
+        X-Auto-Response-Suppress: All
+        To: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-73b7c9af@test.forgejo.org
+        X-GitLab-Project: repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67
+        X-GitLab-Project-Path: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67
+        X-Gitea-Repository-Link: http://localhost:3003/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67
+        X-Forgejo-Sender: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd
+        X-GitLab-Issue-IID: 1
+        X-Gitea-Issue-Link: http://localhost:3003/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67/pulls/1
+        X-Forgejo-Repository-Link: http://localhost:3003/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67
+        X-Forgejo-Recipient-Address: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-73b7c9af@test.forgejo.org
+        X-Forgejo-Reason: pull
+        X-GitHub-Sender: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd
+        X-Forgejo-Repository: repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67
+        X-GitHub-Recipient: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-73b7c9af
+        Message-ID: <user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67/pulls/1/merge/1792853453548@localhost>
+        X-Forgejo-Repository-Path: user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67
+        Content-Type: multipart/alternative;
+         boundary=57977a62306fa492ed9f66d50e695621079acb8594679ceb20ec32a1d9b7
+        
+        --57977a62306fa492ed9f66d50e695621079acb8594679ceb20ec32a1d9b7
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/plain; charset=UTF-8
+        
+        *@user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2=
+        f55adbd* merged #1 into main.
+        
+        ---
+        View it on Forgejo ( http://localhost:3003/user-TestPullMergeSpecialRoutesA=
+        cceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialR=
+        outesAcceptMissingExpectedBase_ManuallyMerged-ce986b67/pulls/1 ).
+        --57977a62306fa492ed9f66d50e695621079acb8594679ceb20ec32a1d9b7
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/html; charset=UTF-8
+        
+        <!DOCTYPE html>
+        <html>
+        <head>
+        	<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+        
+        	<style>
+        		blockquote { padding-left: 1em; margin: 1em 0; border-left: 1px solid gre=
+        y; color: #777}
+        		.footer { font-size:small; color:#666;}
+        	=09
+        	</style>
+        
+        </head>
+        
+        <body>
+        =09
+        =09
+        	<p>
+        	=09
+        			<b>@user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMer=
+        ged-2f55adbd</b> merged #1 into main.
+        	=09
+        		=09
+        	=09
+        	</p>
+        	<div class=3D"footer">
+        	<p>
+        		---
+        		<br>
+        		<a href=3D"http://localhost:3003/user-TestPullMergeSpecialRoutesAcceptMis=
+        singExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcc=
+        eptMissingExpectedBase_ManuallyMerged-ce986b67/pulls/1">View it on Forgejo<=
+        /a>.
+        	</p>
+        	</div>
+        </body>
+        </html>
+        
+        --57977a62306fa492ed9f66d50e695621079acb8594679ceb20ec32a1d9b7--
+    testlogger.go:408: 2026/10/24 10:50:53 ...pull/merge_manual.go:87:MergedManually() [I] manuallyMerged[201]: Marked as manually merged into repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67/main by commit id: 137d658f60dee1e30453e6e823e08483a388dfff
+    testlogger.go:408: 2026/10/24 10:50:53 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/v1/repos/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67/pulls/1/merge for test-mock:12345, 200 OK in 60.6ms @ repo/pull.go:869(repo.MergePullRequest)
+    testlogger.go:408: 2026/10/24 10:50:53 ...eb/routing/logger.go:109:func1() [I] router: completed GET /api/v1/repos/user-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-2f55adbd/repo-TestPullMergeSpecialRoutesAcceptMissingExpectedBase_ManuallyMerged-ce986b67/pulls/1 for test-mock:12345, 200 OK in 17.6ms @ repo/pull.go:205(repo.GetPullRequest)
+    pull_merge_freshness_race_test.go:398: manually-merged accepted absent expected_base_commit_id and competitor commit: checked=7dac92026748d9faa98309c0557f3c4ef8962e1e current=137d658f60dee1e30453e6e823e08483a388dfff
+??? [TestLogger] 2026/10/24 10:50:53 ...s/actions/cleanup.go:184:CleanupEphemeralRunnersByPickedTaskOfRepo() [I] Removed 0 runners
+--- PASS: TestPullMergeSpecialRoutesAcceptMissingExpectedBase (3.76s)
+    --- PASS: TestPullMergeSpecialRoutesAcceptMissingExpectedBase/AutoMerge (2.00s)
+    --- PASS: TestPullMergeSpecialRoutesAcceptMissingExpectedBase/ManuallyMerged (1.76s)
+=== RUN   TestPullMergeCASRefusalLeavesLFSMetadata
+=== TestPullMergeCASRefusalLeavesLFSMetadata (tests/integration/git_helper_for_declarative_test.go:67)
+    testlogger.go:408: 2026/10/24 10:50:53 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/gitea-lfs-meta
+    testlogger.go:408: 2026/10/24 10:50:53 ...odels/user/avatar.go:59:GenerateRandomAvatar() [I] New random avatar created: 151
+    testlogger.go:408: 2026/10/24 10:50:53 ...odels/user/avatar.go:59:GenerateRandomAvatar() [I] New random avatar created: 152
+    testlogger.go:408: 2026/10/24 10:50:54 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/pre-receive/user-TestPullMergeCASRefusalLeavesLFSMetadata-1b6a2072/lfs-cas-head for 127.0.0.1:0, 200 OK in 1.2ms @ private/hook_pre_receive.go:204(private.HookPreReceive)
+    testlogger.go:408: 2026/10/24 10:50:54 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/post-receive/user-TestPullMergeCASRefusalLeavesLFSMetadata-1b6a2072/lfs-cas-head for 127.0.0.1:0, 200 OK in 38.7ms @ private/hook_post_receive.go:46(private.HookPostReceive)
+    testlogger.go:408: 2026/10/24 10:50:54 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/pre-receive/user-TestPullMergeCASRefusalLeavesLFSMetadata-1ca5b181/repo-TestPullMergeCASRefusalLeavesLFSMetadata-9acb86ff for 127.0.0.1:0, 200 OK in 1.1ms @ private/hook_pre_receive.go:204(private.HookPreReceive)
+    testlogger.go:408: 2026/10/24 10:50:54 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/post-receive/user-TestPullMergeCASRefusalLeavesLFSMetadata-1ca5b181/repo-TestPullMergeCASRefusalLeavesLFSMetadata-9acb86ff for 127.0.0.1:0, 200 OK in 52.1ms @ private/hook_post_receive.go:46(private.HookPostReceive)
+    testlogger.go:408: 2026/10/24 10:50:54 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/login for test-mock:12345, 303 See Other in 1.4ms @ auth/auth.go:208(auth.SignInPost)
+    testlogger.go:408: 2026/10/24 10:50:54 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/settings/applications/tokens/new for test-mock:12345, 303 See Other in 5.5ms @ setting/access_token.go:220(setting.AccessTokenCreatePost)
+    testlogger.go:408: 2026/10/24 10:50:54 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user/settings/applications for test-mock:12345, 200 OK in 1.4ms @ setting/applications.go:24(setting.Applications)
+    testlogger.go:408: 2026/10/24 10:50:54 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/login for test-mock:12345, 303 See Other in 1.2ms @ auth/auth.go:208(auth.SignInPost)
+    testlogger.go:408: 2026/10/24 10:50:54 ...eb/routing/logger.go:109:func1() [I] router: completed POST /user/settings/applications/tokens/new for test-mock:12345, 303 See Other in 3.5ms @ setting/access_token.go:220(setting.AccessTokenCreatePost)
+    testlogger.go:408: 2026/10/24 10:50:54 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user/settings/applications for test-mock:12345, 200 OK in 1.3ms @ setting/applications.go:24(setting.Applications)
+    testlogger.go:408: 2026/10/24 10:50:54 ...ces/mailer/mailer.go:384:Send() [I] Mail From: sqlite-integration-test@gitea.io To: [user-TestPullMergeCASRefusalLeavesLFSMetadata-1ca5b181@test.forgejo.org] Body: Mime-Version: 1.0
+        X-GitLab-NotificationReason: pull
+        X-Gitea-Issue-ID: 1
+        X-Gitea-Recipient: user-TestPullMergeCASRefusalLeavesLFSMetadata-1ca5b181
+        In-Reply-To: <user-TestPullMergeCASRefusalLeavesLFSMetadata-1ca5b181/repo-TestPullMergeCASRefusalLeavesLFSMetadata-9acb86ff/pulls/1@localhost>
+        Message-ID: <user-TestPullMergeCASRefusalLeavesLFSMetadata-1ca5b181/repo-TestPullMergeCASRefusalLeavesLFSMetadata-9acb86ff/pulls/1@localhost>
+        X-Forgejo-Repository: repo-TestPullMergeCASRefusalLeavesLFSMetadata-9acb86ff
+        X-Forgejo-Recipient-Address: user-TestPullMergeCASRefusalLeavesLFSMetadata-1ca5b181@test.forgejo.org
+        X-Forgejo-Issue-ID: 1
+        X-Gitea-Repository: repo-TestPullMergeCASRefusalLeavesLFSMetadata-9acb86ff
+        List-Unsubscribe: <http://localhost:3003/user-TestPullMergeCASRefusalLeavesLFSMetadata-1ca5b181/repo-TestPullMergeCASRefusalLeavesLFSMetadata-9acb86ff/pulls/1>
+        X-Forgejo-Sender: user-TestPullMergeCASRefusalLeavesLFSMetadata-1b6a2072
+        Subject: [user-TestPullMergeCASRefusalLeavesLFSMetadata-1ca5b181/repo-TestPullMergeCASRefusalLeavesLFSMetadata-9acb86ff]
+         create a pr from
+         user-TestPullMergeCASRefusalLeavesLFSMetadata-1b6a2072:lfs-cas-target to
+         main (PR #1)
+        Date: Sat, 24 Oct 2026 10:50:54 -0400
+        X-Auto-Response-Suppress: All
+        To: user-TestPullMergeCASRefusalLeavesLFSMetadata-1ca5b181@test.forgejo.org
+        X-Gitea-Recipient-Address: user-TestPullMergeCASRefusalLeavesLFSMetadata-1ca5b181@test.forgejo.org
+        X-GitHub-Recipient-Address: user-TestPullMergeCASRefusalLeavesLFSMetadata-1ca5b181@test.forgejo.org
+        X-Gitea-Reason: pull
+        From: "user-TestPullMergeCASRefusalLeavesLFSMetadata-1b6a2072"
+         <sqlite-integration-test@gitea.io>
+        X-Forgejo-Recipient: user-TestPullMergeCASRefusalLeavesLFSMetadata-1ca5b181
+        X-GitLab-Project-Path: user-TestPullMergeCASRefusalLeavesLFSMetadata-1ca5b181/repo-TestPullMergeCASRefusalLeavesLFSMetadata-9acb86ff
+        X-Forgejo-Repository-Link: http://localhost:3003/user-TestPullMergeCASRefusalLeavesLFSMetadata-1ca5b181/repo-TestPullMergeCASRefusalLeavesLFSMetadata-9acb86ff
+        X-GitHub-Recipient: user-TestPullMergeCASRefusalLeavesLFSMetadata-1ca5b181
+        List-Archive: <http://localhost:3003/user-TestPullMergeCASRefusalLeavesLFSMetadata-1ca5b181/repo-TestPullMergeCASRefusalLeavesLFSMetadata-9acb86ff>
+        X-Gitea-Issue-Link: http://localhost:3003/user-TestPullMergeCASRefusalLeavesLFSMetadata-1ca5b181/repo-TestPullMergeCASRefusalLeavesLFSMetadata-9acb86ff/pulls/1
+        X-GitLab-Project: repo-TestPullMergeCASRefusalLeavesLFSMetadata-9acb86ff
+        X-Gitea-Repository-Path: user-TestPullMergeCASRefusalLeavesLFSMetadata-1ca5b181/repo-TestPullMergeCASRefusalLeavesLFSMetadata-9acb86ff
+        X-Gitea-Repository-Link: http://localhost:3003/user-TestPullMergeCASRefusalLeavesLFSMetadata-1ca5b181/repo-TestPullMergeCASRefusalLeavesLFSMetadata-9acb86ff
+        X-Forgejo-Repository-Path: user-TestPullMergeCASRefusalLeavesLFSMetadata-1ca5b181/repo-TestPullMergeCASRefusalLeavesLFSMetadata-9acb86ff
+        List-ID: user-TestPullMergeCASRefusalLeavesLFSMetadata-1ca5b181/repo-TestPullMergeCASRefusalLeavesLFSMetadata-9acb86ff
+         <repo-TestPullMergeCASRefusalLeavesLFSMetadata-9acb86ff.user-TestPullMergeCASRefusalLeavesLFSMetadata-1ca5b181.localhost>
+        X-Forgejo-Reason: pull
+        X-Mailer: Forgejo
+        References: <user-TestPullMergeCASRefusalLeavesLFSMetadata-1ca5b181/repo-TestPullMergeCASRefusalLeavesLFSMetadata-9acb86ff/pulls/1@localhost>
+        X-GitHub-Sender: user-TestPullMergeCASRefusalLeavesLFSMetadata-1b6a2072
+        X-GitLab-Issue-IID: 1
+        X-Gitea-Sender: user-TestPullMergeCASRefusalLeavesLFSMetadata-1b6a2072
+        X-Forgejo-Issue-Link: http://localhost:3003/user-TestPullMergeCASRefusalLeavesLFSMetadata-1ca5b181/repo-TestPullMergeCASRefusalLeavesLFSMetadata-9acb86ff/pulls/1
+        X-GitHub-Reason: pull
+        Content-Type: multipart/alternative;
+         boundary=a29b06fd96c1607b799e4818499db16c95b832ec9fb922d67aee229c260b
+        
+        --a29b06fd96c1607b799e4818499db16c95b832ec9fb922d67aee229c260b
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/plain; charset=UTF-8
+        
+        *@user-TestPullMergeCASRefusalLeavesLFSMetadata-1b6a2072* created #1.
+        
+        ---
+        View it on Forgejo ( http://localhost:3003/user-TestPullMergeCASRefusalLeav=
+        esLFSMetadata-1ca5b181/repo-TestPullMergeCASRefusalLeavesLFSMetadata-9acb86=
+        ff/pulls/1 ).
+        --a29b06fd96c1607b799e4818499db16c95b832ec9fb922d67aee229c260b
+        Content-Transfer-Encoding: quoted-printable
+        Content-Type: text/html; charset=UTF-8
+        
+        <!DOCTYPE html>
+        <html>
+        <head>
+        	<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+        
+        	<style>
+        		blockquote { padding-left: 1em; margin: 1em 0; border-left: 1px solid gre=
+        y; color: #777}
+        		.footer { font-size:small; color:#666;}
+        	=09
+        	</style>
+        
+        </head>
+        
+        <body>
+        =09
+        =09
+        	<p>
+        	=09
+        		=09
+        				<b>@user-TestPullMergeCASRefusalLeavesLFSMetadata-1b6a2072</b> created =
+        #1.
+        		=09
+        	=09
+        	</p>
+        	<div class=3D"footer">
+        	<p>
+        		---
+        		<br>
+        		<a href=3D"http://localhost:3003/user-TestPullMergeCASRefusalLeavesLFSMet=
+        adata-1ca5b181/repo-TestPullMergeCASRefusalLeavesLFSMetadata-9acb86ff/pulls=
+        /1">View it on Forgejo</a>.
+        	</p>
+        	</div>
+        </body>
+        </html>
+        
+        --a29b06fd96c1607b799e4818499db16c95b832ec9fb922d67aee229c260b--
+    testlogger.go:408: 2026/10/24 10:50:54 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/v1/repos/user-TestPullMergeCASRefusalLeavesLFSMetadata-1ca5b181/repo-TestPullMergeCASRefusalLeavesLFSMetadata-9acb86ff/pulls for test-mock:12345, 201 Created in 149.7ms @ repo/pull.go:404(repo.CreatePullRequest)
+    testlogger.go:408: 2026/10/24 10:50:54 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/v1/repos/user-TestPullMergeCASRefusalLeavesLFSMetadata-1ca5b181/repo-TestPullMergeCASRefusalLeavesLFSMetadata-9acb86ff/pulls for test-mock:12345, 201 Created in 140.2ms @ repo/pull.go:404(repo.CreatePullRequest)
+    testlogger.go:408: 2026/10/24 10:50:54 ...eb/routing/logger.go:109:func1() [I] router: completed GET /api/v1/repos/user-TestPullMergeCASRefusalLeavesLFSMetadata-1ca5b181/repo-TestPullMergeCASRefusalLeavesLFSMetadata-9acb86ff/pulls/1 for test-mock:12345, 200 OK in 23.2ms @ repo/pull.go:205(repo.GetPullRequest)
+    testlogger.go:408: 2026/10/24 10:50:54 ...eb/routing/logger.go:109:func1() [I] router: completed GET /api/v1/repos/user-TestPullMergeCASRefusalLeavesLFSMetadata-1ca5b181/repo-TestPullMergeCASRefusalLeavesLFSMetadata-9acb86ff/pulls/2 for test-mock:12345, 200 OK in 17.0ms @ repo/pull.go:205(repo.GetPullRequest)
+    testlogger.go:408: 2026/10/24 10:50:55 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/pre-receive/user-TestPullMergeCASRefusalLeavesLFSMetadata-1ca5b181/repo-TestPullMergeCASRefusalLeavesLFSMetadata-9acb86ff for 127.0.0.1:0, 200 OK in 0.7ms @ private/hook_pre_receive.go:204(private.HookPreReceive)
+    testlogger.go:408: 2026/10/24 10:50:55 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/internal/hook/post-receive/user-TestPullMergeCASRefusalLeavesLFSMetadata-1ca5b181/repo-TestPullMergeCASRefusalLeavesLFSMetadata-9acb86ff for 127.0.0.1:0, 200 OK in 63.1ms @ private/hook_post_receive.go:46(private.HookPostReceive)
+    testlogger.go:408: 2026/10/24 10:50:55 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/v1/repos/user-TestPullMergeCASRefusalLeavesLFSMetadata-1ca5b181/repo-TestPullMergeCASRefusalLeavesLFSMetadata-9acb86ff/pulls/2/merge for test-mock:12345, 200 OK in 316.9ms @ repo/pull.go:869(repo.MergePullRequest)
+    testlogger.go:408: 2026/10/24 10:50:55 ...eb/routing/logger.go:109:func1() [I] router: completed GET /api/v1/repos/user-TestPullMergeCASRefusalLeavesLFSMetadata-1ca5b181/repo-TestPullMergeCASRefusalLeavesLFSMetadata-9acb86ff/pulls/2 for test-mock:12345, 200 OK in 20.7ms @ repo/pull.go:205(repo.GetPullRequest)
+    testlogger.go:408: 2026/10/24 10:50:55 ...eb/routing/logger.go:109:func1() [I] router: completed POST /api/v1/repos/user-TestPullMergeCASRefusalLeavesLFSMetadata-1ca5b181/repo-TestPullMergeCASRefusalLeavesLFSMetadata-9acb86ff/pulls/1/merge for test-mock:12345, 409 Conflict in 507.7ms @ repo/pull.go:869(repo.MergePullRequest)
+    testlogger.go:408: 2026/10/24 10:50:55 ...eb/routing/logger.go:109:func1() [I] router: completed GET /api/v1/repos/user-TestPullMergeCASRefusalLeavesLFSMetadata-1ca5b181/repo-TestPullMergeCASRefusalLeavesLFSMetadata-9acb86ff/pulls/1 for test-mock:12345, 200 OK in 19.1ms @ repo/pull.go:205(repo.GetPullRequest)
+    pull_merge_freshness_race_test.go:1334: CAS refusal left base-repository LFS metadata and public download: target response=409 merge push out of date; competitor base=0bdf51a7ab17f5ffd1201a3f6756f88323eb5e04; LFS OID=1bb07c21f1c1615b4cbd601cf4883e7a45324b483fad787a23c9eb49434e5e61 repository=1203; anonymous download=46 bytes
+    testlogger.go:408: 2026/10/24 10:50:55 ...eb/routing/logger.go:109:func1() [I] router: completed GET /user-TestPullMergeCASRefusalLeavesLFSMetadata-1ca5b181/repo-TestPullMergeCASRefusalLeavesLFSMetadata-9acb86ff.git/info/lfs/objects/1bb07c21f1c1615b4cbd601cf4883e7a45324b483fad787a23c9eb49434e5e61 for test-mock:12345, 200 OK in 0.9ms @ lfs/server.go:73(lfs.DownloadHandler)
+??? [TestLogger] 2026/10/24 10:50:55 ...s/actions/cleanup.go:184:CleanupEphemeralRunnersByPickedTaskOfRepo() [I] Removed 0 runners
+--- PASS: TestPullMergeCASRefusalLeavesLFSMetadata (1.91s)
+PASS
+ok  	forgejo.org/tests/integration	10.836s

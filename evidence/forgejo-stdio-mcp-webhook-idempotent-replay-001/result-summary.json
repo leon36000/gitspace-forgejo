@@ -1,0 +1,82 @@
+{
+  "base_commit": "0bb5292ec64abda75fdf690a66e8fed02203bb95",
+  "candidate_commit": "ba5e714f605fcc908397760d6d2a1a2ab96568f7",
+  "candidate_sha256": "78cc4a0a2cafa1d15b62adc8782af05445e1708268d618bf970de3b2340d407a",
+  "false_executor_status_refused": true,
+  "forgejo_binary_sha256": "e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7",
+  "forgejo_version": "17.0.0+gitea-1.22.0",
+  "green_acceptance": "9 passed; 0 failed",
+  "main_head_after_merge": "67c96ab3fa8d21be6e3c2f6c1e66f6a6387a7a84",
+  "merge_commit_sha": "67c96ab3fa8d21be6e3c2f6c1e66f6a6387a7a84",
+  "merge_http_status": 200,
+  "merged": true,
+  "postmerge_behavior": {
+    "acceptance_exit_code": 0,
+    "failed_tests": 0,
+    "passed_tests": 9,
+    "tested_source_sha256": "78cc4a0a2cafa1d15b62adc8782af05445e1708268d618bf970de3b2340d407a",
+    "worker_sha256": "94347097f1c48eb26b881b494475284b2c9b924281f1b50571641a0ddaff4dd6"
+  },
+  "red_acceptance": {
+    "exit_code": 1,
+    "failed_tests": [
+      "below_min_returns_min",
+      "above_max_returns_max",
+      "singleton_interval_clamps",
+      "i32_min_clamps",
+      "i32_max_clamps"
+    ],
+    "passing_tests": [
+      "in_range_is_preserved",
+      "equal_lower_bound_is_preserved",
+      "equal_upper_bound_is_preserved",
+      "negative_interval_clamps"
+    ]
+  },
+  "requirement_sha256": "878086cb92e6ee91331204e51ecacb4900448537620ba6e108f8db8cca984af6",
+  "same_run_webhook_reconciliation": {
+    "action": "closed",
+    "delivery_sequence": 4,
+    "duplicate_replay": {
+      "accepted": true,
+      "delivery_id": "d5c1fe9a-9c9e-4fe6-9d4b-5564b120b157",
+      "duplicate": true,
+      "http_status": 202,
+      "journal_record_count": 4,
+      "journal_unchanged": true,
+      "payload_sha256": "440f1d7ac4127472abd88b9e863d3432e2b472115d44bae81b2b6825c1eea81b",
+      "reconcile_required": true,
+      "replay_kind": "test-driver re-signing of the accepted native Forgejo payload",
+      "secret_recorded": false,
+      "sequence": 4
+    },
+    "forgejo_task_http_202": true,
+    "head_sha": "ba5e714f605fcc908397760d6d2a1a2ab96568f7",
+    "hook_deactivated": true,
+    "merge_commit_sha": "67c96ab3fa8d21be6e3c2f6c1e66f6a6387a7a84",
+    "reconciled_merge_commit_sha": "67c96ab3fa8d21be6e3c2f6c1e66f6a6387a7a84",
+    "reconciled_verdict": "current_state_read",
+    "secret_recorded": false
+  },
+  "sandbox_egress_during_merge": false,
+  "schema_version": 1,
+  "stale_candidate_verdict": "stale_candidate",
+  "stdio_mcp_egress_during_merge": true,
+  "stdio_mcp_gate_barrier": {
+    "child_process_alive_during_gate_read": true,
+    "reached_on": "tools/call:mission_context after corrected acceptance",
+    "released_after_gate_operation": true,
+    "released_after_gate_read": false
+  },
+  "stdio_mcp_source_binding": {
+    "forgejo_candidate_commit": "ba5e714f605fcc908397760d6d2a1a2ab96568f7",
+    "forgejo_candidate_source_sha256": "78cc4a0a2cafa1d15b62adc8782af05445e1708268d618bf970de3b2340d407a",
+    "llm_invoked": false,
+    "mcp_source_sha256": "78cc4a0a2cafa1d15b62adc8782af05445e1708268d618bf970de3b2340d407a",
+    "merge_commit_sha": "67c96ab3fa8d21be6e3c2f6c1e66f6a6387a7a84",
+    "merged_source_sha256": "78cc4a0a2cafa1d15b62adc8782af05445e1708268d618bf970de3b2340d407a",
+    "producer": "same stdio-MCP process using the explicitly named local-test-adapter",
+    "same_process_alive_during_gate": true,
+    "same_process_released_after_merge_operation": true
+  }
+}

@@ -1,0 +1,1023 @@
+Environment variable $PROJECT_CONF not set, use default: tests/sqlite.ini
+2026/10/24 11:23:29 ...s/storage/storage.go:157:initAttachments() [I] Initialising Attachment storage with type: local
+2026/10/24 11:23:29 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/attachments
+2026/10/24 11:23:29 ...s/storage/storage.go:147:initAvatars() [I] Initialising Avatar storage with type: local
+2026/10/24 11:23:29 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/avatars
+2026/10/24 11:23:29 ...s/storage/storage.go:174:initRepoAvatars() [I] Initialising Repository Avatar storage with type: local
+2026/10/24 11:23:29 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/repo-avatars
+2026/10/24 11:23:29 ...s/storage/storage.go:168:initLFS() [I] Initialising LFS storage with type: local
+2026/10/24 11:23:29 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/lfs
+2026/10/24 11:23:29 ...s/storage/storage.go:180:initRepoArchives() [I] Initialising Repository Archive storage with type: local
+2026/10/24 11:23:29 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/repo-archive
+2026/10/24 11:23:29 ...s/storage/storage.go:190:initPackages() [I] Initialising Packages storage with type: local
+2026/10/24 11:23:29 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/packages
+2026/10/24 11:23:29 ...s/storage/storage.go:201:initActions() [I] Initialising Actions storage with type: local
+2026/10/24 11:23:29 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/actions_log
+2026/10/24 11:23:29 ...s/storage/storage.go:205:initActions() [I] Initialising ActionsArtifacts storage with type: local
+2026/10/24 11:23:29 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/actions_artifacts
+2026/10/24 11:23:29 modules/git/git.go:122:checkInit() [W] git module has been initialized already, duplicate init may work but it's better to fix it
+2026/10/24 11:23:29 routers/init.go:109:InitWebInstalled() [I] Git version: 2.43.0 (home: /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/home)
+??? [TestLogger] 2026/10/24 11:23:29 ...s/storage/storage.go:157:initAttachments() [I] Initialising Attachment storage with type: local
+??? [TestLogger] 2026/10/24 11:23:29 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/attachments
+??? [TestLogger] 2026/10/24 11:23:29 ...s/storage/storage.go:147:initAvatars() [I] Initialising Avatar storage with type: local
+??? [TestLogger] 2026/10/24 11:23:29 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/avatars
+??? [TestLogger] 2026/10/24 11:23:29 ...s/storage/storage.go:174:initRepoAvatars() [I] Initialising Repository Avatar storage with type: local
+??? [TestLogger] 2026/10/24 11:23:29 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/repo-avatars
+??? [TestLogger] 2026/10/24 11:23:29 ...s/storage/storage.go:168:initLFS() [I] Initialising LFS storage with type: local
+??? [TestLogger] 2026/10/24 11:23:29 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/lfs
+??? [TestLogger] 2026/10/24 11:23:29 ...s/storage/storage.go:180:initRepoArchives() [I] Initialising Repository Archive storage with type: local
+??? [TestLogger] 2026/10/24 11:23:29 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/repo-archive
+??? [TestLogger] 2026/10/24 11:23:29 ...s/storage/storage.go:190:initPackages() [I] Initialising Packages storage with type: local
+??? [TestLogger] 2026/10/24 11:23:29 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/packages
+??? [TestLogger] 2026/10/24 11:23:29 ...s/storage/storage.go:201:initActions() [I] Initialising Actions storage with type: local
+??? [TestLogger] 2026/10/24 11:23:29 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/actions_log
+??? [TestLogger] 2026/10/24 11:23:29 ...s/storage/storage.go:205:initActions() [I] Initialising ActionsArtifacts storage with type: local
+??? [TestLogger] 2026/10/24 11:23:29 ...les/storage/local.go:33:NewLocalStorage() [I] Creating new Local Storage at /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/actions_artifacts
+??? [TestLogger] 2026/10/24 11:23:29 routers/init.go:129:InitWebInstalled() [I] SQLite3 support is enabled
+??? [TestLogger] 2026/10/24 11:23:29 routers/common/db.go:23:InitDBEngine() [I] Beginning ORM engine initialization.
+??? [TestLogger] 2026/10/24 11:23:29 routers/common/db.go:30:InitDBEngine() [I] ORM engine initialization attempt #1/10...
+??? [TestLogger] 2026/10/24 11:23:30 routers/init.go:135:InitWebInstalled() [I] ORM engine initialization successful!
+??? [TestLogger] 2026/10/24 11:23:30 ...er/issues/indexer.go:80:func1() [I] PID 2337415: Initializing Issue Indexer: bleve
+??? [TestLogger] 2026/10/24 11:23:30 ...exer/code/indexer.go:169:func3() [I] PID: 2337415 Initializing Repository Indexer at: /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/indexers/repos.bleve
+??? [TestLogger] 2026/10/24 11:23:30 ...xer/stats/indexer.go:41:populateRepoIndexer() [I] Populating the repo stats indexer with existing repositories
+??? [TestLogger] 2026/10/24 11:23:30 routers/init.go:84:syncAppConfForGit() [I] AppPath changed from '' to '/dev/shm/go-build3500802008/b001/integration.test'
+??? [TestLogger] 2026/10/24 11:23:30 routers/init.go:89:syncAppConfForGit() [I] CustomConf changed from '' to '/tmp/forgejo-v17-base-cas-poc/tests/sqlite.ini'
+??? [TestLogger] 2026/10/24 11:23:30 modules/ssh/ssh.go:345:Listen() [I] Adding SSH host key: /tmp/forgejo-v17-base-cas-poc/tests/integration/forgejo-integration-sqlite/data/ssh/gitea.rsa
+??? [TestLogger] 2026/10/24 11:23:30 modules/ssh/init.go:30:Init() [I] SSH server started on localhost:2203. Cipher list ([chacha20-poly1305@openssh.com aes128-ctr aes192-ctr aes256-ctr aes128-gcm@openssh.com aes256-gcm@openssh.com]), key exchange algorithms ([mlkem768x25519-sha256 curve25519-sha256 ecdh-sha2-nistp256 ecdh-sha2-nistp384 ecdh-sha2-nistp521 diffie-hellman-group14-sha256 diffie-hellman-group14-sha1]), MACs ([hmac-sha2-256-etm@openssh.com hmac-sha2-256 hmac-sha1])
+??? [TestLogger] 2026/10/24 11:23:30 ...s/graceful/server.go:50:NewServer() [I] Starting new SSH server: tcp:localhost:2203 on PID: 2337415
+??? [TestLogger] 2026/10/24 11:23:30 ...xer/stats/indexer.go:87:populateRepoIndexer() [I] Done (re)populating the repo stats indexer with existing repositories
+??? [TestLogger] 2026/10/24 11:23:30 ...er/cleanup_sha256.go:27:CleanupSHA256() [I] Start to cleanup dangling images with a sha256:* version
+??? [TestLogger] 2026/10/24 11:23:30 ...er/cleanup_sha256.go:106:cleanupSHA256() [I] Nothing to cleanup
+??? [TestLogger] 2026/10/24 11:23:30 ...er/cleanup_sha256.go:29:CleanupSHA256() [I] Finished to cleanup dangling images with a sha256:* version
+??? [TestLogger] 2026/10/24 11:23:30 ...er/issues/indexer.go:160:func2() [I] Issue Indexer Initialization took 23.873097ms
+??? [TestLogger] 2026/10/24 11:23:30 ...exer/code/indexer.go:265:func4() [I] Repository Indexer Initialization took 28.204371ms
+??? [TestLogger] 2026/10/24 11:23:30 ...exer/code/indexer.go:291:populateRepoIndexer() [I] Populating the repo indexer with existing repositories
+??? [TestLogger] 2026/10/24 11:23:30 ...exer/code/indexer.go:343:populateRepoIndexer() [I] Done (re)populating the repo indexer with existing repositories
+=== TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge (tests/integration/git_helper_for_declarative_test.go:67)
+SIGQUIT: quit
+PC=0x497f3c m=0 sigcode=0
+
+goroutine 0 gp=0x6dd3620 m=0 mp=0x6dd51c0 [idle]:
+runtime.futex(0x6dd5318, 0x80, 0x0, 0x0, 0x0, 0x0)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/sys_linux_arm64.s:665 +0x1c fp=0xffffcfc1e8b0 sp=0xffffcfc1e8b0 pc=0x497f3c
+runtime.futexsleep(0x8367701f8fb8?, 0x6dd51c0?, 0xffffcfc1e938?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/os_linux.go:73 +0x28 fp=0xffffcfc1e900 sp=0xffffcfc1e8b0 pc=0x44f968
+runtime.notesleep(0x6dd5318)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/lock_futex.go:47 +0x8c fp=0xffffcfc1e940 sp=0xffffcfc1e900 pc=0x42173c
+runtime.mPark(...)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:1985
+runtime.stopm()
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:3023 +0x84 fp=0xffffcfc1e970 sp=0xffffcfc1e940 pc=0x45a3c4
+runtime.exitsyscallNoP(0x716bcb9041e0)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:5153 +0x2f0 fp=0xffffcfc1e9c0 sp=0xffffcfc1e970 pc=0x45eee0
+runtime.mcall()
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:319 +0x54 fp=0xffffcfc1e9d0 sp=0xffffcfc1e9c0 pc=0x494dd4
+
+goroutine 1 gp=0x716bc9cd81e0 m=nil [chan receive, 2 minutes]:
+runtime.gopark(0x1ce99f778?, 0xea96981b1aa0?, 0x8?, 0x1?, 0x80?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:474 +0xb8 fp=0x716bced4b710 sp=0x716bced4b6f0 pc=0x48f0b8
+runtime.chanrecv(0x716bcd430500, 0x716bce99f817, 0x1)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/chan.go:667 +0x470 fp=0x716bced4b790 sp=0x716bced4b710 pc=0x41bc90
+runtime.chanrecv1(0x18?, 0x65af098?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/chan.go:509 +0x14 fp=0x716bced4b7c0 sp=0x716bced4b790 pc=0x41b7e4
+testing.(*T).Run(0x716bcec9c488, {0x31ffdf1?, 0x716bce99f8d8?}, 0x68f26e0)
+	/tmp/forgejo-merge011-test/toolchain/src/testing/testing.go:2268 +0x3cc fp=0x716bced4b8a0 sp=0x716bced4b7c0 pc=0x55da4c
+testing.runTests.func1(0x716bcec9c488)
+	/tmp/forgejo-merge011-test/toolchain/src/testing/testing.go:2744 +0x38 fp=0x716bced4b8e0 sp=0x716bced4b8a0 pc=0x563a38
+testing.tRunner(0x716bcec9c488, 0x716bce99fa08)
+	/tmp/forgejo-merge011-test/toolchain/src/testing/testing.go:2195 +0xc4 fp=0x716bced4b930 sp=0x716bced4b8e0 pc=0x55d614
+testing.runTests({0x2fc7f8f, 0xb}, {0x312d68e, 0x1d}, 0x716bcbc63b00, {0x69db6c0, 0x562, 0x562}, {0x716bce99faf8?, 0xa61e48?, ...})
+	/tmp/forgejo-merge011-test/toolchain/src/testing/testing.go:2742 +0x400 fp=0x716bced4ba30 sp=0x716bced4b930 pc=0x55f570
+testing.(*M).Run(0x716bcb7c7a40)
+	/tmp/forgejo-merge011-test/toolchain/src/testing/testing.go:2602 +0x578 fp=0x716bced4bc70 sp=0x716bced4ba30 pc=0x55e5b8
+forgejo.org/tests/integration.TestMain(0x716bcb7c7a40)
+	/tmp/forgejo-v17-base-cas-poc/tests/integration/integration_test.go:152 +0x29c fp=0x716bced4be10 sp=0x716bced4bc70 pc=0x2a9901c
+main.main()
+	_testmain.go:2808 +0x88 fp=0x716bced4bea0 sp=0x716bced4be10 pc=0x2de6a38
+runtime.main()
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:302 +0x380 fp=0x716bced4bfd0 sp=0x716bced4bea0 pc=0x455710
+runtime.goexit({})
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:1039 +0x4 fp=0x716bced4bfd0 sp=0x716bced4bfd0 pc=0x496ec4
+
+goroutine 2 gp=0x716bc9cd8d20 m=nil [force gc (idle), 2 minutes]:
+runtime.gopark(0x8383741d2e3c?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:474 +0xb8 fp=0x716bc9d5cf90 sp=0x716bc9d5cf70 pc=0x48f0b8
+runtime.goparkunlock(...)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:480
+runtime.forcegchelper()
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:387 +0xb4 fp=0x716bc9d5cfd0 sp=0x716bc9d5cf90 pc=0x4559f4
+runtime.goexit({})
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:1039 +0x4 fp=0x716bc9d5cfd0 sp=0x716bc9d5cfd0 pc=0x496ec4
+created by runtime.init.7 in goroutine 1
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:375 +0x24
+
+goroutine 18 gp=0x716bc9d943c0 m=nil [GC sweep wait]:
+runtime.gopark(0x1?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:474 +0xb8 fp=0x716bc9d58770 sp=0x716bc9d58750 pc=0x48f0b8
+runtime.goparkunlock(...)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:480
+runtime.bgsweep(0x716bc9da2000)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/mgcsweep.go:324 +0x178 fp=0x716bc9d587b0 sp=0x716bc9d58770 pc=0x43e918
+runtime.gcenable.gowrap1()
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/mgc.go:214 +0x20 fp=0x716bc9d587d0 sp=0x716bc9d587b0 pc=0x4843c0
+runtime.goexit({})
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:1039 +0x4 fp=0x716bc9d587d0 sp=0x716bc9d587d0 pc=0x496ec4
+created by runtime.gcenable in goroutine 1
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/mgc.go:214 +0x6c
+
+goroutine 19 gp=0x716bc9d945a0 m=nil [GC scavenge wait]:
+runtime.gopark(0x11f053?, 0xeb2a0?, 0x0?, 0x0?, 0x0?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:474 +0xb8 fp=0x716bc9d58f60 sp=0x716bc9d58f40 pc=0x48f0b8
+runtime.goparkunlock(...)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:480
+runtime.(*scavengerState).park(0x6dd1980)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/mgcscavenge.go:425 +0x5c fp=0x716bc9d58f90 sp=0x716bc9d58f60 pc=0x43c4ac
+runtime.bgscavenge(0x716bc9da2000)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/mgcscavenge.go:658 +0xac fp=0x716bc9d58fb0 sp=0x716bc9d58f90 pc=0x43ca1c
+runtime.gcenable.gowrap2()
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/mgc.go:215 +0x20 fp=0x716bc9d58fd0 sp=0x716bc9d58fb0 pc=0x484380
+runtime.goexit({})
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:1039 +0x4 fp=0x716bc9d58fd0 sp=0x716bc9d58fd0 pc=0x496ec4
+created by runtime.gcenable in goroutine 1
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/mgc.go:215 +0xac
+
+goroutine 34 gp=0x716bc9e00000 m=nil [GOMAXPROCS updater (idle), 2 minutes]:
+runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:474 +0xb8 fp=0x716bc9e06770 sp=0x716bc9e06750 pc=0x48f0b8
+runtime.goparkunlock(...)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:480
+runtime.updateMaxProcsGoroutine()
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:7146 +0xf4 fp=0x716bc9e067d0 sp=0x716bc9e06770 pc=0x463534
+runtime.goexit({})
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:1039 +0x4 fp=0x716bc9e067d0 sp=0x716bc9e067d0 pc=0x496ec4
+created by runtime.defaultGOMAXPROCSUpdateEnable in goroutine 1
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:7134 +0x48
+
+goroutine 35 gp=0x716bc9e005a0 m=nil [finalizer wait, 2 minutes]:
+runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:474 +0xb8 fp=0x716bc9e06d80 sp=0x716bc9e06d60 pc=0x48f0b8
+runtime.runFinalizers()
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/mfinal.go:210 +0x100 fp=0x716bc9e06fd0 sp=0x716bc9e06d80 pc=0x42fa40
+runtime.goexit({})
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:1039 +0x4 fp=0x716bc9e06fd0 sp=0x716bc9e06fd0 pc=0x496ec4
+created by runtime.createfing in goroutine 1
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/mfinal.go:172 +0x78
+
+goroutine 36 gp=0x716bc9e01c20 m=nil [GC worker (idle), 2 minutes]:
+runtime.gopark(0x83676450d940?, 0x3?, 0x60?, 0x3?, 0x0?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:474 +0xb8 fp=0x716bc9e07720 sp=0x716bc9e07700 pc=0x48f0b8
+runtime.gcBgMarkWorker(0x716bc9e0a9a0)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/mgc.go:1807 +0xe0 fp=0x716bc9e077b0 sp=0x716bc9e07720 pc=0x432d20
+runtime.gcBgMarkStartWorkers.gowrap1()
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/mgc.go:1711 +0x20 fp=0x716bc9e077d0 sp=0x716bc9e077b0 pc=0x4848f0
+runtime.goexit({})
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:1039 +0x4 fp=0x716bc9e077d0 sp=0x716bc9e077d0 pc=0x496ec4
+created by runtime.gcBgMarkStartWorkers in goroutine 1
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/mgc.go:1711 +0x130
+
+goroutine 37 gp=0x716bca15c000 m=nil [GC worker (idle), 2 minutes]:
+runtime.gopark(0x83676450d880?, 0x3?, 0xe1?, 0x3d?, 0x0?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:474 +0xb8 fp=0x716bc9e07f20 sp=0x716bc9e07f00 pc=0x48f0b8
+runtime.gcBgMarkWorker(0x716bc9e0a9a0)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/mgc.go:1807 +0xe0 fp=0x716bc9e07fb0 sp=0x716bc9e07f20 pc=0x432d20
+runtime.gcBgMarkStartWorkers.gowrap1()
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/mgc.go:1711 +0x20 fp=0x716bc9e07fd0 sp=0x716bc9e07fb0 pc=0x4848f0
+runtime.goexit({})
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:1039 +0x4 fp=0x716bc9e07fd0 sp=0x716bc9e07fd0 pc=0x496ec4
+created by runtime.gcBgMarkStartWorkers in goroutine 1
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/mgc.go:1711 +0x130
+
+goroutine 38 gp=0x716bca15c1e0 m=nil [GC worker (idle), 2 minutes]:
+runtime.gopark(0x8383753249a4?, 0x3?, 0x21?, 0xc?, 0x0?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:474 +0xb8 fp=0x716bc9e08720 sp=0x716bc9e08700 pc=0x48f0b8
+runtime.gcBgMarkWorker(0x716bc9e0a9a0)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/mgc.go:1807 +0xe0 fp=0x716bc9e087b0 sp=0x716bc9e08720 pc=0x432d20
+runtime.gcBgMarkStartWorkers.gowrap1()
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/mgc.go:1711 +0x20 fp=0x716bc9e087d0 sp=0x716bc9e087b0 pc=0x4848f0
+runtime.goexit({})
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:1039 +0x4 fp=0x716bc9e087d0 sp=0x716bc9e087d0 pc=0x496ec4
+created by runtime.gcBgMarkStartWorkers in goroutine 1
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/mgc.go:1711 +0x130
+
+goroutine 39 gp=0x716bca15c3c0 m=nil [GC worker (idle), 2 minutes]:
+runtime.gopark(0x83676450e1e0?, 0x1?, 0x1a?, 0xd3?, 0x0?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:474 +0xb8 fp=0x716bc9e08f20 sp=0x716bc9e08f00 pc=0x48f0b8
+runtime.gcBgMarkWorker(0x716bc9e0a9a0)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/mgc.go:1807 +0xe0 fp=0x716bc9e08fb0 sp=0x716bc9e08f20 pc=0x432d20
+runtime.gcBgMarkStartWorkers.gowrap1()
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/mgc.go:1711 +0x20 fp=0x716bc9e08fd0 sp=0x716bc9e08fb0 pc=0x4848f0
+runtime.goexit({})
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:1039 +0x4 fp=0x716bc9e08fd0 sp=0x716bc9e08fd0 pc=0x496ec4
+created by runtime.gcBgMarkStartWorkers in goroutine 1
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/mgc.go:1711 +0x130
+
+goroutine 20 gp=0x716bc9d95680 m=nil [cleanup wait, 2 minutes]:
+runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:474 +0xb8 fp=0x716bc9d5b750 sp=0x716bc9d5b730 pc=0x48f0b8
+runtime.goparkunlock(...)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:480
+runtime.(*cleanupQueue).dequeue(0x6dd3460)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/mcleanup.go:522 +0x160 fp=0x716bc9d5b790 sp=0x716bc9d5b750 pc=0x42bdc0
+runtime.runCleanups()
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/mcleanup.go:718 +0x40 fp=0x716bc9d5b7d0 sp=0x716bc9d5b790 pc=0x42c510
+runtime.goexit({})
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:1039 +0x4 fp=0x716bc9d5b7d0 sp=0x716bc9d5b7d0 pc=0x496ec4
+created by runtime.(*cleanupQueue).createGs in goroutine 1
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/mcleanup.go:672 +0x108
+
+goroutine 21 gp=0x716bca15c960 m=nil [select, 2 minutes]:
+runtime.gopark(0x716bcadb9f90?, 0x2?, 0x80?, 0x47?, 0x716bcadb9f8c?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:474 +0xb8 fp=0x716bcadb9e10 sp=0x716bcadb9df0 pc=0x48f0b8
+runtime.selectgo(0x716bcadb9f90, 0x716bcadb9f88, 0x0?, 0x0, 0x0?, 0x1)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/select.go:351 +0x838 fp=0x716bcadb9f50 sp=0x716bcadb9e10 pc=0x4682c8
+github.com/blevesearch/bleve_index_api.AnalysisWorker(...)
+	/home/pc6/go/pkg/mod/github.com/blevesearch/bleve_index_api@v1.4.1/analysis.go:46
+github.com/blevesearch/bleve_index_api.NewAnalysisQueue.gowrap1()
+	/home/pc6/go/pkg/mod/github.com/blevesearch/bleve_index_api@v1.4.1/analysis.go:38 +0x74 fp=0x716bcadb9fd0 sp=0x716bcadb9f50 pc=0x1887974
+runtime.goexit({})
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:1039 +0x4 fp=0x716bcadb9fd0 sp=0x716bcadb9fd0 pc=0x496ec4
+created by github.com/blevesearch/bleve_index_api.NewAnalysisQueue in goroutine 1
+	/home/pc6/go/pkg/mod/github.com/blevesearch/bleve_index_api@v1.4.1/analysis.go:38 +0x9c
+
+goroutine 22 gp=0x716bca15cb40 m=nil [select, 2 minutes]:
+runtime.gopark(0x716bc9d6ff90?, 0x2?, 0x80?, 0x47?, 0x716bc9d6ff8c?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:474 +0xb8 fp=0x716bc9d6fe10 sp=0x716bc9d6fdf0 pc=0x48f0b8
+runtime.selectgo(0x716bc9d6ff90, 0x716bc9d6ff88, 0x0?, 0x0, 0x0?, 0x1)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/select.go:351 +0x838 fp=0x716bc9d6ff50 sp=0x716bc9d6fe10 pc=0x4682c8
+github.com/blevesearch/bleve_index_api.AnalysisWorker(...)
+	/home/pc6/go/pkg/mod/github.com/blevesearch/bleve_index_api@v1.4.1/analysis.go:46
+github.com/blevesearch/bleve_index_api.NewAnalysisQueue.gowrap1()
+	/home/pc6/go/pkg/mod/github.com/blevesearch/bleve_index_api@v1.4.1/analysis.go:38 +0x74 fp=0x716bc9d6ffd0 sp=0x716bc9d6ff50 pc=0x1887974
+runtime.goexit({})
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:1039 +0x4 fp=0x716bc9d6ffd0 sp=0x716bc9d6ffd0 pc=0x496ec4
+created by github.com/blevesearch/bleve_index_api.NewAnalysisQueue in goroutine 1
+	/home/pc6/go/pkg/mod/github.com/blevesearch/bleve_index_api@v1.4.1/analysis.go:38 +0x9c
+
+goroutine 23 gp=0x716bca15cd20 m=nil [select, 2 minutes]:
+runtime.gopark(0x716bcadb5f90?, 0x2?, 0x80?, 0x47?, 0x716bcadb5f8c?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:474 +0xb8 fp=0x716bcadb5e10 sp=0x716bcadb5df0 pc=0x48f0b8
+runtime.selectgo(0x716bcadb5f90, 0x716bcadb5f88, 0x0?, 0x0, 0x0?, 0x1)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/select.go:351 +0x838 fp=0x716bcadb5f50 sp=0x716bcadb5e10 pc=0x4682c8
+github.com/blevesearch/bleve_index_api.AnalysisWorker(...)
+	/home/pc6/go/pkg/mod/github.com/blevesearch/bleve_index_api@v1.4.1/analysis.go:46
+github.com/blevesearch/bleve_index_api.NewAnalysisQueue.gowrap1()
+	/home/pc6/go/pkg/mod/github.com/blevesearch/bleve_index_api@v1.4.1/analysis.go:38 +0x74 fp=0x716bcadb5fd0 sp=0x716bcadb5f50 pc=0x1887974
+runtime.goexit({})
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:1039 +0x4 fp=0x716bcadb5fd0 sp=0x716bcadb5fd0 pc=0x496ec4
+created by github.com/blevesearch/bleve_index_api.NewAnalysisQueue in goroutine 1
+	/home/pc6/go/pkg/mod/github.com/blevesearch/bleve_index_api@v1.4.1/analysis.go:38 +0x9c
+
+goroutine 24 gp=0x716bca15cf00 m=nil [select, 2 minutes]:
+runtime.gopark(0x716bcd89ff90?, 0x2?, 0x80?, 0x47?, 0x716bcd89ff8c?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:474 +0xb8 fp=0x716bcd89fe10 sp=0x716bcd89fdf0 pc=0x48f0b8
+runtime.selectgo(0x716bcd89ff90, 0x716bcd89ff88, 0x0?, 0x0, 0x0?, 0x1)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/select.go:351 +0x838 fp=0x716bcd89ff50 sp=0x716bcd89fe10 pc=0x4682c8
+github.com/blevesearch/bleve_index_api.AnalysisWorker(...)
+	/home/pc6/go/pkg/mod/github.com/blevesearch/bleve_index_api@v1.4.1/analysis.go:46
+github.com/blevesearch/bleve_index_api.NewAnalysisQueue.gowrap1()
+	/home/pc6/go/pkg/mod/github.com/blevesearch/bleve_index_api@v1.4.1/analysis.go:38 +0x74 fp=0x716bcd89ffd0 sp=0x716bcd89ff50 pc=0x1887974
+runtime.goexit({})
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:1039 +0x4 fp=0x716bcd89ffd0 sp=0x716bcd89ffd0 pc=0x496ec4
+created by github.com/blevesearch/bleve_index_api.NewAnalysisQueue in goroutine 1
+	/home/pc6/go/pkg/mod/github.com/blevesearch/bleve_index_api@v1.4.1/analysis.go:38 +0x9c
+
+goroutine 63 gp=0x716bcb5ecf00 m=nil [select, 2 minutes, locked to thread]:
+runtime.gopark(0x716bc9e05fa0?, 0x2?, 0x98?, 0x5e?, 0x716bc9e05f8c?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:474 +0xb8 fp=0x716bc9e05e00 sp=0x716bc9e05de0 pc=0x48f0b8
+runtime.selectgo(0x716bc9e05fa0, 0x716bc9e05f88, 0x0?, 0x0, 0x0?, 0x1)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/select.go:351 +0x838 fp=0x716bc9e05f40 sp=0x716bc9e05e00 pc=0x4682c8
+runtime.ensureSigM.func1()
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/signal_unix.go:1093 +0x17c fp=0x716bc9e05fd0 sp=0x716bc9e05f40 pc=0x488ebc
+runtime.goexit({})
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:1039 +0x4 fp=0x716bc9e05fd0 sp=0x716bc9e05fd0 pc=0x496ec4
+created by runtime.ensureSigM in goroutine 68
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/signal_unix.go:1076 +0xcc
+
+goroutine 68 gp=0x716bcb5ed4a0 m=nil [select, 2 minutes]:
+runtime.gopark(0x716bc9d70ed0?, 0x3?, 0x0?, 0x0?, 0x716bc9d70de2?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:474 +0xb8 fp=0x716bc9d70c30 sp=0x716bc9d70c10 pc=0x48f0b8
+runtime.selectgo(0x716bc9d70ed0, 0x716bc9d70ddc, 0x0?, 0x0, 0x23aa87?, 0x1)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/select.go:351 +0x838 fp=0x716bc9d70d70 sp=0x716bc9d70c30 pc=0x4682c8
+forgejo.org/modules/graceful.(*Manager).handleSignals(0x716bcb7e5040, {0x68c3e08, 0x716bcb818e40})
+	/tmp/forgejo-v17-base-cas-poc/modules/graceful/manager_unix.go:123 +0x1c0 fp=0x716bc9d70fa0 sp=0x716bc9d70d70 pc=0xd2a390
+forgejo.org/modules/graceful.(*Manager).start.gowrap2()
+	/tmp/forgejo-v17-base-cas-poc/modules/graceful/manager_unix.go:53 +0x24 fp=0x716bc9d70fd0 sp=0x716bc9d70fa0 pc=0xd2f154
+runtime.goexit({})
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:1039 +0x4 fp=0x716bc9d70fd0 sp=0x716bc9d70fd0 pc=0x496ec4
+created by forgejo.org/modules/graceful.(*Manager).start in goroutine 1
+	/tmp/forgejo-v17-base-cas-poc/modules/graceful/manager_unix.go:53 +0x14c
+
+goroutine 69 gp=0x716bcb5ed680 m=nil [sync.Cond.Wait, 2 minutes]:
+runtime.gopark(0x716bcb437a40?, 0x60ac6b8?, 0x0?, 0x8e?, 0x0?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:474 +0xb8 fp=0x716bc9d5c700 sp=0x716bc9d5c6e0 pc=0x48f0b8
+runtime.goparkunlock(...)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:480
+sync.runtime_notifyListWait(0x716bcb7e5100, 0x1)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/sema.go:617 +0x194 fp=0x716bc9d5c750 sp=0x716bc9d5c700 pc=0x490cd4
+sync.(*Cond).Wait(0x716bcb7e50f0)
+	/tmp/forgejo-merge011-test/toolchain/src/sync/cond.go:71 +0xa4 fp=0x716bc9d5c780 sp=0x716bc9d5c750 pc=0x49fbb4
+forgejo.org/modules/graceful.(*Manager).start.func1()
+	/tmp/forgejo-v17-base-cas-poc/modules/graceful/manager_unix.go:77 +0x60 fp=0x716bc9d5c7d0 sp=0x716bc9d5c780 pc=0xd2f040
+runtime.goexit({})
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:1039 +0x4 fp=0x716bc9d5c7d0 sp=0x716bc9d5c7d0 pc=0x496ec4
+created by forgejo.org/modules/graceful.(*Manager).start in goroutine 1
+	/tmp/forgejo-v17-base-cas-poc/modules/graceful/manager_unix.go:57 +0x1b0
+
+goroutine 64 gp=0x716bc9cd9860 m=3 mp=0x716bc9d61008 [syscall, 2 minutes]:
+runtime.notetsleepg(0x6e09940, 0xffffffffffffffff)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/lock_futex.go:123 +0x34 fp=0x716bc9e09f90 sp=0x716bc9e09f60 pc=0x4219d4
+os/signal.signal_recv()
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/sigqueue.go:152 +0x114 fp=0x716bc9e09fb0 sp=0x716bc9e09f90 pc=0x491674
+os/signal.loop()
+	/tmp/forgejo-merge011-test/toolchain/src/os/signal/signal_unix.go:23 +0x1c fp=0x716bc9e09fd0 sp=0x716bc9e09fb0 pc=0x5f5a7c
+runtime.goexit({})
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:1039 +0x4 fp=0x716bc9e09fd0 sp=0x716bc9e09fd0 pc=0x496ec4
+created by os/signal.Notify.func2.1 in goroutine 68
+	/tmp/forgejo-merge011-test/toolchain/src/os/signal/signal.go:164 +0x28
+
+goroutine 4170 gp=0x716bcb878000 m=nil [select, 2 minutes]:
+runtime.gopark(0x716bcecedf30?, 0x2?, 0x0?, 0x0?, 0x716bcecedebc?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:474 +0xb8 fp=0x716bcecedd30 sp=0x716bcecedd10 pc=0x48f0b8
+runtime.selectgo(0x716bcecedf30, 0x716bcecedeb8, 0x716bcb878000?, 0x1, 0x716bcecedf08?, 0x1)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/select.go:351 +0x838 fp=0x716bcecede70 sp=0x716bcecedd30 pc=0x4682c8
+os/exec.(*Cmd).watchCtx(0x716bcb85c820, 0x716bccc99ab0)
+	/tmp/forgejo-merge011-test/toolchain/src/os/exec/exec.go:808 +0x74 fp=0x716bcecedfb0 sp=0x716bcecede70 pc=0x58f574
+os/exec.(*Cmd).Start.gowrap2()
+	/tmp/forgejo-merge011-test/toolchain/src/os/exec/exec.go:794 +0x20 fp=0x716bcecedfd0 sp=0x716bcecedfb0 pc=0x591bd0
+runtime.goexit({})
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:1039 +0x4 fp=0x716bcecedfd0 sp=0x716bcecedfd0 pc=0x496ec4
+created by os/exec.(*Cmd).Start in goroutine 4166
+	/tmp/forgejo-merge011-test/toolchain/src/os/exec/exec.go:794 +0x6ac
+
+goroutine 1899 gp=0x716bcadc03c0 m=nil [chan receive, 2 minutes]:
+runtime.gopark(0x716bd00b4bb8?, 0x41b68c?, 0x4?, 0x0?, 0x716bccd13b80?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:474 +0xb8 fp=0x716bceee6b70 sp=0x716bceee6b50 pc=0x48f0b8
+runtime.chanrecv(0x716bcc2d1490, 0x0, 0x1)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/chan.go:667 +0x470 fp=0x716bceee6bf0 sp=0x716bceee6b70 pc=0x41bc90
+runtime.chanrecv1(0x716bcc2d1420?, 0x0?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/chan.go:509 +0x14 fp=0x716bceee6c20 sp=0x716bceee6bf0 pc=0x41b7e4
+forgejo.org/tests/integration.TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge.func1.2(0x68c52d0?)
+	/tmp/forgejo-v17-base-cas-poc/tests/integration/pull_merge_freshness_race_test.go:586 +0x8c fp=0x716bceee6c50 sp=0x716bceee6c20 pc=0x2d2892c
+forgejo.org/services/automerge.handlePullRequestAutoMerge(0x137, {0x716bcbe97b90, 0x28})
+	/tmp/forgejo-v17-base-cas-poc/services/automerge/automerge.go:243 +0x998 fp=0x716bceee7130 sp=0x716bceee6c50 pc=0x2139828
+forgejo.org/services/automerge.handler({0x716bcb6f6940?, 0x17fadd0?, 0x6017878?})
+	/tmp/forgejo-v17-base-cas-poc/services/automerge/automerge.go:53 +0x18c fp=0x716bceee7200 sp=0x716bceee7130 pc=0x2138bec
+forgejo.org/modules/queue.NewWorkerPoolQueueWithContext[...].func1()
+	/tmp/forgejo-v17-base-cas-poc/modules/queue/workerqueue.go:255 +0x6c fp=0x716bceee7270 sp=0x716bceee7200 pc=0x17fab4c
+forgejo.org/modules/queue.(*WorkerPoolQueue[...]).Push(0x3560a60, {0x716bcbe97b00, 0x2c})
+	/tmp/forgejo-v17-base-cas-poc/modules/queue/workerqueue.go:168 +0xd4 fp=0x716bceee72c0 sp=0x716bceee7270 pc=0x17fae14
+forgejo.org/services/shared/automerge.addToQueue(0x716bd0aa38c0, {0x716bcbdf0540, 0x28})
+	/tmp/forgejo-v17-base-cas-poc/services/shared/automerge/automerge.go:26 +0x100 fp=0x716bceee7380 sp=0x716bceee72c0 pc=0x186c2d0
+forgejo.org/services/shared/automerge.StartPRCheckAndAutoMerge({0x68c3e40?, 0x716bcd4ddc20?}, 0x716bd0aa38c0?)
+	/tmp/forgejo-v17-base-cas-poc/services/shared/automerge/automerge.go:61 +0x74 fp=0x716bceee73b0 sp=0x716bceee7380 pc=0x186c4d4
+forgejo.org/services/automerge.StartPRCheckAndAutoMerge(...)
+	/tmp/forgejo-v17-base-cas-poc/services/automerge/automerge.go:109
+forgejo.org/tests/integration.TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge.func1(0x716bcec9c6c8, 0x716bceaf50e0)
+	/tmp/forgejo-v17-base-cas-poc/tests/integration/pull_merge_freshness_race_test.go:594 +0x51c fp=0x716bceee7e30 sp=0x716bceee73b0 pc=0x2d280cc
+forgejo.org/tests/integration.onApplicationRun[...](0x716bcec9c6c8, 0x68f43b0)
+	/tmp/forgejo-v17-base-cas-poc/tests/integration/git_helper_for_declarative_test.go:99 +0x354 fp=0x716bceee7f30 sp=0x716bceee7e30 pc=0x2de1894
+forgejo.org/tests/integration.TestPullMergeRepositoryPolicyRacePreservesScheduledAutoMerge(0x716bcec9c6c8?)
+	/tmp/forgejo-v17-base-cas-poc/tests/integration/pull_merge_freshness_race_test.go:566 +0x30 fp=0x716bceee7f60 sp=0x716bceee7f30 pc=0x2aef360
+testing.tRunner(0x716bcec9c6c8, 0x68f26e0)
+	/tmp/forgejo-merge011-test/toolchain/src/testing/testing.go:2195 +0xc4 fp=0x716bceee7fb0 sp=0x716bceee7f60 pc=0x55d614
+testing.(*T).Run.gowrap1()
+	/tmp/forgejo-merge011-test/toolchain/src/testing/testing.go:2260 +0x20 fp=0x716bceee7fd0 sp=0x716bceee7fb0 pc=0x5637f0
+runtime.goexit({})
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:1039 +0x4 fp=0x716bceee7fd0 sp=0x716bceee7fd0 pc=0x496ec4
+created by testing.(*T).Run in goroutine 1
+	/tmp/forgejo-merge011-test/toolchain/src/testing/testing.go:2260 +0x3b8
+
+goroutine 4165 gp=0x716bcadc05a0 m=nil [chan receive, 2 minutes]:
+runtime.gopark(0x0?, 0x0?, 0x78?, 0xff?, 0x716bcadc0501?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:474 +0xb8 fp=0x716bd0dadef0 sp=0x716bd0daded0 pc=0x48f0b8
+runtime.chanrecv(0x716bccc99880, 0x0, 0x1)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/chan.go:667 +0x470 fp=0x716bd0dadf70 sp=0x716bd0dadef0 pc=0x41bc90
+runtime.chanrecv1(0x0?, 0x68c3e40?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/chan.go:509 +0x14 fp=0x716bd0dadfa0 sp=0x716bd0dadf70 pc=0x41b7e4
+forgejo.org/modules/git.catFileBatchCheck.func2()
+	/tmp/forgejo-v17-base-cas-poc/modules/git/batch_reader.go:55 +0x34 fp=0x716bd0dadfd0 sp=0x716bd0dadfa0 pc=0x1219ed4
+runtime.goexit({})
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:1039 +0x4 fp=0x716bd0dadfd0 sp=0x716bd0dadfd0 pc=0x496ec4
+created by forgejo.org/modules/git.catFileBatchCheck in goroutine 1899
+	/tmp/forgejo-v17-base-cas-poc/modules/git/batch_reader.go:54 +0x230
+
+goroutine 1615 gp=0x716bcadc0f00 m=nil [select, 2 minutes]:
+runtime.gopark(0x716bccdb7758?, 0x2?, 0x18?, 0x76?, 0x716bccdb7744?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:474 +0xb8 fp=0x716bccdb75c0 sp=0x716bccdb75a0 pc=0x48f0b8
+runtime.selectgo(0x716bccdb7758, 0x716bccdb7740, 0x2000000000000?, 0x0, 0x0?, 0x1)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/select.go:351 +0x838 fp=0x716bccdb7700 sp=0x716bccdb75c0 pc=0x4682c8
+github.com/syndtr/goleveldb/leveldb.(*DB).mCompaction(0x716bcceb1d40)
+	/home/pc6/go/pkg/mod/github.com/syndtr/goleveldb@v1.0.0/leveldb/db_compaction.go:762 +0xbc fp=0x716bccdb77b0 sp=0x716bccdb7700 pc=0x8a138c
+github.com/syndtr/goleveldb/leveldb.openDB.gowrap4()
+	/home/pc6/go/pkg/mod/github.com/syndtr/goleveldb@v1.0.0/leveldb/db.go:150 +0x20 fp=0x716bccdb77d0 sp=0x716bccdb77b0 pc=0x8b4e70
+runtime.goexit({})
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:1039 +0x4 fp=0x716bccdb77d0 sp=0x716bccdb77d0 pc=0x496ec4
+created by github.com/syndtr/goleveldb/leveldb.openDB in goroutine 1610
+	/home/pc6/go/pkg/mod/github.com/syndtr/goleveldb@v1.0.0/leveldb/db.go:150 +0x460
+
+goroutine 4169 gp=0x716bcb878f00 m=nil [IO wait, 2 minutes]:
+runtime.gopark(0x716bd0719bf8?, 0x4ad3f0?, 0x0?, 0x0?, 0xffffffffffffffff?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:474 +0xb8 fp=0x716bd0719b90 sp=0x716bd0719b70 pc=0x48f0b8
+runtime.netpollblock(0x716bd0719bf8?, 0xb?, 0x0?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/netpoll.go:575 +0x150 fp=0x716bd0719bd0 sp=0x716bd0719b90 pc=0x44ebf0
+internal/poll.runtime_pollWait(0xea9688727600, 0x72)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/netpoll.go:351 +0xa0 fp=0x716bd0719c00 sp=0x716bd0719bd0 pc=0x48e2b0
+internal/poll.(*pollDesc).wait(0x716bce9df2c0?, 0x716bceea0000?, 0x1)
+	/tmp/forgejo-merge011-test/toolchain/src/internal/poll/fd_poll_runtime.go:84 +0x28 fp=0x716bd0719c40 sp=0x716bd0719c00 pc=0x4d0d98
+internal/poll.(*pollDesc).waitRead(...)
+	/tmp/forgejo-merge011-test/toolchain/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Read(0x716bce9df2c0, {0x716bceea0000, 0x8000, 0x8000})
+	/tmp/forgejo-merge011-test/toolchain/src/internal/poll/fd_unix.go:170 +0x22c fp=0x716bd0719ce0 sp=0x716bd0719c40 pc=0x4d1d7c
+os.(*File).read(...)
+	/tmp/forgejo-merge011-test/toolchain/src/os/file_posix.go:30
+os.(*File).Read(0x716bce02fdd8, {0x716bceea0000?, 0x6959101?, 0x60178b0?})
+	/tmp/forgejo-merge011-test/toolchain/src/os/file.go:144 +0x68 fp=0x716bd0719d20 sp=0x716bd0719ce0 pc=0x4dc538
+os.fileWithoutWriteTo.Read({{}, 0x695c410?}, {0x716bceea0000?, 0x716bd0719db8?, 0x490a88?})
+	<autogenerated>:1 +0x20 fp=0x716bd0719d50 sp=0x716bd0719d20 pc=0x4ebfe0
+io.copyBuffer({0x68a4380, 0x716bce9c1ec0}, {0x68a42c0, 0x716bce02fdd8}, {0x0, 0x0, 0x0})
+	/tmp/forgejo-merge011-test/toolchain/src/io/io.go:429 +0x18c fp=0x716bd0719dd0 sp=0x716bd0719d50 pc=0x4c637c
+io.Copy(...)
+	/tmp/forgejo-merge011-test/toolchain/src/io/io.go:388
+os.genericWriteTo(0x716bce02fdd8?, {0x68a4380?, 0x716bce9c1ec0?})
+	/tmp/forgejo-merge011-test/toolchain/src/os/file.go:295 +0x44 fp=0x716bd0719e20 sp=0x716bd0719dd0 pc=0x4dce14
+os.(*File).WriteTo(0x716bce02fdd8, {0x68a4380, 0x716bce9c1ec0})
+	/tmp/forgejo-merge011-test/toolchain/src/os/file.go:273 +0x9c fp=0x716bd0719e60 sp=0x716bd0719e20 pc=0x4dcd4c
+io.copyBuffer({0x68a4380, 0x716bce9c1ec0}, {0x68a4340, 0x716bce02fdd8}, {0x0, 0x0, 0x0})
+	/tmp/forgejo-merge011-test/toolchain/src/io/io.go:411 +0x98 fp=0x716bd0719ee0 sp=0x716bd0719e60 pc=0x4c6288
+io.Copy(...)
+	/tmp/forgejo-merge011-test/toolchain/src/io/io.go:388
+os/exec.(*Cmd).writerDescriptor.func1()
+	/tmp/forgejo-merge011-test/toolchain/src/os/exec/exec.go:613 +0x40 fp=0x716bd0719f40 sp=0x716bd0719ee0 pc=0x591b60
+os/exec.(*Cmd).Start.func2(0x716bccc9ad70?)
+	/tmp/forgejo-merge011-test/toolchain/src/os/exec/exec.go:768 +0x30 fp=0x716bd0719fb0 sp=0x716bd0719f40 pc=0x591c60
+os/exec.(*Cmd).Start.gowrap1()
+	/tmp/forgejo-merge011-test/toolchain/src/os/exec/exec.go:780 +0x24 fp=0x716bd0719fd0 sp=0x716bd0719fb0 pc=0x591c14
+runtime.goexit({})
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:1039 +0x4 fp=0x716bd0719fd0 sp=0x716bd0719fd0 pc=0x496ec4
+created by os/exec.(*Cmd).Start in goroutine 4166
+	/tmp/forgejo-merge011-test/toolchain/src/os/exec/exec.go:767 +0x6d8
+
+goroutine 1736 gp=0x716bcb9043c0 m=nil [select, 2 minutes]:
+runtime.gopark(0x716bccdb7ee0?, 0x2?, 0xa9?, 0x9b?, 0x716bccdb7e94?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:474 +0xb8 fp=0x716bccdb7cf0 sp=0x716bccdb7cd0 pc=0x48f0b8
+runtime.selectgo(0x716bccdb7ee0, 0x716bccdb7e90, 0x716bccf4e668?, 0x0, 0x716bccdb7f22?, 0x1)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/select.go:351 +0x838 fp=0x716bccdb7e30 sp=0x716bccdb7cf0 pc=0x4682c8
+forgejo.org/modules/queue.(*baseChannel).PopItem(0x716bcd9585e0, {0x68c52d0, 0x716bca0dcce0})
+	/tmp/forgejo-v17-base-cas-poc/modules/queue/base_channel.go:76 +0x7c fp=0x716bccdb7f20 sp=0x716bccdb7e30 pc=0x17f4c5c
+forgejo.org/modules/queue.baseQueue.PopItem-fm({0x68c52d0?, 0x716bca0dcce0?})
+	<autogenerated>:1 +0x38 fp=0x716bccdb7f50 sp=0x716bccdb7f20 pc=0x17f9488
+forgejo.org/modules/queue.popItemByChan.func1()
+	/tmp/forgejo-v17-base-cas-poc/modules/queue/base.go:27 +0x7c fp=0x716bccdb7fd0 sp=0x716bccdb7f50 pc=0x17f7a1c
+runtime.goexit({})
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:1039 +0x4 fp=0x716bccdb7fd0 sp=0x716bccdb7fd0 pc=0x496ec4
+created by forgejo.org/modules/queue.popItemByChan in goroutine 1746
+	/tmp/forgejo-v17-base-cas-poc/modules/queue/base.go:25 +0x134
+
+goroutine 1185 gp=0x716bcb904d20 m=nil [select, 2 minutes]:
+runtime.gopark(0x716bcb4e2ef0?, 0x3?, 0xa0?, 0xa4?, 0x716bcb4e2e66?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:474 +0xb8 fp=0x716bcb4e2ce0 sp=0x716bcb4e2cc0 pc=0x48f0b8
+runtime.selectgo(0x716bcb4e2ef0, 0x716bcb4e2e60, 0x6dd1460?, 0x0, 0x48b7c4?, 0x1)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/select.go:351 +0x838 fp=0x716bcb4e2e20 sp=0x716bcb4e2ce0 pc=0x4682c8
+github.com/blevesearch/bleve/v2/index/scorch.(*Scorch).mergerLoop(0x716bc9f48008)
+	/home/pc6/go/pkg/mod/github.com/blevesearch/bleve/v2@v2.6.1/index/scorch/merge.go:164 +0x4b8 fp=0x716bcb4e2fb0 sp=0x716bcb4e2e20 pc=0x1a067f8
+github.com/blevesearch/bleve/v2/index/scorch.(*Scorch).Open.gowrap4()
+	/home/pc6/go/pkg/mod/github.com/blevesearch/bleve/v2@v2.6.1/index/scorch/scorch.go:359 +0x20 fp=0x716bcb4e2fd0 sp=0x716bcb4e2fb0 pc=0x1a27560
+runtime.goexit({})
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:1039 +0x4 fp=0x716bcb4e2fd0 sp=0x716bcb4e2fd0 pc=0x496ec4
+created by github.com/blevesearch/bleve/v2/index/scorch.(*Scorch).Open in goroutine 1634
+	/home/pc6/go/pkg/mod/github.com/blevesearch/bleve/v2@v2.6.1/index/scorch/scorch.go:359 +0x1c0
+
+goroutine 1739 gp=0x716bcb9050e0 m=nil [select, 2 minutes]:
+runtime.gopark(0x716bc9d6dde8?, 0x5?, 0x40?, 0x35?, 0x716bc9d6dd5e?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:474 +0xb8 fp=0x716bc9d6dbc0 sp=0x716bc9d6dba0 pc=0x48f0b8
+runtime.selectgo(0x716bc9d6dde8, 0x716bc9d6dd54, 0x716bc9e465a0?, 0x0, 0x5f32ea8?, 0x1)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/select.go:351 +0x838 fp=0x716bc9d6dd00 sp=0x716bc9d6dbc0 pc=0x4682c8
+forgejo.org/modules/queue.(*WorkerPoolQueue[...]).doRun(0x3561d80)
+	/tmp/forgejo-v17-base-cas-poc/modules/queue/workergroup.go:315 +0x290 fp=0x716bc9d6df00 sp=0x716bc9d6dd00 pc=0x1c76fb0
+forgejo.org/modules/queue.(*WorkerPoolQueue[...]).Run(...)
+	/tmp/forgejo-v17-base-cas-poc/modules/queue/workerqueue.go:181
+forgejo.org/modules/queue.(*WorkerPoolQueue[...]).Run()
+	/tmp/forgejo-v17-base-cas-poc/modules/queue/workerqueue.go:180 +0x24 fp=0x716bc9d6df20 sp=0x716bc9d6df00 pc=0x1c789b4
+forgejo.org/modules/graceful.(*Manager).RunWithCancel(0x716bcb7e5040, {0x68b6dc8, 0x716bcd05af00})
+	/tmp/forgejo-v17-base-cas-poc/modules/graceful/manager.go:75 +0xf4 fp=0x716bc9d6dfa0 sp=0x716bc9d6df20 pc=0xd28d94
+forgejo.org/modules/indexer/issues.InitIssueIndexer.func1.gowrap1()
+	/tmp/forgejo-v17-base-cas-poc/modules/indexer/issues/indexer.go:128 +0x24 fp=0x716bc9d6dfd0 sp=0x716bc9d6dfa0 pc=0x1c74924
+runtime.goexit({})
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:1039 +0x4 fp=0x716bc9d6dfd0 sp=0x716bc9d6dfd0 pc=0x496ec4
+created by forgejo.org/modules/indexer/issues.InitIssueIndexer.func1 in goroutine 1616
+	/tmp/forgejo-v17-base-cas-poc/modules/indexer/issues/indexer.go:128 +0x720
+
+goroutine 174 gp=0x716bc9d95c20 m=nil [select, 2 minutes]:
+runtime.gopark(0x716bceed7ef0?, 0x3?, 0x0?, 0x0?, 0x716bceed7e66?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:474 +0xb8 fp=0x716bceef9ce0 sp=0x716bceef9cc0 pc=0x48f0b8
+runtime.selectgo(0x716bceef9ef0, 0x716bceed7e60, 0x6dd1460?, 0x0, 0x716bcd4f6508?, 0x1)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/select.go:351 +0x838 fp=0x716bceef9e20 sp=0x716bceef9ce0 pc=0x4682c8
+github.com/blevesearch/bleve/v2/index/scorch.(*Scorch).mergerLoop(0x716bcaf60608)
+	/home/pc6/go/pkg/mod/github.com/blevesearch/bleve/v2@v2.6.1/index/scorch/merge.go:164 +0x4b8 fp=0x716bceef9fb0 sp=0x716bceef9e20 pc=0x1a067f8
+github.com/blevesearch/bleve/v2/index/scorch.(*Scorch).Open.gowrap4()
+	/home/pc6/go/pkg/mod/github.com/blevesearch/bleve/v2@v2.6.1/index/scorch/scorch.go:359 +0x20 fp=0x716bceef9fd0 sp=0x716bceef9fb0 pc=0x1a27560
+runtime.goexit({})
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:1039 +0x4 fp=0x716bceef9fd0 sp=0x716bceef9fd0 pc=0x496ec4
+created by github.com/blevesearch/bleve/v2/index/scorch.(*Scorch).Open in goroutine 1616
+	/home/pc6/go/pkg/mod/github.com/blevesearch/bleve/v2@v2.6.1/index/scorch/scorch.go:359 +0x1c0
+
+goroutine 1949 gp=0x716bcb5ec5a0 m=nil [IO wait, 2 minutes]:
+runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:474 +0xb8 fp=0x716bcadb3bb0 sp=0x716bcadb3b90 pc=0x48f0b8
+runtime.netpollblock(0x0?, 0x0?, 0x0?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/netpoll.go:575 +0x150 fp=0x716bcadb3bf0 sp=0x716bcadb3bb0 pc=0x44ebf0
+internal/poll.runtime_pollWait(0xea9698428c00, 0x72)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/netpoll.go:351 +0xa0 fp=0x716bcadb3c20 sp=0x716bcadb3bf0 pc=0x48e2b0
+internal/poll.(*pollDesc).wait(0x716bceafc500?, 0x4d01f0?, 0x0)
+	/tmp/forgejo-merge011-test/toolchain/src/internal/poll/fd_poll_runtime.go:84 +0x28 fp=0x716bcadb3c60 sp=0x716bcadb3c20 pc=0x4d0d98
+internal/poll.(*pollDesc).waitRead(...)
+	/tmp/forgejo-merge011-test/toolchain/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Accept(0x716bceafc500)
+	/tmp/forgejo-merge011-test/toolchain/src/internal/poll/fd_unix.go:618 +0x210 fp=0x716bcadb3d10 sp=0x716bcadb3c60 pc=0x4d49b0
+net.(*netFD).accept(0x716bceafc500)
+	/tmp/forgejo-merge011-test/toolchain/src/net/fd_unix.go:149 +0x28 fp=0x716bcadb3dd0 sp=0x716bcadb3d10 pc=0x66bb38
+net.(*TCPListener).accept(0x716bceafeac0)
+	/tmp/forgejo-merge011-test/toolchain/src/net/tcpsock_posix.go:159 +0x24 fp=0x716bcadb3e20 sp=0x716bcadb3dd0 pc=0x682294
+net.(*TCPListener).Accept(0x716bceafeac0)
+	/tmp/forgejo-merge011-test/toolchain/src/net/tcpsock.go:387 +0x2c fp=0x716bcadb3e70 sp=0x716bcadb3e20 pc=0x6813cc
+net/http.(*Server).Serve(0x716bca326500, {0x68be738, 0x716bceafeac0})
+	/tmp/forgejo-merge011-test/toolchain/src/net/http/server.go:3574 +0x2a8 fp=0x716bcadb3fa0 sp=0x716bcadb3e70 pc=0xa1d288
+forgejo.org/tests/integration.onApplicationRun[...].gowrap1()
+	/tmp/forgejo-v17-base-cas-poc/tests/integration/git_helper_for_declarative_test.go:96 +0x24 fp=0x716bcadb3fd0 sp=0x716bcadb3fa0 pc=0x2de1394
+runtime.goexit({})
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:1039 +0x4 fp=0x716bcadb3fd0 sp=0x716bcadb3fd0 pc=0x496ec4
+created by forgejo.org/tests/integration.onApplicationRun[...] in goroutine 1899
+	/tmp/forgejo-v17-base-cas-poc/tests/integration/git_helper_for_declarative_test.go:96 +0x33c
+
+goroutine 1614 gp=0x716bcb1cc000 m=nil [select, 2 minutes]:
+runtime.gopark(0x716bcae6bee8?, 0x3?, 0x4?, 0x0?, 0x716bcae6be6e?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:474 +0xb8 fp=0x716bcae6bcc0 sp=0x716bcae6bca0 pc=0x48f0b8
+runtime.selectgo(0x716bcae6bee8, 0x716bcae6be68, 0x716bcae6be38?, 0x0, 0x716bccfa0248?, 0x1)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/select.go:351 +0x838 fp=0x716bcae6be00 sp=0x716bcae6bcc0 pc=0x4682c8
+github.com/syndtr/goleveldb/leveldb.(*DB).tCompaction(0x716bcceb1d40)
+	/home/pc6/go/pkg/mod/github.com/syndtr/goleveldb@v1.0.0/leveldb/db_compaction.go:825 +0x41c fp=0x716bcae6bfb0 sp=0x716bcae6be00 pc=0x8a183c
+github.com/syndtr/goleveldb/leveldb.openDB.gowrap3()
+	/home/pc6/go/pkg/mod/github.com/syndtr/goleveldb@v1.0.0/leveldb/db.go:149 +0x20 fp=0x716bcae6bfd0 sp=0x716bcae6bfb0 pc=0x8b4eb0
+runtime.goexit({})
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:1039 +0x4 fp=0x716bcae6bfd0 sp=0x716bcae6bfd0 pc=0x496ec4
+created by github.com/syndtr/goleveldb/leveldb.openDB in goroutine 1610
+	/home/pc6/go/pkg/mod/github.com/syndtr/goleveldb@v1.0.0/leveldb/db.go:149 +0x418
+
+goroutine 1611 gp=0x716bcb1cc3c0 m=nil [select]:
+runtime.gopark(0x716bccdbbf70?, 0x2?, 0x28?, 0xbe?, 0x716bccdbbf2c?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:474 +0xb8 fp=0x716bccdbbda0 sp=0x716bccdbbd80 pc=0x48f0b8
+runtime.selectgo(0x716bccdbbf70, 0x716bccdbbf28, 0x0?, 0x0, 0x0?, 0x1)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/select.go:351 +0x838 fp=0x716bccdbbee0 sp=0x716bccdbbda0 pc=0x4682c8
+github.com/syndtr/goleveldb/leveldb/util.(*BufferPool).drain(0x716bcb7542a0)
+	/home/pc6/go/pkg/mod/github.com/syndtr/goleveldb@v1.0.0/leveldb/util/buffer_pool.go:206 +0x98 fp=0x716bccdbbfb0 sp=0x716bccdbbee0 pc=0x8808a8
+github.com/syndtr/goleveldb/leveldb/util.NewBufferPool.gowrap1()
+	/home/pc6/go/pkg/mod/github.com/syndtr/goleveldb@v1.0.0/leveldb/util/buffer_pool.go:237 +0x20 fp=0x716bccdbbfd0 sp=0x716bccdbbfb0 pc=0x880dd0
+runtime.goexit({})
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:1039 +0x4 fp=0x716bccdbbfd0 sp=0x716bccdbbfd0 pc=0x496ec4
+created by github.com/syndtr/goleveldb/leveldb/util.NewBufferPool in goroutine 1610
+	/home/pc6/go/pkg/mod/github.com/syndtr/goleveldb@v1.0.0/leveldb/util/buffer_pool.go:237 +0x150
+
+goroutine 1184 gp=0x716bcb1cc5a0 m=nil [select, 2 minutes]:
+runtime.gopark(0x716bcd4c7f70?, 0x3?, 0x0?, 0x0?, 0x716bcd4c7dd2?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:474 +0xb8 fp=0x716bc9d71c20 sp=0x716bc9d71c00 pc=0x48f0b8
+runtime.selectgo(0x716bc9d71f70, 0x716bcd4c7dcc, 0x1?, 0x0, 0x1?, 0x1)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/select.go:351 +0x838 fp=0x716bc9d71d60 sp=0x716bc9d71c20 pc=0x4682c8
+github.com/blevesearch/bleve/v2/index/scorch.(*Scorch).persisterLoop(0x716bc9f48008)
+	/home/pc6/go/pkg/mod/github.com/blevesearch/bleve/v2@v2.6.1/index/scorch/persister.go:283 +0xa4c fp=0x716bc9d71fb0 sp=0x716bc9d71d60 pc=0x1a0b58c
+github.com/blevesearch/bleve/v2/index/scorch.(*Scorch).Open.gowrap3()
+	/home/pc6/go/pkg/mod/github.com/blevesearch/bleve/v2@v2.6.1/index/scorch/scorch.go:357 +0x20 fp=0x716bc9d71fd0 sp=0x716bc9d71fb0 pc=0x1a275a0
+runtime.goexit({})
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:1039 +0x4 fp=0x716bc9d71fd0 sp=0x716bc9d71fd0 pc=0x496ec4
+created by github.com/blevesearch/bleve/v2/index/scorch.(*Scorch).Open in goroutine 1634
+	/home/pc6/go/pkg/mod/github.com/blevesearch/bleve/v2@v2.6.1/index/scorch/scorch.go:357 +0x16c
+
+goroutine 1612 gp=0x716bcb1cc780 m=nil [select, 2 minutes]:
+runtime.gopark(0x716bcae6cf78?, 0x2?, 0x78?, 0xcd?, 0x716bcae6cec4?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:474 +0xb8 fp=0x716bcae6cd20 sp=0x716bcae6cd00 pc=0x48f0b8
+runtime.selectgo(0x716bcae6cf78, 0x716bcae6cec0, 0x716bcbb92af0?, 0x0, 0x0?, 0x1)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/select.go:351 +0x838 fp=0x716bcae6ce60 sp=0x716bcae6cd20 pc=0x4682c8
+github.com/syndtr/goleveldb/leveldb.(*DB).compactionError(0x716bcceb1d40)
+	/home/pc6/go/pkg/mod/github.com/syndtr/goleveldb@v1.0.0/leveldb/db_compaction.go:90 +0x74 fp=0x716bcae6cfb0 sp=0x716bcae6ce60 pc=0x89dff4
+github.com/syndtr/goleveldb/leveldb.openDB.gowrap1()
+	/home/pc6/go/pkg/mod/github.com/syndtr/goleveldb@v1.0.0/leveldb/db.go:142 +0x20 fp=0x716bcae6cfd0 sp=0x716bcae6cfb0 pc=0x8b4f30
+runtime.goexit({})
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:1039 +0x4 fp=0x716bcae6cfd0 sp=0x716bcae6cfd0 pc=0x496ec4
+created by github.com/syndtr/goleveldb/leveldb.openDB in goroutine 1610
+	/home/pc6/go/pkg/mod/github.com/syndtr/goleveldb@v1.0.0/leveldb/db.go:142 +0x364
+
+goroutine 4168 gp=0x716bcb1cc960 m=nil [IO wait, 2 minutes]:
+runtime.gopark(0x716bcf0a6bf8?, 0x4ad3f0?, 0x18?, 0x6c?, 0x490f30?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:474 +0xb8 fp=0x716bcf0a6b90 sp=0x716bcf0a6b70 pc=0x48f0b8
+runtime.netpollblock(0x716bcf0a6be8?, 0xb?, 0x0?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/netpoll.go:575 +0x150 fp=0x716bcf0a6bd0 sp=0x716bcf0a6b90 pc=0x44ebf0
+internal/poll.runtime_pollWait(0xea968876ba00, 0x72)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/netpoll.go:351 +0xa0 fp=0x716bcf0a6c00 sp=0x716bcf0a6bd0 pc=0x48e2b0
+internal/poll.(*pollDesc).wait(0x716bce9df200?, 0x716bcee90000?, 0x1)
+	/tmp/forgejo-merge011-test/toolchain/src/internal/poll/fd_poll_runtime.go:84 +0x28 fp=0x716bcf0a6c40 sp=0x716bcf0a6c00 pc=0x4d0d98
+internal/poll.(*pollDesc).waitRead(...)
+	/tmp/forgejo-merge011-test/toolchain/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Read(0x716bce9df200, {0x716bcee90000, 0x8000, 0x8000})
+	/tmp/forgejo-merge011-test/toolchain/src/internal/poll/fd_unix.go:170 +0x22c fp=0x716bcf0a6ce0 sp=0x716bcf0a6c40 pc=0x4d1d7c
+os.(*File).read(...)
+	/tmp/forgejo-merge011-test/toolchain/src/os/file_posix.go:30
+os.(*File).Read(0x716bce02fdc8, {0x716bcee90000?, 0x34?, 0x8000?})
+	/tmp/forgejo-merge011-test/toolchain/src/os/file.go:144 +0x68 fp=0x716bcf0a6d20 sp=0x716bcf0a6ce0 pc=0x4dc538
+os.fileWithoutWriteTo.Read({{}, 0x695c410?}, {0x716bcee90000?, 0x716bcf0a6dc8?, 0x4ac93c?})
+	<autogenerated>:1 +0x20 fp=0x716bcf0a6d50 sp=0x716bcf0a6d20 pc=0x4ebfe0
+io.copyBuffer({0x68a5740, 0x716bce9df020}, {0x68a42c0, 0x716bce02fdc8}, {0x0, 0x0, 0x0})
+	/tmp/forgejo-merge011-test/toolchain/src/io/io.go:429 +0x18c fp=0x716bcf0a6dd0 sp=0x716bcf0a6d50 pc=0x4c637c
+io.Copy(...)
+	/tmp/forgejo-merge011-test/toolchain/src/io/io.go:388
+os.genericWriteTo(0x716bce02fdc8?, {0x68a5740?, 0x716bce9df020?})
+	/tmp/forgejo-merge011-test/toolchain/src/os/file.go:295 +0x44 fp=0x716bcf0a6e20 sp=0x716bcf0a6dd0 pc=0x4dce14
+os.(*File).WriteTo(0x716bce02fdc8, {0x68a5740, 0x716bce9df020})
+	/tmp/forgejo-merge011-test/toolchain/src/os/file.go:273 +0x9c fp=0x716bcf0a6e60 sp=0x716bcf0a6e20 pc=0x4dcd4c
+io.copyBuffer({0x68a5740, 0x716bce9df020}, {0x68a4340, 0x716bce02fdc8}, {0x0, 0x0, 0x0})
+	/tmp/forgejo-merge011-test/toolchain/src/io/io.go:411 +0x98 fp=0x716bcf0a6ee0 sp=0x716bcf0a6e60 pc=0x4c6288
+io.Copy(...)
+	/tmp/forgejo-merge011-test/toolchain/src/io/io.go:388
+os/exec.(*Cmd).writerDescriptor.func1()
+	/tmp/forgejo-merge011-test/toolchain/src/os/exec/exec.go:613 +0x40 fp=0x716bcf0a6f40 sp=0x716bcf0a6ee0 pc=0x591b60
+os/exec.(*Cmd).Start.func2(0x716bd0d982d0?)
+	/tmp/forgejo-merge011-test/toolchain/src/os/exec/exec.go:768 +0x30 fp=0x716bcf0a6fb0 sp=0x716bcf0a6f40 pc=0x591c60
+os/exec.(*Cmd).Start.gowrap1()
+	/tmp/forgejo-merge011-test/toolchain/src/os/exec/exec.go:780 +0x24 fp=0x716bcf0a6fd0 sp=0x716bcf0a6fb0 pc=0x591c14
+runtime.goexit({})
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:1039 +0x4 fp=0x716bcf0a6fd0 sp=0x716bcf0a6fd0 pc=0x496ec4
+created by os/exec.(*Cmd).Start in goroutine 4166
+	/tmp/forgejo-merge011-test/toolchain/src/os/exec/exec.go:767 +0x6d8
+
+goroutine 173 gp=0x716bcb1cdc20 m=nil [select, 2 minutes]:
+runtime.gopark(0x716bced51f70?, 0x3?, 0x0?, 0x0?, 0x716bced51dd2?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:474 +0xb8 fp=0x716bcc185c20 sp=0x716bcc185c00 pc=0x48f0b8
+runtime.selectgo(0x716bcc185f70, 0x716bced51dcc, 0x49?, 0x0, 0x1?, 0x1)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/select.go:351 +0x838 fp=0x716bcc185d60 sp=0x716bcc185c20 pc=0x4682c8
+github.com/blevesearch/bleve/v2/index/scorch.(*Scorch).persisterLoop(0x716bcaf60608)
+	/home/pc6/go/pkg/mod/github.com/blevesearch/bleve/v2@v2.6.1/index/scorch/persister.go:283 +0xa4c fp=0x716bcc185fb0 sp=0x716bcc185d60 pc=0x1a0b58c
+github.com/blevesearch/bleve/v2/index/scorch.(*Scorch).Open.gowrap3()
+	/home/pc6/go/pkg/mod/github.com/blevesearch/bleve/v2@v2.6.1/index/scorch/scorch.go:357 +0x20 fp=0x716bcc185fd0 sp=0x716bcc185fb0 pc=0x1a275a0
+runtime.goexit({})
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:1039 +0x4 fp=0x716bcc185fd0 sp=0x716bcc185fd0 pc=0x496ec4
+created by github.com/blevesearch/bleve/v2/index/scorch.(*Scorch).Open in goroutine 1616
+	/home/pc6/go/pkg/mod/github.com/blevesearch/bleve/v2@v2.6.1/index/scorch/scorch.go:357 +0x16c
+
+goroutine 1652 gp=0x716bcb34b2c0 m=nil [IO wait, 2 minutes]:
+runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:474 +0xb8 fp=0x716bcb4e49a0 sp=0x716bcb4e4980 pc=0x48f0b8
+runtime.netpollblock(0x0?, 0x0?, 0x0?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/netpoll.go:575 +0x150 fp=0x716bcb4e49e0 sp=0x716bcb4e49a0 pc=0x44ebf0
+internal/poll.runtime_pollWait(0xea9698428e00, 0x72)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/netpoll.go:351 +0xa0 fp=0x716bcb4e4a10 sp=0x716bcb4e49e0 pc=0x48e2b0
+internal/poll.(*pollDesc).wait(0x716bcd11e600?, 0x1d0?, 0x0)
+	/tmp/forgejo-merge011-test/toolchain/src/internal/poll/fd_poll_runtime.go:84 +0x28 fp=0x716bcb4e4a50 sp=0x716bcb4e4a10 pc=0x4d0d98
+internal/poll.(*pollDesc).waitRead(...)
+	/tmp/forgejo-merge011-test/toolchain/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Accept(0x716bcd11e600)
+	/tmp/forgejo-merge011-test/toolchain/src/internal/poll/fd_unix.go:618 +0x210 fp=0x716bcb4e4b00 sp=0x716bcb4e4a50 pc=0x4d49b0
+net.(*netFD).accept(0x716bcd11e600)
+	/tmp/forgejo-merge011-test/toolchain/src/net/fd_unix.go:149 +0x28 fp=0x716bcb4e4bc0 sp=0x716bcb4e4b00 pc=0x66bb38
+net.(*TCPListener).accept(0x716bcb408b80)
+	/tmp/forgejo-merge011-test/toolchain/src/net/tcpsock_posix.go:159 +0x24 fp=0x716bcb4e4c10 sp=0x716bcb4e4bc0 pc=0x682294
+net.(*TCPListener).AcceptTCP(0x716bcb408b80)
+	/tmp/forgejo-merge011-test/toolchain/src/net/tcpsock.go:374 +0x2c fp=0x716bcb4e4c60 sp=0x716bcb4e4c10 pc=0x68129c
+forgejo.org/modules/graceful.(*wrappedListener).Accept(0x716bca0dcca0)
+	/tmp/forgejo-v17-base-cas-poc/modules/graceful/server.go:199 +0x4c fp=0x716bcb4e4cc0 sp=0x716bcb4e4c60 pc=0xd2dccc
+github.com/gliderlabs/ssh.(*Server).Serve(0x716bcd078360, {0x68bed68, 0x716bca0dcca0})
+	/home/pc6/go/pkg/mod/code.forgejo.org/forgejo/ssh@v0.0.0-20241211213324-5fc306ca0616/server.go:250 +0x12c fp=0x716bcb4e4d80 sp=0x716bcb4e4cc0 pc=0x253e83c
+github.com/gliderlabs/ssh.(*Server).Serve-fm({0x68bed68?, 0x716bca0dcca0?})
+	<autogenerated>:1 +0x34 fp=0x716bcb4e4db0 sp=0x716bcb4e4d80 pc=0x2547324
+forgejo.org/modules/graceful.(*Server).Serve(0x716bcb341b90, 0x716bcb4e4f40)
+	/tmp/forgejo-v17-base-cas-poc/modules/graceful/server.go:152 +0xc8 fp=0x716bcb4e4e60 sp=0x716bcb4e4db0 pc=0xd2d958
+forgejo.org/modules/graceful.(*Server).ListenAndServe(0x716bcb341b90, 0x716bcb4e4f40, 0x0)
+	/tmp/forgejo-v17-base-cas-poc/modules/graceful/server.go:94 +0x1fc fp=0x716bcb4e4ee0 sp=0x716bcb4e4e60 pc=0xd2d52c
+forgejo.org/modules/ssh.listen(0x716bcd078360)
+	/tmp/forgejo-v17-base-cas-poc/modules/ssh/ssh_graceful.go:19 +0x74 fp=0x716bcb4e4f60 sp=0x716bcb4e4ee0 pc=0x25463e4
+forgejo.org/modules/ssh.Listen.func3()
+	/tmp/forgejo-v17-base-cas-poc/modules/ssh/ssh.go:355 +0x88 fp=0x716bcb4e4fd0 sp=0x716bcb4e4f60 pc=0x2546ee8
+runtime.goexit({})
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:1039 +0x4 fp=0x716bcb4e4fd0 sp=0x716bcb4e4fd0 pc=0x496ec4
+created by forgejo.org/modules/ssh.Listen in goroutine 1
+	/tmp/forgejo-v17-base-cas-poc/modules/ssh/ssh.go:352 +0x824
+
+goroutine 263 gp=0x716bcb34b4a0 m=nil [select, 2 minutes]:
+runtime.gopark(0x716bc9d6cf20?, 0x2?, 0xc8?, 0xc6?, 0x716bc9d6cef4?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:474 +0xb8 fp=0x716bc9d6cd70 sp=0x716bc9d6cd50 pc=0x48f0b8
+runtime.selectgo(0x716bc9d6cf20, 0x716bc9d6cef0, 0x716bcbe6a580?, 0x0, 0x716bcae70738?, 0x1)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/select.go:351 +0x838 fp=0x716bc9d6ceb0 sp=0x716bc9d6cd70 pc=0x4682c8
+forgejo.org/modules/testlogger.(*TestLogEventWriter).Run(0x716bca2b5a50, {0x68c52d0, 0x716bca158f40})
+	/tmp/forgejo-v17-base-cas-poc/modules/testlogger/testlogger.go:545 +0xa8 fp=0x716bc9d6cf60 sp=0x716bc9d6ceb0 pc=0x2967818
+forgejo.org/modules/log.eventWriterStartGo.func1()
+	/tmp/forgejo-v17-base-cas-poc/modules/log/event_writer_base.go:174 +0x98 fp=0x716bc9d6cfd0 sp=0x716bc9d6cf60 pc=0x803b18
+runtime.goexit({})
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:1039 +0x4 fp=0x716bc9d6cfd0 sp=0x716bc9d6cfd0 pc=0x496ec4
+created by forgejo.org/modules/log.eventWriterStartGo in goroutine 1
+	/tmp/forgejo-v17-base-cas-poc/modules/log/event_writer_base.go:170 +0x18c
+
+goroutine 264 gp=0x716bcb34b680 m=nil [select, 2 minutes]:
+runtime.gopark(0x716bcadb4ea8?, 0x2?, 0xc0?, 0x25?, 0x716bcadb4da4?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:474 +0xb8 fp=0x716bcadb4b80 sp=0x716bcadb4b60 pc=0x48f0b8
+runtime.selectgo(0x716bcadb4ea8, 0x716bcadb4da0, 0x6f?, 0x0, 0x716bcae6fd48?, 0x1)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/select.go:351 +0x838 fp=0x716bcadb4cc0 sp=0x716bcadb4b80 pc=0x4682c8
+forgejo.org/modules/log.(*EventWriterBaseImpl).Run(0x716bc9e46780, {0x68c52d0, 0x716bca158fc0})
+	/tmp/forgejo-v17-base-cas-poc/modules/log/event_writer_base.go:91 +0x2cc fp=0x716bcadb4f60 sp=0x716bcadb4cc0 pc=0x7fe0bc
+forgejo.org/modules/log.eventWriterStartGo.func1()
+	/tmp/forgejo-v17-base-cas-poc/modules/log/event_writer_base.go:174 +0x98 fp=0x716bcadb4fd0 sp=0x716bcadb4f60 pc=0x803b18
+runtime.goexit({})
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:1039 +0x4 fp=0x716bcadb4fd0 sp=0x716bcadb4fd0 pc=0x496ec4
+created by forgejo.org/modules/log.eventWriterStartGo in goroutine 1
+	/tmp/forgejo-v17-base-cas-poc/modules/log/event_writer_base.go:170 +0x18c
+
+goroutine 267 gp=0x716bcb34ba40 m=nil [chan receive, 2 minutes]:
+runtime.gopark(0x716bcb316160?, 0x716bcb316070?, 0x60?, 0x61?, 0x83750de53af0?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:474 +0xb8 fp=0x716bcae6b650 sp=0x716bcae6b630 pc=0x48f0b8
+runtime.chanrecv(0x716bcb316070, 0x0, 0x1)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/chan.go:667 +0x470 fp=0x716bcae6b6d0 sp=0x716bcae6b650 pc=0x41bc90
+runtime.chanrecv1(0x716bc9e2ce70?, 0x0?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/chan.go:509 +0x14 fp=0x716bcae6b700 sp=0x716bcae6b6d0 pc=0x41b7e4
+code.forgejo.org/go-chi/cache.(*MemoryCacher).startGC(0x716bc9e2ce70)
+	/home/pc6/go/pkg/mod/code.forgejo.org/go-chi/cache@v1.0.1/memory.go:154 +0x140 fp=0x716bcae6b7b0 sp=0x716bcae6b700 pc=0xd207f0
+code.forgejo.org/go-chi/cache.(*MemoryCacher).StartAndGC.gowrap1()
+	/home/pc6/go/pkg/mod/code.forgejo.org/go-chi/cache@v1.0.1/memory.go:172 +0x20 fp=0x716bcae6b7d0 sp=0x716bcae6b7b0 pc=0xd21010
+runtime.goexit({})
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:1039 +0x4 fp=0x716bcae6b7d0 sp=0x716bcae6b7d0 pc=0x496ec4
+created by code.forgejo.org/go-chi/cache.(*MemoryCacher).StartAndGC in goroutine 1
+	/home/pc6/go/pkg/mod/code.forgejo.org/go-chi/cache@v1.0.1/memory.go:172 +0x90
+
+goroutine 272 gp=0x716bcb36c960 m=nil [select, 2 minutes]:
+runtime.gopark(0x716bc9d5ef78?, 0x2?, 0x0?, 0x0?, 0x716bc9d5ef74?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:474 +0xb8 fp=0x716bc9d5edf0 sp=0x716bc9d5edd0 pc=0x48f0b8
+runtime.selectgo(0x716bc9d5ef78, 0x716bc9d5ef70, 0x0?, 0x0, 0x0?, 0x1)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/select.go:351 +0x838 fp=0x716bc9d5ef30 sp=0x716bc9d5edf0 pc=0x4682c8
+database/sql.(*DB).connectionOpener(0x716bcb286270, {0x68c3e40, 0x716bca252190})
+	/tmp/forgejo-merge011-test/toolchain/src/database/sql/sql.go:1266 +0x84 fp=0x716bc9d5efa0 sp=0x716bc9d5ef30 pc=0x851644
+database/sql.OpenDB.gowrap1()
+	/tmp/forgejo-merge011-test/toolchain/src/database/sql/sql.go:846 +0x24 fp=0x716bc9d5efd0 sp=0x716bc9d5efa0 pc=0x85ad94
+runtime.goexit({})
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:1039 +0x4 fp=0x716bc9d5efd0 sp=0x716bc9d5efd0 pc=0x496ec4
+created by database/sql.OpenDB in goroutine 1
+	/tmp/forgejo-merge011-test/toolchain/src/database/sql/sql.go:846 +0x11c
+
+goroutine 1817 gp=0x716bcb36d680 m=nil [select]:
+runtime.gopark(0x716bcd8a1eb0?, 0x2?, 0xb8?, 0xfc?, 0x716bcd8a1e0c?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:474 +0xb8 fp=0x716bcd8a1c70 sp=0x716bcd8a1c50 pc=0x48f0b8
+runtime.selectgo(0x716bcd8a1eb0, 0x716bcd8a1e08, 0x716bcd8a1ed0?, 0x0, 0x53a876b8?, 0x1)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/select.go:351 +0x838 fp=0x716bcd8a1db0 sp=0x716bcd8a1c70 pc=0x4682c8
+forgejo.org/modules/web/routing.(*requestRecordsManager).startSlowQueryDetector.func1({0x68c3e08, 0x716bcb818de0})
+	/tmp/forgejo-v17-base-cas-poc/modules/web/routing/logger_manager.go:53 +0xe4 fp=0x716bcd8a1f40 sp=0x716bcd8a1db0 pc=0x1e21c84
+forgejo.org/modules/graceful.(*Manager).RunWithShutdownContext(0x716bcb7e5040, 0x716bcdbefa40)
+	/tmp/forgejo-v17-base-cas-poc/modules/graceful/manager.go:92 +0x9c fp=0x716bcd8a1fb0 sp=0x716bcd8a1f40 pc=0xd28e8c
+forgejo.org/modules/web/routing.(*requestRecordsManager).startSlowQueryDetector.gowrap1()
+	/tmp/forgejo-v17-base-cas-poc/modules/web/routing/logger_manager.go:43 +0x20 fp=0x716bcd8a1fd0 sp=0x716bcd8a1fb0 pc=0x1e21b80
+runtime.goexit({})
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:1039 +0x4 fp=0x716bcd8a1fd0 sp=0x716bcd8a1fd0 pc=0x496ec4
+created by forgejo.org/modules/web/routing.(*requestRecordsManager).startSlowQueryDetector in goroutine 1
+	/tmp/forgejo-v17-base-cas-poc/modules/web/routing/logger_manager.go:43 +0xe0
+
+goroutine 1183 gp=0x716bcba643c0 m=nil [select, 2 minutes]:
+runtime.gopark(0x716bcb4e9f20?, 0x5?, 0x0?, 0x0?, 0x716bcb4e9e7e?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:474 +0xb8 fp=0x716bcb4e9ce0 sp=0x716bcb4e9cc0 pc=0x48f0b8
+runtime.selectgo(0x716bcb4e9f20, 0x716bcb4e9e74, 0x1?, 0x0, 0x5fffa38?, 0x1)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/select.go:351 +0x838 fp=0x716bcb4e9e20 sp=0x716bcb4e9ce0 pc=0x4682c8
+github.com/blevesearch/bleve/v2/index/scorch.(*Scorch).introducerLoop(0x716bc9f48008)
+	/home/pc6/go/pkg/mod/github.com/blevesearch/bleve/v2@v2.6.1/index/scorch/introducer.go:69 +0x13c fp=0x716bcb4e9fb0 sp=0x716bcb4e9e20 pc=0x1a0327c
+github.com/blevesearch/bleve/v2/index/scorch.(*Scorch).Open.gowrap1()
+	/home/pc6/go/pkg/mod/github.com/blevesearch/bleve/v2@v2.6.1/index/scorch/scorch.go:348 +0x20 fp=0x716bcb4e9fd0 sp=0x716bcb4e9fb0 pc=0x1a27620
+runtime.goexit({})
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:1039 +0x4 fp=0x716bcb4e9fd0 sp=0x716bcb4e9fd0 pc=0x496ec4
+created by github.com/blevesearch/bleve/v2/index/scorch.(*Scorch).Open in goroutine 1634
+	/home/pc6/go/pkg/mod/github.com/blevesearch/bleve/v2@v2.6.1/index/scorch/scorch.go:348 +0x88
+
+goroutine 1896 gp=0x716bcba64780 m=nil [select]:
+runtime.gopark(0x716bcef01ee8?, 0x3?, 0x98?, 0x7d?, 0x716bcef01eba?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:474 +0xb8 fp=0x716bcef01d30 sp=0x716bcef01d10 pc=0x48f0b8
+runtime.selectgo(0x716bcef01ee8, 0x716bcef01eb4, 0x716bcea84fd0?, 0x0, 0x2?, 0x1)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/select.go:351 +0x838 fp=0x716bcef01e70 sp=0x716bcef01d30 pc=0x4682c8
+forgejo.org/modules/queue.(*WorkerPoolQueue[...]).doStartNewWorker.func1()
+	/tmp/forgejo-v17-base-cas-poc/modules/queue/workergroup.go:160 +0x18c fp=0x716bcef01fa0 sp=0x716bcef01e70 pc=0x1c75c8c
+sync.(*WaitGroup).Go.func1()
+	/tmp/forgejo-merge011-test/toolchain/src/sync/waitgroup.go:258 +0x48 fp=0x716bcef01fd0 sp=0x716bcef01fa0 pc=0x4a2058
+runtime.goexit({})
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:1039 +0x4 fp=0x716bcef01fd0 sp=0x716bcef01fd0 pc=0x496ec4
+created by sync.(*WaitGroup).Go in goroutine 1739
+	/tmp/forgejo-merge011-test/toolchain/src/sync/waitgroup.go:238 +0x78
+
+goroutine 4166 gp=0x716bcba6b2c0 m=8 mp=0x716bcb4d6008 [syscall, 2 minutes]:
+syscall.Syscall6(0x5f, 0x3, 0x1b, 0x716bced4da08, 0x4, 0x716bcbd81cb0, 0x0)
+	/tmp/forgejo-merge011-test/toolchain/src/syscall/syscall_linux.go:96 +0x2c fp=0x716bced4d970 sp=0x716bced4d910 pc=0x4af6fc
+internal/syscall/unix.Waitid(0x716bce91c020?, 0x716bced4da4e?, 0x716bced4db78?, 0x11d4168?, 0x18?)
+	/tmp/forgejo-merge011-test/toolchain/src/internal/syscall/unix/waitid_linux.go:18 +0x44 fp=0x716bced4d9d0 sp=0x716bced4d970 pc=0x4cfd34
+os.(*Process).pidfdWait.func1(...)
+	/tmp/forgejo-merge011-test/toolchain/src/os/pidfd_linux.go:108
+os.ignoringEINTR(...)
+	/tmp/forgejo-merge011-test/toolchain/src/os/file_posix.go:263
+os.(*Process).pidfdWait(0x716bce91c080)
+	/tmp/forgejo-merge011-test/toolchain/src/os/pidfd_linux.go:107 +0x154 fp=0x716bced4dae0 sp=0x716bced4d9d0 pc=0x4e1594
+os.(*Process).wait(0x716bcb59af00?)
+	/tmp/forgejo-merge011-test/toolchain/src/os/exec_unix.go:25 +0x24 fp=0x716bced4db00 sp=0x716bced4dae0 pc=0x4dbdd4
+os.(*Process).Wait(...)
+	/tmp/forgejo-merge011-test/toolchain/src/os/exec.go:347
+os/exec.(*Cmd).Wait(0x716bcb85c820)
+	/tmp/forgejo-merge011-test/toolchain/src/os/exec/exec.go:944 +0x34 fp=0x716bced4db80 sp=0x716bced4db00 pc=0x58f8f4
+forgejo.org/modules/git.(*Command).Run(0x716bca214ee0, 0x31?)
+	/tmp/forgejo-v17-base-cas-poc/modules/git/command.go:356 +0x5d8 fp=0x716bced4dde0 sp=0x716bced4db80 pc=0x11d4198
+forgejo.org/modules/git.catFileBatchCheck.func3()
+	/tmp/forgejo-v17-base-cas-poc/modules/git/batch_reader.go:66 +0x390 fp=0x716bced4dfd0 sp=0x716bced4dde0 pc=0x1219da0
+runtime.goexit({})
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:1039 +0x4 fp=0x716bced4dfd0 sp=0x716bced4dfd0 pc=0x496ec4
+created by forgejo.org/modules/git.catFileBatchCheck in goroutine 1899
+	/tmp/forgejo-v17-base-cas-poc/modules/git/batch_reader.go:62 +0x334
+
+goroutine 1755 gp=0x716bcba6b4a0 m=nil [select, 2 minutes]:
+runtime.gopark(0x716bcbea4780?, 0x2?, 0xb8?, 0x45?, 0x716bcbea470c?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:474 +0xb8 fp=0x716bcbea4570 sp=0x716bcbea4550 pc=0x48f0b8
+runtime.selectgo(0x716bcbea4780, 0x716bcbea4708, 0x716bcd1425b0?, 0x0, 0x716bcbea4778?, 0x1)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/select.go:351 +0x838 fp=0x716bcbea46b0 sp=0x716bcbea4570 pc=0x4682c8
+github.com/go-co-op/gocron/v2.(*executor).start(0x716bcb41e698)
+	/home/pc6/go/pkg/mod/github.com/go-co-op/gocron/v2@v2.22.0/executor.go:129 +0x198 fp=0x716bcbea47b0 sp=0x716bcbea46b0 pc=0x2722d58
+github.com/go-co-op/gocron/v2.(*scheduler).selectStart.gowrap1()
+	/home/pc6/go/pkg/mod/github.com/go-co-op/gocron/v2@v2.22.0/scheduler.go:706 +0x20 fp=0x716bcbea47d0 sp=0x716bcbea47b0 pc=0x272de90
+runtime.goexit({})
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:1039 +0x4 fp=0x716bcbea47d0 sp=0x716bcbea47d0 pc=0x496ec4
+created by github.com/go-co-op/gocron/v2.(*scheduler).selectStart in goroutine 1747
+	/home/pc6/go/pkg/mod/github.com/go-co-op/gocron/v2@v2.22.0/scheduler.go:706 +0x8c
+
+goroutine 1747 gp=0x716bcba6b860 m=nil [select, 2 minutes]:
+runtime.gopark(0x716bcd4c9c88?, 0xe?, 0x74?, 0xac?, 0x716bcd4c9bfc?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:474 +0xb8 fp=0x716bcd4c9870 sp=0x716bcd4c9850 pc=0x48f0b8
+runtime.selectgo(0x716bcd4c9c88, 0x716bcd4c9be0, 0x0?, 0x0, 0x0?, 0x1)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/select.go:351 +0x838 fp=0x716bcd4c99b0 sp=0x716bcd4c9870 pc=0x4682c8
+github.com/go-co-op/gocron/v2.NewScheduler.func1()
+	/home/pc6/go/pkg/mod/github.com/go-co-op/gocron/v2@v2.22.0/scheduler.go:232 +0x224 fp=0x716bcd4c9fd0 sp=0x716bcd4c99b0 pc=0x272d9b4
+runtime.goexit({})
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:1039 +0x4 fp=0x716bcd4c9fd0 sp=0x716bcd4c9fd0 pc=0x496ec4
+created by github.com/go-co-op/gocron/v2.NewScheduler in goroutine 1
+	/home/pc6/go/pkg/mod/github.com/go-co-op/gocron/v2@v2.22.0/scheduler.go:229 +0x438
+
+goroutine 172 gp=0x716bcba78d20 m=nil [select, 2 minutes]:
+runtime.gopark(0x716bcb4e7f20?, 0x5?, 0xd0?, 0xe5?, 0x716bcb4e7e7e?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:474 +0xb8 fp=0x716bcb4e7ce0 sp=0x716bcb4e7cc0 pc=0x48f0b8
+runtime.selectgo(0x716bcb4e7f20, 0x716bcb4e7e74, 0x1?, 0x0, 0x5fffa38?, 0x1)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/select.go:351 +0x838 fp=0x716bcb4e7e20 sp=0x716bcb4e7ce0 pc=0x4682c8
+github.com/blevesearch/bleve/v2/index/scorch.(*Scorch).introducerLoop(0x716bcaf60608)
+	/home/pc6/go/pkg/mod/github.com/blevesearch/bleve/v2@v2.6.1/index/scorch/introducer.go:69 +0x13c fp=0x716bcb4e7fb0 sp=0x716bcb4e7e20 pc=0x1a0327c
+github.com/blevesearch/bleve/v2/index/scorch.(*Scorch).Open.gowrap1()
+	/home/pc6/go/pkg/mod/github.com/blevesearch/bleve/v2@v2.6.1/index/scorch/scorch.go:348 +0x20 fp=0x716bcb4e7fd0 sp=0x716bcb4e7fb0 pc=0x1a27620
+runtime.goexit({})
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:1039 +0x4 fp=0x716bcb4e7fd0 sp=0x716bcb4e7fd0 pc=0x496ec4
+created by github.com/blevesearch/bleve/v2/index/scorch.(*Scorch).Open in goroutine 1616
+	/home/pc6/go/pkg/mod/github.com/blevesearch/bleve/v2@v2.6.1/index/scorch/scorch.go:348 +0x88
+
+goroutine 1613 gp=0x716bcbac3860 m=nil [select, 2 minutes]:
+runtime.gopark(0x716bcbb14f88?, 0x2?, 0x18?, 0x4e?, 0x716bcbb14f54?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:474 +0xb8 fp=0x716bcbb14dd0 sp=0x716bcbb14db0 pc=0x48f0b8
+runtime.selectgo(0x716bcbb14f88, 0x716bcbb14f50, 0x0?, 0x0, 0x716bc9e0a070?, 0x1)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/select.go:351 +0x838 fp=0x716bcbb14f10 sp=0x716bcbb14dd0 pc=0x4682c8
+github.com/syndtr/goleveldb/leveldb.(*DB).mpoolDrain(0x716bcceb1d40)
+	/home/pc6/go/pkg/mod/github.com/syndtr/goleveldb@v1.0.0/leveldb/db_state.go:101 +0x88 fp=0x716bcbb14fb0 sp=0x716bcbb14f10 pc=0x8a47b8
+github.com/syndtr/goleveldb/leveldb.openDB.gowrap2()
+	/home/pc6/go/pkg/mod/github.com/syndtr/goleveldb@v1.0.0/leveldb/db.go:143 +0x20 fp=0x716bcbb14fd0 sp=0x716bcbb14fb0 pc=0x8b4ef0
+runtime.goexit({})
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:1039 +0x4 fp=0x716bcbb14fd0 sp=0x716bcbb14fd0 pc=0x496ec4
+created by github.com/syndtr/goleveldb/leveldb.openDB in goroutine 1610
+	/home/pc6/go/pkg/mod/github.com/syndtr/goleveldb@v1.0.0/leveldb/db.go:143 +0x3ac
+
+goroutine 1646 gp=0x716bcbadc000 m=nil [select, 2 minutes]:
+runtime.gopark(0x716bc9d6be08?, 0x2?, 0x18?, 0x5c?, 0x716bc9d6bd7c?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:474 +0xb8 fp=0x716bc9d6bbe0 sp=0x716bc9d6bbc0 pc=0x48f0b8
+runtime.selectgo(0x716bc9d6be08, 0x716bc9d6bd78, 0x30d7ff6?, 0x0, 0x0?, 0x1)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/select.go:351 +0x838 fp=0x716bc9d6bd20 sp=0x716bc9d6bbe0 pc=0x4682c8
+forgejo.org/modules/eventsource.(*Manager).Run(0x716bcb5a6b58, {0x68c3e08, 0x716bcb818de0})
+	/tmp/forgejo-v17-base-cas-poc/modules/eventsource/manager_run.go:59 +0x25c fp=0x716bc9d6bf10 sp=0x716bc9d6bd20 pc=0x21d377c
+forgejo.org/modules/eventsource.(*Manager).Run-fm({0x68c3e08?, 0x716bcb818de0?})
+	<autogenerated>:1 +0x34 fp=0x716bc9d6bf40 sp=0x716bc9d6bf10 pc=0x21d43b4
+forgejo.org/modules/graceful.(*Manager).RunWithShutdownContext(0x716bcb7e5040, 0x716bcd0faf20)
+	/tmp/forgejo-v17-base-cas-poc/modules/graceful/manager.go:92 +0x9c fp=0x716bc9d6bfb0 sp=0x716bc9d6bf40 pc=0xd28e8c
+forgejo.org/modules/eventsource.(*Manager).Init.gowrap1()
+	/tmp/forgejo-v17-base-cas-poc/modules/eventsource/manager_run.go:26 +0x20 fp=0x716bc9d6bfd0 sp=0x716bc9d6bfb0 pc=0x21d4210
+runtime.goexit({})
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:1039 +0x4 fp=0x716bc9d6bfd0 sp=0x716bc9d6bfd0 pc=0x496ec4
+created by forgejo.org/modules/eventsource.(*Manager).Init in goroutine 1
+	/tmp/forgejo-v17-base-cas-poc/modules/eventsource/manager_run.go:26 +0xe4
+
+goroutine 1746 gp=0x716bcbadc5a0 m=nil [select, 2 minutes]:
+runtime.gopark(0x716bcadb6de8?, 0x5?, 0x28?, 0x6c?, 0x716bcadb6d56?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:474 +0xb8 fp=0x716bcadb6bb0 sp=0x716bcadb6b90 pc=0x48f0b8
+runtime.selectgo(0x716bcadb6de8, 0x716bcadb6d4c, 0x716bcd88b2a8?, 0x0, 0x716bcbb0fe70?, 0x1)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/select.go:351 +0x838 fp=0x716bcadb6cf0 sp=0x716bcadb6bb0 pc=0x4682c8
+forgejo.org/modules/queue.(*WorkerPoolQueue[...]).doRun(0x3560a60)
+	/tmp/forgejo-v17-base-cas-poc/modules/queue/workergroup.go:315 +0x290 fp=0x716bcadb6f00 sp=0x716bcadb6cf0 pc=0x17fbc20
+forgejo.org/modules/queue.(*WorkerPoolQueue[...]).Run(...)
+	/tmp/forgejo-v17-base-cas-poc/modules/queue/workerqueue.go:181
+forgejo.org/modules/queue.(*WorkerPoolQueue[...]).Run()
+	/tmp/forgejo-v17-base-cas-poc/modules/queue/workerqueue.go:180 +0x24 fp=0x716bcadb6f20 sp=0x716bcadb6f00 pc=0x17fd574
+forgejo.org/modules/graceful.(*Manager).RunWithCancel(0x716bcb7e5040, {0x68b5450, 0x716bcd05be00})
+	/tmp/forgejo-v17-base-cas-poc/modules/graceful/manager.go:75 +0xf4 fp=0x716bcadb6fa0 sp=0x716bcadb6f20 pc=0xd28d94
+forgejo.org/services/stats.Init.gowrap1()
+	/tmp/forgejo-v17-base-cas-poc/services/stats/stats.go:76 +0x24 fp=0x716bcadb6fd0 sp=0x716bcadb6fa0 pc=0x17f9db4
+runtime.goexit({})
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:1039 +0x4 fp=0x716bcadb6fd0 sp=0x716bcadb6fd0 pc=0x496ec4
+created by forgejo.org/services/stats.Init in goroutine 1
+	/tmp/forgejo-v17-base-cas-poc/services/stats/stats.go:76 +0x118
+
+goroutine 1741 gp=0x716bcbadcf00 m=nil [select]:
+runtime.gopark(0x716bced51e08?, 0x3?, 0x98?, 0x1c?, 0x716bced51dd2?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:474 +0xb8 fp=0x716bced51c50 sp=0x716bced51c30 pc=0x48f0b8
+runtime.selectgo(0x716bced51e08, 0x716bced51dcc, 0x716bcc186e18?, 0x0, 0x68f5250?, 0x1)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/select.go:351 +0x838 fp=0x716bced51d90 sp=0x716bced51c50 pc=0x4682c8
+forgejo.org/modules/queue.backoffRetErr[...]({0x68c52d0?, 0x716bcd07f060}, 0x10, 0x77359400?, 0x716bcb5d43f0, 0x716bced51ea8)
+	/tmp/forgejo-v17-base-cas-poc/modules/queue/backoff.go:43 +0x118 fp=0x716bced51e60 sp=0x716bced51d90 pc=0x17f8f48
+forgejo.org/modules/queue.(*baseLevelQueueCommonImpl).PopItem(0x10?, {0x68c52d0?, 0x716bcd07f060?})
+	/tmp/forgejo-v17-base-cas-poc/modules/queue/base_levelqueue_common.go:53 +0x54 fp=0x716bced51ec0 sp=0x716bced51e60 pc=0x17f5934
+forgejo.org/modules/queue.(*baseLevelQueueUnique).PopItem(0x716bcd06f110, {0x68c52d0, 0x716bcd07f060})
+	/tmp/forgejo-v17-base-cas-poc/modules/queue/base_levelqueue_unique.go:51 +0x9c fp=0x716bced51f20 sp=0x716bced51ec0 pc=0x17f5e7c
+forgejo.org/modules/queue.baseQueue.PopItem-fm({0x68c52d0?, 0x716bcd07f060?})
+	<autogenerated>:1 +0x38 fp=0x716bced51f50 sp=0x716bced51f20 pc=0x17f9488
+forgejo.org/modules/queue.popItemByChan.func1()
+	/tmp/forgejo-v17-base-cas-poc/modules/queue/base.go:27 +0x7c fp=0x716bced51fd0 sp=0x716bced51f50 pc=0x17f7a1c
+runtime.goexit({})
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:1039 +0x4 fp=0x716bced51fd0 sp=0x716bced51fd0 pc=0x496ec4
+created by forgejo.org/modules/queue.popItemByChan in goroutine 1739
+	/tmp/forgejo-v17-base-cas-poc/modules/queue/base.go:25 +0x134
+
+goroutine 175 gp=0x716bccefa1e0 m=nil [select, 2 minutes]:
+runtime.gopark(0x716bccdba788?, 0x2?, 0x38?, 0xa6?, 0x716bccdba77c?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:474 +0xb8 fp=0x716bccdba600 sp=0x716bccdba5e0 pc=0x48f0b8
+runtime.selectgo(0x716bccdba788, 0x716bccdba778, 0x716bcbb93960?, 0x0, 0x0?, 0x1)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/select.go:351 +0x838 fp=0x716bccdba740 sp=0x716bccdba600 pc=0x4682c8
+forgejo.org/modules/graceful.(*Server).awaitShutdown(0x716bcb341b90)
+	/tmp/forgejo-v17-base-cas-poc/modules/graceful/server_hooks.go:15 +0xa4 fp=0x716bccdba7b0 sp=0x716bccdba740 pc=0xd2e244
+forgejo.org/modules/graceful.(*Server).ListenAndServe.gowrap1()
+	/tmp/forgejo-v17-base-cas-poc/modules/graceful/server.go:72 +0x20 fp=0x716bccdba7d0 sp=0x716bccdba7b0 pc=0xd2ff70
+runtime.goexit({})
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:1039 +0x4 fp=0x716bccdba7d0 sp=0x716bccdba7d0 pc=0x496ec4
+created by forgejo.org/modules/graceful.(*Server).ListenAndServe in goroutine 1652
+	/tmp/forgejo-v17-base-cas-poc/modules/graceful/server.go:72 +0x6c
+
+goroutine 4167 gp=0x716bccefab40 m=nil [select, 2 minutes]:
+runtime.gopark(0x716bceb9dce8?, 0x2?, 0x70?, 0xa3?, 0x716bceb9dcbc?)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/proc.go:474 +0xb8 fp=0x716bceb9db40 sp=0x716bceb9db20 pc=0x48f0b8
+runtime.selectgo(0x716bceb9dce8, 0x716bceb9dcb8, 0x716bce9df1a0?, 0x0, 0x716bceb9dd08?, 0x1)
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/select.go:351 +0x838 fp=0x716bceb9dc80 sp=0x716bceb9db40 pc=0x4682c8
+io.(*pipe).read(0x716bce9defc0, {0x716bcee98000, 0x8000, 0x5f2fae0?})
+	/tmp/forgejo-merge011-test/toolchain/src/io/pipe.go:57 +0x80 fp=0x716bceb9dd10 sp=0x716bceb9dc80 pc=0x4c7ba0
+io.(*PipeReader).Read(0x695c410?, {0x716bcee98000?, 0x716bceb9dd98?, 0x42ff8c?})
+	/tmp/forgejo-merge011-test/toolchain/src/io/pipe.go:134 +0x24 fp=0x716bceb9dd40 sp=0x716bceb9dd10 pc=0x4c8124
+io.copyBuffer({0x68a42e0, 0x716bce02fdb8}, {0x68a5760, 0x716bce9defc0}, {0x0, 0x0, 0x0})
+	/tmp/forgejo-merge011-test/toolchain/src/io/io.go:429 +0x18c fp=0x716bceb9ddc0 sp=0x716bceb9dd40 pc=0x4c637c
+io.Copy(...)
+	/tmp/forgejo-merge011-test/toolchain/src/io/io.go:388
+os.genericReadFrom(0x716bce02fdb8?, {0x68a5760?, 0x716bce9defc0?})
+	/tmp/forgejo-merge011-test/toolchain/src/os/file.go:205 +0x44 fp=0x716bceb9de10 sp=0x716bceb9ddc0 pc=0x4dc8e4
+os.(*File).ReadFrom(0x716bce02fdb8, {0x68a5760, 0x716bce9defc0})
+	/tmp/forgejo-merge011-test/toolchain/src/os/file.go:181 +0x9c fp=0x716bceb9de50 sp=0x716bceb9de10 pc=0x4dc81c
+io.copyBuffer({0x68a4320, 0x716bce02fdb8}, {0x68a5760, 0x716bce9defc0}, {0x0, 0x0, 0x0})
+	/tmp/forgejo-merge011-test/toolchain/src/io/io.go:415 +0x14c fp=0x716bceb9ded0 sp=0x716bceb9de50 pc=0x4c633c
+io.Copy(...)
+	/tmp/forgejo-merge011-test/toolchain/src/io/io.go:388
+os/exec.(*Cmd).childStdin.func1()
+	/tmp/forgejo-merge011-test/toolchain/src/os/exec/exec.go:564 +0x3c fp=0x716bceb9df40 sp=0x716bceb9ded0 pc=0x5919cc
+os/exec.(*Cmd).Start.func2(0x3622288?)
+	/tmp/forgejo-merge011-test/toolchain/src/os/exec/exec.go:768 +0x30 fp=0x716bceb9dfb0 sp=0x716bceb9df40 pc=0x591c60
+os/exec.(*Cmd).Start.gowrap1()
+	/tmp/forgejo-merge011-test/toolchain/src/os/exec/exec.go:780 +0x24 fp=0x716bceb9dfd0 sp=0x716bceb9dfb0 pc=0x591c14
+runtime.goexit({})
+	/tmp/forgejo-merge011-test/toolchain/src/runtime/asm_arm64.s:1039 +0x4 fp=0x716bceb9dfd0 sp=0x716bceb9dfd0 pc=0x496ec4
+created by os/exec.(*Cmd).Start in goroutine 4166
+	/tmp/forgejo-merge011-test/toolchain/src/os/exec/exec.go:767 +0x6d8
+
+r0      0x6dd5318
+r1      0x80
+r2      0x0
+r3      0x0
+r4      0x0
+r5      0x0
+r6      0x0
+r7      0x0
+r8      0x62
+r9      0x0
+r10     0x0
+r11     0x0
+r12     0x0
+r13     0x0
+r14     0x0
+r15     0x0
+r16     0xffffcf4203a0
+r17     0x0
+r18     0x28a7f138
+r19     0x0
+r20     0xffffcfc1e8d0
+r21     0x6dd51c0
+r22     0x1
+r23     0x0
+r24     0x0
+r25     0x6a21600
+r26     0x68f4de0
+r27     0x6940000
+r28     0x6dd3620
+r29     0xffffcfc1e8a8
+lr      0x44f968
+sp      0xffffcfc1e8b0
+pc      0x497f3c
+fault   0x0
+FAIL	forgejo.org/tests/integration	133.520s
+FAIL
