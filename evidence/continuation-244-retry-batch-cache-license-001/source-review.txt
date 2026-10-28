@@ -1,0 +1,7 @@
+# Revue de source — CONTINUATION-244
+
+- `tests/webhook_receiver_process_e2e.rs::actual_reconcile_cli_process_shares_recovered_issue_read_across_batch_deliveries` exerce deux livraisons signées distinctes pour la même issue au travers du receiver et du processus CLI. Le contrôleur HTTP loopback impose 429 puis 200; les assertions établissent deux lectures totales, deux résultats courants, journal immuable, route bornée, absence de credential d’API et non-divulgation du corps hostile.
+- `scripts/run_webhook_reconcile_cli_e2e.py` ajoute seulement le nom du test à l’allowlist fixe. Le runner compile hors réseau et exécute le test sous namespaces réseau/PID isolés.
+- `src/bin/forgejo-reconcile-local.rs` et `src/webhook/reconcile.rs` fournissent le runtime exercé et n’ont pas été modifiés dans ce lot. Le test vérifie le partage du succès final après retry; il ne généralise pas à toutes les ressources ou mutations concurrentes.
+- `Cargo.toml` était déjà modifié dans le worktree à l’entrée de ce lot. Il garde `publish = false`, omet `license` et `license-file`, et porte des métadonnées explicites de revue. Le readback JSON et le garde refusent une valeur de licence, un fichier, la publication active, une assertion SPDX ou une omission des métadonnées de revue.
+- Les neuf tests Python valident les états positifs et négatifs de la politique de métadonnées; ils n’évaluent ni la propriété du code ni les droits juridiques. Pas de décision de licence.

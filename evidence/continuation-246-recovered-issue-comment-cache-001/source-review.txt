@@ -1,0 +1,7 @@
+Source review
+- Receiver and journal: tests/webhook_receiver_process_e2e.rs; actual `forgejo-webhook-local` process receives both signed deliveries, writes sequence 1/2, and is stopped before the actual `forgejo-reconcile-local` process reads the durable journal.
+- Adapter/reconciliation: src/bin/forgejo-reconcile-local.rs and src/webhook/reconcile.rs. The test proves issue-parent cache reuse across `issues` and `issue_comment`, with a separate comment GET after an in-budget `429 Retry-After: 0`.
+- Isolation: scripts/run_webhook_reconcile_cli_e2e.py builds/runs in Bubblewrap without network/PID namespace sharing; API is an explicitly scripted loopback fixture on the allowlisted local endpoint, not Forgejo live.
+- Trust: webhook comment body is not projected; the API comment body is labelled `untrusted_user_content`. No authorization header is sent by the anonymous fixture run.
+- Product delta: test function plus one fixed runner allowlist entry; no runtime code or Cargo metadata change.
+- Licence status verified separately from runtime: Cargo fields stay unset/disabled; guard exposes no legal conclusion or redistribution right.

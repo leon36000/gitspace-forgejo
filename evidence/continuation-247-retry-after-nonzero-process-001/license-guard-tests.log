@@ -1,0 +1,2 @@
+Command: python3 -m unittest -v scripts.test_cargo_license_state
+Ran 12 tests; all passed.

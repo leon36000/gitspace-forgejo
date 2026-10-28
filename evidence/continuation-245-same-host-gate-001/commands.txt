@@ -1,0 +1,5 @@
+Successful composed run: successful-composition.command.txt (exact argv emitted by the runner wrapper).
+The command used systemd-run --user --scope, Bubblewrap --unshare-net, --same-host-gate-barrier, and --reuse-attested-parent-scope; its result is captured in successful-composition.log and successful-composition.exit.
+First refusal: preflight-refusal-001.command.txt; no mission stage/state dir was started. The rejected evidence-directory name is preserved with its log and exit file.
+Post-run source-snapshot audit: 114/114 source hashes and sizes match source-manifest.json; composition_source_sha256 matches all current recorded paths.
+Post-documentation verification: cargo fmt --all -- --check and git diff --check both exit 0; documentation-whitespace.log checks the new report/checkpoint/matrix and exits 0.

@@ -1,0 +1,7 @@
+Reviewed test code: tests/webhook_receiver_process_e2e.rs, including the actual receiver + CLI scenario, signed synthetic issue delivery, 429 Retry-After 1 fixture response, 200 current-state response, the specialized fixture helper that measures from completion of the 429 response write to acceptance of the retry connection, exact request count/path, absence of Authorization and response-marker leakage, and byte-identical journal check.
+
+Reviewed runner: scripts/run_webhook_reconcile_cli_e2e.py; it compiles the selected test target offline and runs the selected ignored process test under Bubblewrap with network and PID namespaces unshared.
+
+Reviewed merge identity context (read-only source review only): scripts/run_mission_012_live_agent_pr_e2e.py:61 configures the local gate token with read:user, write:repository, write:issue; src/bin/forgejo-reconcile-local.rs:1409 has a client-side route/method/body allowlist for the merge gate. This lot does not prove a Forgejo-side merge-only permission or all writers fenced.
+
+No AgentOS, Forge Code, production LLM, or external model call is part of this scenario. The deterministic HTTP fixture is labeled as a fixture, not Forgejo behavior.

@@ -1,0 +1,7 @@
+cargo 1.95.0 (f2d3ce0bd 2026-03-21)
+rustc 1.95.0 (59807616e 2026-04-14), host aarch64-unknown-linux-gnu, LLVM 22.1.2
+Python 3.12.3
+Bubblewrap 0.9.0
+systemd 255 (255.4-1ubuntu8.18)
+Forgejo 17.0.0+gitea-1.22.0 (release name 17.0.0); SHA-256 e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7; build commit unknown
+Forgejo binary digest readback: e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7

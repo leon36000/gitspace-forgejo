@@ -1,0 +1,14 @@
+{
+  "local": {
+    "count": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "project": {
+    "count": 8171,
+    "sha256": "79fe7f2610be8ea0469b83b1d06ab4f6a030a44cbbed9e75cf00a32dab0a49f6"
+  },
+  "worktree": {
+    "count": 13832,
+    "sha256": "5d97010d5815805f9ebb6dcd9182c418ae758faf2475653df6b9d856a57137bb"
+  }
+}

@@ -1,0 +1,6 @@
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_shares_recovered_parent_issue_read_with_comment_batch
+cargo fmt --all -- --check
+python3 scripts/verify_cargo_license_state.py
+python3 scripts/test_cargo_license_state.py
+git diff --check
+python3 AST parse of scripts/run_webhook_reconcile_cli_e2e.py (no bytecode output)

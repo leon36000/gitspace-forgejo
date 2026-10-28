@@ -1,0 +1,18 @@
+Worktree HEAD before the lot: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+
+Final timed run 001 (exit 0; full output in final-run-001.log):
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_waits_for_nonzero_in_budget_retry_after
+
+Final timed run 002 (exit 0; full output in test.log):
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_waits_for_nonzero_in_budget_retry_after
+
+A less precise preliminary timing probe is kept in initial-timing-probe-before-refinement.log and is not counted as final proof.
+
+Checks (all exit 0):
+cargo fmt --all -- --check
+git diff --check
+python3 -m py_compile scripts/run_webhook_reconcile_cli_e2e.py
+python3 scripts/verify_cargo_license_state.py
+python3 -m unittest -v scripts.test_cargo_license_state
+
+No full Rust test suite was run in this lot.
