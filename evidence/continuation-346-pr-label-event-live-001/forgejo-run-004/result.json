@@ -1,0 +1,1343 @@
+{
+  "forgejo": {
+    "binary_sha256": "e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7",
+    "listener": "127.0.0.1:3130",
+    "test_only_webhook_allowlist": "127.0.0.1",
+    "version": "forgejo version 17.0.0+gitea-1.22.0 (release name 17.0.0) built with GNU Make 4.4.1, go1.26.9 : bindata, timetzdata, sqlite, sqlite_unlock_notify"
+  },
+  "invalid_credential": {
+    "credential_material_recorded": false,
+    "exit_status": 1,
+    "result": {
+      "api_version": "forgejo-rest-v1",
+      "delivery_id": "7212b6c2-848c-4dff-ba7e-07d099135161",
+      "error": {
+        "action": "verify the host-scoped Forgejo API credential is present, current, and accepted for the configured repository; keep its value outside agent input",
+        "code": "upstream_unauthorized",
+        "details": {
+          "journal_source_hash": "c9fa30f2f60a94e1c21ec37178404f6cbbd6f8bad5a48a68a9ed5f2210a25ba3",
+          "journal_source_sequence": 1,
+          "resource": {
+            "kind": "issue",
+            "number": 1,
+            "owner": "forge-admin",
+            "repository": "agent-forge-core"
+          },
+          "upstream": "forgejo"
+        },
+        "retryable": false
+      },
+      "journal_source": {
+        "event_sha256": "c9fa30f2f60a94e1c21ec37178404f6cbbd6f8bad5a48a68a9ed5f2210a25ba3",
+        "receiver_attestation": {
+          "algorithm": "ed25519",
+          "key_id_sha256": "27ad8d6bef5640158830f9023d206a0a459d6c9493f11ca9c737a409667f44cb",
+          "signature_included": false,
+          "status": "verified",
+          "verification_scope": "receiver_signature_only"
+        },
+        "sequence": 1
+      },
+      "schema_version": 16,
+      "source_event_provenance_contract": {
+        "batch_error_source_observation": "selected_event_sources binds selected delivery IDs to journal rows for structured batch refusals after source selection, including host credential-pipe read failures, when per-delivery results are omitted",
+        "current_state_read_means": "canonical_api_read_only",
+        "journal_hash_chain_authenticates_local_writer": false,
+        "journal_replay_contract": "validates_hash_chain_and_envelope; optional_receiver_attestation_requires_external_trust_policy",
+        "per_delivery_attestation_observation": "journal_source.receiver_attestation.status reports only receiver signature verification under the supplied external key policy",
+        "per_delivery_ingestion_attestation_persisted": "optional_ed25519_receiver_signature",
+        "per_delivery_journal_identity": [
+          "journal_source.sequence",
+          "journal_source.event_sha256"
+        ],
+        "raw_signature_persisted": false,
+        "receiver_attestation_verification": "requires_external_trusted_key_policy; required_before_credential_for_in_scope_delivery",
+        "receiver_hmac_check": "performed_before_append_by_current_ingest_path",
+        "replay_hmac_verification": "not_performed",
+        "signature_verification_does_not_establish": [
+          "upstream_truth",
+          "software_correctness",
+          "local_writer_authenticity"
+        ],
+        "source_authenticity_claim_for_selected_delivery": "not_made",
+        "trusted_boundary": "local_filesystem_writer"
+      },
+      "upstream_read_attempts": 1,
+      "verdict": "inconclusive"
+    }
+  },
+  "issue": {
+    "edited_event_reconciliations": [
+      {
+        "api_version": "forgejo-rest-v1",
+        "canonical_state": {
+          "base_sha": null,
+          "comment": null,
+          "draft": null,
+          "head_sha": null,
+          "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/issues/1",
+          "labels": {
+            "freshness": "current_api_read",
+            "items": [],
+            "source": "current_forgejo_resource_api",
+            "trust": "untrusted_user_content"
+          },
+          "merge_commit_sha": null,
+          "merged": null,
+          "parent_workflow_run": null,
+          "requested_reviewers": null,
+          "requested_reviewers_teams": null,
+          "state": "closed",
+          "updated_at": "2026-10-28T02:53:44-04:00",
+          "work_item_content": {
+            "body": "Editing a closed issue emits a notification; reconcile from Forgejo's current API state.",
+            "source": "current_forgejo_issue_api",
+            "title": "Forgejo-emitted reconciliation (edited)",
+            "trust": "untrusted_user_content"
+          }
+        },
+        "delivery_id": "b540dd12-18ff-45eb-a702-eb6b8a5330ab",
+        "journal_source": {
+          "event_sha256": "86545d61601fd965057d1bc06d69a2edd8dde9b8a3bb7fd14d67485d38d63125",
+          "receiver_attestation": {
+            "algorithm": "ed25519",
+            "key_id_sha256": "27ad8d6bef5640158830f9023d206a0a459d6c9493f11ca9c737a409667f44cb",
+            "signature_included": false,
+            "status": "verified",
+            "verification_scope": "receiver_signature_only"
+          },
+          "sequence": 3
+        },
+        "resource": {
+          "kind": "issue",
+          "number": 1,
+          "owner": "forge-admin",
+          "repository": "agent-forge-core"
+        },
+        "schema_version": 16,
+        "source_event_provenance_contract": {
+          "batch_error_source_observation": "selected_event_sources binds selected delivery IDs to journal rows for structured batch refusals after source selection, including host credential-pipe read failures, when per-delivery results are omitted",
+          "current_state_read_means": "canonical_api_read_only",
+          "journal_hash_chain_authenticates_local_writer": false,
+          "journal_replay_contract": "validates_hash_chain_and_envelope; optional_receiver_attestation_requires_external_trust_policy",
+          "per_delivery_attestation_observation": "journal_source.receiver_attestation.status reports only receiver signature verification under the supplied external key policy",
+          "per_delivery_ingestion_attestation_persisted": "optional_ed25519_receiver_signature",
+          "per_delivery_journal_identity": [
+            "journal_source.sequence",
+            "journal_source.event_sha256"
+          ],
+          "raw_signature_persisted": false,
+          "receiver_attestation_verification": "requires_external_trusted_key_policy; required_before_credential_for_in_scope_delivery",
+          "receiver_hmac_check": "performed_before_append_by_current_ingest_path",
+          "replay_hmac_verification": "not_performed",
+          "signature_verification_does_not_establish": [
+            "upstream_truth",
+            "software_correctness",
+            "local_writer_authenticity"
+          ],
+          "source_authenticity_claim_for_selected_delivery": "not_made",
+          "trusted_boundary": "local_filesystem_writer"
+        },
+        "upstream_read_attempts": 1,
+        "verdict": "current_state_read"
+      },
+      {
+        "api_version": "forgejo-rest-v1",
+        "canonical_state": {
+          "base_sha": null,
+          "comment": null,
+          "draft": null,
+          "head_sha": null,
+          "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/issues/1",
+          "labels": {
+            "freshness": "current_api_read",
+            "items": [],
+            "source": "current_forgejo_resource_api",
+            "trust": "untrusted_user_content"
+          },
+          "merge_commit_sha": null,
+          "merged": null,
+          "parent_workflow_run": null,
+          "requested_reviewers": null,
+          "requested_reviewers_teams": null,
+          "state": "closed",
+          "updated_at": "2026-10-28T02:53:44-04:00",
+          "work_item_content": {
+            "body": "Editing a closed issue emits a notification; reconcile from Forgejo's current API state.",
+            "source": "current_forgejo_issue_api",
+            "title": "Forgejo-emitted reconciliation (edited)",
+            "trust": "untrusted_user_content"
+          }
+        },
+        "delivery_id": "eb23fb29-f135-4c48-922b-b060df527f10",
+        "journal_source": {
+          "event_sha256": "fb75325f51980d583acb5a3e2eb21468330d8bd68bd3ccd78df07e7374ce4a9c",
+          "receiver_attestation": {
+            "algorithm": "ed25519",
+            "key_id_sha256": "27ad8d6bef5640158830f9023d206a0a459d6c9493f11ca9c737a409667f44cb",
+            "signature_included": false,
+            "status": "verified",
+            "verification_scope": "receiver_signature_only"
+          },
+          "sequence": 4
+        },
+        "resource": {
+          "kind": "issue",
+          "number": 1,
+          "owner": "forge-admin",
+          "repository": "agent-forge-core"
+        },
+        "schema_version": 16,
+        "source_event_provenance_contract": {
+          "batch_error_source_observation": "selected_event_sources binds selected delivery IDs to journal rows for structured batch refusals after source selection, including host credential-pipe read failures, when per-delivery results are omitted",
+          "current_state_read_means": "canonical_api_read_only",
+          "journal_hash_chain_authenticates_local_writer": false,
+          "journal_replay_contract": "validates_hash_chain_and_envelope; optional_receiver_attestation_requires_external_trust_policy",
+          "per_delivery_attestation_observation": "journal_source.receiver_attestation.status reports only receiver signature verification under the supplied external key policy",
+          "per_delivery_ingestion_attestation_persisted": "optional_ed25519_receiver_signature",
+          "per_delivery_journal_identity": [
+            "journal_source.sequence",
+            "journal_source.event_sha256"
+          ],
+          "raw_signature_persisted": false,
+          "receiver_attestation_verification": "requires_external_trusted_key_policy; required_before_credential_for_in_scope_delivery",
+          "receiver_hmac_check": "performed_before_append_by_current_ingest_path",
+          "replay_hmac_verification": "not_performed",
+          "signature_verification_does_not_establish": [
+            "upstream_truth",
+            "software_correctness",
+            "local_writer_authenticity"
+          ],
+          "source_authenticity_claim_for_selected_delivery": "not_made",
+          "trusted_boundary": "local_filesystem_writer"
+        },
+        "upstream_read_attempts": 1,
+        "verdict": "current_state_read"
+      }
+    ],
+    "edited_events": [
+      {
+        "action": "edited",
+        "delivery_id": "b540dd12-18ff-45eb-a702-eb6b8a5330ab",
+        "event": "issues",
+        "issue_number": 1,
+        "payload_state": "closed",
+        "sequence": 3
+      },
+      {
+        "action": "edited",
+        "delivery_id": "eb23fb29-f135-4c48-922b-b060df527f10",
+        "event": "issues",
+        "issue_number": 1,
+        "payload_state": "closed",
+        "sequence": 4
+      }
+    ],
+    "number": 1,
+    "old_open_event_payload_state": "open",
+    "ordinary_comment_actions_requested": [
+      "created"
+    ],
+    "ordinary_comment_delete_readback": null,
+    "ordinary_comment_event": null,
+    "ordinary_comment_events": [],
+    "ordinary_comment_id": null,
+    "ordinary_comment_reconcile_exit_statuses": [],
+    "ordinary_comment_reconciliation": null,
+    "ordinary_comment_reconciliations": [],
+    "ordinary_comment_requested": false,
+    "reconciled_current_state": "closed",
+    "state_after_run": "closed"
+  },
+  "limitations": [
+    "The webhook allowlist is loopback-only and belongs to this disposable local instance.",
+    "Forgejo, receiver and CLI run as the current host user; hostile candidate code is not executed.",
+    "No LLM, AgentOS, RAG or memory service was used; no comparative productivity or cost result is measured."
+  ],
+  "process_cleanup": {
+    "cleanup_failure": null,
+    "expected_tcp_listeners_absent": true,
+    "forgejo": {
+      "expected_address": "127.0.0.1:3130",
+      "listener_addresses_after_stop": [],
+      "listener_checked": true,
+      "stop": {
+        "returncode": 0,
+        "started": true,
+        "stop_action": "terminate",
+        "stopped": true
+      }
+    },
+    "hook_disabled_before_server_stop": true,
+    "receiver": {
+      "expected_address": "127.0.0.1:36401",
+      "listener_addresses_after_stop": [],
+      "listener_checked": true,
+      "stop": {
+        "returncode": 0,
+        "started": true,
+        "stop_action": "terminate",
+        "stopped": true
+      },
+      "stops": [
+        {
+          "listener_addresses_after_stop": [],
+          "listener_checked": true,
+          "phase": "sigkill_before_duplicate_redelivery",
+          "stop": {
+            "returncode": -9,
+            "started": true,
+            "stop_action": "sigkill",
+            "stop_signal": "SIGKILL",
+            "stopped": true
+          }
+        },
+        {
+          "listener_addresses_after_stop": [],
+          "listener_checked": true,
+          "phase": "final_cleanup",
+          "stop": {
+            "returncode": 0,
+            "started": true,
+            "stop_action": "terminate",
+            "stopped": true
+          }
+        }
+      ]
+    },
+    "tracked_processes_exited": true
+  },
+  "pull_request": {
+    "approved_review_commit_id": null,
+    "approved_review_delivery_id": null,
+    "approved_review_http_status": null,
+    "approved_review_requested": false,
+    "approved_review_state": null,
+    "approved_review_type": null,
+    "base_repository_full_name": "forge-admin/agent-forge-core",
+    "base_sha": "a0b51c845c3980c7dd55c248323dc2e6df5593ac",
+    "batch_reconciliation": false,
+    "closed_event_merge_commit_sha": null,
+    "closed_event_payload_merged": false,
+    "closed_event_payload_state": "closed",
+    "conversation_comment_action": "created",
+    "conversation_comment_created_delivery_id": null,
+    "conversation_comment_delete_api_readback": null,
+    "conversation_comment_delivery_id": "b8b7e9e0-d89b-49c9-bf30-8b05e2b4ab43",
+    "conversation_comment_id": 4,
+    "conversation_comment_live_api_readback": {
+      "body": "Local Forgejo webhook adapter reconciliation fixture comment.",
+      "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/2#issuecomment-4",
+      "id": 4,
+      "pull_request_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/2",
+      "updated_at": "2026-10-28T02:53:46-04:00"
+    },
+    "conversation_comment_parent_visibility_after_reader_revocation": null,
+    "conversation_comment_payload_state": "open",
+    "conversation_comment_stale_created_exit_status": null,
+    "conversation_comment_stale_created_reconciliation": null,
+    "from_fork": false,
+    "head_repository_full_name": "forge-admin/agent-forge-core",
+    "head_sha": "4d711b786ceb499c6a9d1fae013694c89a0bae8d",
+    "inline_review_comment_commit_id": null,
+    "inline_review_comment_delivery_id": null,
+    "inline_review_comment_requested": false,
+    "inline_review_comment_type": null,
+    "label_add_http_status": 200,
+    "label_change_requested": true,
+    "label_clear_http_status": 204,
+    "label_create_http_status": 201,
+    "label_events": [
+      {
+        "action": "label_updated",
+        "api_labels_after_transition": [
+          {
+            "id": 1,
+            "name": "agent-forge-e2e-live-label"
+          }
+        ],
+        "delivery_id": "01f9666b-3bf8-4945-bc35-bc870ba8a92b",
+        "payload_labels": [
+          {
+            "id": 1,
+            "name": "agent-forge-e2e-live-label"
+          }
+        ],
+        "sequence": 7
+      },
+      {
+        "action": "label_cleared",
+        "api_labels_after_transition": [],
+        "delivery_id": "6de07dbe-dd42-40da-a98e-092a34ef25fb",
+        "payload_labels": [
+          {
+            "id": 1,
+            "name": "agent-forge-e2e-live-label"
+          }
+        ],
+        "sequence": 8
+      }
+    ],
+    "label_id": 1,
+    "label_name": "agent-forge-e2e-live-label",
+    "merge_commit_sha": null,
+    "merged_after_run": false,
+    "number": 2,
+    "opened_event_payload_state": "open",
+    "opened_head_sha": "4d711b786ceb499c6a9d1fae013694c89a0bae8d",
+    "pre_reopen_closed_action": null,
+    "pre_reopen_closed_delivery_id": null,
+    "reconciled_current_state": "closed",
+    "rejected_review_delivery_id": null,
+    "rejected_review_type": null,
+    "reopen_scenario": false,
+    "reopened_action": null,
+    "reopened_delivery_id": null,
+    "reopened_payload_state": null,
+    "requested_changes_review": false,
+    "requested_reviewers_after_removal_readback": null,
+    "requested_reviewers_readback": null,
+    "review_author": null,
+    "review_request_delivery_id": null,
+    "review_request_http_status": null,
+    "review_request_removal_http_status": null,
+    "review_request_removed": false,
+    "review_request_removed_action": null,
+    "review_request_removed_delivery_id": null,
+    "review_request_requested": false,
+    "review_request_reviewer_id": null,
+    "review_request_reviewer_login": null,
+    "state_after_run": "closed",
+    "synchronized": false,
+    "synchronized_event_action": null,
+    "synchronized_event_delivery_id": null,
+    "synchronized_event_head_sha": null,
+    "synchronized_head_sha": null,
+    "title_after_run": "Exercise emitted pull-request webhooks",
+    "title_edit_changed_from": null,
+    "title_edit_delivery_id": null,
+    "title_edit_http_status": null,
+    "title_edit_payload_title": null,
+    "title_edit_requested": false
+  },
+  "reconciliation": {
+    "batch_network_observation": null,
+    "edited_closed_events": [
+      {
+        "api_version": "forgejo-rest-v1",
+        "canonical_state": {
+          "base_sha": null,
+          "comment": null,
+          "draft": null,
+          "head_sha": null,
+          "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/issues/1",
+          "labels": {
+            "freshness": "current_api_read",
+            "items": [],
+            "source": "current_forgejo_resource_api",
+            "trust": "untrusted_user_content"
+          },
+          "merge_commit_sha": null,
+          "merged": null,
+          "parent_workflow_run": null,
+          "requested_reviewers": null,
+          "requested_reviewers_teams": null,
+          "state": "closed",
+          "updated_at": "2026-10-28T02:53:44-04:00",
+          "work_item_content": {
+            "body": "Editing a closed issue emits a notification; reconcile from Forgejo's current API state.",
+            "source": "current_forgejo_issue_api",
+            "title": "Forgejo-emitted reconciliation (edited)",
+            "trust": "untrusted_user_content"
+          }
+        },
+        "delivery_id": "b540dd12-18ff-45eb-a702-eb6b8a5330ab",
+        "journal_source": {
+          "event_sha256": "86545d61601fd965057d1bc06d69a2edd8dde9b8a3bb7fd14d67485d38d63125",
+          "receiver_attestation": {
+            "algorithm": "ed25519",
+            "key_id_sha256": "27ad8d6bef5640158830f9023d206a0a459d6c9493f11ca9c737a409667f44cb",
+            "signature_included": false,
+            "status": "verified",
+            "verification_scope": "receiver_signature_only"
+          },
+          "sequence": 3
+        },
+        "resource": {
+          "kind": "issue",
+          "number": 1,
+          "owner": "forge-admin",
+          "repository": "agent-forge-core"
+        },
+        "schema_version": 16,
+        "source_event_provenance_contract": {
+          "batch_error_source_observation": "selected_event_sources binds selected delivery IDs to journal rows for structured batch refusals after source selection, including host credential-pipe read failures, when per-delivery results are omitted",
+          "current_state_read_means": "canonical_api_read_only",
+          "journal_hash_chain_authenticates_local_writer": false,
+          "journal_replay_contract": "validates_hash_chain_and_envelope; optional_receiver_attestation_requires_external_trust_policy",
+          "per_delivery_attestation_observation": "journal_source.receiver_attestation.status reports only receiver signature verification under the supplied external key policy",
+          "per_delivery_ingestion_attestation_persisted": "optional_ed25519_receiver_signature",
+          "per_delivery_journal_identity": [
+            "journal_source.sequence",
+            "journal_source.event_sha256"
+          ],
+          "raw_signature_persisted": false,
+          "receiver_attestation_verification": "requires_external_trusted_key_policy; required_before_credential_for_in_scope_delivery",
+          "receiver_hmac_check": "performed_before_append_by_current_ingest_path",
+          "replay_hmac_verification": "not_performed",
+          "signature_verification_does_not_establish": [
+            "upstream_truth",
+            "software_correctness",
+            "local_writer_authenticity"
+          ],
+          "source_authenticity_claim_for_selected_delivery": "not_made",
+          "trusted_boundary": "local_filesystem_writer"
+        },
+        "upstream_read_attempts": 1,
+        "verdict": "current_state_read"
+      },
+      {
+        "api_version": "forgejo-rest-v1",
+        "canonical_state": {
+          "base_sha": null,
+          "comment": null,
+          "draft": null,
+          "head_sha": null,
+          "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/issues/1",
+          "labels": {
+            "freshness": "current_api_read",
+            "items": [],
+            "source": "current_forgejo_resource_api",
+            "trust": "untrusted_user_content"
+          },
+          "merge_commit_sha": null,
+          "merged": null,
+          "parent_workflow_run": null,
+          "requested_reviewers": null,
+          "requested_reviewers_teams": null,
+          "state": "closed",
+          "updated_at": "2026-10-28T02:53:44-04:00",
+          "work_item_content": {
+            "body": "Editing a closed issue emits a notification; reconcile from Forgejo's current API state.",
+            "source": "current_forgejo_issue_api",
+            "title": "Forgejo-emitted reconciliation (edited)",
+            "trust": "untrusted_user_content"
+          }
+        },
+        "delivery_id": "eb23fb29-f135-4c48-922b-b060df527f10",
+        "journal_source": {
+          "event_sha256": "fb75325f51980d583acb5a3e2eb21468330d8bd68bd3ccd78df07e7374ce4a9c",
+          "receiver_attestation": {
+            "algorithm": "ed25519",
+            "key_id_sha256": "27ad8d6bef5640158830f9023d206a0a459d6c9493f11ca9c737a409667f44cb",
+            "signature_included": false,
+            "status": "verified",
+            "verification_scope": "receiver_signature_only"
+          },
+          "sequence": 4
+        },
+        "resource": {
+          "kind": "issue",
+          "number": 1,
+          "owner": "forge-admin",
+          "repository": "agent-forge-core"
+        },
+        "schema_version": 16,
+        "source_event_provenance_contract": {
+          "batch_error_source_observation": "selected_event_sources binds selected delivery IDs to journal rows for structured batch refusals after source selection, including host credential-pipe read failures, when per-delivery results are omitted",
+          "current_state_read_means": "canonical_api_read_only",
+          "journal_hash_chain_authenticates_local_writer": false,
+          "journal_replay_contract": "validates_hash_chain_and_envelope; optional_receiver_attestation_requires_external_trust_policy",
+          "per_delivery_attestation_observation": "journal_source.receiver_attestation.status reports only receiver signature verification under the supplied external key policy",
+          "per_delivery_ingestion_attestation_persisted": "optional_ed25519_receiver_signature",
+          "per_delivery_journal_identity": [
+            "journal_source.sequence",
+            "journal_source.event_sha256"
+          ],
+          "raw_signature_persisted": false,
+          "receiver_attestation_verification": "requires_external_trusted_key_policy; required_before_credential_for_in_scope_delivery",
+          "receiver_hmac_check": "performed_before_append_by_current_ingest_path",
+          "replay_hmac_verification": "not_performed",
+          "signature_verification_does_not_establish": [
+            "upstream_truth",
+            "software_correctness",
+            "local_writer_authenticity"
+          ],
+          "source_authenticity_claim_for_selected_delivery": "not_made",
+          "trusted_boundary": "local_filesystem_writer"
+        },
+        "upstream_read_attempts": 1,
+        "verdict": "current_state_read"
+      }
+    ],
+    "new_closed_event": {
+      "api_version": "forgejo-rest-v1",
+      "canonical_state": {
+        "base_sha": null,
+        "comment": null,
+        "draft": null,
+        "head_sha": null,
+        "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/issues/1",
+        "labels": {
+          "freshness": "current_api_read",
+          "items": [],
+          "source": "current_forgejo_resource_api",
+          "trust": "untrusted_user_content"
+        },
+        "merge_commit_sha": null,
+        "merged": null,
+        "parent_workflow_run": null,
+        "requested_reviewers": null,
+        "requested_reviewers_teams": null,
+        "state": "closed",
+        "updated_at": "2026-10-28T02:53:44-04:00",
+        "work_item_content": {
+          "body": "Editing a closed issue emits a notification; reconcile from Forgejo's current API state.",
+          "source": "current_forgejo_issue_api",
+          "title": "Forgejo-emitted reconciliation (edited)",
+          "trust": "untrusted_user_content"
+        }
+      },
+      "delivery_id": "b5f8cca7-58bd-4b7d-8770-e935cb4da9a5",
+      "journal_source": {
+        "event_sha256": "b7014f42d0f0ba2317566656c192768abcb47cc9075c6e5a8ab32b5b28b29947",
+        "receiver_attestation": {
+          "algorithm": "ed25519",
+          "key_id_sha256": "27ad8d6bef5640158830f9023d206a0a459d6c9493f11ca9c737a409667f44cb",
+          "signature_included": false,
+          "status": "verified",
+          "verification_scope": "receiver_signature_only"
+        },
+        "sequence": 2
+      },
+      "resource": {
+        "kind": "issue",
+        "number": 1,
+        "owner": "forge-admin",
+        "repository": "agent-forge-core"
+      },
+      "schema_version": 16,
+      "source_event_provenance_contract": {
+        "batch_error_source_observation": "selected_event_sources binds selected delivery IDs to journal rows for structured batch refusals after source selection, including host credential-pipe read failures, when per-delivery results are omitted",
+        "current_state_read_means": "canonical_api_read_only",
+        "journal_hash_chain_authenticates_local_writer": false,
+        "journal_replay_contract": "validates_hash_chain_and_envelope; optional_receiver_attestation_requires_external_trust_policy",
+        "per_delivery_attestation_observation": "journal_source.receiver_attestation.status reports only receiver signature verification under the supplied external key policy",
+        "per_delivery_ingestion_attestation_persisted": "optional_ed25519_receiver_signature",
+        "per_delivery_journal_identity": [
+          "journal_source.sequence",
+          "journal_source.event_sha256"
+        ],
+        "raw_signature_persisted": false,
+        "receiver_attestation_verification": "requires_external_trusted_key_policy; required_before_credential_for_in_scope_delivery",
+        "receiver_hmac_check": "performed_before_append_by_current_ingest_path",
+        "replay_hmac_verification": "not_performed",
+        "signature_verification_does_not_establish": [
+          "upstream_truth",
+          "software_correctness",
+          "local_writer_authenticity"
+        ],
+        "source_authenticity_claim_for_selected_delivery": "not_made",
+        "trusted_boundary": "local_filesystem_writer"
+      },
+      "upstream_read_attempts": 1,
+      "verdict": "current_state_read"
+    },
+    "new_closed_pull_request_event": {
+      "api_version": "forgejo-rest-v1",
+      "canonical_state": {
+        "base_sha": "a0b51c845c3980c7dd55c248323dc2e6df5593ac",
+        "comment": null,
+        "draft": false,
+        "head_sha": "4d711b786ceb499c6a9d1fae013694c89a0bae8d",
+        "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/2",
+        "labels": {
+          "freshness": "current_api_read",
+          "items": [],
+          "source": "current_forgejo_resource_api",
+          "trust": "untrusted_user_content"
+        },
+        "merge_commit_sha": null,
+        "merged": false,
+        "parent_workflow_run": null,
+        "requested_reviewers": [],
+        "requested_reviewers_teams": [],
+        "state": "closed",
+        "updated_at": "2026-10-28T02:53:47-04:00",
+        "work_item_content": {
+          "body": "Verify that the live receiver journals and reconciles PR transitions.",
+          "source": "current_forgejo_pull_request_api",
+          "title": "Exercise emitted pull-request webhooks",
+          "trust": "untrusted_user_content"
+        }
+      },
+      "delivery_id": "0630ccdf-62ee-40c1-af10-88d6059533d2",
+      "journal_source": {
+        "event_sha256": "fbc4de1e9442db4dc76173899de4ef0898fa6417d8c1c8ee561ca4b1eabbaf62",
+        "receiver_attestation": {
+          "algorithm": "ed25519",
+          "key_id_sha256": "27ad8d6bef5640158830f9023d206a0a459d6c9493f11ca9c737a409667f44cb",
+          "signature_included": false,
+          "status": "verified",
+          "verification_scope": "receiver_signature_only"
+        },
+        "sequence": 9
+      },
+      "resource": {
+        "kind": "pull_request",
+        "number": 2,
+        "owner": "forge-admin",
+        "repository": "agent-forge-core"
+      },
+      "schema_version": 16,
+      "source_event_provenance_contract": {
+        "batch_error_source_observation": "selected_event_sources binds selected delivery IDs to journal rows for structured batch refusals after source selection, including host credential-pipe read failures, when per-delivery results are omitted",
+        "current_state_read_means": "canonical_api_read_only",
+        "journal_hash_chain_authenticates_local_writer": false,
+        "journal_replay_contract": "validates_hash_chain_and_envelope; optional_receiver_attestation_requires_external_trust_policy",
+        "per_delivery_attestation_observation": "journal_source.receiver_attestation.status reports only receiver signature verification under the supplied external key policy",
+        "per_delivery_ingestion_attestation_persisted": "optional_ed25519_receiver_signature",
+        "per_delivery_journal_identity": [
+          "journal_source.sequence",
+          "journal_source.event_sha256"
+        ],
+        "raw_signature_persisted": false,
+        "receiver_attestation_verification": "requires_external_trusted_key_policy; required_before_credential_for_in_scope_delivery",
+        "receiver_hmac_check": "performed_before_append_by_current_ingest_path",
+        "replay_hmac_verification": "not_performed",
+        "signature_verification_does_not_establish": [
+          "upstream_truth",
+          "software_correctness",
+          "local_writer_authenticity"
+        ],
+        "source_authenticity_claim_for_selected_delivery": "not_made",
+        "trusted_boundary": "local_filesystem_writer"
+      },
+      "upstream_read_attempts": 1,
+      "verdict": "current_state_read"
+    },
+    "old_open_event": {
+      "api_version": "forgejo-rest-v1",
+      "canonical_state": {
+        "base_sha": null,
+        "comment": null,
+        "draft": null,
+        "head_sha": null,
+        "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/issues/1",
+        "labels": {
+          "freshness": "current_api_read",
+          "items": [],
+          "source": "current_forgejo_resource_api",
+          "trust": "untrusted_user_content"
+        },
+        "merge_commit_sha": null,
+        "merged": null,
+        "parent_workflow_run": null,
+        "requested_reviewers": null,
+        "requested_reviewers_teams": null,
+        "state": "closed",
+        "updated_at": "2026-10-28T02:53:44-04:00",
+        "work_item_content": {
+          "body": "Editing a closed issue emits a notification; reconcile from Forgejo's current API state.",
+          "source": "current_forgejo_issue_api",
+          "title": "Forgejo-emitted reconciliation (edited)",
+          "trust": "untrusted_user_content"
+        }
+      },
+      "delivery_id": "7212b6c2-848c-4dff-ba7e-07d099135161",
+      "journal_source": {
+        "event_sha256": "c9fa30f2f60a94e1c21ec37178404f6cbbd6f8bad5a48a68a9ed5f2210a25ba3",
+        "receiver_attestation": {
+          "algorithm": "ed25519",
+          "key_id_sha256": "27ad8d6bef5640158830f9023d206a0a459d6c9493f11ca9c737a409667f44cb",
+          "signature_included": false,
+          "status": "verified",
+          "verification_scope": "receiver_signature_only"
+        },
+        "sequence": 1
+      },
+      "resource": {
+        "kind": "issue",
+        "number": 1,
+        "owner": "forge-admin",
+        "repository": "agent-forge-core"
+      },
+      "schema_version": 16,
+      "source_event_provenance_contract": {
+        "batch_error_source_observation": "selected_event_sources binds selected delivery IDs to journal rows for structured batch refusals after source selection, including host credential-pipe read failures, when per-delivery results are omitted",
+        "current_state_read_means": "canonical_api_read_only",
+        "journal_hash_chain_authenticates_local_writer": false,
+        "journal_replay_contract": "validates_hash_chain_and_envelope; optional_receiver_attestation_requires_external_trust_policy",
+        "per_delivery_attestation_observation": "journal_source.receiver_attestation.status reports only receiver signature verification under the supplied external key policy",
+        "per_delivery_ingestion_attestation_persisted": "optional_ed25519_receiver_signature",
+        "per_delivery_journal_identity": [
+          "journal_source.sequence",
+          "journal_source.event_sha256"
+        ],
+        "raw_signature_persisted": false,
+        "receiver_attestation_verification": "requires_external_trusted_key_policy; required_before_credential_for_in_scope_delivery",
+        "receiver_hmac_check": "performed_before_append_by_current_ingest_path",
+        "replay_hmac_verification": "not_performed",
+        "signature_verification_does_not_establish": [
+          "upstream_truth",
+          "software_correctness",
+          "local_writer_authenticity"
+        ],
+        "source_authenticity_claim_for_selected_delivery": "not_made",
+        "trusted_boundary": "local_filesystem_writer"
+      },
+      "upstream_read_attempts": 1,
+      "verdict": "current_state_read"
+    },
+    "old_open_pull_request_event": {
+      "api_version": "forgejo-rest-v1",
+      "canonical_state": {
+        "base_sha": "a0b51c845c3980c7dd55c248323dc2e6df5593ac",
+        "comment": null,
+        "draft": false,
+        "head_sha": "4d711b786ceb499c6a9d1fae013694c89a0bae8d",
+        "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/2",
+        "labels": {
+          "freshness": "current_api_read",
+          "items": [],
+          "source": "current_forgejo_resource_api",
+          "trust": "untrusted_user_content"
+        },
+        "merge_commit_sha": null,
+        "merged": false,
+        "parent_workflow_run": null,
+        "requested_reviewers": [],
+        "requested_reviewers_teams": [],
+        "state": "closed",
+        "updated_at": "2026-10-28T02:53:47-04:00",
+        "work_item_content": {
+          "body": "Verify that the live receiver journals and reconciles PR transitions.",
+          "source": "current_forgejo_pull_request_api",
+          "title": "Exercise emitted pull-request webhooks",
+          "trust": "untrusted_user_content"
+        }
+      },
+      "delivery_id": "653ecfa4-d0a5-4ad8-aaa4-8bea499c2f26",
+      "journal_source": {
+        "event_sha256": "d38dd35d31af97c95583937babb90032a674f2e06e620069c851e5dfa3fa8063",
+        "receiver_attestation": {
+          "algorithm": "ed25519",
+          "key_id_sha256": "27ad8d6bef5640158830f9023d206a0a459d6c9493f11ca9c737a409667f44cb",
+          "signature_included": false,
+          "status": "verified",
+          "verification_scope": "receiver_signature_only"
+        },
+        "sequence": 5
+      },
+      "resource": {
+        "kind": "pull_request",
+        "number": 2,
+        "owner": "forge-admin",
+        "repository": "agent-forge-core"
+      },
+      "schema_version": 16,
+      "source_event_provenance_contract": {
+        "batch_error_source_observation": "selected_event_sources binds selected delivery IDs to journal rows for structured batch refusals after source selection, including host credential-pipe read failures, when per-delivery results are omitted",
+        "current_state_read_means": "canonical_api_read_only",
+        "journal_hash_chain_authenticates_local_writer": false,
+        "journal_replay_contract": "validates_hash_chain_and_envelope; optional_receiver_attestation_requires_external_trust_policy",
+        "per_delivery_attestation_observation": "journal_source.receiver_attestation.status reports only receiver signature verification under the supplied external key policy",
+        "per_delivery_ingestion_attestation_persisted": "optional_ed25519_receiver_signature",
+        "per_delivery_journal_identity": [
+          "journal_source.sequence",
+          "journal_source.event_sha256"
+        ],
+        "raw_signature_persisted": false,
+        "receiver_attestation_verification": "requires_external_trusted_key_policy; required_before_credential_for_in_scope_delivery",
+        "receiver_hmac_check": "performed_before_append_by_current_ingest_path",
+        "replay_hmac_verification": "not_performed",
+        "signature_verification_does_not_establish": [
+          "upstream_truth",
+          "software_correctness",
+          "local_writer_authenticity"
+        ],
+        "source_authenticity_claim_for_selected_delivery": "not_made",
+        "trusted_boundary": "local_filesystem_writer"
+      },
+      "upstream_read_attempts": 1,
+      "verdict": "current_state_read"
+    },
+    "pull_request_approved_review": null,
+    "pull_request_batch": null,
+    "pull_request_closed_before_reopen": null,
+    "pull_request_conversation_comment": {
+      "api_version": "forgejo-rest-v1",
+      "canonical_state": {
+        "base_sha": "a0b51c845c3980c7dd55c248323dc2e6df5593ac",
+        "comment": {
+          "body": "Local Forgejo webhook adapter reconciliation fixture comment.",
+          "body_trust": "untrusted_user_content",
+          "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/2#issuecomment-4",
+          "id": 4,
+          "state": "present",
+          "updated_at": "2026-10-28T02:53:46-04:00"
+        },
+        "draft": false,
+        "head_sha": "4d711b786ceb499c6a9d1fae013694c89a0bae8d",
+        "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/2",
+        "labels": {
+          "freshness": "current_api_read",
+          "items": [],
+          "source": "current_forgejo_resource_api",
+          "trust": "untrusted_user_content"
+        },
+        "merge_commit_sha": null,
+        "merged": false,
+        "parent_workflow_run": null,
+        "requested_reviewers": [],
+        "requested_reviewers_teams": [],
+        "state": "closed",
+        "updated_at": "2026-10-28T02:53:47-04:00",
+        "work_item_content": {
+          "body": "Verify that the live receiver journals and reconciles PR transitions.",
+          "source": "current_forgejo_pull_request_api",
+          "title": "Exercise emitted pull-request webhooks",
+          "trust": "untrusted_user_content"
+        }
+      },
+      "delivery_id": "b8b7e9e0-d89b-49c9-bf30-8b05e2b4ab43",
+      "journal_source": {
+        "event_sha256": "633787ae170530489f02536cd5b16cd09756a3940757f358e4427cf31810bf1e",
+        "receiver_attestation": {
+          "algorithm": "ed25519",
+          "key_id_sha256": "27ad8d6bef5640158830f9023d206a0a459d6c9493f11ca9c737a409667f44cb",
+          "signature_included": false,
+          "status": "verified",
+          "verification_scope": "receiver_signature_only"
+        },
+        "sequence": 6
+      },
+      "resource": {
+        "kind": "pull_request",
+        "number": 2,
+        "owner": "forge-admin",
+        "repository": "agent-forge-core"
+      },
+      "schema_version": 16,
+      "source_event_provenance_contract": {
+        "batch_error_source_observation": "selected_event_sources binds selected delivery IDs to journal rows for structured batch refusals after source selection, including host credential-pipe read failures, when per-delivery results are omitted",
+        "current_state_read_means": "canonical_api_read_only",
+        "journal_hash_chain_authenticates_local_writer": false,
+        "journal_replay_contract": "validates_hash_chain_and_envelope; optional_receiver_attestation_requires_external_trust_policy",
+        "per_delivery_attestation_observation": "journal_source.receiver_attestation.status reports only receiver signature verification under the supplied external key policy",
+        "per_delivery_ingestion_attestation_persisted": "optional_ed25519_receiver_signature",
+        "per_delivery_journal_identity": [
+          "journal_source.sequence",
+          "journal_source.event_sha256"
+        ],
+        "raw_signature_persisted": false,
+        "receiver_attestation_verification": "requires_external_trusted_key_policy; required_before_credential_for_in_scope_delivery",
+        "receiver_hmac_check": "performed_before_append_by_current_ingest_path",
+        "replay_hmac_verification": "not_performed",
+        "signature_verification_does_not_establish": [
+          "upstream_truth",
+          "software_correctness",
+          "local_writer_authenticity"
+        ],
+        "source_authenticity_claim_for_selected_delivery": "not_made",
+        "trusted_boundary": "local_filesystem_writer"
+      },
+      "upstream_read_attempts": 2,
+      "verdict": "current_state_read"
+    },
+    "pull_request_conversation_comment_stale_created": null,
+    "pull_request_inline_review_comment": null,
+    "pull_request_label_events": [
+      {
+        "api_version": "forgejo-rest-v1",
+        "canonical_state": {
+          "base_sha": "a0b51c845c3980c7dd55c248323dc2e6df5593ac",
+          "comment": null,
+          "draft": false,
+          "head_sha": "4d711b786ceb499c6a9d1fae013694c89a0bae8d",
+          "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/2",
+          "labels": {
+            "freshness": "current_api_read",
+            "items": [],
+            "source": "current_forgejo_resource_api",
+            "trust": "untrusted_user_content"
+          },
+          "merge_commit_sha": null,
+          "merged": false,
+          "parent_workflow_run": null,
+          "requested_reviewers": [],
+          "requested_reviewers_teams": [],
+          "state": "closed",
+          "updated_at": "2026-10-28T02:53:47-04:00",
+          "work_item_content": {
+            "body": "Verify that the live receiver journals and reconciles PR transitions.",
+            "source": "current_forgejo_pull_request_api",
+            "title": "Exercise emitted pull-request webhooks",
+            "trust": "untrusted_user_content"
+          }
+        },
+        "delivery_id": "01f9666b-3bf8-4945-bc35-bc870ba8a92b",
+        "journal_source": {
+          "event_sha256": "57a9fe38d72638a5055c35279ec1c098a34f8e2eef0012e3d7910364f7b7db18",
+          "receiver_attestation": {
+            "algorithm": "ed25519",
+            "key_id_sha256": "27ad8d6bef5640158830f9023d206a0a459d6c9493f11ca9c737a409667f44cb",
+            "signature_included": false,
+            "status": "verified",
+            "verification_scope": "receiver_signature_only"
+          },
+          "sequence": 7
+        },
+        "resource": {
+          "kind": "pull_request",
+          "number": 2,
+          "owner": "forge-admin",
+          "repository": "agent-forge-core"
+        },
+        "schema_version": 16,
+        "source_event_provenance_contract": {
+          "batch_error_source_observation": "selected_event_sources binds selected delivery IDs to journal rows for structured batch refusals after source selection, including host credential-pipe read failures, when per-delivery results are omitted",
+          "current_state_read_means": "canonical_api_read_only",
+          "journal_hash_chain_authenticates_local_writer": false,
+          "journal_replay_contract": "validates_hash_chain_and_envelope; optional_receiver_attestation_requires_external_trust_policy",
+          "per_delivery_attestation_observation": "journal_source.receiver_attestation.status reports only receiver signature verification under the supplied external key policy",
+          "per_delivery_ingestion_attestation_persisted": "optional_ed25519_receiver_signature",
+          "per_delivery_journal_identity": [
+            "journal_source.sequence",
+            "journal_source.event_sha256"
+          ],
+          "raw_signature_persisted": false,
+          "receiver_attestation_verification": "requires_external_trusted_key_policy; required_before_credential_for_in_scope_delivery",
+          "receiver_hmac_check": "performed_before_append_by_current_ingest_path",
+          "replay_hmac_verification": "not_performed",
+          "signature_verification_does_not_establish": [
+            "upstream_truth",
+            "software_correctness",
+            "local_writer_authenticity"
+          ],
+          "source_authenticity_claim_for_selected_delivery": "not_made",
+          "trusted_boundary": "local_filesystem_writer"
+        },
+        "upstream_read_attempts": 1,
+        "verdict": "current_state_read"
+      },
+      {
+        "api_version": "forgejo-rest-v1",
+        "canonical_state": {
+          "base_sha": "a0b51c845c3980c7dd55c248323dc2e6df5593ac",
+          "comment": null,
+          "draft": false,
+          "head_sha": "4d711b786ceb499c6a9d1fae013694c89a0bae8d",
+          "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/2",
+          "labels": {
+            "freshness": "current_api_read",
+            "items": [],
+            "source": "current_forgejo_resource_api",
+            "trust": "untrusted_user_content"
+          },
+          "merge_commit_sha": null,
+          "merged": false,
+          "parent_workflow_run": null,
+          "requested_reviewers": [],
+          "requested_reviewers_teams": [],
+          "state": "closed",
+          "updated_at": "2026-10-28T02:53:47-04:00",
+          "work_item_content": {
+            "body": "Verify that the live receiver journals and reconciles PR transitions.",
+            "source": "current_forgejo_pull_request_api",
+            "title": "Exercise emitted pull-request webhooks",
+            "trust": "untrusted_user_content"
+          }
+        },
+        "delivery_id": "6de07dbe-dd42-40da-a98e-092a34ef25fb",
+        "journal_source": {
+          "event_sha256": "fa0d8eb893c328ae028761e806830544fc23e06d5c0900128de285f824f877f7",
+          "receiver_attestation": {
+            "algorithm": "ed25519",
+            "key_id_sha256": "27ad8d6bef5640158830f9023d206a0a459d6c9493f11ca9c737a409667f44cb",
+            "signature_included": false,
+            "status": "verified",
+            "verification_scope": "receiver_signature_only"
+          },
+          "sequence": 8
+        },
+        "resource": {
+          "kind": "pull_request",
+          "number": 2,
+          "owner": "forge-admin",
+          "repository": "agent-forge-core"
+        },
+        "schema_version": 16,
+        "source_event_provenance_contract": {
+          "batch_error_source_observation": "selected_event_sources binds selected delivery IDs to journal rows for structured batch refusals after source selection, including host credential-pipe read failures, when per-delivery results are omitted",
+          "current_state_read_means": "canonical_api_read_only",
+          "journal_hash_chain_authenticates_local_writer": false,
+          "journal_replay_contract": "validates_hash_chain_and_envelope; optional_receiver_attestation_requires_external_trust_policy",
+          "per_delivery_attestation_observation": "journal_source.receiver_attestation.status reports only receiver signature verification under the supplied external key policy",
+          "per_delivery_ingestion_attestation_persisted": "optional_ed25519_receiver_signature",
+          "per_delivery_journal_identity": [
+            "journal_source.sequence",
+            "journal_source.event_sha256"
+          ],
+          "raw_signature_persisted": false,
+          "receiver_attestation_verification": "requires_external_trusted_key_policy; required_before_credential_for_in_scope_delivery",
+          "receiver_hmac_check": "performed_before_append_by_current_ingest_path",
+          "replay_hmac_verification": "not_performed",
+          "signature_verification_does_not_establish": [
+            "upstream_truth",
+            "software_correctness",
+            "local_writer_authenticity"
+          ],
+          "source_authenticity_claim_for_selected_delivery": "not_made",
+          "trusted_boundary": "local_filesystem_writer"
+        },
+        "upstream_read_attempts": 1,
+        "verdict": "current_state_read"
+      }
+    ],
+    "pull_request_rejected_review": null,
+    "pull_request_reopened": null,
+    "pull_request_review_request": null,
+    "pull_request_review_request_removed": null,
+    "pull_request_synchronized_event": null,
+    "pull_request_title_edit": null
+  },
+  "repository": {
+    "api_reader": {
+      "is_admin": false,
+      "login": "forge-reader",
+      "repo_permission_admin": false,
+      "repo_permission_pull": true,
+      "repo_permission_push": false,
+      "requested_token_scopes": [
+        "read:user",
+        "read:repository",
+        "read:issue"
+      ]
+    },
+    "full_name": "forge-admin/agent-forge-core",
+    "private": true,
+    "pull_request_author": null
+  },
+  "schema_version": 1,
+  "source_head_commit": "f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0",
+  "verdict": "passed",
+  "webhook": {
+    "active_after_run": false,
+    "api_hook_id": 1,
+    "configuration_matches_expected": true,
+    "content_type": "json",
+    "deactivation_readback_confirmed": true,
+    "delivery_events": [
+      {
+        "action": "opened",
+        "delivery_id": "7212b6c2-848c-4dff-ba7e-07d099135161",
+        "event": "issues",
+        "issue_number": 1,
+        "payload_state": "open",
+        "sequence": 1
+      },
+      {
+        "action": "closed",
+        "delivery_id": "b5f8cca7-58bd-4b7d-8770-e935cb4da9a5",
+        "event": "issues",
+        "issue_number": 1,
+        "payload_state": "closed",
+        "sequence": 2
+      },
+      {
+        "action": "edited",
+        "delivery_id": "b540dd12-18ff-45eb-a702-eb6b8a5330ab",
+        "event": "issues",
+        "issue_number": 1,
+        "payload_state": "closed",
+        "sequence": 3
+      },
+      {
+        "action": "edited",
+        "delivery_id": "eb23fb29-f135-4c48-922b-b060df527f10",
+        "event": "issues",
+        "issue_number": 1,
+        "payload_state": "closed",
+        "sequence": 4
+      },
+      {
+        "action": "opened",
+        "base_sha": "a0b51c845c3980c7dd55c248323dc2e6df5593ac",
+        "delivery_id": "653ecfa4-d0a5-4ad8-aaa4-8bea499c2f26",
+        "event": "pull_request",
+        "head_sha": "4d711b786ceb499c6a9d1fae013694c89a0bae8d",
+        "payload_merged": false,
+        "payload_state": "open",
+        "pull_request_number": 2,
+        "sequence": 5
+      },
+      {
+        "action": "created",
+        "base_sha": "a0b51c845c3980c7dd55c248323dc2e6df5593ac",
+        "comment_id": 4,
+        "delivery_id": "b8b7e9e0-d89b-49c9-bf30-8b05e2b4ab43",
+        "event": "issue_comment",
+        "head_sha": "4d711b786ceb499c6a9d1fae013694c89a0bae8d",
+        "is_pull": true,
+        "payload_merged": false,
+        "payload_state": "open",
+        "pull_request_number": 2,
+        "sequence": 6
+      },
+      {
+        "action": "label_updated",
+        "base_sha": "a0b51c845c3980c7dd55c248323dc2e6df5593ac",
+        "delivery_id": "01f9666b-3bf8-4945-bc35-bc870ba8a92b",
+        "event": "pull_request",
+        "head_sha": "4d711b786ceb499c6a9d1fae013694c89a0bae8d",
+        "payload_merged": false,
+        "payload_state": "open",
+        "pull_request_number": 2,
+        "sequence": 7
+      },
+      {
+        "action": "label_cleared",
+        "base_sha": "a0b51c845c3980c7dd55c248323dc2e6df5593ac",
+        "delivery_id": "6de07dbe-dd42-40da-a98e-092a34ef25fb",
+        "event": "pull_request",
+        "head_sha": "4d711b786ceb499c6a9d1fae013694c89a0bae8d",
+        "payload_merged": false,
+        "payload_state": "open",
+        "pull_request_number": 2,
+        "sequence": 8
+      },
+      {
+        "action": "closed",
+        "base_sha": "a0b51c845c3980c7dd55c248323dc2e6df5593ac",
+        "delivery_id": "0630ccdf-62ee-40c1-af10-88d6059533d2",
+        "event": "pull_request",
+        "head_sha": "4d711b786ceb499c6a9d1fae013694c89a0bae8d",
+        "payload_merged": false,
+        "payload_state": "closed",
+        "pull_request_number": 2,
+        "sequence": 9
+      }
+    ],
+    "duplicate_replay": {
+      "delivery_id": "7212b6c2-848c-4dff-ba7e-07d099135161",
+      "http_status": 202,
+      "journal_bytes_after": 78842,
+      "journal_bytes_before": 78842,
+      "journal_records_after": 9,
+      "journal_records_before": 9,
+      "journal_sha256_after": "6bbf895aedf5cb4d28292f18e515a9d66cd6e2ecc41c80874f81e8b3dc061940",
+      "journal_sha256_before": "6bbf895aedf5cb4d28292f18e515a9d66cd6e2ecc41c80874f81e8b3dc061940",
+      "payload_encoding": "JSON re-serialized from the journaled object; byte-for-byte original request body is not retained",
+      "payload_source": "verified Forgejo-emitted receiver journal envelope",
+      "receiver_restarted_with_same_journal": true,
+      "response": {
+        "accepted": true,
+        "delivery_id": "7212b6c2-848c-4dff-ba7e-07d099135161",
+        "duplicate": true,
+        "reconcile_required": true,
+        "schema_version": 1,
+        "sequence": 1
+      },
+      "sequence": 1
+    },
+    "emitter": "Forgejo v17 actual webhook task",
+    "events": [
+      "issues",
+      "issue_assign",
+      "issue_label",
+      "issue_milestone",
+      "issue_comment",
+      "pull_request",
+      "pull_request_assign",
+      "pull_request_label",
+      "pull_request_milestone",
+      "pull_request_comment",
+      "pull_request_review_approved",
+      "pull_request_review_rejected",
+      "pull_request_review_comment",
+      "pull_request_sync",
+      "pull_request_review_request"
+    ],
+    "events_readback_valid": true,
+    "forgejo_task_readback": [
+      {
+        "event_type": "issues",
+        "is_delivered": true,
+        "is_succeed": true,
+        "response_status": 202,
+        "task_id": 1,
+        "uuid": "7212b6c2-848c-4dff-ba7e-07d099135161"
+      },
+      {
+        "event_type": "issues",
+        "is_delivered": true,
+        "is_succeed": true,
+        "response_status": 202,
+        "task_id": 2,
+        "uuid": "b5f8cca7-58bd-4b7d-8770-e935cb4da9a5"
+      },
+      {
+        "event_type": "issues",
+        "is_delivered": true,
+        "is_succeed": true,
+        "response_status": 202,
+        "task_id": 3,
+        "uuid": "b540dd12-18ff-45eb-a702-eb6b8a5330ab"
+      },
+      {
+        "event_type": "issues",
+        "is_delivered": true,
+        "is_succeed": true,
+        "response_status": 202,
+        "task_id": 4,
+        "uuid": "eb23fb29-f135-4c48-922b-b060df527f10"
+      },
+      {
+        "event_type": "pull_request",
+        "is_delivered": true,
+        "is_succeed": true,
+        "response_status": 202,
+        "task_id": 5,
+        "uuid": "653ecfa4-d0a5-4ad8-aaa4-8bea499c2f26"
+      },
+      {
+        "event_type": "pull_request_comment",
+        "is_delivered": true,
+        "is_succeed": true,
+        "response_status": 202,
+        "task_id": 6,
+        "uuid": "b8b7e9e0-d89b-49c9-bf30-8b05e2b4ab43"
+      },
+      {
+        "event_type": "pull_request_label",
+        "is_delivered": true,
+        "is_succeed": true,
+        "response_status": 202,
+        "task_id": 7,
+        "uuid": "01f9666b-3bf8-4945-bc35-bc870ba8a92b"
+      },
+      {
+        "event_type": "pull_request_label",
+        "is_delivered": true,
+        "is_succeed": true,
+        "response_status": 202,
+        "task_id": 8,
+        "uuid": "6de07dbe-dd42-40da-a98e-092a34ef25fb"
+      },
+      {
+        "event_type": "pull_request",
+        "is_delivered": true,
+        "is_succeed": true,
+        "response_status": 202,
+        "task_id": 9,
+        "uuid": "0630ccdf-62ee-40c1-af10-88d6059533d2"
+      }
+    ],
+    "hook_id": 1,
+    "secret_recorded": false,
+    "secret_value_recorded": false,
+    "target": "http://127.0.0.1:36401/forgejo/webhook",
+    "type": "gitea"
+  }
+}

@@ -1,0 +1,30 @@
+test_extracts_forgejo_v17_pull_request_label_update_actions (tests.test_forgejo_emitted_webhook_e2e.ParseLivePullRequestDeliveryRecordTests.test_extracts_forgejo_v17_pull_request_label_update_actions) ... 
+  test_extracts_forgejo_v17_pull_request_label_update_actions (tests.test_forgejo_emitted_webhook_e2e.ParseLivePullRequestDeliveryRecordTests.test_extracts_forgejo_v17_pull_request_label_update_actions) (action='label_updated') ... ERROR
+  test_extracts_forgejo_v17_pull_request_label_update_actions (tests.test_forgejo_emitted_webhook_e2e.ParseLivePullRequestDeliveryRecordTests.test_extracts_forgejo_v17_pull_request_label_update_actions) (action='label_cleared') ... ERROR
+
+======================================================================
+ERROR: test_extracts_forgejo_v17_pull_request_label_update_actions (tests.test_forgejo_emitted_webhook_e2e.ParseLivePullRequestDeliveryRecordTests.test_extracts_forgejo_v17_pull_request_label_update_actions) (action='label_updated')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/test_forgejo_emitted_webhook_e2e.py", line 945, in test_extracts_forgejo_v17_pull_request_label_update_actions
+    parsed = self.parse_record(
+             ^^^^^^^^^^^^^^^^^^
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/scripts/run_forgejo_live_webhook_reconcile_emitted.py", line 724, in parse_live_pull_request_delivery_record
+    raise ValueError("expected Forgejo pull-request event/action pair is unsupported")
+ValueError: expected Forgejo pull-request event/action pair is unsupported
+
+======================================================================
+ERROR: test_extracts_forgejo_v17_pull_request_label_update_actions (tests.test_forgejo_emitted_webhook_e2e.ParseLivePullRequestDeliveryRecordTests.test_extracts_forgejo_v17_pull_request_label_update_actions) (action='label_cleared')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/test_forgejo_emitted_webhook_e2e.py", line 945, in test_extracts_forgejo_v17_pull_request_label_update_actions
+    parsed = self.parse_record(
+             ^^^^^^^^^^^^^^^^^^
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/scripts/run_forgejo_live_webhook_reconcile_emitted.py", line 724, in parse_live_pull_request_delivery_record
+    raise ValueError("expected Forgejo pull-request event/action pair is unsupported")
+ValueError: expected Forgejo pull-request event/action pair is unsupported
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (errors=2)

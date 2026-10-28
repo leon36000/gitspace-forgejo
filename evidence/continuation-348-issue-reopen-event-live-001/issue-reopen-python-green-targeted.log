@@ -1,0 +1,7 @@
+test_exposes_live_issue_reopen_scenario (test_forgejo_emitted_webhook_e2e.EmittedWebhookRunnerCliTests.test_exposes_live_issue_reopen_scenario) ... ok
+test_extracts_native_issue_reopened_action (test_forgejo_emitted_webhook_e2e.ParseLiveDeliveryRecordTests.test_extracts_native_issue_reopened_action) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.071s
+
+OK

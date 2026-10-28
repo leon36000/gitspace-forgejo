@@ -1,0 +1,13 @@
+test_accepts_only_an_empty_current_api_label_projection (tests.test_forgejo_emitted_webhook_e2e.PullRequestLabelSnapshotTests.test_accepts_only_an_empty_current_api_label_projection) ... ok
+test_accepts_stale_clear_event_snapshot_when_current_api_is_empty (tests.test_forgejo_emitted_webhook_e2e.PullRequestLabelSnapshotTests.test_accepts_stale_clear_event_snapshot_when_current_api_is_empty) ... ok
+test_projects_only_sorted_label_ids_and_names (tests.test_forgejo_emitted_webhook_e2e.PullRequestLabelSnapshotTests.test_projects_only_sorted_label_ids_and_names) ... ok
+test_rejects_label_clear_event_that_differs_from_prior_snapshot (tests.test_forgejo_emitted_webhook_e2e.PullRequestLabelSnapshotTests.test_rejects_label_clear_event_that_differs_from_prior_snapshot) ... ok
+test_binds_forgejo_comment_task_types_to_their_actual_http_event_names (tests.test_forgejo_emitted_webhook_e2e.HookTaskBindingTests.test_binds_forgejo_comment_task_types_to_their_actual_http_event_names) ... ok
+test_binds_multiple_issue_edits_by_unique_delivery_id_independent_of_order (tests.test_forgejo_emitted_webhook_e2e.HookTaskBindingTests.test_binds_multiple_issue_edits_by_unique_delivery_id_independent_of_order) ... ok
+test_matches_mixed_forgejo_task_types_to_receiver_events (tests.test_forgejo_emitted_webhook_e2e.HookTaskBindingTests.test_matches_mixed_forgejo_task_types_to_receiver_events) ... ok
+test_matches_review_event_and_out_of_order_delivery_ids (tests.test_forgejo_emitted_webhook_e2e.HookTaskBindingTests.test_matches_review_event_and_out_of_order_delivery_ids) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.000s
+
+OK

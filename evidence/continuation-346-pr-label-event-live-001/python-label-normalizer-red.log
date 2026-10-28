@@ -1,0 +1,14 @@
+test_projects_only_sorted_label_ids_and_names (tests.test_forgejo_emitted_webhook_e2e.PullRequestLabelSnapshotTests.test_projects_only_sorted_label_ids_and_names) ... FAIL
+
+======================================================================
+FAIL: test_projects_only_sorted_label_ids_and_names (tests.test_forgejo_emitted_webhook_e2e.PullRequestLabelSnapshotTests.test_projects_only_sorted_label_ids_and_names)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/test_forgejo_emitted_webhook_e2e.py", line 1816, in test_projects_only_sorted_label_ids_and_names
+    self.assertTrue(callable(normalize), "live PR label snapshot normalizer is missing")
+AssertionError: False is not true : live PR label snapshot normalizer is missing
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (failures=1)

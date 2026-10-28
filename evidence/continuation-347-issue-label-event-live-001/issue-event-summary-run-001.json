@@ -1,0 +1,50 @@
+{
+  "run": "forgejo-run-001",
+  "outcome": "failed later at deliver_opened_pull_request_event due hardcoded count of 5",
+  "issue_event_count": 6,
+  "issue_events": [
+    {
+      "sequence": 1,
+      "event": "issues",
+      "action": "opened",
+      "issue_number": 1,
+      "label_count": 0
+    },
+    {
+      "sequence": 2,
+      "event": "issues",
+      "action": "label_updated",
+      "issue_number": 1,
+      "label_count": 1
+    },
+    {
+      "sequence": 3,
+      "event": "issues",
+      "action": "label_cleared",
+      "issue_number": 1,
+      "label_count": 1
+    },
+    {
+      "sequence": 4,
+      "event": "issues",
+      "action": "closed",
+      "issue_number": 1,
+      "label_count": 0
+    },
+    {
+      "sequence": 5,
+      "event": "issues",
+      "action": "edited",
+      "issue_number": 1,
+      "label_count": 0
+    },
+    {
+      "sequence": 6,
+      "event": "issues",
+      "action": "edited",
+      "issue_number": 1,
+      "label_count": 0
+    }
+  ],
+  "note": "No credential or webhook secret is included."
+}

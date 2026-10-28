@@ -1,0 +1,7 @@
+{
+  "cleanup_failure": null,
+  "error_message": "Forgejo label_cleared event is stale, duplicated, or malformed",
+  "error_type": "RuntimeError",
+  "stage": "deliver_pull_request_label_cleared_event",
+  "verdict": "failed"
+}

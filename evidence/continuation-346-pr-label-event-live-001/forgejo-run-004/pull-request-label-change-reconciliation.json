@@ -1,0 +1,52 @@
+{
+  "add_http_status": 200,
+  "clear_http_status": 204,
+  "create_http_status": 201,
+  "events": [
+    {
+      "action": "label_updated",
+      "api_labels_after_transition": [
+        {
+          "id": 1,
+          "name": "agent-forge-e2e-live-label"
+        }
+      ],
+      "delivery_id": "01f9666b-3bf8-4945-bc35-bc870ba8a92b",
+      "payload_labels": [
+        {
+          "id": 1,
+          "name": "agent-forge-e2e-live-label"
+        }
+      ],
+      "sequence": 7
+    },
+    {
+      "action": "label_cleared",
+      "api_labels_after_transition": [],
+      "delivery_id": "6de07dbe-dd42-40da-a98e-092a34ef25fb",
+      "payload_labels": [
+        {
+          "id": 1,
+          "name": "agent-forge-e2e-live-label"
+        }
+      ],
+      "sequence": 8
+    }
+  ],
+  "label_id": 1,
+  "label_name": "agent-forge-e2e-live-label",
+  "reconciled_current_api_label_projections": [
+    {
+      "freshness": "current_api_read",
+      "items": [],
+      "source": "current_forgejo_resource_api",
+      "trust": "untrusted_user_content"
+    },
+    {
+      "freshness": "current_api_read",
+      "items": [],
+      "source": "current_forgejo_resource_api",
+      "trust": "untrusted_user_content"
+    }
+  ]
+}

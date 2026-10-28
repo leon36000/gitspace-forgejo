@@ -1,0 +1,105 @@
+[
+  {
+    "action": "opened",
+    "delivery_id": "971c69c4-c9ff-4901-b5e2-faeb738abe1d",
+    "event": "issues",
+    "issue_number": 1,
+    "payload_state": "open",
+    "sequence": 1
+  },
+  {
+    "action": "label_updated",
+    "delivery_id": "614bd029-22b2-45a3-a9b9-b141c50d29c9",
+    "event": "issues",
+    "issue_number": 1,
+    "payload_labels": [
+      {
+        "id": 1,
+        "name": "agent-forge-e2e-live-issue-label"
+      }
+    ],
+    "payload_state": "open",
+    "sequence": 2
+  },
+  {
+    "action": "label_cleared",
+    "delivery_id": "de5606d1-3bcb-4808-b331-6f547de84667",
+    "event": "issues",
+    "issue_number": 1,
+    "payload_labels": [
+      {
+        "id": 1,
+        "name": "agent-forge-e2e-live-issue-label"
+      }
+    ],
+    "payload_state": "open",
+    "sequence": 3
+  },
+  {
+    "action": "closed",
+    "delivery_id": "f6d46603-32aa-440e-8bcc-99f077e99bde",
+    "event": "issues",
+    "issue_number": 1,
+    "payload_state": "closed",
+    "sequence": 4
+  },
+  {
+    "action": "edited",
+    "delivery_id": "e38cd2fc-8a55-4c21-a023-ce16163a25b4",
+    "event": "issues",
+    "issue_number": 1,
+    "payload_state": "closed",
+    "sequence": 5
+  },
+  {
+    "action": "edited",
+    "delivery_id": "8d0a7848-cae2-458c-b7a6-7a947964cd30",
+    "event": "issues",
+    "issue_number": 1,
+    "payload_state": "closed",
+    "sequence": 6
+  },
+  {
+    "action": "reopened",
+    "delivery_id": "a3bd11b9-8732-4493-b1ba-ae869f808cec",
+    "event": "issues",
+    "issue_number": 1,
+    "payload_state": "open",
+    "sequence": 7
+  },
+  {
+    "action": "opened",
+    "base_sha": "48d2583981b0c0e822cd43b87d164f6ff0e0a3a1",
+    "delivery_id": "c5b7d1cd-3c27-4bfa-88c9-f6c004e68ad1",
+    "event": "pull_request",
+    "head_sha": "9a384331a36752220c5998cd5d7d476c820fb3e3",
+    "payload_merged": false,
+    "payload_state": "open",
+    "pull_request_number": 2,
+    "sequence": 8
+  },
+  {
+    "action": "created",
+    "base_sha": "48d2583981b0c0e822cd43b87d164f6ff0e0a3a1",
+    "comment_id": 7,
+    "delivery_id": "ffbc9966-715e-4097-a242-69c150cfbc09",
+    "event": "issue_comment",
+    "head_sha": "9a384331a36752220c5998cd5d7d476c820fb3e3",
+    "is_pull": true,
+    "payload_merged": false,
+    "payload_state": "open",
+    "pull_request_number": 2,
+    "sequence": 9
+  },
+  {
+    "action": "closed",
+    "base_sha": "48d2583981b0c0e822cd43b87d164f6ff0e0a3a1",
+    "delivery_id": "2868f669-034c-42cb-9da9-630e221b7158",
+    "event": "pull_request",
+    "head_sha": "9a384331a36752220c5998cd5d7d476c820fb3e3",
+    "payload_merged": false,
+    "payload_state": "closed",
+    "pull_request_number": 2,
+    "sequence": 10
+  }
+]

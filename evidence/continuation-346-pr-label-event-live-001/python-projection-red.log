@@ -1,0 +1,14 @@
+test_accepts_only_an_empty_current_api_label_projection (tests.test_forgejo_emitted_webhook_e2e.PullRequestLabelSnapshotTests.test_accepts_only_an_empty_current_api_label_projection) ... FAIL
+
+======================================================================
+FAIL: test_accepts_only_an_empty_current_api_label_projection (tests.test_forgejo_emitted_webhook_e2e.PullRequestLabelSnapshotTests.test_accepts_only_an_empty_current_api_label_projection)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/test_forgejo_emitted_webhook_e2e.py", line 1842, in test_accepts_only_an_empty_current_api_label_projection
+    self.assertTrue(callable(validate), "current API label projection validator is missing")
+AssertionError: False is not true : current API label projection validator is missing
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (failures=1)

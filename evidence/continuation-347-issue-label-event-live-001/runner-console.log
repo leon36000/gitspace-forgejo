@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/scripts/run_forgejo_live_webhook_reconcile_emitted.py", line 5544, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/scripts/run_forgejo_live_webhook_reconcile_emitted.py", line 5538, in main
+    result = run(args)
+             ^^^^^^^^^
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/scripts/run_forgejo_live_webhook_reconcile_emitted.py", line 5058, in run
+    raise RuntimeError(f"Forgejo emitted webhook E2E failed at {stage}") from None
+RuntimeError: Forgejo emitted webhook E2E failed at deliver_opened_pull_request_event

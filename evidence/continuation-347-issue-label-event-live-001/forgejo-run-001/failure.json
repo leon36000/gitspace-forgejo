@@ -1,0 +1,7 @@
+{
+  "cleanup_failure": null,
+  "error_message": "Forgejo delivered an unexpected event before PR close",
+  "error_type": "RuntimeError",
+  "stage": "deliver_opened_pull_request_event",
+  "verdict": "failed"
+}

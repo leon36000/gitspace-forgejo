@@ -1,0 +1,8 @@
+test_live_pull_request_action_set_matches_forgejo_v17_wire_actions (tests.test_forgejo_emitted_webhook_e2e.ParseLivePullRequestDeliveryRecordTests.test_live_pull_request_action_set_matches_forgejo_v17_wire_actions) ... ok
+test_extracts_forgejo_v17_pull_request_label_update_actions (tests.test_forgejo_emitted_webhook_e2e.ParseLivePullRequestDeliveryRecordTests.test_extracts_forgejo_v17_pull_request_label_update_actions) ... ok
+test_projects_only_sorted_label_ids_and_names (tests.test_forgejo_emitted_webhook_e2e.PullRequestLabelSnapshotTests.test_projects_only_sorted_label_ids_and_names) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.000s
+
+OK

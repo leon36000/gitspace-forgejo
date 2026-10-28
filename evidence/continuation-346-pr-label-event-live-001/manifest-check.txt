@@ -1,0 +1,1 @@
+{"local_evidence_entries_verified": 54, "project_append_entries_verified": 62, "project_prefix_preserved": true, "worktree_append_entries_verified": 61, "worktree_prefix_preserved": true}

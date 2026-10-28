@@ -1,0 +1,11 @@
+LivePullRequestScenarioHelpTests (unittest.loader._FailedTest.LivePullRequestScenarioHelpTests) ... ERROR
+
+======================================================================
+ERROR: LivePullRequestScenarioHelpTests (unittest.loader._FailedTest.LivePullRequestScenarioHelpTests)
+----------------------------------------------------------------------
+AttributeError: module 'tests.test_forgejo_emitted_webhook_e2e' has no attribute 'LivePullRequestScenarioHelpTests'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.002s
+
+FAILED (errors=1)
