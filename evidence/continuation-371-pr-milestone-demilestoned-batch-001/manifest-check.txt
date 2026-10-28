@@ -1,0 +1,21 @@
+$ python3 evidence/continuation-369-pr-milestone-event-contract-001/verify_append_only_indexes.py
+exit_code=0
+stdout:
+{"local_evidence_files_verified": 15, "parent_binds_current_worktree_index": true, "project_prefix_preserved": true, "worktree_prefix_preserved": true}
+
+stderr:
+
+$ python3 evidence/continuation-370-pr-milestone-composed-e2e-001/verify_append_only_indexes.py
+exit_code=0
+stdout:
+{"local_evidence_files_verified": 12, "parent_binds_current_worktree_index": true, "project_prefix_preserved": true, "worktree_prefix_preserved": true}
+
+stderr:
+
+$ python3 evidence/continuation-371-pr-milestone-demilestoned-batch-001/verify_append_only_indexes.py
+exit_code=0
+stdout:
+{"local_evidence_files_verified": 18, "parent_binds_current_worktree_index": true, "project_prefix_preserved": true, "worktree_prefix_preserved": true}
+
+stderr:
+

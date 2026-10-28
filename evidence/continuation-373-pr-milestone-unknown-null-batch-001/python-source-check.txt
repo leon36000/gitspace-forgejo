@@ -1,0 +1,2 @@
+py_compile=pass (runner, license guard, and manifest helpers; bytecode under /tmp)
+full_runner_and_Rust_test_trailing_whitespace=none

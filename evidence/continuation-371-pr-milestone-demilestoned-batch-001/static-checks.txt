@@ -1,0 +1,10 @@
+runner_allowlist_red=expected_argparse_exit_2_before_addition
+target_process_e2e_initial=1_pass
+rustfmt_initial=failed_two_layout_diffs_then_corrected
+target_process_e2e_final=1_pass_after_format_fix
+cargo_fmt=pass
+py_compile=pass
+full_source_trailing_whitespace=none
+git_diff_check=pass
+cargo_license_state_tests=12_pass
+cargo_license_metadata=metadata_policy_verified

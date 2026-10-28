@@ -1,0 +1,6 @@
+Contrôle PC4 du 28 octobre 2026, sans authentification :
+- `getent ahostsv4 pc4.tail0c55ff.ts.net`: aucune résolution.
+- `curl --connect-timeout 4 --max-time 6 ... https://pc4.tail0c55ff.ts.net/`: code curl 6, hôte introuvable.
+- `tailscale status --json` (résumé filtré sur PC4): peer Online=true.
+- Sockets TCP vers les adresses peer Tailscale: port 22 inaccessible, port 443 inaccessible.
+- Remote configuré localement sous `pc4-gitlab`, sans identifiant intégré; remote `origin` local conservé. Aucun fetch, lecture de refs, authentification ou push.

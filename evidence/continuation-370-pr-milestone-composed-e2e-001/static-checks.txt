@@ -1,0 +1,3 @@
+cargo_fmt=pass
+py_compile=pass
+git_diff_check=pass

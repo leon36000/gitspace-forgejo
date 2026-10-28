@@ -1,0 +1,11 @@
+{
+  "Cargo.lock": "459fef3749a42c989521901dcde61cb26e12ed4206c5d722e149426c2d3a5439",
+  "Cargo.toml": "a2c1182d6e5cc272c50fb0ad5f16d210befcd452527d29e4dde6cd6b05206d09",
+  "docs/checkpoint.md": "f40741f2bd2d319cbb3fdc8509d4be423485ba6eb2bb133c004b46d805b996c9",
+  "docs/implementation-plan.md": "17aaa7aba365ade946de1154a93426095ad3a00e8fd05cd2881da00e8d395c52",
+  "docs/refusal-evidence-matrix.md": "0c24c275da584dcf2a81e87e7fc87e37cb393d5f1fdb759e9edde10b15109e82",
+  "scripts/run_webhook_reconcile_cli_e2e.py": "023f8d5899620437c4d986451646b7a81b6187febfb1e831b913c18d64dde510",
+  "src/webhook/reconcile.rs": "3976e27bd581a34921c00799166edf0395aa2168cf3b130a7c146f339bd481bf",
+  "tests/webhook_receiver_process_e2e.rs": "c9a35ff7d4241c8ed4d259e27e11edaa2cef0f2b305c158bc8cd6ef5b7001819",
+  "tests/webhook_reconcile_contract.rs": "fdb05f818cfc985acdf8479d75a8e5bac773b226541abf32ccc89e30117bb718"
+}

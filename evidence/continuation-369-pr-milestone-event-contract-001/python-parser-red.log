@@ -1,0 +1,84 @@
+test_accepts_issue_comment_wire_event_for_pull_request_conversation (test_forgejo_emitted_webhook_e2e.ParseLivePullRequestDeliveryRecordTests.test_accepts_issue_comment_wire_event_for_pull_request_conversation) ... ok
+test_accepts_official_pull_request_review_comment_using_review_payload (test_forgejo_emitted_webhook_e2e.ParseLivePullRequestDeliveryRecordTests.test_accepts_official_pull_request_review_comment_using_review_payload) ... ok
+test_binds_native_fork_pull_request_base_and_head_repositories (test_forgejo_emitted_webhook_e2e.ParseLivePullRequestDeliveryRecordTests.test_binds_native_fork_pull_request_base_and_head_repositories) ... ok
+test_extracts_expected_pull_request_transition_and_sha_bindings (test_forgejo_emitted_webhook_e2e.ParseLivePullRequestDeliveryRecordTests.test_extracts_expected_pull_request_transition_and_sha_bindings) ... ok
+test_extracts_forgejo_v17_approved_review_notification_without_using_its_verdict (test_forgejo_emitted_webhook_e2e.ParseLivePullRequestDeliveryRecordTests.test_extracts_forgejo_v17_approved_review_notification_without_using_its_verdict) ... ok
+test_extracts_forgejo_v17_pull_request_assignee_actions_and_payload (test_forgejo_emitted_webhook_e2e.ParseLivePullRequestDeliveryRecordTests.test_extracts_forgejo_v17_pull_request_assignee_actions_and_payload) ... ok
+test_extracts_forgejo_v17_pull_request_label_update_actions (test_forgejo_emitted_webhook_e2e.ParseLivePullRequestDeliveryRecordTests.test_extracts_forgejo_v17_pull_request_label_update_actions) ... ok
+test_extracts_forgejo_v17_pull_request_milestone_actions_and_payload (test_forgejo_emitted_webhook_e2e.ParseLivePullRequestDeliveryRecordTests.test_extracts_forgejo_v17_pull_request_milestone_actions_and_payload) ... 
+  test_extracts_forgejo_v17_pull_request_milestone_actions_and_payload (test_forgejo_emitted_webhook_e2e.ParseLivePullRequestDeliveryRecordTests.test_extracts_forgejo_v17_pull_request_milestone_actions_and_payload) (action='milestoned') ... ERROR
+  test_extracts_forgejo_v17_pull_request_milestone_actions_and_payload (test_forgejo_emitted_webhook_e2e.ParseLivePullRequestDeliveryRecordTests.test_extracts_forgejo_v17_pull_request_milestone_actions_and_payload) (action='demilestoned') ... ERROR
+test_extracts_merged_pull_request_commit_from_native_close_event (test_forgejo_emitted_webhook_e2e.ParseLivePullRequestDeliveryRecordTests.test_extracts_merged_pull_request_commit_from_native_close_event) ... ok
+test_extracts_native_pull_request_title_edit (test_forgejo_emitted_webhook_e2e.ParseLivePullRequestDeliveryRecordTests.test_extracts_native_pull_request_title_edit) ... ok
+test_extracts_native_rejected_review_and_binds_its_notification_type (test_forgejo_emitted_webhook_e2e.ParseLivePullRequestDeliveryRecordTests.test_extracts_native_rejected_review_and_binds_its_notification_type) ... ok
+test_extracts_native_reopened_pull_request_transition (test_forgejo_emitted_webhook_e2e.ParseLivePullRequestDeliveryRecordTests.test_extracts_native_reopened_pull_request_transition) ... ok
+test_extracts_native_review_request_removal_and_binds_requested_user (test_forgejo_emitted_webhook_e2e.ParseLivePullRequestDeliveryRecordTests.test_extracts_native_review_request_removal_and_binds_requested_user) ... ok
+test_extracts_native_review_request_without_treating_webhook_as_canonical_state (test_forgejo_emitted_webhook_e2e.ParseLivePullRequestDeliveryRecordTests.test_extracts_native_review_request_without_treating_webhook_as_canonical_state) ... ok
+test_extracts_synchronized_pull_request_event_with_advanced_head (test_forgejo_emitted_webhook_e2e.ParseLivePullRequestDeliveryRecordTests.test_extracts_synchronized_pull_request_event_with_advanced_head) ... ok
+test_live_pull_request_action_set_matches_forgejo_v17_wire_actions (test_forgejo_emitted_webhook_e2e.ParseLivePullRequestDeliveryRecordTests.test_live_pull_request_action_set_matches_forgejo_v17_wire_actions) ... ok
+test_preserves_forgejo_v17_review_event_header_and_binds_review_type (test_forgejo_emitted_webhook_e2e.ParseLivePullRequestDeliveryRecordTests.test_preserves_forgejo_v17_review_event_header_and_binds_review_type) ... ok
+test_refuses_merge_commit_on_an_unmerged_close_event (test_forgejo_emitted_webhook_e2e.ParseLivePullRequestDeliveryRecordTests.test_refuses_merge_commit_on_an_unmerged_close_event) ... ok
+test_refuses_missing_or_transition_inconsistent_pull_request_milestone (test_forgejo_emitted_webhook_e2e.ParseLivePullRequestDeliveryRecordTests.test_refuses_missing_or_transition_inconsistent_pull_request_milestone) ... 
+  test_refuses_missing_or_transition_inconsistent_pull_request_milestone (test_forgejo_emitted_webhook_e2e.ParseLivePullRequestDeliveryRecordTests.test_refuses_missing_or_transition_inconsistent_pull_request_milestone) (action='milestoned', payload_milestone=None) ... FAIL
+  test_refuses_missing_or_transition_inconsistent_pull_request_milestone (test_forgejo_emitted_webhook_e2e.ParseLivePullRequestDeliveryRecordTests.test_refuses_missing_or_transition_inconsistent_pull_request_milestone) (action='milestoned', payload_milestone={'id': 0, 'title': 'bad', 'state': 'open'}) ... FAIL
+  test_refuses_missing_or_transition_inconsistent_pull_request_milestone (test_forgejo_emitted_webhook_e2e.ParseLivePullRequestDeliveryRecordTests.test_refuses_missing_or_transition_inconsistent_pull_request_milestone) (action='milestoned', payload_milestone={'id': 71, 'title': 'bad', 'state': 'unknown'}) ... FAIL
+  test_refuses_missing_or_transition_inconsistent_pull_request_milestone (test_forgejo_emitted_webhook_e2e.ParseLivePullRequestDeliveryRecordTests.test_refuses_missing_or_transition_inconsistent_pull_request_milestone) (action='demilestoned', payload_milestone={'id': 71, 'title': 'integration-pr-milestone', 'state': 'open'}) ... FAIL
+test_rejects_a_title_edit_with_an_unexpected_previous_title (test_forgejo_emitted_webhook_e2e.ParseLivePullRequestDeliveryRecordTests.test_rejects_a_title_edit_with_an_unexpected_previous_title) ... ok
+test_rejects_a_title_edit_without_title_change_provenance (test_forgejo_emitted_webhook_e2e.ParseLivePullRequestDeliveryRecordTests.test_rejects_a_title_edit_without_title_change_provenance) ... ok
+test_rejects_invalid_pull_request_sha_in_emitted_payload (test_forgejo_emitted_webhook_e2e.ParseLivePullRequestDeliveryRecordTests.test_rejects_invalid_pull_request_sha_in_emitted_payload) ... ok
+test_synchronized_event_requires_the_forgejo_wire_action (test_forgejo_emitted_webhook_e2e.ParseLivePullRequestDeliveryRecordTests.test_synchronized_event_requires_the_forgejo_wire_action) ... ok
+
+======================================================================
+ERROR: test_extracts_forgejo_v17_pull_request_milestone_actions_and_payload (test_forgejo_emitted_webhook_e2e.ParseLivePullRequestDeliveryRecordTests.test_extracts_forgejo_v17_pull_request_milestone_actions_and_payload) (action='milestoned')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/test_forgejo_emitted_webhook_e2e.py", line 1388, in test_extracts_forgejo_v17_pull_request_milestone_actions_and_payload
+    self.assertEqual(parsed["payload_milestone"], payload_milestone)
+                     ~~~~~~^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'payload_milestone'
+
+======================================================================
+ERROR: test_extracts_forgejo_v17_pull_request_milestone_actions_and_payload (test_forgejo_emitted_webhook_e2e.ParseLivePullRequestDeliveryRecordTests.test_extracts_forgejo_v17_pull_request_milestone_actions_and_payload) (action='demilestoned')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/test_forgejo_emitted_webhook_e2e.py", line 1388, in test_extracts_forgejo_v17_pull_request_milestone_actions_and_payload
+    self.assertEqual(parsed["payload_milestone"], payload_milestone)
+                     ~~~~~~^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'payload_milestone'
+
+======================================================================
+FAIL: test_refuses_missing_or_transition_inconsistent_pull_request_milestone (test_forgejo_emitted_webhook_e2e.ParseLivePullRequestDeliveryRecordTests.test_refuses_missing_or_transition_inconsistent_pull_request_milestone) (action='milestoned', payload_milestone=None)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/test_forgejo_emitted_webhook_e2e.py", line 1427, in test_refuses_missing_or_transition_inconsistent_pull_request_milestone
+    with self.assertRaisesRegex(ValueError, "milestone"):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_refuses_missing_or_transition_inconsistent_pull_request_milestone (test_forgejo_emitted_webhook_e2e.ParseLivePullRequestDeliveryRecordTests.test_refuses_missing_or_transition_inconsistent_pull_request_milestone) (action='milestoned', payload_milestone={'id': 0, 'title': 'bad', 'state': 'open'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/test_forgejo_emitted_webhook_e2e.py", line 1427, in test_refuses_missing_or_transition_inconsistent_pull_request_milestone
+    with self.assertRaisesRegex(ValueError, "milestone"):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_refuses_missing_or_transition_inconsistent_pull_request_milestone (test_forgejo_emitted_webhook_e2e.ParseLivePullRequestDeliveryRecordTests.test_refuses_missing_or_transition_inconsistent_pull_request_milestone) (action='milestoned', payload_milestone={'id': 71, 'title': 'bad', 'state': 'unknown'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/test_forgejo_emitted_webhook_e2e.py", line 1427, in test_refuses_missing_or_transition_inconsistent_pull_request_milestone
+    with self.assertRaisesRegex(ValueError, "milestone"):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_refuses_missing_or_transition_inconsistent_pull_request_milestone (test_forgejo_emitted_webhook_e2e.ParseLivePullRequestDeliveryRecordTests.test_refuses_missing_or_transition_inconsistent_pull_request_milestone) (action='demilestoned', payload_milestone={'id': 71, 'title': 'integration-pr-milestone', 'state': 'open'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/test_forgejo_emitted_webhook_e2e.py", line 1427, in test_refuses_missing_or_transition_inconsistent_pull_request_milestone
+    with self.assertRaisesRegex(ValueError, "milestone"):
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.001s
+
+FAILED (failures=4, errors=2)

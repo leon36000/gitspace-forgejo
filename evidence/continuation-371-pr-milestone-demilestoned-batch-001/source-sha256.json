@@ -1,0 +1,9 @@
+{
+  "Cargo.lock": "459fef3749a42c989521901dcde61cb26e12ed4206c5d722e149426c2d3a5439",
+  "Cargo.toml": "a2c1182d6e5cc272c50fb0ad5f16d210befcd452527d29e4dde6cd6b05206d09",
+  "docs/checkpoint.md": "775644ea3162c5cdd2e7e57f91079ce412930acc29eceab620787ef09c85942d",
+  "docs/implementation-plan.md": "a00fe3ed8e8b35443cf5062cce05d19c90d67c05b145f8943a4e2b08fd1a4ea9",
+  "docs/refusal-evidence-matrix.md": "a0b55a7eb480a46906b9206374bb576172e39127295ac837efef011b4de70c50",
+  "scripts/run_webhook_reconcile_cli_e2e.py": "800e5b217a22c05687b62df1f5742d118df678c8a7a05dd542b4b4bcba89f2e0",
+  "tests/webhook_receiver_process_e2e.rs": "d1279e4b09b022487accf00f18b3a828dbb515c667f1ff829b761ed895ca8297"
+}

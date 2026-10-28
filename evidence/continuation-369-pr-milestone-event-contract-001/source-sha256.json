@@ -1,0 +1,15 @@
+{
+  "forgejo_clean_head_blobs": {
+    "modules/structs/pull.go": "1472f689d9e80da512cc8edafa5d647daafccdf060dfba0d4a74d3be5cfe06e3",
+    "modules/webhook/type.go": "ca6a94e1574be77bc4f5da1ee01a3e59147a148342b958577d12544dbd6d820c",
+    "services/webhook/notifier.go": "a67cca36f92104efe0feabf0c62e668e7543b979e5a7440e713ce93dd490004f"
+  },
+  "forgejo_upstream_dirty_status_entries": 64,
+  "forgejo_upstream_head": "0d791421f85ca13a63b665053d81ea765fbbc571",
+  "product_sources": {
+    "scripts/run_forgejo_live_webhook_reconcile_emitted.py": "735896740509fe313d820a01ac7d6cfdfd3e092fc6b49734eb4d564d1a30a59b",
+    "tests/test_forgejo_emitted_webhook_e2e.py": "4b0f132023e07c5a9a969c0993c31f5be499228d53a3ca7648cdd5f77a69e0ea",
+    "tests/webhook_reconcile_contract.rs": "fdb05f818cfc985acdf8479d75a8e5bac773b226541abf32ccc89e30117bb718"
+  },
+  "product_worktree_head": "f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0"
+}

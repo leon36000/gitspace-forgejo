@@ -1,0 +1,19 @@
+python=3.12.3
+platform=Linux-7.0.0-1019-nvidia-aarch64-with-glibc2.39
+rustc=rustc 1.95.0 (59807616e 2026-04-14)
+cargo=cargo 1.95.0 (f2d3ce0bd 2026-03-21)
+bubblewrap=bubblewrap 0.9.0
+git=git version 2.43.0
+branch=local/WEBHOOK-005-canonical-links
+head=f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+git_status_porcelain_records_collapsed=1778
+tracked_status_records=19
+untracked_status_records_collapsed=1759
+untracked_leaf_paths_uall=14169
+staged_paths=0
+deleted_paths=0
+forgejo_in_path=None
+go_in_path=None
+git_lfs_in_path=None
+Cargo.toml and Cargo.lock were already locally modified before this lot; this lot did not edit dependencies or licensing metadata.
+No commit, fetch, push, GitLab, email, external model, or production service was used in this local test lot.

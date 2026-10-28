@@ -1,0 +1,2 @@
+py_compile=pass (runner, license guard, and manifest helpers; bytecode under /tmp)
+trailing_whitespace=none in full runner and Rust process-test source

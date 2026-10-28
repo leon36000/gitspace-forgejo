@@ -1,0 +1,8 @@
+runner_allowlist_red=expected_argparse_exit_2_before_addition
+process_e2e=1_pass; 176_filtered
+cargo_fmt=pass
+git_diff_check=pass
+py_compile=pass
+source_whitespace=clean
+cargo_license_state_tests=12_pass
+cargo_license_metadata=metadata_policy_verified
