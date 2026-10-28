@@ -1,0 +1,8 @@
+Date d’observation : 2026-10-25
+OS/architecture : Linux 7.0.0-1019-nvidia aarch64 GNU/Linux
+Rust : rustc 1.95.0 (59807616e 2026-04-14)
+Cargo : 1.95.0 (f2d3ce0bd 2026-03-21)
+Python : 3.12.3
+Git : 2.43.0
+Bubblewrap : 0.9.0
+Cargo runner : --offline --locked; network and PID namespaces separated for the selected process scenario.

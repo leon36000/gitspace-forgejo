@@ -1,0 +1,7 @@
+# Depuis .runtime/webhook-005-workspace; le runner cible un scénario dans Bubblewrap.
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_reports_deleted_pull_request_in_single_delivery
+
+cargo fmt --all -- --check
+git diff --check
+python3 scripts/verify_cargo_license_state.py
+cargo metadata --no-deps --format-version 1

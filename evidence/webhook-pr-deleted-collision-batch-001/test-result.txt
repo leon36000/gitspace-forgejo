@@ -1,0 +1,5 @@
+Observed command: python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_keeps_deleted_pull_request_collision_separate_in_batch
+Runner exit code: 0
+Selected process test: 1 passed, 0 failed, 0 ignored; 42 filtered out.
+The isolated Cargo build used --offline --locked. The CLI's exit code 1 was expected for a batch containing a terminal deleted-PR result; the test verified the issue result still succeeded.
+Observed API fixture requests: GET /repos/forge-admin/agent-forge-core/pulls/41, then GET /repos/forge-admin/agent-forge-core/issues/41; no third request for the repeated PR delivery.

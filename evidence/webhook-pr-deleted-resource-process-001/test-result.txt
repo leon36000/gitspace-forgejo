@@ -1,0 +1,6 @@
+Observed command: python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_reports_deleted_pull_request_in_single_delivery
+Runner exit code: 0
+Selected process test: 1 passed, 0 failed, 0 ignored; 41 filtered out.
+The assertion also re-reads the durable inbox and compares it byte-for-byte with the pre-reconciliation snapshot.
+Filtered Cargo build: webhook_receiver_process_e2e compiled offline with --locked in Bubblewrap; test binary and required CLI binaries were exported into the isolated test namespace.
+The test expected the CLI itself to return exit code 1 for the structured inconclusive 404; its Rust process test passed.
