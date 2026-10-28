@@ -1,0 +1,56 @@
+{
+  "all_fixed_ports_closed": true,
+  "forgejo_local_state_retained": true,
+  "post_run_loopback_probe": {
+    "3130": {
+      "connect_ex": 111
+    },
+    "3131": {
+      "connect_ex": 111
+    }
+  },
+  "process_cleanup": {
+    "api_observation_proxy_listener_addresses_after_stop": [],
+    "api_observation_proxy_stop": {
+      "stopped": true
+    },
+    "api_observation_proxy_thread_exited": true,
+    "cleanup_failure": null,
+    "forgejo_stop": {
+      "returncode": 0,
+      "started": true,
+      "stop_action": "terminate",
+      "stopped": true
+    },
+    "http_proxy_listener_addresses_after_stop": [],
+    "http_proxy_stop": {
+      "stopped": true
+    },
+    "http_proxy_thread_exited": true,
+    "receiver_stops": [
+      {
+        "listener_addresses_after_stop": [],
+        "phase": "before_native_replay",
+        "stop": {
+          "returncode": 0,
+          "started": true,
+          "stop_action": "terminate",
+          "stopped": true
+        }
+      },
+      {
+        "listener_addresses_after_stop": [],
+        "phase": "final_cleanup",
+        "stop": {
+          "returncode": 0,
+          "started": true,
+          "stop_action": "terminate",
+          "stopped": true
+        }
+      }
+    ],
+    "tracked_processes_exited": true,
+    "webhook_deactivated_before_server_stop": true
+  },
+  "verdict": "passed"
+}

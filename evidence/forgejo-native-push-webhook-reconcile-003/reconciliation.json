@@ -1,0 +1,62 @@
+{
+  "batch_exit_status": 0,
+  "batch_result": {
+    "api_version": "forgejo-rest-v1",
+    "results": [
+      {
+        "canonical_state": {
+          "base_sha": null,
+          "head_sha": "75e6f497e9d45c79504d790cde60e1c0ce8e6ffc",
+          "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/src/branch/agent%2Fnative-push-proof",
+          "merge_commit_sha": null,
+          "merged": null,
+          "state": "present",
+          "updated_at": "2026-10-25T14:18:52-04:00"
+        },
+        "delivery_id": "0615a42b-b901-436e-bdef-d5c4187edd82",
+        "resource": {
+          "branch": "agent/native-push-proof",
+          "kind": "branch",
+          "owner": "forge-admin",
+          "repository": "agent-forge-core"
+        },
+        "verdict": "current_state_read"
+      },
+      {
+        "canonical_state": {
+          "base_sha": null,
+          "head_sha": "75e6f497e9d45c79504d790cde60e1c0ce8e6ffc",
+          "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/src/branch/agent%2Fnative-push-proof",
+          "merge_commit_sha": null,
+          "merged": null,
+          "state": "present",
+          "updated_at": "2026-10-25T14:18:52-04:00"
+        },
+        "delivery_id": "681a81fa-b84c-4ce5-965b-5ec13ab79fc7",
+        "resource": {
+          "branch": "agent/native-push-proof",
+          "kind": "branch",
+          "owner": "forge-admin",
+          "repository": "agent-forge-core"
+        },
+        "verdict": "current_state_read"
+      }
+    ],
+    "schema_version": 5,
+    "upstream_read_attempts": 1,
+    "verdict": "current_state_read"
+  },
+  "deliveries": [
+    {
+      "canonical_head_sha": "75e6f497e9d45c79504d790cde60e1c0ce8e6ffc",
+      "notification_after_sha": "4672785eb15678e9dc8a9d5d53e2357100c5b4d7",
+      "notification_delivery_id": "0615a42b-b901-436e-bdef-d5c4187edd82"
+    },
+    {
+      "canonical_head_sha": "75e6f497e9d45c79504d790cde60e1c0ce8e6ffc",
+      "notification_after_sha": "75e6f497e9d45c79504d790cde60e1c0ce8e6ffc",
+      "notification_delivery_id": "681a81fa-b84c-4ce5-965b-5ec13ab79fc7"
+    }
+  ],
+  "journal_unchanged": true
+}

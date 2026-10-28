@@ -1,0 +1,45 @@
+test_accepts_one_exact_read_only_issue_get_without_recording_credential (test_forgejo_webhook_native_replay_e2e.CountedReconciliationApiReadTests.test_accepts_one_exact_read_only_issue_get_without_recording_credential) ... FAIL
+test_rejects_retried_or_additional_upstream_requests (test_forgejo_webhook_native_replay_e2e.CountedReconciliationApiReadTests.test_rejects_retried_or_additional_upstream_requests) ... FAIL
+test_rejects_wrong_resource_status_method_or_reader_credential (test_forgejo_webhook_native_replay_e2e.CountedReconciliationApiReadTests.test_rejects_wrong_resource_status_method_or_reader_credential) ... FAIL
+test_accepts_only_loopback_http_origins_with_a_valid_port (test_forgejo_webhook_native_replay_e2e.NativeReplayBindingTests.test_accepts_only_loopback_http_origins_with_a_valid_port) ... ok
+test_binds_every_proxy_request_body_to_its_forgejo_task (test_forgejo_webhook_native_replay_e2e.NativeReplayBindingTests.test_binds_every_proxy_request_body_to_its_forgejo_task) ... ok
+test_binds_failed_original_to_successful_new_uuid_and_same_payload (test_forgejo_webhook_native_replay_e2e.NativeReplayBindingTests.test_binds_failed_original_to_successful_new_uuid_and_same_payload) ... ok
+test_binds_inactive_hook_replay_to_skipped_task_and_unchanged_journal (test_forgejo_webhook_native_replay_e2e.NativeReplayBindingTests.test_binds_inactive_hook_replay_to_skipped_task_and_unchanged_journal) ... ok
+test_binds_repeated_manual_replays_to_distinct_ordered_deliveries (test_forgejo_webhook_native_replay_e2e.NativeReplayBindingTests.test_binds_repeated_manual_replays_to_distinct_ordered_deliveries) ... ok
+test_rejects_journal_payload_that_differs_from_forgejo_task (test_forgejo_webhook_native_replay_e2e.NativeReplayBindingTests.test_rejects_journal_payload_that_differs_from_forgejo_task) ... ok
+test_rejects_journal_record_bound_to_another_uuid (test_forgejo_webhook_native_replay_e2e.NativeReplayBindingTests.test_rejects_journal_record_bound_to_another_uuid) ... ok
+test_rejects_nonfailed_original_or_unverified_replay (test_forgejo_webhook_native_replay_e2e.NativeReplayBindingTests.test_rejects_nonfailed_original_or_unverified_replay) ... ok
+test_rejects_same_uuid_or_changed_payload (test_forgejo_webhook_native_replay_e2e.NativeReplayBindingTests.test_rejects_same_uuid_or_changed_payload) ... ok
+test_accepts_two_replayed_deliveries_bound_to_one_canonical_issue_read (test_forgejo_webhook_native_replay_e2e.NativeReplayReconciliationTests.test_accepts_two_replayed_deliveries_bound_to_one_canonical_issue_read) ... ok
+test_rejects_canonical_state_that_differs_from_the_live_issue_readback (test_forgejo_webhook_native_replay_e2e.NativeReplayReconciliationTests.test_rejects_canonical_state_that_differs_from_the_live_issue_readback) ... ok
+test_rejects_more_than_one_upstream_read_for_the_duplicate_resource (test_forgejo_webhook_native_replay_e2e.NativeReplayReconciliationTests.test_rejects_more_than_one_upstream_read_for_the_duplicate_resource) ... ok
+test_rejects_reordered_or_substituted_delivery_results (test_forgejo_webhook_native_replay_e2e.NativeReplayReconciliationTests.test_rejects_reordered_or_substituted_delivery_results) ... ok
+
+======================================================================
+FAIL: test_accepts_one_exact_read_only_issue_get_without_recording_credential (test_forgejo_webhook_native_replay_e2e.CountedReconciliationApiReadTests.test_accepts_one_exact_read_only_issue_get_without_recording_credential)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/test_forgejo_webhook_native_replay_e2e.py", line 338, in setUp
+    self.assertTrue(callable(validator), "independent API read validator is missing")
+AssertionError: False is not true : independent API read validator is missing
+
+======================================================================
+FAIL: test_rejects_retried_or_additional_upstream_requests (test_forgejo_webhook_native_replay_e2e.CountedReconciliationApiReadTests.test_rejects_retried_or_additional_upstream_requests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/test_forgejo_webhook_native_replay_e2e.py", line 338, in setUp
+    self.assertTrue(callable(validator), "independent API read validator is missing")
+AssertionError: False is not true : independent API read validator is missing
+
+======================================================================
+FAIL: test_rejects_wrong_resource_status_method_or_reader_credential (test_forgejo_webhook_native_replay_e2e.CountedReconciliationApiReadTests.test_rejects_wrong_resource_status_method_or_reader_credential)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/test_forgejo_webhook_native_replay_e2e.py", line 338, in setUp
+    self.assertTrue(callable(validator), "independent API read validator is missing")
+AssertionError: False is not true : independent API read validator is missing
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.001s
+
+FAILED (failures=3)
