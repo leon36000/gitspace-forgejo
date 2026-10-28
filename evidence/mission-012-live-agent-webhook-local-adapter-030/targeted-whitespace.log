@@ -1,0 +1,4 @@
+git diff --check -- docs/checkpoint.md docs/implementation-plan.md: exit=0
+(no whitespace errors)
+evidence/mission-012-live-agent-webhook-local-adapter-030/local-run.md: final_newline_and_no_trailing_whitespace=true
+evidence/mission-012-live-agent-webhook-local-adapter-030/independent-review.md: final_newline_and_no_trailing_whitespace=true

@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-10-24T07:13:04Z",
+  "source_head": "f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0",
+  "worktree_was_dirty": true,
+  "checks": [
+    {
+      "group": "composition",
+      "path": "scripts/mission_012_test_agent_adapter.py",
+      "expected_sha256": "7fa23d4024f105b266911c8cacb9907d991272719a36bce03d569108eeb7787b",
+      "observed_sha256": "7fa23d4024f105b266911c8cacb9907d991272719a36bce03d569108eeb7787b",
+      "matches": true
+    },
+    {
+      "group": "composition",
+      "path": "scripts/run_forgejo_live_webhook_mission_admission.py",
+      "expected_sha256": "73f9c3a44fa23b463f7bf02e8101b8c552a321e57139d0fd1d7c5cf28f653da3",
+      "observed_sha256": "73f9c3a44fa23b463f7bf02e8101b8c552a321e57139d0fd1d7c5cf28f653da3",
+      "matches": true
+    },
+    {
+      "group": "composition",
+      "path": "scripts/run_mission_012_live_agent_pr_e2e.py",
+      "expected_sha256": "5fcb1ba1bca8384c15f7a4bf5ee0fe7f6d7c0b0517a7d598238c0cb012962ef3",
+      "observed_sha256": "5fcb1ba1bca8384c15f7a4bf5ee0fe7f6d7c0b0517a7d598238c0cb012962ef3",
+      "matches": true
+    },
+    {
+      "group": "composition",
+      "path": "scripts/run_mission_012_live_composed_e2e.py",
+      "expected_sha256": "2af93af28179e8e6e2372ac1c49325ac515bc7a4c79c4aa16104913a401f2891",
+      "observed_sha256": "2af93af28179e8e6e2372ac1c49325ac515bc7a4c79c4aa16104913a401f2891",
+      "matches": true
+    },
+    {
+      "group": "composition",
+      "path": "scripts/run_mission_012_live_mcp_agent_e2e.py",
+      "expected_sha256": "1be8a4b765043f9fa9c6a988db5e7f699303af2e0934f9bb9dc077f3982beac9",
+      "observed_sha256": "1be8a4b765043f9fa9c6a988db5e7f699303af2e0934f9bb9dc077f3982beac9",
+      "matches": true
+    },
+    {
+      "group": "merge_authority_build",
+      "path": "Cargo.lock",
+      "expected_sha256": "bf599559dd11ff21ecc4754aa8a693966b4a9ca401153d7d7caa1f18d8995fcc",
+      "observed_sha256": "bf599559dd11ff21ecc4754aa8a693966b4a9ca401153d7d7caa1f18d8995fcc",
+      "matches": true
+    },
+    {
+      "group": "merge_authority_build",
+      "path": "Cargo.toml",
+      "expected_sha256": "5244b83d82e6af0504a5f62c951e4779ab672fc429ea93c88c4e4393906bae0c",
+      "observed_sha256": "5244b83d82e6af0504a5f62c951e4779ab672fc429ea93c88c4e4393906bae0c",
+      "matches": true
+    },
+    {
+      "group": "merge_authority_build",
+      "path": "src/bin/forgejo-reconcile-local.rs",
+      "expected_sha256": "47af56cd80d0f597735e33835d7ff3db37254801ac97089670171e9a856a8c01",
+      "observed_sha256": "47af56cd80d0f597735e33835d7ff3db37254801ac97089670171e9a856a8c01",
+      "matches": true
+    },
+    {
+      "group": "merge_authority_build",
+      "path": "src/bin/gate.rs",
+      "expected_sha256": "4366abaa55d4d5d539b10d48a3706afbf37702c9dd199466545963dbdc9d116d",
+      "observed_sha256": "4366abaa55d4d5d539b10d48a3706afbf37702c9dd199466545963dbdc9d116d",
+      "matches": true
+    },
+    {
+      "group": "merge_authority_build",
+      "path": "src/forgejo.rs",
+      "expected_sha256": "4838b7aa13fbaf30320989efd957affba3f3f71aa5849b13db1d3b2d2c343bab",
+      "observed_sha256": "4838b7aa13fbaf30320989efd957affba3f3f71aa5849b13db1d3b2d2c343bab",
+      "matches": true
+    },
+    {
+      "group": "merge_authority_build",
+      "path": "src/lib.rs",
+      "expected_sha256": "cf6d087738102455e0b407974b5630089d850529beb1874fb180282a503e962c",
+      "observed_sha256": "cf6d087738102455e0b407974b5630089d850529beb1874fb180282a503e962c",
+      "matches": true
+    }
+  ],
+  "all_match": true,
+  "note": "Current source hashes are compared with run receipts; HEAD identifies the starting commit but does not identify the dirty working tree by itself."
+}

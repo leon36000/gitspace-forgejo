@@ -1,0 +1,95 @@
+{
+  "both_notifications_reconciled_to_current_state": true,
+  "candidate_commit": "cebedec3006be9c3624f279cd32d00d3bfa9a9c0",
+  "canonical_state": {
+    "base_sha": "2072c6b942e8b2867e352b5fd40abf22aace0ce0",
+    "head_sha": "cebedec3006be9c3624f279cd32d00d3bfa9a9c0",
+    "merged": true,
+    "state": "closed"
+  },
+  "cleanup": {
+    "cleanup_failure": null,
+    "hook_deactivated": true,
+    "receiver_listener_absent": true,
+    "receiver_listener_addresses_after_stop": [],
+    "receiver_stop": {
+      "returncode": 0,
+      "started": true,
+      "stop_action": "terminate",
+      "stopped": true
+    },
+    "receiver_stopped": true,
+    "started": true
+  },
+  "closed_delivery_id": "0cfd5671-d7f3-448c-9f88-6ebd732f70cf",
+  "closed_payload": {
+    "base_sha": "2072c6b942e8b2867e352b5fd40abf22aace0ce0",
+    "head_sha": "cebedec3006be9c3624f279cd32d00d3bfa9a9c0",
+    "merged": true,
+    "state": "closed"
+  },
+  "closed_sequence": 2,
+  "event_count": 2,
+  "forgejo_task_count": 2,
+  "hook_id": 2,
+  "hook_readback": {
+    "active_after_run": false,
+    "api_hook_id": 2,
+    "configuration_matches_expected": true,
+    "content_type": "json",
+    "deactivation_readback_confirmed": true,
+    "events": [
+      "pull_request",
+      "pull_request_assign",
+      "pull_request_label",
+      "pull_request_milestone",
+      "pull_request_comment",
+      "pull_request_review_approved",
+      "pull_request_review_rejected",
+      "pull_request_review_comment",
+      "pull_request_sync",
+      "pull_request_review_request"
+    ],
+    "events_readback_valid": true,
+    "hook_id": 2,
+    "secret_value_recorded": false,
+    "target": "http://127.0.0.1:60367/forgejo/webhook",
+    "type": "gitea"
+  },
+  "merge_commit": "2072c6b942e8b2867e352b5fd40abf22aace0ce0",
+  "opened_delivery_id": "c8ce41a2-5aae-43cb-8816-da58255af500",
+  "opened_payload": {
+    "base_sha": "c9324f31f7cad9702c4e61d8758de16e555ad190",
+    "head_sha": "cebedec3006be9c3624f279cd32d00d3bfa9a9c0",
+    "merged": false,
+    "state": "open"
+  },
+  "opened_sequence": 1,
+  "pull_request_number": 2,
+  "receiver_binary_sha256": "97885cc995323b1b6e3b1d983179719916807c3bbe5ec78345aa07b7ed396363",
+  "reconciled_delivery_ids": [
+    "c8ce41a2-5aae-43cb-8816-da58255af500",
+    "0cfd5671-d7f3-448c-9f88-6ebd732f70cf"
+  ],
+  "review_event_window": {
+    "collection_gap": "PR webhook deliveries from hook deactivation before approval submission through hook reactivation before premerge checks are not collected; current-state API rereads and protected merge gates still apply.",
+    "event_type": "pull_request_review_approved",
+    "hook_paused_before_approval": true,
+    "hook_reactivated_before_premerge_checks": true,
+    "pause_readback": {
+      "active_after_run": false,
+      "configuration_matches_expected": true,
+      "deactivation_readback_confirmed": true
+    },
+    "receiver_support": "unsupported",
+    "resume_readback": {
+      "active_after_run": true,
+      "configuration_matches_expected": true,
+      "deactivation_readback_confirmed": false
+    }
+  },
+  "schema_version": 2,
+  "status": "verified_current_merged_pr",
+  "successful_http_202_count": 2,
+  "target_profile": "mission-012-clamp"
+}
