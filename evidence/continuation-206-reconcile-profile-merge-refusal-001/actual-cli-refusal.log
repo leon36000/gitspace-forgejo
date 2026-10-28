@@ -1,0 +1,10 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.54s
+     Running tests/forgejo_reconcile_capabilities_e2e.rs (target/debug/deps/forgejo_reconcile_capabilities_e2e-79e71d1241083922)
+
+running 2 tests
+test merge_cli_rejects_reconciliation_only_value_under_merge_selector ... ok
+test merge_cli_rejects_reconciliation_only_profile_before_any_merge_input ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 5 filtered out; finished in 0.00s
+

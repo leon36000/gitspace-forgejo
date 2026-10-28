@@ -1,0 +1,3 @@
+04b31ce6f16a43101662afba6fca27a4b18f4f873c2090c496ff922753710a7a  scripts/run_forgejo_live_org_team_reviewer_readback.py
+6d21af79251ab8828cdd67de2901ac2466bc21707df565b374a54e28bbc0794b  tests/test_forgejo_live_org_team_reviewer_readback.py
+Forgejo official audit reference: v17.0.0 commit 0d791421f85ca13a63b665053d81ea765fbbc571 (no upstream source copied or modified).

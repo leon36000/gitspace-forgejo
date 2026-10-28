@@ -1,0 +1,5 @@
+Before implementing `validate_read_only_write_scope_probe`, the newly added test module failed to import that missing function:
+
+ImportError: cannot import name 'validate_read_only_write_scope_probe' from 'run_forgejo_live_org_team_reviewer_readback'
+
+After the implementation, the targeted Python module passes 8/8. This import failure is the expected test-first red state, not a product runtime failure.

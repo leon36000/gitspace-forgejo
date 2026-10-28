@@ -1,0 +1,7 @@
+{
+  "platform": "linux",
+  "python": "3.12.3",
+  "stage": "read_only_rust_reconciliation",
+  "state_dir": "/tmp/forgejo-team-review-cont204-state-003",
+  "state_dir_mode": "0700"
+}

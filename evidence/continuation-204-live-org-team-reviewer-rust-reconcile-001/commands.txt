@@ -1,0 +1,8 @@
+Initial test-first run:
+cargo test --offline --locked --bin forgejo-reconcile-local reconcile_invocation_accepts_the_org_team_reviewer_read_only_profile -- --exact --nocapture
+
+Corrected exact-filter run, before implementation:
+cargo test --offline --locked --bin forgejo-reconcile-local reconcile_invocation_accepts_the_org_team_reviewer_read_only_profile -- --nocapture
+
+Initial live harness attempt:
+python3 scripts/run_forgejo_live_org_team_reviewer_readback.py --forgejo-binary /tmp/forgejo-17.0.0 --state-dir /tmp/forgejo-team-review-cont204-state-001 --evidence-dir evidence/continuation-204-live-org-team-reviewer-rust-reconcile-001

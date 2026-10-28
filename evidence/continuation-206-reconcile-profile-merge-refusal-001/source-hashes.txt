@@ -1,0 +1,2 @@
+4e4b9b10901600c104aa31b52028df877cd1fc43a0c9ada2bf196b4f698b5881  src/bin/forgejo-reconcile-local.rs
+ba6597b6a3755a4330744487d3ba89f7cb55221318af50c12c32d42a41ec4813  tests/forgejo_reconcile_capabilities_e2e.rs

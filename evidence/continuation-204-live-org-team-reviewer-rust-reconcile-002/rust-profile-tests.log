@@ -1,0 +1,14 @@
+$ cargo test --offline --locked --bin forgejo-reconcile-local reconcile_invocation_ -- --nocapture
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.01s
+     Running unittests src/bin/forgejo-reconcile-local.rs (target/debug/deps/forgejo_reconcile_local-3e9fc5f7734f2ac5)
+
+running 6 tests
+test tests::reconcile_invocation_accepts_the_mission_012_target_profile ... ok
+test tests::reconcile_invocation_accepts_the_org_team_reviewer_read_only_profile ... ok
+test tests::reconcile_invocation_rejects_duplicate_or_standard_credential_fds ... ok
+test tests::reconcile_invocation_rejects_ambiguous_or_unknown_target_profiles ... ok
+test tests::reconcile_invocation_accepts_a_host_pipe_fd_and_fixed_config ... ok
+test tests::reconcile_invocation_rejects_unknown_duplicate_and_combined_reconcile_profiles ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 149 filtered out; finished in 0.00s
+

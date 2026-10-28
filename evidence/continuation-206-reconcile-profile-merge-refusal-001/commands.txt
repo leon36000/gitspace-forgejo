@@ -1,0 +1,4 @@
+cargo test --offline --locked --bin forgejo-reconcile-local reconciliation_only_profile -- --nocapture
+cargo test --offline --locked --test forgejo_reconcile_capabilities_e2e merge_cli_rejects_reconciliation_only -- --nocapture
+cargo fmt --all -- --check
+git diff --check

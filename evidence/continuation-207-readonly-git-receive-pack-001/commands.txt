@@ -1,0 +1,5 @@
+# Commande du premier essai (résultat inconclusif)
+
+python3 scripts/run_forgejo_live_org_team_reviewer_readback.py --forgejo-binary /tmp/forgejo-17.0.0 --state-dir /tmp/forgejo-team-review-cont207-state-001 --evidence-dir evidence/continuation-207-readonly-git-receive-pack-001 --probe-read-only-git-write
+
+Le processus s’est arrêté avec erreur car aucun statut receive-pack explicite n’était disponible dans le flux de logs inspecté; ne pas interpréter comme refus HTTP prouvé.

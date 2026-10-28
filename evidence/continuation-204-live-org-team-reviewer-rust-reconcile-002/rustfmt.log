@@ -1,0 +1,23 @@
+$ cargo fmt --all -- --check
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/src/bin/forgejo-reconcile-local.rs:8119:
+             "inbox.jsonl".into(),
+             "delivery-1".into(),
+         ]);
+-        assert!(matches!(unknown, Err(message) if message.contains("unknown Forgejo reconciliation profile")));
++        assert!(
++            matches!(unknown, Err(message) if message.contains("unknown Forgejo reconciliation profile"))
++        );
+ 
+         let duplicate = parse_reconcile_invocation([
+             "--reconcile-target-profile".into(),
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/src/bin/forgejo-reconcile-local.rs:8139:
+             "inbox.jsonl".into(),
+             "delivery-1".into(),
+         ]);
+-        assert!(matches!(with_legacy_profile, Err(message) if message.contains("cannot be combined")));
++        assert!(
++            matches!(with_legacy_profile, Err(message) if message.contains("cannot be combined"))
++        );
+ 
+         let scratch = ScratchJournalDir::new();
+         let config_path = scratch.0.join("adapter.json");

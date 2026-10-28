@@ -1,0 +1,5 @@
+Date: 2026-10-27 America/Montreal
+Workspace HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0 (dirty, existing state preserved).
+rustc 1.95.0 (59807616e 2026-04-14)
+cargo 1.95.0 (f2d3ce0bd 2026-03-21)
+Tests run with --offline --locked.

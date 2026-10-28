@@ -1,0 +1,1 @@
+$ python3 -m py_compile scripts/run_forgejo_live_org_team_reviewer_readback.py scripts/run_forgejo_live_webhook_reconcile_e2e.py tests/test_forgejo_live_org_team_reviewer_readback.py

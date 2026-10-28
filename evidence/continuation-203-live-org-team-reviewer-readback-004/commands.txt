@@ -1,0 +1,6 @@
+python3 scripts/run_forgejo_live_org_team_reviewer_readback.py --forgejo-binary /tmp/forgejo-17.0.0 --state-dir /tmp/forgejo-team-review-cont203-state-004 --evidence-dir evidence/continuation-203-live-org-team-reviewer-readback-004
+python3 -m unittest discover -s tests -p 'test_forgejo_live_org_team_reviewer_readback.py' -v
+python3 -m py_compile scripts/run_forgejo_live_org_team_reviewer_readback.py tests/test_forgejo_live_org_team_reviewer_readback.py
+git diff --check
+python3 evidence/continuation-203-live-org-team-reviewer-readback-004/append_manifests.py
+python3 evidence/continuation-203-live-org-team-reviewer-readback-004/verify_append_only_indexes.py

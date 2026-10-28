@@ -1,0 +1,1 @@
+{"local_entries_appended": 7, "local_files_verified": 7, "project_entries_appended": 12, "project_prefix_preserved": true, "worktree_entries_appended": 11, "worktree_prefix_preserved": true}

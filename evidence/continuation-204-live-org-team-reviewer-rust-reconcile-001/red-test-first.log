@@ -1,0 +1,18 @@
+The first command included --exact but omitted the module-qualified test name. It returned exit 0 while executing zero tests; this was treated as no evidence and not as a pass:
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 155 filtered out
+
+The corrected command selected one test and failed before implementation, proving the fixed profile was absent:
+
+running 1 test
+
+thread 'tests::reconcile_invocation_accepts_the_org_team_reviewer_read_only_profile' panicked at src/bin/forgejo-reconcile-local.rs:8025:9:
+assertion `left == right` failed
+  left: "forge-admin"
+ right: "forge-team-org"
+
+test tests::reconcile_invocation_accepts_the_org_team_reviewer_read_only_profile ... FAILED
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 154 filtered out
