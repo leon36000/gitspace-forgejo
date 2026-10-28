@@ -1,0 +1,28 @@
+{
+  "canonical_state": {
+    "base_sha": "f66a232b5fce5ada01ee6632ff7d168cfb0593f1",
+    "comment": {
+      "body": "Local Forgejo webhook adapter reconciliation fixture comment.",
+      "body_trust": "untrusted_user_content",
+      "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/2#issuecomment-4",
+      "id": 4,
+      "state": "present",
+      "updated_at": "2026-10-26T23:13:15-04:00"
+    },
+    "head_sha": "e5e1e4ac086246e1b01243483ece92d2b0ba2769",
+    "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/2",
+    "merge_commit_sha": null,
+    "merged": false,
+    "requested_reviewers": [],
+    "state": "closed",
+    "updated_at": "2026-10-26T23:13:16-04:00"
+  },
+  "delivery_id": "e7e927da-f69b-4f95-8336-d644aa2be6bd",
+  "resource": {
+    "kind": "pull_request",
+    "number": 2,
+    "owner": "forge-admin",
+    "repository": "agent-forge-core"
+  },
+  "verdict": "current_state_read"
+}

@@ -1,0 +1,10 @@
+Product worktree: /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace
+Worktree HEAD before this continuation: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+Worktree was already heavily modified; no reset, clean, commit, or checkout replacement was performed.
+
+rustc 1.95.0 (59807616e 2026-04-14)
+cargo 1.95.0 (f2d3ce0bd 2026-03-21)
+rust host: aarch64-unknown-linux-gnu
+Python 3.12.3
+Forgejo scratch HEAD: v17.0.0 / 0d791421f85ca13a63b665053d81ea765fbbc571
+Go: not found in the current PATH; no Go build or Forgejo source test was run in this tranche.

@@ -1,0 +1,36 @@
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:7733:
+     .expect("serialize stale PR webhook without reviewer authority fields");
+ 
+     let (mut receiver, address) = start_ready_receiver(&secret, &journal_path);
+-    let (status, accepted) = send(
+-        address,
+-        &request_event(DELIVERY_ID, "pull_request", &body),
+-    );
++    let (status, accepted) = send(address, &request_event(DELIVERY_ID, "pull_request", &body));
+     assert_eq!(status, 202);
+     assert_eq!(accepted["accepted"], true);
+     assert!(stop_receiver(&mut receiver).success());
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:7843:
+     }))
+     .expect("serialize PR webhook for malformed current reviewer-team response");
+     let (mut receiver, address) = start_ready_receiver(&secret, &journal_path);
+-    let (status, accepted) = send(
+-        address,
+-        &request_event(DELIVERY_ID, "pull_request", &body),
+-    );
++    let (status, accepted) = send(address, &request_event(DELIVERY_ID, "pull_request", &body));
+     assert_eq!(status, 202);
+     assert_eq!(accepted["accepted"], true);
+     assert!(stop_receiver(&mut receiver).success());
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:7902:
+     assert_eq!(value["verdict"], "inconclusive");
+     assert_eq!(value["error"]["code"], "invalid_current_state");
+     assert_eq!(value["error"]["retryable"], false);
+-    assert_eq!(value["error"]["details"]["field"], "requested_reviewers_teams");
++    assert_eq!(
++        value["error"]["details"]["field"],
++        "requested_reviewers_teams"
++    );
+     assert!(!value["error"]["action"].as_str().unwrap().is_empty());
+     assert!(value.get("canonical_state").is_none());
+ }

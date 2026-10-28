@@ -1,0 +1,97 @@
+{
+  "indexed_failed_runs": [
+    [
+      "7c17636f0808977b47c34d9fbe13d3eb3efd6b1c0b99b6b4c242e915d8b684f4",
+      "evidence/continuation-169-pr-reviewer-projection-001/cargo-build.log",
+      ".runtime/webhook-005-workspace/evidence/continuation-169-pr-reviewer-projection-001/cargo-build.log"
+    ],
+    [
+      "574179595abf806adb1317cd10793d09ff0aa4e65fb628216deaba0d538847e9",
+      "evidence/continuation-169-pr-reviewer-projection-001/duplicate-delivery-replay.json",
+      ".runtime/webhook-005-workspace/evidence/continuation-169-pr-reviewer-projection-001/duplicate-delivery-replay.json"
+    ],
+    [
+      "aefbcbeecc134c39f5ed088eb68b3c733302be19fad3b660924f4481129763a9",
+      "evidence/continuation-169-pr-reviewer-projection-001/failure.json",
+      ".runtime/webhook-005-workspace/evidence/continuation-169-pr-reviewer-projection-001/failure.json"
+    ],
+    [
+      "c901105144c6e708e1a1743220bb212be53e718af9264d7d2c16b625b3d67d88",
+      "evidence/continuation-169-pr-reviewer-projection-001/forgejo-hook-tasks.json",
+      ".runtime/webhook-005-workspace/evidence/continuation-169-pr-reviewer-projection-001/forgejo-hook-tasks.json"
+    ],
+    [
+      "8ba06e95999910d2d14f35d0fcc69fcd1266f8f0101f72039c0796099e673873",
+      "evidence/continuation-169-pr-reviewer-projection-001/hook-readback.json",
+      ".runtime/webhook-005-workspace/evidence/continuation-169-pr-reviewer-projection-001/hook-readback.json"
+    ],
+    [
+      "e037910ab7707c6131884359c4be698c23c798fa3a97f2da1805bde2dc745659",
+      "evidence/continuation-169-pr-reviewer-projection-001/port-cleanup-readback.json",
+      ".runtime/webhook-005-workspace/evidence/continuation-169-pr-reviewer-projection-001/port-cleanup-readback.json"
+    ],
+    [
+      "01fd5b81f08b2ee019abfec963e916e45b7ccd3973c28c3bf0f1e562fe305e47",
+      "evidence/continuation-169-pr-reviewer-projection-001/SHA256SUMS",
+      ".runtime/webhook-005-workspace/evidence/continuation-169-pr-reviewer-projection-001/SHA256SUMS"
+    ],
+    [
+      "a60d40960b5c8c29c3c35da169a9d69348345d428fa77264ffedecaaaca13e8a",
+      "evidence/continuation-169-pr-reviewer-projection-002/cargo-build.log",
+      ".runtime/webhook-005-workspace/evidence/continuation-169-pr-reviewer-projection-002/cargo-build.log"
+    ],
+    [
+      "b065fafe64458f0772d1b7da9223f0217c2cb630c83c32c0ed6a873a606452a7",
+      "evidence/continuation-169-pr-reviewer-projection-002/duplicate-delivery-replay.json",
+      ".runtime/webhook-005-workspace/evidence/continuation-169-pr-reviewer-projection-002/duplicate-delivery-replay.json"
+    ],
+    [
+      "360e68d5d3480df7360ea969d26963b62b86e9508831bbd05bcfc4996b36459e",
+      "evidence/continuation-169-pr-reviewer-projection-002/failure.json",
+      ".runtime/webhook-005-workspace/evidence/continuation-169-pr-reviewer-projection-002/failure.json"
+    ],
+    [
+      "0b45cbd991a01ea10efcc955221aac6c25902ed5f57dca9d969658fd9a9333cc",
+      "evidence/continuation-169-pr-reviewer-projection-002/forgejo-hook-tasks.json",
+      ".runtime/webhook-005-workspace/evidence/continuation-169-pr-reviewer-projection-002/forgejo-hook-tasks.json"
+    ],
+    [
+      "41c8febadd4b1518f91881605a3e0c908cbce27be4a787ce75bdc2f4e2688a7d",
+      "evidence/continuation-169-pr-reviewer-projection-002/hook-readback.json",
+      ".runtime/webhook-005-workspace/evidence/continuation-169-pr-reviewer-projection-002/hook-readback.json"
+    ],
+    [
+      "c90751166776d5be9467681cf692574701378ecc7df7b39d43d9abb00fe54d90",
+      "evidence/continuation-169-pr-reviewer-projection-002/port-cleanup-readback.json",
+      ".runtime/webhook-005-workspace/evidence/continuation-169-pr-reviewer-projection-002/port-cleanup-readback.json"
+    ],
+    [
+      "68421785c694a95f2886edb93f1f045f408328391e28a433fdb25e7c210c5298",
+      "evidence/continuation-169-pr-reviewer-projection-002/SHA256SUMS",
+      ".runtime/webhook-005-workspace/evidence/continuation-169-pr-reviewer-projection-002/SHA256SUMS"
+    ]
+  ],
+  "worktree_entries_appended": 14,
+  "project_entries_appended": 15,
+  "prefix_before": {
+    "worktree": {
+      "line_count": 11865,
+      "sha256": "abb6463fc58cb50ca24acbaee7fb12f9a016f76b699be93f77479866ba815cc1"
+    },
+    "project": {
+      "line_count": 6078,
+      "sha256": "cfcecbc414d21228e8e06701188fda3141c7a845656f09a1272f19d7a66ae454"
+    }
+  },
+  "prefix_after": {
+    "worktree": {
+      "line_count": 11879,
+      "sha256": "529e7599b47bce22a49940387845979d8e583eaa832dd8aac477434341f3c04d"
+    },
+    "project": {
+      "line_count": 6093,
+      "sha256": "e0ea34b616832bc2f90f57b83ce2e42598acdac30b79766902387101e57f0e21"
+    }
+  },
+  "prefixes_preserved": true
+}

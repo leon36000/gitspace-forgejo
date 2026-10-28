@@ -1,0 +1,13 @@
+Product worktree base: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0 (dirty working tree; tested modifications are not a commit)
+Product source SHA-256:
+c1c858d7f24c12f934f6f9646951190a6e65dd419d3748bde304624e49e9cf2b  src/webhook/reconcile.rs
+2b69bbb5b042319266fa9fb7269cc354d49436780da9269f81a11f0123582c5c  src/bin/forgejo-reconcile-local.rs
+427b09d809786efb441f5c3287bd2903e45b0264fb44f4b9c13203469baf981d  scripts/run_forgejo_live_webhook_reconcile_emitted.py
+d208b4f656394533f2c4a96fd9a9eb5a6ca8f58c695e0cba4ed667c7fc69fc51  tests/test_forgejo_emitted_webhook_e2e.py
+
+Forgejo source audit: /tmp/forgejo-v17-base-cas-poc, official v17.0.0 commit 0d791421f85ca13a63b665053d81ea765fbbc571. SHA-256 of `git show HEAD:<path>` output:
+7e3e4ef86c1854943eb36530797a878dc10a66845d3e34e845dc3c69c80930b5  services/convert/pull.go
+1472f689d9e80da512cc8edafa5d647daafccdf060dfba0d4a74d3be5cfe06e3  modules/structs/pull.go
+b946c8cb957aa5397420036ec5583f0c1a08e9a07177f4ff5846c03fad07ceff  modules/structs/user.go
+
+The scratch is dirty from unrelated experimental work; these files had no status entries and match the pinned HEAD blobs. No Forgejo source was copied into the product.

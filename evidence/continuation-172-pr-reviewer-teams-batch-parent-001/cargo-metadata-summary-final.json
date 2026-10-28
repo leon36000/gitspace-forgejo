@@ -1,0 +1,12 @@
+{
+  "license": null,
+  "license_file": null,
+  "licensing": {
+    "decision": null,
+    "redistribution_rights": null,
+    "spdx_package_license_declared": null
+  },
+  "name": "agent-forge-core",
+  "publish": [],
+  "version": "0.1.0"
+}

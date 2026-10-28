@@ -1,0 +1,30 @@
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:8001:
+         "batch reconciliation CLI failed: {}",
+         String::from_utf8_lossy(&output.stderr)
+     );
+-    assert_eq!(requests.len(), 2, "one PR read and one comment read are expected");
++    assert_eq!(
++        requests.len(),
++        2,
++        "one PR read and one comment read are expected"
++    );
+     assert!(requests[0].starts_with(&format!(
+         "GET /api/v1/repos/{OWNER}/{REPOSITORY}/pulls/{NUMBER} HTTP/1.1\r\n"
+     )));
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:8038:
+         assert_eq!(result["verdict"], "current_state_read");
+         assert_eq!(result["canonical_state"]["head_sha"], current_head);
+         assert_eq!(result["canonical_state"]["base_sha"], current_base);
+-        assert_eq!(result["canonical_state"]["requested_reviewers"], expected_reviewers);
+-        assert_eq!(result["canonical_state"]["requested_reviewers_teams"], expected_teams);
++        assert_eq!(
++            result["canonical_state"]["requested_reviewers"],
++            expected_reviewers
++        );
++        assert_eq!(
++            result["canonical_state"]["requested_reviewers_teams"],
++            expected_teams
++        );
+     }
+     assert_eq!(
+         results[1]["canonical_state"]["comment"]["body_trust"],

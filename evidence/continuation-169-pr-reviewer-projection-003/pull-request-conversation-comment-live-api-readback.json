@@ -1,0 +1,7 @@
+{
+  "body": "Local Forgejo webhook adapter reconciliation fixture comment.",
+  "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/2#issuecomment-4",
+  "id": 4,
+  "pull_request_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/2",
+  "updated_at": "2026-10-26T23:13:15-04:00"
+}

@@ -1,0 +1,120 @@
+{
+  "api_version": "forgejo-rest-v1",
+  "results": [
+    {
+      "canonical_state": {
+        "base_sha": "f66a232b5fce5ada01ee6632ff7d168cfb0593f1",
+        "comment": null,
+        "head_sha": "e5e1e4ac086246e1b01243483ece92d2b0ba2769",
+        "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/2",
+        "merge_commit_sha": null,
+        "merged": false,
+        "requested_reviewers": [],
+        "state": "closed",
+        "updated_at": "2026-10-26T23:13:16-04:00"
+      },
+      "delivery_id": "25aaa56d-6c53-47f7-8023-83a1b49ca155",
+      "resource": {
+        "kind": "pull_request",
+        "number": 2,
+        "owner": "forge-admin",
+        "repository": "agent-forge-core"
+      },
+      "verdict": "current_state_read"
+    },
+    {
+      "canonical_state": {
+        "base_sha": "f66a232b5fce5ada01ee6632ff7d168cfb0593f1",
+        "comment": {
+          "body": "Local Forgejo webhook adapter reconciliation fixture comment.",
+          "body_trust": "untrusted_user_content",
+          "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/2#issuecomment-4",
+          "id": 4,
+          "state": "present",
+          "updated_at": "2026-10-26T23:13:15-04:00"
+        },
+        "head_sha": "e5e1e4ac086246e1b01243483ece92d2b0ba2769",
+        "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/2",
+        "merge_commit_sha": null,
+        "merged": false,
+        "requested_reviewers": [],
+        "state": "closed",
+        "updated_at": "2026-10-26T23:13:16-04:00"
+      },
+      "delivery_id": "e7e927da-f69b-4f95-8336-d644aa2be6bd",
+      "resource": {
+        "kind": "pull_request",
+        "number": 2,
+        "owner": "forge-admin",
+        "repository": "agent-forge-core"
+      },
+      "verdict": "current_state_read"
+    },
+    {
+      "canonical_state": {
+        "base_sha": "f66a232b5fce5ada01ee6632ff7d168cfb0593f1",
+        "comment": null,
+        "head_sha": "e5e1e4ac086246e1b01243483ece92d2b0ba2769",
+        "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/2",
+        "merge_commit_sha": null,
+        "merged": false,
+        "requested_reviewers": [],
+        "state": "closed",
+        "updated_at": "2026-10-26T23:13:16-04:00"
+      },
+      "delivery_id": "bcb8b200-49f8-468d-a4f6-45e4e2d0c73f",
+      "resource": {
+        "kind": "pull_request",
+        "number": 2,
+        "owner": "forge-admin",
+        "repository": "agent-forge-core"
+      },
+      "verdict": "current_state_read"
+    },
+    {
+      "canonical_state": {
+        "base_sha": "f66a232b5fce5ada01ee6632ff7d168cfb0593f1",
+        "comment": null,
+        "head_sha": "e5e1e4ac086246e1b01243483ece92d2b0ba2769",
+        "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/2",
+        "merge_commit_sha": null,
+        "merged": false,
+        "requested_reviewers": [],
+        "state": "closed",
+        "updated_at": "2026-10-26T23:13:16-04:00"
+      },
+      "delivery_id": "36c70eff-87c3-4408-8f87-d34f9970ca11",
+      "resource": {
+        "kind": "pull_request",
+        "number": 2,
+        "owner": "forge-admin",
+        "repository": "agent-forge-core"
+      },
+      "verdict": "current_state_read"
+    },
+    {
+      "canonical_state": {
+        "base_sha": "f66a232b5fce5ada01ee6632ff7d168cfb0593f1",
+        "comment": null,
+        "head_sha": "e5e1e4ac086246e1b01243483ece92d2b0ba2769",
+        "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/2",
+        "merge_commit_sha": null,
+        "merged": false,
+        "requested_reviewers": [],
+        "state": "closed",
+        "updated_at": "2026-10-26T23:13:16-04:00"
+      },
+      "delivery_id": "3fca95e9-fdea-4f1f-ba70-b405bb792fc1",
+      "resource": {
+        "kind": "pull_request",
+        "number": 2,
+        "owner": "forge-admin",
+        "repository": "agent-forge-core"
+      },
+      "verdict": "current_state_read"
+    }
+  ],
+  "schema_version": 7,
+  "upstream_read_attempts": 2,
+  "verdict": "current_state_read"
+}

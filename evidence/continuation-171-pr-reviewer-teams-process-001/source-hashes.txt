@@ -1,0 +1,9 @@
+Current product worktree source and evidence inputs:
+0e4a291b32aeff4ee0f57e3bd535fb9fa69d9f33b41f292121c8839fb49d1919  tests/webhook_receiver_process_e2e.rs
+b25d21f319a7775adf18f4a4846193a9add84d2a37ef9134517fd2b583fe9206  scripts/run_webhook_reconcile_cli_e2e.py
+da8fc1f71dfac04a2c1416ae912eac8779197bab8d147fef9ad0933aa9ae09e8  src/webhook/reconcile.rs
+f3e925c93db5f4adb4d4340991704d641fc3b2aea95aab75646e487943d0f5d6  src/bin/forgejo-reconcile-local.rs
+f9144c83c85369f40ecfd2255fdd0915ddb90a4d6c14e1705908febe9bb2b1a3  Cargo.toml
+bf599559dd11ff21ecc4754aa8a693966b4a9ca401153d7d7caa1f18d8995fcc  Cargo.lock
+
+The current CLI projection hashes for Rust sources repeat CONTINUATION-170 and are included to bind this process proof to that implementation. There is no Forgejo source checkout or third-party source copied in this evidence directory.
