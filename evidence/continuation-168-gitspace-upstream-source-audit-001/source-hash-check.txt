@@ -1,0 +1,7 @@
+sha256sum -c source-sha256.txt from /tmp/gitspace-audit-dcde1142cf76:
+12 selected source/schema/test files: OK
+git rev-parse HEAD: dcde1142cf76996a6ba0074cb7eab9d3c870c561
+git status --porcelain after tests: empty
+rustc 1.97.1 (8bab26f4f 2026-07-14)
+cargo 1.97.1 (c980f4866 2026-06-30)
+bubblewrap 0.9.0

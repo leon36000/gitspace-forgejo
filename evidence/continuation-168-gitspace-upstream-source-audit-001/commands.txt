@@ -1,0 +1,20 @@
+Public source identity:
+  git ls-remote https://github.com/leon36000/GitSpace.git HEAD refs/heads/main
+  GET https://api.github.com/repos/leon36000/GitSpace
+  GET https://api.github.com/repos/leon36000/GitSpace/commits/main
+  GET https://api.github.com/repos/leon36000/GitSpace/git/trees/dcde1142cf76996a6ba0074cb7eab9d3c870c561?recursive=1
+  GET https://raw.githubusercontent.com/leon36000/GitSpace/dcde1142cf76996a6ba0074cb7eab9d3c870c561/README.md
+  GET https://raw.githubusercontent.com/leon36000/GitSpace/dcde1142cf76996a6ba0074cb7eab9d3c870c561/Cargo.toml
+  git clone --no-checkout --depth=1 --filter=blob:none https://github.com/leon36000/GitSpace.git /tmp/gitspace-audit-dcde1142cf76
+  git -C /tmp/gitspace-audit-dcde1142cf76 checkout --detach HEAD
+
+Dependency fetch (fresh /tmp/gitspace-audit-cargo-home; crates.io lockfile sources only; HOME and environment cleared; source read-only):
+  cargo fetch --locked
+
+Test command run after dependency fetch (Bubblewrap; source read-only at /opt; network/PID/user namespaces isolated; /home and /tmp temporary and masked; Cargo home was the private scratch cache mounted at /var/cache; output was observed by exec_command):
+  cargo test --quiet --offline --locked --workspace --all-targets
+
+Equivalent isolated invocation recorded from the executed command:
+  bwrap --unshare-all --die-with-parent --clearenv --ro-bind / / --ro-bind /tmp/gitspace-audit-dcde1142cf76 /opt --bind /tmp/gitspace-audit-target /var/tmp --bind /tmp/gitspace-audit-cargo-home /var/cache --ro-bind /home/pc6/.cargo/bin /usr/local/bin --ro-bind /home/pc6/.rustup /root --tmpfs /home --tmpfs /tmp --dir /tmp/home --proc /proc --dev /dev --chdir /opt --setenv HOME /tmp/home --setenv CARGO_HOME /var/cache --setenv CARGO_TARGET_DIR /var/tmp --setenv RUSTUP_HOME /root --setenv RUSTUP_TOOLCHAIN 1.97.1 --setenv CARGO_NET_OFFLINE true --setenv CARGO_REGISTRIES_CRATES_IO_PROTOCOL sparse --setenv PATH /usr/local/bin:/usr/bin:/bin -- /usr/local/bin/cargo test --quiet --offline --locked --workspace --all-targets
+
+Source hashes: sha256sum output is in source-sha256.txt. The product worktree was not used as a Cargo source or target.

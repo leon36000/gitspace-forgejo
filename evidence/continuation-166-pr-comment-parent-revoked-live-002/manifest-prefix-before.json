@@ -1,0 +1,14 @@
+{
+  "local": {
+    "line_count": 19,
+    "sha256": "dd3364bb845304f410770a368ed8889c8dc437008b74575463637f5f4dcbe9a8"
+  },
+  "project": {
+    "line_count": 5946,
+    "sha256": "930ffc15b69cd3ebf1d689fef053d7c0ef1a854e5c4c8857b499364c5f163f0f"
+  },
+  "worktree": {
+    "line_count": 11742,
+    "sha256": "9c7aa3f077699486767a656b69e50d023b92754c34689be2df42bbce154e37e6"
+  }
+}

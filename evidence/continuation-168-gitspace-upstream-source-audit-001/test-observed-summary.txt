@@ -1,0 +1,9 @@
+Observation from the single successful cargo test tool result on 2026-10-26:
+command: cargo test --quiet --offline --locked --workspace --all-targets
+exit_code: 0
+wall_time_seconds: 15.744
+cargo_test_result_blocks: 34
+tests_passed: 107
+tests_failed: 0
+
+This is a concise transcription/count of the tool output, not its raw byte-for-byte stdout. The exact source is pinned by HEAD and source-sha256.txt; commands.txt records the sandbox and reproduction command.

@@ -1,0 +1,14 @@
+Date: 2026-10-26
+Scratch source path: /tmp/gitspace-audit-dcde1142cf76
+Git HEAD: dcde1142cf76996a6ba0074cb7eab9d3c870c561
+Git tree: 760dfeca4fcc8f43c4799bea37eed37f1ea9f618
+Git status after checkout/test: clean
+Host: Linux 7.0.0-1019-nvidia aarch64
+rust-toolchain.toml: 1.97.1, minimal, clippy and rustfmt components declared
+rustc/cargo used: 1.97.1
+Bubblewrap: 0.9.0
+Cargo lock source: crates.io registry only
+Build scripts in repository: no build.rs found
+Network during cargo fetch: enabled for public locked crates.io dependencies only; process env cleared and HOME masked
+Network during cargo test: disabled with Bubblewrap
+GitSpace/Forgejo code copied into product: no

@@ -1,0 +1,7 @@
+{
+  "cleanup_failure": null,
+  "error_message": "PR-comment reconciler did not complete the expected canonical reads",
+  "error_type": "ValueError",
+  "stage": "reconcile_issue_and_pull_request_events",
+  "verdict": "failed"
+}

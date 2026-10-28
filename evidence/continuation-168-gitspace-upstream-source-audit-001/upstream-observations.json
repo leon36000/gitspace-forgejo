@@ -1,0 +1,31 @@
+{
+  "observed_date": "2026-10-26",
+  "repository": "https://github.com/leon36000/GitSpace",
+  "default_branch": "main",
+  "head_sha": "dcde1142cf76996a6ba0074cb7eab9d3c870c561",
+  "tree_sha": "760dfeca4fcc8f43c4799bea37eed37f1ea9f618",
+  "tracked_blob_count": 217,
+  "commit_date": "2026-08-14T23:32:51-04:00",
+  "commit_subject": "docs: project final proven Task 11 state into RAGLite",
+  "github_license_metadata": null,
+  "license_named_paths": [],
+  "readme_license_state": "UNKNOWN",
+  "readme_project_state": "bootstrap draft; README says the full GitSpace product is not yet implemented",
+  "rust_workspace_members": [
+    "gs-canonical-json",
+    "gs-eval-ir",
+    "gs-cas",
+    "gs-event-journal",
+    "gs-verdict",
+    "gs-local-runner",
+    "gs-foundry-cli"
+  ],
+  "cargo_locked_source": "crates.io registry only",
+  "archive_search": {
+    "root": "/home/pc6/Documents/Codex",
+    "names": ["GitSpace-main.zip", "forgejo-forgejo (2).zip"],
+    "matches": 0,
+    "scope_limit": "This root only; absence elsewhere is not established"
+  },
+  "product_code_copied": false
+}

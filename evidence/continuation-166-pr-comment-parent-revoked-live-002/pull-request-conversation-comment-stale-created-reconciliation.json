@@ -1,0 +1,24 @@
+{
+  "api_version": "forgejo-rest-v1",
+  "delivery_id": "9fa1ad3e-755b-47e7-8a0f-1d61729cb40a",
+  "error": {
+    "action": "verify the comment ID, parent pull request, and repository access; a deleted comment is absent only after the parent pull request is readable",
+    "code": "resource_not_found",
+    "details": {
+      "journal_source_hash": "012514263e9ede7a6070431f996f64c6d00ed26089bdf6cb46af1f047d038748",
+      "journal_source_sequence": 6,
+      "resource": {
+        "comment_id": 4,
+        "kind": "pull_request_comment",
+        "owner": "forge-admin",
+        "pull_request_number": 2,
+        "repository": "agent-forge-core"
+      },
+      "upstream": "forgejo"
+    },
+    "retryable": false
+  },
+  "schema_version": 5,
+  "upstream_read_attempts": 1,
+  "verdict": "inconclusive"
+}

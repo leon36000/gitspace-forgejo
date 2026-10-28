@@ -1,0 +1,7 @@
+{
+  "cleanup_failure": null,
+  "error_message": "pull-request reconciliation batch did not report one current-state read",
+  "error_type": "ValueError",
+  "stage": "reconcile_issue_and_pull_request_events",
+  "verdict": "failed"
+}
