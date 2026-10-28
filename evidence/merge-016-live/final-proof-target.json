@@ -1,0 +1,7 @@
+{
+  "base_branch": "main",
+  "origin": "http://127.0.0.1:3130",
+  "owner": "forge-admin",
+  "profile_selector": "merge-014-agent-forge-core",
+  "repository": "agent-forge-core"
+}

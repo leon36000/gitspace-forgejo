@@ -1,0 +1,46 @@
+{
+  "reviews": [
+    {
+      "body": "Reviewed this candidate and its acceptance result against main at b8cd6972aacd3c0137a260287922fae64239b661.",
+      "comments_count": 0,
+      "commit_id": "a939b5e3a0cf6f5f474acce8c28dff6153610857",
+      "dismissed": false,
+      "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/2#issuecomment-3",
+      "id": 1,
+      "official": true,
+      "pull_request_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/2",
+      "stale": false,
+      "state": "APPROVED",
+      "submitted_at": "2026-10-23T13:50:39-04:00",
+      "team": null,
+      "updated_at": "2026-10-23T13:50:39-04:00",
+      "user": {
+        "active": true,
+        "avatar_url": "http://127.0.0.1:3130/avatars/6a9dd4a103760335b1ea305eca60dd03",
+        "created": "2026-10-23T13:50:36-04:00",
+        "description": "",
+        "email": "forge-reviewer@local.invalid",
+        "followers_count": 0,
+        "following_count": 0,
+        "full_name": "",
+        "html_url": "http://127.0.0.1:3130/forge-reviewer",
+        "id": 2,
+        "is_admin": false,
+        "language": "",
+        "last_login": "1969-12-31T19:00:00-05:00",
+        "location": "",
+        "login": "forge-reviewer",
+        "login_name": "",
+        "prohibit_login": false,
+        "pronouns": "",
+        "restricted": false,
+        "source_id": 0,
+        "starred_repos_count": 0,
+        "username": "forge-reviewer",
+        "visibility": "public",
+        "website": ""
+      }
+    }
+  ],
+  "x_total_count": 1
+}

@@ -1,0 +1,13 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.01s
+     Running unittests src/bin/forgejo-reconcile-local.rs (target/debug/deps/forgejo_reconcile_local-3e9fc5f7734f2ac5)
+
+running 6 tests
+test tests::local_merge_gate_refuses_additional_merge_whitelist_users ... ok
+test tests::local_merge_gate_refuses_merge_whitelist_teams ... ok
+test tests::local_merge_gate_refuses_branch_protection_without_team_whitelist_readback ... ok
+test tests::local_merge_gate_stops_before_merge_post_when_another_user_is_whitelisted ... ok
+test tests::local_merge_gate_rechecks_branch_protection_immediately_before_merge_post ... ok
+test tests::local_merge_gate_reports_invalid_final_branch_protection_as_inconclusive ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 74 filtered out; finished in 0.06s
+

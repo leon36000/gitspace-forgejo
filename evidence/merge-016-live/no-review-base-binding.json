@@ -1,0 +1,11 @@
+{
+  "base_branch": "main",
+  "base_commit": "984e71b8c7c81e1e49af1871e0ce28d0257fca1c",
+  "candidate_commit": "e7e03d62498dd50f5eb4f240beb8e3fc2d44f3e4",
+  "pull_request_number": 2,
+  "review_id": 1,
+  "reviewer_id": 2,
+  "reviewer_login": "forge-reviewer",
+  "schema_version": 1,
+  "source": "synthetic host fixture; no review is expected yet"
+}

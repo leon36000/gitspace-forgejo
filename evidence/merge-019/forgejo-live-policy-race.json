@@ -1,0 +1,147 @@
+{
+  "api_server_port": 3131,
+  "credentials_persisted_in_evidence": false,
+  "event_trace": [
+    {
+      "event": "forward",
+      "http_status": 200,
+      "method": "GET",
+      "path": "/api/v1/repos/forge-admin/agent-forge-core/pulls/2"
+    },
+    {
+      "event": "forward",
+      "http_status": 200,
+      "method": "GET",
+      "path": "/api/v1/user"
+    },
+    {
+      "event": "forward",
+      "http_status": 200,
+      "method": "GET",
+      "path": "/api/v1/repos/forge-admin/agent-forge-core/pulls/2/reviews?limit=50&page=1"
+    },
+    {
+      "event": "branch_protection_read_request",
+      "ordinal": 1
+    },
+    {
+      "event": "forward",
+      "http_status": 200,
+      "method": "GET",
+      "path": "/api/v1/repos/forge-admin/agent-forge-core/branch_protections"
+    },
+    {
+      "event": "forward",
+      "http_status": 200,
+      "method": "GET",
+      "path": "/api/v1/users/forge-reviewer"
+    },
+    {
+      "event": "forward",
+      "http_status": 200,
+      "method": "GET",
+      "path": "/api/v1/repos/forge-admin/agent-forge-core/branches/main"
+    },
+    {
+      "event": "forward",
+      "http_status": 200,
+      "method": "GET",
+      "path": "/api/v1/repos/forge-admin/agent-forge-core/pulls/2"
+    },
+    {
+      "event": "forward",
+      "http_status": 200,
+      "method": "GET",
+      "path": "/api/v1/repos/forge-admin/agent-forge-core/branches/main"
+    },
+    {
+      "event": "branch_protection_read_request",
+      "ordinal": 2
+    },
+    {
+      "event": "policy_patch",
+      "http_status": 200
+    },
+    {
+      "event": "forward",
+      "http_status": 200,
+      "method": "GET",
+      "path": "/api/v1/repos/forge-admin/agent-forge-core/branch_protections"
+    }
+  ],
+  "external_writers_excluded": false,
+  "forgejo_binary_sha256": "e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7",
+  "forgejo_version": "17.0.0+gitea-1.22.0",
+  "gate_non_get_upstream_attempts": 0,
+  "gate_policy_reads": 2,
+  "gate_proxy_port": 3130,
+  "gate_result": {
+    "error_code": "branch_protection_changed_during_gate",
+    "merge_attempted": false,
+    "merge_authorized": false,
+    "verdict": "rejected"
+  },
+  "merge_posts_from_gate": 0,
+  "non_get_gate_requests_blocked": 0,
+  "non_get_gate_requests_forwarded": 0,
+  "policy_after_mutation": {
+    "apply_to_admins": true,
+    "approvals_whitelist_teams": [],
+    "approvals_whitelist_username": [
+      "forge-reviewer"
+    ],
+    "block_on_official_review_requests": false,
+    "block_on_outdated_branch": true,
+    "block_on_rejected_reviews": false,
+    "branch_name": "main",
+    "created_at": "2026-10-23T23:57:38-04:00",
+    "dismiss_stale_approvals": true,
+    "enable_approvals_whitelist": true,
+    "enable_merge_whitelist": true,
+    "enable_push": false,
+    "enable_push_whitelist": false,
+    "enable_status_check": false,
+    "ignore_stale_approvals": false,
+    "merge_whitelist_teams": [],
+    "merge_whitelist_usernames": [
+      "forge-reviewer",
+      "forge-admin"
+    ],
+    "protected_file_patterns": "",
+    "push_whitelist_deploy_keys": false,
+    "push_whitelist_teams": [],
+    "push_whitelist_usernames": [],
+    "require_signed_commits": false,
+    "required_approvals": 1,
+    "rule_name": "main",
+    "status_check_contexts": null,
+    "unprotected_file_patterns": "",
+    "updated_at": "2026-10-23T23:57:39-04:00"
+  },
+  "policy_mutation_http_status": 200,
+  "pull_request_merged_after_gate": false,
+  "pull_request_state_after_gate": "open",
+  "scenario": "forgejo_live_branch_policy_changed_between_gate_reads",
+  "schema_version": 1,
+  "test_credential_is_administrator": true,
+  "write_guard_probes": [
+    {
+      "blocked_non_get_count": 1,
+      "forwarded_non_get_count": 0,
+      "forwarded_to_forgejo": false,
+      "http_status": 409,
+      "method": "POST",
+      "path": "/api/v1/repos/forge-admin/agent-forge-core/pulls/999999/merge?probe=guard",
+      "upstream_attempt_count": 0
+    },
+    {
+      "blocked_non_get_count": 1,
+      "forwarded_non_get_count": 0,
+      "forwarded_to_forgejo": false,
+      "http_status": 409,
+      "method": "POST",
+      "path": "/api/v1/repos/forge-admin/agent-forge-core/pulls/888888/merge?probe=partial",
+      "upstream_attempt_count": 0
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "issue_number": 1,
+  "issue_state": "closed",
+  "main_head": "d18dfdd8eb5fb16fc6f42c4cd16fdb3a48bc26d8",
+  "merge_commit_sha": "d18dfdd8eb5fb16fc6f42c4cd16fdb3a48bc26d8",
+  "pull_request_base_sha_after_merge": "d18dfdd8eb5fb16fc6f42c4cd16fdb3a48bc26d8",
+  "pull_request_head_sha": "93d1d83dd739197a1fd8781763ef9560a2ac5066",
+  "pull_request_merged": true,
+  "pull_request_number": 2,
+  "pull_request_state": "closed"
+}

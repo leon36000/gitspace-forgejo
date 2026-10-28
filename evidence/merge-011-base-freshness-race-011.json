@@ -1,0 +1,81 @@
+{
+  "classification": "stale_base_merge_refused",
+  "concurrent_pull_request": 3,
+  "concurrent_pull_request_after": {
+    "head_sha": "243daed1677b6dfb1cff56c09e416c96777bf1eb",
+    "merge_commit_sha": "c9678231b58f1ca4e836b01b771799f8b98ff2b0",
+    "merged": true,
+    "state": "closed"
+  },
+  "concurrent_pull_request_approved_head": "243daed1677b6dfb1cff56c09e416c96777bf1eb",
+  "concurrent_pull_request_merge_http_status": 200,
+  "concurrent_pull_request_merge_response": null,
+  "concurrent_pull_request_review": {
+    "commit_id": "243daed1677b6dfb1cff56c09e416c96777bf1eb",
+    "id": 2,
+    "reviewer_id": 2,
+    "reviewer_login": "forge-reviewer",
+    "state": "APPROVED",
+    "submitted_at": "2026-10-23T08:28:36-04:00"
+  },
+  "interpretation": "A merge accepted after main advanced means the proof's original base is no longer the exact merge base; a local/cooperative lock cannot exclude API writers that do not participate in it.",
+  "limitation": "Disposable local Forgejo v17 binary. The concurrent writer is an ordinary approved PR merge; no production service or LLM is used.",
+  "main_readme_contains_race_marker": true,
+  "main_sha_after_concurrent_merge_before_target_merge": "c9678231b58f1ca4e836b01b771799f8b98ff2b0",
+  "main_sha_after_target_attempt": "c9678231b58f1ca4e836b01b771799f8b98ff2b0",
+  "main_sha_before_race": "c8c8e59d9e44563bd01ba140c982ebde27b3cbd1",
+  "main_source_readback_error": {
+    "http_status": 404,
+    "reason": "GetContentsOrList"
+  },
+  "main_source_sha256_after_attempt": null,
+  "mergeability_readbacks_after_initial_refusal": [
+    {
+      "base_sha": "c9678231b58f1ca4e836b01b771799f8b98ff2b0",
+      "head_sha": "fb4e570cd68838472fb6b4e5f883cd31a5f6320d",
+      "mergeable": false,
+      "state": "open"
+    },
+    {
+      "base_sha": "c9678231b58f1ca4e836b01b771799f8b98ff2b0",
+      "head_sha": "fb4e570cd68838472fb6b4e5f883cd31a5f6320d",
+      "mergeable": true,
+      "state": "open"
+    }
+  ],
+  "scenario": "advance main through a separately approved PR after the target's final checks and immediately before its merge POST",
+  "schema_version": 2,
+  "target_base_sha_at_last_read": "c8c8e59d9e44563bd01ba140c982ebde27b3cbd1",
+  "target_head_sha_at_last_read": "fb4e570cd68838472fb6b4e5f883cd31a5f6320d",
+  "target_merge_attempts": [
+    {
+      "http_status": 405,
+      "label": "immediate_after_base_advance",
+      "reason": "Please try again later"
+    },
+    {
+      "http_status": 405,
+      "label": "after_forgejo_mergeability_readback",
+      "reason": "not allowed to merge [reason: The head branch is behind the base branch]"
+    }
+  ],
+  "target_merge_commit": null,
+  "target_merge_commit_parents": [],
+  "target_merge_request_head_sha": "fb4e570cd68838472fb6b4e5f883cd31a5f6320d",
+  "target_mergeability_before_post": false,
+  "target_premerge_evidence_sha256": {
+    "changed-files-before-merge.json": "814699b8ccb7f6b9244434835412ffdd15c82d633514e416d4bf00d3c5662f66",
+    "final-premerge-preflight.json": "755e6d54a1b39ee922aee4732407d83df827e6668846d2b1428db0b1a9ed29d0",
+    "premerge-forgejo-readback.json": "aa8eb6d0249a3ec7d81ff8593151e59a883e1a463379bb1fee47f3d8b5289596",
+    "reviews-final.json": "40b2d9f3de6fc0fa84ec11fcfdfd53dfab0cb870a9e61dda9276da3433b83ffa"
+  },
+  "target_pull_request": 2,
+  "target_pull_request_after_attempt": {
+    "base_sha": "c9678231b58f1ca4e836b01b771799f8b98ff2b0",
+    "head_sha": "fb4e570cd68838472fb6b4e5f883cd31a5f6320d",
+    "merge_commit_sha": null,
+    "mergeable": true,
+    "merged": false,
+    "state": "open"
+  }
+}

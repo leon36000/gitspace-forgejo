@@ -1,0 +1,20 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+     Running unittests src/bin/forgejo-reconcile-local.rs (target/debug/deps/forgejo_reconcile_local-3e9fc5f7734f2ac5)
+
+running 1 test
+
+thread 'tests::local_merge_gate_reports_invalid_final_branch_protection_as_inconclusive' (2806142) panicked at src/bin/forgejo-reconcile-local.rs:7372:9:
+assertion `left == right` failed
+  left: String("rejected")
+ right: "inconclusive"
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test tests::local_merge_gate_reports_invalid_final_branch_protection_as_inconclusive ... FAILED
+
+failures:
+
+failures:
+    tests::local_merge_gate_reports_invalid_final_branch_protection_as_inconclusive
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 79 filtered out; finished in 0.06s
+
+error: test failed, to rerun pass `--bin forgejo-reconcile-local`

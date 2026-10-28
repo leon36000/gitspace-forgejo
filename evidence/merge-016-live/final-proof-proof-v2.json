@@ -1,0 +1,42 @@
+{
+  "schema_version": 2,
+  "target": {
+    "profile_selector": "merge-014-agent-forge-core",
+    "origin": "http://127.0.0.1:3130",
+    "owner": "forge-admin",
+    "repository": "agent-forge-core",
+    "base_branch": "main"
+  },
+  "evidence": {
+    "schema_version": 1,
+    "requirement_sha256": "878086cb92e6ee91331204e51ecacb4900448537620ba6e108f8db8cca984af6",
+    "policy_sha256": "bfa4222a96cd14a471b500ba7dc9350a20fe825968fa9903594666e7bb20ea30",
+    "candidate_commit": "e7e03d62498dd50f5eb4f240beb8e3fc2d44f3e4",
+    "base_commit": "984e71b8c7c81e1e49af1871e0ce28d0257fca1c",
+    "merge_commit": null,
+    "verifier_id": "mission-012-verify-local",
+    "environment": "local Forgejo v17.0.0 and Bubblewrap test verifier",
+    "commands": [
+      [
+        "rustc",
+        "--edition=2024",
+        "/workspace/worker.rs",
+        "-o",
+        "/build/worker"
+      ],
+      [
+        "run",
+        "/worker VALUE MIN MAX in a fresh Bubblewrap namespace for each of nine cases"
+      ]
+    ],
+    "artifact_sha256": [
+      "d2d3ae071c330a25aa59fba851ef59d51c3bf6da63138953e87c96b2b6274c45",
+      "94347097f1c48eb26b881b494475284b2c9b924281f1b50571641a0ddaff4dd6",
+      "6a5432c13b0a4f341ff335adc0ad78eef3824e07aa76c37b9693d2c4a5dadafc",
+      "b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759"
+    ],
+    "outcome": "pass",
+    "detail": "All nine host-owned acceptance cases passed against source fetched by the pinned Forgejo PR head commit; the candidate worker ran separately from the host verifier. The complete PR-files API read-back listed: src/lib.rs."
+  },
+  "target_mac_sha256": "94e581197a60e48cbf931f9acded80435b5d4890724f1592044c0de7eb9b2fe3"
+}

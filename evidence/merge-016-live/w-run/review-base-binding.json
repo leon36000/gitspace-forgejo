@@ -1,0 +1,11 @@
+{
+  "base_branch": "main",
+  "base_commit": "b8cd6972aacd3c0137a260287922fae64239b661",
+  "candidate_commit": "a939b5e3a0cf6f5f474acce8c28dff6153610857",
+  "pull_request_number": 2,
+  "review_id": 1,
+  "reviewer_id": 2,
+  "reviewer_login": "forge-reviewer",
+  "schema_version": 1,
+  "source": "local test driver read the current PR immediately before submitting the synthetic separate reviewer approval"
+}

@@ -1,0 +1,42 @@
+{
+  "branch_protection": {
+    "apply_to_admins": true,
+    "approvals_whitelist_username": [
+      "forge-reviewer"
+    ],
+    "block_on_outdated_branch": true,
+    "branch_name": "main",
+    "dismiss_stale_approvals": true,
+    "enable_approvals_whitelist": true,
+    "enable_merge_whitelist": true,
+    "enable_push": false,
+    "ignore_stale_approvals": false,
+    "merge_whitelist_usernames": [
+      "forge-admin"
+    ],
+    "required_approvals": 1
+  },
+  "preflight": {
+    "api_version": "forgejo-rest-v1",
+    "merge_attempted": false,
+    "merge_authorized": false,
+    "operation": "read_only_merge_preflight",
+    "pull_request_number": 2,
+    "verdict": "proof_current"
+  },
+  "preflight_artifact_sha256": "755e6d54a1b39ee922aee4732407d83df827e6668846d2b1428db0b1a9ed29d0",
+  "pull_request": {
+    "base_ref": "main",
+    "base_sha": "c8c8e59d9e44563bd01ba140c982ebde27b3cbd1",
+    "head_ref": "agent/clamp",
+    "head_sha": "fb4e570cd68838472fb6b4e5f883cd31a5f6320d",
+    "mergeable": true,
+    "merged": false,
+    "number": 2,
+    "state": "open"
+  },
+  "race_run": "011",
+  "review_count": 1,
+  "schema_version": 1,
+  "source_artifact_sha256": "aa8eb6d0249a3ec7d81ff8593151e59a883e1a463379bb1fee47f3d8b5289596"
+}

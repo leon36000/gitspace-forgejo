@@ -1,0 +1,24 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/.runtime/merge-016-target-bound-proof-sandbox)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.44s
+     Running unittests src/bin/forgejo-reconcile-local.rs (target/debug/deps/forgejo_reconcile_local-3e9fc5f7734f2ac5)
+
+running 1 test
+test tests::short_verifier_key_is_refused_before_any_forgejo_request ... FAILED
+
+failures:
+
+---- tests::short_verifier_key_is_refused_before_any_forgejo_request stdout ----
+
+thread 'tests::short_verifier_key_is_refused_before_any_forgejo_request' (2308453) panicked at src/bin/forgejo-reconcile-local.rs:6311:9:
+assertion `left == right` failed
+  left: Null
+ right: "replace the host-managed verifier key with at least 32 bytes and issue a new proof"
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    tests::short_verifier_key_is_refused_before_any_forgejo_request
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 63 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `--bin forgejo-reconcile-local`

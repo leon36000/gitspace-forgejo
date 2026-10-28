@@ -1,0 +1,43 @@
+## MERGE-016 final review
+
+**Verdict: no material finding.** I didn't run anything, so no tests, builds or network calls are claimed.
+
+### Delegated review
+`merge016_sonnet_final` stopped at its 8-turn limit and returned nothing beyond "I'll start by locating the relevant code." It produced no findings to compare against, so everything below comes from my own reading of the source.
+
+### Scope I read
+- The focused diff `evidence/merge-016/reviews/merge-016-vs-015.diff`, all of it.
+- The agent's scope definition, `evidence/merge-016/reviews/sonnet-final-agent.json`, and `review-manifest.json`.
+- The candidate source at `src/bin/forgejo-reconcile-local.rs:2180-2339` (gate wrapper, then `merge_authority_decision` up to the proof check) and `:5838-5917` (the test server that records requests).
+- Symbol locations only (grep) in `src/lib.rs` and `src/forgejo.rs`. Their contents I checked through the diff hunks.
+
+### Checks
+
+**1. Can an untrusted proof choose or change the target? No.**
+- The expected target is built from `profile.selector()` and `api.config` (`forgejo-reconcile-local.rs:2314-2321`). The proof file supplies none of it.
+- The gate checks the API config against the selected profile before any input is read: owner and repository at `:2202`, credential origin at `:2205-2211`, origin at `:2212`.
+- `verify_target_bound_proof_v2` (`lib.rs:531`) checks the version, validates both targets, and requires all five target fields to match exactly (`lib.rs:548`). Only then does it check the MAC. The MAC uses a domain separator (`lib.rs:361`) and covers `{schema_version, target, evidence}`.
+- All V2 structs reject unknown fields (`lib.rs:301`, `:366`, `:427`). `ProofTargetV2::validate` rejects non-canonical values (diff lines 116-129).
+
+**2. Can a Forgejo request happen before V2 authentication? No.**
+Everything before the proof check is local: the scope is built (`:2237-2243`), the file lock is taken (`:2244`), and the expected binding and proof are read from disk (`:2268-2276`). Rejection returns from the pre-check (`:2291`), the parse (`:2303`) and verification (`:2328`) all happen before the policy read at `:2337`. The later readiness step (`:2627`) re-verifies the proof through `validate_target_bound_merge_preflight_v2` (`forgejo.rs:744`).
+
+**3. Is malformed schema classified correctly? Yes.**
+- A real V1 proof has no top-level `schema_version` but has `evidence` and `mac_sha256`, so it gets `target_bound_proof_required` (`:2282-2284`).
+- A non-negative integer version other than 2 gets `unsupported_target_bound_proof_version` (`:2285-2287`).
+- The string `"2"`, `2.0`, negative numbers, `null`, non-objects, or a version-2 body that fails strict parsing all get `invalid_target_bound_proof` (`:2288`, `:2300-2311`).
+
+**4. Do the tests actually prove no network access? Yes.**
+- The test server records every connection it accepts (`:5853-5867`). The authority call is synchronous and finishes before `done` is set, so any request would already be recorded.
+- `legacy_v1_proof_is_rejected…` (`:6204`), `malformed_target_bound_schema…` (`:6234`, uses `"2"` as a string, diff line 970) and `proof_signed_for_other_profile…` (`:6274`) each assert `requests.is_empty()` and that no merge was called.
+- The library test (`lib.rs:1619`) covers a mismatch in each of the five target fields, a tampered MAC or evidence, each stale binding, a wrong version, unknown fields at three levels, and a missing version.
+
+### Minor notes (none material)
+- **Untested origin check:** `forgejo-reconcile-local.rs:2212` is skipped under `cfg!(test)`, so no unit test can exercise the production origin-equals-profile check. In test builds, the origin part of the expected target simply comes from the test server's config.
+- **Narrow cross-profile test:** the end-to-end test changes only `profile_selector`. Mismatches in the other four fields are covered only by the library test.
+- **Unreachable branch:** `target_proof_error_code` maps `MissingProof` (`:2762-2764`), but the authority always passes `Some(&proof)`, so that arm can't be reached from there.
+
+### Limits of this review
+- I didn't read the full files: the `forgejo.rs` V2 readiness bodies after the diff hunks, `gate.rs` beyond its diff, or the rest of the test server's responses.
+- I didn't look at the evidence logs and assumed nothing about whether tests, builds or mutation runs passed.
+- I didn't compare the code against the MERGE-015 base tree beyond the provided diff.

@@ -1,0 +1,164 @@
+{
+  "evidence_id": "MERGE-011-source-toctou",
+  "date": "2026-10-23",
+  "classification": "toctou_reproduced",
+  "official_source": {
+    "repository": "https://codeberg.org/forgejo/forgejo.git",
+    "commit": "ea9ae1e174ac290febcd92f57e7a28ccb58262d0",
+    "clean_audit_clone": "/tmp/forgejo-audit-merge006",
+    "instrumented_throwaway_clone": "/tmp/forgejo-merge011-test/source",
+    "product_worktree_modified_by_this_test": false,
+    "official_clone_modified": false,
+    "commit_created": false
+  },
+  "instrumentation": {
+    "test_name": "TestPullMergeBaseFreshnessTOCTOU",
+    "test_file": "/tmp/forgejo-merge011-test/source/tests/integration/pull_merge_freshness_race_test.go",
+    "test_file_sha256": "8e761d173e764357e74217fb7498730a6ee642ef5b0e938508a7e66971a0c0d5",
+    "route_seam": "/tmp/forgejo-merge011-test/source/routers/api/v1/repo/pull.go",
+    "route_seam_diff_sha256": "201408a0b1a6724e4888f016da440e986aaa29870e056e3b164a170eeeca65a8",
+    "test_seams": [
+      "after successful CheckPullMergeable and before pull_service.Merge",
+      "existing TestSeamPostReceiveSync after competitor Git ref update and before SyncBranchesToDB"
+    ],
+    "protection_readback": {
+      "block_on_outdated_branch": true,
+      "enable_push": false,
+      "required_approvals": 1,
+      "apply_to_admins": true,
+      "merge_whitelist": "repository owner fixture"
+    },
+    "oracle": "The expected guard is exact HTTP 405 with the outdated-branch reason, target PR open/unmerged, and target file absent. Any accepted target merge is explicitly reported as TOCTOU OBSERVED; inconsistent or generic refusal is inconclusive.",
+    "interpretation": "The final target merge commit contains the concurrent merge as an ancestor, so this test does not demonstrate loss of the concurrent change. It demonstrates that block_on_outdated_branch can be decided using stale CommitsBehind state. The test attaches no external proof and does not itself demonstrate acceptance of a proof bound to an earlier base.",
+    "independent_review": "Corrected test reviewed read-only; one-shot target gate, goroutine-safe error return, exact refusal oracle, competitor merge/readbacks, and final Git/DB equality confirmed."
+  },
+  "toolchain": {
+    "version": "go1.27.3",
+    "target": "linux/arm64",
+    "archive": "/tmp/forgejo-merge011-test/dist/go1.27.3.linux-arm64.tar.gz",
+    "archive_sha256": "a06e99309dbcbdca1a8ccd2282c3ee146e55930886e26b4f1193269587165f49",
+    "official_release_page": "https://go.dev/dl/",
+    "installed_under_tmp_only": true
+  },
+  "commands": {
+    "upstream_concurrency_baseline": "make -o git-check 'test-sqlite#TestGitPushConcurrentBranchUpdate'",
+    "instrumented_reproduction": "make -o git-check 'test-sqlite#TestPullMergeBaseFreshnessTOCTOU'",
+    "environment": "GOTOOLCHAIN=local GOROOT=/tmp/forgejo-merge011-test/toolchain GOPATH=/tmp/forgejo-merge011-test/gopath GOMODCACHE=/tmp/forgejo-merge011-test/gomodcache GOCACHE=/tmp/forgejo-merge011-test/gocache GOFLAGS=-p=2 PATH=/tmp/forgejo-merge011-test/toolchain/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+    "git_lfs": "not installed; make -o git-check skips only the git-check prerequisite for this SQLite integration test"
+  },
+  "baseline": {
+    "test": "TestGitPushConcurrentBranchUpdate",
+    "result": "PASS",
+    "log": "/tmp/forgejo-merge011-test/baseline-test.log",
+    "log_sha256": "0bdbfb2b6e5942bdb676d5eab80217bb3c3ecf05fe09a697f3708204b2654ca5"
+  },
+  "runs": [
+    {
+      "id": "toctou-corrected-001",
+      "target_head": "6210c36691a481cef038e04f91b53f07800584d6",
+      "base_before_and_db_while_paused": "2c54ec9ff4752817f1c09fce36bfb3917f0a0e71",
+      "commits_behind_seen_by_target_check": 0,
+      "competitor_http": 200,
+      "git_base_while_db_was_paused": "179d09afebb6691ae05d342948f77104ff99d14f",
+      "target_http": 200,
+      "target_readback": {
+        "merged": true,
+        "state": "closed",
+        "merge_commit": "f4d3be3149e78327f2aef705873107c7158aec7a"
+      },
+      "competitor_readback": {
+        "merged": true,
+        "state": "closed",
+        "merge_commit": "179d09afebb6691ae05d342948f77104ff99d14f"
+      },
+      "final_git_base": "f4d3be3149e78327f2aef705873107c7158aec7a",
+      "final_db_base": "f4d3be3149e78327f2aef705873107c7158aec7a",
+      "target_file_present": true,
+      "competitor_file_present": true,
+      "test_result": "FAIL at explicit TOCTOU OBSERVED assertion; expected diagnostic red on vulnerable source",
+      "log": "/tmp/forgejo-merge011-test/toctou-corrected-001.log",
+      "log_sha256": "e63633e8526a1da652bf313f1c65c1e8a60ca59c08082b2f6a98689bb8db3e2d"
+    },
+    {
+      "id": "toctou-corrected-002",
+      "target_head": "e8ef2a2f9bd2e298cb0fc7ccd2795310084c066a",
+      "base_before_and_db_while_paused": "054499e11bc142bdee9f13a9a9a7a8850654c116",
+      "commits_behind_seen_by_target_check": 0,
+      "competitor_http": 200,
+      "git_base_while_db_was_paused": "3efe01270a54d63546012d96fcad9e269bfaab02",
+      "target_http": 200,
+      "target_readback": {
+        "merged": true,
+        "state": "closed",
+        "merge_commit": "bcf265121a7bae762ad6893d8f7706a5dbb760c6"
+      },
+      "competitor_readback": {
+        "merged": true,
+        "state": "closed",
+        "merge_commit": "3efe01270a54d63546012d96fcad9e269bfaab02"
+      },
+      "final_git_base": "bcf265121a7bae762ad6893d8f7706a5dbb760c6",
+      "final_db_base": "bcf265121a7bae762ad6893d8f7706a5dbb760c6",
+      "target_file_present": true,
+      "competitor_file_present": true,
+      "test_result": "FAIL at explicit TOCTOU OBSERVED assertion; expected diagnostic red on vulnerable source",
+      "log": "/tmp/forgejo-merge011-test/toctou-corrected-002.log",
+      "log_sha256": "bc95d46f1e0072b98a07638223a00fb352ae228f99ce692a79ee6c24ff10cf55"
+    }
+  ],
+  "preliminary_run": {
+    "log": "/tmp/forgejo-merge011-test/toctou-test-003.log",
+    "log_sha256": "7ebbacc9a72e8a7451fb055c5c0c5e2670a3e3a051e30af32b759f09b20755f4",
+    "superseded_by": "toctou-corrected-001/002 after independent harness review"
+  },
+  "format_and_diff_checks": "gofmt and git diff --check passed in the throwaway source clone",
+  "limits": [
+    "This is an instrumented source test, not behavior observed on a deployed Forgejo instance.",
+    "The local v17.0.0 binary used by the API race runs in the preceding section has no established build provenance link to this source commit.",
+    "The original TOCTOU reproduction above remains the vulnerable-source experiment; no Forgejo patch was copied into the product or the clean official audit clone."
+  ],
+  "mitigation_experiment": {
+    "classification": "selected_source_guard_experiment_in_second_throwaway_clone",
+    "repository": "https://codeberg.org/forgejo/forgejo.git",
+    "commit": "ea9ae1e174ac290febcd92f57e7a28ccb58262d0",
+    "clean_official_audit_clone": "/tmp/forgejo-audit-merge006",
+    "patched_throwaway_clone": "/tmp/forgejo-merge011-fix-test/source",
+    "patch_file": "/tmp/forgejo-merge011-fix-test/merge-011-expected-base.patch",
+    "patch_sha256": "fa4a6ac37c50fc1a60cd7a7cc98ea9c7fb71cf1d611e79c635585643ca81c6e6",
+    "race_test": "tests/integration/pull_merge_freshness_race_test.go",
+    "race_test_sha256_final": "672d19da7d2adff125817e092c7702fa1df784c3bccef1523aaffd134c5e24e3",
+    "mechanism": [
+      "Capture the branch-row SHA in the same DB transaction as mergeability checks and pass it through API, web, and AutoMerge paths.",
+      "Compare the expected SHA with the fetched Git base; recompute actual divergence when block_on_outdated_branch applies instead of trusting cached CommitsBehind.",
+      "Require the built merge result to descend from the checked base and push with --force-with-lease against the expected base ref."
+    ],
+    "combined_selected_integration": {
+      "result": "PASS",
+      "exit_status": 0,
+      "duration_seconds": 71.913,
+      "log": "/tmp/forgejo-merge011-fix-test/green-final-merge-paths-and-races.log",
+      "log_sha256": "23022071ed13f7b6b74ed47cecb198a81382dfd0844ef093db11f115d366319a",
+      "source_test_version": "The production patch and all three freshness scenarios passed before a final test-only assertion comparing the check-time expected base SHA was added; after that assertion, the post-fetch race passed alone, not as a full combined rerun."
+    },
+    "final_post_fetch_test": {
+      "result": "PASS",
+      "exit_status": 0,
+      "log": "/tmp/forgejo-merge011-fix-test/green-final-after-precheck-assertion.log",
+      "log_sha256": "9bf08b5966c2cbe942eb35586edf2c48dc7fe4d84311b5e8069ae78225807182"
+    },
+    "pull_service_package": {
+      "result": "PASS",
+      "exit_status": 0,
+      "log": "/tmp/forgejo-merge011-fix-test/service-pull-package-final.log",
+      "log_sha256": "826d3cda7a42a5bca2c820d6c1dc488f0301d333ed6bb501506d5e5b412ecc44"
+    },
+    "limits": [
+      "The full Forgejo repository suite was not run; the combined command selected merge-related API integration tests only.",
+      "A local cooperative/source guard does not create server-side atomicity against external writers or other hosts.",
+      "LFSPush runs before the Git lease push; a failed lease can leave uploaded unreferenced LFS objects. LFS was not tested.",
+      "AutoMerge deletes its schedule row before Merge; a CAS failure may leave the operation unqueued. This order is unchanged in the patch.",
+      "Manual-merge bookkeeping and pull-request-head update/rebase are separate paths; no full race coverage for web or every route is claimed.",
+      "The final isolated E2E emits some TestLogger FATAL teardown markers while go test exits 0; relevant AutoMerge logger markers were also observed on baseline."
+    ]
+  }
+}

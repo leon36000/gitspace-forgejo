@@ -1,0 +1,8 @@
+{
+  "base_commit": "984e71b8c7c81e1e49af1871e0ce28d0257fca1c",
+  "candidate_commit": "e7e03d62498dd50f5eb4f240beb8e3fc2d44f3e4",
+  "merge_commit": null,
+  "policy_sha256": "bfa4222a96cd14a471b500ba7dc9350a20fe825968fa9903594666e7bb20ea30",
+  "requirement_sha256": "878086cb92e6ee91331204e51ecacb4900448537620ba6e108f8db8cca984af6",
+  "verifier_id": "mission-012-verify-local"
+}

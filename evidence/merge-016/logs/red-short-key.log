@@ -1,0 +1,22 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/.runtime/merge-016-target-bound-proof-sandbox)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.57s
+     Running unittests src/lib.rs (target/debug/deps/agent_forge_core-4f3c0a59eee64024)
+
+running 1 test
+test tests::target_bound_v2_signer_and_verifier_reject_keys_shorter_than_32_bytes ... FAILED
+
+failures:
+
+---- tests::target_bound_v2_signer_and_verifier_reject_keys_shorter_than_32_bytes stdout ----
+
+thread 'tests::target_bound_v2_signer_and_verifier_reject_keys_shorter_than_32_bytes' (2250715) panicked at src/lib.rs:1798:13:
+signer accepted a 0 byte verifier key
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    tests::target_bound_v2_signer_and_verifier_reject_keys_shorter_than_32_bytes
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 10 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `--lib`

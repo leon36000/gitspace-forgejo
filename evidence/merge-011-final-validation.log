@@ -1,0 +1,48 @@
+MERGE-011 focused validation; date=2026-10-23; product HEAD=f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+
+$ PYTHONDONTWRITEBYTECODE=1 python3 -m unittest -v tests/test_forgejo_base_freshness_race.py
+test_accepts_forgejo_wrapped_reason_without_widening_the_match (tests.test_forgejo_base_freshness_race.ClassificationTests.test_accepts_forgejo_wrapped_reason_without_widening_the_match) ... ok
+test_generic_error_after_race_is_not_a_verified_stale_base_refusal (tests.test_forgejo_base_freshness_race.ClassificationTests.test_generic_error_after_race_is_not_a_verified_stale_base_refusal) ... ok
+test_reports_a_merge_as_accepted_only_with_concurrent_advance_evidence (tests.test_forgejo_base_freshness_race.ClassificationTests.test_reports_a_merge_as_accepted_only_with_concurrent_advance_evidence) ... ok
+test_requires_approved_competitor_and_post_readback_stale_base_reason (tests.test_forgejo_base_freshness_race.ClassificationTests.test_requires_approved_competitor_and_post_readback_stale_base_reason) ... ok
+test_requires_expected_http_405_and_competitor_merge_commit (tests.test_forgejo_base_freshness_race.ClassificationTests.test_requires_expected_http_405_and_competitor_merge_commit) ... ok
+test_requires_mergeable_readback_before_retry (tests.test_forgejo_base_freshness_race.ClassificationTests.test_requires_mergeable_readback_before_retry) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.000s
+
+OK
+exit_status=0
+
+$ python3 scripts/verify_merge011_evidence.py
+009: stale_base_merge_refused
+010: stale_base_merge_refused
+011: stale_base_merge_refused
+012: stale_base_merge_refused
+10 MERGE-011 JSON files parse successfully
+exit_status=0
+
+$ git diff --check
+exit_status=0
+
+Source-level guard follow-up validation; product remains unmodified by the Forgejo patch.
+
+$ python3 scripts/verify_merge011_evidence.py
+009: stale_base_merge_refused
+010: stale_base_merge_refused
+011: stale_base_merge_refused
+012: stale_base_merge_refused
+10 MERGE-011 JSON files parse successfully
+exit_status=0
+
+$ python3 -m json.tool evidence/merge-011-base-freshness-race-source-toctou.json >/dev/null
+exit_status=0
+
+$ git diff --check
+exit_status=0
+
+Throwaway Forgejo source test evidence (exact scopes/versions/hashes in the MERGE-011 report and /tmp/forgejo-merge011-fix-test/CHECKPOINT.md):
+- selected integration group before final test-only assertion: PASS, exit 0, 71.913 s
+- final post-fetch assertion test: PASS, exit 0, run alone
+- ./services/pull package: PASS, exit 0
+- no full Forgejo test suite; no combined rerun after final test-only assertion
