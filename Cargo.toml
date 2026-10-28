@@ -1,1 +1,26 @@
-W3BhY2thZ2VdCm5hbWUgPSAiYWdlbnQtZm9yZ2UtY29yZSIKdmVyc2lvbiA9ICIwLjEuMCIKZWRpdGlvbiA9ICIyMDI0IgpkZXNjcmlwdGlvbiA9ICJNaW5pbWFsIHJlcXVpcmVtZW50cywgZXZpZGVuY2UsIGFuZCBldmVudC1qb3VybmFsIGNvcmUgZm9yIGFuIGFnZW50LW9yaWVudGVkIGZvcmdlIHByb3RvdHlwZSIKcHVibGlzaCA9IGZhbHNlCgojIFNQRFggZXhwb3J0IGhpbnQgb25seTsgQ2FyZ28ncyBvd24gbGljZW5zZSBmaWVsZCByZW1haW5zIHVuc2V0LiBOT0FTU0VSVElPTgojIG1ha2VzIG5vIGRlY2xhcmVkLWxpY2Vuc2UgYXNzZXJ0aW9uIGFuZCBncmFudHMgbm8gcmlnaHRzLgpbcGFja2FnZS5tZXRhZGF0YS5hZ2VudC1mb3JnZS5saWNlbnNpbmddCmRlY2lzaW9uID0gIm5vX2xpY2Vuc2Vfc2VsZWN0ZWQiCnJlZGlzdHJpYnV0aW9uX3JpZ2h0cyA9ICJub3RfYXNzZXNzZWQiCnNwZHhfcGFja2FnZV9saWNlbnNlX2RlY2xhcmVkID0gIk5PQVNTRVJUSU9OIgoKW2ZlYXR1cmVzXQp0ZXN0LWNyYXNoLWluamVjdGlvbiA9IFtdCgpbZGVwZW5kZW5jaWVzXQpoZXggPSAiPTAuNC4zIgpobWFjID0gIj0wLjEyLjEiCmVkMjU1MTktZGFsZWsgPSAiPTMuMC4wIgpsaWJjID0gIj0wLjIuMTkwIgpzZXJkZSA9IHsgdmVyc2lvbiA9ICI9MS4wLjIyOCIsIGZlYXR1cmVzID0gWyJkZXJpdmUiXSB9CnNlcmRlX2pzb24gPSAiPTEuMC4xNTAiCnNoYTIgPSAiPTAuMTAuOSIKemVyb2l6ZSA9ICI9MS45LjEiCg==
+[package]
+name = "agent-forge-core"
+version = "0.1.0"
+edition = "2024"
+description = "Minimal requirements, evidence, and event-journal core for an agent-oriented forge prototype"
+publish = false
+
+# SPDX export hint only; Cargo's own license field remains unset. NOASSERTION
+# makes no declared-license assertion and grants no rights.
+[package.metadata.agent-forge.licensing]
+decision = "no_license_selected"
+redistribution_rights = "not_assessed"
+spdx_package_license_declared = "NOASSERTION"
+
+[features]
+test-crash-injection = []
+
+[dependencies]
+hex = "=0.4.3"
+hmac = "=0.12.1"
+ed25519-dalek = "=3.0.0"
+libc = "=0.2.190"
+serde = { version = "=1.0.228", features = ["derive"] }
+serde_json = "=1.0.150"
+sha2 = "=0.10.9"
+zeroize = "=1.9.1"

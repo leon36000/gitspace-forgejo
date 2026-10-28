@@ -1,1 +1,28 @@
-IyEvdXNyL2Jpbi9lbnYgcHl0aG9uMwoiIiJJbmRlcGVuZGVudCBibGFjay1ib3ggYWNjZXB0YW5jZSBjaGVja3MsIG1vdW50ZWQgcmVhZC1vbmx5IGJ5IHRoZSB2ZXJpZmllci4iIiIKaW1wb3J0IHN1YnByb2Nlc3MKaW1wb3J0IHN5cwoKCmJpbmFyeSA9IHN5cy5hcmd2WzFdCmNhc2VzID0gewogICAgIjI1MG1zIjogIjI1MCIsCiAgICAiMnMiOiAiMjAwMCIsCiAgICAiM20iOiAiMTgwMDAwIiwKICAgICIwMDQyIjogIjQyIiwKICAgICI3TVMiOiAiNyIsCn0KZm9yIHNvdXJjZSwgZXhwZWN0ZWQgaW4gY2FzZXMuaXRlbXMoKToKICAgIHJlc3VsdCA9IHN1YnByb2Nlc3MucnVuKFtiaW5hcnksICJwYXJzZS1kdXJhdGlvbiIsIHNvdXJjZV0sIHRleHQ9VHJ1ZSwgY2FwdHVyZV9vdXRwdXQ9VHJ1ZSkKICAgIGFjdHVhbCA9IHJlc3VsdC5zdGRvdXQuc3RyaXAoKQogICAgaWYgcmVzdWx0LnJldHVybmNvZGUgIT0gMCBvciBhY3R1YWwgIT0gZXhwZWN0ZWQ6CiAgICAgICAgcHJpbnQoZiJGQUlMIHtzb3VyY2Uhcn06IGV4cGVjdGVkIHtleHBlY3RlZH0gbXMsIGV4aXQ9e3Jlc3VsdC5yZXR1cm5jb2RlfSwgc3Rkb3V0PXthY3R1YWwhcn0sIHN0ZGVycj17cmVzdWx0LnN0ZGVyci5zdHJpcCgpIXJ9IikKICAgICAgICByYWlzZSBTeXN0ZW1FeGl0KDEpCgpmb3Igc291cmNlIGluICgiIiwgIi0xcyIsICIxLjVzIiwgIjk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OW0iLCAiM3hzIik6CiAgICByZXN1bHQgPSBzdWJwcm9jZXNzLnJ1bihbYmluYXJ5LCAicGFyc2UtZHVyYXRpb24iLCBzb3VyY2VdLCB0ZXh0PVRydWUsIGNhcHR1cmVfb3V0cHV0PVRydWUpCiAgICBpZiByZXN1bHQucmV0dXJuY29kZSA9PSAwOgogICAgICAgIHByaW50KGYiRkFJTCB7c291cmNlIXJ9OiBpbnZhbGlkIGR1cmF0aW9uIHdhcyBhY2NlcHRlZCBhcyB7cmVzdWx0LnN0ZG91dC5zdHJpcCgpIXJ9IikKICAgICAgICByYWlzZSBTeXN0ZW1FeGl0KDEpCgpwcmludChmIlBBU1Mge2xlbihjYXNlcyl9IHZhbGlkIGFuZCA1IGludmFsaWQgZHVyYXRpb24gY2FzZXMiKQo=
+#!/usr/bin/env python3
+"""Independent black-box acceptance checks, mounted read-only by the verifier."""
+import subprocess
+import sys
+
+
+binary = sys.argv[1]
+cases = {
+    "250ms": "250",
+    "2s": "2000",
+    "3m": "180000",
+    "0042": "42",
+    "7MS": "7",
+}
+for source, expected in cases.items():
+    result = subprocess.run([binary, "parse-duration", source], text=True, capture_output=True)
+    actual = result.stdout.strip()
+    if result.returncode != 0 or actual != expected:
+        print(f"FAIL {source!r}: expected {expected} ms, exit={result.returncode}, stdout={actual!r}, stderr={result.stderr.strip()!r}")
+        raise SystemExit(1)
+
+for source in ("", "-1s", "1.5s", "999999999999999999999999m", "3xs"):
+    result = subprocess.run([binary, "parse-duration", source], text=True, capture_output=True)
+    if result.returncode == 0:
+        print(f"FAIL {source!r}: invalid duration was accepted as {result.stdout.strip()!r}")
+        raise SystemExit(1)
+
+print(f"PASS {len(cases)} valid and 5 invalid duration cases")

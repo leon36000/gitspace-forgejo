@@ -1,1 +1,15 @@
-ewogICJzY2hlbWFfdmVyc2lvbiI6IDEsCiAgImlkIjogIlJFUS0wMDEiLAogICJyZXZpc2lvbiI6IDEsCiAgInJlcXVlc3QiOiAiQWpvdXRlciBhdSBiaW5haXJlIFJ1c3QgdW4gcGFyc2V1ciBkZSBkdXLDqWUgZW4gbWlsbGlzZWNvbmRlcywgcG91ciBsZXMgc3VmZml4ZXMgbXMsIHMgZXQgbS4iLAogICJhY2NlcHRhbmNlIjogWwogICAgIkxlIGJpbmFpcmUgcGFyc2UgMjUwbXMgZW4gMjUwIG1pbGxpc2Vjb25kZXMuIiwKICAgICJMZSBiaW5haXJlIHBhcnNlIDJzIGVuIDIwMDAgbWlsbGlzZWNvbmRlcy4iLAogICAgIkxlIGJpbmFpcmUgcGFyc2UgM20gZW4gMTgwMDAwIG1pbGxpc2Vjb25kZXMuIiwKICAgICJTYW5zIHN1ZmZpeGUsIGxhIHZhbGV1ciBlc3QgZW4gbWlsbGlzZWNvbmRlcy4iLAogICAgIkxlcyBzdWZmaXhlcyBzb250IGluc2Vuc2libGVzIMOgIGxhIGNhc3NlLiIsCiAgICAiVW5lIGVudHLDqWUgdmlkZSwgbWFsIGZvcm3DqWUsIG7DqWdhdGl2ZSBvdSBkb250IGxlIGNhbGN1bCBkw6lib3JkZSBlc3QgcmVmdXPDqWUuIgogIF0sCiAgImFtYmlndWl0aWVzIjogW10KfQo=
+{
+  "schema_version": 1,
+  "id": "REQ-001",
+  "revision": 1,
+  "request": "Ajouter au binaire Rust un parseur de durée en millisecondes, pour les suffixes ms, s et m.",
+  "acceptance": [
+    "Le binaire parse 250ms en 250 millisecondes.",
+    "Le binaire parse 2s en 2000 millisecondes.",
+    "Le binaire parse 3m en 180000 millisecondes.",
+    "Sans suffixe, la valeur est en millisecondes.",
+    "Les suffixes sont insensibles à la casse.",
+    "Une entrée vide, mal formée, négative ou dont le calcul déborde est refusée."
+  ],
+  "ambiguities": []
+}

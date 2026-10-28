@@ -1,1 +1,357 @@
-IyBUaGlzIGZpbGUgaXMgYXV0b21hdGljYWxseSBAZ2VuZXJhdGVkIGJ5IENhcmdvLgojIEl0IGlzIG5vdCBpbnRlbmRlZCBmb3IgbWFudWFsIGVkaXRpbmcuCnZlcnNpb24gPSA0CgpbW3BhY2thZ2VdXQpuYW1lID0gImFnZW50LWZvcmdlLWNvcmUiCnZlcnNpb24gPSAiMC4xLjAiCmRlcGVuZGVuY2llcyA9IFsKICJlZDI1NTE5LWRhbGVrIiwKICJoZXgiLAogImhtYWMiLAogImxpYmMiLAogInNlcmRlIiwKICJzZXJkZV9qc29uIiwKICJzaGEyIDAuMTAuOSIsCiAiemVyb2l6ZSIsCl0KCltbcGFja2FnZV1dCm5hbWUgPSAiYmxvY2stYnVmZmVyIgp2ZXJzaW9uID0gIjAuMTAuNCIKc291cmNlID0gInJlZ2lzdHJ5K2h0dHBzOi8vZ2l0aHViLmNvbS9ydXN0LWxhbmcvY3JhdGVzLmlvLWluZGV4IgpjaGVja3N1bSA9ICIzMDc4Yzc2MjliNjJkM2YwNDM5NTE3ZmEzOTQ5OTZhY2FjYzVjYmM5MWM1YTIwZDhjNjU4ZTc3YWJkNTAzYTcxIgpkZXBlbmRlbmNpZXMgPSBbCiAiZ2VuZXJpYy1hcnJheSIsCl0KCltbcGFja2FnZV1dCm5hbWUgPSAiYmxvY2stYnVmZmVyIgp2ZXJzaW9uID0gIjAuMTIuMSIKc291cmNlID0gInJlZ2lzdHJ5K2h0dHBzOi8vZ2l0aHViLmNvbS9ydXN0LWxhbmcvY3JhdGVzLmlvLWluZGV4IgpjaGVja3N1bSA9ICJkMmY2YzdkYmU5NWE2ZWQ2N2FkOWYxOGU1N2RhZjkzYTJmMDM0YzUyNGI5OWZkMmI3NmQxOGZkZmViNjY2MGFhIgpkZXBlbmRlbmNpZXMgPSBbCiAiaHlicmlkLWFycmF5IiwKXQoKW1twYWNrYWdlXV0KbmFtZSA9ICJjZmctaWYiCnZlcnNpb24gPSAiMS4wLjUiCnNvdXJjZSA9ICJyZWdpc3RyeStodHRwczovL2dpdGh1Yi5jb20vcnVzdC1sYW5nL2NyYXRlcy5pby1pbmRleCIKY2hlY2tzdW0gPSAiNGU3NjQ4MTc1YjQ1YTlhNDg1MzZkNjc2ZjY4ZDkxODI3MDY5OTEwMmFhOGRhYjU0OTZkZjA2OTA0YzkxNDYwMCIKCltbcGFja2FnZV1dCm5hbWUgPSAiY3B1ZmVhdHVyZXMiCnZlcnNpb24gPSAiMC4yLjE3Igpzb3VyY2UgPSAicmVnaXN0cnkraHR0cHM6Ly9naXRodWIuY29tL3J1c3QtbGFuZy9jcmF0ZXMuaW8taW5kZXgiCmNoZWNrc3VtID0gIjU5ZWQ1ODM4ZWViYjI2YTJiYjJlNThmNmQ1YjUzMTY5ODlhZTlkMDhiYWIxMGUwZTZkMTAzZTY1NmQxYjAyODAiCmRlcGVuZGVuY2llcyA9IFsKICJsaWJjIiwKXQoKW1twYWNrYWdlXV0KbmFtZSA9ICJjcHVmZWF0dXJlcyIKdmVyc2lvbiA9ICIwLjMuMSIKc291cmNlID0gInJlZ2lzdHJ5K2h0dHBzOi8vZ2l0aHViLmNvbS9ydXN0LWxhbmcvY3JhdGVzLmlvLWluZGV4IgpjaGVja3N1bSA9ICI1Y2EyOGIwYWUzMTE1Yjg4NDY2MGRiNDExOGQ4MDM3OTFmZDY3NTZiNmU4OGYzOWMwZjNmNzg1OTA2MGQ3NTY2IgpkZXBlbmRlbmNpZXMgPSBbCiAibGliYyIsCl0KCltbcGFja2FnZV1dCm5hbWUgPSAiY3J5cHRvLWNvbW1vbiIKdmVyc2lvbiA9ICIwLjEuNyIKc291cmNlID0gInJlZ2lzdHJ5K2h0dHBzOi8vZ2l0aHViLmNvbS9ydXN0LWxhbmcvY3JhdGVzLmlvLWluZGV4IgpjaGVja3N1bSA9ICI3OGM4MjkyMDU1ZDFjMWRmMGNjZTVkMTgwMzkzZGM4Y2NlMGFiZWMwYTcxMDJhZGI2YzdiMWVlZjYwMTZkNjBhIgpkZXBlbmRlbmNpZXMgPSBbCiAiZ2VuZXJpYy1hcnJheSIsCiAidHlwZW51bSIsCl0KCltbcGFja2FnZV1dCm5hbWUgPSAiY3J5cHRvLWNvbW1vbiIKdmVyc2lvbiA9ICIwLjIuMiIKc291cmNlID0gInJlZ2lzdHJ5K2h0dHBzOi8vZ2l0aHViLmNvbS9ydXN0LWxhbmcvY3JhdGVzLmlvLWluZGV4IgpjaGVja3N1bSA9ICJjZTZlNGM5NjFkNmNkNmM5YTg2ZGI0MTgzODc0MjVlOGJkZWFmMDViM2M4YmMxNDExZTZkY2E0YzI1MmYxNDUzIgpkZXBlbmRlbmNpZXMgPSBbCiAiaHlicmlkLWFycmF5IiwKXQoKW1twYWNrYWdlXV0KbmFtZSA9ICJjdXJ2ZTI1NTE5LWRhbGVrIgp2ZXJzaW9uID0gIjUuMC4wIgpzb3VyY2UgPSAicmVnaXN0cnkraHR0cHM6Ly9naXRodWIuY29tL3J1c3QtbGFuZy9jcmF0ZXMuaW8taW5kZXgiCmNoZWNrc3VtID0gImI1ZWVkMzMzMDg5ZTJlMWMxYWM4YzZjMDM5OGU1ZTI0OTdiNGM5OTI2Y2E2ZDAzNjVlZDFlMDk5YWZhNWJjMjMiCmRlcGVuZGVuY2llcyA9IFsKICJjZmctaWYiLAogImNwdWZlYXR1cmVzIDAuMy4xIiwKICJjdXJ2ZTI1NTE5LWRhbGVrLWRlcml2ZSIsCiAiZGlnZXN0IDAuMTEuMyIsCiAiZmlhdC1jcnlwdG8iLAogInJ1c3RjX3ZlcnNpb24iLAogInN1YnRsZSIsCiAiemVyb2l6ZSIsCl0KCltbcGFja2FnZV1dCm5hbWUgPSAiY3VydmUyNTUxOS1kYWxlay1kZXJpdmUiCnZlcnNpb24gPSAiMC4xLjEiCnNvdXJjZSA9ICJyZWdpc3RyeStodHRwczovL2dpdGh1Yi5jb20vcnVzdC1sYW5nL2NyYXRlcy5pby1pbmRleCIKY2hlY2tzdW0gPSAiZjQ2ODgyZTE3OTk5YzZjYzU5MGFmNTkyMjkwNDMyYmUzYmNlMDQyOGNiMGQ1ZjhiNjcxNWU0ZGM3YjM4M2ViMyIKZGVwZW5kZW5jaWVzID0gWwogInByb2MtbWFjcm8yIiwKICJxdW90ZSIsCiAic3luIiwKXQoKW1twYWNrYWdlXV0KbmFtZSA9ICJkaWdlc3QiCnZlcnNpb24gPSAiMC4xMC43Igpzb3VyY2UgPSAicmVnaXN0cnkraHR0cHM6Ly9naXRodWIuY29tL3J1c3QtbGFuZy9jcmF0ZXMuaW8taW5kZXgiCmNoZWNrc3VtID0gIjllZDlhMjgxZjdiYzliNzU3NmU2MTQ2OGJhNjE1YTY2YTVjOGNmZGZmNDI0MjBhNzBhYTgyNzAxYTNiMWUyOTIiCmRlcGVuZGVuY2llcyA9IFsKICJibG9jay1idWZmZXIgMC4xMC40IiwKICJjcnlwdG8tY29tbW9uIDAuMS43IiwKICJzdWJ0bGUiLApdCgpbW3BhY2thZ2VdXQpuYW1lID0gImRpZ2VzdCIKdmVyc2lvbiA9ICIwLjExLjMiCnNvdXJjZSA9ICJyZWdpc3RyeStodHRwczovL2dpdGh1Yi5jb20vcnVzdC1sYW5nL2NyYXRlcy5pby1pbmRleCIKY2hlY2tzdW0gPSAiZjFkZDZkYmI1ODQxOTM3OTQwNzgxODY2ZmExMjgxYTFmZjdiZDNiZjgyNzA5MTQ0MDg3OWY5OTk0OTgzZDVjMiIKZGVwZW5kZW5jaWVzID0gWwogImJsb2NrLWJ1ZmZlciAwLjEyLjEiLAogImNyeXB0by1jb21tb24gMC4yLjIiLApdCgpbW3BhY2thZ2VdXQpuYW1lID0gImVkMjU1MTkiCnZlcnNpb24gPSAiMy4wLjAiCnNvdXJjZSA9ICJyZWdpc3RyeStodHRwczovL2dpdGh1Yi5jb20vcnVzdC1sYW5nL2NyYXRlcy5pby1pbmRleCIKY2hlY2tzdW0gPSAiMjlmY2YzMmU2YzczZDEwNzlmODNhYjRkNzgyZGUyZDgxNjIwMzQ2YTVmMzhjNjIzN2E4NmEyMmY4MzY4OTgwYSIKZGVwZW5kZW5jaWVzID0gWwogInNpZ25hdHVyZSIsCl0KCltbcGFja2FnZV1dCm5hbWUgPSAiZWQyNTUxOS1kYWxlayIKdmVyc2lvbiA9ICIzLjAuMCIKc291cmNlID0gInJlZ2lzdHJ5K2h0dHBzOi8vZ2l0aHViLmNvbS9ydXN0LWxhbmcvY3JhdGVzLmlvLWluZGV4IgpjaGVja3N1bSA9ICI2ZWJhYTFhMmJmMTI5MGFiM2JmZTVhN2I3NzFkMDUwZWJmZmFiMjcxMWMxOWE4MTY5MWM2ODNhNTE0NGEyNWRlIgpkZXBlbmRlbmNpZXMgPSBbCiAiY3VydmUyNTUxOS1kYWxlayIsCiAiZWQyNTUxOSIsCiAic2hhMiAwLjExLjAiLAogInN1YnRsZSIsCiAiemVyb2l6ZSIsCl0KCltbcGFja2FnZV1dCm5hbWUgPSAiZmlhdC1jcnlwdG8iCnZlcnNpb24gPSAiMC4zLjAiCnNvdXJjZSA9ICJyZWdpc3RyeStodHRwczovL2dpdGh1Yi5jb20vcnVzdC1sYW5nL2NyYXRlcy5pby1pbmRleCIKY2hlY2tzdW0gPSAiNjRjZDFlMzJkZGQzNTAwNjFhZTZlZGIxYjA4MmQ3YzU0OTE1YjVjNjcyYzM4OTE0M2I5YTYzNDAzYTEwOWYyNCIKCltbcGFja2FnZV1dCm5hbWUgPSAiZ2VuZXJpYy1hcnJheSIKdmVyc2lvbiA9ICIwLjE0LjciCnNvdXJjZSA9ICJyZWdpc3RyeStodHRwczovL2dpdGh1Yi5jb20vcnVzdC1sYW5nL2NyYXRlcy5pby1pbmRleCIKY2hlY2tzdW0gPSAiODU2NDljYTUxZmQ3MjI3MmQ3ODIxYWRhZjI3NGFkOTFjMjg4Mjc3NzEzZDljMTg4MjBkODQ5OWE3ZmY2OWU5YSIKZGVwZW5kZW5jaWVzID0gWwogInR5cGVudW0iLAogInZlcnNpb25fY2hlY2siLApdCgpbW3BhY2thZ2VdXQpuYW1lID0gImhleCIKdmVyc2lvbiA9ICIwLjQuMyIKc291cmNlID0gInJlZ2lzdHJ5K2h0dHBzOi8vZ2l0aHViLmNvbS9ydXN0LWxhbmcvY3JhdGVzLmlvLWluZGV4IgpjaGVja3N1bSA9ICI3ZjI0MjU0YWE5YTU0YjVjODU4ZWFlZTJmNWJjY2RiNDZhYWYwZTQ4NmE1OTVlZDVmZDhmODZiYTU1MjMyYTcwIgoKW1twYWNrYWdlXV0KbmFtZSA9ICJobWFjIgp2ZXJzaW9uID0gIjAuMTIuMSIKc291cmNlID0gInJlZ2lzdHJ5K2h0dHBzOi8vZ2l0aHViLmNvbS9ydXN0LWxhbmcvY3JhdGVzLmlvLWluZGV4IgpjaGVja3N1bSA9ICI2YzQ5YzM3YzA5YzE3YTUzZDkzN2RmYmI3NDJlYjNhOTYxZDY1YTk5NGU2YmNkY2YzN2U3Mzk5ZDBjYzhhYjVlIgpkZXBlbmRlbmNpZXMgPSBbCiAiZGlnZXN0IDAuMTAuNyIsCl0KCltbcGFja2FnZV1dCm5hbWUgPSAiaHlicmlkLWFycmF5Igp2ZXJzaW9uID0gIjAuNC4xNSIKc291cmNlID0gInJlZ2lzdHJ5K2h0dHBzOi8vZ2l0aHViLmNvbS9ydXN0LWxhbmcvY3JhdGVzLmlvLWluZGV4IgpjaGVja3N1bSA9ICIyN2Y4NjRmMTBkZmI1NjcyNWNlNWNlNTQ3MmJjNTIyNTJjOGY5M2E0YWI4NjMyNzEyMmNlYmY2MmM1ZjU5YTE3IgpkZXBlbmRlbmNpZXMgPSBbCiAidHlwZW51bSIsCl0KCltbcGFja2FnZV1dCm5hbWUgPSAiaXRvYSIKdmVyc2lvbiA9ICIxLjAuMTgiCnNvdXJjZSA9ICJyZWdpc3RyeStodHRwczovL2dpdGh1Yi5jb20vcnVzdC1sYW5nL2NyYXRlcy5pby1pbmRleCIKY2hlY2tzdW0gPSAiOGY0MmE2MGNiZGY5YTk3ZjVkMjMwNWYwOGE4N2RjNGUwOTMwOGQxMjc2ZDI4Yzg2OWM2ODRkNzc3NzY4NTY4MiIKCltbcGFja2FnZV1dCm5hbWUgPSAibGliYyIKdmVyc2lvbiA9ICIwLjIuMTkwIgpzb3VyY2UgPSAicmVnaXN0cnkraHR0cHM6Ly9naXRodWIuY29tL3J1c3QtbGFuZy9jcmF0ZXMuaW8taW5kZXgiCmNoZWNrc3VtID0gImNlNWQzZGRjNmQzZmEwMDBlYjE1MzZkODVlMTQ3YmZlMzFhYWNhYmE2OTJlZDZhODc2Zjk1Y2I3Yzg1NWJlNzgiCgpbW3BhY2thZ2VdXQpuYW1lID0gIm1lbWNociIKdmVyc2lvbiA9ICIyLjguMyIKc291cmNlID0gInJlZ2lzdHJ5K2h0dHBzOi8vZ2l0aHViLmNvbS9ydXN0LWxhbmcvY3JhdGVzLmlvLWluZGV4IgpjaGVja3N1bSA9ICJjZjhiYWYxYzU1ZTYyZmZjYWNlN2E5ZjA2ZjRiZDljZDNmMGM0YmViMDIyZDNiMzY3MjU2YjkxYjg3NTEzZDk4IgoKW1twYWNrYWdlXV0KbmFtZSA9ICJwcm9jLW1hY3JvMiIKdmVyc2lvbiA9ICIxLjAuMTA3Igpzb3VyY2UgPSAicmVnaXN0cnkraHR0cHM6Ly9naXRodWIuY29tL3J1c3QtbGFuZy9jcmF0ZXMuaW8taW5kZXgiCmNoZWNrc3VtID0gIjk4NWU3ZWM5YmI3NDVlNmNlNjUzNWI1NDRkODRkNmNkNmY3YWQ4YmQ3MTFjMzk4OTM4YWU5ODNiOTFhNzY2ZDkiCmRlcGVuZGVuY2llcyA9IFsKICJ1bmljb2RlLWlkZW50IiwKXQoKW1twYWNrYWdlXV0KbmFtZSA9ICJxdW90ZSIKdmVyc2lvbiA9ICIxLjAuNDciCnNvdXJjZSA9ICJyZWdpc3RyeStodHRwczovL2dpdGh1Yi5jb20vcnVzdC1sYW5nL2NyYXRlcy5pby1pbmRleCIKY2hlY2tzdW0gPSAiMWZiZjRkYjE0MmE0NzNhOGQ4MGMyNmJiZjE4NDU0ZWQ0NThiZjhkMjZjODIxOWMzMzFkYWVjZmRiZDA3OTAwMSIKZGVwZW5kZW5jaWVzID0gWwogInByb2MtbWFjcm8yIiwKXQoKW1twYWNrYWdlXV0KbmFtZSA9ICJydXN0Y192ZXJzaW9uIgp2ZXJzaW9uID0gIjAuNC4xIgpzb3VyY2UgPSAicmVnaXN0cnkraHR0cHM6Ly9naXRodWIuY29tL3J1c3QtbGFuZy9jcmF0ZXMuaW8taW5kZXgiCmNoZWNrc3VtID0gImNmY2IzYTIyZWY0NmU4NWI0NWRlNmVlN2U3OWQwNjMzMTllYmI2NTk0ZmFhZmNmMWMyMjVlYTkyYWI2ZTliOTIiCmRlcGVuZGVuY2llcyA9IFsKICJzZW12ZXIiLApdCgpbW3BhY2thZ2VdXQpuYW1lID0gInNlbXZlciIKdmVyc2lvbiA9ICIxLjAuMjgiCnNvdXJjZSA9ICJyZWdpc3RyeStodHRwczovL2dpdGh1Yi5jb20vcnVzdC1sYW5nL2NyYXRlcy5pby1pbmRleCIKY2hlY2tzdW0gPSAiOGE3ODUyZDAyZmM4NDg5ODJlMGMxNjdlZjE2M2FhZmY5Y2Q5MWRjNjQwYmE4NWUyNjNjYjFjZTQ2ZmFlNTFjZCIKCltbcGFja2FnZV1dCm5hbWUgPSAic2VyZGUiCnZlcnNpb24gPSAiMS4wLjIyOCIKc291cmNlID0gInJlZ2lzdHJ5K2h0dHBzOi8vZ2l0aHViLmNvbS9ydXN0LWxhbmcvY3JhdGVzLmlvLWluZGV4IgpjaGVja3N1bSA9ICI5YThlOTRlYTdmMzc4YmQzMmNiYmQzNzE5OGE0YTkxNDM2MTgwYzViYjQ3MjQxMWU0OGI1ZWMyZTIxMjRhZTllIgpkZXBlbmRlbmNpZXMgPSBbCiAic2VyZGVfY29yZSIsCiAic2VyZGVfZGVyaXZlIiwKXQoKW1twYWNrYWdlXV0KbmFtZSA9ICJzZXJkZV9jb3JlIgp2ZXJzaW9uID0gIjEuMC4yMjgiCnNvdXJjZSA9ICJyZWdpc3RyeStodHRwczovL2dpdGh1Yi5jb20vcnVzdC1sYW5nL2NyYXRlcy5pby1pbmRleCIKY2hlY2tzdW0gPSAiNDFkMzg1YzdkNGNhNThlNTlmYzczMmFmMjVjMzk4M2I2N2FjODUyYzFhMjUwMDBhZmUxMTc1ZGU0NThiNjdhZCIKZGVwZW5kZW5jaWVzID0gWwogInNlcmRlX2Rlcml2ZSIsCl0KCltbcGFja2FnZV1dCm5hbWUgPSAic2VyZGVfZGVyaXZlIgp2ZXJzaW9uID0gIjEuMC4yMjgiCnNvdXJjZSA9ICJyZWdpc3RyeStodHRwczovL2dpdGh1Yi5jb20vcnVzdC1sYW5nL2NyYXRlcy5pby1pbmRleCIKY2hlY2tzdW0gPSAiZDU0MGYyMjBkMzE4NzE3M2RhMjIwZjg4NWFiNjY2MDgzNjdiNjU3NGU5MjUwMTFhOTM1M2U0YmFkZGE5MWQ3OSIKZGVwZW5kZW5jaWVzID0gWwogInByb2MtbWFjcm8yIiwKICJxdW90ZSIsCiAic3luIiwKXQoKW1twYWNrYWdlXV0KbmFtZSA9ICJzZXJkZV9qc29uIgp2ZXJzaW9uID0gIjEuMC4xNTAiCnNvdXJjZSA9ICJyZWdpc3RyeStodHRwczovL2dpdGh1Yi5jb20vcnVzdC1sYW5nL2NyYXRlcy5pby1pbmRleCIKY2hlY2tzdW0gPSAiZTgwMTRlNDRiNDczNmVkMDUzOGFkZWVjZGVkMGZjZTJhMjcyZjIyZGM5NTc4YTdlYjZiMmQ5OTkzYzc0Y2ZiOSIKZGVwZW5kZW5jaWVzID0gWwogIml0b2EiLAogIm1lbWNociIsCiAic2VyZGUiLAogInNlcmRlX2NvcmUiLAogInptaWoiLApdCgpbW3BhY2thZ2VdXQpuYW1lID0gInNoYTIiCnZlcnNpb24gPSAiMC4xMC45Igpzb3VyY2UgPSAicmVnaXN0cnkraHR0cHM6Ly9naXRodWIuY29tL3J1c3QtbGFuZy9jcmF0ZXMuaW8taW5kZXgiCmNoZWNrc3VtID0gImE3NTA3ZDgxOTc2OWQwMWEzNjVhYjcwNzc5NGE0MDg0MzkyYzgyNGY1NGE3YTZhNzg2MmY4YzNkMDg5MmIyODMiCmRlcGVuZGVuY2llcyA9IFsKICJjZmctaWYiLAogImNwdWZlYXR1cmVzIDAuMi4xNyIsCiAiZGlnZXN0IDAuMTAuNyIsCl0KCltbcGFja2FnZV1dCm5hbWUgPSAic2hhMiIKdmVyc2lvbiA9ICIwLjExLjAiCnNvdXJjZSA9ICJyZWdpc3RyeStodHRwczovL2dpdGh1Yi5jb20vcnVzdC1sYW5nL2NyYXRlcy5pby1pbmRleCIKY2hlY2tzdW0gPSAiNDQ2YmE3MTc1MDk1MjRjYjNmMjJmMTdlY2MwOTZmMTBmNDgyMmQ3NmFiNWMwYjk4MjJjNWY5YzI4NGU4MjVmNCIKZGVwZW5kZW5jaWVzID0gWwogImNmZy1pZiIsCiAiY3B1ZmVhdHVyZXMgMC4zLjEiLAogImRpZ2VzdCAwLjExLjMiLApdCgpbW3BhY2thZ2VdXQpuYW1lID0gInNpZ25hdHVyZSIKdmVyc2lvbiA9ICIzLjAuMCIKc291cmNlID0gInJlZ2lzdHJ5K2h0dHBzOi8vZ2l0aHViLmNvbS9ydXN0LWxhbmcvY3JhdGVzLmlvLWluZGV4IgpjaGVja3N1bSA9ICIyOGQ1NjdkY2JhZjAwNDljYjhhYzI2MDhhNzZjZDk1ZmY5ZTQ0MTJlMTg5OWQzODllZTQwMDkxOGNhNzUzN2Y1IgoKW1twYWNrYWdlXV0KbmFtZSA9ICJzdWJ0bGUiCnZlcnNpb24gPSAiMi42LjEiCnNvdXJjZSA9ICJyZWdpc3RyeStodHRwczovL2dpdGh1Yi5jb20vcnVzdC1sYW5nL2NyYXRlcy5pby1pbmRleCIKY2hlY2tzdW0gPSAiMTNjMmJkZGVjYzU3YjM4NGRlZTE4NjUyMzU4ZmIyMzE3MmZhY2I4YTJjNTFjY2MxMGQ3NGMxNTdiZGVhMzI5MiIKCltbcGFja2FnZV1dCm5hbWUgPSAic3luIgp2ZXJzaW9uID0gIjIuMC4xMTciCnNvdXJjZSA9ICJyZWdpc3RyeStodHRwczovL2dpdGh1Yi5jb20vcnVzdC1sYW5nL2NyYXRlcy5pby1pbmRleCIKY2hlY2tzdW0gPSAiZTY2NWI4ODAzZTdiMWQyYTcyN2Y0MDIzNDU2YmJiYmU3NGRhNjcwOTljNTg1MjU4YWYwYWQ5YzUwMTNiOWI5OSIKZGVwZW5kZW5jaWVzID0gWwogInByb2MtbWFjcm8yIiwKICJxdW90ZSIsCiAidW5pY29kZS1pZGVudCIsCl0KCltbcGFja2FnZV1dCm5hbWUgPSAidHlwZW51bSIKdmVyc2lvbiA9ICIxLjIwLjAiCnNvdXJjZSA9ICJyZWdpc3RyeStodHRwczovL2dpdGh1Yi5jb20vcnVzdC1sYW5nL2NyYXRlcy5pby1pbmRleCIKY2hlY2tzdW0gPSAiNDBjZTEwMmFiNjc3MDFiODUyNmMxMjNjMWJhYjVjYmU0MmQ3MDQwY2NmZDBmNjRhZjFhMzg1ODA4ZDJmNDNkZSIKCltbcGFja2FnZV1dCm5hbWUgPSAidW5pY29kZS1pZGVudCIKdmVyc2lvbiA9ICIxLjAuMjYiCnNvdXJjZSA9ICJyZWdpc3RyeStodHRwczovL2dpdGh1Yi5jb20vcnVzdC1sYW5nL2NyYXRlcy5pby1pbmRleCIKY2hlY2tzdW0gPSAiZDI0NWY0Nzg1NzdmODA5YTg1MTU5NGQwMjMxM2I2NDBmYjQzN2UwYmIzMzg2Njc1M2NmZjkzNzg2MzA5Njk1NCIKCltbcGFja2FnZV1dCm5hbWUgPSAidmVyc2lvbl9jaGVjayIKdmVyc2lvbiA9ICIwLjkuNSIKc291cmNlID0gInJlZ2lzdHJ5K2h0dHBzOi8vZ2l0aHViLmNvbS9ydXN0LWxhbmcvY3JhdGVzLmlvLWluZGV4IgpjaGVja3N1bSA9ICIwYjkyOGYzM2Q5NzVmYzZhZDlmODZjOGYyODM4NTNhZDI2YmRkNWIxMGI3ZjE1NDJhYTJmYTE1ZTIyODkxMDVhIgoKW1twYWNrYWdlXV0KbmFtZSA9ICJ6ZXJvaXplIgp2ZXJzaW9uID0gIjEuOS4xIgpzb3VyY2UgPSAicmVnaXN0cnkraHR0cHM6Ly9naXRodWIuY29tL3J1c3QtbGFuZy9jcmF0ZXMuaW8taW5kZXgiCmNoZWNrc3VtID0gImUxMzA4NDM5MmM1ZTRiYzM3MTkwM2UyOTM1YTVlYWVlZDI0OTA1YTc1MTEzNTZiODgzODM1ZTE4YTc4ZjY4NzkiCgpbW3BhY2thZ2VdXQpuYW1lID0gInptaWoiCnZlcnNpb24gPSAiMS4wLjIzIgpzb3VyY2UgPSAicmVnaXN0cnkraHR0cHM6Ly9naXRodWIuY29tL3J1c3QtbGFuZy9jcmF0ZXMuaW8taW5kZXgiCmNoZWNrc3VtID0gIjI5NjY2ZDBhYmJmYWQxZTNkYzRkY2Y2MTQ0NzMwZGQzYTNhYjIyNWJiYmRhYzgzMzE5MzQ1YjFiNDRjY2ZjMWIiCg==
+# This file is automatically @generated by Cargo.
+# It is not intended for manual editing.
+version = 4
+
+[[package]]
+name = "agent-forge-core"
+version = "0.1.0"
+dependencies = [
+ "ed25519-dalek",
+ "hex",
+ "hmac",
+ "libc",
+ "serde",
+ "serde_json",
+ "sha2 0.10.9",
+ "zeroize",
+]
+
+[[package]]
+name = "block-buffer"
+version = "0.10.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3078c7629b62d3f0439517fa394996acacc5cbc91c5a20d8c658e77abd503a71"
+dependencies = [
+ "generic-array",
+]
+
+[[package]]
+name = "block-buffer"
+version = "0.12.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d2f6c7dbe95a6ed67ad9f18e57daf93a2f034c524b99fd2b76d18fdfeb6660aa"
+dependencies = [
+ "hybrid-array",
+]
+
+[[package]]
+name = "cfg-if"
+version = "1.0.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "4e7648175b45a9a48536d676f68d918270699102aa8dab5496df06904c914600"
+
+[[package]]
+name = "cpufeatures"
+version = "0.2.17"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "59ed5838eebb26a2bb2e58f6d5b5316989ae9d08bab10e0e6d103e656d1b0280"
+dependencies = [
+ "libc",
+]
+
+[[package]]
+name = "cpufeatures"
+version = "0.3.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5ca28b0ae3115b884660db4118d803791fd6756b6e88f39c0f3f7859060d7566"
+dependencies = [
+ "libc",
+]
+
+[[package]]
+name = "crypto-common"
+version = "0.1.7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "78c8292055d1c1df0cce5d180393dc8cce0abec0a7102adb6c7b1eef6016d60a"
+dependencies = [
+ "generic-array",
+ "typenum",
+]
+
+[[package]]
+name = "crypto-common"
+version = "0.2.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ce6e4c961d6cd6c9a86db418387425e8bdeaf05b3c8bc1411e6dca4c252f1453"
+dependencies = [
+ "hybrid-array",
+]
+
+[[package]]
+name = "curve25519-dalek"
+version = "5.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b5eed333089e2e1c1ac8c6c0398e5e2497b4c9926ca6d0365ed1e099afa5bc23"
+dependencies = [
+ "cfg-if",
+ "cpufeatures 0.3.1",
+ "curve25519-dalek-derive",
+ "digest 0.11.3",
+ "fiat-crypto",
+ "rustc_version",
+ "subtle",
+ "zeroize",
+]
+
+[[package]]
+name = "curve25519-dalek-derive"
+version = "0.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f46882e17999c6cc590af592290432be3bce0428cb0d5f8b6715e4dc7b383eb3"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
+]
+
+[[package]]
+name = "digest"
+version = "0.10.7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9ed9a281f7bc9b7576e61468ba615a66a5c8cfdff42420a70aa82701a3b1e292"
+dependencies = [
+ "block-buffer 0.10.4",
+ "crypto-common 0.1.7",
+ "subtle",
+]
+
+[[package]]
+name = "digest"
+version = "0.11.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f1dd6dbb5841937940781866fa1281a1ff7bd3bf827091440879f9994983d5c2"
+dependencies = [
+ "block-buffer 0.12.1",
+ "crypto-common 0.2.2",
+]
+
+[[package]]
+name = "ed25519"
+version = "3.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "29fcf32e6c73d1079f83ab4d782de2d81620346a5f38c6237a86a22f8368980a"
+dependencies = [
+ "signature",
+]
+
+[[package]]
+name = "ed25519-dalek"
+version = "3.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6ebaa1a2bf1290ab3bfe5a7b771d050ebffab2711c19a81691c683a5144a25de"
+dependencies = [
+ "curve25519-dalek",
+ "ed25519",
+ "sha2 0.11.0",
+ "subtle",
+ "zeroize",
+]
+
+[[package]]
+name = "fiat-crypto"
+version = "0.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "64cd1e32ddd350061ae6edb1b082d7c54915b5c672c389143b9a63403a109f24"
+
+[[package]]
+name = "generic-array"
+version = "0.14.7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "85649ca51fd72272d7821adaf274ad91c288277713d9c18820d8499a7ff69e9a"
+dependencies = [
+ "typenum",
+ "version_check",
+]
+
+[[package]]
+name = "hex"
+version = "0.4.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7f24254aa9a54b5c858eaee2f5bccdb46aaf0e486a595ed5fd8f86ba55232a70"
+
+[[package]]
+name = "hmac"
+version = "0.12.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6c49c37c09c17a53d937dfbb742eb3a961d65a994e6bcdcf37e7399d0cc8ab5e"
+dependencies = [
+ "digest 0.10.7",
+]
+
+[[package]]
+name = "hybrid-array"
+version = "0.4.15"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "27f864f10dfb56725ce5ce5472bc52252c8f93a4ab86327122cebf62c5f59a17"
+dependencies = [
+ "typenum",
+]
+
+[[package]]
+name = "itoa"
+version = "1.0.18"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8f42a60cbdf9a97f5d2305f08a87dc4e09308d1276d28c869c684d7777685682"
+
+[[package]]
+name = "libc"
+version = "0.2.190"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ce5d3ddc6d3fa000eb1536d85e147bfe31aacaba692ed6a876f95cb7c855be78"
+
+[[package]]
+name = "memchr"
+version = "2.8.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "cf8baf1c55e62ffcace7a9f06f4bd9cd3f0c4beb022d3b367256b91b87513d98"
+
+[[package]]
+name = "proc-macro2"
+version = "1.0.107"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "985e7ec9bb745e6ce6535b544d84d6cd6f7ad8bd711c398938ae983b91a766d9"
+dependencies = [
+ "unicode-ident",
+]
+
+[[package]]
+name = "quote"
+version = "1.0.47"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1fbf4db142a473a8d80c26bbf18454ed458bf8d26c8219c331daecfdbd079001"
+dependencies = [
+ "proc-macro2",
+]
+
+[[package]]
+name = "rustc_version"
+version = "0.4.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "cfcb3a22ef46e85b45de6ee7e79d063319ebb6594faafcf1c225ea92ab6e9b92"
+dependencies = [
+ "semver",
+]
+
+[[package]]
+name = "semver"
+version = "1.0.28"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8a7852d02fc848982e0c167ef163aaff9cd91dc640ba85e263cb1ce46fae51cd"
+
+[[package]]
+name = "serde"
+version = "1.0.228"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9a8e94ea7f378bd32cbbd37198a4a91436180c5bb472411e48b5ec2e2124ae9e"
+dependencies = [
+ "serde_core",
+ "serde_derive",
+]
+
+[[package]]
+name = "serde_core"
+version = "1.0.228"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "41d385c7d4ca58e59fc732af25c3983b67ac852c1a25000afe1175de458b67ad"
+dependencies = [
+ "serde_derive",
+]
+
+[[package]]
+name = "serde_derive"
+version = "1.0.228"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d540f220d3187173da220f885ab66608367b6574e925011a9353e4badda91d79"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
+]
+
+[[package]]
+name = "serde_json"
+version = "1.0.150"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e8014e44b4736ed0538adeecded0fce2a272f22dc9578a7eb6b2d9993c74cfb9"
+dependencies = [
+ "itoa",
+ "memchr",
+ "serde",
+ "serde_core",
+ "zmij",
+]
+
+[[package]]
+name = "sha2"
+version = "0.10.9"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a7507d819769d01a365ab707794a4084392c824f54a7a6a7862f8c3d0892b283"
+dependencies = [
+ "cfg-if",
+ "cpufeatures 0.2.17",
+ "digest 0.10.7",
+]
+
+[[package]]
+name = "sha2"
+version = "0.11.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "446ba717509524cb3f22f17ecc096f10f4822d76ab5c0b9822c5f9c284e825f4"
+dependencies = [
+ "cfg-if",
+ "cpufeatures 0.3.1",
+ "digest 0.11.3",
+]
+
+[[package]]
+name = "signature"
+version = "3.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "28d567dcbaf0049cb8ac2608a76cd95ff9e4412e1899d389ee400918ca7537f5"
+
+[[package]]
+name = "subtle"
+version = "2.6.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "13c2bddecc57b384dee18652358fb23172facb8a2c51ccc10d74c157bdea3292"
+
+[[package]]
+name = "syn"
+version = "2.0.117"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e665b8803e7b1d2a727f4023456bbbbe74da67099c585258af0ad9c5013b9b99"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "unicode-ident",
+]
+
+[[package]]
+name = "typenum"
+version = "1.20.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "40ce102ab67701b8526c123c1bab5cbe42d7040ccfd0f64af1a385808d2f43de"
+
+[[package]]
+name = "unicode-ident"
+version = "1.0.26"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d245f478577f809a851594d02313b640fb437e0bb33866753cff937863096954"
+
+[[package]]
+name = "version_check"
+version = "0.9.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0b928f33d975fc6ad9f86c8f283853ad26bdd5b10b7f1542aa2fa15e2289105a"
+
+[[package]]
+name = "zeroize"
+version = "1.9.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e13084392c5e4bc371903e2935a5eaeed24905a7511356b883835e18a78f6879"
+
+[[package]]
+name = "zmij"
+version = "1.0.23"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "29666d0abbfad1e3dc4dcf6144730dd3a3ab225bbbdac83319345b1b44ccfc1b"
