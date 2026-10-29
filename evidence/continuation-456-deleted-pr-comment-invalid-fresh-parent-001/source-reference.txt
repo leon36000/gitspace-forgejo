@@ -1,0 +1,4 @@
+Existing source inventory reference: docs/source-inventory.md:286.
+Forgejo official v17.0.0 commit: 0d791421f85ca13a63b665053d81ea765fbbc571.
+GET /repos/{owner}/{repo}/pulls/{index}; route in routers/api/v1/api.go:1020-1062; PR DTO in modules/structs/pull.go.
+No upstream Forgejo source was modified or copied in CONTINUATION-456.

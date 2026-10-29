@@ -1,0 +1,26 @@
+{
+  "focused_process_scenario": {
+    "name": "actual_reconcile_cli_process_replays_same_deleted_pr_comment_after_upstream_retry_exhaustion",
+    "isolated_runner": "scripts/run_webhook_reconcile_cli_e2e.py",
+    "passed": 1,
+    "failed": 0,
+    "ignored_in_focused_run": 0,
+    "bubblewrap": true,
+    "network_namespace": true,
+    "pid_namespace": true,
+    "same_durable_delivery_reused": true,
+    "webhook_reinserted": false,
+    "inbox_byte_identical": true
+  },
+  "all_targets": {
+    "groups": 39,
+    "passed": 793,
+    "failed": 0,
+    "ignored": 219,
+    "command": "cargo test --locked --offline --all-targets -- --test-threads=1"
+  },
+  "runtime_code_changed": false,
+  "live_forgejo": false,
+  "llm_or_agentos": false,
+  "comparative_gain_demonstrated": false
+}

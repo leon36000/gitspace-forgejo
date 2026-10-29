@@ -1,0 +1,50 @@
+{
+  "project": {
+    "id": 4,
+    "path_with_namespace": "root/gitspace-forgejo",
+    "visibility": "private",
+    "default_branch": "codex/pc6-transfer-2026-10-28"
+  },
+  "branches": {
+    "default": {
+      "commit": "6c6ffa3d7d37d48b9d7877acb982d73a2c49a14f",
+      "protected": true,
+      "can_push": false
+    },
+    "work": {
+      "name": "codex/pc6-transfer-work-2026-10-28",
+      "commit": "9ac877767e9b458a9cd911e67a10f87aeeaefbdb",
+      "protected": false,
+      "can_push": true
+    }
+  },
+  "open_merge_requests": 0,
+  "pipeline": {
+    "id": 328,
+    "commit": "9ac877767e9b458a9cd911e67a10f87aeeaefbdb",
+    "status": "failed",
+    "jobs": {
+      "pc4_gitleaks": "failed",
+      "pc4_semgrep": "success",
+      "pc4_trivy": "success",
+      "pc4_ci_fallback": "skipped"
+    }
+  },
+  "gitleaks": {
+    "job_id": 627,
+    "commits_scanned": 221,
+    "bytes_scanned": 105265295,
+    "finding_count": 988,
+    "rule_id": "generic-api-key",
+    "unique_files": 336,
+    "unique_commits": 37,
+    "secret_values_persisted_locally": false,
+    "artifact_fields_redacted": false,
+    "job_upload_credential_present_in_tool_output": true,
+    "job_upload_credential_used": false,
+    "job_upload_credential_persisted_locally": false,
+    "classification": "unverified"
+  },
+  "mutations_performed": 0,
+  "email_opened": false
+}

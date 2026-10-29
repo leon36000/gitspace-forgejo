@@ -1,0 +1,10 @@
+{
+  "command": "cargo test --locked --offline --all-targets -- --test-threads=1",
+  "failed": 0,
+  "final_exit_code": 0,
+  "groups": 39,
+  "ignored": 217,
+  "passed": 793,
+  "process_scenario": "actual_reconcile_cli_process_retries_fresh_pr_parent_before_projecting_deleted_comment_absent",
+  "process_scenario_result": "passed 1/1 in separate Bubblewrap run; ignored in all-targets by design"
+}

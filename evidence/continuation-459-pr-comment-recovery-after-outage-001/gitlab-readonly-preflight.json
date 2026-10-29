@@ -1,0 +1,35 @@
+{
+  "observed_date": "2026-10-29",
+  "mcp_server_version": "19.5.1",
+  "project": {
+    "id": 4,
+    "path_with_namespace": "root/gitspace-forgejo",
+    "visibility": "private",
+    "default_branch": "codex/pc6-transfer-2026-10-28"
+  },
+  "branches": [
+    {
+      "name": "codex/pc6-transfer-2026-10-28",
+      "sha": "6c6ffa3d7d37d48b9d7877acb982d73a2c49a14f",
+      "protected": true,
+      "can_push": false,
+      "default": true
+    },
+    {
+      "name": "codex/pc6-transfer-work-2026-10-28",
+      "sha": "9ac877767e9b458a9cd911e67a10f87aeeaefbdb",
+      "protected": false,
+      "can_push": true,
+      "default": false
+    }
+  ],
+  "latest_work_branch_pipeline": {
+    "id": 328,
+    "sha": "9ac877767e9b458a9cd911e67a10f87aeeaefbdb",
+    "status": "failed",
+    "ref": "codex/pc6-transfer-work-2026-10-28"
+  },
+  "writes_performed": false,
+  "email_access_used": false,
+  "secrets_copied": false
+}

@@ -1,0 +1,22 @@
+Date: 2026-10-29
+Base HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+
+Local code/test commands:
+cargo fmt --all
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_replays_same_deleted_pr_comment_after_upstream_retry_exhaustion
+cargo test --locked --offline --all-targets -- --test-threads=1
+cargo fmt --all -- --check
+git diff --check
+python in-memory syntax compilation of scripts/run_webhook_reconcile_cli_e2e.py and evidence append helper
+python3 scripts/verify_cargo_license_state.py
+python3 scripts/test_cargo_license_state.py
+python3 evidence/documentation-link-audit-001/verify_doc_links.py
+
+GitLab PC4 preflight (read-only connector calls, no email credential use):
+mcp__GitLab_PC4__get_project(url=https://pc4.tail0c55ff.ts.net/root/gitspace-forgejo)
+mcp__GitLab_PC4__list_branches(id=4, per_page=100)
+mcp__GitLab_PC4__list_commits(project_id=4, ref_name=codex/pc6-transfer-work-2026-10-28, first=5)
+mcp__GitLab_PC4__list_pipelines(id=4, ref=codex/pc6-transfer-work-2026-10-28, per_page=5)
+mcp__GitLab_PC4__get_mcp_server_version()
+
+No GitLab write, email read, credential extraction, commit, push, merge request, artifact operation, or settings change was performed.

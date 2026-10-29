@@ -1,0 +1,19 @@
+{
+  "checked_links": 1602,
+  "missing_count": 3,
+  "missing": [
+    {
+      "document": "docs/checkpoint.md",
+      "target": "evidence/continuation-289-cargo-dependency-license-inventory-001/local-run.md"
+    },
+    {
+      "document": "docs/source-inventory.md",
+      "target": "continuation-297-forgejo-requirement-review-binding-001/local-run.md"
+    },
+    {
+      "document": "docs/source-inventory.md",
+      "target": "/tmp/forgejo-merge011-fix-test/CHECKPOINT.md"
+    }
+  ],
+  "passed": false
+}

@@ -1,0 +1,21 @@
+Git source checkout: /tmp/forgejo-v17-base-cas-poc
+Immutable upstream revision queried: 0d791421f85ca13a63b665053d81ea765fbbc571
+
+Read-only identity/status checks:
+  git -C /tmp/forgejo-v17-base-cas-poc rev-parse HEAD
+  git -C /tmp/forgejo-v17-base-cas-poc status --short
+  git -C /tmp/forgejo-v17-base-cas-poc rev-parse 0d791421f85ca13a63b665053d81ea765fbbc571:<path>
+
+Bounded source searches against the immutable commit object:
+  git grep -n -E 'CreateBranch|UpdateBranch|DeleteBranch|RenameBranch|PushToRepo|UpdateRepoFiles|DeleteRepoBranch|RenameRepoBranch' 0d791421f85ca13a63b665053d81ea765fbbc571 -- routers services modules models cmd
+  git grep -n -E 'git\.(NewCommand|NewCommandContext)|\.Run\(.*(push|update-ref|receive-pack)|git-receive-pack|update-ref|receive-pack' 0d791421f85ca13a63b665053d81ea765fbbc571 -- routers services modules models cmd
+  git grep -n -E 'CheckPullMergeable|MergedManually|ForceMerge|AutoMerge|MergePullRequest|UpdatePullRequest' 0d791421f85ca13a63b665053d81ea765fbbc571 -- routers services modules models cmd
+  git grep -n 'InternalPushingEnvironment' 0d791421f85ca13a63b665053d81ea765fbbc571 -- ':!**/*_test.go'
+  git grep -n -E 'PushingEnvironment\(|FullPushingEnvironment\(' 0d791421f85ca13a63b665053d81ea765fbbc571 -- services/repository services/pull services/mirror
+  git grep -n -E 'CreateFile\(|UpdateFile\(|DeleteFile\(|ChangeRepoFiles\(' 0d791421f85ca13a63b665053d81ea765fbbc571 -- routers/api/v1/repo/file.go routers/web/repo/editor.go services/repository/files
+  git grep -n -E 'CreateBranch|DeleteBranch|RenameBranchPost|DeleteBranchPost' 0d791421f85ca13a63b665053d81ea765fbbc571 -- routers/api/v1/api.go routers/web/web.go
+
+Selected exact blobs are listed in source-blobs.txt. Source ranges were read using git show <revision>:<path> and line-numbered output; no scratch working-tree diff was used as upstream source.
+
+Environment: Git 2.43.0; Python 3.12.3; Linux aarch64. No Go test, Cargo test, package installation, network request or model call was made.
+

@@ -1,0 +1,13 @@
+Read-only/local operations in this lot:
+
+- git status --short --branch
+- git rev-parse HEAD
+- git remote -v
+- python3 -B scripts/verify_latest_sha256_manifest.py evidence/SHA256SUMS --root .
+- GitLab MCP get_project(url=project URL)
+- GitLab MCP get_mcp_server_version()
+- GitLab MCP list_branches(id=4, per_page=100)
+- GitLab MCP list_pipelines(id=4, per_page=10)
+- GitLab MCP get_pipeline(id=4, pipeline_id=328, include=[jobs])
+
+No email connector call, GitLab write, Git push, merge, secret use, or local service start/stop was performed.

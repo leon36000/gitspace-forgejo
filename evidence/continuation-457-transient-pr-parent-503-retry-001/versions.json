@@ -1,0 +1,32 @@
+{
+  "architecture": {
+    "command": "uname -m",
+    "exit_code": 0,
+    "output": "aarch64"
+  },
+  "bubblewrap": {
+    "command": "/usr/bin/bwrap --version",
+    "exit_code": 0,
+    "output": "bubblewrap 0.9.0"
+  },
+  "cargo": {
+    "command": "cargo --version",
+    "exit_code": 0,
+    "output": "cargo 1.95.0 (f2d3ce0bd 2026-03-21)"
+  },
+  "git": {
+    "command": "git --version",
+    "exit_code": 0,
+    "output": "git version 2.43.0"
+  },
+  "python": {
+    "command": "python3 --version",
+    "exit_code": 0,
+    "output": "Python 3.12.3"
+  },
+  "rustc": {
+    "command": "rustc --version",
+    "exit_code": 0,
+    "output": "rustc 1.95.0 (59807616e 2026-04-14)"
+  }
+}

@@ -1,0 +1,13 @@
+Lecture distante, sans mutation :
+- mcp__GitLab_PC4__get_project(url=https://pc4.tail0c55ff.ts.net/root/gitspace-forgejo)
+- mcp__GitLab_PC4__list_branches(id=4, per_page=100)
+- mcp__GitLab_PC4__list_pipelines(id=4, per_page=10, order_by=id, sort=desc)
+- mcp__GitLab_PC4__list_merge_requests(project_id=4, state=opened)
+- mcp__GitLab_PC4__get_pipeline(id=4, pipeline_id=328, include=jobs)
+- mcp__GitLab_PC4__get_job(id=4, job_id=627, include=log)
+- mcp__GitLab_PC4__get_job(id=4, job_id=627, include=artifacts)
+- mcp__GitLab_PC4__get_artifact_file(project_id=4, job_id=627, artifact_path=gitleaks-report.json)
+
+Traitement du rapport : les résultats ont été réduits en mémoire à des compteurs, noms de règle, chemins et identifiants de commit. Aucune valeur de champ Secret ou jeton de trace n’a été écrite dans les preuves locales.
+
+Restitution de l’index historique : les deux fichiers locaux TRANSFER-004 ont été comparés aux hashes précédents puis restaurés depuis leur readback GitLab; `append_transfer004_manifest.py` ajoute l’empreinte du seul fichier de readback complémentaire en préservant le préfixe du manifeste.

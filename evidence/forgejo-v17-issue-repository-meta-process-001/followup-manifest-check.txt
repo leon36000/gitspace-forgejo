@@ -1,0 +1,3 @@
+Source follow-up evidence hashes: PASS
+worktree and project manifest prefixes unchanged: PASS
+local source-followup entries appended=3

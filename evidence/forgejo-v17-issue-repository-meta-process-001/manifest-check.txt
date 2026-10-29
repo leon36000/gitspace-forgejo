@@ -1,0 +1,4 @@
+FORGEJO-ISSUE-REPOSITORY-META-PROCESS-001 local evidence hashes: PASS
+worktree and project append-only prefixes: PASS
+checkpoint, source inventory, refusal matrix, runner and process test hashes appended: PASS
+local_evidence_files=5

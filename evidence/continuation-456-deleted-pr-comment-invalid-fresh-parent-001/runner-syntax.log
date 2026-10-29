@@ -1,0 +1,2 @@
+PYTHONPYCACHEPREFIX=/tmp/cont456-pycache python3 -m py_compile scripts/run_webhook_reconcile_cli_e2e.py
+exit status: 0

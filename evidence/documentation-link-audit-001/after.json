@@ -1,0 +1,13 @@
+{
+  "checked_links": 1602,
+  "documents": [
+    "docs/checkpoint.md",
+    "docs/architecture.md",
+    "docs/implementation-plan.md",
+    "docs/refusal-evidence-matrix.md",
+    "docs/source-inventory.md"
+  ],
+  "missing": [],
+  "missing_count": 0,
+  "passed": true
+}

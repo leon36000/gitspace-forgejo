@@ -1,0 +1,8 @@
+Output observé du runner isolé:
+
+running 1 test
+test actual_reconcile_cli_process_reads_v17_issue_repository_metadata_owner_string ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 204 filtered out; finished in 0.07s
+
+Runner status: exit code 0.

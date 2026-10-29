@@ -1,0 +1,18 @@
+Working directory: /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace
+Base HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+
+Isolated process scenario (runner uses Bubblewrap network/PID namespaces):
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_keeps_deleted_pr_comment_inconclusive_after_fresh_parent_retries_exhaust
+Output: process-e2e.log
+
+Full locked, offline default suite (ignored process case is excluded by design):
+cargo test --locked --offline --all-targets -- --test-threads=1
+Output: all-targets.log
+
+Final checks:
+cargo fmt --all -- --check
+git diff --check
+python3 scripts/verify_cargo_license_state.py
+Python syntax compilation of the scenario runner and append_manifests.py
+
+append_manifests.py snapshots and checks append-only worktree/project SHA-256 indexes with scripts/verify_latest_sha256_manifest.py.

@@ -1,0 +1,10 @@
+Contrôles après mise à jour du reçu et des documents, le 2026-10-28:
+
+- `cargo fmt --all -- --check`: exit 0.
+- `python3 -m py_compile scripts/run_webhook_reconcile_cli_e2e.py`: exit 0.
+- `git diff --check`: exit 0 pour les fichiers suivis; le processus de test et le runner sont préexistants/non suivis dans ce worktree fortement modifié.
+- `python3 scripts/verify_cargo_license_state.py`: exit 0; license=null, license_file=null, publish=[], no_license_selected, redistribution_rights=not_assessed, SPDX=NOASSERTION.
+- `python3 evidence/documentation-link-audit-001/verify_doc_links.py`: exit 0; 1 614 liens dans les cinq documents canoniques, zéro cible absente.
+- Le scénario processus Bubblewrap ciblé: exit 0; 1 passé, 0 échec, 204 filtrés; voir `run-result.txt`.
+
+Ces commandes ne relancent pas les parcours antérieurs et ne constituent pas une suite complète du dépôt.

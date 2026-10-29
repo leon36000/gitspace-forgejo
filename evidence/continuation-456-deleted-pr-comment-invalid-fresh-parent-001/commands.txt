@@ -1,0 +1,13 @@
+cargo test --locked --offline --test webhook_reconcile_contract deleted_pr_comment_rejects_invalid_fresh_parent_after_comment_404 -- --exact --nocapture
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_refuses_missing_draft_on_fresh_deleted_comment_parent
+cargo test --locked --offline --test webhook_reconcile_contract -- --test-threads=1
+cargo test --locked --offline --all-targets -- --test-threads=1
+cargo fmt --all
+cargo fmt --all -- --check
+git diff --check
+PYTHONPYCACHEPREFIX=/tmp/cont456-pycache python3 -m py_compile scripts/run_webhook_reconcile_cli_e2e.py
+python3 scripts/verify_cargo_license_state.py
+python3 evidence/documentation-link-audit-001/verify_doc_links.py
+sha256sum -c evidence/continuation-456-deleted-pr-comment-invalid-fresh-parent-001/source-sha256.txt
+(cd evidence/continuation-456-deleted-pr-comment-invalid-fresh-parent-001 && sha256sum -c SHA256SUMS)
+python3 evidence/continuation-456-deleted-pr-comment-invalid-fresh-parent-001/append_manifests.py
