@@ -1,0 +1,9 @@
+# Vérifier les blobs locaux transmis au commit GitLab CONT462
+git hash-object src/webhook/reconcile.rs tests/webhook_reconcile_contract.rs tests/webhook_receiver_process_e2e.rs docs/checkpoint.md evidence/continuation-462-present-comment-fresh-parent-001/{SHA256SUMS,append_manifests.py,commands.txt,contract-tests.log,local-run.md,manifest-check.txt,manifest-prefix-before.json,process-e2e.log,source-sha256.txt}
+
+# Vérifier les manifestes locaux après ajout du reçu CONT463
+python3 scripts/verify_latest_sha256_manifest.py evidence/SHA256SUMS --root .
+python3 scripts/verify_latest_sha256_manifest.py ../../evidence/SHA256SUMS --root ../..
+
+# Le readback distant a été fait avec le connecteur GitLab PC4 : list_branches,
+# list_repository_tree et get_repository_file; il n’exige aucun secret de courriel.

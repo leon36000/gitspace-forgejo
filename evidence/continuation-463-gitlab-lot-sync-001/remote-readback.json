@@ -1,0 +1,50 @@
+{
+  "project": {
+    "id": 4,
+    "path": "root/gitspace-forgejo",
+    "visibility": "private"
+  },
+  "branch": "codex/pc6-transfer-work-2026-10-28",
+  "commit": {
+    "sha": "4dc2c2d7c61c81426c79b2596cc4188529b8b102",
+    "message": "fix: bind present comments to fresh parent [skip ci]",
+    "actions": {
+      "updates": 15,
+      "creates": 9,
+      "total": 24
+    }
+  },
+  "branch_heads": {
+    "work_before": "27a6eda885d578203d5c9f234ceb7da1110208cd",
+    "work_after": "4dc2c2d7c61c81426c79b2596cc4188529b8b102",
+    "default_branch": "codex/pc6-transfer-2026-10-28",
+    "default_sha_unchanged": "6c6ffa3d7d37d48b9d7877acb982d73a2c49a14f",
+    "default_protected": true
+  },
+  "verified_blobs": {
+    "src/webhook/reconcile.rs": "5a8355b4abfb18253128c7b19a5d5c5753ca1bd3",
+    "tests/webhook_reconcile_contract.rs": "5eb8cac9b9ee033ec2a7635716a3a3a4316f5bfb",
+    "tests/webhook_receiver_process_e2e.rs": "fe99d6ce2e39e636c26174d6f1f1f747ca1a328f",
+    "docs/checkpoint.md": "da51c2706b235c55c4767ea0706204d1d62179a7",
+    "evidence/continuation-462-present-comment-fresh-parent-001/SHA256SUMS": "b147e31610f07089451def50fea9fc14b5ead12c",
+    "evidence/continuation-462-present-comment-fresh-parent-001/append_manifests.py": "c3887d501755a3c6dd777bd92e3d59b225331d1f",
+    "evidence/continuation-462-present-comment-fresh-parent-001/commands.txt": "762e831740db88ee43599206e7cb9dd00107c2b3",
+    "evidence/continuation-462-present-comment-fresh-parent-001/contract-tests.log": "4f20c7af216ed57ae7b305bd00447c4c06fd9260",
+    "evidence/continuation-462-present-comment-fresh-parent-001/local-run.md": "c1982709c854b8cb1a666b4f343adfa4783635f5",
+    "evidence/continuation-462-present-comment-fresh-parent-001/manifest-check.txt": "687bedd5c27776671d0e64028d7ee8efddd8a0a8",
+    "evidence/continuation-462-present-comment-fresh-parent-001/manifest-prefix-before.json": "fb62ad6a5184f1d5c72f4fcb76af2598ee863458",
+    "evidence/continuation-462-present-comment-fresh-parent-001/process-e2e.log": "f262992a0655e2a96a848d77ec89209dd36e7f35",
+    "evidence/continuation-462-present-comment-fresh-parent-001/source-sha256.txt": "cb4748561ce83bb90ce3514fdbeae4396d7ef78e"
+  },
+  "manifest": {
+    "global_blob": "36a874192a941d175ae50a75c214b4e868e29354",
+    "lines_before": 19701,
+    "lines_after": 19716,
+    "prefix_sha256": "2f872fa51eb0271adb8c5087687d4570066f73673324ba08881b34fff5438efc",
+    "appended_line_count": 15,
+    "appended_suffix_matches_local": true
+  },
+  "ci": "not run; commit uses [skip ci]",
+  "merge_request": "not created",
+  "remote_shell_or_runner": "not established"
+}
