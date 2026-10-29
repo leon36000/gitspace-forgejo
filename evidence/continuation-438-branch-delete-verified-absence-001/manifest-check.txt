@@ -1,0 +1,4 @@
+local evidence hashes: PASS
+worktree and project append-only prefixes: PASS
+canonical source and test hashes appended: PASS
+local_evidence_files=92

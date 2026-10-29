@@ -1,0 +1,8 @@
+Commands:
+
+- rustc -V
+- cargo -V
+- python3 --version
+- cargo metadata --format-version 1 --locked --offline --no-deps
+- python3 -B scripts/verify_cargo_license_state.py
+- python3 -B -m unittest -v scripts.test_cargo_license_state

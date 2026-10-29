@@ -1,0 +1,8 @@
+CONTINUATION-437 local evidence hashes: PASS
+worktree and project append-only prefixes: PASS
+checkpoint, refusal matrix, source and test hashes appended: PASS
+local_evidence_files=20
+final_local_sha256_entries_verified=20
+parent_project_stale_hashes_appended=52
+final_worktree_paths_verified=13690
+final_project_paths_verified=8859

@@ -1,0 +1,45 @@
+[
+  {
+    "checked_lines": 20,
+    "exit": 0,
+    "name": "local evidence SHA256SUMS",
+    "stderr": ""
+  },
+  {
+    "checked_lines": 7,
+    "exit": 0,
+    "name": "source-sha256",
+    "stderr": ""
+  },
+  {
+    "exit": 0,
+    "malformed": 0,
+    "mismatched": 0,
+    "missing": 0,
+    "name": "worktree append-only manifest",
+    "passed": true,
+    "unhashed": 0,
+    "unique_paths": 13690,
+    "unsafe": 0,
+    "verified_paths": 13690
+  },
+  {
+    "exit": 0,
+    "malformed": 0,
+    "mismatched": 0,
+    "missing": 0,
+    "name": "project append-only manifest",
+    "passed": true,
+    "unhashed": 0,
+    "unique_paths": 8859,
+    "unsafe": 0,
+    "verified_paths": 8859
+  },
+  {
+    "checked_links": 1607,
+    "exit": 0,
+    "missing": 0,
+    "name": "documentation links",
+    "passed": true
+  }
+]

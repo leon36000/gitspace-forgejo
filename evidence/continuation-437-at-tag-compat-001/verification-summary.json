@@ -1,0 +1,62 @@
+{
+  "all_targets": {
+    "failed": 0,
+    "groups": 38,
+    "ignored": 200,
+    "passed": 765
+  },
+  "cargo_metadata": {
+    "license": null,
+    "license_file": null,
+    "publish": []
+  },
+  "checks": [
+    {
+      "command": "cargo fmt --all -- --check",
+      "exit": 0,
+      "output": "rustfmt.log"
+    },
+    {
+      "command": "git diff --check",
+      "exit": 0,
+      "output": "diff-check.log"
+    },
+    {
+      "command": "python3 scripts/verify_cargo_license_state.py",
+      "exit": 0,
+      "output": "license-state.json"
+    },
+    {
+      "command": "git check-ref-format refs/tags/@",
+      "exit": 0,
+      "output": "git-refname-check.txt"
+    },
+    {
+      "command": "cargo metadata --format-version 1 --locked --offline --no-deps",
+      "exit": 0,
+      "output": "cargo-metadata.json"
+    }
+  ],
+  "contract": {
+    "failed": 0,
+    "groups": 1,
+    "ignored": 0,
+    "passed": 104
+  },
+  "documentation_links": {
+    "checked": 1607,
+    "missing": 0,
+    "passed": true
+  },
+  "license_guard": {
+    "license": null,
+    "license_decision": "no_license_selected",
+    "license_file": null,
+    "package": "agent-forge-core",
+    "publish": [],
+    "redistribution_rights": "not_assessed",
+    "spdx_package_license_declared": "NOASSERTION",
+    "status": "metadata_policy_verified"
+  },
+  "post_doc_diff_check_exit": 0
+}

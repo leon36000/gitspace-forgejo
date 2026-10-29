@@ -1,0 +1,278 @@
+{
+  "after": {
+    "line_count": 12840,
+    "mismatched_path_count": 0,
+    "passed": true,
+    "sha256": "d3eeb26f2bdbdad9cf1ea06c8e22bba57764593bef4394907389498ea6b0284e",
+    "unique_paths": 8854,
+    "verified_paths": 8854
+  },
+  "append_only_prefix_preserved": true,
+  "appended_current_hashes": [
+    {
+      "current_sha256": "a50fcb2ea456ded6b5581a0fd77b767b02160252be0837bec5083dfa55ebf7ab",
+      "path": ".runtime/webhook-005-workspace/src/webhook.rs",
+      "previous_sha256": "eeef64dbf1165f093efab2c484d9df6f6fbf20c5c5b21f55fdec812987658c41"
+    },
+    {
+      "current_sha256": "5c567b7f5ed53ce731f7cc00532546347b548cdf9c5f5be9d287c81bf9174039",
+      "path": ".runtime/webhook-005-workspace/tests/webhook_contract.rs",
+      "previous_sha256": "7dff0401947757ad951151b06b883b74530dca285298f031d1b9f3f8a4e48a18"
+    },
+    {
+      "current_sha256": "c5a7a4dde6190e830243f36998d9bbb08ce61e8f87f3b07b33e2558b6abc657b",
+      "path": ".runtime/webhook-005-workspace/docs/architecture.md",
+      "previous_sha256": "c53cc66e52ce1408c3a68afbf653b05594ac91fd4fec63a61cfbee4f30d7904e"
+    },
+    {
+      "current_sha256": "e8a73e20fb748283ec1b48b719a0637f929068ac971f16eb00c16fca603ce01a",
+      "path": ".runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs",
+      "previous_sha256": "5e5b59be0d039b4f1415aa6670d2a6cf31305335e31ba4302bd42c8b6153897e"
+    },
+    {
+      "current_sha256": "b62921b3cc03e9d76193e7095bdc092124c5beb3e339648ebb0dc1ba69cdb9f8",
+      "path": ".runtime/webhook-005-workspace/src/lib.rs",
+      "previous_sha256": "a82d965198eed0df65b6cf0a985ce4dd5b2bee07018702afb8db7a9cd75011d7"
+    },
+    {
+      "current_sha256": "ac2661705b2046ef6790f38013631573dcfd982f3ce8ede64ffd7b92850a15e0",
+      "path": ".runtime/webhook-005-workspace/src/bin/forgejo-reconcile-local.rs",
+      "previous_sha256": "96e9470051bfe23a4c20c34b8bcfec8bb385f495f5551e4b90d6bb570180492d"
+    },
+    {
+      "current_sha256": "9a77e69010f34d4c9dfd97de472535513dcc3871acdf397c66674ef545b19b63",
+      "path": ".runtime/webhook-005-workspace/docs/implementation-plan.md",
+      "previous_sha256": "4cadc14e25b68f17df8af9472b768f865411c961c29d80308ce4153932311201"
+    },
+    {
+      "current_sha256": "d857bc33076ee075ef7896daf10f1c3e67f7b9ea847b55fad64dedb79eddca28",
+      "path": ".runtime/webhook-005-workspace/docs/source-inventory.md",
+      "previous_sha256": "ae6e2feb5978087534ef8532b71cecfe935a52a1380dd858a6be316a60865c51"
+    },
+    {
+      "current_sha256": "ab0ac2462f321add9c30dc4cfae8166ea6b27821ba8704d899bcce797fe69fc8",
+      "path": ".runtime/webhook-005-workspace/scripts/run_forgejo_live_webhook_reconcile_emitted.py",
+      "previous_sha256": "1ec5c4cfed6d87357277f8c0d103b084b5a17c1ce45d3c44c7b57df5cb5bdc96"
+    },
+    {
+      "current_sha256": "d448661991f9fdf4169bcb9d35b1db1787e044cb62ae3d4e590220e6ea07f81f",
+      "path": ".runtime/webhook-005-workspace/tests/test_forgejo_emitted_webhook_e2e.py",
+      "previous_sha256": "ae957c0e26312c251681468b6e344ae36ff1190fc2b8e40943ba33d945d34310"
+    },
+    {
+      "current_sha256": "89afb61e996f97f8bd586d718f75157941ad5f57f6bbf5bcceb94dcb97c8e7f2",
+      "path": ".runtime/webhook-005-workspace/scripts/mission_012_test_agent_adapter.py",
+      "previous_sha256": "518d9245888a5bb2f5e3427771e20df6fa3e1b99a374e7925b99bc775f636038"
+    },
+    {
+      "current_sha256": "60ce20fe2dda57d51679c353d9a2f13b1dc52bb1381730b03467cfdcabdbba55",
+      "path": ".runtime/webhook-005-workspace/scripts/run_mission_012_live_mcp_agent_e2e.py",
+      "previous_sha256": "9e26c8d92842e6d8aeecc7cc992b9334ebe7fff210202326416097224f37696c"
+    },
+    {
+      "current_sha256": "ef6199fe69c78dd34cd0fdc86be2b2b8b767e628cd5648957384a01346cdc14a",
+      "path": ".runtime/webhook-005-workspace/tests/test_mission_012_sandboxed_test_adapter.py",
+      "previous_sha256": "4d704dcf77f4af33daf4d4b23d1f56f01edb954d7484910c896db1161f04daee"
+    },
+    {
+      "current_sha256": "7f39921477e5373e9f41cc231931705ef634a8c36dc2f3f991ab2f549df99b10",
+      "path": ".runtime/webhook-005-workspace/scripts/run_webhook_reconcile_cli_e2e.py",
+      "previous_sha256": "f71698aabad75bf92bff8d1040600bc9709de83f91b514c917a16adae85e45e3"
+    },
+    {
+      "current_sha256": "c229d6b9191aeb59742c6469f9a7802c436602b3abb79c8855987d7ed267fe7a",
+      "path": ".runtime/webhook-005-workspace/scripts/run_forgejo_preflight_cli_e2e.py",
+      "previous_sha256": "eb80a65edc025b694a3447dd0edc48f154fc451b38b7d2bd25bc4ec0b2f2dba3"
+    },
+    {
+      "current_sha256": "5edf06998021005df1cd2b52feed6a41e5b191630388435593d0e80441e62d7c",
+      "path": ".runtime/webhook-005-workspace/tests/forgejo_preflight_process_e2e.rs",
+      "previous_sha256": "5b42481f42e709c221bbead3724746576bbc616af4d2071899a0912f575a2b02"
+    },
+    {
+      "current_sha256": "a28a2c4eeda68a63a87db1cccec9bec4a7a7c0259c11ae88959464ceb0219088",
+      "path": ".runtime/webhook-005-workspace/tests/forgejo_reconcile_capabilities_e2e.rs",
+      "previous_sha256": "0419e0bdcca2251c6bcb0c77f9195e9a8d0006fbe906f72437837bcadd69c2bc"
+    },
+    {
+      "current_sha256": "dee5a9ab148cb1cf60411609cdff8ab1ec275a7ab963af158af212492e7d2b06",
+      "path": ".runtime/webhook-005-workspace/tests/webhook_handler_contract.rs",
+      "previous_sha256": "b6cb0bd23c4728c4c0b15e667aed41a90b3bc12c1f201af321cf10a8d7fdf600"
+    },
+    {
+      "current_sha256": "f7646970cbc6c6d228c0cc60491c7d447a2558eba2631cc093d3ee8531e2539a",
+      "path": ".runtime/webhook-005-workspace/tests/mission_012_mcp_lifecycle.rs",
+      "previous_sha256": "a6ab990b727df910e3071fd86bf8daa8f479ebfdec1d3b29c7d489f40c8646ca"
+    },
+    {
+      "current_sha256": "e6558e76eb3e7aaba5fe7efee5754c8566c97e7baeec0463a3e14811348c62a3",
+      "path": ".runtime/webhook-005-workspace/src/webhook/http.rs",
+      "previous_sha256": "4e4d628a49090ba1cbfc869ac4cee2b425e04f996a6443ff99b24eb712053758"
+    },
+    {
+      "current_sha256": "e293abb0359a4f1b26d834d5c5ab25a58466f6aae4eb5e42e01aff1433ee2be9",
+      "path": ".runtime/webhook-005-workspace/scripts/run_forgejo_mission_delivery_process_e2e.py",
+      "previous_sha256": "5825c7a213fab314e0e7b81bd5546a55b774a4ddfe15bd35ec56bf6c12fdb665"
+    },
+    {
+      "current_sha256": "96ab823763a3b4e80b44195608a30f21ec5462b9e0556150e5f8fe6ba435b848",
+      "path": ".runtime/webhook-005-workspace/tests/forgejo_merge_post_crash_recovery_process_e2e.rs",
+      "previous_sha256": "b5d5080a848527128006de32b0d1021348452a02aef52e4d487bdbfc30671760"
+    },
+    {
+      "current_sha256": "e4fbd67657cb6e4025a54ae74c82cca9e516695e0f79de4934f1ffe55a25b837",
+      "path": ".runtime/webhook-005-workspace/tests/webhook_reconcile_pipeline.rs",
+      "previous_sha256": "4c36cb38257f1c1e5b96983fe6c7b108348c804cd5f1ad9d2d1945236e89bc97"
+    },
+    {
+      "current_sha256": "10ccaf1b4f736b88f3fbdb8b68c7818e68693cda8d96a8cc2d5f8cfbe854b167",
+      "path": ".runtime/webhook-005-workspace/src/agent_runtime.rs",
+      "previous_sha256": "60f3fe92ed15e34fbb04d3aae5ed434e6bc1cb40095c05f7b1720f83dcab3459"
+    },
+    {
+      "current_sha256": "0740c988983963d3b9ad2c1f53083092a0131611ab746c212166eed9e3181c0e",
+      "path": ".runtime/webhook-005-workspace/tests/mission_execution_journal_contract.rs",
+      "previous_sha256": "0cb86d751a4275924ad1cb0efd8fd87dca19c751aa56cbfee3a8f6f392e1c947"
+    },
+    {
+      "current_sha256": "443ba878a549a49945b9563cf8727e8a60c369d5e1a00787dc599dc721059e34",
+      "path": ".runtime/webhook-005-workspace/tests/test_mission_012_test_agent_adapter.py",
+      "previous_sha256": "71c00981a46850f80f4261e5b3006e70fda3d35cc76fadec73c510738c27eac0"
+    },
+    {
+      "current_sha256": "e5061289d5d721f53c9907f69cecae617ddc685e848919598c2478e4c54bc3fa",
+      "path": ".runtime/webhook-005-workspace/tests/agent_runtime_contract.rs",
+      "previous_sha256": "51f2e896125e63610b1929900f59e0e1fca13042188bd749bb102676fc0eef3d"
+    },
+    {
+      "current_sha256": "fc9088a1ef85b02cf15a7cfb910fd17bef3ccf1a7b53b99f6a2814f075b28bad",
+      "path": ".runtime/webhook-005-workspace/scripts/resume_forgejo_semantic_clean_merge.py",
+      "previous_sha256": "4b1227acfa37eb3b29ad7de4faa10daa1d149493716ced6c4543c2195f49244e"
+    },
+    {
+      "current_sha256": "61603d33f39c89ecbbdc00aaa9462c44563c07c9146a94b56d67b720c6490f41",
+      "path": ".runtime/webhook-005-workspace/tests/test_mission_012_live_agent_pr_e2e.py",
+      "previous_sha256": "823d4c41514656716457309007c8f777a0ad23bcf01f01afc8fc47a1457d34b3"
+    },
+    {
+      "current_sha256": "0d0ed769068fc9a2f31dd864af8cb27f96512942458b38b539eb2abab9cc8ce2",
+      "path": ".runtime/webhook-005-workspace/tests/test_mission_012_live_mcp_agent_e2e.py",
+      "previous_sha256": "25a10a56c196b91a0f210d61e64b5bd72c364912e9b9d0a32da1befdf128c59d"
+    },
+    {
+      "current_sha256": "519c6f91911b067458475c8b2bd3723077b0cc02f3548142ae9226c3c1ec401f",
+      "path": ".runtime/webhook-005-workspace/src/mission_admission.rs",
+      "previous_sha256": "5de792d7ae0eec32fd4eeecb3b2d7ead77670fae0c4327aa3cd6043d2ca0b163"
+    },
+    {
+      "current_sha256": "b3a216f8509026794dd04c3a67eb4ad46ba86160f27119709ed9ea8523a3f0e7",
+      "path": ".runtime/webhook-005-workspace/tests/webhook_mission_admission_contract.rs",
+      "previous_sha256": "3cf66f03a79e8b7fbca58435ae0130fdc4af3ce3a69c117c52d3d4f8770328c6"
+    },
+    {
+      "current_sha256": "e58222dc28669b7e08d7c9685fb8996facae908caefac1be41dffb61cd2f8633",
+      "path": ".runtime/webhook-005-workspace/src/bin/forgejo-mission-local.rs",
+      "previous_sha256": "0db859eeecd4096e2a6d3fa7df801b3a773b890da47a766cb56378a4916d398e"
+    },
+    {
+      "current_sha256": "7af1e6a9acf0dfa3577adf7783803cbbbd890c3739fe8429164df6a65cd69ae7",
+      "path": ".runtime/webhook-005-workspace/evidence/continuation-080-workflow-job-readback-001/manifest-update.log",
+      "previous_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "current_sha256": "2e6e21f152bfd89f63dbdb4e4a516242a04b3b166fe34db4293963cb6e39c85d",
+      "path": ".runtime/webhook-005-workspace/scripts/run_forgejo_native_branch_delete_webhook_reconcile.py",
+      "previous_sha256": "5bf56128c20ddf38120665ca9875d47121ddac60107e8e2711d52db133590b21"
+    },
+    {
+      "current_sha256": "cd4e03412966a15da658125413352b1d7c8402c8f953f4ecef9c530394f10917",
+      "path": ".runtime/webhook-005-workspace/src/bin/mission-012-mcp-host.rs",
+      "previous_sha256": "a22fdea07b679dfe85f635091291303b1d684b36cd277816fcdee55acb7f63cb"
+    },
+    {
+      "current_sha256": "4bb7cd05963691876da3fddf7c16de47e8b3993be53b746f4cb673ecb5ca7c6a",
+      "path": ".runtime/webhook-005-workspace/tests/forgejo_mission_delivery_process_e2e.rs",
+      "previous_sha256": "f3fc31b8c4dce17695acf6b9c0eba451b3f1a6a8f18be8f6f68d7cfd5878c3ad"
+    },
+    {
+      "current_sha256": "9eadb158f5b7f3a6af6ed80bfea39bf1729803c5e8efa6b7df9933df3da30250",
+      "path": ".runtime/webhook-005-workspace/evidence/continuation-213-live-pr-comment-interrupted-cli-resume-001/commands.txt",
+      "previous_sha256": "d3c0e15293f72de01712bbb5e96ad3d74468141af31f205ece5457a8942cd8aa"
+    },
+    {
+      "current_sha256": "0250cba618d6aabad420e14bb4457da5ad788e2ff8eb75127ff47b784b913cc7",
+      "path": ".runtime/webhook-005-workspace/tests/mission_admission_contract.rs",
+      "previous_sha256": "d9fd8e46c06c2ca27a41b48ad22ce2e578f2d843813190e2a1e16f7f81c961fd"
+    },
+    {
+      "current_sha256": "fbb2c09e13f2cbadefaa80e6cc4d2e151c471e30e412cae42aab55bfddfdf533",
+      "path": ".runtime/webhook-005-workspace/src/mission_012_host.rs",
+      "previous_sha256": "4c3ab96d6eb1639f929403993414e1bbc162a61c685fbfe4c4f65599f0bc8bce"
+    },
+    {
+      "current_sha256": "e3043cda77bfc125318f476164e0181173dfa1408e6862ba6a723e1dba802c2b",
+      "path": ".runtime/webhook-005-workspace/tests/reconcile_config_contract.rs",
+      "previous_sha256": "c01c2a84ee114f896439c6d622ae0e9de964d4bcbe69a450ccffbb26a2291639"
+    },
+    {
+      "current_sha256": "9501c2568477977f6f7f37d1290a314e3a8203f1ca4dd1d6e477c20bb16125df",
+      "path": ".runtime/webhook-005-workspace/tests/reconcile_journal_lock_timeout.rs",
+      "previous_sha256": "a92cdffe4b8be87c9eda142815c624baa0f8bcfda69555d009de19e614e128ca"
+    },
+    {
+      "current_sha256": "083f4087eb3389251c30e1d97623a7cfceb81ce48686b8864f7b7b29e68b5f8f",
+      "path": ".runtime/webhook-005-workspace/tests/webhook_quarantine_cli.rs",
+      "previous_sha256": "f56c265fb9e6e1a9c84ad5e238611b3aa0eac21db2ab695e9a35579711ed5863"
+    },
+    {
+      "current_sha256": "f680b94d649f875382a322e28b509da3929d0bde1acb1445b66ca0c3390fd06f",
+      "path": ".runtime/webhook-005-workspace/tests/test_forgejo_live_org_team_reviewer_readback.py",
+      "previous_sha256": "84898581f0959e21093bbd655a69d94938374b47f02d4e0f36b6f57e06e5cdf6"
+    },
+    {
+      "current_sha256": "fec80cf38dfc790a654971a1ba4bdf43a8342859a5512da31d29b4f6bbe46190",
+      "path": ".runtime/webhook-005-workspace/tests/test_forgejo_webhook_native_replay_e2e.py",
+      "previous_sha256": "03a4c2f4f371cdda79b64e44b3d367c0b7c74fde8f73f4ebf87de6409449f601"
+    },
+    {
+      "current_sha256": "c5f19f6cba3bd674b0c581a7151282b2ab11b29659cd638d147e91e52649de2a",
+      "path": ".runtime/webhook-005-workspace/scripts/run_forgejo_live_org_team_reviewer_readback.py",
+      "previous_sha256": "f7ce0302ca0ed2045b9ba247ee405e5d279b90210b9a6b3569cf070040152b33"
+    },
+    {
+      "current_sha256": "c250d66440284ae96e7072ef1ea011e0f062293874eb5c5b5130b0e43c454be6",
+      "path": ".runtime/webhook-005-workspace/scripts/run_forgejo_native_push_webhook_reconcile.py",
+      "previous_sha256": "91c0070c9207fe2474a9765cfb17c51ce115f4036c902b84a4f50f00ec91c323"
+    },
+    {
+      "current_sha256": "8120377e33d885442d69e48be7aa2b3169139e3ea952caa0b0399df19c7a8a2e",
+      "path": ".runtime/webhook-005-workspace/scripts/run_forgejo_live_webhook_native_replay_e2e.py",
+      "previous_sha256": "6eb71f48ba1cd4a68f85fe4558468be5e58f23861fb52e9ed95ee02bbb26d41d"
+    },
+    {
+      "current_sha256": "95e6d92529a4b558ed1bc9912db8c2a2806a8673e7c461345128ebebdb5e4fc1",
+      "path": ".runtime/webhook-005-workspace/src/bin/mission-012-verify-local.rs",
+      "previous_sha256": "a920fe426e22fd292635d095f8f8775fafea2d5271b6be2945453f94e5d2a9bf"
+    },
+    {
+      "current_sha256": "e11402f9359d8359816c13f5240e6f4b6ff877a68b8e4ca79d43ae9626f22735",
+      "path": ".runtime/webhook-005-workspace/tests/forgejo_mission_delivery_process.rs",
+      "previous_sha256": "857b525401636f9bdc70d4ab62f2f75da40e29d5c594d6252fc881a7769e05ea"
+    },
+    {
+      "current_sha256": "8e7664a4994b6d810a7beb84f4076800055f76be06ef22b098dc1e311b776207",
+      "path": ".runtime/webhook-005-workspace/scripts/run_forgejo_live_webhook_reconcile_e2e.py",
+      "previous_sha256": "06268802afab5216eae3d7e5cd4a3c8a33a23af98e0baabefac2eefd7db74e34"
+    },
+    {
+      "current_sha256": "6f533e368e1a1680bbbeab8ea7870ccef2b429fc1fa3cbb9b6afd512a369aef9",
+      "path": ".runtime/webhook-005-workspace/tests/test_mission_requirement_arbitration_cli_process.py",
+      "previous_sha256": "27b66541bdb19e066edb70836e28e466701d96a9899762a210cbbadf81dc28bf"
+    }
+  ],
+  "before": {
+    "line_count": 12788,
+    "mismatched_count": 52,
+    "sha256": "e008badaddc581f4a47d88f66dcf0efd3de447673b477c2136e0a3cca6e93134"
+  }
+}

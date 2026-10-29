@@ -1,0 +1,12 @@
+Exploration oracle and current focused check:
+  git check-ref-format refs/tags/@
+  cargo test --offline --locked --test webhook_reconcile_contract release_accepts_git_valid_unicode_whitespace_and_at_current_tag_names -- --exact --nocapture
+  cargo test --offline --locked --test webhook_reconcile_contract -- --test-threads=1
+  cargo test --locked --offline --all-targets -- --test-threads=1 2>&1 | tee evidence/continuation-437-at-tag-compat-001/all-targets.log
+  cargo fmt --all -- --check
+  git diff --check
+  python3 scripts/verify_cargo_license_state.py
+  cargo metadata --format-version 1 --locked --offline --no-deps
+  python3 evidence/documentation-link-audit-001/verify_doc_links.py
+
+No Forgejo instance, GitLab, email, model, or external service was used. The complete suite log records 38 groups and every group result; see verification-summary.json for totals.

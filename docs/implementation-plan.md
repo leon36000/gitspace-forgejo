@@ -1,5 +1,67 @@
 # Plan du premier lot local
 
+## CONTINUATION-459 — reprendre une livraison durable après une panne API
+
+Une seule livraison `issue_comment/deleted` est reçue et conservée dans l’inbox. Le premier processus épuise trois réponses 503 après le 404 du commentaire et reste inconclusif; le second rejoue le même ID depuis le même journal, sans réingress, et obtient un parent frais valide. Il confirme `comment.state=absent` seulement après ce readback, garde l’inbox byte-for-byte identique et n’envoie pas d’Authorization. Le scénario du receiver et du CLI sous Bubblewrap passe **1/1**; all-targets **39 groupes, 793 réussis, 0 échec, 219 ignorés**. [Rapport, sorties et prévol PC4 en lecture seule](../evidence/continuation-459-pr-comment-recovery-after-outage-001/local-run.md).
+
+Limite : fixture HTTP loopback (`n=1`), sans Forgejo live, AgentOS/LLM ou benchmark; aucun code runtime n’a changé. PC4 est accessible par le connecteur, mais son pipeline courant est en échec et l’audit Gitleaks signale des valeurs à classifier ainsi qu’un jeton d’artefact exposé. Pas de nouveau push avant révocation/rotation, protection de l’artefact/trace et classification des détections. Prochaine tranche locale : sélectionner un refus distinct encore ouvert dans la matrice, sans rejouer ces scénarios.
+
+## CONTINUATION-458 — refuser l’absence après épuisement des retries du parent frais
+
+Après un `issue_comment/deleted` de PR, le parent initial est valide et le commentaire répond 404. Le parent relu répond trois fois 503 avec `Retry-After: 0`. Le test processus du receiver, journal durable et CLI sous Bubblewrap observe cinq GET, puis `inconclusive/upstream_http_status` et aucun `canonical_state`; aucune Authorization ou réponse HTTP privée ne fuit et l’inbox reste identique. Scénario isolé **1/1**; all-targets **39 groupes, 793 réussis, 0 échec, 218 ignorés**. [Rapport CONTINUATION-458](../evidence/continuation-458-pr-comment-fresh-parent-retry-exhaustion-001/local-run.md).
+
+Limite : fixture HTTP loopback `n=1`, pas Forgejo live, AgentOS/LLM ni benchmark; runtime inchangé. La récupération du même delivery sans nouvelle insertion d’inbox est prouvée par CONTINUATION-459.
+
+## CONTINUATION-457 — retry du parent PR frais après un 503
+
+Pour un webhook `issue_comment/deleted` sur une conversation PR, le client ne doit pas convertir le 404 du commentaire en absence si le parent PR frais est temporairement indisponible. Un test du vrai receiver, de l’inbox durable et du binaire `forgejo-reconcile-local` renvoie un premier parent valide, un commentaire 404, un parent 503 avec `Retry-After: 0`, puis un parent fusionné valide. Sous Bubblewrap, quatre GET sont observés dans l’ordre; la projection finale utilise le dernier parent et marque le commentaire absent uniquement après ce readback. L’Authorization est absent, les corps de réponses ne fuient pas et l’inbox reste identique.
+
+Le scénario isolé passe **1/1**. La suite `cargo test --locked --offline --all-targets -- --test-threads=1` passe **39 groupes, 793 réussis, 0 échec, 217 ignorés**; le test processus est ignoré dans Cargo puis lancé séparément par `scripts/run_webhook_reconcile_cli_e2e.py`. [Rapport, journaux et limites CONTINUATION-457](../evidence/continuation-457-transient-pr-parent-503-retry-001/local-run.md).
+
+Limite : une fixture API loopback (`n=1`), sans Forgejo live, LLM/AgentOS ni mesure comparative; le runtime n’a pas changé. Le refus à l’épuisement des retries est couvert par CONTINUATION-458; prochaine vérification : réconcilier le même delivery après le retour du service sans le réinsérer dans le journal.
+
+## CONTINUATION-456 — refuser une absence de commentaire si le parent frais est invalide
+
+Pour `issue_comment/deleted` rattaché à une PR, une première lecture valide du parent et un 404 sur le commentaire ne suffisent pas à annoncer `absent`; le parent est relu. Ce lot ajoute une preuve quand ce parent frais omet `draft`: le CLI retourne `inconclusive/invalid_current_state`, sans projection ni mutation du journal. Le contrat suit PR → commentaire 404 → PR; le test processus traverse le vrai receiver, inbox, CLI et Bubblewrap avec fixture loopback. [Rapport CONTINUATION-456](../evidence/continuation-456-deleted-pr-comment-invalid-fresh-parent-001/local-run.md). Le retry 503 transitoire réussi est couvert par CONTINUATION-457; prochaine couverture : refuser l’absence canonique quand les retries du parent frais sont épuisés.
+
+## CONTINUATION-455 — refuser `draft` absent avant GET du commentaire
+
+Étendre le contrat parent PR de CONTINUATION-454 : un `draft` absent dans le readback de la PR doit être inconclusif avant tout appel de lecture du commentaire. La cible Rust vérifie exactement un GET parent; le test processus traverse receiver, inbox durable et vrai CLI sous Bubblewrap puis vérifie l’absence de GET enfant, de projection canonique et de mutation du journal. Résultats et limites : [CONTINUATION-455](../evidence/continuation-455-pr-comment-parent-draft-required-before-comment-001/local-run.md). Cela renforce le refus sur une fixture, sans Forgejo live.
+
+## CONTINUATION-454 — rendre le snapshot parent PR complet avant le commentaire
+
+Pour `issue_comment` rattaché à une PR, valider et retenir le snapshot PR (merge/draft, SHA head/base, dépôt base, commit de fusion et reviewers) avant l’API du commentaire. Le test contrat rouge montrait un GET commentaire avant le refus d’un `head.sha` invalide. La réconciliation réutilise maintenant le snapshot validé, y compris après le parent frais du chemin deleted/404. Le processus réel receiver/journal/CLI vérifie un seul GET PR, aucun commentaire/Authorization, `inconclusive/invalid_current_state`, aucune projection et inbox inchangée. [Rapport, sorties et portée](../evidence/continuation-454-pr-comment-parent-snapshot-before-comment-001/local-run.md). Les API sont des fixtures loopback; pas de Forgejo live ni d’autorisation de fusion.
+
+## CONTINUATION-453 — vérifier la base PR du parent avant le commentaire
+
+Pour une conversation de PR livrée comme `issue_comment`, valider `pull_request.base.repo` dans le snapshot du parent avant tout GET commentaire. Le contrat rouge a reproduit deux appels API au lieu de s’arrêter après le parent étranger; le correctif réutilise la validation existante. Le vrai receiver → journal → CLI dans Bubblewrap doit alors retourner `inconclusive/resource_mismatch`, un GET PR seulement, aucun Authorization et aucune mutation du journal. [Rapport et limites](../evidence/continuation-453-pr-comment-parent-base-bind-001/local-run.md). La fixture est loopback, pas un Forgejo live; ce lot n’autorise pas une fusion.
+
+## CONTINUATION-452 — publier exactement le contrat d’identité d’issue
+
+Après CONTINUATION-451, le reconciler refuse un objet `Issue.repository` sans combinaison d’identité complète. Le descripteur de capacités publie maintenant les combinaisons admises (`full_name` seul ou `owner`+`name`), la validation de chaque champ d’identité présent et le refus d’un couple incomplet même si `full_name` est aussi présent. Le schéma passe à 32 / `forgejo-reconcile-capabilities-v32`; un client peut découvrir la vraie règle avant d’appeler le reconciler. Preuve ciblée, suite et limites : [CONTINUATION-452](../evidence/continuation-452-capability-issue-identity-contract-001/local-run.md).
+
+## CONTINUATION-450 — cohérence des IDs de base en réconciliation de PR
+
+Le contrat descriptif vérifie désormais les IDs `base.repo_id` et `base.repo.id` quand ces champs sont présents. Ils doivent être des entiers signés positifs et égaux lorsqu’ils coexistent; les réponses Forgejo partielles avec dépôt absent ou nul restent autorisées sans prétendre à une liaison numérique. Le contrat de découverte passe à schema 31 / `forgejo-reconcile-capabilities-v31`. La preuve unit test et le processus Bubblewrap sont conservés dans [CONTINUATION-450](../evidence/continuation-450-current-pr-base-id-consistency-001/local-run.md). Cette égalité interne n’établit pas l’ID cible attendu ni une autorité de fusion.
+
+## CONTINUATION-442 — lier l’issue au dépôt configuré
+
+`GET /repos/{owner}/{repo}/issues/{index}` contient aussi `repository.owner`, `repository.name` et `repository.full_name`. L’adaptateur vérifie maintenant leur forme et leur accord avec le scope fixe en plus du numéro et de `html_url`. Les formes absentes, mal formées ou contradictoires sont refusées avant admission. L’audit Forgejo v17 qui fonde cette forme est limité aux routes/conversions/DTO documentés dans [la preuve amont](../evidence/forgejo-v17-issue-repository-meta-process-001/upstream-route-followup.md); aucun ID numérique de dépôt n’est revendiqué.
+
+Les tests unitaires ciblés passent **49/49** et le scénario processus `actual_mission_cli_refuses_issue_snapshot_change_during_admission_then_retries_current_state` passe **1/1** dans Bubblewrap; voir [reçu CONTINUATION-442](../evidence/continuation-442-issue-repository-meta-binding-001/local-run.md). La fixture du processus fournit désormais aussi le `sha` racine requis par le parseur de l’arbre. Aucun serveur Forgejo live, LLM/AgentOS ou benchmark n’est concerné.
+
+## CONTINUATION-438 — distinguer une branche absente d’un dépôt inaccessible
+
+Pour le seul webhook natif de suppression de branche, le premier GET `/branches/{branch}` en 404 ne suffit pas. L’adaptateur doit relire le dépôt exact, vérifier `full_name`, `name` et `owner.login`, puis refaire le GET branche hors cache. `absent` n’est émis que si cette lecture fraîche retourne encore 404; un refus, une identité mal formée ou une ressource recréée restent respectivement inconclusifs ou `present`. La source par défaut de `verify_repository_access` échoue fermée; aucun writer n’est ajouté.
+
+Le contrat (y compris un batch create/delete), la politique de route et trois tests processus isolés couvrent succès, identité étrangère et verdict mixte du batch : [rapport](../evidence/continuation-438-branch-delete-verified-absence-001/local-run.md). CONTINUATION-441 apporte ensuite une seule suppression émise par Forgejo natif local : HTTP 202, réconciliation `current_state_read/absent` après trois lectures et nettoyage confirmé. Le binaire est étiqueté Forgejo 17.0.0+gitea-1.22.0, mais son commit de build exact demeure inconnu; aucun log individuel de chaque réponse HTTP n’est conservé. La recréation après un événement tardif et les autres cas d’accès restent à traiter.
+
+## WEBHOOK-INBOX-RESTORE-STAGE-001 — restaurer vers un journal neuf sans bascule implicite
+
+Le snapshot exporté seul ne fournissait pas de chemin vérifié pour le préparer à la reprise. Le nouveau `--stage-restore-inbox <snapshot> <nouvelle-inbox> <sha256-attendu>` valide le format du hash, l’existence et les permissions de la source, la chaîne et les clés d’idempotence, puis l’empreinte attendue. Il crée la destination par création exclusive, synchronise et relit le journal pour vérifier les mêmes octets. Le CLI ne remplace jamais une destination et ne modifie pas l’inbox source/active. Son reçu précise qu’un hash ne prouve pas la provenance, que le point n’est pas quiescent et que le replay d’événements acceptés après la copie reste requis. [Preuve et limites](../evidence/webhook-inbox-restore-stage-001/local-run.md).
+
+Le scénario complet staging → replay → append séquence 3 et sept refus nouveaux passent avec les cinq tests snapshot préexistants : 13/13. Le rouge avant implémentation échouait sur l’option absente. Limites restantes : pas de crash injecté pendant l’écriture, d’activation de receiver, de quiescence, de récupération automatique des webhooks post-snapshot, de restauration Forgejo ou de rétention.
+
 ## CONTINUATION-429 — vérifier la composition Release + labels sur Forgejo natif
 
 Un run local jetable ajoute au scénario natif Release les transitions de labels d’une issue et d’une PR. Forgejo émet 12 deliveries dans un ordre vérifié; les readbacks courants montrent les labels retirés, et un rejeu du Release après SIGKILL ne modifie pas le journal. Les 190 tests du runner et les 12 tests du garde Cargo passent. Aucun code runtime ne change, aucune licence n’est choisie. Reçu, versions et limites : [CONTINUATION-429](../evidence/continuation-429-forgejo-release-label-composition-001/local-run.md).
@@ -1721,6 +1783,6 @@ Portée : contrats Rust et fixtures Python locales; pas de Forgejo live, de mod�
 
 ## CONTINUATION-404 — readback minimal des publications Forgejo
 
-État local : réalisé. Contrat webhook v9 ajoute `release` sans retirer v8; les actions natives sont limitées à `published`, `updated`, `deleted`. Le CLI lit l’endpoint exact release par ID/dépôt, vérifie une projection bornée (ID, tag, draft, prerelease), exclut notes/assets et conserve 404 comme inconclusif. La route GET figure seule dans l’allowlist, avec refus des méthodes/sous-routes/IDs non canoniques. Les consommateurs annoncent single 19, batch 23, capabilities 28/v28. Tests globaux courants: 757 réussis, 0 échec, 189 ignorés en 38 groupes; les tests ignorés restent à exécuter selon leur runner isolé.
+État local : réalisé. Contrat webhook v9 ajoute `release` sans retirer v8; les actions natives sont limitées à `published`, `updated`, `deleted`. Le CLI lit l’endpoint exact release par ID/dépôt, vérifie une projection bornée (ID, tag, draft, prerelease), exclut notes/assets et conserve 404 comme inconclusif. La route GET figure seule dans l’allowlist, avec refus des méthodes/sous-routes/IDs non canoniques. Ce reçu historique de CONT-404 citait single 19, batch 23 et capabilities 28/v28; après CONT-449, les consommateurs annoncent capabilities 30/v30 (CONT-448 avait porté la version à 29/v29). Le résultat de 757 réussis, 0 échec, 189 ignorés en 38 groupes est celui du run archivé de cette tranche; le run all-targets du worktree actuel est consigné dans le checkpoint et le reçu CONT-448, et les tests ignorés exigent leurs runners isolés.
 
 Suite : conserver le déploiement autour de Forgejo sans fork; achever le transfert vers `root/gitspace-forgejo` seulement après routage PC6→PC4, lecture des refs et credential ciblé; persister un run processus release reproductible si un échec utile modifie la source (ne pas rejouer un scénario déjà prouvé sans raison). Le parcours LLM/AgentOS, la preuve d’isolation indépendante et le benchmark comparatif restent ouverts. Voir [CONTINUATION-404](../evidence/continuation-404-release-webhook-readback-001/local-run.md).
