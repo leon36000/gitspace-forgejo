@@ -1,0 +1,15 @@
+cargo_fmt=PASS
+git_diff_check=PASS
+{
+  "license": null,
+  "license_decision": "no_license_selected",
+  "license_file": null,
+  "package": "agent-forge-core",
+  "publish": [],
+  "redistribution_rights": "not_assessed",
+  "spdx_package_license_declared": "NOASSERTION",
+  "status": "metadata_policy_verified"
+}
+cargo_license_guard=PASS
+process_runner_py_compile=PASS
+missing documentation target: /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/continuation-447-merge-readback-issue-repository-identity-001/local-run.md

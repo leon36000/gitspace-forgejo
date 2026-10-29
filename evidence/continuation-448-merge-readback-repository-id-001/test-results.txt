@@ -1,0 +1,11 @@
+CONTINUATION-448 results, final source state, 28 October 2026 local time.
+
+- Expected red: `tests::merge_readback_refuses_divergent_commit_and_issue_state` failed specifically because different positive IDs for `base.repo.id` and `issue.repository.id` did not yet refuse confirmation. The Cargo process exited 101; see `red.log`.
+- Final focused unit test passed 1/1, 166 filtered (`unit-focused.log`). It rejects mismatched, zero, missing, or non-integer issue repository IDs, and zero or missing PR base repository ID, while text identities must also match.
+- Process E2E passed 1/1 under Bubblewrap 0.9.0 with network and PID namespaces unshared (`process-e2e.log`). The fixture applies the merge POST, then returns an issue repository ID 99 while the merged PR base carries ID 17. The CLI reports `inconclusive / merge_outcome_not_confirmed`, persists one started intent and no resolved intent.
+- Full all-targets suite passed: 39 test-result groups, 786 passed, 0 failed, 209 ignored (`all-targets.log`). Ignored process scenarios are not counted as executed; the new process scenario was run separately. `all-targets-pre-i64-refinement.log` and `process-e2e-pre-i64-refinement.log` preserve earlier successful runs before changing the JSON integer decoder from unsigned to signed-i64; they are not the final-run proof.
+- Actual CLI `--capabilities` prints schema 29 / `forgejo-reconcile-capabilities-v29`; `operations[4].postmerge_issue_identity` requires positive `repository.id` equal to `postmerge_pull_request_identity.base.repo.id` plus the three textual fields (`capabilities.json`).
+- Cargo metadata remains explicitly unchosen: `license=null`, `license_file=null`, `publish=[]`; `Cargo.toml` still has `publish=false`, metadata decision `no_license_selected`, rights `not_assessed`, SPDX marker `NOASSERTION`. Raw metadata and the guard result are retained.
+- Static checks and manifest results are separate from functional tests (`final-checks.log`, `SHA256SUMS`).
+
+- The initial static-results aggregator script had a regex escaping error; it is preserved in `final-checks-aggregate-regex-error.log`. The corrected non-test checks and aggregate parsing pass in `final-checks.log`.

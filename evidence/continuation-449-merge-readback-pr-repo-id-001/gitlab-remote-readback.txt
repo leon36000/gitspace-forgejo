@@ -1,0 +1,19 @@
+Read-only GitLab PC4 MCP observation, 2026-10-28. MCP server version: 19.5.1.
+Project:
+  id=4
+  path=root/gitspace-forgejo
+  visibility=private
+  web_url=https://pc4.tail0c55ff.ts.net/root/gitspace-forgejo
+  default_branch=codex/pc6-transfer-2026-10-28
+Default branch:
+  commit=6c6ffa3d7d37d48b9d7877acb982d73a2c49a14f
+  protected=true
+  can_push=false
+Work branch:
+  name=codex/pc6-transfer-work-2026-10-28
+  commit=9ac877767e9b458a9cd911e67a10f87aeeaefbdb
+  protected=false
+  can_push=true
+  merged=false
+Merge requests: none returned by a project-wide `state=all` query.
+The path evidence/gitlab-pc4-transfer-012 was not found on the work branch; its local pipeline/report evidence was not transferred there. No remote write, credential rotation, deletion, history rewrite, default-branch change, or merge was performed.

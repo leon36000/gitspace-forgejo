@@ -1,0 +1,19 @@
+cargo_fmt=PASS
+git_diff_check=PASS
+{
+  "license": null,
+  "license_decision": "no_license_selected",
+  "license_file": null,
+  "package": "agent-forge-core",
+  "publish": [],
+  "redistribution_rights": "not_assessed",
+  "spdx_package_license_declared": "NOASSERTION",
+  "status": "metadata_policy_verified"
+}
+cargo_license_guard=PASS
+process_runner_py_compile=PASS
+cargo_metadata_license=PASS (null/null/publish=[])
+capabilities_v29=PASS
+all_targets_log=PASS (39 groups, 786 passed, 0 failed, 209 ignored)
+process_e2e_log=PASS (1/1)
+documentation_reference=PASS

@@ -1,0 +1,17 @@
+cargo_fmt=PASS
+git_diff_check=PASS
+process_runner_py_compile=PASS
+{
+  "license": null,
+  "license_decision": "no_license_selected",
+  "license_file": null,
+  "package": "agent-forge-core",
+  "publish": [],
+  "redistribution_rights": "not_assessed",
+  "spdx_package_license_declared": "NOASSERTION",
+  "status": "metadata_policy_verified"
+}
+cargo_license_guard=PASS
+pinned_upstream_sources=PASS
+capabilities_contract=PASS
+documentation_and_remote_readback=PASS

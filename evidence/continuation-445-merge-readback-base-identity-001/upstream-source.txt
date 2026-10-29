@@ -1,0 +1,13 @@
+Repository: https://github.com/forgejo/forgejo
+Version/tag: v17.0.0
+Commit: 0d791421f85ca13a63b665053d81ea765fbbc571
+Checkout: /tmp/forgejo-v17-base-cas-poc; only read operations on the source files listed below.
+
+Relevant definitions:
+- modules/structs/pull.go :: PRBranchInfo.Repository has type *Repository.
+- modules/structs/repo.go :: Repository fields Owner, Name, FullName serialize as `owner`, `name`, `full_name`.
+- modules/structs/user.go :: User.UserName serializes as `login`.
+- services/convert/pull.go :: ToAPIPullRequest populates Base.Repository through ToRepo.
+- services/convert/repository.go :: innerToRepo sets Owner, Name, and FullName.
+
+These symbols establish the shape emitted by the pinned source. The test uses a local HTTP fixture and does not establish behavior of a running Forgejo server. No Forgejo source was copied into the product. The prior focused readback of these same pinned DTO/converter definitions is also retained at ../continuation-444-pr-base-repository-identity-001/upstream-source.txt.

@@ -1,0 +1,27 @@
+Canonical official Forgejo source: https://codeberg.org/forgejo/forgejo.git
+The official GitHub account profile points to Codeberg; direct open of
+https://github.com/forgejo/forgejo returned 404 during this review.
+The official download page links code/releases through Codeberg and says
+code.forgejo.org is a mirror.
+Tag: v17.0.0
+Resolved commit and checkout HEAD: 0d791421f85ca13a63b665053d81ea765fbbc571
+Checkout: /tmp/forgejo-v17-base-cas-poc
+Origin read from the checkout: https://codeberg.org/forgejo/forgejo.git
+
+Official location references:
+- https://github.com/forgejo (profile points to https://codeberg.org/forgejo)
+- https://forgejo.org/download/ (official download and source links)
+
+Inspected pinned source:
+- modules/structs/pull.go:64-71 — PRBranchInfo emits RepoID int64 as repo_id and Repository *Repository as repo.
+- services/convert/pull.go:100-105 — ToPullRequest assigns RepoID from pr.BaseRepoID and Repository from ToRepo(ctx, pr.BaseRepo, p).
+- modules/structs/repo.go:49-55 — API Repository.ID is int64 serialized as id.
+- services/convert/repository.go:184-201 — innerToRepo assigns ID from repo.ID.
+
+SHA-256 of cited files:
+- modules/structs/pull.go: 1472f689d9e80da512cc8edafa5d647daafccdf060dfba0d4a74d3be5cfe06e3
+- services/convert/pull.go: 7e3e4ef86c1854943eb36530797a878dc10a66845d3e34e845dc3c69c80930b5
+- modules/structs/repo.go: d1e5864b5d95436822d64a58b3ee1ed64eec7a778fd279fe2cdf677536c84a1f
+- services/convert/repository.go: edc14cbb5e831ac69d46858596e1e03f7e550efc7522add59e1f985ebcea7fe8
+
+The cited upstream files are read-only evidence; no Forgejo source was copied or changed. Coverage is limited to the DTO and conversion that produce these two fields. It does not establish server authenticity, transaction atomicity, or every merge-state behavior.

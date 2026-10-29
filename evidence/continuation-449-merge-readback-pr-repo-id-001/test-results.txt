@@ -1,0 +1,6 @@
+Expected-red unit: the new `base.repo_id` assertion failed before the implementation changed the predicate (0 pass, 1 expected failure); see red.log.
+Focused green unit: 1 passed, 0 failed; see unit-green.log.
+Isolated CLI process test: 1 passed, 0 failed, 13 filtered out; fixture applied the merge POST and returned inconsistent base repository IDs; see process-e2e-final.log.
+All-targets first attempt: 8 existing successful-merge fixtures failed because the newly required `base.repo_id` was missing. The product predicate was not weakened; the fixture responses were repaired with repo ID 7. Full first-run output is preserved in all-targets.log.
+All-targets final: 39 groups, 786 passed, 0 failed, 210 ignored; see all-targets-green.log. Ignored tests are not counted as passes.
+Static checks: rustfmt, diff check, Cargo license policy, capabilities-v30 contract, process-runner Python compilation, and three documentation references pass; see final-checks.log.

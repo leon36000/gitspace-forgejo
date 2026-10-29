@@ -1,0 +1,19 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.85s
+     Running unittests src/bin/forgejo-reconcile-local.rs (target/debug/deps/forgejo_reconcile_local-1cabf43e3a16c18e)
+
+running 1 test
+
+thread 'tests::merge_readback_refuses_divergent_commit_and_issue_state' (3763119) panicked at src/bin/forgejo-reconcile-local.rs:10160:9:
+base.repo_id must be positive and agree with base.repo.id
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test tests::merge_readback_refuses_divergent_commit_and_issue_state ... FAILED
+
+failures:
+
+failures:
+    tests::merge_readback_refuses_divergent_commit_and_issue_state
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 166 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `--bin forgejo-reconcile-local`

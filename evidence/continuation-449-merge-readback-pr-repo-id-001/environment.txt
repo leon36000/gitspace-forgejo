@@ -1,0 +1,22 @@
+observed_at=2026-10-28T22:59:44-04:00
+platform=Linux gx10-e526 7.0.0-1019-nvidia aarch64
+worktree=/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace
+branch=local/WEBHOOK-005-canonical-links
+base_commit=f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+source_tree_sha256_in_final_process_runner=eaa142255d0362adeac26a562846f6cd0769a75ffd10331b74106697b6dc881f
+working_tree=dirty; pre-existing work preserved; no commit created
+rustc=rustc 1.95.0 (59807616e 2026-04-14)
+cargo=cargo 1.95.0 (f2d3ce0bd 2026-03-21)
+python=Python 3.12.3
+bubblewrap=bubblewrap 0.9.0
+runner=network and PID namespaces unshared; no host environment; loopback fixture only
+model=none
+AgentOS=not used
+implementation_and_test_execution=local only
+subsequent_external_reads=authenticated GitLab project/branch/MR metadata and user-directed Gmail access lookup; no credential value used, displayed, or written to files; temporary mailbox payload cleared
+source_file_blobs:
+  src/bin/forgejo-reconcile-local.rs 8812dc42344ffce6b2ba95383f4581c2c5e00811
+  tests/forgejo_merge_post_crash_recovery_process_e2e.rs 8609c01f38ba12e6dea69ea6e1c938e6b24ad296
+  scripts/run_forgejo_mission_delivery_process_e2e.py af79ae7e2dfdb826c9a7549c7462835b4b303fe0
+forgejo_v17_source=0d791421f85ca13a63b665053d81ea765fbbc571
+forgejo_cited_files=clean in pinned source checkout

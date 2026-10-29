@@ -1,0 +1,22 @@
+Forgejo source audit — numeric repository ID shape for CONTINUATION-448
+
+Official repository: https://github.com/forgejo/forgejo
+Tag: v17.0.0
+Resolved commit: 0d791421f85ca13a63b665053d81ea765fbbc571
+Checkout: /tmp/forgejo-v17-base-cas-poc (HEAD and exact tag checked)
+
+Pinned source inspected:
+- `modules/structs/repo.go:49-55`: API `Repository.ID` is `int64`, serialized as `id`; `Name`/`FullName` are strings and `Owner` is a `*User`.
+- `modules/structs/pull.go:64-71`: `PRBranchInfo` has an `int64 repo_id` and a `*Repository repo`; the merged PR base therefore carries a nested repository identity with numeric ID.
+- `modules/structs/issue.go:37-42,79-80`: `Issue.Repo` is `*RepositoryMeta`; its `ID` is `int64` serialized `id`, alongside string `owner`, `name`, `full_name`.
+- `services/convert/issue.go:60-75`: `toIssue` fills the issue repository metadata, including the repository ID.
+- `routers/api/v1/repo/issue.go:648-661`: `GetIssue` loads by scoped repo ID and issue index and returns `convert.ToAPIIssue`.
+
+SHA-256 of cited DTO source:
+- `modules/structs/repo.go`: d1e5864b5d95436822d64a58b3ee1ed64eec7a778fd279fe2cdf677536c84a1f
+- `modules/structs/pull.go`: 1472f689d9e80da512cc8edafa5d647daafccdf060dfba0d4a74d3be5cfe06e3
+- `modules/structs/issue.go`: e6cb7890f1d7045b2423465d1e452b6f91c4d71c746957aefc9bade286d10006
+- `services/convert/issue.go`: a85ec9a4567fb0a87b0af7756f3ddb2366c54375e9ad7471046c9c2fa4fd4776
+- `routers/api/v1/repo/issue.go`: c88041dc09cdc1097549f00d25fc5a33aefee443c21b5be2ce2e4198b4dcf576
+
+The five inspected source files were clean in the pinned checkout. Scope is limited to the ID representation needed for cross-readback consistency, not a complete audit of all PR/issue API paths or runtime behavior. No upstream code was copied or modified.

@@ -1,0 +1,19 @@
+Forgejo source audit — narrow scope for CONTINUATION-447
+
+Repository: https://github.com/forgejo/forgejo
+Tag: v17.0.0
+Resolved commit: 0d791421f85ca13a63b665053d81ea765fbbc571
+Checkout used: /tmp/forgejo-v17-base-cas-poc
+
+Inspected source at that exact commit:
+- `modules/structs/issue.go:37-42`: `RepositoryMeta` serializes `Name` as `name`, `Owner` as a plain string `owner`, and `FullName` as `full_name`.
+- `modules/structs/issue.go:80`: `Issue.Repo` is `*RepositoryMeta` serialized as `repository`.
+- `services/convert/issue.go:33-42,60-75`: `toIssue` loads repository metadata and populates `apiIssue.Repo` with repository ID, name, owner name, and full name.
+- `routers/api/v1/repo/issue.go:648-661`: `GetIssue` loads by repository ID and issue index, checks read permission, then returns `convert.ToAPIIssue`.
+
+The three cited source files were clean in the checkout (`git status --short` returned no rows for them). SHA-256:
+- `modules/structs/issue.go`: e6cb7890f1d7045b2423465d1e452b6f91c4d71c746957aefc9bade286d10006
+- `services/convert/issue.go`: a85ec9a4567fb0a87b0af7756f3ddb2366c54375e9ad7471046c9c2fa4fd4776
+- `routers/api/v1/repo/issue.go`: c88041dc09cdc1097549f00d25fc5a33aefee443c21b5be2ce2e4198b4dcf576
+
+Coverage is limited to this DTO, converter, and API route needed to determine the `GET /repos/{owner}/{repo}/issues/{index}` response shape. This is not a fresh full Forgejo audit, runtime test, or review of every error path. No upstream file was modified and no upstream code was copied.

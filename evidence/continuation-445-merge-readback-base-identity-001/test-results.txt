@@ -1,0 +1,18 @@
+Fresh focused unit command: cargo test --locked --offline --bin forgejo-reconcile-local -- --test-threads=1
+Result: 167 passed; 0 failed; 0 ignored; finished in 10.93s.
+Saved stdout/stderr: unit-tests.log
+
+Fresh full command: cargo test --locked --offline --all-targets -- --test-threads=1
+Exit code: 0. Aggregate parsed from 39 `test result: ok` lines:
+786 passed; 0 failed; 207 ignored; 0 measured; 0 filtered.
+Ignored scenarios were not executed by the normal all-targets command.
+Saved stdout/stderr: all-targets.log
+
+Process test already observed before the all-targets run:
+python3 scripts/run_forgejo_mission_delivery_process_e2e.py --only merged_readback_with_contradictory_base_owner_is_inconclusive
+Result: 1 passed / 1 selected under Bubblewrap 0.9.0. The fixture applied one merge POST and the real CLI returned inconclusive, retained one started-intent event, and wrote zero resolved events. The runner output was not separately saved; see the honest limitation in local-run.md.
+
+Other fresh checks:
+- cargo fmt --all -- --check: exit 0
+- git diff --check: exit 0
+- python3 scripts/verify_cargo_license_state.py: exit 0; no license selected; rights not assessed; SPDX NOASSERTION.

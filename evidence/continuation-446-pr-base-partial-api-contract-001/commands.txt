@@ -1,0 +1,14 @@
+Working directory: .runtime/webhook-005-workspace
+
+# Pin the upstream checkout and inspect only the cited source files.
+git -C /tmp/forgejo-v17-base-cas-poc rev-parse HEAD
+git -C /tmp/forgejo-v17-base-cas-poc status --short -- modules/structs/pull.go modules/structs/repo.go modules/structs/user.go services/convert/pull.go services/convert/repository.go routers/api/v1/repo/pull.go
+git -C /tmp/forgejo-v17-base-cas-poc show HEAD:routers/api/v1/repo/pull.go | nl -ba | sed -n '225,255p'
+git -C /tmp/forgejo-v17-base-cas-poc show HEAD:services/convert/pull.go | nl -ba | sed -n '35,108p'
+git -C /tmp/forgejo-v17-base-cas-poc show HEAD:services/convert/repository.go | nl -ba | sed -n '21,58p'
+git -C /tmp/forgejo-v17-base-cas-poc show HEAD:modules/structs/pull.go | nl -ba | sed -n '64,73p'
+git -C /tmp/forgejo-v17-base-cas-poc show HEAD:modules/structs/repo.go | nl -ba | sed -n '48,57p'
+git -C /tmp/forgejo-v17-base-cas-poc show HEAD:modules/structs/user.go | nl -ba | sed -n '15,21p'
+
+# Confirm the local declared contract and validator; no tests were run for this source-only slice.
+rg -n 'validate_current_pull_request_base_repository|current_api_identity_contract|pull_request_base_repository' src/webhook/reconcile.rs src/bin/forgejo-reconcile-local.rs tests/forgejo_reconcile_capabilities_e2e.rs

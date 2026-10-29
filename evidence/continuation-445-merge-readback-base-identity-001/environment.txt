@@ -1,0 +1,18 @@
+Date: 2026-10-28
+OS: Linux 7.0.0-1019-nvidia, aarch64
+Rust: rustc 1.95.0 (59807616e 2026-04-14)
+Cargo: cargo 1.95.0 (f2d3ce0bd 2026-03-21)
+Bubblewrap: 0.9.0
+Python: 3.12.3
+Git HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+Git worktree: dirty before and after this lot; changes preserved; no commit/reset.
+Upstream checkout: Forgejo v17.0.0, commit 0d791421f85ca13a63b665053d81ea765fbbc571, /tmp/forgejo-v17-base-cas-poc; product-relevant source files were read-only and clean at that commit.
+
+SHA-256 at evidence capture:
+unit-tests.log  bcfafe45ee71e64e27d647e1cc12990c93327ee2468101bd84a522ed4e232ba7
+all-targets.log  f51c9990ba1e3a2e56f44e590c901026afb2a801a5b4ca5b64d86fde333c3559
+src/bin/forgejo-reconcile-local.rs  9f2914431b2699b7b973b42241d77e9c9344413b25de3efc0192cc3b2ac2f779
+tests/forgejo_merge_post_crash_recovery_process_e2e.rs  71d94ed46ae857e9b70d0f14c23bb28e793dd898748993ba16685a0b509fc424
+scripts/run_forgejo_mission_delivery_process_e2e.py  7873ac7171d5741740dfed5e13745c0f7d878b85de721fd78e988f917e8e50ee
+
+The documentation and evidence files were edited after this initial source hash capture; the append-only manifest records their final hashes.

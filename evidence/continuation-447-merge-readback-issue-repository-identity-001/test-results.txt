@@ -1,0 +1,8 @@
+CONTINUATION-447 results, observed 2026-10-28 local time.
+
+- Expected red: `tests::merge_readback_refuses_divergent_commit_and_issue_state` failed at the new assertion because an issue readback with `repository.owner=other-owner` was accepted. `red.log` preserves the failing stdout/stderr.
+- Green focused unit: same test passed 1/1, 166 filtered (`unit-focused.log`). It also checks wrong repository `name`/`full_name`, missing fields, and absent repository object.
+- Binary unit suite: 167 passed, 0 failed, 0 ignored (`bin-tests.log`).
+- Process E2E: 1 passed, 0 failed under Bubblewrap 0.9.0 with network and PID namespaces unshared (`process-e2e.log`). The fixture applied exactly one merge POST, then returned an issue readback for another owner; result was inconclusive, one intent-start event, zero intent-resolved events.
+- Full all-targets run: 39 result groups, 786 passed, 0 failed, 208 ignored (`all-targets.log`). Ignored tests are not counted as executed; the process test above was run separately. The earlier fixture-migration failure is retained in `all-targets-fixture-fail.log`; missing valid repository identity in five unrelated fixtures was corrected before the final green run.
+- Non-test checks: see `final-checks.log`; Cargo license metadata remains unselected (`license=null`, `license_file=null`, `publish=[]`, redistribution rights `not_assessed`, SPDX `NOASSERTION`).

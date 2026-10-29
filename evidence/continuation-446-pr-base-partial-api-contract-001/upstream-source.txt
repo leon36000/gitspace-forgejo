@@ -1,0 +1,13 @@
+Official source repository: https://github.com/forgejo/forgejo
+Tag/version: v17.0.0
+Commit: 0d791421f85ca13a63b665053d81ea765fbbc571
+
+Read-only source references at that commit:
+- routers/api/v1/repo/pull.go:229-247, `GetPullRequest` looks up the PR, calls `pr.LoadBaseRepo`, loads head repo, then returns `convert.ToAPIPullRequest` as HTTP 200.
+- services/convert/pull.go:42-50 loads base/head repositories again and returns nil on those load errors; lines 100-105 populate `Base` and set `Repository: ToRepo(ctx, pr.BaseRepo, p)`.
+- modules/structs/pull.go:64-71 defines `PRBranchInfo.Repository *Repository` as JSON `repo`.
+- modules/structs/repo.go:49-55 serializes `Repository.Owner`, `Name`, `FullName` as `owner`, `name`, `full_name`.
+- modules/structs/user.go:15-19 serializes `User.UserName` as `login`.
+- services/convert/repository.go:21-26 defines `ToRepo` and `innerToRepo`; lines 43-46 return nil if `repo.GetBaseRepo(ctx)` returns an error.
+
+Inference: because `PRBranchInfo.Repository` is a pointer and `ToRepo` may return nil, the JSON encoder can represent a successful PR object with `base.repo: null`. The source inspection does not establish that this happens in a live server or how often. It supports retaining the explicitly documented partial-response read-only contract, while keeping merge gates strict.
