@@ -78,7 +78,11 @@ fn forgejo_response(number: u64) -> serde_json::Value {
         "base": {
             "ref": "main",
             "sha": "2222222222222222222222222222222222222222",
-            "repo": {"full_name": "forge-admin/agent-forge-core"}
+            "repo": {
+                "owner": {"login": "forge-admin"},
+                "name": "agent-forge-core",
+                "full_name": "forge-admin/agent-forge-core"
+            }
         },
         "head": {
             "sha": "1111111111111111111111111111111111111111",
@@ -254,6 +258,64 @@ fn api_snapshot_parser_binds_target_base_and_allows_fork_head() {
             "agent-forge-core",
             23,
             &response,
+        ),
+        Err(MergePreflightError::WrongScope)
+    );
+}
+
+#[test]
+fn api_snapshot_parser_rejects_base_repository_owner_or_name_that_disagrees_with_full_name() {
+    let mut wrong_name = forgejo_response(23);
+    wrong_name["base"]["repo"]["name"] = serde_json::json!("other-repo");
+    assert_eq!(
+        PullRequestSnapshotV1::from_forgejo_response(
+            "http://127.0.0.1:3130",
+            "forge-admin",
+            "agent-forge-core",
+            23,
+            &wrong_name,
+        ),
+        Err(MergePreflightError::WrongScope)
+    );
+
+    let mut wrong_owner = forgejo_response(23);
+    wrong_owner["base"]["repo"]["owner"]["login"] = serde_json::json!("other-owner");
+    assert_eq!(
+        PullRequestSnapshotV1::from_forgejo_response(
+            "http://127.0.0.1:3130",
+            "forge-admin",
+            "agent-forge-core",
+            23,
+            &wrong_owner,
+        ),
+        Err(MergePreflightError::WrongScope)
+    );
+
+    let mut missing_name = forgejo_response(23);
+    missing_name["base"]["repo"]
+        .as_object_mut()
+        .unwrap()
+        .remove("name");
+    assert_eq!(
+        PullRequestSnapshotV1::from_forgejo_response(
+            "http://127.0.0.1:3130",
+            "forge-admin",
+            "agent-forge-core",
+            23,
+            &missing_name,
+        ),
+        Err(MergePreflightError::WrongScope)
+    );
+
+    let mut missing_owner_login = forgejo_response(23);
+    missing_owner_login["base"]["repo"]["owner"] = serde_json::json!({});
+    assert_eq!(
+        PullRequestSnapshotV1::from_forgejo_response(
+            "http://127.0.0.1:3130",
+            "forge-admin",
+            "agent-forge-core",
+            23,
+            &missing_owner_login,
         ),
         Err(MergePreflightError::WrongScope)
     );

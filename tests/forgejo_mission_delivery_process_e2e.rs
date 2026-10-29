@@ -92,6 +92,8 @@ struct ForgejoFixture {
     issue_closed: Arc<AtomicBool>,
     issue_edited: Arc<AtomicBool>,
     issue_labels_changed: Arc<AtomicBool>,
+    issue_repository_mismatched: Arc<AtomicBool>,
+    source_pull_request_repository_mismatched: Arc<AtomicBool>,
     advance_branch_after_source: Arc<AtomicBool>,
     edit_issue_after_requirement_inventory: Arc<AtomicBool>,
     advance_branch_after_requirement_inventory: Arc<AtomicBool>,
@@ -111,6 +113,8 @@ impl ForgejoFixture {
         let issue_closed = Arc::new(AtomicBool::new(true));
         let issue_edited = Arc::new(AtomicBool::new(false));
         let issue_labels_changed = Arc::new(AtomicBool::new(false));
+        let issue_repository_mismatched = Arc::new(AtomicBool::new(false));
+        let source_pull_request_repository_mismatched = Arc::new(AtomicBool::new(false));
         let branch_commit = Arc::new(Mutex::new(COMMIT.to_owned()));
         let advance_branch_after_source = Arc::new(AtomicBool::new(false));
         let edit_issue_after_requirement_inventory = Arc::new(AtomicBool::new(false));
@@ -120,6 +124,9 @@ impl ForgejoFixture {
         let worker_issue_closed = Arc::clone(&issue_closed);
         let worker_issue_edited = Arc::clone(&issue_edited);
         let worker_issue_labels_changed = Arc::clone(&issue_labels_changed);
+        let worker_issue_repository_mismatched = Arc::clone(&issue_repository_mismatched);
+        let worker_source_pull_request_repository_mismatched =
+            Arc::clone(&source_pull_request_repository_mismatched);
         let worker_branch_commit = Arc::clone(&branch_commit);
         let worker_advance_branch_after_source = Arc::clone(&advance_branch_after_source);
         let worker_edit_issue_after_requirement_inventory =
@@ -154,6 +161,8 @@ impl ForgejoFixture {
                             worker_issue_closed.load(Ordering::SeqCst),
                             worker_issue_edited.load(Ordering::SeqCst),
                             worker_issue_labels_changed.load(Ordering::SeqCst),
+                            worker_issue_repository_mismatched.load(Ordering::SeqCst),
+                            worker_source_pull_request_repository_mismatched.load(Ordering::SeqCst),
                             &current_branch_commit,
                             &requirement_bytes,
                         );
@@ -216,6 +225,8 @@ impl ForgejoFixture {
             issue_closed,
             issue_edited,
             issue_labels_changed,
+            issue_repository_mismatched,
+            source_pull_request_repository_mismatched,
             advance_branch_after_source,
             edit_issue_after_requirement_inventory,
             advance_branch_after_requirement_inventory,
@@ -236,6 +247,16 @@ impl ForgejoFixture {
 
     fn set_issue_labels_changed(&self, changed: bool) {
         self.issue_labels_changed.store(changed, Ordering::SeqCst);
+    }
+
+    fn set_issue_repository_mismatched(&self, mismatched: bool) {
+        self.issue_repository_mismatched
+            .store(mismatched, Ordering::SeqCst);
+    }
+
+    fn set_source_pull_request_repository_mismatched(&self, mismatched: bool) {
+        self.source_pull_request_repository_mismatched
+            .store(mismatched, Ordering::SeqCst);
     }
 
     fn advance_branch_after_context_source(&self) {
@@ -282,6 +303,8 @@ fn fixture_body(
     issue_closed: bool,
     issue_edited: bool,
     issue_labels_changed: bool,
+    issue_repository_mismatched: bool,
+    source_pull_request_repository_mismatched: bool,
     commit: &str,
     requirements: &[u8],
 ) -> Vec<u8> {
@@ -302,6 +325,15 @@ fn fixture_body(
             "title": if issue_edited { "Edited title from Forgejo API" } else { "Current title from Forgejo API" },
             "body": if issue_edited { "Edited body from Forgejo API; changed after the first claim." } else { "Current body from Forgejo API; this is optional untrusted context." },
             "labels": if issue_edited || issue_labels_changed { json!([{"id": 12, "name": "edited/current"}]) } else { json!([{"id": 7, "name": "area/triage"}]) },
+            "repository": {
+                "owner": OWNER,
+                "name": REPOSITORY,
+                "full_name": if issue_repository_mismatched {
+                    "foreign-scope/contradictory-repository".to_owned()
+                } else {
+                    format!("{OWNER}/{REPOSITORY}")
+                }
+            },
             "html_url": format!("http://127.0.0.1:3130/{OWNER}/{REPOSITORY}/issues/{ISSUE_NUMBER}")
         }))
         .unwrap()
@@ -319,6 +351,7 @@ fn fixture_body(
             "page": 1,
             "total_count": 2,
             "truncated": false,
+            "sha": commit,
             "tree": [
                 {"path":"requirements/REQ-001.json","type":"blob","mode":"100644"},
                 {"path":"src/lib.rs","type":"blob","mode":"100644"}
@@ -340,7 +373,17 @@ fn fixture_body(
             "base": {
                 "ref": "main",
                 "sha": commit,
-                "repo": {"full_name": format!("{OWNER}/{REPOSITORY}")}
+                "repo": {
+                    "owner": {
+                        "login": if source_pull_request_repository_mismatched {
+                            "foreign-owner"
+                        } else {
+                            OWNER
+                        }
+                    },
+                    "name": REPOSITORY,
+                    "full_name": format!("{OWNER}/{REPOSITORY}")
+                }
             },
             "head": {"sha": "fedcba9876543210fedcba9876543210fedcba98"},
             "merge_commit_sha": commit
@@ -1378,7 +1421,9 @@ fn actual_mission_cli_refuses_issue_snapshot_change_during_admission_then_retrie
     assert_eq!(response["verdict"], "inconclusive");
     assert_eq!(
         response["error"]["code"],
-        "mission_issue_changed_during_admission"
+        "mission_issue_changed_during_admission",
+        "unexpected mission refusal {response}; requests {:?}",
+        fixture.paths()
     );
     assert_eq!(
         response["error"]["action"],
@@ -1429,6 +1474,123 @@ fn actual_mission_cli_refuses_issue_snapshot_change_during_admission_then_retrie
     fixture.stop();
     println!(
         "process-e2e: issue API changed during protected requirement inventory; first admission refused before generation allocation or host handoff; retry of same signed delivery bound the stable current snapshot and claimed generation 1"
+    );
+}
+
+#[test]
+#[ignore = "run only through the bwrap network-namespace runner with a scratch .runtime mount"]
+fn actual_mission_cli_refuses_mismatched_issue_repository_before_allocation_then_retries_corrected()
+{
+    let runtime = PathBuf::from(env!("CARGO_MANIFEST_DIR")).join(".runtime");
+    assert_private_runtime(&runtime);
+    let secret = runtime.join("synthetic-webhook.secret");
+    let inbox = runtime.join("forgejo-webhook-inbox.jsonl");
+    let mission_journal = runtime.join("mission-execution.jsonl");
+    let host_admission_file = runtime.join("mission-host-admission-repository-mismatch.json");
+    write_synthetic_secret(&secret);
+
+    let requirement_sha256 = hex::encode(Sha256::digest(REQUIREMENTS));
+    let webhook_body = serde_json::to_vec(&json!({
+        "action": "opened",
+        "repository": {"full_name": format!("{OWNER}/{REPOSITORY}")},
+        "issue": {
+            "number": ISSUE_NUMBER,
+            "state": "open",
+            "title": "Issue title from signed delivery",
+            "body": "This webhook body is untrusted context."
+        }
+    }))
+    .expect("serialize synthetic signed issue delivery");
+
+    let mut fixture = ForgejoFixture::start();
+    fixture.set_issue_closed(false);
+    fixture.set_issue_repository_mismatched(true);
+    let (mut receiver, receiver_address) = start_receiver(&secret, &inbox);
+    let (delivery_status, delivery) = send_webhook(
+        receiver_address,
+        "mission-issue-repository-mismatch-41",
+        &webhook_body,
+    );
+    assert_eq!(delivery_status, 202);
+    assert_eq!(delivery["accepted"], true);
+    assert_eq!(delivery["sequence"], 1);
+
+    let (status, response) = mission_cli(
+        "mission-issue-repository-mismatch-41",
+        &requirement_sha256,
+        &host_admission_file,
+    );
+    assert_eq!(
+        status,
+        Some(1),
+        "foreign issue identity must be refused: {response}"
+    );
+    assert_eq!(response["verdict"], "inconclusive");
+    assert_eq!(response["error"]["code"], "mission_source_invalid_response");
+    assert_eq!(
+        response["error"]["action"],
+        "repair the malformed Forgejo response or reduce a raw file to at most 1 MiB, then re-read"
+    );
+    assert!(
+        !serde_json::to_string(&response)
+            .unwrap()
+            .contains("foreign-scope/contradictory-repository")
+    );
+    assert!(
+        EventJournal::open(&mission_journal)
+            .replay()
+            .unwrap()
+            .is_empty()
+    );
+    assert!(!host_admission_file.exists());
+    assert_eq!(EventJournal::open(&inbox).replay().unwrap().len(), 1);
+
+    let issue_path = format!("/api/v1/repos/{OWNER}/{REPOSITORY}/issues/{ISSUE_NUMBER}");
+    let paths_before_retry = fixture.paths();
+    assert!(paths_before_retry.contains(&issue_path));
+    fixture.set_issue_repository_mismatched(false);
+
+    let (retry_status, retry) = mission_cli(
+        "mission-issue-repository-mismatch-41",
+        &requirement_sha256,
+        &host_admission_file,
+    );
+    assert_eq!(retry_status, Some(0), "corrected issue identity: {retry}");
+    assert_eq!(retry["verdict"], "claimed");
+    assert_eq!(retry["claim"], "claimed");
+    assert_eq!(retry["allocation_id"], "admission-41");
+    assert_eq!(retry["allocation_replayed"], false);
+    assert_eq!(retry["execution_generation"], 1);
+    assert_eq!(
+        retry["execution_request"]["workspace"]["base_commit"],
+        COMMIT
+    );
+    let retry_paths = fixture.paths();
+    assert!(
+        retry_paths
+            .iter()
+            .filter(|path| *path == &issue_path)
+            .count()
+            >= 2
+    );
+
+    let recovered_handoff: MissionHostAdmissionV1 = serde_json::from_slice(
+        &fs::read(&host_admission_file).expect("corrected admission persists its handoff"),
+    )
+    .expect("corrected handoff is versioned JSON");
+    assert_eq!(recovered_handoff.base_commit, COMMIT);
+    assert!(recovered_handoff.validate().is_ok());
+    let claimed_events = EventJournal::open(&mission_journal).replay().unwrap();
+    assert_eq!(claimed_events.len(), 2);
+    assert_eq!(claimed_events[0].kind, "mission_generation_allocated_v1");
+    assert_eq!(claimed_events[1].kind, "mission_execution_claim_v1");
+    assert_eq!(EventJournal::open(&inbox).replay().unwrap().len(), 1);
+
+    let receiver_status = receiver.stop();
+    assert!(receiver_status.success() || receiver_status.signal() == Some(libc::SIGTERM));
+    fixture.stop();
+    println!(
+        "process-e2e: contradictory issue repository full_name refused before generation allocation or host handoff; after correcting the API snapshot, the same signed delivery claimed generation 1"
     );
 }
 
@@ -2163,6 +2325,126 @@ fn actual_mission_cli_admits_signed_webhook_with_v3_requirement_arbitration() {
     fixture.stop();
     println!(
         "process-e2e: signed webhook delivery admitted schema-v3 requirements bound to PR 77 and authorized reviewer 9001; local HTTP fixture only; agent_runtime_invoked=false"
+    );
+}
+
+#[test]
+#[ignore = "run only through the bwrap network-namespace runner with a scratch .runtime mount"]
+fn actual_mission_cli_refuses_mismatched_source_pull_request_repository_before_allocation_then_retries()
+ {
+    let runtime = PathBuf::from(env!("CARGO_MANIFEST_DIR")).join(".runtime");
+    assert_private_runtime(&runtime);
+    let secret = runtime.join("synthetic-v3-pr-scope-webhook.secret");
+    let inbox = runtime.join("forgejo-webhook-inbox.jsonl");
+    let mission_journal = runtime.join("mission-execution.jsonl");
+    let host_admission_file = runtime.join("mission-v3-pr-scope-host-admission.json");
+    let arbitration_directory = runtime.join("mission-arbitration");
+    fs::create_dir(&arbitration_directory).expect("create private arbitration policy directory");
+    fs::set_permissions(&arbitration_directory, fs::Permissions::from_mode(0o700))
+        .expect("make arbitration policy directory private");
+    write_synthetic_secret(&secret);
+    write_private_json(
+        &arbitration_directory.join("duration-parser.json"),
+        &json!({
+            "schema_version": 1,
+            "revision": 4,
+            "scope": {
+                "origin": "http://127.0.0.1:3130",
+                "owner": OWNER,
+                "repository": REPOSITORY,
+                "branch": "main"
+            },
+            "required_approvals": 1,
+            "authorized_reviewer_ids": [9001]
+        }),
+    );
+
+    let requirement_sha256 = hex::encode(Sha256::digest(REQUIREMENTS_V3));
+    let webhook_body = serde_json::to_vec(&json!({
+        "action": "opened",
+        "repository": {"full_name": format!("{OWNER}/{REPOSITORY}")},
+        "issue": {
+            "number": ISSUE_NUMBER,
+            "state": "open",
+            "title": "Untrusted request title",
+            "body": "Untrusted request body"
+        }
+    }))
+    .expect("serialize synthetic schema-v3 issue webhook");
+
+    let mut fixture = ForgejoFixture::start();
+    fixture.set_issue_closed(false);
+    fixture.set_requirements(REQUIREMENTS_V3);
+    fixture.set_source_pull_request_repository_mismatched(true);
+    let (mut receiver, receiver_address) = start_receiver(&secret, &inbox);
+    let (delivery_status, delivery) = send_webhook(
+        receiver_address,
+        "mission-v3-pr-scope-delivery-1",
+        &webhook_body,
+    );
+    assert_eq!(delivery_status, 202);
+    assert_eq!(delivery["accepted"], true);
+    assert_eq!(delivery["sequence"], 1);
+
+    let (status, response) = mission_cli(
+        "mission-v3-pr-scope-delivery-1",
+        &requirement_sha256,
+        &host_admission_file,
+    );
+    assert_eq!(
+        status,
+        Some(1),
+        "a source PR whose base owner disagrees with full_name must be refused: {response}"
+    );
+    assert_eq!(response["verdict"], "inconclusive");
+    assert_eq!(response["error"]["code"], "mission_source_invalid_response");
+    assert!(
+        EventJournal::open(&mission_journal)
+            .replay()
+            .unwrap()
+            .is_empty()
+    );
+    assert!(!host_admission_file.exists());
+    let source_pr_path = format!("/api/v1/repos/{OWNER}/{REPOSITORY}/pulls/77");
+    let reviews_path = format!("{source_pr_path}/reviews?page=1&limit=50");
+    let paths_before_retry = fixture.paths();
+    assert!(paths_before_retry.contains(&source_pr_path));
+    assert!(!paths_before_retry.contains(&reviews_path));
+
+    fixture.set_source_pull_request_repository_mismatched(false);
+    let (retry_status, retry) = mission_cli(
+        "mission-v3-pr-scope-delivery-1",
+        &requirement_sha256,
+        &host_admission_file,
+    );
+    assert_eq!(
+        retry_status,
+        Some(0),
+        "corrected source PR identity: {retry}"
+    );
+    assert_eq!(retry["verdict"], "claimed");
+    assert_eq!(retry["execution_generation"], 1);
+    assert_eq!(
+        retry["requirement_arbitration"]["source_pull_request_number"],
+        77
+    );
+    assert!(fixture.paths().contains(&reviews_path));
+    let claimed_events = EventJournal::open(&mission_journal).replay().unwrap();
+    assert_eq!(claimed_events.len(), 2);
+    assert_eq!(claimed_events[0].kind, "mission_generation_allocated_v1");
+    assert_eq!(claimed_events[1].kind, "mission_execution_claim_v1");
+    assert_eq!(EventJournal::open(&inbox).replay().unwrap().len(), 1);
+
+    let handoff: MissionHostAdmissionV1 = serde_json::from_slice(
+        &fs::read(&host_admission_file).expect("recovered v3 admission persists handoff"),
+    )
+    .expect("recovered v3 handoff is versioned JSON");
+    assert!(handoff.validate().is_ok());
+    let exit_status = receiver.stop();
+    assert!(exit_status.success());
+    fixture.stop();
+    println!(
+        "process-e2e: source PR owner/login mismatch against canonical base repo refused before reviews, allocation, or handoff; corrected response let the same signed delivery claim generation 1"
     );
 }
 

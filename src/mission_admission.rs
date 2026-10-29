@@ -834,6 +834,19 @@ fn evaluate_requirement_arbitration(
             json!({"source_pull_request_number":source_pull_request_number}),
         ));
     }
+    // Bracket the final review read as well. Forgejo does not provide an
+    // atomic PR/review snapshot, but this catches ref movement during both
+    // consecutive full review listings before durable mission allocation.
+    let pull_request_after_reviews = source
+        .read_requirement_source_pull_request(scope, source_pull_request_number)
+        .map_err(source_error)?;
+    if pull_request_after_reviews != pull_request_before {
+        return Err(error(
+            "mission_requirement_review_snapshot_changed",
+            "re-read the merged pull request after the final review snapshot and retry if its refs changed",
+            json!({"source_pull_request_number":source_pull_request_number}),
+        ));
+    }
     let (review_snapshot_sha256, approved_review_ids, reviewer_ids) = first_decision;
 
     Ok(RequirementArbitrationDecisionV1 {

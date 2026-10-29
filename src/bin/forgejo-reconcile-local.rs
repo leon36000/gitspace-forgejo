@@ -69,8 +69,8 @@ const FORGEJO_REST_API_VERSION: &str = "forgejo-rest-v1";
 const RECONCILE_SINGLE_SCHEMA_VERSION: u32 = 19;
 const RECONCILE_BATCH_SCHEMA_VERSION: u32 = 23;
 const MERGE_PREFLIGHT_SCHEMA_VERSION: u32 = 1;
-const CAPABILITIES_SCHEMA_VERSION: u32 = 28;
-const CAPABILITIES_API_VERSION: &str = "forgejo-reconcile-capabilities-v28";
+const CAPABILITIES_SCHEMA_VERSION: u32 = 32;
+const CAPABILITIES_API_VERSION: &str = "forgejo-reconcile-capabilities-v32";
 const MERGE_PREFLIGHT_BASE_BRANCH: &str = "main";
 const MERGE_LOCK_ROOT_PREFIX: &str = "agent-forge-merge-locks-";
 const MERGE_LOCK_WAIT: Duration = Duration::from_secs(5);
@@ -1364,6 +1364,11 @@ impl LocalLoopbackForgejoApi {
         }
         let segments = path.split('/').skip(1).collect::<Vec<_>>();
         match segments.as_slice() {
+            ["repos", owner, repository]
+                if *owner == self.config.owner && *repository == self.config.repository =>
+            {
+                true
+            }
             ["repos", owner, repository, "issues" | "pulls", number]
                 if *owner == self.config.owner && *repository == self.config.repository =>
             {
@@ -1561,6 +1566,11 @@ impl LocalLoopbackForgejoApi {
         }
         match segments.as_slice() {
             ["user"] | ["users", _] => true,
+            ["repos", owner, repository]
+                if *owner == self.config.owner && *repository == self.config.repository =>
+            {
+                true
+            }
             ["repos", owner, repository, _, ..] => {
                 *owner == self.config.owner && *repository == self.config.repository
             }
@@ -1916,6 +1926,57 @@ impl LocalLoopbackForgejoApi {
             }),
         }
     }
+
+    fn read_url_with_retry(&self, url: &str) -> Result<Value, ApiReadError> {
+        if self.authorization_rejected.load(Ordering::Acquire) {
+            return Err(ApiReadError::Unauthorized);
+        }
+        for attempt in 0..self.retry_policy.max_attempts {
+            let remaining = self.deadline.saturating_duration_since(Instant::now());
+            if remaining < Duration::from_millis(1) {
+                return Err(ApiReadError::Unavailable);
+            }
+            let timeout = self.retry_policy.request_timeout.min(remaining);
+            self.upstream_read_attempts.fetch_add(1, Ordering::Relaxed);
+            let response = self.read_current_once(url, timeout);
+            if Instant::now() >= self.deadline {
+                return Err(ApiReadError::Unavailable);
+            }
+
+            match response {
+                Ok(current) => return Ok(current),
+                Err(failure) if transient_api_read_error(&failure.error) => {
+                    if attempt + 1 >= self.retry_policy.max_attempts {
+                        return Err(failure.as_api_read_error());
+                    }
+                    let delay = match failure.retry_after {
+                        Some(RetryAfterValue::Delay(delay)) => delay,
+                        Some(RetryAfterValue::Invalid) => {
+                            return Err(failure.as_api_read_error());
+                        }
+                        None => self
+                            .retry_policy
+                            .backoff
+                            .get(attempt)
+                            .copied()
+                            .unwrap_or_default(),
+                    };
+                    let remaining = self.deadline.saturating_duration_since(Instant::now());
+                    if delay >= remaining {
+                        return Err(failure.as_api_read_error());
+                    }
+                    std::thread::sleep(delay);
+                }
+                Err(failure) => {
+                    if failure.error == ApiReadError::Unauthorized {
+                        self.authorization_rejected.store(true, Ordering::Release);
+                    }
+                    return Err(failure.error);
+                }
+            }
+        }
+        Err(ApiReadError::Unavailable)
+    }
 }
 
 impl ForgejoCurrentState for LocalLoopbackForgejoApi {
@@ -1976,51 +2037,34 @@ impl ForgejoCurrentState for LocalLoopbackForgejoApi {
             }
             _ => return Err(ApiReadError::Forbidden),
         };
-        for attempt in 0..self.retry_policy.max_attempts {
-            let remaining = self.deadline.saturating_duration_since(Instant::now());
-            if remaining < Duration::from_millis(1) {
-                return Err(ApiReadError::Unavailable);
-            }
-            let timeout = self.retry_policy.request_timeout.min(remaining);
-            self.upstream_read_attempts.fetch_add(1, Ordering::Relaxed);
-            let response = self.read_current_once(&url, timeout);
-            if Instant::now() >= self.deadline {
-                return Err(ApiReadError::Unavailable);
-            }
+        self.read_url_with_retry(&url)
+    }
 
-            match response {
-                Ok(current) => return Ok(current),
-                Err(failure) if transient_api_read_error(&failure.error) => {
-                    if attempt + 1 >= self.retry_policy.max_attempts {
-                        return Err(failure.as_api_read_error());
-                    }
-                    let delay = match failure.retry_after {
-                        Some(RetryAfterValue::Delay(delay)) => delay,
-                        Some(RetryAfterValue::Invalid) => {
-                            return Err(failure.as_api_read_error());
-                        }
-                        None => self
-                            .retry_policy
-                            .backoff
-                            .get(attempt)
-                            .copied()
-                            .unwrap_or_default(),
-                    };
-                    let remaining = self.deadline.saturating_duration_since(Instant::now());
-                    if delay >= remaining {
-                        return Err(failure.as_api_read_error());
-                    }
-                    std::thread::sleep(delay);
-                }
-                Err(failure) => {
-                    if failure.error == ApiReadError::Unauthorized {
-                        self.authorization_rejected.store(true, Ordering::Release);
-                    }
-                    return Err(failure.error);
-                }
-            }
+    fn verify_repository_access(&self, owner: &str, repository: &str) -> Result<(), ApiReadError> {
+        if owner != self.config.owner || repository != self.config.repository {
+            return Err(ApiReadError::Forbidden);
         }
-        Err(ApiReadError::Unavailable)
+        let url = format!("{}/api/v1/repos/{owner}/{repository}", self.config.origin);
+        let current = self.read_url_with_retry(&url)?;
+        let expected_full_name = format!("{owner}/{repository}");
+        let full_name = current
+            .get("full_name")
+            .and_then(Value::as_str)
+            .ok_or(ApiReadError::InvalidResponse)?;
+        let name = current
+            .get("name")
+            .and_then(Value::as_str)
+            .ok_or(ApiReadError::InvalidResponse)?;
+        let owner_login = current
+            .get("owner")
+            .and_then(Value::as_object)
+            .and_then(|owner| owner.get("login"))
+            .and_then(Value::as_str)
+            .ok_or(ApiReadError::InvalidResponse)?;
+        if full_name != expected_full_name || name != repository || owner_login != owner {
+            return Err(ApiReadError::InvalidResponse);
+        }
+        Ok(())
     }
 
     fn expected_html_url(&self, resource: &ResourceRef) -> String {
@@ -5184,6 +5228,49 @@ fn merge_readback_is_confirmed(
     merged_issue: &Value,
 ) -> bool {
     let expected_base_repository = format!("{expected_owner}/{expected_repository}");
+    let base_repository_matches = merged_pr
+        .get("base")
+        .and_then(|base| base.get("repo"))
+        .and_then(Value::as_object)
+        .is_some_and(|repository| {
+            repository.get("full_name").and_then(Value::as_str)
+                == Some(expected_base_repository.as_str())
+                && repository.get("name").and_then(Value::as_str) == Some(expected_repository)
+                && repository
+                    .get("owner")
+                    .and_then(Value::as_object)
+                    .and_then(|owner| owner.get("login"))
+                    .and_then(Value::as_str)
+                    == Some(expected_owner)
+        });
+    let base_repository_id = merged_pr
+        .get("base")
+        .and_then(|base| base.get("repo"))
+        .and_then(|repository| repository.get("id"))
+        .and_then(Value::as_i64)
+        .filter(|repository_id| *repository_id > 0);
+    let base_repo_id = merged_pr
+        .get("base")
+        .and_then(|base| base.get("repo_id"))
+        .and_then(Value::as_i64)
+        .filter(|repository_id| *repository_id > 0);
+    let pull_request_repository_id_matches =
+        base_repository_id.is_some() && base_repo_id == base_repository_id;
+    let issue_repository_matches = merged_issue
+        .get("repository")
+        .and_then(Value::as_object)
+        .is_some_and(|repository| {
+            repository.get("full_name").and_then(Value::as_str)
+                == Some(expected_base_repository.as_str())
+                && repository.get("name").and_then(Value::as_str) == Some(expected_repository)
+                && repository.get("owner").and_then(Value::as_str) == Some(expected_owner)
+                && base_repository_id.is_some()
+                && repository
+                    .get("id")
+                    .and_then(Value::as_i64)
+                    .filter(|repository_id| *repository_id > 0)
+                    == base_repository_id
+        });
     let main_sha = merged_main
         .get("commit")
         .and_then(|commit| commit.get("id"))
@@ -5202,18 +5289,15 @@ fn merge_readback_is_confirmed(
             .and_then(|base| base.get("ref"))
             .and_then(Value::as_str)
             == Some(MERGE_PREFLIGHT_BASE_BRANCH)
-        && merged_pr
-            .get("base")
-            .and_then(|base| base.get("repo"))
-            .and_then(|repository| repository.get("full_name"))
-            .and_then(Value::as_str)
-            == Some(expected_base_repository.as_str())
+        && base_repository_matches
+        && pull_request_repository_id_matches
         && merged_pr
             .get("base")
             .and_then(|base| base.get("sha"))
             .and_then(Value::as_str)
             == main_sha
         && main_sha == merge_sha
+        && issue_repository_matches
         && merged_issue.get("number").and_then(Value::as_u64) == Some(pull_request_number)
         && merged_issue.get("state").and_then(Value::as_str) == Some("closed")
 }
@@ -6757,7 +6841,9 @@ fn capabilities_document() -> Value {
             "issue_repository": {
                 "field": "repository",
                 "accepted_identity_fields": ["full_name", "name", "owner"],
-                "when_object_present": "require_at_least_one_identity_field_and_validate_every_supplied_value",
+                "required_identity_combinations": [["full_name"], ["owner", "name"]],
+                "when_object_present": "require_one_complete_identity_combination_and_validate_each_present_identity_value",
+                "incomplete_owner_name_pair": "invalid_current_state_field_repository_even_if_full_name_is_present",
                 "missing_or_null": "allowed_as_partial_api_response",
             },
             "pull_request_base_repository": {
@@ -6765,6 +6851,12 @@ fn capabilities_document() -> Value {
                 "accepted_identity_fields": ["full_name", "name", "owner.login"],
                 "when_object_present": "require_at_least_one_identity_field_and_validate_every_supplied_value",
                 "missing_or_null": "allowed_as_partial_api_response",
+                "numeric_repository_id_contract": {
+                    "base_repo_id": "when_present_require_positive_signed_integer",
+                    "nested_repository_id": "when_present_require_positive_signed_integer",
+                    "when_both_present": "require_equal",
+                    "missing_or_null_nested_repository": "no_numeric_equality_claim",
+                },
             },
             "pull_request_head_repository": {
                 "target_repository_must_match": false,
@@ -7155,10 +7247,18 @@ fn capabilities_document() -> Value {
         "post_is_retried": false,
         "ambiguous_post_resolution": "authenticated_pull_request_main_branch_issue_and_equal_candidate_merge_tree_manifest_readback",
         "postmerge_pull_request_identity": {
-            "field": "base.repo.full_name",
+            "fields": ["base.repo_id", "base.repo.id", "base.repo.full_name", "base.repo.name", "base.repo.owner.login"],
             "required": true,
-            "must_equal": "selected_target_profile_owner_and_repository",
-            "mismatch": "inconclusive",
+            "must_match": "selected_target_profile_owner_and_repository",
+            "repository_id_binding": "positive base.repo_id must equal positive base.repo.id",
+            "missing_or_mismatch": "inconclusive",
+        },
+        "postmerge_issue_identity": {
+            "fields": ["repository.id", "repository.full_name", "repository.name", "repository.owner"],
+            "required": true,
+            "must_match": "selected_target_profile_owner_and_repository",
+            "repository_id_binding": "positive repository.id must equal postmerge_pull_request_identity.base.repo.id",
+            "missing_or_mismatch": "inconclusive",
         },
         "readback": [
             format!("{api_path}/pulls/{{number}}"),
@@ -7609,7 +7709,7 @@ fn run_reconciliation(invocation: ReconcileInvocationV1) -> Result<(Value, bool)
                     .to_owned()
             }
             JournalError::InboxTooLarge { maximum_bytes } => format!(
-                "inbox_capacity_exceeded: inbox exceeds {maximum_bytes} bytes; preserve a backup and apply a verified compaction or migration before retrying"
+                "inbox_capacity_exceeded: inbox exceeds {maximum_bytes} bytes; reconciliation stopped without changing the inbox. Pause webhook delivery and preserve a private copy. This build has no verified compaction or rotation command; do not truncate or edit the inbox"
             ),
             error => format!("cannot replay inbox: {error:?}"),
         }),
@@ -7964,6 +8064,30 @@ mod tests {
     };
 
     type FixtureHmacSha256 = Hmac<Sha256>;
+
+    fn fixture_repo_identity(full_name: &str) -> Value {
+        let (owner, name) = full_name
+            .split_once('/')
+            .expect("fixture repository identity is owner/name");
+        json!({
+            "id": 7,
+            "owner": {"login": owner},
+            "name": name,
+            "full_name": full_name
+        })
+    }
+
+    fn fixture_issue_repository_identity(full_name: &str) -> Value {
+        let (owner, name) = full_name
+            .split_once('/')
+            .expect("fixture issue repository identity is owner/name");
+        json!({
+            "id": 7,
+            "owner": owner,
+            "name": name,
+            "full_name": full_name
+        })
+    }
 
     struct ScratchJournalDir(PathBuf);
 
@@ -9280,11 +9404,11 @@ mod tests {
                         "mergeable": true,
                         "base": {
                             "ref": "main", "sha": base_sha,
-                            "repo": {"full_name": "forge-admin/agent-forge-core"}
+                            "repo": fixture_repo_identity("forge-admin/agent-forge-core")
                         },
                         "head": {
                             "sha": head_sha,
-                            "repo": {"full_name": "forge-admin/agent-forge-core"}
+                            "repo": fixture_repo_identity("forge-admin/agent-forge-core")
                         }
                     })
                 } else if request_line
@@ -9386,7 +9510,8 @@ mod tests {
                     "base": {
                         "ref": "main",
                         "sha": merge_sha,
-                        "repo": {"full_name": "forge-admin/agent-forge-core"}
+                        "repo_id": 7,
+                        "repo": fixture_repo_identity("forge-admin/agent-forge-core")
                     },
                     "merge_commit_sha": merge_sha,
                 }),
@@ -9396,7 +9521,11 @@ mod tests {
                 }),
                 json!({"sha": head_sha}),
                 json!({"commit": {"id": merge_sha}}),
-                json!({"number": 23, "state": "closed"}),
+                json!({
+                    "number": 23,
+                    "state": "closed",
+                    "repository": fixture_issue_repository_identity("forge-admin/agent-forge-core")
+                }),
                 Some(vec![(
                     "src/lib.rs".to_owned(),
                     "100644".to_owned(),
@@ -9613,7 +9742,7 @@ mod tests {
                         "merged": true,
                         "state": "closed",
                         "head": {"sha": head_sha},
-                        "base": {"ref": "main", "sha": merge_sha, "repo": {"full_name": "forge-admin/agent-forge-core"}},
+                        "base": {"ref": "main", "sha": merge_sha, "repo_id": 7, "repo": fixture_repo_identity("forge-admin/agent-forge-core")},
                         "merge_commit_sha": merge_sha,
                     })
                 } else if request_line.starts_with(
@@ -9634,7 +9763,7 @@ mod tests {
                 } else if request_line
                     .starts_with("GET /api/v1/repos/forge-admin/agent-forge-core/issues/23 ")
                 {
-                    json!({"number": 23, "state": "closed"})
+                    json!({"number": 23, "state": "closed", "repository": fixture_issue_repository_identity("forge-admin/agent-forge-core")})
                 } else if request_line.starts_with(
                     "GET /api/v1/repos/forge-admin/agent-forge-core/git/trees/2222222222222222222222222222222222222222?",
                 ) {
@@ -9806,7 +9935,7 @@ mod tests {
                         "merged": true,
                         "state": "closed",
                         "head": {"sha": head_sha},
-                        "base": {"ref": "main", "sha": merge_sha, "repo": {"full_name": "forge-admin/agent-forge-core"}},
+                        "base": {"ref": "main", "sha": merge_sha, "repo_id": 7, "repo": fixture_repo_identity("forge-admin/agent-forge-core")},
                         "merge_commit_sha": merge_sha,
                     })
                 } else if request_line.starts_with(
@@ -9827,7 +9956,7 @@ mod tests {
                 } else if request_line.starts_with(
                     "GET /api/v1/repos/forge-admin/agent-forge-core/issues/23 ",
                 ) {
-                    json!({"number": 23, "state": "closed"})
+                    json!({"number": 23, "state": "closed", "repository": fixture_issue_repository_identity("forge-admin/agent-forge-core")})
                 } else if request_line.starts_with(
                     "GET /api/v1/repos/forge-admin/agent-forge-core/git/trees/2222222222222222222222222222222222222222?",
                 ) {
@@ -10020,12 +10149,17 @@ mod tests {
                     "base": {
                         "ref": "main",
                         "sha": merge_sha,
-                        "repo": {"full_name": "forge-admin/agent-forge-core"}
+                        "repo_id": 7,
+                        "repo": fixture_repo_identity("forge-admin/agent-forge-core")
                     },
                     "merge_commit_sha": merge_sha,
                 }),
                 json!({"commit": {"id": merge_sha}}),
-                json!({"number": 23, "state": "closed"}),
+                json!({
+                    "number": 23,
+                    "state": "closed",
+                    "repository": fixture_issue_repository_identity("forge-admin/agent-forge-core")
+                }),
             )
         };
         let (pull, main, issue) = valid();
@@ -10039,7 +10173,31 @@ mod tests {
             &issue,
         ));
 
+        let (mut pull, main, issue) = valid();
+        pull["base"]["repo_id"] = json!(8);
+        assert!(
+            !merge_readback_is_confirmed(
+                23,
+                LOCAL_REPOSITORY_OWNER,
+                LOCAL_REPOSITORY_NAME,
+                submitted_head,
+                &pull,
+                &main,
+                &issue,
+            ),
+            "base.repo_id must be positive and agree with base.repo.id"
+        );
+
         let mut cases = Vec::new();
+        let (mut pull, main, issue) = valid();
+        pull["base"]["repo_id"] = json!(0);
+        cases.push((pull, main, issue));
+        let (mut pull, main, issue) = valid();
+        pull["base"]["repo_id"] = json!("7");
+        cases.push((pull, main, issue));
+        let (mut pull, main, issue) = valid();
+        pull["base"].as_object_mut().unwrap().remove("repo_id");
+        cases.push((pull, main, issue));
         let (mut pull, main, issue) = valid();
         pull["head"]["sha"] = json!("3333333333333333333333333333333333333333");
         cases.push((pull, main, issue));
@@ -10054,6 +10212,27 @@ mod tests {
         cases.push((pull, main, issue));
         let (mut pull, main, issue) = valid();
         pull["base"]["repo"]["full_name"] = json!("other-owner/other-repository");
+        cases.push((pull, main, issue));
+        let (mut pull, main, issue) = valid();
+        pull["base"]["repo"]["name"] = json!("other-repository");
+        cases.push((pull, main, issue));
+        let (mut pull, main, issue) = valid();
+        pull["base"]["repo"]["owner"]["login"] = json!("other-owner");
+        cases.push((pull, main, issue));
+        let (mut pull, main, issue) = valid();
+        pull["base"]["repo"]
+            .as_object_mut()
+            .unwrap()
+            .remove("full_name");
+        cases.push((pull, main, issue));
+        let (mut pull, main, issue) = valid();
+        pull["base"]["repo"].as_object_mut().unwrap().remove("name");
+        cases.push((pull, main, issue));
+        let (mut pull, main, issue) = valid();
+        pull["base"]["repo"]["owner"]
+            .as_object_mut()
+            .unwrap()
+            .remove("login");
         cases.push((pull, main, issue));
         let (mut pull, main, issue) = valid();
         pull["base"].as_object_mut().unwrap().remove("repo");
@@ -10082,6 +10261,77 @@ mod tests {
                 &issue,
             ));
         }
+
+        let (pull, main, mut issue) = valid();
+        issue["repository"]["owner"] = json!("other-owner");
+        assert!(
+            !merge_readback_is_confirmed(
+                23,
+                LOCAL_REPOSITORY_OWNER,
+                LOCAL_REPOSITORY_NAME,
+                submitted_head,
+                &pull,
+                &main,
+                &issue,
+            ),
+            "a merged issue readback from another owner must not confirm the merge"
+        );
+
+        let mut issue_cases = Vec::new();
+        let (pull, main, mut issue) = valid();
+        issue["repository"]["name"] = json!("other-repository");
+        issue_cases.push((pull, main, issue, "foreign repository name"));
+        let (pull, main, mut issue) = valid();
+        issue["repository"]["full_name"] = json!("other-owner/other-repository");
+        issue_cases.push((pull, main, issue, "foreign repository full name"));
+        let (pull, main, mut issue) = valid();
+        issue["repository"].as_object_mut().unwrap().remove("owner");
+        issue_cases.push((pull, main, issue, "missing repository owner"));
+        let (pull, main, mut issue) = valid();
+        issue["repository"].as_object_mut().unwrap().remove("name");
+        issue_cases.push((pull, main, issue, "missing repository name"));
+        let (pull, main, mut issue) = valid();
+        issue["repository"]
+            .as_object_mut()
+            .unwrap()
+            .remove("full_name");
+        issue_cases.push((pull, main, issue, "missing repository full name"));
+        let (pull, main, mut issue) = valid();
+        issue["repository"]["id"] = json!(8);
+        issue_cases.push((pull, main, issue, "repository ID differs from the PR base"));
+        let (pull, main, mut issue) = valid();
+        issue["repository"]["id"] = json!(0);
+        issue_cases.push((pull, main, issue, "repository ID is not positive"));
+        let (pull, main, mut issue) = valid();
+        issue["repository"]["id"] = json!("7");
+        issue_cases.push((pull, main, issue, "repository ID is not an integer"));
+        let (pull, main, mut issue) = valid();
+        issue["repository"].as_object_mut().unwrap().remove("id");
+        issue_cases.push((pull, main, issue, "missing repository ID"));
+        let (mut pull, main, issue) = valid();
+        pull["base"]["repo"]["id"] = json!(0);
+        issue_cases.push((pull, main, issue, "base repository ID is not positive"));
+        let (mut pull, main, issue) = valid();
+        pull["base"]["repo"].as_object_mut().unwrap().remove("id");
+        issue_cases.push((pull, main, issue, "missing base repository ID"));
+        let (pull, main, mut issue) = valid();
+        issue.as_object_mut().unwrap().remove("repository");
+        issue_cases.push((pull, main, issue, "missing issue repository"));
+
+        for (pull, main, issue, case) in issue_cases {
+            assert!(
+                !merge_readback_is_confirmed(
+                    23,
+                    LOCAL_REPOSITORY_OWNER,
+                    LOCAL_REPOSITORY_NAME,
+                    submitted_head,
+                    &pull,
+                    &main,
+                    &issue,
+                ),
+                "{case} must not confirm the merge"
+            );
+        }
     }
 
     #[test]
@@ -10098,7 +10348,7 @@ mod tests {
                     "merged": true,
                     "state": "closed",
                     "head": {"sha": head_sha},
-                    "base": {"ref": "main", "sha": merge_sha, "repo": {"full_name": "forge-admin/agent-forge-core"}},
+                    "base": {"ref": "main", "sha": merge_sha, "repo_id": 7, "repo": fixture_repo_identity("forge-admin/agent-forge-core")},
                     "merge_commit_sha": merge_sha,
                 }),
                 json!({
@@ -10110,7 +10360,7 @@ mod tests {
                 }),
                 json!({"sha": head_sha}),
                 json!({"commit": {"id": merge_sha}}),
-                json!({"number": 23, "state": "closed"}),
+                json!({"number": 23, "state": "closed", "repository": fixture_issue_repository_identity("forge-admin/agent-forge-core")}),
                 Some(vec![(
                     "src".to_owned(),
                     "100644".to_owned(),
@@ -10166,7 +10416,7 @@ mod tests {
                     "merged": true,
                     "state": "closed",
                     "head": {"sha": head_sha},
-                    "base": {"ref": "main", "sha": merge_sha, "repo": {"full_name": "forge-admin/agent-forge-core"}},
+                    "base": {"ref": "main", "sha": merge_sha, "repo_id": 7, "repo": fixture_repo_identity("forge-admin/agent-forge-core")},
                     "merge_commit_sha": merge_sha,
                 }),
                 json!({
@@ -10175,7 +10425,7 @@ mod tests {
                 }),
                 json!({"sha": head_sha}),
                 json!({"commit": {"id": merge_sha}}),
-                json!({"number": 23, "state": "closed"}),
+                json!({"number": 23, "state": "closed", "repository": fixture_issue_repository_identity("forge-admin/agent-forge-core")}),
                 Some(vec![(
                     "src".to_owned(),
                     "100644".to_owned(),
@@ -10224,7 +10474,7 @@ mod tests {
                     "merged": true,
                     "state": "closed",
                     "head": {"sha": head_sha},
-                    "base": {"ref": "main", "sha": merge_sha, "repo": {"full_name": "forge-admin/agent-forge-core"}},
+                    "base": {"ref": "main", "sha": merge_sha, "repo_id": 7, "repo": fixture_repo_identity("forge-admin/agent-forge-core")},
                     "merge_commit_sha": merge_sha,
                 }),
                 json!({
@@ -10233,7 +10483,7 @@ mod tests {
                 }),
                 json!({"sha": head_sha}),
                 json!({"commit": {"id": merge_sha}}),
-                json!({"number": 23, "state": "closed"}),
+                json!({"number": 23, "state": "closed", "repository": fixture_issue_repository_identity("forge-admin/agent-forge-core")}),
                 Some(vec![(
                     "src".to_owned(),
                     "100644".to_owned(),
@@ -10283,7 +10533,7 @@ mod tests {
                     "merged": true,
                     "state": "closed",
                     "head": {"sha": head_sha},
-                    "base": {"ref": "main", "sha": merge_sha, "repo": {"full_name": "forge-admin/agent-forge-core"}},
+                    "base": {"ref": "main", "sha": merge_sha, "repo_id": 7, "repo": fixture_repo_identity("forge-admin/agent-forge-core")},
                     "merge_commit_sha": merge_sha,
                 }),
                 json!({
@@ -10292,7 +10542,7 @@ mod tests {
                 }),
                 json!({"sha": head_sha}),
                 json!({"commit": {"id": merge_sha}}),
-                json!({"number": 23, "state": "closed"}),
+                json!({"number": 23, "state": "closed", "repository": fixture_issue_repository_identity("forge-admin/agent-forge-core")}),
                 Some(vec![]),
                 None,
             )),
@@ -10578,7 +10828,7 @@ mod tests {
                     "merged": true,
                     "state": "closed",
                     "head": {"sha": submitted_head},
-                    "base": {"ref": "main", "sha": merge_sha, "repo": {"full_name": "forge-admin/agent-forge-core"}},
+                    "base": {"ref": "main", "sha": merge_sha, "repo_id": 7, "repo": fixture_repo_identity("forge-admin/agent-forge-core")},
                     "merge_commit_sha": merge_sha,
                 }))
                 .unwrap(),
@@ -10756,6 +11006,28 @@ mod tests {
                 "unexpectedly accepted {invalid} into the repository scope"
             );
         }
+    }
+
+    #[test]
+    fn reconciliation_policy_allows_only_exact_configured_repository_visibility_read() {
+        let api = LocalLoopbackForgejoApi::default();
+        let allowed = "/repos/forge-admin/agent-forge-core";
+        assert!(api.reconciliation_request_is_allowed(allowed, "GET", None));
+        assert!(api.request_path_stays_in_configured_repository(allowed));
+
+        for invalid in [
+            "/repos/another-owner/agent-forge-core",
+            "/repos/forge-admin/another-repository",
+            "/repos/forge-admin/agent-forge-core/issues",
+            "/repos/forge-admin/agent-forge-core?include_owner=true",
+        ] {
+            assert!(
+                !api.reconciliation_request_is_allowed(invalid, "GET", None),
+                "unexpectedly allowed {invalid}"
+            );
+        }
+        assert!(!api.reconciliation_request_is_allowed(allowed, "POST", None));
+        assert!(!api.reconciliation_request_is_allowed(allowed, "GET", Some(b"{}")));
     }
 
     #[test]
@@ -11078,7 +11350,7 @@ mod tests {
             "base": {
                 "ref": "main",
                 "sha": base_sha,
-                "repo": {"full_name": "forge-admin/agent-forge-core"},
+                "repo": fixture_repo_identity("forge-admin/agent-forge-core"),
             },
             "head": {"sha": head_sha},
         })
@@ -15250,8 +15522,8 @@ mod tests {
                             "merged": false,
                             "draft": false,
                             "mergeable": true,
-                            "base": {"ref": "main", "sha": PROFILE_BASE_SHA, "repo": {"full_name": full_name}},
-                            "head": {"sha": PROFILE_HEAD_SHA, "repo": {"full_name": full_name}},
+                            "base": {"ref": "main", "sha": PROFILE_BASE_SHA, "repo": fixture_repo_identity(&full_name)},
+                            "head": {"sha": PROFILE_HEAD_SHA, "repo": fixture_repo_identity(&full_name)},
                         }))
                         .unwrap(),
                     )
@@ -15265,8 +15537,8 @@ mod tests {
                             "state": "closed",
                             "merged": true,
                             "merge_commit_sha": PROFILE_MERGE_SHA,
-                            "base": {"ref": "main", "sha": PROFILE_MERGE_SHA, "repo": {"full_name": full_name}},
-                            "head": {"sha": PROFILE_HEAD_SHA, "repo": {"full_name": full_name}},
+                            "base": {"ref": "main", "sha": PROFILE_MERGE_SHA, "repo_id": 7, "repo": fixture_repo_identity(&full_name)},
+                            "head": {"sha": PROFILE_HEAD_SHA, "repo": fixture_repo_identity(&full_name)},
                         }))
                         .unwrap(),
                     )
@@ -15357,6 +15629,7 @@ mod tests {
                         serde_json::to_vec(&json!({
                             "number": 23,
                             "state": if merged { "closed" } else { "open" },
+                            "repository": fixture_issue_repository_identity(&full_name),
                         }))
                         .unwrap(),
                     )
@@ -17097,7 +17370,6 @@ mod tests {
             "/repos/forge-admin/mission-012-clamp/./pulls/23",
             "/repos/forge-admin/mission-012-clamp/%2e%2e/agent-forge-core/pulls/23",
             "/repos/forge-admin/mission-012-clamp-other/pulls/23",
-            "/repos/forge-admin/mission-012-clamp",
             "/repos/forge-admin//mission-012-clamp/pulls/23",
             // Repository-by-ID and other routes outside the allowlisted shapes.
             "/repositories/1",
@@ -17261,7 +17533,9 @@ mod tests {
                 "issue_repository": {
                     "field": "repository",
                     "accepted_identity_fields": ["full_name", "name", "owner"],
-                    "when_object_present": "require_at_least_one_identity_field_and_validate_every_supplied_value",
+                    "required_identity_combinations": [["full_name"], ["owner", "name"]],
+                    "when_object_present": "require_one_complete_identity_combination_and_validate_each_present_identity_value",
+                    "incomplete_owner_name_pair": "invalid_current_state_field_repository_even_if_full_name_is_present",
                     "missing_or_null": "allowed_as_partial_api_response",
                 },
                 "pull_request_base_repository": {
@@ -17269,6 +17543,12 @@ mod tests {
                     "accepted_identity_fields": ["full_name", "name", "owner.login"],
                     "when_object_present": "require_at_least_one_identity_field_and_validate_every_supplied_value",
                     "missing_or_null": "allowed_as_partial_api_response",
+                    "numeric_repository_id_contract": {
+                        "base_repo_id": "when_present_require_positive_signed_integer",
+                        "nested_repository_id": "when_present_require_positive_signed_integer",
+                        "when_both_present": "require_equal",
+                        "missing_or_null_nested_repository": "no_numeric_equality_claim",
+                    },
                 },
                 "pull_request_head_repository": {
                     "target_repository_must_match": false,
@@ -17322,10 +17602,10 @@ mod tests {
                 "required_caller_boundary": "invoke_credential_bearing_adapter_in_trusted_host_process_outside_agent_execution_scope",
             })
         );
-        assert_eq!(document["schema_version"], 28);
+        assert_eq!(document["schema_version"], 32);
         assert_eq!(
             document["api_version"],
-            "forgejo-reconcile-capabilities-v28"
+            "forgejo-reconcile-capabilities-v32"
         );
         assert_eq!(
             reconcile["work_item_assignees_projection"],
@@ -17451,10 +17731,21 @@ mod tests {
         assert_eq!(
             merge["postmerge_pull_request_identity"],
             json!({
-                "field": "base.repo.full_name",
+                "fields": ["base.repo_id", "base.repo.id", "base.repo.full_name", "base.repo.name", "base.repo.owner.login"],
                 "required": true,
-                "must_equal": "selected_target_profile_owner_and_repository",
-                "mismatch": "inconclusive",
+                "must_match": "selected_target_profile_owner_and_repository",
+                "repository_id_binding": "positive base.repo_id must equal positive base.repo.id",
+                "missing_or_mismatch": "inconclusive",
+            })
+        );
+        assert_eq!(
+            merge["postmerge_issue_identity"],
+            json!({
+                "fields": ["repository.id", "repository.full_name", "repository.name", "repository.owner"],
+                "required": true,
+                "must_match": "selected_target_profile_owner_and_repository",
+                "repository_id_binding": "positive repository.id must equal postmerge_pull_request_identity.base.repo.id",
+                "missing_or_mismatch": "inconclusive",
             })
         );
         let profile_entry = |selector: &str, default: bool, origin: &str, repository: &str| {

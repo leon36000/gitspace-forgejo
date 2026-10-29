@@ -246,7 +246,7 @@ fn spawn_pull_request_status_http_fixture(
                     "base":{
                         "ref":"main",
                         "sha":"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
-                        "repo":{"full_name":"forge-admin/agent-forge-core"},
+                        "repo":{"owner":{"login":"forge-admin"},"name":"agent-forge-core","full_name":"forge-admin/agent-forge-core"},
                     },
                     "head":{"sha":head_sha},
                 })
@@ -291,8 +291,8 @@ fn actual_cli_discloses_versioned_local_test_capabilities() {
     );
     let value: Value = serde_json::from_slice(&output.stdout)
         .expect("capability discovery returns structured JSON");
-    assert_eq!(value["schema_version"], 28);
-    assert_eq!(value["api_version"], "forgejo-reconcile-capabilities-v28");
+    assert_eq!(value["schema_version"], 32);
+    assert_eq!(value["api_version"], "forgejo-reconcile-capabilities-v32");
     assert_eq!(value["adapter"], "forgejo-reconcile-local");
     let status_snapshot = value["operations"]
         .as_array()
@@ -335,7 +335,9 @@ fn actual_cli_discloses_versioned_local_test_capabilities() {
             "issue_repository": {
                 "field": "repository",
                 "accepted_identity_fields": ["full_name", "name", "owner"],
-                "when_object_present": "require_at_least_one_identity_field_and_validate_every_supplied_value",
+                "required_identity_combinations": [["full_name"], ["owner", "name"]],
+                "when_object_present": "require_one_complete_identity_combination_and_validate_each_present_identity_value",
+                "incomplete_owner_name_pair": "invalid_current_state_field_repository_even_if_full_name_is_present",
                 "missing_or_null": "allowed_as_partial_api_response",
             },
             "pull_request_base_repository": {
@@ -343,6 +345,12 @@ fn actual_cli_discloses_versioned_local_test_capabilities() {
                 "accepted_identity_fields": ["full_name", "name", "owner.login"],
                 "when_object_present": "require_at_least_one_identity_field_and_validate_every_supplied_value",
                 "missing_or_null": "allowed_as_partial_api_response",
+                "numeric_repository_id_contract": {
+                    "base_repo_id": "when_present_require_positive_signed_integer",
+                    "nested_repository_id": "when_present_require_positive_signed_integer",
+                    "when_both_present": "require_equal",
+                    "missing_or_null_nested_repository": "no_numeric_equality_claim",
+                },
             },
             "pull_request_head_repository": {
                 "target_repository_must_match": false,

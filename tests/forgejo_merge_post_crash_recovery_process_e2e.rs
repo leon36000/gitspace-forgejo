@@ -464,6 +464,10 @@ fn build_inputs() -> MergeInputs {
 enum CrashPoint {
     NoCrash,
     AfterForgejoCommitsPost,
+    MismatchedMergedBaseOwner,
+    MismatchedMergedPullRequestBaseRepoId,
+    MismatchedMergedIssueRepository,
+    MismatchedMergedIssueRepositoryId,
     AfterDurableIntentBeforePost,
     AfterFinalProtectionReadBeforePost,
     BaseAdvancesAfterFinalCheckBeforePost,
@@ -596,6 +600,10 @@ impl ForgejoFixture {
                         &worker_current_main_sha.lock().unwrap(),
                         &worker_merge_parent_sha.lock().unwrap(),
                         current_draft,
+                        crash_point == CrashPoint::MismatchedMergedBaseOwner,
+                        crash_point == CrashPoint::MismatchedMergedPullRequestBaseRepoId,
+                        crash_point == CrashPoint::MismatchedMergedIssueRepository,
+                        crash_point == CrashPoint::MismatchedMergedIssueRepositoryId,
                     );
                     write_json_response(&mut stream, status, total_count, &body)
                         .expect("release final protected-state read");
@@ -689,6 +697,10 @@ impl ForgejoFixture {
                     &worker_current_main_sha.lock().unwrap(),
                     &worker_merge_parent_sha.lock().unwrap(),
                     current_draft,
+                    crash_point == CrashPoint::MismatchedMergedBaseOwner,
+                    crash_point == CrashPoint::MismatchedMergedPullRequestBaseRepoId,
+                    crash_point == CrashPoint::MismatchedMergedIssueRepository,
+                    crash_point == CrashPoint::MismatchedMergedIssueRepositoryId,
                 );
                 write_json_response(&mut stream, status, total_count, &body)
                     .expect("write bounded fixture response");
@@ -768,6 +780,10 @@ fn fixture_response(
     current_main_sha: &str,
     merge_parent_sha: &str,
     draft: bool,
+    mismatched_merged_base_owner: bool,
+    mismatched_merged_pull_request_base_repo_id: bool,
+    mismatched_merged_issue_repository: bool,
+    mismatched_merged_issue_repository_id: bool,
 ) -> (u16, Option<usize>, Vec<u8>) {
     let repo = format!("/api/v1/repos/{OWNER}/{REPOSITORY}");
     let pull_url = format!("{ORIGIN}/{OWNER}/{REPOSITORY}/pulls/{PR_NUMBER}");
@@ -782,7 +798,7 @@ fn fixture_response(
                 "draft": draft,
                 "merge_commit_sha": MERGE_SHA,
                 "updated_at": "2026-10-25T22:00:00Z",
-                "base": {"ref":"main","sha":MERGE_SHA,"repo":{"full_name":full_name}},
+                "base": {"ref":"main","sha":MERGE_SHA,"repo_id":if mismatched_merged_pull_request_base_repo_id { 18 } else { 17 },"repo":{"id":17,"owner":{"login":if mismatched_merged_base_owner { "other-owner" } else { OWNER }},"name":REPOSITORY,"full_name":full_name}},
                 "head": {"sha":HEAD_SHA,"repo":{"full_name":full_name}}
             })
         } else {
@@ -793,7 +809,7 @@ fn fixture_response(
                 "merged": false,
                 "draft": draft,
                 "mergeable": true,
-                "base": {"ref":"main","sha":BASE_SHA,"repo":{"full_name":full_name}},
+                "base": {"ref":"main","sha":BASE_SHA,"repo_id":17,"repo":{"id":17,"owner":{"login":OWNER},"name":REPOSITORY,"full_name":full_name}},
                 "head": {"sha":HEAD_SHA,"repo":{"full_name":full_name}}
             })
         }
@@ -840,12 +856,21 @@ fn fixture_response(
             "state": "closed",
             "updated_at": "2026-10-27T13:40:00Z",
             "html_url": format!("{ORIGIN}/{OWNER}/{REPOSITORY}/issues/{ISSUE_NUMBER}"),
-            "repository": {"full_name": full_name},
+            "repository": {"owner": OWNER, "name": REPOSITORY, "full_name": full_name},
             "title": "canonical title from Forgejo",
             "body": "canonical body from Forgejo"
         })
     } else if target == format!("{repo}/issues/{PR_NUMBER}") {
-        json!({"number":PR_NUMBER,"state":if merged { "closed" } else { "open" }})
+        json!({
+            "number": PR_NUMBER,
+            "state": if merged { "closed" } else { "open" },
+            "repository": {
+                "id": if mismatched_merged_issue_repository_id { 99 } else { 17 },
+                "owner": if mismatched_merged_issue_repository { "other-owner" } else { OWNER },
+                "name": REPOSITORY,
+                "full_name": full_name,
+            }
+        })
     } else if target == format!("{repo}/git/trees/{MERGE_SHA}?page=1&per_page=1000&recursive=false")
         && merged
     {
@@ -1311,6 +1336,202 @@ fn killed_cli_after_forgejo_merge_recovers_readback_only_and_serializes_duplicat
         fixture.requests().len(),
         before_duplicate,
         "a resolved duplicate replays the saved host decision without network writes or reads"
+    );
+}
+
+#[test]
+#[ignore = "run only through the bwrap network-isolated process E2E runner"]
+fn merged_readback_with_contradictory_base_owner_is_inconclusive() {
+    let inputs = build_inputs();
+    let fixture = ForgejoFixture::start(
+        CrashPoint::MismatchedMergedBaseOwner,
+        inputs.journal.clone(),
+    );
+    let output = spawn_merge_cli(&inputs)
+        .wait_with_output()
+        .expect("collect the real CLI result after contradictory merged readback");
+    let result = output_json(&output);
+
+    assert!(fixture.merged(), "the fixture applied the merge POST");
+    assert!(
+        !output.status.success(),
+        "a contradictory base identity is not success"
+    );
+    assert_eq!(result["verdict"], "inconclusive");
+    assert_eq!(result["merge_attempted"], true);
+    assert_eq!(result["merge_authorized"], false);
+    assert_eq!(result["error"]["code"], "merge_outcome_not_confirmed");
+    let requests = fixture.requests();
+    assert_eq!(
+        requests
+            .iter()
+            .filter(|line| line.starts_with("POST ") && line.ends_with("/pulls/23/merge HTTP/1.1"))
+            .count(),
+        1
+    );
+    assert!(requests.iter().any(|line| {
+        line == "GET /api/v1/repos/forge-admin/mission-012-clamp/pulls/23 HTTP/1.1"
+    }));
+    let kinds = event_kinds(&inputs.journal);
+    assert_eq!(
+        kinds
+            .iter()
+            .filter(|kind| kind.as_str() == "mission_merge_attempt_started_v1")
+            .count(),
+        1,
+        "the attempted merge remains durably recorded"
+    );
+    assert_eq!(
+        kinds
+            .iter()
+            .filter(|kind| kind.as_str() == "mission_merge_attempt_resolved_v1")
+            .count(),
+        0,
+        "a contradictory readback must not resolve the intent as a verified merge"
+    );
+}
+
+#[test]
+#[ignore = "run only through the bwrap network-isolated process E2E runner"]
+fn merged_readback_with_mismatched_pr_base_repository_id_is_inconclusive() {
+    let inputs = build_inputs();
+    let fixture = ForgejoFixture::start(
+        CrashPoint::MismatchedMergedPullRequestBaseRepoId,
+        inputs.journal.clone(),
+    );
+    let output = spawn_merge_cli(&inputs)
+        .wait_with_output()
+        .expect("collect the real CLI result after mismatched PR base repository ID readback");
+    let result = output_json(&output);
+
+    assert!(fixture.merged(), "the fixture applied the merge POST");
+    assert!(!output.status.success());
+    assert_eq!(result["verdict"], "inconclusive");
+    assert_eq!(result["merge_attempted"], true);
+    assert_eq!(result["merge_authorized"], false);
+    assert_eq!(result["error"]["code"], "merge_outcome_not_confirmed");
+    let requests = fixture.requests();
+    assert_eq!(
+        requests
+            .iter()
+            .filter(|line| line.starts_with("POST ") && line.ends_with("/pulls/23/merge HTTP/1.1"))
+            .count(),
+        1
+    );
+    assert!(requests.iter().any(|line| {
+        line == "GET /api/v1/repos/forge-admin/mission-012-clamp/pulls/23 HTTP/1.1"
+    }));
+    let kinds = event_kinds(&inputs.journal);
+    assert_eq!(
+        kinds
+            .iter()
+            .filter(|kind| kind.as_str() == "mission_merge_attempt_started_v1")
+            .count(),
+        1
+    );
+    assert_eq!(
+        kinds
+            .iter()
+            .filter(|kind| kind.as_str() == "mission_merge_attempt_resolved_v1")
+            .count(),
+        0,
+        "a contradictory PR base repository ID must not resolve the merge intent"
+    );
+}
+
+#[test]
+#[ignore = "run only through the bwrap network-isolated process E2E runner"]
+fn merged_readback_with_contradictory_issue_repository_is_inconclusive() {
+    let inputs = build_inputs();
+    let fixture = ForgejoFixture::start(
+        CrashPoint::MismatchedMergedIssueRepository,
+        inputs.journal.clone(),
+    );
+    let output = spawn_merge_cli(&inputs)
+        .wait_with_output()
+        .expect("collect the real CLI result after contradictory issue repository readback");
+    let result = output_json(&output);
+
+    assert!(fixture.merged(), "the fixture applied the merge POST");
+    assert!(!output.status.success());
+    assert_eq!(result["verdict"], "inconclusive");
+    assert_eq!(result["merge_attempted"], true);
+    assert_eq!(result["merge_authorized"], false);
+    assert_eq!(result["error"]["code"], "merge_outcome_not_confirmed");
+    let requests = fixture.requests();
+    assert_eq!(
+        requests
+            .iter()
+            .filter(|line| line.starts_with("POST ") && line.ends_with("/pulls/23/merge HTTP/1.1"))
+            .count(),
+        1
+    );
+    assert!(requests.iter().any(|line| {
+        line == "GET /api/v1/repos/forge-admin/mission-012-clamp/issues/23 HTTP/1.1"
+    }));
+    let kinds = event_kinds(&inputs.journal);
+    assert_eq!(
+        kinds
+            .iter()
+            .filter(|kind| kind.as_str() == "mission_merge_attempt_started_v1")
+            .count(),
+        1
+    );
+    assert_eq!(
+        kinds
+            .iter()
+            .filter(|kind| kind.as_str() == "mission_merge_attempt_resolved_v1")
+            .count(),
+        0,
+        "a contradictory issue repository must not resolve the merge intent"
+    );
+}
+
+#[test]
+#[ignore = "run only through the bwrap network-isolated process E2E runner"]
+fn merged_readback_with_mismatched_issue_repository_id_is_inconclusive() {
+    let inputs = build_inputs();
+    let fixture = ForgejoFixture::start(
+        CrashPoint::MismatchedMergedIssueRepositoryId,
+        inputs.journal.clone(),
+    );
+    let output = spawn_merge_cli(&inputs)
+        .wait_with_output()
+        .expect("collect the real CLI result after mismatched issue repository ID readback");
+    let result = output_json(&output);
+
+    assert!(fixture.merged(), "the fixture applied the merge POST");
+    assert!(!output.status.success());
+    assert_eq!(result["verdict"], "inconclusive");
+    assert_eq!(result["merge_attempted"], true);
+    assert_eq!(result["merge_authorized"], false);
+    assert_eq!(result["error"]["code"], "merge_outcome_not_confirmed");
+    let requests = fixture.requests();
+    assert_eq!(
+        requests
+            .iter()
+            .filter(|line| line.starts_with("POST ") && line.ends_with("/pulls/23/merge HTTP/1.1"))
+            .count(),
+        1
+    );
+    assert!(requests.iter().any(|line| {
+        line == "GET /api/v1/repos/forge-admin/mission-012-clamp/issues/23 HTTP/1.1"
+    }));
+    let kinds = event_kinds(&inputs.journal);
+    assert_eq!(
+        kinds
+            .iter()
+            .filter(|kind| kind.as_str() == "mission_merge_attempt_started_v1")
+            .count(),
+        1
+    );
+    assert_eq!(
+        kinds
+            .iter()
+            .filter(|kind| kind.as_str() == "mission_merge_attempt_resolved_v1")
+            .count(),
+        0,
+        "different numeric repository identities must not resolve the merge intent"
     );
 }
 

@@ -87,9 +87,98 @@ fn run() -> Result<(), String> {
         println!("{}", hex::encode(signing_key.verifying_key().as_bytes()));
         return Ok(());
     }
+    if args.len() == 3 && args[0] == "--snapshot-inbox" {
+        let source = Path::new(&args[1]);
+        let destination = Path::new(&args[2]);
+        validate_private_journal_path(source).map_err(|_| {
+            "snapshot_refused: source inbox must be in an owner-owned 0700 directory and be an owner-owned 0600 regular file with one link".to_owned()
+        })?;
+        validate_private_journal_path(destination).map_err(|_| {
+            "snapshot_refused: destination parent must be an owner-owned 0700 directory; destination must be absent or a private regular file".to_owned()
+        })?;
+        let snapshot = EventJournal::open_webhook_inbox(source)
+            .snapshot_read_only()
+            .map_err(snapshot_refusal)?;
+        write_private_snapshot(destination, &snapshot.bytes)?;
+        println!(
+            "{}",
+            serde_json::json!({
+                "schema_version": "forgejo-webhook-inbox-snapshot-v1",
+                "byte_length": snapshot.bytes.len(),
+                "event_count": snapshot.event_count,
+                "last_sequence": snapshot.last_sequence,
+                "last_event_hash": snapshot.last_event_hash,
+                "sha256": snapshot.sha256,
+                "source_validation": "event_chain_and_idempotency_keys",
+                "source_lock": "exclusive_journal_flock",
+                "restore_policy": "reconcile_or_quiesce_and_replay",
+                "quiescent_restore_point": false
+            })
+        );
+        return Ok(());
+    }
+    if args.len() == 4 && args[0] == "--stage-restore-inbox" {
+        let source = Path::new(&args[1]);
+        let destination = Path::new(&args[2]);
+        let expected_sha256 = &args[3];
+        if !is_canonical_sha256(expected_sha256) {
+            return Err(
+                "restore_refused: expected snapshot SHA-256 must be 64 lowercase hexadecimal characters"
+                    .to_owned(),
+            );
+        }
+        validate_existing_private_journal_path(source)?;
+        validate_private_journal_path(destination).map_err(|_| {
+            "restore_refused: destination parent must be an owner-owned 0700 directory; destination must be absent or a private regular file".to_owned()
+        })?;
+
+        let snapshot = EventJournal::open_webhook_inbox(source)
+            .snapshot_read_only()
+            .map_err(restore_refusal)?;
+        if snapshot.sha256 != *expected_sha256 {
+            return Err(
+                "restore_refused: snapshot SHA-256 differs from the independently supplied expected digest; destination was not created"
+                    .to_owned(),
+            );
+        }
+
+        write_private_journal_file(destination, &snapshot.bytes, "restore")?;
+        let staged = EventJournal::open_webhook_inbox(destination)
+            .snapshot_read_only()
+            .map_err(|_| {
+                "restore_write_incomplete: staged journal failed read-back validation; preserve both files and do not activate the staged journal".to_owned()
+            })?;
+        if staged.sha256 != snapshot.sha256 || staged.bytes != snapshot.bytes {
+            return Err(
+                "restore_write_incomplete: staged journal differs from the validated snapshot; preserve both files and do not activate the staged journal"
+                    .to_owned(),
+            );
+        }
+        println!(
+            "{}",
+            serde_json::json!({
+                "schema_version": "forgejo-webhook-inbox-restore-v1",
+                "operation": "stage_validated_snapshot",
+                "snapshot_sha256": snapshot.sha256,
+                "staged_sha256": staged.sha256,
+                "expected_sha256_source": "operator_supplied_argument",
+                "event_count": snapshot.event_count,
+                "last_sequence": snapshot.last_sequence,
+                "last_event_hash": snapshot.last_event_hash,
+                "source_validation": "event_chain_and_idempotency_keys",
+                "destination_validation": "read_back_event_chain_and_hash",
+                "source_snapshot_bytes_modified": false,
+                "existing_inbox_replaced": false,
+                "quiescent_restore_point": false,
+                "post_snapshot_delivery_replay": "operator_required",
+                "signature_authenticity": "not_established"
+            })
+        );
+        return Ok(());
+    }
     if args.len() != 3 && args.len() != 4 {
         return Err(
-            "usage: forgejo-webhook-local <127.0.0.1:port> <secret-file> <journal.jsonl> [<receiver-signing-seed-file>] | forgejo-webhook-local --print-attestation-public-key <receiver-signing-seed-file>".into(),
+            "usage: forgejo-webhook-local <127.0.0.1:port> <secret-file> <journal.jsonl> [<receiver-signing-seed-file>] | forgejo-webhook-local --print-attestation-public-key <receiver-signing-seed-file> | forgejo-webhook-local --snapshot-inbox <inbox.jsonl> <new-snapshot.jsonl> | forgejo-webhook-local --stage-restore-inbox <snapshot.jsonl> <new-inbox.jsonl> <expected-sha256>".into(),
         );
     }
     let address = args[0]
@@ -110,7 +199,7 @@ fn run() -> Result<(), String> {
         .replay()
         .map_err(|error| match error {
             JournalError::InboxTooLarge { maximum_bytes } => format!(
-                "webhook inbox exceeds its {maximum_bytes}-byte limit; preserve a backup and apply a verified compaction or migration before restart"
+                "webhook inbox exceeds its {maximum_bytes}-byte limit; startup stopped without changing the inbox. Preserve a private copy; this build has no verified compaction or rotation command; do not truncate or edit the inbox"
             ),
             _ => "journal recovery failed".to_owned(),
         })?;
@@ -126,6 +215,287 @@ fn run() -> Result<(), String> {
     serve(listener, secret, journal, attestation_signing_key)?;
     Ok(())
 }
+
+fn snapshot_refusal(error: JournalError) -> String {
+    match error {
+        JournalError::Corrupt { line } => format!(
+            "snapshot_refused: journal integrity validation failed at line {line}; preserve the source and use an operator-approved recovery path; no repair was attempted"
+        ),
+        JournalError::InboxTooLarge { maximum_bytes } => format!(
+            "snapshot_refused: inbox exceeds the {maximum_bytes}-byte limit; preserve the source. This build has no verified compaction or rotation command; do not truncate or edit the inbox"
+        ),
+        JournalError::LockBusy => {
+            "snapshot_refused: inbox lock is busy; retry after the current journal operation completes".to_owned()
+        }
+        JournalError::InvalidEvent => {
+            "snapshot_refused: journal path or metadata failed its private-file checks".to_owned()
+        }
+        JournalError::Io(_) => {
+            "snapshot_refused: journal could not be read safely; preserve the source and inspect the local filesystem".to_owned()
+        }
+        JournalError::IdempotencyConflict => {
+            "snapshot_refused: journal integrity validation failed; preserve the source and inspect it before retrying".to_owned()
+        }
+    }
+}
+
+fn restore_refusal(error: JournalError) -> String {
+    match error {
+        JournalError::Corrupt { line } => format!(
+            "restore_refused: snapshot journal integrity validation failed at line {line}; preserve the source; no repair was attempted"
+        ),
+        JournalError::InboxTooLarge { maximum_bytes } => format!(
+            "restore_refused: snapshot exceeds the {maximum_bytes}-byte limit; preserve the source snapshot. This build has no verified recovery path for an oversized snapshot; do not truncate or edit the snapshot"
+        ),
+        JournalError::LockBusy => {
+            "restore_refused: snapshot is in use; retry after the current journal operation completes"
+                .to_owned()
+        }
+        JournalError::InvalidEvent => {
+            "restore_refused: snapshot path or metadata failed its private-file checks".to_owned()
+        }
+        JournalError::Io(_) => {
+            "restore_refused: snapshot could not be read safely; preserve the source and inspect the local filesystem".to_owned()
+        }
+        JournalError::IdempotencyConflict => {
+            "restore_refused: snapshot has conflicting idempotency keys; preserve the source and inspect it before retrying".to_owned()
+        }
+    }
+}
+
+fn is_canonical_sha256(value: &str) -> bool {
+    value.len() == 64
+        && value
+            .bytes()
+            .all(|byte| byte.is_ascii_digit() || (b'a'..=b'f').contains(&byte))
+}
+
+fn validate_existing_private_journal_path(path: &Path) -> Result<(), String> {
+    validate_private_journal_path(path).map_err(|_| {
+        "restore_refused: source snapshot must be in an owner-owned 0700 directory and be an owner-owned 0600 regular file with one link".to_owned()
+    })?;
+    match fs::symlink_metadata(path) {
+        Ok(metadata) if metadata.file_type().is_file() => Ok(()),
+        Ok(_) => Err(
+            "restore_refused: source snapshot must be an existing private regular file".to_owned(),
+        ),
+        Err(error) if error.kind() == io::ErrorKind::NotFound => {
+            Err("restore_refused: source snapshot does not exist; nothing was staged".to_owned())
+        }
+        Err(_) => Err(
+            "restore_refused: source snapshot metadata is unavailable; nothing was staged"
+                .to_owned(),
+        ),
+    }
+}
+
+fn write_private_snapshot(destination: &Path, bytes: &[u8]) -> Result<(), String> {
+    write_private_journal_file(destination, bytes, "snapshot")
+}
+
+fn write_private_journal_file(
+    destination: &Path,
+    bytes: &[u8],
+    operation: &str,
+) -> Result<(), String> {
+    #[cfg(not(target_os = "linux"))]
+    {
+        let _ = (destination, bytes);
+        Err(format!(
+            "{operation}_refused: atomic journal publication requires Linux O_TMPFILE and /proc/self/fd; no destination was created"
+        ))
+    }
+
+    #[cfg(target_os = "linux")]
+    {
+        use std::{
+            ffi::CString,
+            os::{
+                fd::AsRawFd,
+                fd::FromRawFd,
+                unix::ffi::OsStrExt,
+                unix::fs::{MetadataExt, OpenOptionsExt, PermissionsExt},
+            },
+        };
+
+        let parent = destination
+            .parent()
+            .filter(|parent| !parent.as_os_str().is_empty())
+            .unwrap_or_else(|| Path::new("."));
+        let filename = destination.file_name().ok_or_else(|| {
+            format!("{operation}_refused: destination must name a file in a private directory")
+        })?;
+        let filename = CString::new(filename.as_bytes()).map_err(|_| {
+            format!("{operation}_refused: destination file name contains an invalid NUL byte")
+        })?;
+        let directory = fs::OpenOptions::new()
+            .read(true)
+            .custom_flags(libc::O_CLOEXEC | libc::O_DIRECTORY | libc::O_NOFOLLOW)
+            .open(parent)
+            .map_err(|_| {
+                format!("{operation}_refused: destination parent could not be opened safely")
+            })?;
+        let directory_metadata = directory.metadata().map_err(|_| {
+            format!("{operation}_refused: destination parent metadata is unavailable")
+        })?;
+        if !directory_metadata.is_dir()
+            || directory_metadata.uid() != unsafe { libc::geteuid() }
+            || directory_metadata.permissions().mode() & 0o777 != 0o700
+        {
+            return Err(format!(
+                "{operation}_refused: destination parent must be an owner-owned 0700 directory"
+            ));
+        }
+
+        let dot = c".";
+        let staging_fd = unsafe {
+            libc::openat(
+                directory.as_raw_fd(),
+                dot.as_ptr(),
+                libc::O_TMPFILE | libc::O_RDWR | libc::O_CLOEXEC,
+                0o600,
+            )
+        };
+        if staging_fd < 0 {
+            let error = io::Error::last_os_error();
+            if matches!(
+                error.raw_os_error(),
+                Some(code) if code == libc::EOPNOTSUPP || code == libc::EINVAL
+            ) {
+                return Err(format!(
+                    "{operation}_refused: destination filesystem does not support anonymous atomic staging; choose a private local filesystem that supports O_TMPFILE"
+                ));
+            }
+            return Err(format!(
+                "{operation}_refused: anonymous staging file could not be created; no destination was published, preserve the source and inspect the local filesystem"
+            ));
+        }
+        let mut file = unsafe { fs::File::from_raw_fd(staging_fd) };
+        let metadata = file
+        .metadata()
+        .map_err(|_| format!("{operation}_write_incomplete: preserve the source; anonymous staging metadata is unavailable"))?;
+        if !metadata.is_file()
+            || metadata.uid() != unsafe { libc::geteuid() }
+            || metadata.nlink() != 0
+            || metadata.permissions().mode() & 0o077 != 0
+        {
+            return Err(format!(
+                "{operation}_write_incomplete: preserve the source; anonymous staging metadata is unsafe"
+            ));
+        }
+        file.set_permissions(fs::Permissions::from_mode(0o600))
+        .map_err(|_| {
+            format!("{operation}_write_incomplete: preserve the source; private staging permissions could not be established")
+        })?;
+        file.write_all(bytes).map_err(|_| {
+        format!("{operation}_write_incomplete: preserve the source; anonymous staged bytes are incomplete and were not published")
+    })?;
+        file.sync_all().map_err(|_| {
+        format!("{operation}_write_incomplete: preserve the source; anonymous staged bytes are not confirmed durable and were not published")
+    })?;
+
+        pause_before_atomic_journal_publish();
+
+        let proc_fd_path = CString::new(format!("/proc/self/fd/{}", file.as_raw_fd()))
+            .expect("numeric file descriptor path contains no NUL");
+        let publish_result = unsafe {
+            libc::linkat(
+                libc::AT_FDCWD,
+                proc_fd_path.as_ptr(),
+                directory.as_raw_fd(),
+                filename.as_ptr(),
+                libc::AT_SYMLINK_FOLLOW,
+            )
+        };
+        if publish_result != 0 {
+            let error = io::Error::last_os_error();
+            if error.kind() == io::ErrorKind::AlreadyExists {
+                return Err(format!(
+                    "{operation}_refused: destination already exists; choose a new path, no existing file was replaced"
+                ));
+            }
+            return Err(format!(
+                "{operation}_write_incomplete: preserve the source; atomic publication failed and no partial destination was published"
+            ));
+        }
+        let published_metadata = file.metadata().map_err(|_| {
+        format!("{operation}_write_incomplete: preserve the source; published destination metadata is unavailable")
+    })?;
+        if !published_metadata.is_file()
+            || published_metadata.uid() != unsafe { libc::geteuid() }
+            || published_metadata.nlink() != 1
+            || published_metadata.permissions().mode() & 0o777 != 0o600
+        {
+            return Err(format!(
+                "{operation}_write_incomplete: preserve the source; published destination metadata is unsafe and must not be activated"
+            ));
+        }
+        pause_after_atomic_journal_publish();
+        directory.sync_all().map_err(|_| {
+        format!("{operation}_write_incomplete: destination contains complete bytes but directory durability is unconfirmed; preserve the source and verify the staged copy before activation")
+    })?;
+        Ok(())
+    }
+}
+
+#[cfg(all(target_os = "linux", feature = "test-crash-injection"))]
+fn pause_after_atomic_journal_publish() {
+    use std::os::unix::fs::OpenOptionsExt;
+
+    if let Some(marker_path) = env::var_os("AGENT_FORGE_TEST_RESTORE_PAUSE_AFTER_PUBLISH") {
+        let mut marker = fs::OpenOptions::new()
+            .write(true)
+            .create_new(true)
+            .mode(0o600)
+            .open(marker_path)
+            .expect("create post-publication crash-test barrier");
+        marker
+            .write_all(b"complete destination linked; directory sync is pending\n")
+            .expect("write post-publication crash-test barrier");
+        marker
+            .sync_all()
+            .expect("sync post-publication crash-test barrier");
+        loop {
+            thread::park_timeout(Duration::from_secs(60));
+        }
+    }
+}
+
+#[cfg(all(target_os = "linux", not(feature = "test-crash-injection")))]
+fn pause_after_atomic_journal_publish() {}
+
+#[cfg(all(target_os = "linux", feature = "test-crash-injection"))]
+fn pause_before_atomic_journal_publish() {
+    use std::os::unix::fs::OpenOptionsExt;
+
+    if let Some(marker_path) = env::var_os("AGENT_FORGE_TEST_RESTORE_PAUSE_BEFORE_PUBLISH") {
+        let mut marker = fs::OpenOptions::new()
+            .write(true)
+            .create_new(true)
+            .mode(0o600)
+            .open(marker_path)
+            .expect("create crash-test publication barrier");
+        marker
+            .write_all(b"anonymous staged file is synced; final name is not published\n")
+            .expect("write crash-test publication barrier");
+        marker
+            .sync_all()
+            .expect("sync crash-test publication barrier");
+        if let Some(resume_path) = env::var_os("AGENT_FORGE_TEST_RESTORE_CONTINUE_AFTER_BARRIER") {
+            let resume_path = Path::new(&resume_path);
+            while !resume_path.exists() {
+                thread::park_timeout(Duration::from_millis(5));
+            }
+            return;
+        }
+        loop {
+            thread::park_timeout(Duration::from_secs(60));
+        }
+    }
+}
+
+#[cfg(all(target_os = "linux", not(feature = "test-crash-injection")))]
+fn pause_before_atomic_journal_publish() {}
 
 fn read_secret(path: &Path) -> Result<Vec<u8>, String> {
     use std::os::unix::fs::{MetadataExt, OpenOptionsExt, PermissionsExt};
@@ -601,6 +971,19 @@ mod tests {
         let mut request = headers.into_bytes();
         request.extend_from_slice(body);
         request
+    }
+
+    #[test]
+    fn snapshot_and_restore_capacity_refusals_do_not_claim_a_migration_exists() {
+        let inbox_refusal = snapshot_refusal(JournalError::InboxTooLarge { maximum_bytes: 64 });
+        assert!(inbox_refusal.contains("no verified compaction or rotation command"));
+        assert!(inbox_refusal.contains("do not truncate or edit the inbox"));
+        assert!(!inbox_refusal.contains("approved migration"));
+
+        let snapshot_refusal = restore_refusal(JournalError::InboxTooLarge { maximum_bytes: 64 });
+        assert!(snapshot_refusal.contains("no verified recovery path for an oversized snapshot"));
+        assert!(snapshot_refusal.contains("do not truncate or edit the snapshot"));
+        assert!(!snapshot_refusal.contains("approved migration"));
     }
 
     fn send_request(address: SocketAddr, request: &[u8]) -> (u16, serde_json::Value) {

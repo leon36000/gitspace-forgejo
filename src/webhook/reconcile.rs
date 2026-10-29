@@ -86,6 +86,17 @@ impl ResourceRef {
 pub trait ForgejoCurrentState {
     fn read_current(&self, resource: &ResourceRef) -> Result<Value, ApiReadError>;
 
+    /// Confirm that the configured repository is currently readable. This is
+    /// used only to disambiguate a deleted branch's 404 from an inaccessible
+    /// repository; implementations without this check must fail closed.
+    fn verify_repository_access(
+        &self,
+        _owner: &str,
+        _repository: &str,
+    ) -> Result<(), ApiReadError> {
+        Err(ApiReadError::Unavailable)
+    }
+
     /// Force a source read when a prior response may now be stale.
     /// This default is correct for direct, uncached readers; implementations
     /// that cache `read_current` must override it to evict or bypass that cache.
@@ -536,9 +547,24 @@ pub fn reconcile_inbox_event(
         return reconcile_workflow_job(delivery_id, resource, current, source);
     }
 
-    let current = source
-        .read_current(&resource)
-        .map_err(ReconcileError::Source)?;
+    let current = match source.read_current(&resource) {
+        Ok(current) => current,
+        Err(ApiReadError::NotFound)
+            if resource.kind == ResourceKind::Branch && event_name == super::DELETE_EVENT =>
+        {
+            source
+                .verify_repository_access(&resource.owner, &resource.repository)
+                .map_err(ReconcileError::Source)?;
+            match source.read_current_fresh(&resource) {
+                Ok(current) => current,
+                Err(ApiReadError::NotFound) => {
+                    return Ok(reconciled_absent_branch(delivery_id, resource, source));
+                }
+                Err(error) => return Err(ReconcileError::Source(error)),
+            }
+        }
+        Err(error) => return Err(ReconcileError::Source(error)),
+    };
     if resource.kind == ResourceKind::Branch {
         let ResourceId::Branch(expected_branch) = &resource.id else {
             return Err(ReconcileError::InvalidCurrentStateField("resource.id"));
@@ -662,23 +688,15 @@ pub fn reconcile_inbox_event(
         requested_reviewers,
         requested_reviewers_teams,
     ) = if resource.kind == ResourceKind::PullRequest {
-        let (
-            head_sha,
-            base_sha,
-            merged,
-            draft,
-            merge_commit_sha,
-            requested_reviewers,
-            requested_reviewers_teams,
-        ) = current_pull_request_fields(&current, &resource, state)?;
+        let fields = current_pull_request_fields(&current, &resource, state)?;
         (
-            Some(head_sha),
-            Some(base_sha),
-            Some(merged),
-            Some(draft),
-            merge_commit_sha,
-            requested_reviewers,
-            requested_reviewers_teams,
+            Some(fields.head_sha),
+            Some(fields.base_sha),
+            Some(fields.merged),
+            Some(fields.draft),
+            fields.merge_commit_sha,
+            fields.requested_reviewers,
+            fields.requested_reviewers_teams,
         )
     } else {
         (None, None, None, None, None, None, None)
@@ -710,6 +728,35 @@ pub fn reconcile_inbox_event(
         review_notification,
         release: None,
     })
+}
+
+fn reconciled_absent_branch(
+    delivery_id: String,
+    resource: ResourceRef,
+    source: &impl ForgejoCurrentState,
+) -> ReconciledState {
+    ReconciledState {
+        delivery_id,
+        html_url: source.expected_html_url(&resource),
+        resource,
+        state: "absent".to_owned(),
+        updated_at: String::new(),
+        head_sha: None,
+        parent_workflow_run: None,
+        base_sha: None,
+        merged: None,
+        draft: None,
+        merge_commit_sha: None,
+        requested_reviewers: None,
+        requested_reviewers_teams: None,
+        labels: None,
+        assignees: None,
+        milestone: None,
+        work_item_content: None,
+        comment: None,
+        review_notification: None,
+        release: None,
+    }
 }
 
 fn review_notification_from_event(
@@ -1172,23 +1219,18 @@ fn reconcile_issue_comment(
         requested_reviewers,
         requested_reviewers_teams,
     ) = if parent_kind == ResourceKind::PullRequest {
-        let (
-            head_sha,
-            base_sha,
-            merged,
-            draft,
-            merge_commit_sha,
-            requested_reviewers,
-            requested_reviewers_teams,
-        ) = current_pull_request_fields(&current_issue, &parent, &parent_snapshot.state)?;
+        let fields = parent_snapshot
+            .pull_request_fields
+            .take()
+            .ok_or(ReconcileError::InvalidCurrentStateField("resource.kind"))?;
         (
-            Some(head_sha),
-            Some(base_sha),
-            Some(merged),
-            Some(draft),
-            merge_commit_sha,
-            requested_reviewers,
-            requested_reviewers_teams,
+            Some(fields.head_sha),
+            Some(fields.base_sha),
+            Some(fields.merged),
+            Some(fields.draft),
+            fields.merge_commit_sha,
+            fields.requested_reviewers,
+            fields.requested_reviewers_teams,
         )
     } else {
         (None, None, None, None, None, None, None)
@@ -1226,6 +1268,17 @@ struct CurrentCommentParentSnapshot {
     assignees: Option<Vec<ReconciledAssignee>>,
     milestone: Option<ReconciledMilestoneObservation>,
     work_item_content: Option<ReconciledWorkItemContent>,
+    pull_request_fields: Option<CurrentPullRequestFields>,
+}
+
+struct CurrentPullRequestFields {
+    head_sha: String,
+    base_sha: String,
+    merged: bool,
+    draft: bool,
+    merge_commit_sha: Option<String>,
+    requested_reviewers: Option<Vec<ReconciledReviewer>>,
+    requested_reviewers_teams: Option<Vec<ReconciledReviewerTeam>>,
 }
 
 fn current_comment_parent_snapshot(
@@ -1260,6 +1313,11 @@ fn current_comment_parent_snapshot(
     if html_url != source.expected_html_url(resource) {
         return Err(ReconcileError::ResourceMismatch);
     }
+    let pull_request_fields = if resource.kind == ResourceKind::PullRequest {
+        Some(current_pull_request_fields(current, resource, state)?)
+    } else {
+        None
+    };
     Ok(CurrentCommentParentSnapshot {
         state: state.to_owned(),
         updated_at: updated_at.to_owned(),
@@ -1268,6 +1326,7 @@ fn current_comment_parent_snapshot(
         assignees: current_work_item_assignees(current, resource)?,
         milestone: current_work_item_milestone(current, resource)?,
         work_item_content: current_work_item_content(current, resource)?,
+        pull_request_fields,
     })
 }
 
@@ -1473,18 +1532,7 @@ fn current_pull_request_fields(
     current: &Value,
     resource: &ResourceRef,
     state: &str,
-) -> Result<
-    (
-        String,
-        String,
-        bool,
-        bool,
-        Option<String>,
-        Option<Vec<ReconciledReviewer>>,
-        Option<Vec<ReconciledReviewerTeam>>,
-    ),
-    ReconcileError,
-> {
+) -> Result<CurrentPullRequestFields, ReconcileError> {
     let merged = current
         .get("merged")
         .and_then(Value::as_bool)
@@ -1528,15 +1576,15 @@ fn current_pull_request_fields(
     };
     let requested_reviewers = current_pull_request_reviewers(current)?;
     let requested_reviewers_teams = current_pull_request_reviewer_teams(current)?;
-    Ok((
-        head_sha.to_owned(),
-        base_sha.to_owned(),
+    Ok(CurrentPullRequestFields {
+        head_sha: head_sha.to_owned(),
+        base_sha: base_sha.to_owned(),
         merged,
         draft,
         merge_commit_sha,
         requested_reviewers,
         requested_reviewers_teams,
-    ))
+    })
 }
 
 fn current_pull_request_reviewer_teams(
@@ -2690,11 +2738,19 @@ fn validate_current_pull_request_base_repository(
     current: &Value,
     resource: &ResourceRef,
 ) -> Result<(), ReconcileError> {
-    let Some(repository_value) = current
-        .get("base")
-        .and_then(Value::as_object)
-        .and_then(|base| base.get("repo"))
-    else {
+    let Some(base) = current.get("base").and_then(Value::as_object) else {
+        return Ok(());
+    };
+    let base_repo_id = base
+        .get("repo_id")
+        .map(|value| {
+            value
+                .as_i64()
+                .filter(|id| *id > 0)
+                .ok_or(ReconcileError::InvalidCurrentStateField("base.repo_id"))
+        })
+        .transpose()?;
+    let Some(repository_value) = base.get("repo") else {
         return Ok(());
     };
     if repository_value.is_null() {
@@ -2703,6 +2759,21 @@ fn validate_current_pull_request_base_repository(
     let repository = repository_value
         .as_object()
         .ok_or(ReconcileError::InvalidCurrentStateField("base.repo"))?;
+    let nested_repo_id = repository
+        .get("id")
+        .map(|value| {
+            value
+                .as_i64()
+                .filter(|id| *id > 0)
+                .ok_or(ReconcileError::InvalidCurrentStateField("base.repo.id"))
+        })
+        .transpose()?;
+    if base_repo_id
+        .zip(nested_repo_id)
+        .is_some_and(|(base_id, nested_id)| base_id != nested_id)
+    {
+        return Err(ReconcileError::ResourceMismatch);
+    }
     let has_identity_field = repository.contains_key("full_name")
         || repository.contains_key("name")
         || repository
@@ -2865,6 +2936,10 @@ impl<S: ForgejoCurrentState> ForgejoCurrentState for CachedCurrentState<'_, S> {
         response
     }
 
+    fn verify_repository_access(&self, owner: &str, repository: &str) -> Result<(), ApiReadError> {
+        self.source.verify_repository_access(owner, repository)
+    }
+
     fn expected_html_url(&self, resource: &ResourceRef) -> String {
         self.source.expected_html_url(resource)
     }
@@ -2872,7 +2947,9 @@ impl<S: ForgejoCurrentState> ForgejoCurrentState for CachedCurrentState<'_, S> {
 
 /// When Forgejo includes issue repository metadata, bind it to the requested
 /// repository as well as checking the endpoint number and canonical HTML URL.
-/// Missing or null metadata remains compatible with partial API responses.
+/// Missing/null metadata remains compatible with partial API responses. If
+/// Forgejo returns an object, it must contain `full_name` or both `owner` and
+/// `name`; a lone component does not establish a repository identity.
 fn validate_current_issue_repository(
     current: &Value,
     resource: &ResourceRef,
@@ -2886,10 +2963,17 @@ fn validate_current_issue_repository(
     let repository = repository_value
         .as_object()
         .ok_or(ReconcileError::InvalidCurrentStateField("repository"))?;
-    let mut has_identity_field = false;
+    let full_name = repository.get("full_name");
+    let name = repository.get("name");
+    let owner = repository.get("owner");
+    if name.is_some() != owner.is_some() {
+        return Err(ReconcileError::InvalidCurrentStateField("repository"));
+    }
+    if full_name.is_none() && name.is_none() {
+        return Err(ReconcileError::InvalidCurrentStateField("repository"));
+    }
 
-    if let Some(full_name) = repository.get("full_name") {
-        has_identity_field = true;
+    if let Some(full_name) = full_name {
         let full_name = full_name
             .as_str()
             .ok_or(ReconcileError::InvalidCurrentStateField(
@@ -2899,8 +2983,7 @@ fn validate_current_issue_repository(
             return Err(ReconcileError::ResourceMismatch);
         }
     }
-    if let Some(name) = repository.get("name") {
-        has_identity_field = true;
+    if let Some(name) = name {
         let name = name
             .as_str()
             .ok_or(ReconcileError::InvalidCurrentStateField("repository.name"))?;
@@ -2908,8 +2991,7 @@ fn validate_current_issue_repository(
             return Err(ReconcileError::ResourceMismatch);
         }
     }
-    if let Some(owner) = repository.get("owner") {
-        has_identity_field = true;
+    if let Some(owner) = owner {
         let owner = owner
             .as_str()
             .ok_or(ReconcileError::InvalidCurrentStateField("repository.owner"))?;
@@ -2917,10 +2999,6 @@ fn validate_current_issue_repository(
             return Err(ReconcileError::ResourceMismatch);
         }
     }
-    if !has_identity_field {
-        return Err(ReconcileError::InvalidCurrentStateField("repository"));
-    }
-
     Ok(())
 }
 

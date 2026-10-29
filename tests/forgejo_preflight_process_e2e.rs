@@ -116,7 +116,11 @@ fn current_pull_request(base_sha: &str, head_sha: &str) -> Value {
         "base": {
             "ref": BASE_BRANCH,
             "sha": base_sha,
-            "repo": {"full_name": format!("{OWNER}/{REPOSITORY}")}
+            "repo": {
+                "owner": {"login": OWNER},
+                "name": REPOSITORY,
+                "full_name": format!("{OWNER}/{REPOSITORY}")
+            }
         },
         "head": {
             "sha": head_sha,

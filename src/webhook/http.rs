@@ -474,7 +474,7 @@ fn handle_webhook_request_inner(
             507,
             "inbox_capacity_exceeded",
             false,
-            "preserve a backup, apply a verified inbox compaction or migration, then manually redeliver if needed",
+            "pause webhook delivery and preserve a private copy; this build has no verified compaction or rotation command; do not truncate or edit the inbox",
         ),
         Err(WebhookError::Journal(JournalError::LockBusy)) => HttpResponse {
             status: 503,

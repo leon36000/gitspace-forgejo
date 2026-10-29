@@ -148,9 +148,20 @@ impl PullRequestSnapshotV1 {
             .ok_or(MergePreflightError::InvalidSnapshot)?;
         let base_repo = base
             .get("repo")
-            .and_then(|value| value.get("full_name"))
+            .and_then(serde_json::Value::as_object)
+            .ok_or(MergePreflightError::InvalidSnapshot)?;
+        let base_repo_full_name = base_repo
+            .get("full_name")
             .and_then(serde_json::Value::as_str);
-        if base_repo != Some(expected_repo.as_str()) {
+        let base_repo_name = base_repo.get("name").and_then(serde_json::Value::as_str);
+        let base_repo_owner_login = base_repo
+            .get("owner")
+            .and_then(|value| value.get("login"))
+            .and_then(serde_json::Value::as_str);
+        if base_repo_full_name != Some(expected_repo.as_str())
+            || base_repo_name != Some(repository)
+            || base_repo_owner_login != Some(owner)
+        {
             return Err(MergePreflightError::WrongScope);
         }
 

@@ -713,6 +713,19 @@ pub struct EventJournal {
     maximum_bytes: Option<u64>,
 }
 
+/// Exact journal bytes and the chain metadata verified while holding its
+/// shared sidecar lock. This is a consistent copy, not a quiescent restore
+/// point: callers must reconcile the source of truth or quiesce and replay
+/// deliveries acknowledged after the snapshot.
+#[derive(Clone, Debug, PartialEq, Eq)]
+pub struct EventJournalSnapshot {
+    pub bytes: Vec<u8>,
+    pub event_count: u64,
+    pub last_sequence: Option<u64>,
+    pub last_event_hash: Option<String>,
+    pub sha256: String,
+}
+
 /// Capability for journal transitions performed while an outer per-mission
 /// lock is held. Keeping this separate from `EventJournal` prevents merge
 /// callers from accidentally releasing that lock between durable transitions
@@ -930,11 +943,41 @@ impl EventJournal {
     /// when no smaller explicit limit was configured.
     pub fn replay_read_only(&self) -> Result<Vec<JournalEvent>, JournalError> {
         let _lock = FileLock::acquire(&self.lock_path()?)?;
+        self.validate_read_only_file()?;
+        let maximum_bytes = self
+            .maximum_bytes
+            .unwrap_or(MAX_WEBHOOK_INBOX_BYTES)
+            .min(MAX_WEBHOOK_INBOX_BYTES);
+        self.read_locked_with_options(Some(maximum_bytes), false)
+    }
+
+    /// Capture and validate the exact bounded source bytes under the journal
+    /// lock, without repairing a torn tail or modifying the journal.
+    pub fn snapshot_read_only(&self) -> Result<EventJournalSnapshot, JournalError> {
+        let _lock = FileLock::acquire(&self.lock_path()?)?;
+        self.validate_read_only_file()?;
+        let maximum_bytes = self
+            .maximum_bytes
+            .unwrap_or(MAX_WEBHOOK_INBOX_BYTES)
+            .min(MAX_WEBHOOK_INBOX_BYTES);
+        let (events, bytes) =
+            self.read_locked_with_options_and_capture(Some(maximum_bytes), false, true)?;
+        let bytes = bytes.ok_or(JournalError::InvalidEvent)?;
+        let event_count = u64::try_from(events.len()).map_err(|_| JournalError::InvalidEvent)?;
+        let last = events.last();
+        Ok(EventJournalSnapshot {
+            sha256: hex::encode(Sha256::digest(&bytes)),
+            bytes,
+            event_count,
+            last_sequence: last.map(|event| event.sequence),
+            last_event_hash: last.map(|event| event.hash.clone()),
+        })
+    }
+
+    fn validate_read_only_file(&self) -> Result<(), JournalError> {
         let metadata = match fs::symlink_metadata(&self.path) {
             Ok(metadata) => metadata,
-            Err(error) if error.kind() == std::io::ErrorKind::NotFound => {
-                return Ok(Vec::new());
-            }
+            Err(error) if error.kind() == std::io::ErrorKind::NotFound => return Ok(()),
             Err(error) => return Err(io_err(error)),
         };
         if !metadata.is_file()
@@ -945,11 +988,7 @@ impl EventJournal {
         {
             return Err(JournalError::InvalidEvent);
         }
-        let maximum_bytes = self
-            .maximum_bytes
-            .unwrap_or(MAX_WEBHOOK_INBOX_BYTES)
-            .min(MAX_WEBHOOK_INBOX_BYTES);
-        self.read_locked_with_options(Some(maximum_bytes), false)
+        Ok(())
     }
 
     /// Replay an inbox using the webhook limit even when the caller received
@@ -1092,6 +1131,16 @@ impl EventJournal {
         maximum_bytes: Option<u64>,
         repair_incomplete_tail: bool,
     ) -> Result<Vec<JournalEvent>, JournalError> {
+        self.read_locked_with_options_and_capture(maximum_bytes, repair_incomplete_tail, false)
+            .map(|(events, _)| events)
+    }
+
+    fn read_locked_with_options_and_capture(
+        &self,
+        maximum_bytes: Option<u64>,
+        repair_incomplete_tail: bool,
+        capture_bytes: bool,
+    ) -> Result<(Vec<JournalEvent>, Option<Vec<u8>>), JournalError> {
         let mut repair_file: Option<File> = None;
         let bytes = match maximum_bytes {
             Some(maximum_bytes) => {
@@ -1102,7 +1151,7 @@ impl EventJournal {
                 let file = match options.open(&self.path) {
                     Ok(file) => file,
                     Err(error) if error.kind() == std::io::ErrorKind::NotFound => {
-                        return Ok(Vec::new());
+                        return Ok((Vec::new(), capture_bytes.then_some(Vec::new())));
                     }
                     Err(error) => return Err(io_err(error)),
                 };
@@ -1132,7 +1181,7 @@ impl EventJournal {
             }
             None => {
                 if !self.path.exists() {
-                    return Ok(Vec::new());
+                    return Ok((Vec::new(), capture_bytes.then_some(Vec::new())));
                 }
                 fs::read(&self.path).map_err(io_err)?
             }
@@ -1165,7 +1214,7 @@ impl EventJournal {
                             .map_err(io_err)?;
                         Self::truncate_journal_file(&file, valid_bytes)?;
                     }
-                    return Ok(events);
+                    return Ok((events, None));
                 }
                 Err(_) => return Err(JournalError::Corrupt { line: index + 1 }),
             };
@@ -1187,7 +1236,7 @@ impl EventJournal {
                             .map_err(io_err)?;
                         Self::truncate_journal_file(&file, valid_bytes)?;
                     }
-                    return Ok(events);
+                    return Ok((events, None));
                 }
                 Err(_) => return Err(JournalError::Corrupt { line: index + 1 }),
             };
@@ -1223,7 +1272,7 @@ impl EventJournal {
                 file.sync_all().map_err(io_err)?;
             }
         }
-        Ok(events)
+        Ok((events, capture_bytes.then_some(bytes)))
     }
 
     fn open_verified_repair_file(
