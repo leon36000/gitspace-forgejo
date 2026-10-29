@@ -27,3 +27,10 @@ Les commandes, versions et sorties sont dans `commands.txt`, `contract-tests.log
 Le refus de transition est prouvé au contrat avec une fixture déterministe, `n=1`; le processus prouve la nouvelle lecture fraîche sur le cas stable, `n=1`. Aucun serveur Forgejo live, runner Actions, LLM ou AgentOS n’a été utilisé. Le troisième GET augmente la latence et la charge de lecture. Ce contrôle réduit la fenêtre de course mais ne fournit pas de snapshot atomique : un changement après le dernier GET reste possible. Les statuts Actions restent consultatifs et n’autorisent ni vérification indépendante ni fusion.
 
 Le lot n’adopte ni code Forgejo/GitSpace, ni licence, et n’engage aucun coût de modèle. Voir [la ligne CONT-464 de la matrice](../../docs/refusal-evidence-matrix.md) et [le checkpoint](../../docs/checkpoint.md). La mission globale reste incomplète.
+
+
+## Synchronisation et readback GitLab PC4
+
+Le commit `50ef4b9327204dd787cb84ff5bb94074a8c2c18d` synchronise le lot sur `codex/pc6-transfer-work-2026-10-28`. La branche est toujours inscriptible, non protégée et non par défaut; le SHA distant correspond au commit. Le diff GitLab rapporte 17 fichiers, 729 ajouts et 40 suppressions. Le readback confirme à l’identique les 11 fichiers de preuve créés et les 187 967 caractères du fichier `tests/webhook_reconcile_contract.rs`; les nouvelles sections source/test, matrice, checkpoint et manifeste sont présentes. Détails et chemins vérifiés : `remote-readback.json`. Le commit utilise `[skip ci]`; aucune pipeline n’a été lancée.
+
+Cela synchronise des contenus de fichiers via l’API GitLab. Le graphe Git PC6, les archives binaires et un runner/exécuteur sur PC4 ne sont pas transférés ou démontrés; les tests de ce lot ont été exécutés localement sur PC6.

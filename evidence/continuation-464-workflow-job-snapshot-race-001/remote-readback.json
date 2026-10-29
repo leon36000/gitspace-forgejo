@@ -1,0 +1,58 @@
+{
+  "project": {
+    "path": "root/gitspace-forgejo",
+    "id": "4",
+    "visibility": "private"
+  },
+  "branch": {
+    "name": "codex/pc6-transfer-work-2026-10-28",
+    "previous_head": "682a27d62b5f32a4de1e7f87c0380f78d46a3842",
+    "head": "50ef4b9327204dd787cb84ff5bb94074a8c2c18d",
+    "protected": false,
+    "default": false,
+    "can_push": true
+  },
+  "commit": {
+    "sha": "50ef4b9327204dd787cb84ff5bb94074a8c2c18d",
+    "message": "fix: reject changing workflow job snapshot [skip ci]",
+    "files": 17,
+    "additions": 729,
+    "deletions": 40,
+    "pipeline_triggered": false
+  },
+  "readback": {
+    "new_evidence_files": {
+      "verified": 11,
+      "expected": 11,
+      "exact_content_match": true
+    },
+    "tests/webhook_reconcile_contract.rs": {
+      "exact_content_match": true,
+      "characters": 187967,
+      "pages": 3
+    },
+    "src/webhook/reconcile.rs": {
+      "new_function_fragment_present": true,
+      "old_function_fragment_absent": true
+    },
+    "tests/webhook_receiver_process_e2e.rs": {
+      "new_process_case_present": true,
+      "old_case_fragment_absent": true
+    },
+    "docs/refusal-evidence-matrix.md": {
+      "new_row_present": true
+    },
+    "docs/checkpoint.md": {
+      "expected_continuation_fragment_present": true
+    },
+    "evidence/SHA256SUMS": {
+      "expected_continuation_rows_present": true
+    }
+  },
+  "limits": [
+    "Content snapshot via GitLab API; local Git commit graph is not mirrored.",
+    "Binary source archives remain untransferred.",
+    "No PC4 shell or runner execution; tests are PC6 local results.",
+    "No merge request, merge, default-branch write, or production change."
+  ]
+}
