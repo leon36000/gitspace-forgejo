@@ -1,7 +1,7 @@
 use agent_forge_core::{JournalEvent, webhook::reconcile::*};
 use serde_json::{Value, json};
 use sha2::{Digest, Sha256};
-use std::sync::Mutex;
+use std::{collections::VecDeque, sync::Mutex};
 
 struct FixtureApi {
     response: Result<Value, ApiReadError>,
@@ -284,6 +284,12 @@ struct WorkflowJobFixtureApi {
     requests: Mutex<Vec<ResourceRef>>,
 }
 
+struct WorkflowJobSequenceApi {
+    jobs: Mutex<VecDeque<Value>>,
+    run: Value,
+    requests: Mutex<Vec<ResourceRef>>,
+}
+
 impl ForgejoCurrentState for WorkflowRunFixtureApi {
     fn read_current(&self, resource: &ResourceRef) -> Result<Value, ApiReadError> {
         self.requests.lock().unwrap().push(format!("{resource:?}"));
@@ -300,6 +306,34 @@ impl ForgejoCurrentState for WorkflowJobFixtureApi {
         self.requests.lock().unwrap().push(resource.clone());
         match resource.kind {
             ResourceKind::WorkflowJob => Ok(self.job.clone()),
+            ResourceKind::WorkflowRun => Ok(self.run.clone()),
+            _ => Err(ApiReadError::Forbidden),
+        }
+    }
+
+    fn expected_html_url(&self, resource: &ResourceRef) -> String {
+        let index_in_repo = match &resource.id {
+            ResourceId::WorkflowRun { index_in_repo, .. }
+            | ResourceId::WorkflowJob { index_in_repo, .. } => index_in_repo,
+            _ => return String::new(),
+        };
+        format!(
+            "http://127.0.0.1:3130/{}/{}/actions/runs/{index_in_repo}",
+            resource.owner, resource.repository
+        )
+    }
+}
+
+impl ForgejoCurrentState for WorkflowJobSequenceApi {
+    fn read_current(&self, resource: &ResourceRef) -> Result<Value, ApiReadError> {
+        self.requests.lock().unwrap().push(resource.clone());
+        match resource.kind {
+            ResourceKind::WorkflowJob => self
+                .jobs
+                .lock()
+                .unwrap()
+                .pop_front()
+                .ok_or(ApiReadError::InvalidResponse),
             ResourceKind::WorkflowRun => Ok(self.run.clone()),
             _ => Err(ApiReadError::Forbidden),
         }
@@ -977,9 +1011,67 @@ fn workflow_job_readback_uses_current_job_and_parent_run_without_runner_details(
                     run_id: 7001,
                     index_in_repo: 41
                 }
+            },
+            ResourceRef {
+                kind: ResourceKind::WorkflowJob,
+                owner: "forge-admin".into(),
+                repository: "agent-forge-core".into(),
+                id: ResourceId::WorkflowJob {
+                    job_id: 9001,
+                    run_id: 7001,
+                    index_in_repo: 41,
+                    job_index: 1
+                }
             }
         ]
     );
+}
+
+#[test]
+fn workflow_job_readback_refuses_status_change_during_parent_read() {
+    let run_url = "http://127.0.0.1:3130/forge-admin/agent-forge-core/actions/runs/41";
+    let job_url = format!("{run_url}/jobs/1/attempt/2");
+    let api = WorkflowJobSequenceApi {
+        jobs: Mutex::new(VecDeque::from([
+            json!({
+                "id": 9001,
+                "run_id": 7001,
+                "status": "running",
+                "html_url": job_url
+            }),
+            json!({
+                "id": 9001,
+                "run_id": 7001,
+                "status": "success",
+                "html_url": job_url
+            }),
+        ])),
+        run: json!({
+            "id": 7001,
+            "index_in_repo": 41,
+            "status": "success",
+            "commit_sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "updated": "2026-10-26T11:05:00Z",
+            "html_url": run_url,
+            "repository": {
+                "full_name": "forge-admin/agent-forge-core",
+                "name": "agent-forge-core",
+                "owner": {"login": "forge-admin"}
+            }
+        }),
+        requests: Mutex::new(Vec::new()),
+    };
+
+    assert_eq!(
+        reconcile_inbox_event(&workflow_job_event(), &api),
+        Err(ReconcileError::ResourceMismatch),
+        "do not project the first job status beside a parent read that may have raced it"
+    );
+    let requests = api.requests.lock().unwrap();
+    assert_eq!(requests.len(), 3);
+    assert_eq!(requests[0].kind, ResourceKind::WorkflowJob);
+    assert_eq!(requests[1].kind, ResourceKind::WorkflowRun);
+    assert_eq!(requests[2].kind, ResourceKind::WorkflowJob);
 }
 
 #[test]
@@ -1035,7 +1127,7 @@ fn workflow_job_readback_refuses_api_url_for_another_job_index() {
         Err(ReconcileError::InvalidCurrentStateField("html_url")),
         "the API URL must still identify the job index in the signed event"
     );
-    assert_eq!(api.requests.lock().unwrap().len(), 2);
+    assert_eq!(api.requests.lock().unwrap().len(), 1);
 }
 
 #[test]
@@ -1074,7 +1166,7 @@ fn workflow_job_readback_does_not_project_or_follow_event_url_origin() {
     assert_eq!(reconciled.state, "success");
     assert_eq!(reconciled.html_url, api_job_url);
     assert!(!reconciled.html_url.contains("attacker.invalid"));
-    assert_eq!(api.requests.lock().unwrap().len(), 2);
+    assert_eq!(api.requests.lock().unwrap().len(), 3);
 }
 
 #[test]
@@ -1109,7 +1201,7 @@ fn workflow_job_readback_accepts_zero_based_first_job_and_rejects_unscoped_urls(
     let reconciled = reconcile_inbox_event(&first_job_event, &api)
         .expect("Forgejo uses zero-based indexes for job URLs");
     assert_eq!(reconciled.html_url, first_job_url);
-    assert_eq!(api.requests.lock().unwrap().len(), 2);
+    assert_eq!(api.requests.lock().unwrap().len(), 3);
 
     for invalid_job_url in [
         "https://attacker.invalid/forge-admin/agent-forge-core/actions/runs/41/jobs/0/attempt/1"
@@ -1128,8 +1220,8 @@ fn workflow_job_readback_accepts_zero_based_first_job_and_rejects_unscoped_urls(
         );
         assert_eq!(
             api.requests.lock().unwrap().len(),
-            2,
-            "job and parent must be read before the URL can be checked"
+            1,
+            "an invalid job URL is rejected before reading the parent"
         );
     }
 }

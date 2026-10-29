@@ -979,33 +979,13 @@ fn reconcile_workflow_job(
     source: &impl ForgejoCurrentState,
 ) -> Result<ReconciledState, ReconcileError> {
     let ResourceId::WorkflowJob {
-        job_id: expected_job_id,
         run_id,
         index_in_repo,
-        job_index: expected_job_index,
+        ..
     } = &resource.id
     else {
         return Err(ReconcileError::InvalidCurrentStateField("resource.id"));
     };
-    let current_job_id = current_job
-        .get("id")
-        .and_then(Value::as_u64)
-        .filter(|id| *id > 0)
-        .ok_or(ReconcileError::InvalidCurrentStateField("id"))?;
-    let current_run_id = current_job
-        .get("run_id")
-        .and_then(Value::as_u64)
-        .filter(|id| *id > 0)
-        .ok_or(ReconcileError::InvalidCurrentStateField("run_id"))?;
-    if current_job_id != *expected_job_id || current_run_id != *run_id {
-        return Err(ReconcileError::ResourceMismatch);
-    }
-    let state = current_job
-        .get("status")
-        .and_then(Value::as_str)
-        .filter(|status| valid_workflow_run_status(status))
-        .ok_or(ReconcileError::InvalidCurrentStateField("status"))?;
-
     let parent = ResourceRef {
         kind: ResourceKind::WorkflowRun,
         owner: resource.owner.clone(),
@@ -1015,6 +995,9 @@ fn reconcile_workflow_job(
             index_in_repo: *index_in_repo,
         },
     };
+    let expected_parent_html_url = source.expected_html_url(&parent);
+    let initial_job =
+        current_workflow_job_snapshot(&current_job, &resource, &expected_parent_html_url)?;
     let current_run = source.read_current(&parent).map_err(|error| match error {
         ApiReadError::NotFound => ReconcileError::ParentWorkflowRunNotFound {
             run_id: *run_id,
@@ -1023,24 +1006,26 @@ fn reconcile_workflow_job(
         error => ReconcileError::Source(error),
     })?;
     let run = current_workflow_run_snapshot(&current_run, &parent, source)?;
-    let html_url = current_job
-        .get("html_url")
-        .and_then(Value::as_str)
-        .ok_or(ReconcileError::InvalidCurrentStateField("html_url"))?;
-    let current_job_index = workflow_job_url_index_within_run(html_url, &run.html_url)
-        .ok_or(ReconcileError::InvalidCurrentStateField("html_url"))?;
-    if current_job_index != *expected_job_index {
-        return Err(ReconcileError::InvalidCurrentStateField("html_url"));
+    // The job status and parent SHA are separate API reads. Re-read the job
+    // after its parent and refuse if either projected job field changed while
+    // the parent was being fetched. This narrows, but cannot eliminate, the
+    // non-atomic snapshot window.
+    let fresh_job = source
+        .read_current_fresh(&resource)
+        .map_err(ReconcileError::Source)?;
+    let fresh_job = current_workflow_job_snapshot(&fresh_job, &resource, &run.html_url)?;
+    if initial_job != fresh_job {
+        return Err(ReconcileError::ResourceMismatch);
     }
 
     Ok(ReconciledState {
         delivery_id,
         resource,
-        state: state.to_owned(),
+        state: initial_job.status,
         // Forgejo's job response has no updated timestamp; expose the current
-        // parent run timestamp and SHA, which are read independently above.
+        // parent run timestamp and SHA after confirming the job read is stable.
         updated_at: run.updated_at.clone(),
-        html_url: html_url.to_owned(),
+        html_url: initial_job.html_url,
         head_sha: Some(run.head_sha.clone()),
         parent_workflow_run: Some(run),
         base_sha: None,
@@ -1056,6 +1041,60 @@ fn reconcile_workflow_job(
         comment: None,
         review_notification: None,
         release: None,
+    })
+}
+
+#[derive(Debug, PartialEq, Eq)]
+struct CurrentWorkflowJobSnapshot {
+    status: String,
+    html_url: String,
+}
+
+fn current_workflow_job_snapshot(
+    current_job: &Value,
+    resource: &ResourceRef,
+    expected_parent_html_url: &str,
+) -> Result<CurrentWorkflowJobSnapshot, ReconcileError> {
+    let ResourceId::WorkflowJob {
+        job_id: expected_job_id,
+        run_id: expected_run_id,
+        job_index: expected_job_index,
+        ..
+    } = &resource.id
+    else {
+        return Err(ReconcileError::InvalidCurrentStateField("resource.id"));
+    };
+    let current_job_id = current_job
+        .get("id")
+        .and_then(Value::as_u64)
+        .filter(|id| *id > 0)
+        .ok_or(ReconcileError::InvalidCurrentStateField("id"))?;
+    let current_run_id = current_job
+        .get("run_id")
+        .and_then(Value::as_u64)
+        .filter(|id| *id > 0)
+        .ok_or(ReconcileError::InvalidCurrentStateField("run_id"))?;
+    if current_job_id != *expected_job_id || current_run_id != *expected_run_id {
+        return Err(ReconcileError::ResourceMismatch);
+    }
+    let status = current_job
+        .get("status")
+        .and_then(Value::as_str)
+        .filter(|status| valid_workflow_run_status(status))
+        .ok_or(ReconcileError::InvalidCurrentStateField("status"))?;
+    let html_url = current_job
+        .get("html_url")
+        .and_then(Value::as_str)
+        .ok_or(ReconcileError::InvalidCurrentStateField("html_url"))?;
+    let current_job_index = workflow_job_url_index_within_run(html_url, expected_parent_html_url)
+        .ok_or(ReconcileError::InvalidCurrentStateField("html_url"))?;
+    if current_job_index != *expected_job_index {
+        return Err(ReconcileError::InvalidCurrentStateField("html_url"));
+    }
+
+    Ok(CurrentWorkflowJobSnapshot {
+        status: status.to_owned(),
+        html_url: html_url.to_owned(),
     })
 }
 

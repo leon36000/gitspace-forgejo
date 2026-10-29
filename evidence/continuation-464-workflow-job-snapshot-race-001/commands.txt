@@ -1,0 +1,24 @@
+Environnement
+=============
+Linux aarch64
+rustc 1.95.0 (59807616e 2026-04-14)
+cargo 1.95.0 (f2d3ce0bd 2026-03-21)
+bubblewrap 0.9.0
+Python 3.12.3
+Worktree HEAD de base : f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0 (worktree préexistant fortement modifié)
+
+Test rouge, avant le changement de production
+=============================================
+cargo test --offline --locked --test webhook_reconcile_contract workflow_job_readback_refuses_status_change_during_parent_read -- --exact
+Résultat : code 101; le test recevait Ok(ReconciledState) avec job `running` et parent `success`, au lieu de Err(ResourceMismatch).
+
+Vérification après correction
+=============================
+cargo test --offline --locked --test webhook_reconcile_contract
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_reads_workflow_job_and_parent_run_without_runner_details
+cargo fmt --all -- --check
+git diff --check
+sha256sum src/webhook/reconcile.rs tests/webhook_reconcile_contract.rs tests/webhook_receiver_process_e2e.rs docs/refusal-evidence-matrix.md docs/checkpoint.md > evidence/continuation-464-workflow-job-snapshot-race-001/source-sha256.txt
+python3 evidence/continuation-464-workflow-job-snapshot-race-001/append_manifests.py
+
+Les sorties des tests, du runner Bubblewrap, du formatage et du diff-check sont jointes. Le script d’ajout des manifestes vérifie les index du worktree et du projet après leur append.

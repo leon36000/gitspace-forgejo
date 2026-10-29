@@ -1,0 +1,14 @@
+Transcription concise de l’observation du test rouge (sortie complète non redirigée dans un fichier lors du premier run).
+
+Commande :
+cargo test --offline --locked --test webhook_reconcile_contract workflow_job_readback_refuses_status_change_during_parent_read -- --exact
+
+Sortie observée :
+running 1 test
+test workflow_job_readback_refuses_status_change_during_parent_read ... FAILED
+assertion failed: the first job status was projected beside a parent read that may have raced it
+left: Ok(ReconciledState { state: "running", parent_workflow_run.state: "success", ... })
+right: Err(ResourceMismatch)
+test result: FAILED. 0 passed; 1 failed; exit code 101
+
+Après le correctif, le contrat correspondant passe dans `contract-tests.log`.

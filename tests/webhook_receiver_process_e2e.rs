@@ -10408,6 +10408,20 @@ fn actual_reconcile_cli_process_reads_workflow_job_and_parent_run_without_runner
             }),
             Vec::new(),
         ),
+        (
+            200,
+            json!({
+                "id": 9001,
+                "run_id": 7001,
+                "status": "success",
+                "name": "fresh-api-job-name-private-marker",
+                "html_url": job_url,
+                "steps": [{"name": "fresh-api-step-private-marker", "status": "success"}],
+                "runs_on": ["fresh-api-runner-private-marker"],
+                "task_id": 43
+            }),
+            Vec::new(),
+        ),
     ]);
     let output = Command::new(env!("CARGO_BIN_EXE_forgejo-reconcile-local"))
         .env_clear()
@@ -10425,12 +10439,15 @@ fn actual_reconcile_cli_process_reads_workflow_job_and_parent_run_without_runner
         String::from_utf8_lossy(&output.stdout),
         String::from_utf8_lossy(&output.stderr)
     );
-    assert_eq!(requests.len(), 2);
+    assert_eq!(requests.len(), 3);
     assert!(requests[0].starts_with(&format!(
         "GET /api/v1/repos/{OWNER}/{REPOSITORY}/actions/jobs/9001 HTTP/1.1\r\n"
     )));
     assert!(requests[1].starts_with(&format!(
         "GET /api/v1/repos/{OWNER}/{REPOSITORY}/actions/runs/7001 HTTP/1.1\r\n"
+    )));
+    assert!(requests[2].starts_with(&format!(
+        "GET /api/v1/repos/{OWNER}/{REPOSITORY}/actions/jobs/9001 HTTP/1.1\r\n"
     )));
     assert!(requests.iter().all(|request| !request.contains("/logs")));
 
@@ -10438,7 +10455,7 @@ fn actual_reconcile_cli_process_reads_workflow_job_and_parent_run_without_runner
         .expect("workflow-job reconciliation returns structured JSON");
     assert_reconcile_schema_version(&value);
     assert_eq!(value["verdict"], "current_state_read");
-    assert_eq!(value["upstream_read_attempts"], 2);
+    assert_eq!(value["upstream_read_attempts"], 3);
     assert_eq!(value["delivery_id"], "workflow-job-current-readback");
     assert_eq!(value["resource"]["kind"], "workflow_job");
     assert_eq!(value["resource"]["job_id"], 9001);
@@ -10486,6 +10503,9 @@ fn actual_reconcile_cli_process_reads_workflow_job_and_parent_run_without_runner
         "api-step-private-marker",
         "api-runner-private-marker",
         "api-event-private-marker",
+        "fresh-api-job-name-private-marker",
+        "fresh-api-step-private-marker",
+        "fresh-api-runner-private-marker",
     ] {
         assert!(
             !output_text.contains(private_marker),
