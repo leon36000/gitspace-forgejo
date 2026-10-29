@@ -1,8 +1,8 @@
 """Process-level check for the fixed host policy and schema-v3 admission path.
 
-This test builds a temporary copy containing only Cargo.toml, Cargo.lock and
-src/. Its compile-time CARGO_MANIFEST_DIR therefore points at the temporary
-fixture, never the product checkout's private .runtime directory.
+This test builds a temporary copy of Cargo.toml, Cargo.lock, src/, and the
+compile-time mission profile fixture. Its CARGO_MANIFEST_DIR therefore points
+at the temporary fixture, never the product checkout's private .runtime.
 """
 
 from __future__ import annotations
@@ -26,6 +26,7 @@ OWNER = "forge-admin"
 REPOSITORY = "agent-forge-core"
 BASE = "1111111111111111111111111111111111111111"
 HEAD = "2222222222222222222222222222222222222222"
+CHANGED_HEAD = "4444444444444444444444444444444444444444"
 MERGE = "3333333333333333333333333333333333333333"
 REQUIREMENTS = (
     b'{"schema_version":3,"id":"REQ-001","revision":1,'
@@ -42,6 +43,10 @@ class _Fixture:
     def __init__(self, source: bytes) -> None:
         self.source = source
         self.reviewer_id = 9001
+        self.pull_request_head = HEAD
+        self.pull_request_heads_read: list[str] = []
+        self.review_responses_until_pull_request_head_change: int | None = None
+        self.review_response_count = 0
         self.requests: list[str] = []
         self.lock = threading.Lock()
 
@@ -59,6 +64,11 @@ class _Fixture:
                 {
                     "number": 41,
                     "html_url": f"{ORIGIN}/{OWNER}/{REPOSITORY}/issues/41",
+                    "repository": {
+                        "owner": OWNER,
+                        "name": REPOSITORY,
+                        "full_name": f"{OWNER}/{REPOSITORY}",
+                    },
                     "state": "open",
                     "title": "Implement duration parsing",
                     "body": "Implement a duration parser.",
@@ -71,6 +81,7 @@ class _Fixture:
                     "page": 1,
                     "total_count": 2,
                     "truncated": False,
+                    "sha": BASE,
                     "tree": [
                         {"path": "requirements/REQ-001.json", "type": "blob", "mode": "100644"},
                         {"path": "src/lib.rs", "type": "blob", "mode": "100644"},
@@ -84,6 +95,7 @@ class _Fixture:
         if route == f"/{OWNER}/{REPOSITORY}/raw/commit/{BASE}/src/lib.rs":
             return 200, [], self.source
         if route == f"/api/v1/repos/{OWNER}/{REPOSITORY}/pulls/77":
+            self.pull_request_heads_read.append(self.pull_request_head)
             return 200, [], json.dumps(
                 {
                     "number": 77,
@@ -95,9 +107,13 @@ class _Fixture:
                     "base": {
                         "ref": "main",
                         "sha": BASE,
-                        "repo": {"full_name": f"{OWNER}/{REPOSITORY}"},
+                        "repo": {
+                            "owner": {"login": OWNER},
+                            "name": REPOSITORY,
+                            "full_name": f"{OWNER}/{REPOSITORY}",
+                        },
                     },
-                    "head": {"sha": HEAD},
+                    "head": {"sha": self.pull_request_head},
                     "merge_commit_sha": MERGE,
                 }
             ).encode()
@@ -116,6 +132,12 @@ class _Fixture:
                     }
                 ]
             ).encode()
+            self.review_response_count += 1
+            if self.review_responses_until_pull_request_head_change is not None:
+                self.review_responses_until_pull_request_head_change -= 1
+                if self.review_responses_until_pull_request_head_change == 0:
+                    self.review_responses_until_pull_request_head_change = None
+                    self.pull_request_head = CHANGED_HEAD
             return 200, [("X-Total-Count", "1")], body
         return 404, [], b'{"message":"not found"}'
 
@@ -135,20 +157,24 @@ class MissionV3CliProcessTest(unittest.TestCase):
         shutil.copy2(ROOT / "Cargo.toml", cls.package / "Cargo.toml")
         shutil.copy2(ROOT / "Cargo.lock", cls.package / "Cargo.lock")
         shutil.copytree(ROOT / "src", cls.package / "src")
+        profile_fixture = Path("tests/fixtures/mission-012/requirements/MISSION-012-CLAMP-001.json")
+        temporary_profile_fixture = cls.package / profile_fixture
+        temporary_profile_fixture.parent.mkdir(parents=True, mode=0o700)
+        shutil.copy2(ROOT / profile_fixture, temporary_profile_fixture)
 
         global ORIGIN
         cls.fixture = _Fixture((ROOT / "src" / "lib.rs").read_bytes())
         cls.server = ThreadingHTTPServer(("127.0.0.1", 0), cls._handler_for(cls.fixture))
         cls.port = cls.server.server_address[1]
         ORIGIN = f"http://127.0.0.1:{cls.port}"
-        source_path = cls.package / "src" / "bin" / "forgejo-mission-local.rs"
-        source_text = source_path.read_text(encoding="utf-8")
-        fixed_origin = 'const LOCAL_FORGEJO_ORIGIN: &str = "http://127.0.0.1:3130";'
-        if source_text.count(fixed_origin) != 1:
+        profile_path = cls.package / "src" / "mission_profile.rs"
+        profile_text = profile_path.read_text(encoding="utf-8")
+        fixed_origin = '    origin: "http://127.0.0.1:3130",'
+        if profile_text.count(fixed_origin) != 1:
             cls.server.server_close()
-            raise AssertionError("expected exactly one fixed local profile origin in copied source")
-        source_path.write_text(
-            source_text.replace(fixed_origin, f'const LOCAL_FORGEJO_ORIGIN: &str = "{ORIGIN}";'),
+            raise AssertionError("expected exactly one duration-parser profile origin in copied source")
+        profile_path.write_text(
+            profile_text.replace(fixed_origin, f'    origin: "{ORIGIN}",'),
             encoding="utf-8",
         )
         cls.worker = threading.Thread(target=cls.server.serve_forever, daemon=True)
@@ -237,7 +263,11 @@ class MissionV3CliProcessTest(unittest.TestCase):
                 timeout=45,
                 check=False,
             )
-            self.assertEqual(accepted.returncode, 0, accepted.stdout + accepted.stderr)
+            self.assertEqual(
+                accepted.returncode,
+                0,
+                f"{accepted.stdout}{accepted.stderr} observed routes={fixture.requests}",
+            )
             receipt = json.loads(accepted.stdout)
             self.assertEqual(receipt["admission_schema_version"], 3)
             self.assertEqual(receipt["requirement_arbitration"]["reviewer_ids"], [9001])
@@ -251,6 +281,50 @@ class MissionV3CliProcessTest(unittest.TestCase):
             journal_before = (runtime / "mission-execution.jsonl").read_bytes()
             with fixture.lock:
                 accepted_routes = list(fixture.requests)
+
+            # Move the source PR head after the second complete review snapshot.
+            # Admission must re-read the PR after that snapshot and fail before
+            # it reserves a second durable mission allocation.
+            fixture.pull_request_head = HEAD
+            fixture.pull_request_heads_read.clear()
+            fixture.review_response_count = 0
+            fixture.review_responses_until_pull_request_head_change = 2
+            with fixture.lock:
+                fixture.requests.clear()
+            changed_pr_args = args.copy()
+            changed_pr_args[10] = "fixture-allocation-pr-head-race"
+            changed_pr = subprocess.run(
+                changed_pr_args,
+                cwd=self.package,
+                env=self.run_env,
+                capture_output=True,
+                text=True,
+                timeout=45,
+                check=False,
+            )
+            self.assertNotEqual(
+                changed_pr.returncode,
+                0,
+                f"expected source-PR movement refusal; exit={changed_pr.returncode} "
+                f"stdout={changed_pr.stdout!r} stderr={changed_pr.stderr!r} "
+                f"head_reads={fixture.pull_request_heads_read!r} routes={fixture.requests!r}",
+            )
+            changed_pr_refusal = json.loads(changed_pr.stdout)
+            self.assertEqual(
+                changed_pr_refusal["error"]["code"],
+                "mission_requirement_review_snapshot_changed",
+            )
+            self.assertEqual((runtime / "mission-execution.jsonl").read_bytes(), journal_before)
+            changed_pr_head_reads = list(fixture.pull_request_heads_read)
+            self.assertEqual(changed_pr_head_reads, [HEAD, HEAD, CHANGED_HEAD])
+            self.assertIsNone(fixture.review_responses_until_pull_request_head_change)
+            with fixture.lock:
+                changed_pr_routes = list(fixture.requests)
+            pull_route = f"/api/v1/repos/{OWNER}/{REPOSITORY}/pulls/77"
+            reviews_route = f"/api/v1/repos/{OWNER}/{REPOSITORY}/pulls/77/reviews?page=1&limit=50"
+            self.assertEqual(changed_pr_routes.count(pull_route), 3)
+            self.assertEqual(changed_pr_routes.count(reviews_route), 2)
+            self.assertEqual(changed_pr_routes[-1], pull_route)
 
             policy_path.unlink()
             with fixture.lock:
@@ -300,7 +374,7 @@ class MissionV3CliProcessTest(unittest.TestCase):
                 unauthorized_routes = list(fixture.requests)
 
             self.assertEqual(
-                accepted_routes.count(f"/api/v1/repos/{OWNER}/{REPOSITORY}/pulls/77"), 2
+                accepted_routes.count(f"/api/v1/repos/{OWNER}/{REPOSITORY}/pulls/77"), 3
             )
             self.assertEqual(
                 accepted_routes.count(
@@ -314,9 +388,9 @@ class MissionV3CliProcessTest(unittest.TestCase):
                     {
                         "schema_version": 1,
                         "fixture_only": True,
-                        "binary_manifest_root": "temporary copy of Cargo.toml, Cargo.lock, src/",
+                        "binary_manifest_root": "temporary copy of Cargo.toml, Cargo.lock, src/, and one compile-time mission fixture",
                         "test_profile_origin": ORIGIN,
-                        "temporary_source_change": "fixed profile origin changed only to this test's ephemeral loopback port",
+                        "temporary_source_change": "duration-parser profile catalog origin changed only to this test's ephemeral loopback port",
                         "accepted_exit_code": accepted.returncode,
                         "admission_schema_version": receipt["admission_schema_version"],
                         "requirement_sha256": receipt["requirement_arbitration"]["requirements_sha256"],
@@ -329,6 +403,10 @@ class MissionV3CliProcessTest(unittest.TestCase):
                                 f"/api/v1/repos/{OWNER}/{REPOSITORY}/pulls/77/reviews?page=1&limit=50"
                             ),
                         },
+                        "changed_source_pr_head_error": changed_pr_refusal["error"]["code"],
+                        "changed_source_pr_head_reads": changed_pr_head_reads,
+                        "changed_source_pr_head_routes": changed_pr_routes,
+                        "journal_unchanged_on_changed_source_pr_head": True,
                         "agent_runtime_invoked": receipt["agent_runtime_invoked"],
                         "missing_policy_error": refusal["error"]["code"],
                         "missing_policy_routes": refused_routes,

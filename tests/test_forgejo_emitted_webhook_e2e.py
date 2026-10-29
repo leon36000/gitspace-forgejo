@@ -3134,13 +3134,14 @@ class DeleteReconciliationValidationTests(unittest.TestCase):
         return {
             "schema_version": 19,
             "api_version": "forgejo-rest-v1",
-            "verdict": "inconclusive",
+            "verdict": "current_state_read",
             "delivery_id": "forgejo-delete-001",
-            "upstream_read_attempts": 1,
-            "error": {
-                "code": "resource_not_found",
-                "retryable": False,
-                "details": {"resource": resource},
+            "upstream_read_attempts": 3,
+            "resource": resource,
+            "canonical_state": {
+                "state": "absent",
+                "head_sha": None,
+                "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/src/branch/agent%2Fnative-delete-proof",
             },
         }
 
@@ -3153,8 +3154,14 @@ class DeleteReconciliationValidationTests(unittest.TestCase):
             "expected_present": False,
         }
 
-    def test_accepts_only_inconclusive_not_found_for_deleted_branch(self) -> None:
-        self.validate_result(1, self._result(), **self._kwargs())
+    def test_accepts_verified_absence_after_repository_and_fresh_branch_reads(self) -> None:
+        self.validate_result(0, self._result(), **self._kwargs())
+
+    def test_refuses_absence_without_repository_and_fresh_branch_reads(self) -> None:
+        result = self._result()
+        result["upstream_read_attempts"] = 2
+        with self.assertRaisesRegex(ValueError, "readable repository and a fresh branch 404"):
+            self.validate_result(0, result, **self._kwargs())
 
     def test_accepts_current_state_read_for_recreated_branch(self) -> None:
         result = self._result()
@@ -3182,7 +3189,7 @@ class DeleteReconciliationValidationTests(unittest.TestCase):
         }
         result["canonical_state"] = {"state": "present", "head_sha": "a" * 40}
 
-        with self.assertRaisesRegex(ValueError, "inconclusive"):
+        with self.assertRaisesRegex(ValueError, "branch absence"):
             self.validate_result(0, result, **self._kwargs())
 
 
@@ -3242,19 +3249,29 @@ class BranchRefBatchReconciliationValidationTests(unittest.TestCase):
 
     def test_accepts_native_create_and_delete_when_branch_is_absent_at_readback(self) -> None:
         _, events, batch = self._input()
+        resource = batch["results"][0]["resource"]
         batch["verdict"] = "inconclusive"
+        batch["upstream_read_attempts"] = 3
         batch["results"] = [
             {
-                "delivery_id": event["delivery_id"],
+                "delivery_id": events[0]["delivery_id"],
                 "verdict": "inconclusive",
                 "error": {
                     "code": "resource_not_found",
                     "retryable": False,
-                    "action": "verify the branch name and repository access; HTTP 404 does not distinguish an absent branch from an inaccessible repository",
-                    "details": {"resource": batch["results"][index]["resource"]},
+                    "details": {"resource": resource},
                 },
-            }
-            for index, event in enumerate(events)
+            },
+            {
+                "delivery_id": events[1]["delivery_id"],
+                "verdict": "current_state_read",
+                "resource": dict(resource),
+                "canonical_state": {
+                    "state": "absent",
+                    "head_sha": None,
+                    "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/src/branch/agent%2Fnative-delete-proof",
+                },
+            },
         ]
         checked = self.validate_batch(
             1,
@@ -3266,7 +3283,10 @@ class BranchRefBatchReconciliationValidationTests(unittest.TestCase):
             current_head_sha=None,
             expected_present=False,
         )
-        self.assertEqual([item["delivery_id"] for item in checked], [event["delivery_id"] for event in events])
+        self.assertEqual(
+            [item["verdict"] for item in checked],
+            ["inconclusive", "current_state_read"],
+        )
 
     def test_accepts_same_deliveries_retried_after_branch_becomes_readable(self) -> None:
         head, events, present = self._input()
@@ -3274,21 +3294,27 @@ class BranchRefBatchReconciliationValidationTests(unittest.TestCase):
             "schema_version": 23,
             "api_version": "forgejo-rest-v1",
             "verdict": "inconclusive",
-            "upstream_read_attempts": 1,
+            "upstream_read_attempts": 3,
             "results": [
                 {
-                    "delivery_id": event["delivery_id"],
+                    "delivery_id": events[0]["delivery_id"],
                     "verdict": "inconclusive",
                     "error": {
                         "code": "resource_not_found",
                         "retryable": False,
-                        "action": "HTTP 404 does not distinguish an absent branch from an inaccessible repository",
-                        "details": {
-                            "resource": present["results"][index]["resource"],
-                        },
+                        "details": {"resource": present["results"][0]["resource"]},
                     },
-                }
-                for index, event in enumerate(events)
+                },
+                {
+                    "delivery_id": events[1]["delivery_id"],
+                    "verdict": "current_state_read",
+                    "resource": dict(present["results"][1]["resource"]),
+                    "canonical_state": {
+                        "state": "absent",
+                        "head_sha": None,
+                        "html_url": present["results"][1]["canonical_state"]["html_url"],
+                    },
+                },
             ],
         }
         validate_retry = getattr(
@@ -3310,7 +3336,10 @@ class BranchRefBatchReconciliationValidationTests(unittest.TestCase):
             [item["delivery_id"] for item in first],
             [item["delivery_id"] for item in second],
         )
-        self.assertEqual([item["verdict"] for item in first], ["inconclusive", "inconclusive"])
+        self.assertEqual(
+            [item["verdict"] for item in first],
+            ["inconclusive", "current_state_read"],
+        )
         self.assertEqual([item["verdict"] for item in second], ["current_state_read", "current_state_read"])
 
     def test_rejects_retry_when_a_captured_delivery_id_changes(self) -> None:
@@ -3319,19 +3348,27 @@ class BranchRefBatchReconciliationValidationTests(unittest.TestCase):
             "schema_version": 23,
             "api_version": "forgejo-rest-v1",
             "verdict": "inconclusive",
-            "upstream_read_attempts": 1,
+            "upstream_read_attempts": 3,
             "results": [
                 {
-                    "delivery_id": event["delivery_id"],
+                    "delivery_id": events[0]["delivery_id"],
                     "verdict": "inconclusive",
                     "error": {
                         "code": "resource_not_found",
                         "retryable": False,
-                        "action": "HTTP 404 does not distinguish an absent branch from an inaccessible repository",
-                        "details": {"resource": present["results"][index]["resource"]},
+                        "details": {"resource": present["results"][0]["resource"]},
                     },
-                }
-                for index, event in enumerate(events)
+                },
+                {
+                    "delivery_id": events[1]["delivery_id"],
+                    "verdict": "current_state_read",
+                    "resource": dict(present["results"][1]["resource"]),
+                    "canonical_state": {
+                        "state": "absent",
+                        "head_sha": None,
+                        "html_url": present["results"][1]["canonical_state"]["html_url"],
+                    },
+                },
             ],
         }
         changed = [dict(event) for event in events]
@@ -3378,6 +3415,7 @@ class BranchRefBatchReconciliationValidationTests(unittest.TestCase):
     def test_refuses_present_state_when_batch_expected_deleted_branch(self) -> None:
         head, events, batch = self._input()
         batch["verdict"] = "inconclusive"
+        batch["upstream_read_attempts"] = 3
         batch["results"][0]["verdict"] = "inconclusive"
         batch["results"][0]["error"] = {
             "code": "resource_not_found",
@@ -3385,7 +3423,8 @@ class BranchRefBatchReconciliationValidationTests(unittest.TestCase):
             "action": "verify the branch name and repository access; HTTP 404 does not distinguish an absent branch from an inaccessible repository",
             "details": {"resource": batch["results"][0]["resource"]},
         }
-        with self.assertRaisesRegex(ValueError, "absence inconclusive"):
+        batch["results"][0].pop("canonical_state")
+        with self.assertRaisesRegex(ValueError, "delete result lacks a verified absent branch state"):
             self.validate_batch(
                 1,
                 events,
@@ -3400,6 +3439,7 @@ class BranchRefBatchReconciliationValidationTests(unittest.TestCase):
     def test_refuses_missing_branch_result_without_404_ambiguity_or_order_binding(self) -> None:
         _, events, batch = self._input()
         batch["verdict"] = "inconclusive"
+        batch["upstream_read_attempts"] = 3
         batch["results"] = [
             {
                 "delivery_id": event["delivery_id"],
@@ -3413,7 +3453,7 @@ class BranchRefBatchReconciliationValidationTests(unittest.TestCase):
             }
             for index, event in enumerate(events)
         ]
-        with self.assertRaisesRegex(ValueError, "absence inconclusive"):
+        with self.assertRaisesRegex(ValueError, "delete result lacks a verified absent branch state"):
             self.validate_batch(
                 1,
                 events,
@@ -3425,10 +3465,10 @@ class BranchRefBatchReconciliationValidationTests(unittest.TestCase):
                 expected_present=False,
             )
 
-    def test_rejects_duplicate_reads_or_reordered_delivery_results(self) -> None:
+    def test_rejects_missing_read_or_reordered_delivery_results(self) -> None:
         head, events, batch = self._input()
-        batch["upstream_read_attempts"] = 2
-        with self.assertRaisesRegex(ValueError, "one upstream read"):
+        batch["upstream_read_attempts"] = 0
+        with self.assertRaisesRegex(ValueError, "must perform an upstream read"):
             self.validate_batch(
                 0, events, batch, owner="forge-admin", repository="agent-forge-core",
                 branch="agent/native-delete-proof", current_head_sha=head,

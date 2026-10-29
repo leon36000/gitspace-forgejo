@@ -118,11 +118,20 @@ fn reconcile_refuses_an_oversized_inbox_without_changing_it() {
 
     assert_eq!(output.status.code(), Some(1));
     assert!(output.stdout.is_empty());
+    let stderr = String::from_utf8_lossy(&output.stderr);
     assert!(
-        String::from_utf8_lossy(&output.stderr).contains("inbox_capacity_exceeded"),
-        "unexpected error: {}",
-        String::from_utf8_lossy(&output.stderr)
+        stderr.contains("inbox_capacity_exceeded"),
+        "unexpected error: {stderr}"
     );
+    assert!(
+        stderr.contains("reconciliation stopped without changing the inbox"),
+        "unexpected recovery guidance: {stderr}"
+    );
+    assert!(
+        stderr.contains("no verified compaction or rotation command"),
+        "must not direct operators to an unavailable operation: {stderr}"
+    );
+    assert!(stderr.contains("do not truncate or edit the inbox"));
     assert_eq!(fs::metadata(&path).unwrap().len(), MAX_INBOX_BYTES + 1);
     fs::remove_dir_all(root).expect("remove private test fixture");
 }
@@ -168,11 +177,17 @@ fn receiver_refuses_an_oversized_inbox_before_binding() {
 
     assert_eq!(output.status.code(), Some(2));
     assert!(output.stdout.is_empty());
+    let stderr = String::from_utf8_lossy(&output.stderr);
     assert!(
-        String::from_utf8_lossy(&output.stderr).contains("webhook inbox exceeds"),
-        "unexpected startup error: {}",
-        String::from_utf8_lossy(&output.stderr)
+        stderr.contains("webhook inbox exceeds"),
+        "unexpected startup error: {stderr}"
     );
+    assert!(
+        stderr.contains("startup stopped without changing the inbox"),
+        "unexpected recovery guidance: {stderr}"
+    );
+    assert!(stderr.contains("no verified compaction or rotation command"));
+    assert!(stderr.contains("do not truncate or edit the inbox"));
     assert_eq!(fs::metadata(&path).unwrap().len(), MAX_INBOX_BYTES + 1);
     fs::remove_dir_all(root).expect("remove private test fixture");
 }
@@ -191,11 +206,18 @@ fn full_inbox_returns_actionable_http_error_without_creating_an_event() {
     assert_eq!(response.status, 507);
     assert_eq!(response.body["error"]["code"], "inbox_capacity_exceeded");
     assert_eq!(response.body["error"]["retryable"], false);
+    let action = response.body["error"]["action"].as_str().unwrap();
     assert!(
-        response.body["error"]["action"]
-            .as_str()
-            .unwrap()
-            .contains("backup")
+        action.contains("pause webhook delivery"),
+        "action: {action}"
+    );
+    assert!(
+        action.contains("no verified compaction or rotation command"),
+        "action: {action}"
+    );
+    assert!(
+        action.contains("do not truncate or edit the inbox"),
+        "action: {action}"
     );
     assert!(
         !path.exists(),

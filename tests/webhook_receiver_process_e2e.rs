@@ -16224,6 +16224,110 @@ fn actual_reconcile_cli_process_keeps_fork_pull_request_inconclusive_without_hos
 
 #[test]
 #[ignore = "run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint"]
+fn actual_reconcile_cli_process_refuses_contradictory_current_base_repository_ids() {
+    const NUMBER: u64 = 45;
+    let scratch = ScratchDir::new();
+    let secret = scratch.path().join("webhook.secret");
+    let journal_path = scratch.path().join("inbox.jsonl");
+    write_secret(&secret);
+    let delivery_id = "cli-pr-contradictory-current-base-repository-ids-45";
+    let event = serde_json::to_vec(&json!({
+        "action": "synchronized",
+        "repository": {"full_name": format!("{OWNER}/{REPOSITORY}")},
+        "pull_request": {
+            "number": NUMBER,
+            "state": "open",
+            "merged": false,
+            "head": {
+                "ref": "feature/agent-change",
+                "sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "repo": {"full_name": "contributor/agent-forge-core"}
+            },
+            "base": {
+                "ref": "main",
+                "sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                "repo": {"full_name": format!("{OWNER}/{REPOSITORY}")}
+            }
+        }
+    }))
+    .expect("serialize signed fork PR notification with configured base");
+
+    let (mut receiver, address) = start_ready_receiver(&secret, &journal_path);
+    let (status, accepted) = send(address, &request_event(delivery_id, "pull_request", &event));
+    assert_eq!(status, 202);
+    assert_eq!(accepted["accepted"], true);
+    assert_eq!(accepted["reconcile_required"], true);
+    assert!(stop_receiver(&mut receiver).success());
+    let journal_before = fs::read(&journal_path).expect("snapshot durable fork PR delivery");
+
+    let fixture = start_cli_http_fixture(
+        200,
+        json!({
+            "number": NUMBER,
+            "state": "open",
+            "merged": false,
+            "draft": false,
+            "updated_at": "2026-10-25T17:00:00Z",
+            "html_url": format!("http://127.0.0.1:3130/{OWNER}/{REPOSITORY}/pulls/{NUMBER}"),
+            "head": {
+                "sha": "1111111111111111111111111111111111111111",
+                "repo": {"full_name": "contributor/agent-forge-core"}
+            },
+            "base": {
+                "ref": "main",
+                "sha": "2222222222222222222222222222222222222222",
+                "repo_id": 18,
+                "repo": {
+                    "id": 17,
+                    "full_name": format!("{OWNER}/{REPOSITORY}"),
+                    "name": REPOSITORY,
+                    "owner": {"login": OWNER}
+                }
+            }
+        }),
+        1,
+    );
+    let output = Command::new(env!("CARGO_BIN_EXE_forgejo-reconcile-local"))
+        .env_clear()
+        .arg(&journal_path)
+        .arg(delivery_id)
+        .stdin(Stdio::null())
+        .output()
+        .expect("run the actual reconciler against contradictory numeric repository ids");
+    let requests = fixture
+        .join()
+        .expect("contradictory current-base API fixture completed");
+
+    assert_eq!(output.status.code(), Some(1));
+    assert_eq!(requests.len(), 1);
+    assert!(requests[0].starts_with(&format!(
+        "GET /api/v1/repos/{OWNER}/{REPOSITORY}/pulls/{NUMBER} HTTP/1.1\r\n"
+    )));
+    assert!(
+        !requests[0]
+            .lines()
+            .any(|line| line.to_ascii_lowercase().starts_with("authorization:")),
+        "the local CLI must not send an authorization header"
+    );
+
+    let value: Value = serde_json::from_slice(&output.stdout)
+        .expect("contradictory current-base IDs refusal is structured JSON");
+    assert_reconcile_schema_version(&value);
+    assert_eq!(value["verdict"], "inconclusive");
+    assert_eq!(value["delivery_id"], delivery_id);
+    assert_eq!(value["upstream_read_attempts"], 1);
+    assert_eq!(value["error"]["code"], "resource_mismatch");
+    assert_eq!(value["error"]["retryable"], false);
+    assert!(value.get("canonical_state").is_none());
+    assert_eq!(
+        fs::read(&journal_path).expect("re-read fork PR delivery journal"),
+        journal_before,
+        "contradictory current base IDs must not rewrite the durable webhook"
+    );
+}
+
+#[test]
+#[ignore = "run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint"]
 fn actual_reconcile_cli_process_refuses_foreign_current_base_repository_after_fork_delivery() {
     const NUMBER: u64 = 44;
     let scratch = ScratchDir::new();
@@ -17213,6 +17317,7 @@ fn actual_reconcile_cli_process_routes_issue_comment_pr_conversation_to_pull_req
                 "number": 23,
                 "state": "closed",
                 "merged": true,
+                "draft": false,
                 "merge_commit_sha": "3333333333333333333333333333333333333333",
                 "updated_at": "2026-10-25T12:00:00Z",
                 "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/23",
@@ -17292,6 +17397,1019 @@ fn actual_reconcile_cli_process_routes_issue_comment_pr_conversation_to_pull_req
     assert_ne!(
         value["canonical_state"]["base_sha"],
         "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    );
+}
+
+#[test]
+#[ignore = "run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint"]
+fn actual_reconcile_cli_process_refuses_foreign_pr_base_before_reading_comment() {
+    const NUMBER: u64 = 23;
+    const COMMENT_ID: u64 = 915;
+    let scratch = ScratchDir::new();
+    let secret = scratch.path().join("webhook.secret");
+    let journal_path = scratch.path().join("inbox.jsonl");
+    write_secret(&secret);
+    let delivery_id = "cli-pr-comment-foreign-base-23";
+    let body = serde_json::to_vec(&json!({
+        "action": "created",
+        "repository": {"full_name": format!("{OWNER}/{REPOSITORY}")},
+        "issue": {"number": NUMBER, "state": "open"},
+        "comment": {"id": COMMENT_ID, "body": "untrusted webhook text"},
+        "is_pull": true,
+        "pull_request": {"number": NUMBER, "state": "open"}
+    }))
+    .expect("serialize signed pull request conversation comment");
+
+    let (mut receiver, address) = start_ready_receiver(&secret, &journal_path);
+    let (status, accepted) = send(address, &request_event(delivery_id, "issue_comment", &body));
+    assert_eq!(status, 202);
+    assert_eq!(accepted["accepted"], true);
+    assert!(stop_receiver(&mut receiver).success());
+    let journal_before = fs::read(&journal_path).expect("snapshot accepted comment journal");
+
+    let pr_url = format!("http://127.0.0.1:3130/{OWNER}/{REPOSITORY}/pulls/{NUMBER}");
+    let fixture = start_cli_http_fixture(
+        200,
+        json!({
+            "number": NUMBER,
+            "state": "open",
+            "merged": false,
+            "draft": false,
+            "updated_at": "2026-10-26T12:00:00Z",
+            "html_url": pr_url,
+            "head": {"sha": "1111111111111111111111111111111111111111"},
+            "base": {
+                "sha": "2222222222222222222222222222222222222222",
+                "repo": {
+                    "full_name": "other-owner/other-repository",
+                    "name": "other-repository",
+                    "owner": {"login": "other-owner"}
+                }
+            }
+        }),
+        1,
+    );
+    let output = Command::new(env!("CARGO_BIN_EXE_forgejo-reconcile-local"))
+        .env_clear()
+        .arg(&journal_path)
+        .arg(delivery_id)
+        .stdin(Stdio::null())
+        .output()
+        .expect("run the actual CLI against a foreign PR base fixture");
+    let requests = fixture.join().expect("foreign PR base fixture completed");
+
+    assert_eq!(output.status.code(), Some(1));
+    assert_eq!(requests.len(), 1);
+    assert!(requests[0].starts_with(&format!(
+        "GET /api/v1/repos/{OWNER}/{REPOSITORY}/pulls/{NUMBER} HTTP/1.1\r\n"
+    )));
+    assert!(
+        !requests[0]
+            .lines()
+            .any(|line| line.to_ascii_lowercase().starts_with("authorization:"))
+    );
+    let value: Value =
+        serde_json::from_slice(&output.stdout).expect("foreign PR base refusal is structured JSON");
+    assert_reconcile_schema_version(&value);
+    assert_eq!(value["verdict"], "inconclusive");
+    assert_eq!(value["error"]["code"], "resource_mismatch");
+    assert_eq!(value["upstream_read_attempts"], 1);
+    assert!(value.get("canonical_state").is_none());
+    assert_eq!(
+        fs::read(&journal_path).expect("re-read durable comment journal"),
+        journal_before
+    );
+}
+
+#[test]
+#[ignore = "run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint"]
+fn actual_reconcile_cli_process_refuses_invalid_pr_head_before_reading_comment() {
+    const NUMBER: u64 = 24;
+    const COMMENT_ID: u64 = 916;
+    let scratch = ScratchDir::new();
+    let secret = scratch.path().join("webhook.secret");
+    let journal_path = scratch.path().join("inbox.jsonl");
+    write_secret(&secret);
+    let delivery_id = "cli-pr-comment-invalid-head-24";
+    let body = serde_json::to_vec(&json!({
+        "action": "created",
+        "repository": {"full_name": format!("{OWNER}/{REPOSITORY}")},
+        "issue": {"number": NUMBER, "state": "open"},
+        "comment": {"id": COMMENT_ID, "body": "untrusted webhook comment"},
+        "is_pull": true,
+        "pull_request": {
+            "number": NUMBER,
+            "state": "open",
+            "merged": false,
+            "head": {"sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"},
+            "base": {"sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"}
+        }
+    }))
+    .expect("serialize signed pull request conversation comment");
+
+    let (mut receiver, address) = start_ready_receiver(&secret, &journal_path);
+    let (status, accepted) = send(address, &request_event(delivery_id, "issue_comment", &body));
+    assert_eq!(status, 202);
+    assert_eq!(accepted["accepted"], true);
+    assert!(stop_receiver(&mut receiver).success());
+    let journal_before = fs::read(&journal_path).expect("snapshot accepted comment journal");
+
+    let fixture = start_cli_http_fixture_responses(vec![(
+        200,
+        json!({
+            "number": NUMBER,
+            "state": "open",
+            "merged": false,
+            "draft": false,
+            "updated_at": "2026-10-27T12:00:00Z",
+            "html_url": format!("http://127.0.0.1:3130/{OWNER}/{REPOSITORY}/pulls/{NUMBER}"),
+            "head": {"sha": "not-a-valid-commit-id"},
+            "base": {
+                "sha": "2222222222222222222222222222222222222222",
+                "repo": {
+                    "full_name": format!("{OWNER}/{REPOSITORY}"),
+                    "name": REPOSITORY,
+                    "owner": {"login": OWNER}
+                }
+            }
+        }),
+    )]);
+    let output = Command::new(env!("CARGO_BIN_EXE_forgejo-reconcile-local"))
+        .env_clear()
+        .arg(&journal_path)
+        .arg(delivery_id)
+        .stdin(Stdio::null())
+        .output()
+        .expect("run the actual CLI against a malformed current PR head fixture");
+    let requests = fixture.join().expect("PR parent fixture completed");
+
+    assert_eq!(output.status.code(), Some(1));
+    assert_eq!(requests.len(), 1);
+    assert!(requests[0].starts_with(&format!(
+        "GET /api/v1/repos/{OWNER}/{REPOSITORY}/pulls/{NUMBER} HTTP/1.1\r\n"
+    )));
+    assert!(
+        !requests[0]
+            .lines()
+            .any(|line| line.to_ascii_lowercase().starts_with("authorization:"))
+    );
+    let value: Value = serde_json::from_slice(&output.stdout)
+        .expect("malformed PR parent refusal is structured JSON");
+    assert_reconcile_schema_version(&value);
+    assert_eq!(value["verdict"], "inconclusive");
+    assert_eq!(value["error"]["code"], "invalid_current_state");
+    assert_eq!(value["error"]["details"]["field"], "head.sha");
+    assert_eq!(value["upstream_read_attempts"], 1);
+    assert!(value.get("canonical_state").is_none());
+    let transcript = format!(
+        "{}{}",
+        String::from_utf8_lossy(&output.stdout),
+        String::from_utf8_lossy(&output.stderr)
+    );
+    assert!(!transcript.contains("untrusted webhook comment"));
+    assert_eq!(
+        fs::read(&journal_path).expect("re-read durable comment journal"),
+        journal_before
+    );
+}
+
+#[test]
+#[ignore = "run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint"]
+fn actual_reconcile_cli_process_refuses_missing_pr_draft_before_reading_comment() {
+    const NUMBER: u64 = 24;
+    const COMMENT_ID: u64 = 916;
+    const DELIVERY_ID: &str = "cli-pr-comment-missing-draft-24";
+    let scratch = ScratchDir::new();
+    let secret = scratch.path().join("webhook.secret");
+    let journal_path = scratch.path().join("inbox.jsonl");
+    write_secret(&secret);
+    let body = serde_json::to_vec(&json!({
+        "action": "created",
+        "repository": {"full_name": format!("{OWNER}/{REPOSITORY}")},
+        "issue": {"number": NUMBER, "state": "open"},
+        "comment": {"id": COMMENT_ID, "body": "untrusted webhook comment"},
+        "is_pull": true,
+        "pull_request": {"number": NUMBER}
+    }))
+    .expect("serialize signed pull request conversation comment");
+
+    let (mut receiver, address) = start_ready_receiver(&secret, &journal_path);
+    let (status, accepted) = send(address, &request_event(DELIVERY_ID, "issue_comment", &body));
+    assert_eq!(status, 202);
+    assert_eq!(accepted["accepted"], true);
+    assert!(stop_receiver(&mut receiver).success());
+    let journal_before = fs::read(&journal_path).expect("snapshot accepted comment journal");
+
+    let fixture = start_cli_http_fixture_responses(vec![(
+        200,
+        json!({
+            "number": NUMBER,
+            "state": "open",
+            "merged": false,
+            "updated_at": "2026-10-27T12:00:00Z",
+            "html_url": format!("http://127.0.0.1:3130/{OWNER}/{REPOSITORY}/pulls/{NUMBER}"),
+            "head": {"sha": "1111111111111111111111111111111111111111"},
+            "base": {
+                "sha": "2222222222222222222222222222222222222222",
+                "repo": {
+                    "full_name": format!("{OWNER}/{REPOSITORY}"),
+                    "name": REPOSITORY,
+                    "owner": {"login": OWNER}
+                }
+            }
+        }),
+    )]);
+    let output = Command::new(env!("CARGO_BIN_EXE_forgejo-reconcile-local"))
+        .env_clear()
+        .arg(&journal_path)
+        .arg(DELIVERY_ID)
+        .stdin(Stdio::null())
+        .output()
+        .expect("run the actual CLI against a PR parent missing draft");
+    let requests = fixture.join().expect("PR parent fixture completed");
+
+    assert_eq!(output.status.code(), Some(1));
+    assert_eq!(requests.len(), 1);
+    assert!(requests[0].starts_with(&format!(
+        "GET /api/v1/repos/{OWNER}/{REPOSITORY}/pulls/{NUMBER} HTTP/1.1\r\n"
+    )));
+    assert!(
+        !requests[0]
+            .lines()
+            .any(|line| line.to_ascii_lowercase().starts_with("authorization:"))
+    );
+    let value: Value =
+        serde_json::from_slice(&output.stdout).expect("missing draft refusal is structured JSON");
+    assert_reconcile_schema_version(&value);
+    assert_eq!(value["verdict"], "inconclusive");
+    assert_eq!(value["error"]["code"], "invalid_current_state");
+    assert_eq!(value["error"]["details"]["field"], "draft");
+    assert_eq!(value["upstream_read_attempts"], 1);
+    assert!(value.get("canonical_state").is_none());
+    let transcript = format!(
+        "{}{}",
+        String::from_utf8_lossy(&output.stdout),
+        String::from_utf8_lossy(&output.stderr)
+    );
+    assert!(!transcript.contains("untrusted webhook comment"));
+    assert_eq!(
+        fs::read(&journal_path).expect("re-read durable comment journal"),
+        journal_before
+    );
+}
+
+#[test]
+#[ignore = "run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint"]
+fn actual_reconcile_cli_process_refuses_missing_draft_on_fresh_deleted_comment_parent() {
+    const NUMBER: u64 = 24;
+    const COMMENT_ID: u64 = 916;
+    const DELIVERY_ID: &str = "cli-pr-comment-fresh-parent-missing-draft-24";
+    const COMMENT_404: &str = "deleted-comment-404-body-must-not-leak";
+
+    let scratch = ScratchDir::new();
+    let secret = scratch.path().join("webhook.secret");
+    let journal_path = scratch.path().join("inbox.jsonl");
+    write_secret(&secret);
+    let body = serde_json::to_vec(&json!({
+        "action": "deleted",
+        "repository": {"full_name": format!("{OWNER}/{REPOSITORY}")},
+        "issue": {"number": NUMBER, "state": "closed"},
+        "pull_request": {"number": NUMBER},
+        "comment": {"id": COMMENT_ID, "body": "untrusted deleted PR comment"},
+        "is_pull": true
+    }))
+    .expect("serialize signed Forgejo PR-comment deletion payload");
+
+    let (mut receiver, address) = start_ready_receiver(&secret, &journal_path);
+    let (status, accepted) = send(address, &request_event(DELIVERY_ID, "issue_comment", &body));
+    assert_eq!(status, 202);
+    assert_eq!(accepted["accepted"], true);
+    assert!(stop_receiver(&mut receiver).success());
+    let journal_before =
+        fs::read(&journal_path).expect("snapshot accepted comment-deletion journal");
+
+    let valid_parent = json!({
+        "number": NUMBER,
+        "state": "open",
+        "merged": false,
+        "draft": false,
+        "merge_commit_sha": null,
+        "updated_at": "2026-10-27T12:00:00Z",
+        "html_url": format!("http://127.0.0.1:3130/{OWNER}/{REPOSITORY}/pulls/{NUMBER}"),
+        "head": {"sha": "1111111111111111111111111111111111111111"},
+        "base": {
+            "sha": "2222222222222222222222222222222222222222",
+            "repo": {
+                "full_name": format!("{OWNER}/{REPOSITORY}"),
+                "name": REPOSITORY,
+                "owner": {"login": OWNER}
+            }
+        }
+    });
+    let malformed_fresh_parent = json!({
+        "number": NUMBER,
+        "state": "closed",
+        "merged": true,
+        "merge_commit_sha": "5555555555555555555555555555555555555555",
+        "updated_at": "2026-10-28T12:00:00Z",
+        "html_url": format!("http://127.0.0.1:3130/{OWNER}/{REPOSITORY}/pulls/{NUMBER}"),
+        "head": {"sha": "3333333333333333333333333333333333333333"},
+        "base": {
+            "sha": "4444444444444444444444444444444444444444",
+            "repo": {
+                "full_name": format!("{OWNER}/{REPOSITORY}"),
+                "name": REPOSITORY,
+                "owner": {"login": OWNER}
+            }
+        }
+    });
+    let fixture = start_cli_http_fixture_responses(vec![
+        (200, valid_parent),
+        (404, json!({"message": COMMENT_404})),
+        (200, malformed_fresh_parent),
+    ]);
+    let output = Command::new(env!("CARGO_BIN_EXE_forgejo-reconcile-local"))
+        .env_clear()
+        .arg(&journal_path)
+        .arg(DELIVERY_ID)
+        .stdin(Stdio::null())
+        .output()
+        .expect("run the actual CLI against a malformed fresh PR parent");
+    let requests = fixture
+        .join()
+        .expect("fresh-parent PR-comment fixture completed");
+
+    assert_eq!(output.status.code(), Some(1));
+    assert_eq!(requests.len(), 3);
+    assert!(requests[0].starts_with(&format!(
+        "GET /api/v1/repos/{OWNER}/{REPOSITORY}/pulls/{NUMBER} HTTP/1.1\r\n"
+    )));
+    assert!(requests[1].starts_with(&format!(
+        "GET /api/v1/repos/{OWNER}/{REPOSITORY}/issues/comments/{COMMENT_ID} HTTP/1.1\r\n"
+    )));
+    assert!(requests[2].starts_with(&format!(
+        "GET /api/v1/repos/{OWNER}/{REPOSITORY}/pulls/{NUMBER} HTTP/1.1\r\n"
+    )));
+    assert!(requests.iter().all(|request| {
+        request
+            .lines()
+            .all(|line| !line.to_ascii_lowercase().starts_with("authorization:"))
+    }));
+    let value: Value = serde_json::from_slice(&output.stdout)
+        .expect("invalid fresh PR parent refusal is structured JSON");
+    assert_reconcile_schema_version(&value);
+    assert_eq!(value["verdict"], "inconclusive");
+    assert_eq!(value["error"]["code"], "invalid_current_state");
+    assert_eq!(value["error"]["details"]["field"], "draft");
+    assert_eq!(value["upstream_read_attempts"], 3);
+    assert!(value.get("canonical_state").is_none());
+    let transcript = format!(
+        "{}{}",
+        String::from_utf8_lossy(&output.stdout),
+        String::from_utf8_lossy(&output.stderr)
+    );
+    assert!(!transcript.contains(COMMENT_404));
+    assert!(!transcript.contains("untrusted deleted PR comment"));
+    assert_eq!(
+        fs::read(&journal_path).expect("re-read durable comment-deletion journal"),
+        journal_before
+    );
+}
+
+#[test]
+#[ignore = "run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint"]
+fn actual_reconcile_cli_process_refuses_foreign_base_on_fresh_deleted_comment_parent() {
+    const NUMBER: u64 = 28;
+    const COMMENT_ID: u64 = 929;
+    const DELIVERY_ID: &str = "cli-pr-comment-foreign-fresh-base-28";
+    const COMMENT_404: &str = "foreign-fresh-base-comment-404-body-must-not-leak";
+    const FOREIGN_BASE_SENTINEL: &str = "foreign-pr-comment-base-private-sentinel";
+
+    let scratch = ScratchDir::new();
+    let secret = scratch.path().join("webhook.secret");
+    let journal_path = scratch.path().join("inbox.jsonl");
+    write_secret(&secret);
+    let body = serde_json::to_vec(&json!({
+        "action": "deleted",
+        "repository": {"full_name": format!("{OWNER}/{REPOSITORY}")},
+        "issue": {"number": NUMBER, "state": "closed"},
+        "pull_request": {"number": NUMBER},
+        "comment": {"id": COMMENT_ID, "body": "untrusted deleted PR comment"},
+        "is_pull": true
+    }))
+    .expect("serialize signed Forgejo PR-comment deletion payload");
+
+    let (mut receiver, address) = start_ready_receiver(&secret, &journal_path);
+    let (status, accepted) = send(address, &request_event(DELIVERY_ID, "issue_comment", &body));
+    assert_eq!(status, 202);
+    assert_eq!(accepted["accepted"], true);
+    assert_eq!(accepted["sequence"], 1);
+    assert!(stop_receiver(&mut receiver).success());
+    let journal_before =
+        fs::read(&journal_path).expect("snapshot accepted comment-deletion journal");
+
+    let initial_parent = json!({
+        "number": NUMBER,
+        "state": "open",
+        "merged": false,
+        "draft": false,
+        "merge_commit_sha": null,
+        "updated_at": "2026-10-27T12:00:00Z",
+        "html_url": format!("http://127.0.0.1:3130/{OWNER}/{REPOSITORY}/pulls/{NUMBER}"),
+        "head": {"sha": "1111111111111111111111111111111111111111"},
+        "base": {
+            "sha": "2222222222222222222222222222222222222222",
+            "repo": {
+                "full_name": format!("{OWNER}/{REPOSITORY}"),
+                "name": REPOSITORY,
+                "owner": {"login": OWNER}
+            }
+        }
+    });
+    let foreign_fresh_parent = json!({
+        "number": NUMBER,
+        "state": "closed",
+        "merged": true,
+        "draft": false,
+        "merge_commit_sha": "5555555555555555555555555555555555555555",
+        "updated_at": "2026-10-28T12:00:00Z",
+        "html_url": format!("http://127.0.0.1:3130/{OWNER}/{REPOSITORY}/pulls/{NUMBER}"),
+        "head": {"sha": "3333333333333333333333333333333333333333"},
+        "base": {
+            "sha": "4444444444444444444444444444444444444444",
+            "repo": {
+                "full_name": format!("{OWNER}/{FOREIGN_BASE_SENTINEL}"),
+                "name": FOREIGN_BASE_SENTINEL,
+                "owner": {"login": OWNER}
+            }
+        }
+    });
+    let fixture = start_cli_http_fixture_responses(vec![
+        (200, initial_parent),
+        (404, json!({"message": COMMENT_404})),
+        (200, foreign_fresh_parent),
+    ]);
+    let output = Command::new(env!("CARGO_BIN_EXE_forgejo-reconcile-local"))
+        .env_clear()
+        .arg(&journal_path)
+        .arg(DELIVERY_ID)
+        .stdin(Stdio::null())
+        .output()
+        .expect("run the actual CLI against a foreign base on the fresh PR parent");
+    let requests = fixture
+        .join()
+        .expect("foreign fresh-parent base fixture completed");
+
+    assert_eq!(output.status.code(), Some(1));
+    assert_eq!(requests.len(), 3);
+    for (index, request) in requests.iter().enumerate() {
+        let expected_path = if index == 1 {
+            format!(
+                "GET /api/v1/repos/{OWNER}/{REPOSITORY}/issues/comments/{COMMENT_ID} HTTP/1.1\r\n"
+            )
+        } else {
+            format!("GET /api/v1/repos/{OWNER}/{REPOSITORY}/pulls/{NUMBER} HTTP/1.1\r\n")
+        };
+        assert!(
+            request.starts_with(&expected_path),
+            "request {index}: {request}"
+        );
+        assert!(
+            request
+                .lines()
+                .all(|line| !line.to_ascii_lowercase().starts_with("authorization:"))
+        );
+    }
+    let value: Value = serde_json::from_slice(&output.stdout)
+        .expect("foreign fresh-parent base refusal is structured JSON");
+    assert_reconcile_schema_version(&value);
+    assert_eq!(value["verdict"], "inconclusive");
+    assert_eq!(value["delivery_id"], DELIVERY_ID);
+    assert_eq!(value["error"]["code"], "resource_mismatch");
+    assert_eq!(value["upstream_read_attempts"], 3);
+    assert!(value.get("canonical_state").is_none());
+    let transcript = format!(
+        "{}{}",
+        String::from_utf8_lossy(&output.stdout),
+        String::from_utf8_lossy(&output.stderr)
+    );
+    assert!(!transcript.contains(COMMENT_404));
+    assert!(!transcript.contains(FOREIGN_BASE_SENTINEL));
+    assert!(!transcript.contains("untrusted deleted PR comment"));
+    assert_eq!(
+        fs::read(&journal_path).expect("re-read durable comment-deletion journal"),
+        journal_before
+    );
+}
+
+#[test]
+#[ignore = "run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint"]
+fn actual_reconcile_cli_process_retries_fresh_pr_parent_before_projecting_deleted_comment_absent() {
+    const NUMBER: u64 = 25;
+    const COMMENT_ID: u64 = 917;
+    const DELIVERY_ID: &str = "cli-pr-comment-fresh-parent-retry-503-25";
+    const COMMENT_404: &str = "deleted-comment-404-body-must-not-leak";
+    const PARENT_503: &str = "fresh-parent-503-body-must-not-leak";
+
+    let scratch = ScratchDir::new();
+    let secret = scratch.path().join("webhook.secret");
+    let journal_path = scratch.path().join("inbox.jsonl");
+    write_secret(&secret);
+    let body = serde_json::to_vec(&json!({
+        "action": "deleted",
+        "repository": {"full_name": format!("{OWNER}/{REPOSITORY}")},
+        "issue": {"number": NUMBER, "state": "closed"},
+        "pull_request": {"number": NUMBER},
+        "comment": {"id": COMMENT_ID, "body": "untrusted deleted PR comment"},
+        "is_pull": true
+    }))
+    .expect("serialize signed Forgejo PR-comment deletion payload");
+
+    let (mut receiver, address) = start_ready_receiver(&secret, &journal_path);
+    let (status, accepted) = send(address, &request_event(DELIVERY_ID, "issue_comment", &body));
+    assert_eq!(status, 202);
+    assert_eq!(accepted["accepted"], true);
+    assert!(stop_receiver(&mut receiver).success());
+    let journal_before =
+        fs::read(&journal_path).expect("snapshot accepted comment-deletion journal");
+
+    let initial_parent = json!({
+        "number": NUMBER,
+        "state": "open",
+        "merged": false,
+        "draft": false,
+        "merge_commit_sha": null,
+        "updated_at": "2026-10-27T12:00:00Z",
+        "html_url": format!("http://127.0.0.1:3130/{OWNER}/{REPOSITORY}/pulls/{NUMBER}"),
+        "head": {"sha": "1111111111111111111111111111111111111111"},
+        "base": {
+            "sha": "2222222222222222222222222222222222222222",
+            "repo": {
+                "full_name": format!("{OWNER}/{REPOSITORY}"),
+                "name": REPOSITORY,
+                "owner": {"login": OWNER}
+            }
+        }
+    });
+    let fresh_parent = json!({
+        "number": NUMBER,
+        "state": "closed",
+        "merged": true,
+        "draft": false,
+        "merge_commit_sha": "5555555555555555555555555555555555555555",
+        "updated_at": "2026-10-28T12:00:00Z",
+        "html_url": format!("http://127.0.0.1:3130/{OWNER}/{REPOSITORY}/pulls/{NUMBER}"),
+        "head": {"sha": "3333333333333333333333333333333333333333"},
+        "base": {
+            "sha": "4444444444444444444444444444444444444444",
+            "repo": {
+                "full_name": format!("{OWNER}/{REPOSITORY}"),
+                "name": REPOSITORY,
+                "owner": {"login": OWNER}
+            }
+        }
+    });
+    let fixture = start_scripted_cli_http_fixture(
+        vec![
+            (200, initial_parent, Vec::new()),
+            (404, json!({"message": COMMENT_404}), Vec::new()),
+            (
+                503,
+                json!({"message": PARENT_503}),
+                vec![("Retry-After".to_owned(), "0".to_owned())],
+            ),
+            (200, fresh_parent, Vec::new()),
+        ],
+        Duration::from_millis(300),
+    );
+    let output = Command::new(env!("CARGO_BIN_EXE_forgejo-reconcile-local"))
+        .env_clear()
+        .arg(&journal_path)
+        .arg(DELIVERY_ID)
+        .stdin(Stdio::null())
+        .output()
+        .expect("run the CLI through a transient fresh-parent failure");
+    let requests = fixture
+        .join()
+        .expect("fresh-parent retry fixture completed");
+
+    assert!(
+        output.status.success(),
+        "successful fresh-parent retry should allow reconciliation: stdout={} stderr={}",
+        String::from_utf8_lossy(&output.stdout),
+        String::from_utf8_lossy(&output.stderr)
+    );
+    assert_eq!(
+        requests.len(),
+        4,
+        "one 503 must be retried before projection"
+    );
+    for (index, request) in requests.iter().enumerate() {
+        let expected_path = if index == 1 {
+            format!(
+                "GET /api/v1/repos/{OWNER}/{REPOSITORY}/issues/comments/{COMMENT_ID} HTTP/1.1\r\n"
+            )
+        } else {
+            format!("GET /api/v1/repos/{OWNER}/{REPOSITORY}/pulls/{NUMBER} HTTP/1.1\r\n")
+        };
+        assert!(
+            request.starts_with(&expected_path),
+            "request {index}: {request}"
+        );
+        assert!(
+            request
+                .lines()
+                .all(|line| !line.to_ascii_lowercase().starts_with("authorization:"))
+        );
+    }
+    assert_eq!(
+        fs::read(&journal_path).expect("re-read durable comment-deletion journal"),
+        journal_before
+    );
+
+    let transcript = format!(
+        "{}{}",
+        String::from_utf8_lossy(&output.stdout),
+        String::from_utf8_lossy(&output.stderr)
+    );
+    assert!(!transcript.contains(COMMENT_404));
+    assert!(!transcript.contains(PARENT_503));
+    assert!(!transcript.contains("untrusted deleted PR comment"));
+    let value: Value =
+        serde_json::from_slice(&output.stdout).expect("successful retry result is structured JSON");
+    assert_reconcile_schema_version(&value);
+    assert_eq!(value["verdict"], "current_state_read");
+    assert_eq!(value["delivery_id"], DELIVERY_ID);
+    assert_eq!(value["upstream_read_attempts"], 4);
+    assert_eq!(value["resource"]["kind"], "pull_request");
+    assert_eq!(value["resource"]["number"], NUMBER);
+    assert_eq!(value["canonical_state"]["state"], "closed");
+    assert_eq!(value["canonical_state"]["merged"], true);
+    assert_eq!(
+        value["canonical_state"]["merge_commit_sha"],
+        "5555555555555555555555555555555555555555"
+    );
+    assert_eq!(value["canonical_state"]["comment"]["state"], "absent");
+    assert!(value.get("error").is_none());
+}
+
+#[test]
+#[ignore = "run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint"]
+fn actual_reconcile_cli_process_keeps_deleted_pr_comment_inconclusive_after_fresh_parent_retries_exhaust()
+ {
+    const NUMBER: u64 = 26;
+    const COMMENT_ID: u64 = 918;
+    const DELIVERY_ID: &str = "cli-pr-comment-fresh-parent-exhausted-503-26";
+    const COMMENT_404: &str = "deleted-comment-404-body-must-not-leak";
+    const PARENT_503: &str = "fresh-parent-exhausted-503-body-must-not-leak";
+
+    let scratch = ScratchDir::new();
+    let secret = scratch.path().join("webhook.secret");
+    let journal_path = scratch.path().join("inbox.jsonl");
+    write_secret(&secret);
+    let body = serde_json::to_vec(&json!({
+        "action": "deleted",
+        "repository": {"full_name": format!("{OWNER}/{REPOSITORY}")},
+        "issue": {"number": NUMBER, "state": "closed"},
+        "pull_request": {"number": NUMBER},
+        "comment": {"id": COMMENT_ID, "body": "untrusted deleted PR comment"},
+        "is_pull": true
+    }))
+    .expect("serialize signed Forgejo PR-comment deletion payload");
+
+    let (mut receiver, address) = start_ready_receiver(&secret, &journal_path);
+    let (status, accepted) = send(address, &request_event(DELIVERY_ID, "issue_comment", &body));
+    assert_eq!(status, 202);
+    assert_eq!(accepted["accepted"], true);
+    assert!(stop_receiver(&mut receiver).success());
+    let journal_before =
+        fs::read(&journal_path).expect("snapshot accepted comment-deletion journal");
+
+    let initial_parent = json!({
+        "number": NUMBER,
+        "state": "open",
+        "merged": false,
+        "draft": false,
+        "merge_commit_sha": null,
+        "updated_at": "2026-10-27T12:00:00Z",
+        "html_url": format!("http://127.0.0.1:3130/{OWNER}/{REPOSITORY}/pulls/{NUMBER}"),
+        "head": {"sha": "1111111111111111111111111111111111111111"},
+        "base": {
+            "sha": "2222222222222222222222222222222222222222",
+            "repo": {
+                "full_name": format!("{OWNER}/{REPOSITORY}"),
+                "name": REPOSITORY,
+                "owner": {"login": OWNER}
+            }
+        }
+    });
+    let retry_after_zero = vec![("Retry-After".to_owned(), "0".to_owned())];
+    let fixture = start_scripted_cli_http_fixture(
+        vec![
+            (200, initial_parent, Vec::new()),
+            (404, json!({"message": COMMENT_404}), Vec::new()),
+            (
+                503,
+                json!({"message": PARENT_503}),
+                retry_after_zero.clone(),
+            ),
+            (
+                503,
+                json!({"message": PARENT_503}),
+                retry_after_zero.clone(),
+            ),
+            (503, json!({"message": PARENT_503}), retry_after_zero),
+        ],
+        Duration::from_millis(300),
+    );
+    let output = Command::new(env!("CARGO_BIN_EXE_forgejo-reconcile-local"))
+        .env_clear()
+        .arg(&journal_path)
+        .arg(DELIVERY_ID)
+        .stdin(Stdio::null())
+        .output()
+        .expect("run the CLI until the fresh-parent retry budget is exhausted");
+    let requests = fixture
+        .join()
+        .expect("exhausted fresh-parent retry fixture completed");
+
+    assert_eq!(output.status.code(), Some(1));
+    assert_eq!(
+        requests.len(),
+        5,
+        "the fresh parent gets exactly three attempts"
+    );
+    for (index, request) in requests.iter().enumerate() {
+        let expected_path = if index == 1 {
+            format!(
+                "GET /api/v1/repos/{OWNER}/{REPOSITORY}/issues/comments/{COMMENT_ID} HTTP/1.1\r\n"
+            )
+        } else {
+            format!("GET /api/v1/repos/{OWNER}/{REPOSITORY}/pulls/{NUMBER} HTTP/1.1\r\n")
+        };
+        assert!(
+            request.starts_with(&expected_path),
+            "request {index}: {request}"
+        );
+        assert!(
+            request
+                .lines()
+                .all(|line| !line.to_ascii_lowercase().starts_with("authorization:"))
+        );
+    }
+    assert_eq!(
+        fs::read(&journal_path).expect("re-read durable comment-deletion journal"),
+        journal_before
+    );
+
+    let transcript = format!(
+        "{}{}",
+        String::from_utf8_lossy(&output.stdout),
+        String::from_utf8_lossy(&output.stderr)
+    );
+    assert!(!transcript.contains(COMMENT_404));
+    assert!(!transcript.contains(PARENT_503));
+    assert!(!transcript.contains("untrusted deleted PR comment"));
+    let value: Value =
+        serde_json::from_slice(&output.stdout).expect("retry exhaustion result is structured JSON");
+    assert_reconcile_schema_version(&value);
+    assert_eq!(value["verdict"], "inconclusive");
+    assert_eq!(value["delivery_id"], DELIVERY_ID);
+    assert_eq!(value["upstream_read_attempts"], 5);
+    assert_eq!(value["error"]["code"], "upstream_http_status");
+    assert_eq!(value["error"]["retryable"], true);
+    assert_eq!(value["error"]["details"]["http_status"], 503);
+    assert!(value.get("canonical_state").is_none());
+}
+
+#[test]
+#[ignore = "run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint"]
+fn actual_reconcile_cli_process_replays_same_deleted_pr_comment_after_upstream_retry_exhaustion() {
+    const NUMBER: u64 = 27;
+    const COMMENT_ID: u64 = 919;
+    const DELIVERY_ID: &str = "cli-pr-comment-recover-after-503-27";
+    const COMMENT_404: &str = "recovery-comment-404-body-must-not-leak";
+    const PARENT_503: &str = "recovery-parent-503-body-must-not-leak";
+
+    let scratch = ScratchDir::new();
+    let secret = scratch.path().join("webhook.secret");
+    let journal_path = scratch.path().join("inbox.jsonl");
+    write_secret(&secret);
+    let body = serde_json::to_vec(&json!({
+        "action": "deleted",
+        "repository": {"full_name": format!("{OWNER}/{REPOSITORY}")},
+        "issue": {"number": NUMBER, "state": "closed"},
+        "pull_request": {"number": NUMBER},
+        "comment": {"id": COMMENT_ID, "body": "untrusted deleted PR comment"},
+        "is_pull": true
+    }))
+    .expect("serialize signed Forgejo PR-comment deletion payload");
+
+    let (mut receiver, address) = start_ready_receiver(&secret, &journal_path);
+    let (status, accepted) = send(address, &request_event(DELIVERY_ID, "issue_comment", &body));
+    assert_eq!(status, 202);
+    assert_eq!(accepted["accepted"], true);
+    assert_eq!(accepted["sequence"], 1);
+    assert!(stop_receiver(&mut receiver).success());
+    let journal_before =
+        fs::read(&journal_path).expect("snapshot accepted comment-deletion journal");
+
+    let initial_parent = json!({
+        "number": NUMBER,
+        "state": "open",
+        "merged": false,
+        "draft": false,
+        "merge_commit_sha": null,
+        "updated_at": "2026-10-27T12:00:00Z",
+        "html_url": format!("http://127.0.0.1:3130/{OWNER}/{REPOSITORY}/pulls/{NUMBER}"),
+        "head": {"sha": "1111111111111111111111111111111111111111"},
+        "base": {
+            "sha": "2222222222222222222222222222222222222222",
+            "repo": {
+                "full_name": format!("{OWNER}/{REPOSITORY}"),
+                "name": REPOSITORY,
+                "owner": {"login": OWNER}
+            }
+        }
+    });
+    let retry_after_zero = vec![("Retry-After".to_owned(), "0".to_owned())];
+    let outage_fixture = start_scripted_cli_http_fixture(
+        vec![
+            (200, initial_parent.clone(), Vec::new()),
+            (404, json!({"message": COMMENT_404}), Vec::new()),
+            (
+                503,
+                json!({"message": PARENT_503}),
+                retry_after_zero.clone(),
+            ),
+            (
+                503,
+                json!({"message": PARENT_503}),
+                retry_after_zero.clone(),
+            ),
+            (503, json!({"message": PARENT_503}), retry_after_zero),
+        ],
+        Duration::from_millis(300),
+    );
+    let failed_output = Command::new(env!("CARGO_BIN_EXE_forgejo-reconcile-local"))
+        .env_clear()
+        .arg(&journal_path)
+        .arg(DELIVERY_ID)
+        .stdin(Stdio::null())
+        .output()
+        .expect("run the CLI until the parent retry budget is exhausted");
+    let outage_requests = outage_fixture
+        .join()
+        .expect("parent outage fixture completed");
+
+    assert_eq!(failed_output.status.code(), Some(1));
+    assert_eq!(outage_requests.len(), 5);
+    for (index, request) in outage_requests.iter().enumerate() {
+        let expected_path = if index == 1 {
+            format!(
+                "GET /api/v1/repos/{OWNER}/{REPOSITORY}/issues/comments/{COMMENT_ID} HTTP/1.1\r\n"
+            )
+        } else {
+            format!("GET /api/v1/repos/{OWNER}/{REPOSITORY}/pulls/{NUMBER} HTTP/1.1\r\n")
+        };
+        assert!(
+            request.starts_with(&expected_path),
+            "outage request {index}: {request}"
+        );
+        assert!(
+            request
+                .lines()
+                .all(|line| !line.to_ascii_lowercase().starts_with("authorization:"))
+        );
+    }
+    let failed_value: Value = serde_json::from_slice(&failed_output.stdout)
+        .expect("exhausted retry result is structured JSON");
+    assert_reconcile_schema_version(&failed_value);
+    assert_eq!(failed_value["verdict"], "inconclusive");
+    assert_eq!(failed_value["delivery_id"], DELIVERY_ID);
+    assert_eq!(failed_value["upstream_read_attempts"], 5);
+    assert_eq!(failed_value["error"]["code"], "upstream_http_status");
+    assert_eq!(failed_value["error"]["details"]["http_status"], 503);
+    assert!(failed_value.get("canonical_state").is_none());
+    let failed_transcript = format!(
+        "{}{}",
+        String::from_utf8_lossy(&failed_output.stdout),
+        String::from_utf8_lossy(&failed_output.stderr)
+    );
+    assert!(!failed_transcript.contains(COMMENT_404));
+    assert!(!failed_transcript.contains(PARENT_503));
+    assert!(!failed_transcript.contains("untrusted deleted PR comment"));
+    assert_eq!(
+        fs::read(&journal_path).expect("check journal after failed reconciliation"),
+        journal_before
+    );
+    let first_replay = EventJournal::open(&journal_path)
+        .replay()
+        .expect("replay persisted webhook journal");
+    assert_eq!(first_replay.len(), 1);
+    assert_eq!(
+        first_replay[0].idempotency_key,
+        format!("forgejo-delivery-v1:{DELIVERY_ID}")
+    );
+
+    let recovered_parent = json!({
+        "number": NUMBER,
+        "state": "closed",
+        "merged": true,
+        "draft": false,
+        "merge_commit_sha": "5555555555555555555555555555555555555555",
+        "updated_at": "2026-10-28T12:00:00Z",
+        "html_url": format!("http://127.0.0.1:3130/{OWNER}/{REPOSITORY}/pulls/{NUMBER}"),
+        "head": {"sha": "3333333333333333333333333333333333333333"},
+        "base": {
+            "sha": "4444444444444444444444444444444444444444",
+            "repo": {
+                "full_name": format!("{OWNER}/{REPOSITORY}"),
+                "name": REPOSITORY,
+                "owner": {"login": OWNER}
+            }
+        }
+    });
+    let recovery_fixture = start_scripted_cli_http_fixture(
+        vec![
+            (200, initial_parent, Vec::new()),
+            (404, json!({"message": COMMENT_404}), Vec::new()),
+            (200, recovered_parent, Vec::new()),
+        ],
+        Duration::from_millis(300),
+    );
+    let recovered_output = Command::new(env!("CARGO_BIN_EXE_forgejo-reconcile-local"))
+        .env_clear()
+        .arg(&journal_path)
+        .arg(DELIVERY_ID)
+        .stdin(Stdio::null())
+        .output()
+        .expect("replay the same durable delivery after the API recovers");
+    let recovery_requests = recovery_fixture
+        .join()
+        .expect("recovered parent fixture completed");
+
+    assert!(
+        recovered_output.status.success(),
+        "the same delivery should recover after the API is healthy: stdout={} stderr={}",
+        String::from_utf8_lossy(&recovered_output.stdout),
+        String::from_utf8_lossy(&recovered_output.stderr)
+    );
+    assert_eq!(recovery_requests.len(), 3);
+    for (index, request) in recovery_requests.iter().enumerate() {
+        let expected_path = if index == 1 {
+            format!(
+                "GET /api/v1/repos/{OWNER}/{REPOSITORY}/issues/comments/{COMMENT_ID} HTTP/1.1\r\n"
+            )
+        } else {
+            format!("GET /api/v1/repos/{OWNER}/{REPOSITORY}/pulls/{NUMBER} HTTP/1.1\r\n")
+        };
+        assert!(
+            request.starts_with(&expected_path),
+            "recovery request {index}: {request}"
+        );
+        assert!(
+            request
+                .lines()
+                .all(|line| !line.to_ascii_lowercase().starts_with("authorization:"))
+        );
+    }
+    let recovered_value: Value = serde_json::from_slice(&recovered_output.stdout)
+        .expect("recovered reconciliation result is structured JSON");
+    assert_reconcile_schema_version(&recovered_value);
+    assert_eq!(recovered_value["verdict"], "current_state_read");
+    assert_eq!(recovered_value["delivery_id"], DELIVERY_ID);
+    assert_eq!(recovered_value["upstream_read_attempts"], 3);
+    assert_eq!(recovered_value["canonical_state"]["state"], "closed");
+    assert_eq!(recovered_value["canonical_state"]["merged"], true);
+    assert_eq!(
+        recovered_value["canonical_state"]["merge_commit_sha"],
+        "5555555555555555555555555555555555555555"
+    );
+    assert_eq!(
+        recovered_value["canonical_state"]["comment"]["state"],
+        "absent"
+    );
+    assert!(recovered_value.get("error").is_none());
+    let recovered_transcript = format!(
+        "{}{}",
+        String::from_utf8_lossy(&recovered_output.stdout),
+        String::from_utf8_lossy(&recovered_output.stderr)
+    );
+    assert!(!recovered_transcript.contains(COMMENT_404));
+    assert!(!recovered_transcript.contains("untrusted deleted PR comment"));
+    assert_eq!(
+        fs::read(&journal_path).expect("check journal after recovery"),
+        journal_before,
+        "reconciliation retry must not append another webhook delivery"
+    );
+    let final_replay = EventJournal::open(&journal_path)
+        .replay()
+        .expect("verify journal after recovery");
+    assert_eq!(final_replay.len(), 1);
+    assert_eq!(
+        final_replay[0].idempotency_key,
+        format!("forgejo-delivery-v1:{DELIVERY_ID}")
     );
 }
 
@@ -18110,10 +19228,10 @@ fn actual_reconcile_cli_process_reads_current_branch_after_native_delete_notific
 
 #[test]
 #[ignore = "run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint"]
-fn actual_reconcile_cli_process_keeps_native_delete_404_inconclusive() {
+fn actual_reconcile_cli_process_confirms_native_delete_404_after_repository_and_fresh_reads() {
     const DELIVERY_ID: &str = "cli-native-branch-delete-404";
     const BRANCH: &str = "release/agent-proof";
-    const NOT_FOUND_BODY: &str = "private branch lookup not found";
+    const PRIVATE_MARKER: &str = "private-branch-and-repository-error-marker";
     let scratch = ScratchDir::new();
     let secret = scratch.path().join("webhook.secret");
     let journal_path = scratch.path().join("inbox.jsonl");
@@ -18137,7 +19255,23 @@ fn actual_reconcile_cli_process_keeps_native_delete_404_inconclusive() {
     assert!(stop_receiver(&mut receiver).success());
     let journal_before = fs::read(&journal_path).expect("snapshot accepted delete journal");
 
-    let fixture = start_cli_http_fixture(404, json!({"message":NOT_FOUND_BODY}), 1);
+    let fixture = start_scripted_cli_http_fixture(
+        vec![
+            (404, json!({"message":PRIVATE_MARKER}), vec![]),
+            (
+                200,
+                json!({
+                    "full_name": format!("{OWNER}/{REPOSITORY}"),
+                    "name": REPOSITORY,
+                    "owner": {"login": OWNER},
+                    "description": PRIVATE_MARKER
+                }),
+                vec![],
+            ),
+            (404, json!({"message":PRIVATE_MARKER}), vec![]),
+        ],
+        Duration::from_millis(50),
+    );
     let output = Command::new(env!("CARGO_BIN_EXE_forgejo-reconcile-local"))
         .env_clear()
         .arg(&journal_path)
@@ -18147,37 +19281,345 @@ fn actual_reconcile_cli_process_keeps_native_delete_404_inconclusive() {
         .expect("run the actual reconciliation CLI for a branch-delete 404");
     let requests = fixture.join().expect("branch API 404 fixture completed");
 
-    assert_eq!(output.status.code(), Some(1));
-    assert_eq!(requests.len(), 1);
+    assert_eq!(output.status.code(), Some(0));
+    assert_eq!(requests.len(), 3);
     assert!(requests[0].starts_with(
         "GET /api/v1/repos/forge-admin/agent-forge-core/branches/release%2Fagent-proof HTTP/1.1\r\n"
     ));
-    assert!(
-        !requests[0]
-            .lines()
-            .any(|line| line.to_ascii_lowercase().starts_with("authorization:")),
-        "the local reconciliation CLI must not send an authorization header"
-    );
+    assert!(requests[1].starts_with("GET /api/v1/repos/forge-admin/agent-forge-core HTTP/1.1\r\n"));
+    assert!(requests[2].starts_with(
+        "GET /api/v1/repos/forge-admin/agent-forge-core/branches/release%2Fagent-proof HTTP/1.1\r\n"
+    ));
+    for request in &requests {
+        assert!(
+            !request
+                .lines()
+                .any(|line| line.to_ascii_lowercase().starts_with("authorization:")),
+            "the local reconciliation CLI must not send an authorization header"
+        );
+    }
     let transcript = format!(
         "{}{}",
         String::from_utf8_lossy(&output.stdout),
         String::from_utf8_lossy(&output.stderr)
     );
-    assert!(!transcript.contains(NOT_FOUND_BODY));
-    let value: Value =
-        serde_json::from_slice(&output.stdout).expect("404 refusal is structured JSON");
+    assert!(!transcript.contains(PRIVATE_MARKER));
+    let value: Value = serde_json::from_slice(&output.stdout)
+        .expect("confirmed branch deletion is structured JSON");
+    assert_reconcile_schema_version(&value);
+    assert_eq!(value["verdict"], "current_state_read");
+    assert_eq!(value["upstream_read_attempts"], 3);
+    assert_eq!(value["resource"]["kind"], "branch");
+    assert_eq!(value["resource"]["branch"], BRANCH);
+    assert_eq!(value["canonical_state"]["state"], "absent");
+    assert_eq!(value["canonical_state"]["head_sha"], Value::Null);
+    assert_eq!(
+        value["canonical_state"]["html_url"],
+        "http://127.0.0.1:3130/forge-admin/agent-forge-core/src/branch/release%2Fagent-proof"
+    );
+    assert_eq!(
+        fs::read(&journal_path).expect("re-read accepted delete journal"),
+        journal_before,
+        "reconciliation must not rewrite the durable inbox"
+    );
+}
+
+#[test]
+#[ignore = "run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint"]
+fn actual_reconcile_cli_process_refuses_branch_absence_when_repository_identity_mismatches() {
+    const DELIVERY_ID: &str = "cli-native-branch-delete-repository-mismatch";
+    const BRANCH: &str = "release/agent-proof";
+    const PRIVATE_MARKER: &str = "private-repository-identity-marker";
+    let scratch = ScratchDir::new();
+    let secret = scratch.path().join("webhook.secret");
+    let journal_path = scratch.path().join("inbox.jsonl");
+    write_secret(&secret);
+    let body = serde_json::to_vec(&json!({
+        "ref": BRANCH,
+        "ref_type": "branch",
+        "pusher_type": "user",
+        "repository": {"full_name": format!("{OWNER}/{REPOSITORY}")},
+        "sender": {"login": "fixture-owner"}
+    }))
+    .expect("serialize Forgejo branch-delete notification");
+
+    let (mut receiver, address) = start_ready_receiver(&secret, &journal_path);
+    let (status, accepted) = send(address, &request_event(DELIVERY_ID, "delete", &body));
+    assert_eq!(
+        status, 202,
+        "branch-delete delivery should be journaled: {accepted}"
+    );
+    assert!(stop_receiver(&mut receiver).success());
+    let journal_before = fs::read(&journal_path).expect("snapshot accepted delete journal");
+
+    let fixture = start_scripted_cli_http_fixture(
+        vec![
+            (404, json!({"message":PRIVATE_MARKER}), vec![]),
+            (
+                200,
+                json!({
+                    "full_name": format!("{OWNER}/other-repository"),
+                    "name": "other-repository",
+                    "owner": {"login": OWNER},
+                    "description": PRIVATE_MARKER
+                }),
+                vec![],
+            ),
+        ],
+        Duration::from_millis(50),
+    );
+    let output = Command::new(env!("CARGO_BIN_EXE_forgejo-reconcile-local"))
+        .env_clear()
+        .arg(&journal_path)
+        .arg(DELIVERY_ID)
+        .stdin(Stdio::null())
+        .output()
+        .expect("run reconciliation CLI against mismatched repository identity");
+    let requests = fixture
+        .join()
+        .expect("repository mismatch fixture completed");
+
+    assert_eq!(output.status.code(), Some(1));
+    assert_eq!(
+        requests.len(),
+        2,
+        "do not read the branch after identity mismatch"
+    );
+    assert!(requests[0].starts_with(
+        "GET /api/v1/repos/forge-admin/agent-forge-core/branches/release%2Fagent-proof HTTP/1.1\r\n"
+    ));
+    assert!(requests[1].starts_with("GET /api/v1/repos/forge-admin/agent-forge-core HTTP/1.1\r\n"));
+    for request in &requests {
+        assert!(
+            !request
+                .lines()
+                .any(|line| line.to_ascii_lowercase().starts_with("authorization:")),
+            "the local reconciliation CLI must not send an authorization header"
+        );
+    }
+    let transcript = format!(
+        "{}{}",
+        String::from_utf8_lossy(&output.stdout),
+        String::from_utf8_lossy(&output.stderr)
+    );
+    assert!(!transcript.contains(PRIVATE_MARKER));
+    let value: Value = serde_json::from_slice(&output.stdout)
+        .expect("identity mismatch refusal is structured JSON");
     assert_reconcile_schema_version(&value);
     assert_eq!(value["verdict"], "inconclusive");
-    assert_eq!(value["error"]["code"], "resource_not_found");
+    assert_eq!(value["error"]["code"], "upstream_invalid_response");
     assert_eq!(value["error"]["retryable"], false);
-    assert_eq!(value["upstream_read_attempts"], 1);
-    assert_eq!(value["error"]["details"]["resource"]["kind"], "branch");
-    assert_eq!(value["error"]["details"]["resource"]["branch"], BRANCH);
+    assert_eq!(value["upstream_read_attempts"], 2);
     assert!(value.get("canonical_state").is_none());
     assert_eq!(
         fs::read(&journal_path).expect("re-read accepted delete journal"),
         journal_before,
-        "a hidden or deleted branch must not rewrite the durable inbox"
+        "a failed repository identity check must not rewrite the durable inbox"
+    );
+}
+
+#[test]
+#[ignore = "run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint"]
+fn actual_reconcile_cli_process_refuses_branch_absence_when_repository_visibility_is_denied_or_hidden()
+ {
+    const DELIVERY_ID: &str = "cli-native-branch-delete-repository-not-readable";
+    const BRANCH: &str = "release/agent-proof";
+    const PRIVATE_MARKER: &str = "private-repository-visibility-marker";
+    let scratch = ScratchDir::new();
+    let secret = scratch.path().join("webhook.secret");
+    let journal_path = scratch.path().join("inbox.jsonl");
+    write_secret(&secret);
+    let body = serde_json::to_vec(&json!({
+        "ref": BRANCH,
+        "ref_type": "branch",
+        "pusher_type": "user",
+        "repository": {"full_name": format!("{OWNER}/{REPOSITORY}")},
+        "sender": {"login": "fixture-owner"}
+    }))
+    .expect("serialize Forgejo branch-delete notification");
+
+    let (mut receiver, address) = start_ready_receiver(&secret, &journal_path);
+    let (status, accepted) = send(address, &request_event(DELIVERY_ID, "delete", &body));
+    assert_eq!(
+        status, 202,
+        "branch-delete delivery should be journaled: {accepted}"
+    );
+    assert!(stop_receiver(&mut receiver).success());
+    let journal_before = fs::read(&journal_path).expect("snapshot accepted delete journal");
+
+    for (repository_status, expected_error) in [
+        (401, "upstream_unauthorized"),
+        (403, "upstream_forbidden"),
+        (404, "resource_not_found"),
+    ] {
+        let fixture = start_scripted_cli_http_fixture(
+            vec![
+                (404, json!({"message":PRIVATE_MARKER}), vec![]),
+                (repository_status, json!({"message":PRIVATE_MARKER}), vec![]),
+            ],
+            Duration::from_millis(50),
+        );
+        let output = Command::new(env!("CARGO_BIN_EXE_forgejo-reconcile-local"))
+            .env_clear()
+            .arg(&journal_path)
+            .arg(DELIVERY_ID)
+            .stdin(Stdio::null())
+            .output()
+            .expect("run reconciliation CLI with unreadable repository metadata");
+        let requests = fixture
+            .join()
+            .expect("repository visibility fixture completed");
+
+        assert_eq!(output.status.code(), Some(1));
+        assert_eq!(requests.len(), 2, "do not issue a third branch read");
+        assert!(requests[0].starts_with(
+            "GET /api/v1/repos/forge-admin/agent-forge-core/branches/release%2Fagent-proof HTTP/1.1\r\n"
+        ));
+        assert!(
+            requests[1].starts_with("GET /api/v1/repos/forge-admin/agent-forge-core HTTP/1.1\r\n")
+        );
+        assert!(requests.iter().all(|request| {
+            !request
+                .lines()
+                .any(|line| line.to_ascii_lowercase().starts_with("authorization:"))
+        }));
+        let transcript = format!(
+            "{}{}",
+            String::from_utf8_lossy(&output.stdout),
+            String::from_utf8_lossy(&output.stderr)
+        );
+        assert!(!transcript.contains(PRIVATE_MARKER));
+        let value: Value = serde_json::from_slice(&output.stdout)
+            .expect("repository visibility refusal is structured JSON");
+        assert_reconcile_schema_version(&value);
+        assert_eq!(value["verdict"], "inconclusive");
+        assert_eq!(value["error"]["code"], expected_error);
+        assert_eq!(value["error"]["retryable"], false);
+        assert_eq!(value["upstream_read_attempts"], 2);
+        assert!(value.get("canonical_state").is_none());
+        assert_eq!(
+            fs::read(&journal_path).expect("re-read accepted delete journal"),
+            journal_before,
+            "repository visibility failure must not rewrite the durable inbox"
+        );
+    }
+}
+
+#[test]
+#[ignore = "run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint"]
+fn actual_reconcile_cli_process_keeps_create_inconclusive_and_delete_absent_in_batch() {
+    const CREATE_DELIVERY_ID: &str = "cli-branch-create-then-absent-001";
+    const DELETE_DELIVERY_ID: &str = "cli-branch-delete-then-absent-002";
+    const BRANCH: &str = "release/agent-proof";
+    const PRIVATE_MARKER: &str = "private-branch-batch-marker";
+    let scratch = ScratchDir::new();
+    let secret = scratch.path().join("webhook.secret");
+    let journal_path = scratch.path().join("inbox.jsonl");
+    write_secret(&secret);
+    let create_body = serde_json::to_vec(&json!({
+        "ref": BRANCH,
+        "ref_type": "branch",
+        "sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "repository": {"full_name": format!("{OWNER}/{REPOSITORY}")},
+        "sender": {"login": "fixture-owner"}
+    }))
+    .expect("serialize Forgejo branch-create notification");
+    let delete_body = serde_json::to_vec(&json!({
+        "ref": BRANCH,
+        "ref_type": "branch",
+        "pusher_type": "user",
+        "repository": {"full_name": format!("{OWNER}/{REPOSITORY}")},
+        "sender": {"login": "fixture-owner"}
+    }))
+    .expect("serialize Forgejo branch-delete notification");
+
+    let (mut receiver, address) = start_ready_receiver(&secret, &journal_path);
+    let (create_status, create_acceptance) = send(
+        address,
+        &request_event(CREATE_DELIVERY_ID, "create", &create_body),
+    );
+    assert_eq!(
+        create_status, 202,
+        "branch create should be journaled: {create_acceptance}"
+    );
+    let (delete_status, delete_acceptance) = send(
+        address,
+        &request_event(DELETE_DELIVERY_ID, "delete", &delete_body),
+    );
+    assert_eq!(
+        delete_status, 202,
+        "branch delete should be journaled: {delete_acceptance}"
+    );
+    assert!(stop_receiver(&mut receiver).success());
+    let journal_before = fs::read(&journal_path).expect("snapshot accepted branch batch");
+
+    let fixture = start_scripted_cli_http_fixture(
+        vec![
+            (404, json!({"message":PRIVATE_MARKER}), vec![]),
+            (
+                200,
+                json!({
+                    "full_name": format!("{OWNER}/{REPOSITORY}"),
+                    "name": REPOSITORY,
+                    "owner": {"login": OWNER},
+                    "description": PRIVATE_MARKER
+                }),
+                vec![],
+            ),
+            (404, json!({"message":PRIVATE_MARKER}), vec![]),
+        ],
+        Duration::from_millis(50),
+    );
+    let output = Command::new(env!("CARGO_BIN_EXE_forgejo-reconcile-local"))
+        .env_clear()
+        .arg(&journal_path)
+        .args([CREATE_DELIVERY_ID, DELETE_DELIVERY_ID])
+        .stdin(Stdio::null())
+        .output()
+        .expect("run reconciliation CLI on the absent create/delete batch");
+    let requests = fixture.join().expect("branch batch API fixture completed");
+
+    assert_eq!(output.status.code(), Some(1));
+    assert_eq!(requests.len(), 3);
+    assert!(requests[0].starts_with(
+        "GET /api/v1/repos/forge-admin/agent-forge-core/branches/release%2Fagent-proof HTTP/1.1\r\n"
+    ));
+    assert!(requests[1].starts_with("GET /api/v1/repos/forge-admin/agent-forge-core HTTP/1.1\r\n"));
+    assert!(requests[2].starts_with(
+        "GET /api/v1/repos/forge-admin/agent-forge-core/branches/release%2Fagent-proof HTTP/1.1\r\n"
+    ));
+    assert!(requests.iter().all(|request| {
+        !request
+            .lines()
+            .any(|line| line.to_ascii_lowercase().starts_with("authorization:"))
+    }));
+    let transcript = format!(
+        "{}{}",
+        String::from_utf8_lossy(&output.stdout),
+        String::from_utf8_lossy(&output.stderr)
+    );
+    assert!(!transcript.contains(PRIVATE_MARKER));
+    let value: Value =
+        serde_json::from_slice(&output.stdout).expect("mixed branch batch returns structured JSON");
+    assert_reconcile_schema_version(&value);
+    assert_eq!(value["verdict"], "inconclusive");
+    assert_eq!(value["upstream_read_attempts"], 3);
+    let results = value["results"].as_array().expect("batch results array");
+    assert_eq!(results.len(), 2);
+    assert_eq!(results[0]["delivery_id"], CREATE_DELIVERY_ID);
+    assert_eq!(results[0]["verdict"], "inconclusive");
+    assert_eq!(results[0]["error"]["code"], "resource_not_found");
+    assert!(results[0].get("canonical_state").is_none());
+    assert_eq!(results[1]["delivery_id"], DELETE_DELIVERY_ID);
+    assert_eq!(results[1]["verdict"], "current_state_read");
+    assert_eq!(results[1]["resource"]["kind"], "branch");
+    assert_eq!(results[1]["resource"]["branch"], BRANCH);
+    assert_eq!(results[1]["canonical_state"]["state"], "absent");
+    assert_eq!(results[1]["canonical_state"]["head_sha"], Value::Null);
+    assert_eq!(
+        fs::read(&journal_path).expect("re-read accepted branch batch"),
+        journal_before,
+        "reconciliation must not mutate the append-only inbox"
     );
 }
 
@@ -19219,6 +20661,155 @@ fn actual_reconcile_cli_process_refuses_issue_repository_metadata_mismatch() {
         fs::read(&journal_path).expect("re-read accepted issue delivery"),
         journal_before,
         "reconciliation must not rewrite the durable webhook"
+    );
+}
+
+#[test]
+#[ignore = "run inside bwrap --unshare-net; fixture reserves the fixed allowlisted API endpoint"]
+fn actual_reconcile_cli_process_refuses_partial_issue_repository_metadata() {
+    let scratch = ScratchDir::new();
+    let secret = scratch.path().join("webhook.secret");
+    let journal_path = scratch.path().join("inbox.jsonl");
+    write_secret(&secret);
+    let delivery_id = "cli-partial-issue-repository-meta-41";
+    let body = serde_json::to_vec(&json!({
+        "action": "closed",
+        "repository": {"full_name": format!("{OWNER}/{REPOSITORY}")},
+        "issue": {"number": ISSUE_NUMBER, "state": "closed"}
+    }))
+    .expect("serialize signed issue notification");
+
+    let (mut receiver, address) = start_ready_receiver(&secret, &journal_path);
+    let (status, accepted) = send(address, &request(delivery_id, &body));
+    assert_eq!(status, 202);
+    assert_eq!(accepted["accepted"], true);
+    assert!(stop_receiver(&mut receiver).success());
+    let journal_before = fs::read(&journal_path).expect("snapshot accepted issue delivery");
+
+    let fixture = start_cli_http_fixture(
+        200,
+        json!({
+            "number": ISSUE_NUMBER,
+            "state": "closed",
+            "updated_at": "2026-10-25T14:00:00Z",
+            "html_url": format!("http://127.0.0.1:3130/{OWNER}/{REPOSITORY}/issues/{ISSUE_NUMBER}"),
+            "repository": {"name": REPOSITORY}
+        }),
+        1,
+    );
+    let output = Command::new(env!("CARGO_BIN_EXE_forgejo-reconcile-local"))
+        .env_clear()
+        .arg(&journal_path)
+        .arg(delivery_id)
+        .stdin(Stdio::null())
+        .output()
+        .expect("run the actual reconciliation CLI process");
+    let requests = fixture
+        .join()
+        .expect("partial issue metadata fixture completed");
+
+    assert!(!output.status.success());
+    assert_eq!(requests.len(), 1);
+    assert!(requests[0].starts_with(&format!(
+        "GET /api/v1/repos/{OWNER}/{REPOSITORY}/issues/{ISSUE_NUMBER} HTTP/1.1\r\n"
+    )));
+    let value: Value = serde_json::from_slice(&output.stdout)
+        .expect("partial repository identity refusal is structured JSON");
+    assert_reconcile_schema_version(&value);
+    assert_eq!(value["verdict"], "inconclusive");
+    assert_eq!(value["error"]["code"], "invalid_current_state");
+    assert_eq!(value["error"]["details"]["field"], "repository");
+    assert!(value.get("canonical_state").is_none());
+    assert_eq!(
+        fs::read(&journal_path).expect("re-read accepted issue delivery"),
+        journal_before,
+        "reconciliation must leave the durable delivery unchanged"
+    );
+}
+
+#[test]
+#[ignore = "run via scripts/run_webhook_reconcile_cli_e2e.py; fixture reserves the fixed loopback API endpoint"]
+fn actual_reconcile_cli_process_reads_v17_issue_repository_metadata_owner_string() {
+    let scratch = ScratchDir::new();
+    let secret = scratch.path().join("webhook.secret");
+    let journal_path = scratch.path().join("inbox.jsonl");
+    write_secret(&secret);
+    let delivery_id = "cli-v17-issue-repository-meta-owner-string-41";
+    let body = serde_json::to_vec(&json!({
+        "action": "closed",
+        "repository": {"full_name": format!("{OWNER}/{REPOSITORY}")},
+        "issue": {"number": ISSUE_NUMBER, "state": "closed"}
+    }))
+    .expect("serialize signed issue notification");
+
+    let (mut receiver, address) = start_ready_receiver(&secret, &journal_path);
+    let (status, accepted) = send(address, &request(delivery_id, &body));
+    assert_eq!(
+        status, 202,
+        "issue webhook was not durably accepted: {accepted}"
+    );
+    assert_eq!(accepted["accepted"], true);
+    assert!(stop_receiver(&mut receiver).success());
+    let journal_before = fs::read(&journal_path).expect("snapshot accepted issue delivery");
+
+    let current_url = format!("http://127.0.0.1:3130/{OWNER}/{REPOSITORY}/issues/{ISSUE_NUMBER}");
+    let fixture = start_cli_http_fixture(
+        200,
+        json!({
+            "number": ISSUE_NUMBER,
+            "state": "open",
+            "updated_at": "2026-10-26T14:00:00Z",
+            "html_url": current_url,
+            "repository": {
+                "id": 7,
+                "name": REPOSITORY,
+                "owner": OWNER,
+                "full_name": format!("{OWNER}/{REPOSITORY}")
+            }
+        }),
+        1,
+    );
+    let output = Command::new(env!("CARGO_BIN_EXE_forgejo-reconcile-local"))
+        .env_clear()
+        .arg(&journal_path)
+        .arg(delivery_id)
+        .stdin(Stdio::null())
+        .output()
+        .expect("run the actual reconciliation CLI process");
+    let requests = fixture.join().expect("issue metadata fixture completed");
+
+    assert!(
+        output.status.success(),
+        "reconciliation CLI failed: {}",
+        String::from_utf8_lossy(&output.stderr)
+    );
+    assert_eq!(requests.len(), 1);
+    assert!(requests[0].starts_with(&format!(
+        "GET /api/v1/repos/{OWNER}/{REPOSITORY}/issues/{ISSUE_NUMBER} HTTP/1.1\r\n"
+    )));
+    assert!(
+        !requests[0]
+            .lines()
+            .any(|line| line.to_ascii_lowercase().starts_with("authorization:")),
+        "anonymous reconciliation must not send an authorization header"
+    );
+
+    let value: Value =
+        serde_json::from_slice(&output.stdout).expect("reconciliation CLI returns structured JSON");
+    assert_reconcile_schema_version(&value);
+    assert_eq!(value["verdict"], "current_state_read");
+    assert_eq!(value["delivery_id"], delivery_id);
+    assert_eq!(value["resource"]["kind"], "issue");
+    assert_eq!(value["resource"]["owner"], OWNER);
+    assert_eq!(value["resource"]["repository"], REPOSITORY);
+    assert_eq!(value["resource"]["number"], ISSUE_NUMBER);
+    assert_eq!(value["canonical_state"]["state"], "open");
+    assert_eq!(value["canonical_state"]["html_url"], current_url);
+    assert_eq!(value["upstream_read_attempts"], 1);
+    assert_eq!(
+        fs::read(&journal_path).expect("re-read accepted issue delivery"),
+        journal_before,
+        "readback is non-mutating"
     );
 }
 

@@ -8,6 +8,13 @@ struct FixtureApi {
     requests: Mutex<Vec<ResourceRef>>,
 }
 
+struct BranchDeletionFixtureApi {
+    initial_branch: Result<Value, ApiReadError>,
+    repository_access: Result<(), ApiReadError>,
+    fresh_branch: Result<Value, ApiReadError>,
+    requests: Mutex<Vec<&'static str>>,
+}
+
 impl ForgejoCurrentState for FixtureApi {
     fn read_current(&self, resource: &ResourceRef) -> Result<Value, ApiReadError> {
         self.requests.lock().unwrap().push(resource.clone());
@@ -41,6 +48,41 @@ impl ForgejoCurrentState for FixtureApi {
         format!(
             "http://127.0.0.1:3130/{}/{}/{collection}/{identity}",
             resource.owner, resource.repository
+        )
+    }
+}
+
+impl ForgejoCurrentState for BranchDeletionFixtureApi {
+    fn read_current(&self, resource: &ResourceRef) -> Result<Value, ApiReadError> {
+        self.requests.lock().unwrap().push("branch_current");
+        if resource.kind != ResourceKind::Branch {
+            return Err(ApiReadError::Forbidden);
+        }
+        self.initial_branch.clone()
+    }
+
+    fn verify_repository_access(&self, owner: &str, repository: &str) -> Result<(), ApiReadError> {
+        self.requests.lock().unwrap().push("repository_access");
+        if owner != "forge-admin" || repository != "agent-forge-core" {
+            return Err(ApiReadError::Forbidden);
+        }
+        self.repository_access.clone()
+    }
+
+    fn read_current_fresh(&self, resource: &ResourceRef) -> Result<Value, ApiReadError> {
+        self.requests.lock().unwrap().push("branch_fresh");
+        if resource.kind != ResourceKind::Branch {
+            return Err(ApiReadError::Forbidden);
+        }
+        self.fresh_branch.clone()
+    }
+
+    fn expected_html_url(&self, resource: &ResourceRef) -> String {
+        format!(
+            "http://127.0.0.1:3130/{}/{}/src/branch/{}",
+            resource.owner,
+            resource.repository,
+            agent_forge_core::forgejo::encode_url_path_segment("feature/agent-proof")
         )
     }
 }
@@ -743,8 +785,9 @@ fn release_rejects_invalid_current_git_tag_ref_names() {
 }
 
 #[test]
-fn release_accepts_git_valid_unicode_whitespace_in_current_tag_name() {
+fn release_accepts_git_valid_unicode_whitespace_and_at_current_tag_names() {
     let tag_names = [
+        "@",
         "\u{00a0}release/v1.0",
         "release\u{2003}candidate",
         "release/\u{2028}candidate",
@@ -774,6 +817,9 @@ fn release_accepts_git_valid_unicode_whitespace_in_current_tag_name() {
             hash: "1".repeat(64),
         };
         let encoded_tag = agent_forge_core::forgejo::encode_url_path_segments(tag_name);
+        if tag_name == "@" {
+            assert_eq!(encoded_tag, "@");
+        }
         let api = FixtureApi {
             response: Ok(json!({
                 "id": release_id,
@@ -1179,6 +1225,69 @@ fn pull_request_comment_parent_null_assignees_remain_unknown() {
 }
 
 #[test]
+fn pull_request_comment_parent_rejects_foreign_base_before_reading_comment() {
+    let mut api = pull_request_comment_api();
+    api.issue.as_mut().unwrap()["base"]["repo"] = json!({
+        "full_name": "other-owner/other-repository",
+        "name": "other-repository",
+        "owner": {"login": "other-owner"}
+    });
+    let event = pull_request_comment_fixture_event("created", 29, "stale untrusted webhook body");
+
+    let result = reconcile_inbox_event(&event, &api);
+
+    assert_eq!(result, Err(ReconcileError::ResourceMismatch));
+    assert_eq!(
+        api.requests.lock().unwrap().len(),
+        1,
+        "reject the PR parent before reading its conversation comment"
+    );
+}
+
+#[test]
+fn pull_request_comment_parent_rejects_invalid_head_before_reading_comment() {
+    let mut api = pull_request_comment_api();
+    api.issue.as_mut().unwrap()["head"]["sha"] = json!("not-a-valid-commit-id");
+    let event = pull_request_comment_fixture_event("created", 29, "stale untrusted webhook body");
+
+    let result = reconcile_inbox_event(&event, &api);
+
+    assert_eq!(
+        result,
+        Err(ReconcileError::InvalidCurrentStateField("head.sha"))
+    );
+    assert_eq!(
+        api.requests.lock().unwrap().len(),
+        1,
+        "reject an invalid PR snapshot before reading its conversation comment"
+    );
+}
+
+#[test]
+fn pull_request_comment_parent_rejects_missing_draft_before_reading_comment() {
+    let mut api = pull_request_comment_api();
+    api.issue
+        .as_mut()
+        .unwrap()
+        .as_object_mut()
+        .unwrap()
+        .remove("draft");
+    let event = pull_request_comment_fixture_event("created", 29, "stale untrusted webhook body");
+
+    let result = reconcile_inbox_event(&event, &api);
+
+    assert_eq!(
+        result,
+        Err(ReconcileError::InvalidCurrentStateField("draft"))
+    );
+    assert_eq!(
+        api.requests.lock().unwrap().len(),
+        1,
+        "reject a PR parent without draft before reading its conversation comment"
+    );
+}
+
+#[test]
 fn pull_request_conversation_comment_uses_current_pr_and_comment_api() {
     let event = pull_request_comment_fixture_event("created", 29, "stale webhook PR comment");
     let mut api = pull_request_comment_api();
@@ -1560,6 +1669,129 @@ fn deleted_pr_comment_uses_fresh_parent_fields_after_comment_404() {
             ResourceKind::PullRequestComment,
             ResourceKind::PullRequest,
         ],
+    );
+}
+
+#[test]
+fn deleted_pr_comment_rejects_invalid_fresh_parent_after_comment_404() {
+    let api = ChangingPullRequestParentApi {
+        initial_parent: json!({
+            "number": 11,
+            "state": "open",
+            "merged": false,
+            "draft": false,
+            "merge_commit_sha": null,
+            "updated_at": "2026-10-21T15:30:00-04:00",
+            "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/11",
+            "head": {"sha": "1111111111111111111111111111111111111111"},
+            "base": {"sha": "2222222222222222222222222222222222222222"}
+        }),
+        fresh_parent: json!({
+            "number": 11,
+            "state": "closed",
+            "merged": true,
+            "merge_commit_sha": "5555555555555555555555555555555555555555",
+            "updated_at": "2026-10-22T16:30:00-04:00",
+            "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/11",
+            "head": {"sha": "3333333333333333333333333333333333333333"},
+            "base": {"sha": "4444444444444444444444444444444444444444"}
+        }),
+        parent_reads: Mutex::new(0),
+        requests: Mutex::new(Vec::new()),
+    };
+
+    let result = reconcile_inbox_event(
+        &pull_request_comment_fixture_event("deleted", 29, "untrusted webhook body"),
+        &api,
+    );
+
+    assert_eq!(
+        result,
+        Err(ReconcileError::InvalidCurrentStateField("draft")),
+        "an invalid fresh parent must not turn the preceding comment 404 into canonical absence"
+    );
+    assert_eq!(
+        api.requests
+            .lock()
+            .unwrap()
+            .iter()
+            .map(|resource| resource.kind)
+            .collect::<Vec<_>>(),
+        vec![
+            ResourceKind::PullRequest,
+            ResourceKind::PullRequestComment,
+            ResourceKind::PullRequest,
+        ],
+        "validate the fresh parent after the child 404 and before returning absence"
+    );
+}
+
+#[test]
+fn deleted_pr_comment_rejects_foreign_fresh_parent_base_after_comment_404() {
+    let api = ChangingPullRequestParentApi {
+        initial_parent: json!({
+            "number": 11,
+            "state": "open",
+            "merged": false,
+            "draft": false,
+            "merge_commit_sha": null,
+            "updated_at": "2026-10-21T15:30:00-04:00",
+            "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/11",
+            "head": {"sha": "1111111111111111111111111111111111111111"},
+            "base": {
+                "sha": "2222222222222222222222222222222222222222",
+                "repo": {
+                    "full_name": "forge-admin/agent-forge-core",
+                    "name": "agent-forge-core",
+                    "owner": {"login": "forge-admin"}
+                }
+            }
+        }),
+        fresh_parent: json!({
+            "number": 11,
+            "state": "closed",
+            "merged": true,
+            "draft": false,
+            "merge_commit_sha": "5555555555555555555555555555555555555555",
+            "updated_at": "2026-10-22T16:30:00-04:00",
+            "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/11",
+            "head": {"sha": "3333333333333333333333333333333333333333"},
+            "base": {
+                "sha": "4444444444444444444444444444444444444444",
+                "repo": {
+                    "full_name": "forge-admin/foreign-repository",
+                    "name": "foreign-repository",
+                    "owner": {"login": "forge-admin"}
+                }
+            }
+        }),
+        parent_reads: Mutex::new(0),
+        requests: Mutex::new(Vec::new()),
+    };
+
+    let result = reconcile_inbox_event(
+        &pull_request_comment_fixture_event("deleted", 29, "untrusted webhook body"),
+        &api,
+    );
+
+    assert_eq!(
+        result,
+        Err(ReconcileError::ResourceMismatch),
+        "a foreign base on the fresh parent cannot make the preceding comment 404 canonical"
+    );
+    assert_eq!(
+        api.requests
+            .lock()
+            .unwrap()
+            .iter()
+            .map(|resource| resource.kind)
+            .collect::<Vec<_>>(),
+        vec![
+            ResourceKind::PullRequest,
+            ResourceKind::PullRequestComment,
+            ResourceKind::PullRequest,
+        ],
+        "bind the fresh PR base after the child 404 and before returning absence"
     );
 }
 
@@ -2842,7 +3074,7 @@ fn tag_delete_notification_is_rejected_before_api_calls() {
 }
 
 #[test]
-fn branch_delete_not_found_remains_inconclusive() {
+fn branch_delete_not_found_without_repository_check_implementation_remains_inconclusive() {
     let api = FixtureApi {
         response: Err(ApiReadError::NotFound),
         requests: Mutex::new(Vec::new()),
@@ -2853,9 +3085,139 @@ fn branch_delete_not_found_remains_inconclusive() {
             &branch_delete_fixture_event("feature/agent-proof", "branch"),
             &api
         ),
-        Err(ReconcileError::Source(ApiReadError::NotFound))
+        Err(ReconcileError::Source(ApiReadError::Unavailable))
     );
     assert_eq!(api.requests.lock().unwrap().len(), 1);
+}
+
+#[test]
+fn branch_delete_404_becomes_absent_only_after_repository_and_fresh_branch_reads() {
+    let api = BranchDeletionFixtureApi {
+        initial_branch: Err(ApiReadError::NotFound),
+        repository_access: Ok(()),
+        fresh_branch: Err(ApiReadError::NotFound),
+        requests: Mutex::new(Vec::new()),
+    };
+
+    let current = reconcile_inbox_event(
+        &branch_delete_fixture_event("feature/agent-proof", "branch"),
+        &api,
+    )
+    .expect("two branch 404s and a readable repository establish current absence");
+
+    assert_eq!(current.state, "absent");
+    assert_eq!(current.updated_at, "");
+    assert_eq!(current.head_sha, None);
+    assert_eq!(
+        current.html_url,
+        "http://127.0.0.1:3130/forge-admin/agent-forge-core/src/branch/feature%2Fagent-proof"
+    );
+    assert_eq!(
+        *api.requests.lock().unwrap(),
+        ["branch_current", "repository_access", "branch_fresh"]
+    );
+}
+
+#[test]
+fn branch_delete_404_projects_a_recreated_branch_from_the_fresh_read() {
+    let current_head = "dddddddddddddddddddddddddddddddddddddddd";
+    let api = BranchDeletionFixtureApi {
+        initial_branch: Err(ApiReadError::NotFound),
+        repository_access: Ok(()),
+        fresh_branch: Ok(json!({
+            "name": "feature/agent-proof",
+            "commit": {
+                "id": current_head,
+                "timestamp": "2026-10-27T18:00:00Z"
+            }
+        })),
+        requests: Mutex::new(Vec::new()),
+    };
+
+    let current = reconcile_inbox_event(
+        &branch_delete_fixture_event("feature/agent-proof", "branch"),
+        &api,
+    )
+    .expect("a branch recreated between reads must win over stale 404");
+
+    assert_eq!(current.state, "present");
+    assert_eq!(current.head_sha.as_deref(), Some(current_head));
+    assert_eq!(
+        *api.requests.lock().unwrap(),
+        ["branch_current", "repository_access", "branch_fresh"]
+    );
+}
+
+#[test]
+fn branch_delete_404_without_repository_access_confirmation_remains_inconclusive() {
+    let api = BranchDeletionFixtureApi {
+        initial_branch: Err(ApiReadError::NotFound),
+        repository_access: Err(ApiReadError::Forbidden),
+        fresh_branch: Ok(json!({
+            "name": "feature/agent-proof",
+            "commit": {
+                "id": "dddddddddddddddddddddddddddddddddddddddd",
+                "timestamp": "2026-10-27T18:00:00Z"
+            }
+        })),
+        requests: Mutex::new(Vec::new()),
+    };
+
+    assert_eq!(
+        reconcile_inbox_event(
+            &branch_delete_fixture_event("feature/agent-proof", "branch"),
+            &api
+        ),
+        Err(ReconcileError::Source(ApiReadError::Forbidden))
+    );
+    assert_eq!(
+        *api.requests.lock().unwrap(),
+        ["branch_current", "repository_access"],
+        "do not issue the second branch read when repository access was not confirmed"
+    );
+}
+
+#[test]
+fn branch_create_delete_batch_keeps_create_inconclusive_and_confirms_delete_absent() {
+    let api = BranchDeletionFixtureApi {
+        initial_branch: Err(ApiReadError::NotFound),
+        repository_access: Ok(()),
+        fresh_branch: Err(ApiReadError::NotFound),
+        requests: Mutex::new(Vec::new()),
+    };
+    let create = with_delivery_id(
+        branch_create_fixture_event(
+            "feature/agent-proof",
+            "branch",
+            "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        ),
+        "batch-create-absent-branch",
+    );
+    let mut delete = with_delivery_id(
+        branch_delete_fixture_event("feature/agent-proof", "branch"),
+        "batch-delete-absent-branch",
+    );
+    delete.sequence = create.sequence + 1;
+
+    let results = reconcile_inbox_events(&[create, delete], &api)
+        .expect("two same-branch deliveries fit a reconciliation batch");
+
+    assert_eq!(results.len(), 2);
+    assert_eq!(
+        results[0],
+        Err(ReconcileError::Source(ApiReadError::NotFound)),
+        "create cannot infer branch absence from its 404"
+    );
+    let deleted = results[1]
+        .as_ref()
+        .expect("delete receives a fresh verified absence result");
+    assert_eq!(deleted.state, "absent");
+    assert_eq!(deleted.head_sha, None);
+    assert_eq!(
+        *api.requests.lock().unwrap(),
+        ["branch_current", "repository_access", "branch_fresh"],
+        "the cached first branch 404 is followed by repository identity and one fresh branch read"
+    );
 }
 
 #[test]
@@ -4358,6 +4720,34 @@ fn current_issue_repository_metadata_must_match_the_requested_resource() {
             Err(ReconcileError::InvalidCurrentStateField("repository")),
         ),
         (
+            "repository name without owner",
+            json!({"name": "agent-forge-core"}),
+            Err(ReconcileError::InvalidCurrentStateField("repository")),
+        ),
+        (
+            "repository owner without name",
+            json!({"owner": "forge-admin"}),
+            Err(ReconcileError::InvalidCurrentStateField("repository")),
+        ),
+        (
+            "full name and incomplete owner-name pair",
+            json!({
+                "full_name": "forge-admin/agent-forge-core",
+                "owner": "forge-admin"
+            }),
+            Err(ReconcileError::InvalidCurrentStateField("repository")),
+        ),
+        (
+            "full name alone is a complete identity",
+            json!({"full_name": "forge-admin/agent-forge-core"}),
+            Ok(()),
+        ),
+        (
+            "owner and name without full name are a complete identity",
+            json!({"name": "agent-forge-core", "owner": "forge-admin"}),
+            Ok(()),
+        ),
+        (
             "foreign full name",
             json!({
                 "full_name": "other-owner/other-repository",
@@ -4524,6 +4914,141 @@ fn pull_request_current_base_repository_is_bound_while_foreign_head_is_allowed()
             }],
             "current state must be read only from the configured PR route"
         );
+    }
+}
+
+#[test]
+fn pull_request_current_base_repository_numeric_ids_are_positive_and_consistent() {
+    let cases = [
+        (
+            "contradictory repository ids",
+            Some(json!(18)),
+            Some(json!(17)),
+            Some(json!({
+                "full_name": "forge-admin/agent-forge-core",
+                "name": "agent-forge-core",
+                "owner": {"login": "forge-admin"}
+            })),
+            Err(ReconcileError::ResourceMismatch),
+        ),
+        (
+            "zero base repository id",
+            Some(json!(0)),
+            Some(json!(17)),
+            Some(json!({
+                "full_name": "forge-admin/agent-forge-core",
+                "name": "agent-forge-core",
+                "owner": {"login": "forge-admin"}
+            })),
+            Err(ReconcileError::InvalidCurrentStateField("base.repo_id")),
+        ),
+        (
+            "malformed base repository id",
+            Some(json!("17")),
+            Some(json!(17)),
+            Some(json!({
+                "full_name": "forge-admin/agent-forge-core",
+                "name": "agent-forge-core",
+                "owner": {"login": "forge-admin"}
+            })),
+            Err(ReconcileError::InvalidCurrentStateField("base.repo_id")),
+        ),
+        (
+            "zero nested repository id",
+            Some(json!(17)),
+            Some(json!(0)),
+            Some(json!({
+                "full_name": "forge-admin/agent-forge-core",
+                "name": "agent-forge-core",
+                "owner": {"login": "forge-admin"}
+            })),
+            Err(ReconcileError::InvalidCurrentStateField("base.repo.id")),
+        ),
+        (
+            "malformed nested repository id",
+            Some(json!(17)),
+            Some(json!("17")),
+            Some(json!({
+                "full_name": "forge-admin/agent-forge-core",
+                "name": "agent-forge-core",
+                "owner": {"login": "forge-admin"}
+            })),
+            Err(ReconcileError::InvalidCurrentStateField("base.repo.id")),
+        ),
+        (
+            "matching repository ids",
+            Some(json!(17)),
+            Some(json!(17)),
+            Some(json!({
+                "full_name": "forge-admin/agent-forge-core",
+                "name": "agent-forge-core",
+                "owner": {"login": "forge-admin"}
+            })),
+            Ok(()),
+        ),
+        (
+            "outer id with partial nested repository",
+            Some(json!(17)),
+            None,
+            Some(json!({"name": "agent-forge-core"})),
+            Ok(()),
+        ),
+        (
+            "outer id while nested repository is null",
+            Some(json!(17)),
+            None,
+            Some(Value::Null),
+            Ok(()),
+        ),
+        (
+            "nested id without outer id",
+            None,
+            Some(json!(17)),
+            Some(json!({"name": "agent-forge-core"})),
+            Ok(()),
+        ),
+        (
+            "partial response without either id",
+            None,
+            None,
+            Some(json!({"name": "agent-forge-core"})),
+            Ok(()),
+        ),
+    ];
+
+    for (case, base_repo_id, nested_repo_id, base_repository, expected) in cases {
+        let mut current = json!({
+            "number": 11,
+            "state": "open",
+            "updated_at": "2026-10-21T15:30:00-04:00",
+            "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/11",
+            "merged": false,
+            "draft": false,
+            "head": {
+                "sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "repo": {"full_name": "contributor/agent-forge-core"}
+            },
+            "base": {"sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"}
+        });
+        if let Some(base_repo_id) = base_repo_id {
+            current["base"]["repo_id"] = base_repo_id;
+        }
+        if let Some(mut base_repository) = base_repository {
+            if let Some(nested_repo_id) = nested_repo_id {
+                if base_repository.is_object() {
+                    base_repository["id"] = nested_repo_id;
+                }
+            }
+            current["base"]["repo"] = base_repository;
+        }
+
+        let api = FixtureApi {
+            response: Ok(current),
+            requests: Mutex::new(Vec::new()),
+        };
+        let result = reconcile_inbox_event(&fixture_event("pull_request", 11, "open"), &api);
+        assert_eq!(result.map(|_| ()), expected, "{case}");
+        assert_eq!(api.requests.lock().unwrap().len(), 1, "{case}");
     }
 }
 

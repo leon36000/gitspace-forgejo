@@ -1451,6 +1451,97 @@ fn forgejo_v17_approved_review_event_is_accepted_and_bound_to_its_pull_request()
 }
 
 #[test]
+fn unsigned_review_header_substitution_is_refused_and_same_delivery_can_retry() {
+    let path = temp_journal();
+    let journal = EventJournal::open(&path);
+    let cases = [
+        (
+            "pull_request_approved",
+            "pull_request_review_approved",
+            "pull_request_rejected",
+        ),
+        (
+            "pull_request_approved",
+            "pull_request_review_approved",
+            "pull_request_comment",
+        ),
+        (
+            "pull_request_rejected",
+            "pull_request_review_rejected",
+            "pull_request_approved",
+        ),
+        (
+            "pull_request_rejected",
+            "pull_request_review_rejected",
+            "pull_request_comment",
+        ),
+        (
+            "pull_request_comment",
+            "pull_request_review_comment",
+            "pull_request_approved",
+        ),
+        (
+            "pull_request_comment",
+            "pull_request_review_comment",
+            "pull_request_rejected",
+        ),
+    ];
+
+    for (index, (body_event, review_type, substituted_header)) in cases.into_iter().enumerate() {
+        let delivery_id = format!("review-header-substitution-{index}");
+        let payload = json!({
+            "action": "reviewed",
+            "number": 14,
+            "pull_request": {"number": 14},
+            "repository": {"full_name": "forge-admin/agent-forge-core"},
+            "review": {"type": review_type}
+        });
+
+        // Forgejo's HMAC covers the body, not X-Forgejo-Event. Change both
+        // unsigned event-header aliases while retaining the valid body MAC.
+        let signed = String::from_utf8(signed_request(&delivery_id, body_event, &payload)).unwrap();
+        let substituted = signed
+            .replace(
+                &format!("X-Forgejo-Event: {body_event}"),
+                &format!("X-Forgejo-Event: {substituted_header}"),
+            )
+            .replace(
+                &format!("X-Gitea-Event: {body_event}"),
+                &format!("X-Gitea-Event: {substituted_header}"),
+            );
+        let parsed = parse_http_request(substituted.as_bytes()).unwrap();
+        let response = handle_webhook_request(&parsed, b"test-secret", &journal);
+
+        assert_eq!(response.status, 400, "case {index}: {response:?}");
+        assert_eq!(response.body["error"]["code"], "event_payload_invalid");
+        assert_eq!(
+            response.body["error"]["retryable"], false,
+            "case {index}: {response:?}"
+        );
+        assert_eq!(
+            journal.replay().unwrap().len(),
+            index,
+            "mismatched header must not reserve delivery {delivery_id}"
+        );
+
+        let retry = signed_request(&delivery_id, body_event, &payload);
+        let parsed = parse_http_request(&retry).unwrap();
+        let accepted = handle_webhook_request(&parsed, b"test-secret", &journal);
+        assert_eq!(accepted.status, 202, "retry case {index}: {accepted:?}");
+        let event = read_journaled_webhook_event(&journal, &delivery_id).unwrap();
+        assert_eq!(event.event().sequence, index as u64 + 1);
+        assert_eq!(
+            event_resource_ref(event.event()).unwrap().kind,
+            ResourceKind::PullRequest
+        );
+    }
+
+    assert_eq!(journal.replay().unwrap().len(), cases.len());
+    let _ = std::fs::remove_file(&path);
+    let _ = std::fs::remove_file(path.with_extension("jsonl.lock"));
+}
+
+#[test]
 fn review_notifications_require_the_reviewed_action_before_journaling() {
     let path = temp_journal();
     let journal = EventJournal::open(&path);
