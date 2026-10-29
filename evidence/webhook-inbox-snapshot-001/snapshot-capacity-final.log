@@ -1,0 +1,24 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+     Running tests/webhook_inbox_capacity.rs (target/debug/deps/webhook_inbox_capacity-6cb395baf6f9f0c2)
+
+running 6 tests
+test capabilities_disclose_the_total_inbox_limit_and_non_truncating_policy ... ok
+test duplicate_at_exact_limit_is_accepted_but_a_new_delivery_is_not_appended ... ok
+test full_inbox_returns_actionable_http_error_without_creating_an_event ... ok
+test receiver_refuses_an_oversized_inbox_before_binding ... ok
+test reconcile_refuses_an_oversized_inbox_without_changing_it ... ok
+test replay_does_not_repair_an_unterminated_tail_past_the_configured_limit ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+
+     Running tests/webhook_inbox_snapshot.rs (target/debug/deps/webhook_inbox_snapshot-4838526abcc02970)
+
+running 5 tests
+test cli_exports_the_validated_bytes_and_receipt_without_mutating_the_inbox ... ok
+test cli_refuses_a_preexisting_destination_without_overwriting_it ... ok
+test cli_refuses_a_symlink_destination_and_preserves_its_target ... ok
+test cli_refuses_an_oversized_sparse_inbox_before_reading_or_exporting_it ... ok
+test cli_refuses_an_unterminated_journal_without_repairing_or_creating_a_snapshot ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+

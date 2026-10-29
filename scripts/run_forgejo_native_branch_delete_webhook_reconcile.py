@@ -86,7 +86,7 @@ def validate_delete_reconciliation_result(
         result.get("schema_version") != emitted.RECONCILE_SINGLE_SCHEMA_VERSION
         or result.get("api_version") != "forgejo-rest-v1"
         or result.get("delivery_id") != delivery_id
-        or result.get("upstream_read_attempts") != 1
+        or type(result.get("upstream_read_attempts")) is not int
     ):
         raise ValueError("branch-delete reconciliation identity or schema does not match")
 
@@ -94,6 +94,7 @@ def validate_delete_reconciliation_result(
         canonical = result.get("canonical_state")
         if (
             status != 0
+            or result.get("upstream_read_attempts") < 1
             or result.get("verdict") != "current_state_read"
             or result.get("resource") != resource
             or not isinstance(expected_sha, str)
@@ -104,19 +105,19 @@ def validate_delete_reconciliation_result(
             raise ValueError("reconciliation did not read the expected current branch")
         return
 
-    error = result.get("error")
-    details = error.get("details") if isinstance(error, dict) else None
+    canonical = result.get("canonical_state")
+    expected_html_url = f"{ORIGIN}/{owner}/{repository}/src/branch/{quote(branch, safe='')}"
     if (
-        status != 1
-        or result.get("verdict") != "inconclusive"
-        or not isinstance(error, dict)
-        or error.get("code") != "resource_not_found"
-        or error.get("retryable") is not False
-        or not isinstance(details, dict)
-        or details.get("resource") != resource
-        or "canonical_state" in result
+        status != 0
+        or result.get("upstream_read_attempts") < 3
+        or result.get("verdict") != "current_state_read"
+        or result.get("resource") != resource
+        or not isinstance(canonical, dict)
+        or canonical.get("state") != "absent"
+        or canonical.get("head_sha") is not None
+        or canonical.get("html_url") != expected_html_url
     ):
-        raise ValueError("deleted branch must remain inconclusive with resource_not_found")
+        raise ValueError("branch absence requires readable repository and a fresh branch 404")
 
 
 def validate_branch_ref_reconcile_batch(
@@ -141,8 +142,12 @@ def validate_branch_ref_reconcile_batch(
         or batch.get("verdict") != expected_batch_verdict
     ):
         raise ValueError("branch ref reconciliation batch envelope is invalid")
-    if type(batch.get("upstream_read_attempts")) is not int or batch["upstream_read_attempts"] != 1:
-        raise ValueError("same-resource branch ref batch must use one upstream read")
+    if type(batch.get("upstream_read_attempts")) is not int:
+        raise ValueError("same-resource branch ref batch read-attempt count is invalid")
+    if expected_present and batch["upstream_read_attempts"] < 1:
+        raise ValueError("same-resource branch ref batch must perform an upstream read")
+    if not expected_present and batch["upstream_read_attempts"] < 3:
+        raise ValueError("branch absence requires repository and fresh branch reads")
     if not isinstance(requested_events, list) or len(requested_events) != 2:
         raise ValueError("batch must contain unique create and delete deliveries in order")
     delivery_ids: list[str] = []
@@ -169,7 +174,7 @@ def validate_branch_ref_reconcile_batch(
     }
     expected_html_url = f"{ORIGIN}/{owner}/{repository}/src/branch/{quote(branch, safe='')}"
     checked: list[dict[str, Any]] = []
-    for event, result in zip(requested_events, results, strict=True):
+    for index, (event, result) in enumerate(zip(requested_events, results, strict=True)):
         emitted.validate_reconciliation_delivery_binding(event, result)
         if not isinstance(result, dict):
             raise ValueError("branch ref batch item is not an object")
@@ -186,21 +191,30 @@ def validate_branch_ref_reconcile_batch(
             ):
                 raise ValueError("branch ref batch item is not the current branch state")
         else:
-            error = result.get("error")
-            details = error.get("details") if isinstance(error, dict) else None
-            action = error.get("action") if isinstance(error, dict) else None
-            if (
-                result.get("verdict") != "inconclusive"
-                or not isinstance(error, dict)
-                or error.get("code") != "resource_not_found"
-                or error.get("retryable") is not False
-                or not isinstance(details, dict)
-                or details.get("resource") != expected_resource
-                or not isinstance(action, str)
-                or "HTTP 404 does not distinguish an absent branch" not in action
-                or "canonical_state" in result
-            ):
-                raise ValueError("branch ref batch absence inconclusive contract is invalid")
+            if index == 0:
+                error = result.get("error")
+                details = error.get("details") if isinstance(error, dict) else None
+                if (
+                    result.get("verdict") != "inconclusive"
+                    or not isinstance(error, dict)
+                    or error.get("code") != "resource_not_found"
+                    or error.get("retryable") is not False
+                    or not isinstance(details, dict)
+                    or details.get("resource") != expected_resource
+                    or "canonical_state" in result
+                ):
+                    raise ValueError("create result must preserve its inconclusive 404")
+            else:
+                canonical = result.get("canonical_state")
+                if (
+                    result.get("verdict") != "current_state_read"
+                    or result.get("resource") != expected_resource
+                    or not isinstance(canonical, dict)
+                    or canonical.get("state") != "absent"
+                    or canonical.get("head_sha") is not None
+                    or canonical.get("html_url") != expected_html_url
+                ):
+                    raise ValueError("delete result lacks a verified absent branch state")
         checked.append(result)
     return checked
 

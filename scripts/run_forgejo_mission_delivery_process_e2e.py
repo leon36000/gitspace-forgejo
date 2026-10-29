@@ -47,6 +47,10 @@ TESTS = (
     ),
     (
         "forgejo_mission_delivery_process_e2e",
+        "actual_mission_cli_refuses_mismatched_issue_repository_before_allocation_then_retries_corrected",
+    ),
+    (
+        "forgejo_mission_delivery_process_e2e",
         "actual_mission_cli_refuses_branch_head_change_during_admission_then_retries_current_state",
     ),
     (
@@ -64,6 +68,10 @@ TESTS = (
     (
         "forgejo_mission_delivery_process_e2e",
         "actual_mission_cli_admits_signed_webhook_with_v3_requirement_arbitration",
+    ),
+    (
+        "forgejo_mission_delivery_process_e2e",
+        "actual_mission_cli_refuses_mismatched_source_pull_request_repository_before_allocation_then_retries",
     ),
     (
         "forgejo_mission_delivery_process_e2e",
@@ -116,6 +124,22 @@ TESTS = (
     (
         "forgejo_merge_post_crash_recovery_process_e2e",
         "killed_cli_after_forgejo_merge_recovers_readback_only_and_serializes_duplicate_retries",
+    ),
+    (
+        "forgejo_merge_post_crash_recovery_process_e2e",
+        "merged_readback_with_contradictory_base_owner_is_inconclusive",
+    ),
+    (
+        "forgejo_merge_post_crash_recovery_process_e2e",
+        "merged_readback_with_mismatched_pr_base_repository_id_is_inconclusive",
+    ),
+    (
+        "forgejo_merge_post_crash_recovery_process_e2e",
+        "merged_readback_with_contradictory_issue_repository_is_inconclusive",
+    ),
+    (
+        "forgejo_merge_post_crash_recovery_process_e2e",
+        "merged_readback_with_mismatched_issue_repository_id_is_inconclusive",
     ),
     (
         "forgejo_merge_post_crash_recovery_process_e2e",

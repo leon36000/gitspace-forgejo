@@ -1,0 +1,6 @@
+Local SHA256SUMS: PASS
+Worktree/project latest-record manifests: PASS
+Append-only prefixes preserved: PASS
+Local entries: 14
+Worktree verified paths: 13733
+Project verified paths: 8902

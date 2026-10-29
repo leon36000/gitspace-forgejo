@@ -1,0 +1,12 @@
+Command: cargo test --locked --offline --test webhook_inbox_snapshot -- --test-threads=1
+Exit code: 101
+
+Before the CLI mode existed, the new integration test ran against the receiver's normal argument parser:
+
+running 4 tests
+test cli_exports_the_validated_bytes_and_receipt_without_mutating_the_inbox ... FAILED
+test cli_refuses_a_preexisting_destination_without_overwriting_it ... ok
+test cli_refuses_a_symlink_destination_and_preserves_its_target ... ok
+test cli_refuses_an_unterminated_journal_without_repairing_or_creating_a_snapshot ... FAILED
+
+The two behavior-dependent cases failed with `invalid listen address; use a loopback IP and port`; the refusal mechanics for already-existing paths passed in the current parser. This establishes that the requested snapshot behavior was absent before implementation.

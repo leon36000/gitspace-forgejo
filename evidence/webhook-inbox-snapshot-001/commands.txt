@@ -1,0 +1,9 @@
+cargo test --locked --offline --test webhook_inbox_snapshot -- --test-threads=1  # pre-implementation red reproduction
+cargo test --locked --offline --test webhook_inbox_snapshot --test webhook_inbox_capacity -- --test-threads=1
+cargo test --locked --offline --all-targets -- --test-threads=1
+cargo fmt --all -- --check
+git diff --check
+python3 scripts/verify_cargo_license_state.py
+cargo metadata --format-version 1 --locked --offline --no-deps
+python3 evidence/documentation-link-audit-001/verify_doc_links.py
+python3 evidence/webhook-inbox-snapshot-001/append_manifests.py

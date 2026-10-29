@@ -1,0 +1,22 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.59s
+     Running tests/webhook_inbox_snapshot.rs (target/debug/deps/webhook_inbox_snapshot-f8add6a663511908)
+
+running 14 tests
+test cli_exports_the_validated_bytes_and_receipt_without_mutating_the_inbox ... ok
+test cli_refuses_a_preexisting_destination_without_overwriting_it ... ok
+test cli_refuses_a_symlink_destination_and_preserves_its_target ... ok
+test cli_refuses_an_oversized_sparse_inbox_before_reading_or_exporting_it ... ok
+test cli_refuses_an_unterminated_journal_without_repairing_or_creating_a_snapshot ... ok
+test cli_refuses_corrupt_snapshot_even_when_expected_digest_matches ... ok
+test cli_refuses_existing_restore_destination_without_overwriting_it ... ok
+test cli_refuses_hard_linked_restore_source_without_staging_target ... ok
+test cli_refuses_malformed_restore_digest_without_reading_or_staging ... ok
+test cli_refuses_missing_restore_source_before_creating_any_path ... ok
+test cli_refuses_restore_digest_mismatch_without_creating_destination ... ok
+test cli_refuses_symlink_restore_destination_without_touching_its_target ... ok
+test cli_stages_verified_snapshot_and_resumes_the_journal_sequence ... ok
+test interrupted_restore_never_exposes_a_partial_destination ... ok
+
+test result: ok. 14 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.06s
+

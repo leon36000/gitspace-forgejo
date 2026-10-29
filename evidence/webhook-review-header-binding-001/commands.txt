@@ -1,0 +1,11 @@
+cargo test --offline --locked --test webhook_handler_contract unsigned_review_header_substitution_is_refused_and_same_delivery_can_retry -- --exact --test-threads=1
+cargo test --offline --locked --test webhook_handler_contract -- --test-threads=1
+cargo fmt --all -- --check
+git diff --check
+python3 scripts/verify_cargo_license_state.py
+cargo metadata --format-version 1 --locked --offline --no-deps
+python3 evidence/documentation-link-audit-001/verify_doc_links.py
+(cd evidence/continuation-437-at-tag-compat-001 && sha256sum -c SHA256SUMS)
+python3 evidence/webhook-review-header-binding-001/append_manifests.py
+python3 scripts/verify_latest_sha256_manifest.py evidence/SHA256SUMS --root .
+python3 scripts/verify_latest_sha256_manifest.py ../../evidence/SHA256SUMS --root ../..

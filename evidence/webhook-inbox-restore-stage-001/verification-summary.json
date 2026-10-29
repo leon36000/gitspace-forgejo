@@ -1,0 +1,32 @@
+{
+  "lot": "WEBHOOK-INBOX-RESTORE-STAGE-001",
+  "baseline_head": "f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0",
+  "focused_process_tests": {
+    "passed": 13,
+    "failed": 0,
+    "ignored": 0,
+    "status": "pass"
+  },
+  "format_check": "pass",
+  "diff_check": "pass",
+  "license_guard": "pass_no_license_selected",
+  "documentation_links": {
+    "status": "pass_after_report_creation",
+    "missing": 0
+  },
+  "clippy": {
+    "status": "fail",
+    "exit_code": 101,
+    "diagnostics": 22,
+    "scope": "library modules outside the changed CLI target"
+  },
+  "claims_not_established": [
+    "snapshot authenticity",
+    "quiescent restore point",
+    "post-snapshot webhook replay",
+    "crash recovery during file write",
+    "live Forgejo behavior",
+    "LLM or AgentOS execution",
+    "productivity or cost improvement"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "all_targets": {
+    "command": "cargo test --locked --offline --all-targets -- --test-threads=1",
+    "exit_code": 0,
+    "groups": 39,
+    "passed": 771,
+    "failed": 0,
+    "ignored": 200,
+    "log": "all-targets-final.log"
+  },
+  "focused": {
+    "snapshot_tests_passed": 5,
+    "capacity_tests_passed": 6,
+    "failed": 0,
+    "log": "snapshot-capacity-final.log"
+  },
+  "format": {
+    "command": "cargo fmt --all -- --check",
+    "exit_code": 0
+  },
+  "diff_check": {
+    "command": "git diff --check",
+    "exit_code": 0
+  },
+  "cargo_metadata": {
+    "command": "cargo metadata --format-version 1 --locked --offline --no-deps",
+    "exit_code": 0,
+    "dependency_change": false
+  },
+  "license_guard": {
+    "status": "metadata_policy_verified",
+    "license": null,
+    "license_file": null,
+    "publish": [],
+    "license_decision": "no_license_selected",
+    "redistribution_rights": "not_assessed",
+    "spdx_package_license_declared": "NOASSERTION"
+  },
+  "documentation_links": {
+    "checked": 1611,
+    "missing": 0,
+    "passed": true
+  },
+  "scope": "local-only; no email, GitLab, production, model service, or external network call"
+}

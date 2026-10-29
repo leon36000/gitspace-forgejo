@@ -1,0 +1,14 @@
+{
+  "branch": "local/WEBHOOK-005-canonical-links",
+  "capture_phase": "before manifest append",
+  "head": "f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0",
+  "notes": "Pre-existing dirty state preserved; remote URLs and credentials omitted.",
+  "observed_at": "2026-10-28T20:03:20.209955-04:00",
+  "porcelain_entry_count": 1864,
+  "remote_names_only": [
+    "origin",
+    "pc4-gitlab"
+  ],
+  "tracked_dirty_entries": 19,
+  "untracked_entries": 1845
+}

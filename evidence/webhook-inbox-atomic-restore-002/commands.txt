@@ -1,0 +1,33 @@
+RED
+cargo test --locked --offline --features test-crash-injection --test webhook_inbox_snapshot interrupted_restore_never_exposes_a_partial_destination -- --exact --nocapture
+Observed: exit 101; the old CLI exited without reaching the new pre-publication barrier.
+
+cargo test --locked --offline --features test-crash-injection --test webhook_inbox_snapshot interrupted_after_restore_publish_leaves_a_complete_private_destination -- --exact --nocapture
+Observed: exit 101 before adding the post-publication barrier; the CLI exited before reaching it.
+
+cargo test --locked --offline --features test-crash-injection --test webhook_inbox_snapshot restore_refuses_a_destination_created_at_the_publish_boundary -- --exact --nocapture
+Observed: exit 101 before adding the barrier-resume handshake; the child remained blocked until the bounded test killed it.
+
+GREEN / focused suite
+cargo test --locked --offline --features test-crash-injection --test webhook_inbox_snapshot -- --test-threads=1
+Observed after the final RAII guard: 16 passed, 0 failed, 0 ignored. Full stdout/stderr: restore-feature-tests-final.log.
+
+FULL TEST SUITE
+cargo test --locked --offline --all-targets -- --test-threads=1
+Observed: exit 0; 784 passed, 0 failed, 204 ignored in 39 test groups. Full stdout/stderr: all-targets-final.log.
+
+RELATED STALE TEST REPRODUCTION
+cargo test --locked --offline --bin forgejo-reconcile-local gate_request_paths_cannot_mix_repositories_from_two_profiles -- --nocapture
+Observed before expectation update: failed because the configured repository visibility GET returned 200. After removing that allowed route from the foreign-route list, the exact test passed.
+
+CLIPPY
+cargo clippy --locked --offline --bin forgejo-webhook-local --test webhook_inbox_snapshot --message-format short -- -D warnings
+Observed: exit 101; 22 library diagnostics. This invocation selected the webhook binary and snapshot integration test; it had no diagnostic in those selected files and did not lint the reconcile binary.
+
+cargo clippy --locked --offline --all-targets --features test-crash-injection --message-format short
+Observed: exit 0 with warnings. No warnings in forgejo-webhook-local.rs or webhook_inbox_snapshot.rs; five warnings in other areas of forgejo-reconcile-local.rs.
+
+STATIC / POLICY
+cargo fmt --all -- --check
+git diff --check
+python3 scripts/verify_cargo_license_state.py

@@ -1,0 +1,17 @@
+{
+  "canonical_doc_link_audit": "pass: 1609 checked, 0 missing",
+  "cargo_fmt_check": "pass",
+  "cargo_license_policy": "pass; no license selected; rights not assessed",
+  "cargo_metadata_offline_locked": "pass",
+  "git_diff_check": "pass",
+  "limitations": [
+    "synthetic HMAC key",
+    "direct receiver function rather than isolated receiver process",
+    "no Forgejo live webhook source",
+    "no LLM/AgentOS or comparative benchmark"
+  ],
+  "remote_gitlab_write_attempted": false,
+  "runtime_code_changed": false,
+  "targeted_test": "pass: 1/1",
+  "webhook_handler_contract": "pass: 31/31, 0 ignored"
+}

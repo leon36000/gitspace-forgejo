@@ -1,0 +1,4 @@
+WEBHOOK-INBOX-RESTORE-STAGE-001 local evidence hashes: PASS
+worktree and project append-only prefixes: PASS
+checkpoint, architecture, implementation plan, refusal matrix, CLI and process test hashes appended: PASS
+local_evidence_files=11

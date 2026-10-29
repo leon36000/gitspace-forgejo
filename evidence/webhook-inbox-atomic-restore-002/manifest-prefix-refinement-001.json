@@ -1,0 +1,14 @@
+{
+  "package": {
+    "line_count": 10,
+    "sha256": "34e27a9ff15b42cd952729a149d8765b79e74a5f0b64f3e66c38fb182aa3f256"
+  },
+  "project": {
+    "line_count": 13093,
+    "sha256": "2ed3a3522d04dae11495821fd60ffa2a0a29f4effb8e5bbebaf58c526c20d4a6"
+  },
+  "worktree": {
+    "line_count": 19147,
+    "sha256": "e3c51b7d320f0fe90481a08db74611c750d2251992dad714ec32f10263f1b973"
+  }
+}

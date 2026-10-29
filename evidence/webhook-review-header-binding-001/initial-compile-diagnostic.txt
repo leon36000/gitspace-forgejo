@@ -1,0 +1,1 @@
+Premier build après l’ajout du test : erreur de compilation uniquement dans l’assertion d’ordre, car `read_journaled_webhook_event` renvoie `JournaledWebhookEventV1`, qui n’a pas de champ `sequence` direct. Correction appliquée : assertion via `event.event().sequence`. Le test ciblé puis la suite `webhook_handler_contract` complète passent après correction.

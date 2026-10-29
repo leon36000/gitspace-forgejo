@@ -1,0 +1,21 @@
+Behavioral red before runtime correction (after repairing the stale local test fixture):
+  python3 tests/test_mission_requirement_arbitration_cli_process.py -v
+The red run is expected to fail: the fixture moves the source PR head after the second reviews read; old code exited 0 and claimed generation 2.
+
+Process verification after the correction:
+  python3 tests/test_mission_requirement_arbitration_cli_process.py -v
+
+Focused requirements arbitration contracts:
+  cargo test --locked --offline --test mission_requirement_arbitration_contract -- --test-threads=1
+
+Workspace Rust suite:
+  cargo test --locked --offline --all-targets -- --test-threads=1
+
+Formatting, whitespace, licensing policy and lint attempt:
+  cargo fmt --all -- --check
+  git diff --check
+  python3 scripts/verify_cargo_license_state.py
+  cargo clippy --locked --offline --all-targets -- -D warnings
+  python3 evidence/documentation-link-audit-001/verify_doc_links.py
+
+Tool versions and source hashes are recorded beside this file. No GitLab, email, network service, model or paid tool was used by these commands.

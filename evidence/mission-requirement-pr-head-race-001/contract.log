@@ -1,0 +1,21 @@
+   Compiling agent-forge-core v0.1.0 (/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.43s
+     Running tests/mission_requirement_arbitration_contract.rs (target/debug/deps/mission_requirement_arbitration_contract-f25252c684e98e61)
+
+running 13 tests
+test changed_review_pages_between_complete_reads_refuse_admission ... ok
+test duplicated_review_identity_refuses_the_complete_snapshot ... ok
+test host_arbitration_policy_for_another_fixed_scope_refuses_before_allocation ... ok
+test incomplete_review_pages_refuse_even_when_the_visible_page_has_approval ... ok
+test merged_pr_review_marked_stale_after_merge_still_requires_exact_reviewed_head ... ok
+test merged_requirement_pr_and_current_authorized_review_are_recorded_before_admission ... ok
+test missing_authorized_review_refuses_before_generation_allocation ... ok
+test pr_ref_change_during_review_pagination_makes_the_decision_inconclusive ... ok
+test schema_v2_admission_cannot_bypass_the_schema_v3_review_gate ... ok
+test stale_or_missing_pr_merge_bytes_refuse_before_generation_allocation ... ok
+test stale_policy_digest_refuses_before_any_generation_is_allocated ... ok
+test stale_review_on_an_old_pr_head_does_not_authorize_the_decision ... ok
+test unmerged_source_pr_refuses_even_when_its_review_is_approved ... ok
+
+test result: ok. 13 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+

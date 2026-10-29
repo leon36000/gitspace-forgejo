@@ -1,0 +1,10 @@
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_handler_contract.rs:1515:
+         assert_eq!(response.status, 400, "case {index}: {response:?}");
+         assert_eq!(response.body["error"]["code"], "event_payload_invalid");
+         assert_eq!(
+-            response.body["error"]["retryable"],
+-            false,
++            response.body["error"]["retryable"], false,
+             "case {index}: {response:?}"
+         );
+         assert_eq!(
