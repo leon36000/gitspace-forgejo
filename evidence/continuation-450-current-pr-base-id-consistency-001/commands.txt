@@ -1,0 +1,17 @@
+Environment and source:
+  git -C /tmp/forgejo-v17-base-cas-poc rev-parse HEAD
+  git -C /tmp/forgejo-v17-base-cas-poc show HEAD:<path> | sha256sum
+  git -C /tmp/forgejo-v17-base-cas-poc show HEAD:<path> | nl -ba | sed -n '<range>'
+
+TDD and validation:
+  cargo test --locked --offline --test webhook_reconcile_contract pull_request_current_base_repository_numeric_ids_are_positive_and_consistent -- --exact
+  python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_refuses_contradictory_current_base_repository_ids
+  cargo test --locked --offline --all-targets -- --test-threads=1
+  cargo fmt --all -- --check
+  python3 -m py_compile scripts/run_webhook_reconcile_cli_e2e.py
+  git diff --check
+  python3 scripts/verify_cargo_license_state.py
+  cargo metadata --format-version 1 --locked --offline --no-deps
+  target/debug/forgejo-reconcile-local --capabilities
+
+The isolated process runner builds/copies test artifacts into a Bubblewrap namespace, runs the named ignored test with `--unshare-net --unshare-pid`, and supplies only a loopback HTTP fixture. It does not contact Forgejo or GitLab.

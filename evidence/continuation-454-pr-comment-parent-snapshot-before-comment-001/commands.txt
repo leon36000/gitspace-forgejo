@@ -1,0 +1,18 @@
+# Red/green and regression commands represented by the retained logs.
+cargo test --locked --offline --test webhook_reconcile_contract pull_request_comment_parent_rejects_invalid_head_before_reading_comment -- --exact --nocapture
+cargo test --locked --offline --test webhook_reconcile_contract -- --test-threads=1
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_refuses_invalid_pr_head_before_reading_comment
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_refuses_foreign_pr_base_before_reading_comment
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_routes_issue_comment_pr_conversation_to_pull_request_api
+cargo test --locked --offline --all-targets -- --test-threads=1
+
+# Final local checks.
+cargo fmt --all
+cargo fmt --all -- --check
+git diff --check
+PYTHONPYCACHEPREFIX=/tmp/cont454-pycache python3 -m py_compile scripts/run_webhook_reconcile_cli_e2e.py
+python3 scripts/verify_cargo_license_state.py
+python3 evidence/documentation-link-audit-001/verify_doc_links.py
+sha256sum -c evidence/continuation-454-pr-comment-parent-snapshot-before-comment-001/source-sha256.txt
+(cd evidence/continuation-454-pr-comment-parent-snapshot-before-comment-001 && sha256sum -c SHA256SUMS)
+python3 evidence/continuation-454-pr-comment-parent-snapshot-before-comment-001/append_manifests.py

@@ -1,0 +1,36 @@
+{
+  "api_version": "forgejo-reconcile-capabilities-v31",
+  "current_api_identity_contract": {
+    "issue_repository": {
+      "accepted_identity_fields": [
+        "full_name",
+        "name",
+        "owner"
+      ],
+      "field": "repository",
+      "missing_or_null": "allowed_as_partial_api_response",
+      "when_object_present": "require_at_least_one_identity_field_and_validate_every_supplied_value"
+    },
+    "pull_request_base_repository": {
+      "accepted_identity_fields": [
+        "full_name",
+        "name",
+        "owner.login"
+      ],
+      "field": "base.repo",
+      "missing_or_null": "allowed_as_partial_api_response",
+      "numeric_repository_id_contract": {
+        "base_repo_id": "when_present_require_positive_signed_integer",
+        "missing_or_null_nested_repository": "no_numeric_equality_claim",
+        "nested_repository_id": "when_present_require_positive_signed_integer",
+        "when_both_present": "require_equal"
+      },
+      "when_object_present": "require_at_least_one_identity_field_and_validate_every_supplied_value"
+    },
+    "pull_request_head_repository": {
+      "foreign_forks_allowed": true,
+      "target_repository_must_match": false
+    }
+  },
+  "schema_version": 31
+}

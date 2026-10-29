@@ -1,0 +1,11 @@
+Observed from the pre-runtime-update command in commands.txt:
+
+running 1 test
+thread 'actual_cli_discloses_versioned_local_test_capabilities' panicked:
+assertion `left == right` failed
+  left: Number(31)
+ right: 32
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 6 filtered out
+exit status: 101
+
+This is a transcript excerpt of the intentional red check, not a test log captured to disk by the original command. The final green logs are captured separately.

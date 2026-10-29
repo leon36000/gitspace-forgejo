@@ -1,0 +1,10 @@
+Observed from the focused Rust contract test before the runtime change:
+
+test pull_request_comment_parent_rejects_foreign_base_before_reading_comment ... FAILED
+assertion `left == right` failed: reject the PR parent before reading its conversation comment
+  left: 2
+ right: 1
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 109 filtered out
+exit status: 101
+
+The preceding assertion that the eventual result was `ResourceMismatch` passed; the two recorded source calls show that the PR-base mismatch was rejected only after the comment read. This is an excerpt of the observed red output, not a raw log captured by that first command.

@@ -1,0 +1,3 @@
+Command: cargo fmt --all -- --check
+Exit status: 0
+Observed: formatting check passed after cargo fmt --all reformatted one new test invocation.

@@ -1,0 +1,18 @@
+# Intentional red before moving PR-base validation ahead of comment reads (exit 101)
+cargo test --locked --offline --test webhook_reconcile_contract pull_request_comment_parent_rejects_foreign_base_before_reading_comment -- --exact --nocapture
+# Green focused contract, then full contract target
+cargo test --locked --offline --test webhook_reconcile_contract pull_request_comment_parent_rejects_foreign_base_before_reading_comment -- --exact --nocapture
+cargo test --locked --offline --test webhook_reconcile_contract
+# Green receiver -> journal -> actual CLI process under Bubblewrap private net/PID namespaces
+python3 -B scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_refuses_foreign_pr_base_before_reading_comment
+# Green full Rust suite
+cargo test --locked --offline --all-targets -- --test-threads=1
+# Final local checks
+cargo fmt --all -- --check
+git diff --check
+python3 -B -c "compile(open('scripts/run_webhook_reconcile_cli_e2e.py', encoding='utf-8').read(), 'scripts/run_webhook_reconcile_cli_e2e.py', 'exec')"
+python3 -B scripts/verify_cargo_license_state.py
+python3 evidence/documentation-link-audit-001/verify_doc_links.py
+sha256sum src/webhook/reconcile.rs tests/webhook_reconcile_contract.rs tests/webhook_receiver_process_e2e.rs scripts/run_webhook_reconcile_cli_e2e.py docs/checkpoint.md docs/architecture.md docs/implementation-plan.md docs/refusal-evidence-matrix.md
+python3 evidence/continuation-453-pr-comment-parent-base-bind-001/append_manifests.py
+(cd evidence/continuation-453-pr-comment-parent-base-bind-001 && sha256sum -c SHA256SUMS && cd ../.. && sha256sum -c evidence/continuation-453-pr-comment-parent-base-bind-001/source-sha256.txt)

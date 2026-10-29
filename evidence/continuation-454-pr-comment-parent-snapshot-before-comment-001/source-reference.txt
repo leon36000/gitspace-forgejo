@@ -1,0 +1,9 @@
+Forgejo v17 source read from the existing local scratch only.
+HEAD: 0d791421f85ca13a63b665053d81ea765fbbc571
+Working-tree changes to listed source files: none
+Blobs at HEAD:
+100644 blob 8c94589ddff464c3a2b029469220e43fcb7321b0	models/issues/comment.go
+100644 blob 766442374d22a4158c7722c6e97213cdf4f31ef6	modules/structs/issue_comment.go
+100644 blob 90b8638e10a1a19792e0936ff0e1ceb732e874d4	routers/api/v1/api.go
+100644 blob 92d7d714a478d41b68580ef2cace698b74c7155c	routers/api/v1/repo/issue_comment.go
+100644 blob 2f9af9be7c71a81338d70b87cb2be19ee87569a0	services/convert/issue_comment.go

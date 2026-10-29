@@ -1,0 +1,13 @@
+cargo test --locked --offline --test webhook_reconcile_contract current_issue_repository_metadata_must_match_the_requested_resource -- --exact --nocapture  # expected red before the validator change
+cargo test --locked --offline --test webhook_reconcile_contract
+cargo test --locked --offline --test webhook_inbox_capacity  # expected red before recovery-guidance changes
+cargo test --locked --offline --test webhook_inbox_capacity
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_refuses_partial_issue_repository_metadata
+cargo test --locked --offline --bin forgejo-webhook-local snapshot_and_restore_capacity_refusals_do_not_claim_a_migration_exists  # expected red before oversized-snapshot guidance change
+cargo test --locked --offline --bin forgejo-webhook-local snapshot_and_restore_capacity_refusals_do_not_claim_a_migration_exists
+cargo test --locked --offline --bin forgejo-mission-local mission_capacity_error_names_only_available_recovery_actions
+cargo test --locked --offline --all-targets -- --test-threads=1 > evidence/continuation-451-issue-meta-capacity-guidance-001/all-targets.log 2>&1
+cargo fmt --all -- --check
+git diff --check
+python3 -B -c "compile(open('scripts/run_webhook_reconcile_cli_e2e.py', encoding='utf-8').read(), 'scripts/run_webhook_reconcile_cli_e2e.py', 'exec')"
+python3 -B scripts/verify_cargo_license_state.py

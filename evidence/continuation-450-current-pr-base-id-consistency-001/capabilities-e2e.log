@@ -1,0 +1,14 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.01s
+     Running tests/forgejo_reconcile_capabilities_e2e.rs (target/debug/deps/forgejo_reconcile_capabilities_e2e-c64f35efa7049e66)
+
+running 7 tests
+test actual_cli_binds_status_snapshot_to_pr_head_and_refuses_head_drift ... ignored, binds the adapter's fixed loopback port 3130; run explicitly and serially
+test actual_cli_reads_multiple_status_pages_and_refuses_changed_total ... ignored, binds the adapter's fixed loopback port 3130; run explicitly and serially
+test capability_discovery_rejects_extra_arguments ... ok
+test merge_cli_rejects_reconciliation_only_profile_before_any_merge_input ... ok
+test merge_cli_rejects_reconciliation_only_value_under_merge_selector ... ok
+test preflight_rejects_fifo_input_without_blocking ... ok
+test actual_cli_discloses_versioned_local_test_capabilities ... ok
+
+test result: ok. 5 passed; 0 failed; 2 ignored; 0 measured; 0 filtered out; finished in 0.03s
+

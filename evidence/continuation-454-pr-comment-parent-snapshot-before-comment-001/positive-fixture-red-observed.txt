@@ -1,0 +1,3 @@
+Le premier run du processus positif `actual_reconcile_cli_process_routes_issue_comment_pr_conversation_to_pull_request_api` a échoué parce que la fixture attendait le GET du commentaire, alors que le CLI n’a effectué que le GET parent PR et le worker a signalé « reconciliation CLI made too few requests ». Le parent de cette fixture omettait `draft`. Lecture du code : `current_pull_request_fields` exige un booléen `draft`; le snapshot complet refuse donc ce parent avant la lecture enfant. Ajout de `"draft": false` à la fixture conforme, puis rerun du même scénario : 1/1 vert.
+
+Cette note résume la sortie observée; le journal d’échec initial a été remplacé lors du rerun réussi et n’est pas conservé en brut. Le changement corrige la fixture de test, pas le runtime.

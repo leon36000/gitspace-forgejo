@@ -1,0 +1,17 @@
+Forgejo official source audit — source declarations only; no upstream code copied or modified.
+
+Repository: https://codeberg.org/forgejo/forgejo.git
+Tag: v17.0.0
+Commit: 0d791421f85ca13a63b665053d81ea765fbbc571
+Checkout: /tmp/forgejo-v17-base-cas-poc (the scratch is globally dirty; these specific blobs match the pinned commit via `git show HEAD:<path>`)
+
+1. modules/structs/pull.go, SHA-256 1472f689d9e80da512cc8edafa5d647daafccdf060dfba0d4a74d3be5cfe06e3
+   Lines 64-70: PRBranchInfo declares RepoID int64 as `repo_id` and Repository *Repository as `repo`.
+2. modules/structs/repo.go, SHA-256 d1e5864b5d95436822d64a58b3ee1ed64eec7a778fd279fe2cdf677536c84a1f
+   Lines 49-54: Repository declares ID int64 as `id`, plus Owner, Name and FullName.
+3. services/convert/pull.go, SHA-256 7e3e4ef86c1854943eb36530797a878dc10a66845d3e34e845dc3c69c80930b5
+   Lines 100-105 in ToAPIPullRequest: Base.RepoID is copied from pr.BaseRepoID; Base.Repository is separately returned by ToRepo.
+4. services/convert/repository.go, SHA-256 edc14cbb5e831ac69d46858596e1e03f7e550efc7522add59e1f985ebcea7fe8
+   Lines 197-202 in innerToRepo: API Repository.ID is copied from repo.ID and the textual identity fields are populated.
+
+Coverage limit: DTO/converter code was read from the pinned commit; no Go tests or live Forgejo instance were run in this lot. This evidence establishes the documented shape and field population, not server authenticity or consistency under every repository-loading failure.

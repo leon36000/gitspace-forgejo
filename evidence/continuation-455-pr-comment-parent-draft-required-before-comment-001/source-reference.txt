@@ -1,0 +1,4 @@
+Forgejo API source reference is inherited from the existing local source inventory; no new upstream file was read or modified in this test-only slice.
+Official Forgejo v17.0.0 commit: 0d791421f85ca13a63b665053d81ea765fbbc571.
+Existing local reference: docs/source-inventory.md:286, GET /repos/{owner}/{repo}/pulls/{index}; router routers/api/v1/api.go:1020-1062; PR DTO modules/structs/pull.go.
+Related parent/comment source verification and exact scratch blobs: evidence/continuation-454-pr-comment-parent-snapshot-before-comment-001/source-reference.txt.

@@ -1,0 +1,10 @@
+Focused unit test: pull_request_current_base_repository_numeric_ids_are_positive_and_consistent — 1 passed.
+The first run before the runtime edit failed as expected: the assertion for "contradictory repository ids" observed Ok(()) instead of Err(ResourceMismatch).
+
+Process E2E: actual_reconcile_cli_process_refuses_contradictory_current_base_repository_ids — 1 passed under Bubblewrap; 208 other process tests were filtered in the captured run. The first process fixture attempt was invalid because it omitted the required `draft` boolean; the fixture was corrected to include `draft=false`, then the final run passed.
+
+Capability E2E: forgejo_reconcile_capabilities_e2e — 5 passed, 0 failed, 2 ignored in a focused run. The current all-targets log also includes the capability assertion.
+
+Full locked/offline all-targets run: 39 test groups, 787 passed, 0 failed, 211 ignored. Ignored tests were not run by this command.
+
+Static checks: rustfmt check, Python runner compilation, and `git diff --check` passed. Cargo license metadata guard passed with license and license_file unset, publish empty, redistribution rights not assessed, SPDX `NOASSERTION`.
