@@ -114,6 +114,7 @@ struct BudgetedPermissionRaceApi {
 struct ChangingPullRequestParentApi {
     initial_parent: Value,
     fresh_parent: Value,
+    comment: Result<Value, ApiReadError>,
     parent_reads: Mutex<usize>,
     requests: Mutex<Vec<ResourceRef>>,
 }
@@ -227,7 +228,7 @@ impl ForgejoCurrentState for ChangingPullRequestParentApi {
                     Ok(self.fresh_parent.clone())
                 }
             }
-            ResourceKind::PullRequestComment => Err(ApiReadError::NotFound),
+            ResourceKind::PullRequestComment => self.comment.clone(),
             _ => Err(ApiReadError::Forbidden),
         }
     }
@@ -1186,7 +1187,13 @@ fn ordinary_issue_comment_uses_canonical_api_body_and_binds_parent_issue() {
                     comment_id: 29,
                     deleted_event: false,
                 },
-            }
+            },
+            ResourceRef {
+                kind: ResourceKind::Issue,
+                owner: "forge-admin".into(),
+                repository: "agent-forge-core".into(),
+                id: ResourceId::Number(11),
+            },
         ]
     );
 }
@@ -1338,9 +1345,10 @@ fn pull_request_conversation_comment_uses_current_pr_and_comment_api() {
     );
     assert_eq!(comment.body_trust, "untrusted_user_content");
     let requests = api.requests.lock().unwrap();
-    assert_eq!(requests.len(), 2, "read the PR, then the current comment");
+    assert_eq!(requests.len(), 3, "read the PR, comment, then the PR again");
     assert_eq!(requests[0].kind, ResourceKind::PullRequest);
     assert_eq!(format!("{:?}", requests[1].kind), "PullRequestComment");
+    assert_eq!(requests[2].kind, ResourceKind::PullRequest);
     assert!(matches!(
         requests[1].id,
         ResourceId::IssueComment {
@@ -1349,6 +1357,73 @@ fn pull_request_conversation_comment_uses_current_pr_and_comment_api() {
             deleted_event: false
         }
     ));
+}
+
+#[test]
+fn present_pr_comment_uses_fresh_parent_after_comment_readback() {
+    let current = pull_request_comment_api();
+    let mut initial_parent = current.issue.clone().unwrap();
+    initial_parent["state"] = json!("open");
+    initial_parent["merged"] = json!(false);
+    initial_parent["merge_commit_sha"] = Value::Null;
+    initial_parent["updated_at"] = json!("2026-10-21T15:30:00-04:00");
+    initial_parent["head"]["sha"] = json!("1111111111111111111111111111111111111111");
+    initial_parent["base"]["sha"] = json!("2222222222222222222222222222222222222222");
+
+    let mut fresh_parent = initial_parent.clone();
+    fresh_parent["state"] = json!("closed");
+    fresh_parent["merged"] = json!(true);
+    fresh_parent["merge_commit_sha"] = json!("5555555555555555555555555555555555555555");
+    fresh_parent["updated_at"] = json!("2026-10-22T16:30:00-04:00");
+    fresh_parent["head"]["sha"] = json!("3333333333333333333333333333333333333333");
+    fresh_parent["base"]["sha"] = json!("4444444444444444444444444444444444444444");
+
+    let api = ChangingPullRequestParentApi {
+        initial_parent,
+        fresh_parent,
+        comment: current.comment,
+        parent_reads: Mutex::new(0),
+        requests: Mutex::new(Vec::new()),
+    };
+
+    let state = reconcile_inbox_event(
+        &pull_request_comment_fixture_event("edited", 29, "stale webhook comment"),
+        &api,
+    )
+    .unwrap();
+
+    assert_eq!(state.state, "closed");
+    assert_eq!(state.updated_at, "2026-10-22T16:30:00-04:00");
+    assert_eq!(
+        state.head_sha.as_deref(),
+        Some("3333333333333333333333333333333333333333")
+    );
+    assert_eq!(
+        state.base_sha.as_deref(),
+        Some("4444444444444444444444444444444444444444")
+    );
+    assert_eq!(state.merged, Some(true));
+    assert_eq!(
+        state.merge_commit_sha.as_deref(),
+        Some("5555555555555555555555555555555555555555")
+    );
+    assert_eq!(
+        state.comment.unwrap().body.as_deref(),
+        Some("canonical PR conversation comment")
+    );
+    assert_eq!(
+        api.requests
+            .lock()
+            .unwrap()
+            .iter()
+            .map(|resource| resource.kind)
+            .collect::<Vec<_>>(),
+        vec![
+            ResourceKind::PullRequest,
+            ResourceKind::PullRequestComment,
+            ResourceKind::PullRequest,
+        ],
+    );
 }
 
 #[test]
@@ -1631,6 +1706,7 @@ fn deleted_pr_comment_uses_fresh_parent_fields_after_comment_404() {
             "head": {"sha": "3333333333333333333333333333333333333333"},
             "base": {"sha": "4444444444444444444444444444444444444444"}
         }),
+        comment: Err(ApiReadError::NotFound),
         parent_reads: Mutex::new(0),
         requests: Mutex::new(Vec::new()),
     };
@@ -1696,6 +1772,7 @@ fn deleted_pr_comment_rejects_invalid_fresh_parent_after_comment_404() {
             "head": {"sha": "3333333333333333333333333333333333333333"},
             "base": {"sha": "4444444444444444444444444444444444444444"}
         }),
+        comment: Err(ApiReadError::NotFound),
         parent_reads: Mutex::new(0),
         requests: Mutex::new(Vec::new()),
     };
@@ -1765,6 +1842,7 @@ fn deleted_pr_comment_rejects_foreign_fresh_parent_base_after_comment_404() {
                 }
             }
         }),
+        comment: Err(ApiReadError::NotFound),
         parent_reads: Mutex::new(0),
         requests: Mutex::new(Vec::new()),
     };

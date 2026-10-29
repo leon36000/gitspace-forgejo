@@ -1,0 +1,16 @@
+Environment captured: 2026-10-29T01:19:29-04:00; Linux aarch64; rustc 1.95.0; Cargo 1.95.0; Bubblewrap 0.9.0.
+
+Test-first RED, before the production fix:
+cargo test --offline --locked --test webhook_reconcile_contract present_pr_comment_uses_fresh_parent_after_comment_readback -- --exact --nocapture
+
+Contract suite, captured in contract-tests.log:
+cargo test --offline --locked --test webhook_reconcile_contract -- --test-threads=1
+
+Process tests, captured in process-e2e.log:
+python3 scripts/run_webhook_reconcile_cli_e2e.py --scenario actual_reconcile_cli_process_routes_issue_comment_to_issue_api --scenario actual_reconcile_cli_process_routes_issue_comment_pr_conversation_to_pull_request_api --scenario actual_reconcile_cli_process_reconciles_same_id_corrected_pr_comment_after_receiver_refusal --scenario actual_reconcile_cli_process_uses_present_comment_readback_after_deleted_webhook
+
+Formatting:
+cargo fmt --all -- --check
+
+Whitespace check:
+git diff --check

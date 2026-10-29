@@ -100,7 +100,9 @@ pub trait ForgejoCurrentState {
     /// Force a source read when a prior response may now be stale.
     /// This default is correct for direct, uncached readers; implementations
     /// that cache `read_current` must override it to evict or bypass that cache.
-    /// A deleted-comment 404 uses this to recheck parent visibility.
+    /// Comment readbacks use this to bind their projection to a freshly read
+    /// parent after the child request, including present comments and deleted
+    /// comments whose 404 is used to establish absence.
     fn read_current_fresh(&self, resource: &ResourceRef) -> Result<Value, ApiReadError> {
         self.read_current(resource)
     }
@@ -1114,30 +1116,37 @@ fn reconcile_issue_comment(
         repository: resource.repository.clone(),
         id: ResourceId::Number(*issue_number),
     };
-    let mut current_issue = source
+    let current_issue = source
         .read_current(&parent)
         .map_err(ReconcileError::Source)?;
-    let mut parent_snapshot =
-        current_comment_parent_snapshot(&current_issue, &parent, *issue_number, source)?;
+    current_comment_parent_snapshot(&current_issue, &parent, *issue_number, source)?;
 
-    let comment = match source.read_current(&resource) {
+    let (comment, mut parent_snapshot) = match source.read_current(&resource) {
         Err(ApiReadError::NotFound) if *deleted_event => {
-            current_issue = source
+            let fresh_parent = source
                 .read_current_fresh(&parent)
                 .map_err(ReconcileError::Source)?;
-            parent_snapshot =
-                current_comment_parent_snapshot(&current_issue, &parent, *issue_number, source)?;
-            ReconciledComment {
-                id: *comment_id,
-                state: "absent".to_owned(),
-                updated_at: None,
-                html_url: None,
-                body: None,
-                body_trust: "untrusted_user_content",
-            }
+            let parent_snapshot =
+                current_comment_parent_snapshot(&fresh_parent, &parent, *issue_number, source)?;
+            (
+                ReconciledComment {
+                    id: *comment_id,
+                    state: "absent".to_owned(),
+                    updated_at: None,
+                    html_url: None,
+                    body: None,
+                    body_trust: "untrusted_user_content",
+                },
+                parent_snapshot,
+            )
         }
         Err(error) => return Err(ReconcileError::Source(error)),
         Ok(current_comment) => {
+            let fresh_parent = source
+                .read_current_fresh(&parent)
+                .map_err(ReconcileError::Source)?;
+            let parent_snapshot =
+                current_comment_parent_snapshot(&fresh_parent, &parent, *issue_number, source)?;
             let current_id = current_comment
                 .get("id")
                 .and_then(Value::as_u64)
@@ -1199,14 +1208,17 @@ fn reconcile_issue_comment(
                 .get("body")
                 .and_then(Value::as_str)
                 .ok_or(ReconcileError::InvalidCurrentStateField("comment.body"))?;
-            ReconciledComment {
-                id: *comment_id,
-                state: "present".to_owned(),
-                updated_at: Some(comment_updated_at.to_owned()),
-                html_url: Some(comment_html_url.to_owned()),
-                body: Some(body.to_owned()),
-                body_trust: "untrusted_user_content",
-            }
+            (
+                ReconciledComment {
+                    id: *comment_id,
+                    state: "present".to_owned(),
+                    updated_at: Some(comment_updated_at.to_owned()),
+                    html_url: Some(comment_html_url.to_owned()),
+                    body: Some(body.to_owned()),
+                    body_trust: "untrusted_user_content",
+                },
+                parent_snapshot,
+            )
         }
     };
 

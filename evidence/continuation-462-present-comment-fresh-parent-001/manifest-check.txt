@@ -1,0 +1,41 @@
+{
+  "package_files": 8,
+  "project": {
+    "blank_lines_ignored": 2,
+    "legacy_unhashed_records": 0,
+    "malformed_records": [],
+    "manifest": "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/evidence/SHA256SUMS",
+    "mismatched_path_count": 0,
+    "mismatched_paths": [],
+    "missing_path_count": 0,
+    "missing_paths": [],
+    "passed": true,
+    "root": "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue",
+    "unhashed_path_count": 0,
+    "unhashed_paths": [],
+    "unique_paths": 9377,
+    "unsafe_path_count": 0,
+    "unsafe_paths": [],
+    "valid_records": 13706,
+    "verified_paths": 9377
+  },
+  "worktree": {
+    "blank_lines_ignored": 6,
+    "legacy_unhashed_records": 1,
+    "malformed_records": [],
+    "manifest": "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/evidence/SHA256SUMS",
+    "mismatched_path_count": 0,
+    "mismatched_paths": [],
+    "missing_path_count": 0,
+    "missing_paths": [],
+    "passed": true,
+    "root": "/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace",
+    "unhashed_path_count": 0,
+    "unhashed_paths": [],
+    "unique_paths": 14208,
+    "unsafe_path_count": 0,
+    "unsafe_paths": [],
+    "valid_records": 19707,
+    "verified_paths": 14208
+  }
+}

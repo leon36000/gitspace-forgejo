@@ -17336,6 +17336,20 @@ fn actual_reconcile_cli_process_routes_issue_comment_pr_conversation_to_pull_req
                 "pull_request_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/23"
             }),
         ),
+        (
+            200,
+            json!({
+                "number": 23,
+                "state": "closed",
+                "merged": true,
+                "draft": false,
+                "merge_commit_sha": "3333333333333333333333333333333333333333",
+                "updated_at": "2026-10-25T12:02:00Z",
+                "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/pulls/23",
+                "head": {"sha": current_head},
+                "base": {"sha": current_base}
+            }),
+        ),
     ]);
     let output = Command::new(env!("CARGO_BIN_EXE_forgejo-reconcile-local"))
         .env_clear()
@@ -17350,7 +17364,7 @@ fn actual_reconcile_cli_process_routes_issue_comment_pr_conversation_to_pull_req
         "reconciliation CLI failed: {}",
         String::from_utf8_lossy(&output.stderr)
     );
-    assert_eq!(requests.len(), 2);
+    assert_eq!(requests.len(), 3);
     assert!(
         requests[0]
             .starts_with("GET /api/v1/repos/forge-admin/agent-forge-core/pulls/23 HTTP/1.1\r\n"),
@@ -17359,6 +17373,10 @@ fn actual_reconcile_cli_process_routes_issue_comment_pr_conversation_to_pull_req
     assert!(requests[1].starts_with(
         "GET /api/v1/repos/forge-admin/agent-forge-core/issues/comments/915 HTTP/1.1\r\n"
     ));
+    assert!(
+        requests[2]
+            .starts_with("GET /api/v1/repos/forge-admin/agent-forge-core/pulls/23 HTTP/1.1\r\n")
+    );
     for request in &requests {
         assert!(
             !request
@@ -18519,6 +18537,20 @@ fn actual_reconcile_cli_process_reconciles_same_id_corrected_pr_comment_after_re
                 "pull_request_url": pull_url
             }),
         ),
+        (
+            200,
+            json!({
+                "number": NUMBER,
+                "state": "closed",
+                "merged": true,
+                "draft": false,
+                "merge_commit_sha": "3333333333333333333333333333333333333333",
+                "updated_at": "2026-10-28T10:02:00Z",
+                "html_url": pull_url,
+                "head": {"sha": current_head},
+                "base": {"sha": current_base}
+            }),
+        ),
     ]);
     let output = Command::new(env!("CARGO_BIN_EXE_forgejo-reconcile-local"))
         .env_clear()
@@ -18537,12 +18569,15 @@ fn actual_reconcile_cli_process_reconciles_same_id_corrected_pr_comment_after_re
         String::from_utf8_lossy(&output.stdout),
         String::from_utf8_lossy(&output.stderr)
     );
-    assert_eq!(requests.len(), 2);
+    assert_eq!(requests.len(), 3);
     assert!(requests[0].starts_with(&format!(
         "GET /api/v1/repos/{OWNER}/{REPOSITORY}/pulls/{NUMBER} HTTP/1.1\r\n"
     )));
     assert!(requests[1].starts_with(&format!(
         "GET /api/v1/repos/{OWNER}/{REPOSITORY}/issues/comments/{COMMENT_ID} HTTP/1.1\r\n"
+    )));
+    assert!(requests[2].starts_with(&format!(
+        "GET /api/v1/repos/{OWNER}/{REPOSITORY}/pulls/{NUMBER} HTTP/1.1\r\n"
     )));
     assert!(requests.iter().all(|request| {
         !request
@@ -18640,6 +18675,16 @@ fn actual_reconcile_cli_process_routes_issue_comment_to_issue_api() {
             }),
             Vec::new(),
         ),
+        (
+            200,
+            json!({
+                "number": 24,
+                "state": "closed",
+                "updated_at": "2026-10-25T12:32:00Z",
+                "html_url": "http://127.0.0.1:3130/forge-admin/agent-forge-core/issues/24"
+            }),
+            Vec::new(),
+        ),
     ]);
     let output = Command::new(env!("CARGO_BIN_EXE_forgejo-reconcile-local"))
         .env_clear()
@@ -18657,7 +18702,7 @@ fn actual_reconcile_cli_process_routes_issue_comment_to_issue_api() {
         String::from_utf8_lossy(&output.stdout),
         String::from_utf8_lossy(&output.stderr)
     );
-    assert_eq!(requests.len(), 2);
+    assert_eq!(requests.len(), 3);
     assert!(
         requests[0]
             .starts_with("GET /api/v1/repos/forge-admin/agent-forge-core/issues/24 HTTP/1.1\r\n"),
@@ -18666,6 +18711,10 @@ fn actual_reconcile_cli_process_routes_issue_comment_to_issue_api() {
     assert!(requests[1].starts_with(
         "GET /api/v1/repos/forge-admin/agent-forge-core/issues/comments/916 HTTP/1.1\r\n"
     ));
+    assert!(
+        requests[2]
+            .starts_with("GET /api/v1/repos/forge-admin/agent-forge-core/issues/24 HTTP/1.1\r\n")
+    );
     assert!(
         requests
             .iter()
@@ -18688,7 +18737,7 @@ fn actual_reconcile_cli_process_routes_issue_comment_to_issue_api() {
     assert_eq!(value["canonical_state"]["state"], "closed");
     assert_eq!(
         value["canonical_state"]["updated_at"],
-        "2026-10-25T12:30:00Z"
+        "2026-10-25T12:32:00Z"
     );
     assert_eq!(
         value["canonical_state"]["html_url"],
@@ -18760,6 +18809,16 @@ fn actual_reconcile_cli_process_uses_present_comment_readback_after_deleted_webh
             }),
             Vec::new(),
         ),
+        (
+            200,
+            json!({
+                "number": ISSUE_NUMBER,
+                "state": "closed",
+                "updated_at": "2026-10-26T09:02:00Z",
+                "html_url": format!("http://127.0.0.1:3130/{OWNER}/{REPOSITORY}/issues/{ISSUE_NUMBER}")
+            }),
+            Vec::new(),
+        ),
     ]);
     let output = Command::new(env!("CARGO_BIN_EXE_forgejo-reconcile-local"))
         .env_clear()
@@ -18779,12 +18838,15 @@ fn actual_reconcile_cli_process_uses_present_comment_readback_after_deleted_webh
         String::from_utf8_lossy(&output.stdout),
         String::from_utf8_lossy(&output.stderr)
     );
-    assert_eq!(requests.len(), 2);
+    assert_eq!(requests.len(), 3);
     assert!(requests[0].starts_with(&format!(
         "GET /api/v1/repos/{OWNER}/{REPOSITORY}/issues/{ISSUE_NUMBER} HTTP/1.1\r\n"
     )));
     assert!(requests[1].starts_with(&format!(
         "GET /api/v1/repos/{OWNER}/{REPOSITORY}/issues/comments/{COMMENT_ID} HTTP/1.1\r\n"
+    )));
+    assert!(requests[2].starts_with(&format!(
+        "GET /api/v1/repos/{OWNER}/{REPOSITORY}/issues/{ISSUE_NUMBER} HTTP/1.1\r\n"
     )));
     assert!(requests.iter().all(|request| {
         !request
@@ -18808,7 +18870,7 @@ fn actual_reconcile_cli_process_uses_present_comment_readback_after_deleted_webh
     assert_reconcile_schema_version(&value);
     assert_eq!(value["verdict"], "current_state_read");
     assert_eq!(value["delivery_id"], DELIVERY_ID);
-    assert_eq!(value["upstream_read_attempts"], 2);
+    assert_eq!(value["upstream_read_attempts"], 3);
     assert_eq!(value["resource"]["kind"], "issue_comment");
     assert_eq!(value["resource"]["issue_number"], ISSUE_NUMBER);
     assert_eq!(value["resource"]["comment_id"], COMMENT_ID);
