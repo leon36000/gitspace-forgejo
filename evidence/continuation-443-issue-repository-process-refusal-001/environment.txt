@@ -1,0 +1,11 @@
+worktree_head=f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+source_tree_sha256=d26083318185e1cb4b28e3891ee86d3ba0c9b608611b621e8a177640cf8b90ae
+cargo_lock_sha256=459fef3749a42c989521901dcde61cb26e12ed4206c5d722e149426c2d3a5439
+runner_sha256=55acc95b5ba7137ad1c2e5d5f3ed9ae6d08b04249402985ffb0f1117d67a59ab
+rustc=1.95.0 (59807616e 2026-04-14)
+cargo=1.95.0 (f2d3ce0bd 2026-03-21)
+bubblewrap=0.9.0
+platform=Linux-7.0.0-1019-nvidia-aarch64-with-glibc2.39
+test_network=unshared
+test_pid_namespace=unshared
+dependency_resolution=locked offline

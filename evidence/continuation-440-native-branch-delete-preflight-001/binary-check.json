@@ -1,0 +1,12 @@
+{
+  "exact_build_commit_established": false,
+  "matches_prior_native_receipt": true,
+  "mode": "0o755",
+  "path": "/tmp/forgejo-release-slash-001",
+  "regular_non_symlink": true,
+  "required_version": "17.0.0+gitea-1.22.0",
+  "sha256": "e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7",
+  "uid": 1000,
+  "version_exit": 0,
+  "version_output": "forgejo version 17.0.0+gitea-1.22.0 (release name 17.0.0) built with GNU Make 4.4.1, go1.26.9 : bindata, timetzdata, sqlite, sqlite_unlock_notify"
+}

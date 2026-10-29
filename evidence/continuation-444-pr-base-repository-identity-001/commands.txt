@@ -1,0 +1,17 @@
+Workspace: /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace
+Base HEAD: f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+
+python3 scripts/run_forgejo_mission_delivery_process_e2e.py --only actual_mission_cli_refuses_mismatched_source_pull_request_repository_before_allocation_then_retries
+cargo test --locked --offline --test forgejo_merge_preflight -- --test-threads=1
+python3 scripts/run_forgejo_preflight_cli_e2e.py --scenario actual_preflight_cli_accepts_target_base_with_fork_head_without_writes
+cargo test --locked --offline --test forgejo_reconcile_capabilities_e2e -- --test-threads=1
+python3 -m unittest tests.test_mission_requirement_arbitration_cli_process -v
+cargo test --locked --offline --test forgejo_merge_post_crash_recovery_process_e2e --no-run
+cargo test --locked --offline --all-targets -- --test-threads=1
+cargo fmt --all -- --check
+git diff --check
+python3 -m py_compile scripts/run_forgejo_mission_delivery_process_e2e.py tests/test_mission_requirement_arbitration_cli_process.py
+python3 scripts/verify_cargo_license_state.py
+python3 evidence/documentation-link-audit-001/verify_doc_links.py
+
+All commands above ran locally with locked/offline Cargo. No GitLab mutation or external model call occurred in this lot.

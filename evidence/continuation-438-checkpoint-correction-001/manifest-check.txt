@@ -1,0 +1,2 @@
+checkpoint and local evidence hashes: PASS
+worktree and project append-only prefixes: PASS

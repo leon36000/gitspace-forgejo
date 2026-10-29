@@ -1,0 +1,24 @@
+$ cargo test --locked --offline --bin forgejo-mission-local issue_snapshot_rejects_repository_meta_that_contradicts_the_configured_scope -- --nocapture
+exit=101 before implementation (the parser accepted contradictory repository.full_name)
+
+$ cargo test --locked --offline --bin forgejo-mission-local -- --test-threads=1
+exit=0; 49 passed, 0 failed, 0 ignored
+
+$ python3 scripts/run_forgejo_mission_delivery_process_e2e.py --only actual_mission_cli_refuses_issue_snapshot_change_during_admission_then_retries_current_state
+exit=0; 1 passed, 0 failed, 13 filtered
+
+$ cargo fmt --all -- --check
+exit=0
+
+$ git diff --check
+exit=0
+
+$ python3 scripts/verify_cargo_license_state.py
+exit=0; license=null, license_file=null, publish=[], no_license_selected, redistribution_rights=not_assessed, SPDX=NOASSERTION
+
+$ python3 evidence/continuation-442-issue-repository-meta-binding-001/append_manifests.py
+first attempt: exit=1 on a bytes/text write error; only the prefix receipt and an empty local manifest were created, no global index append
+after correcting the script's safe resume path, second attempt exit=0; both prefixes preserved, worktree 13916/13916 paths current, project 9085/9085 paths current
+
+$ python3 evidence/continuation-442-issue-repository-meta-binding-001/append_receipt_revision.py
+exit=0; appended refreshed receipt rows, preserved prior prefixes, both global verifiers passed

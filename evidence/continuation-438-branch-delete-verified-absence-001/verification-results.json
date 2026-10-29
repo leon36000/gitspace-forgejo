@@ -1,0 +1,122 @@
+[
+  {
+    "argv": [
+      "cargo",
+      "test",
+      "--locked",
+      "--offline",
+      "--test",
+      "webhook_reconcile_contract",
+      "--",
+      "--test-threads=1"
+    ],
+    "exit_code": 101,
+    "label": "reconcile-contract",
+    "output_bytes": 81
+  },
+  {
+    "argv": [
+      "cargo",
+      "test",
+      "--locked",
+      "--offline",
+      "--bin",
+      "forgejo-reconcile-local",
+      "reconciliation_policy_allows_only_exact_configured_repository_visibility_read",
+      "--",
+      "--nocapture"
+    ],
+    "exit_code": 101,
+    "label": "repository-route-policy",
+    "output_bytes": 136
+  },
+  {
+    "argv": [
+      "cargo",
+      "test",
+      "--locked",
+      "--offline",
+      "--test",
+      "webhook_receiver_process_e2e",
+      "--",
+      "--test-threads=1"
+    ],
+    "exit_code": 101,
+    "label": "process-target-default",
+    "output_bytes": 83
+  },
+  {
+    "argv": [
+      "python3",
+      "scripts/run_webhook_reconcile_cli_e2e.py",
+      "--scenario",
+      "actual_reconcile_cli_process_confirms_native_delete_404_after_repository_and_fresh_reads",
+      "--scenario",
+      "actual_reconcile_cli_process_refuses_branch_absence_when_repository_identity_mismatches"
+    ],
+    "exit_code": 2,
+    "label": "process-isolated-scenarios",
+    "output_bytes": 187
+  },
+  {
+    "argv": [
+      "python3",
+      "tests/test_forgejo_emitted_webhook_e2e.py"
+    ],
+    "exit_code": 2,
+    "label": "python-validator-suite",
+    "output_bytes": 188
+  },
+  {
+    "argv": [
+      "cargo",
+      "check",
+      "--locked",
+      "--offline",
+      "--all-targets"
+    ],
+    "exit_code": 0,
+    "label": "all-targets-check",
+    "output_bytes": 707
+  },
+  {
+    "argv": [
+      "cargo",
+      "fmt",
+      "--all",
+      "--",
+      "--check"
+    ],
+    "exit_code": 0,
+    "label": "rustfmt",
+    "output_bytes": 0
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit_code": 0,
+    "label": "diff-check",
+    "output_bytes": 0
+  },
+  {
+    "argv": [
+      "python3",
+      "scripts/verify_cargo_license_state.py"
+    ],
+    "exit_code": 2,
+    "label": "cargo-license-policy",
+    "output_bytes": 184
+  },
+  {
+    "argv": [
+      "python3",
+      "evidence/documentation-link-audit-001/verify_doc_links.py"
+    ],
+    "exit_code": 2,
+    "label": "canonical-doc-links",
+    "output_bytes": 204
+  }
+]

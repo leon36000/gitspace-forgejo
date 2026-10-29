@@ -1,0 +1,11 @@
+2026-10-28T21:00:24-04:00
+aarch64
+rustc 1.95.0 (59807616e 2026-04-14)
+cargo 1.95.0 (f2d3ce0bd 2026-03-21)
+rustfmt 1.9.0-stable (59807616e1 2026-04-14)
+Python 3.12.3
+bubblewrap 0.9.0
+local/WEBHOOK-005-canonical-links
+f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+d40396ac625abc0b93178cec1de3fb46cf42af8918c90d72a3b31fd1eea78644  tests/webhook_receiver_process_e2e.rs
+436317ab4700d642eb72333550ef4c13c1b0b34a4641446b2027e8a225594ec5  scripts/run_webhook_reconcile_cli_e2e.py

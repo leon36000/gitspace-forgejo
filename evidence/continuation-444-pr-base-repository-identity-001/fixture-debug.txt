@@ -1,0 +1,14 @@
+The first Python process test run returned:
+  mission_source_invalid_response
+  observed routes ended at GET /api/v1/repos/forge-admin/agent-forge-core/issues/41
+
+Inspection showed its successful Issue response lacked Forgejo v17 RepositoryMeta fields. The strict existing issue parser requires repository.owner (string), repository.name, and repository.full_name to agree with the configured repository. The fixture was updated with:
+  owner = forge-admin
+  name = agent-forge-core
+  full_name = forge-admin/agent-forge-core
+
+Retest:
+  python3 -m unittest tests.test_mission_requirement_arbitration_cli_process -v
+  exit 0; 1 passed. The test then exercised the successful v3 arbitration flow and its existing changed-head and missing-policy refusals.
+
+This was an incomplete test fixture, not a runtime change. The independent Rust unit and process tests separately exercise the PR base repository metadata newly added in CONTINUATION-444.

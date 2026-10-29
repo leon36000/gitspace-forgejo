@@ -1,0 +1,25 @@
+Focused unit test:
+  cargo test --locked --offline --test forgejo_merge_preflight -- --test-threads=1
+  exit 0; 14 passed, 0 failed, 0 ignored.
+
+New process test:
+  python3 scripts/run_forgejo_mission_delivery_process_e2e.py --only actual_mission_cli_refuses_mismatched_source_pull_request_repository_before_allocation_then_retries
+  exit 0; 1 passed, 0 failed, 15 filtered. Bubblewrap 0.9.0; network and PID namespaces unshared. API is loopback fixture.
+  runner source_tree_sha256 at that invocation: 213e41e4f54d2352aebe413d7ca52b5f8598f49fdef29ac39b368f80f926766f
+  Cargo.lock sha256: 459fef3749a42c989521901dcde61cb26e12ed4206c5d722e149426c2d3a5439
+  runner sha256: ce5976d4037083c5c876b959db44e476e72218ec6c9a4f2423df049cdf625aa2
+  The later Rust formatting pass changed layout only; the current all-targets run compiled the formatted sources.
+
+Positive control:
+  python3 scripts/run_forgejo_preflight_cli_e2e.py --scenario actual_preflight_cli_accepts_target_base_with_fork_head_without_writes
+  exit 0; 1 passed, 0 failed, 5 filtered; isolated Bubblewrap fixture.
+  runner source_tree_sha256 at that invocation: 13ea3ad00ecc0099dd54d04ce91573d43c723ae77fe659bdffb7d34267f3c11c
+  runner sha256: c229d6b9191aeb59742c6469f9a7802c436602b3abb79c8855987d7ed267fe7a
+
+Other targeted runs:
+  forgejo_reconcile_capabilities_e2e: exit 0; 5 passed, 2 ignored (fixed-port scenarios).
+  Python unittest: first failed because the success-path Issue fixture omitted required repository metadata; after adding owner/name/full_name, exit 0; 1 passed.
+  forgejo_merge_post_crash_recovery_process_e2e --no-run: exit 0; executable compiled.
+  all-targets after all fixture updates and formatting: exit 0. Aggregated test counters were not retained by the truncated tool response, so no aggregate is claimed.
+
+Final static checks: cargo fmt check, git diff check, Python py_compile, Cargo license-state guard, and documentation link audit (1,641 links, 5 canonical documents, 0 missing) all returned 0. License fields remain unselected and redistribution rights not assessed.

@@ -1,0 +1,11 @@
+$ python3 scripts/run_forgejo_native_branch_delete_webhook_reconcile.py --forgejo-binary /tmp/forgejo-release-slash-001 --repo-root . --state-dir /tmp/agent-forge-cont440-state --evidence-dir evidence/continuation-441-forgejo-native-branch-delete-001/native-run --branch-name agent/cont440-delete-check --expect-branch-absent-after-delete
+exit=0
+See native-run/result.json and the runner's SHA256SUMS for detailed output and artifact digests.
+
+$ python3 read native-run/result.json (independent readback)
+exit=0
+verdict=passed; native delete delivery=HTTP 202; reconcile=current_state_read; canonical_state=absent; upstream_read_attempts=3; journal_unchanged=true; credential_recorded=false.
+
+$ verify cleanup fields in native-run/result.json and stat /tmp/agent-forge-cont440-state
+exit=0
+Forgejo and receiver stopped; hook disabled/readback-confirmed; cleanup_failure=null; no listener remains on 127.0.0.1:3130; private state directory mode=0700 and retained.

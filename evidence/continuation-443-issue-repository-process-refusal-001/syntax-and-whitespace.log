@@ -1,0 +1,1 @@
+Superseded check note: the first ad-hoc whitespace checker used an incorrectly escaped character set and printed false positives from unrelated legacy lines. No whitespace verdict is drawn from that attempt. The corrected Python runner AST check passed (python-ast.log), and Rust formatting passed (rustfmt.log).

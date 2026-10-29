@@ -1,0 +1,5 @@
+platform=Linux aarch64 (glibc 2.39)
+python=3.12.3
+runner_required_forgejo_version=17.0.0+gitea-1.22.0
+preflight_only=true
+native_test_executed_in_this_preflight=false

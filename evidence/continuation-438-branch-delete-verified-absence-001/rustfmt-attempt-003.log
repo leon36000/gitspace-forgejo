@@ -1,0 +1,33 @@
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:18333:
+         address,
+         &request_event(CREATE_DELIVERY_ID, "create", &create_body),
+     );
+-    assert_eq!(create_status, 202, "branch create should be journaled: {create_acceptance}");
++    assert_eq!(
++        create_status, 202,
++        "branch create should be journaled: {create_acceptance}"
++    );
+     let (delete_status, delete_acceptance) = send(
+         address,
+         &request_event(DELETE_DELIVERY_ID, "delete", &delete_body),
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:18340:
+     );
+-    assert_eq!(delete_status, 202, "branch delete should be journaled: {delete_acceptance}");
++    assert_eq!(
++        delete_status, 202,
++        "branch delete should be journaled: {delete_acceptance}"
++    );
+     assert!(stop_receiver(&mut receiver).success());
+     let journal_before = fs::read(&journal_path).expect("snapshot accepted branch batch");
+ 
+Diff in /home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace/tests/webhook_receiver_process_e2e.rs:18388:
+         String::from_utf8_lossy(&output.stderr)
+     );
+     assert!(!transcript.contains(PRIVATE_MARKER));
+-    let value: Value = serde_json::from_slice(&output.stdout)
+-        .expect("mixed branch batch returns structured JSON");
++    let value: Value =
++        serde_json::from_slice(&output.stdout).expect("mixed branch batch returns structured JSON");
+     assert_reconcile_schema_version(&value);
+     assert_eq!(value["verdict"], "inconclusive");
+     assert_eq!(value["upstream_read_attempts"], 3);

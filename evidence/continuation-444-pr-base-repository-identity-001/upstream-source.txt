@@ -1,0 +1,14 @@
+Repository: https://github.com/forgejo/forgejo
+Version: v17.0.0
+Commit: 0d791421f85ca13a63b665053d81ea765fbbc571
+Local checkout: /tmp/forgejo-v17-base-cas-poc
+The checkout HEAD equals the commit above. `git status --short` for the five inspected source files was empty; other scratch files may contain unrelated POCs.
+
+Relevant source definitions:
+- modules/structs/pull.go :: PRBranchInfo.Repository is `*Repository`.
+- modules/structs/repo.go :: Repository serializes Owner (`json:"owner"`), Name (`json:"name"`), FullName (`json:"full_name"`).
+- modules/structs/user.go :: User.UserName serializes as `json:"login"`.
+- services/convert/pull.go :: ToAPIPullRequest assigns Base.Repository from ToRepo.
+- services/convert/repository.go :: innerToRepo populates Owner, Name, FullName.
+
+These definitions establish expected v17 response shape only. No Forgejo server was run for this check, and no upstream source was copied into the product.

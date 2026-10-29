@@ -1,0 +1,9 @@
+Terminal output excerpt from the final isolated process run:
+evidence.git_head=f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+evidence.source_tree_sha256=6a90488bf61b2cec61a912a9ba7ba5bb1ec8eaeaf73fe532ab787100f6340c09
+evidence.rustc=rustc 1.95.0 (59807616e 2026-04-14)
+evidence.cargo=cargo 1.95.0 (f2d3ce0bd 2026-03-21)
+evidence.bwrap=bubblewrap 0.9.0
+evidence.platform=Linux-7.0.0-1019-nvidia-aarch64-with-glibc2.39
+test actual_mission_cli_refuses_issue_snapshot_change_during_admission_then_retries_current_state ... process-e2e: issue API changed during protected requirement inventory; first admission refused before generation allocation or host handoff; retry of same signed delivery bound the stable current snapshot and claimed generation 1
+test result: ok. 1 passed; 0 failed; 0 ignored; 13 filtered out

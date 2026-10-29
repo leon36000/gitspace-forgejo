@@ -1,0 +1,27 @@
+$ command -v forgejo
+exit=1
+No Forgejo executable is on PATH. This did not establish that no binary exists elsewhere.
+
+$ test -x /tmp/forgejo-release-slash-001
+exit=0
+The exact path referenced by the prior native run exists and is executable.
+
+$ find /tmp -type f -name forgejo -perm -111 -print
+exit=1
+The broad scan encountered protected temporary directories; their path strings are intentionally omitted. It searched the basename `forgejo`, so it did not match `forgejo-release-slash-001`; no absence claim is based on this scan.
+
+$ python3 scripts/run_forgejo_native_branch_delete_webhook_reconcile.py --help
+exit=0
+The targeted option `--expect-branch-absent-after-delete` is available. No runner execution occurred in this preflight.
+
+$ local socket connect_ex 127.0.0.1:3130
+exit=0
+connect_ex=111 (no listener accepted the probe).
+
+$ first evidence-report collector
+exit=1
+KeyError: "/bin/bash -c 'command -v forgejo'" while formatting captured probe results; no Forgejo process was launched.
+
+$ /tmp/forgejo-release-slash-001 --version and SHA-256 readback
+exit=0
+See `binary-check.json`; the hash matches the prior native receipt and the reported version is the runner's required version.

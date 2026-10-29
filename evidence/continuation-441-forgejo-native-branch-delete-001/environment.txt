@@ -1,0 +1,9 @@
+platform=forgejo version 17.0.0+gitea-1.22.0 (release name 17.0.0) built with GNU Make 4.4.1, go1.26.9 : bindata, timetzdata, sqlite, sqlite_unlock_notify
+forgejo_binary_sha256=e5ec437cd6357e8d1b4580cb47ab1daa58a32b33971a63db63446a535d33adb7
+forgejo_version=forgejo version 17.0.0+gitea-1.22.0 (release name 17.0.0) built with GNU Make 4.4.1, go1.26.9 : bindata, timetzdata, sqlite, sqlite_unlock_notify
+forgejo_build_commit=not_established
+rustc=rustc 1.95.0 (59807616e 2026-04-14)
+cargo=cargo 1.95.0 (f2d3ce0bd 2026-03-21)
+bubblewrap=bubblewrap 0.9.0
+source_tree_sha256=ce1c9c9cd58d7b3410d0f8c7892353fc168aa1b02c7bed6ca8d0c7210fc75b03
+state_dir_mode=0o700

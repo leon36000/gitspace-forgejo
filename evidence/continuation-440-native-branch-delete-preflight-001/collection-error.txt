@@ -1,0 +1,5 @@
+Initial receipt-writer traceback, after read-only probes and before any Forgejo launch:
+
+KeyError: '/bin/bash -c 'command -v forgejo''
+
+Cause: the collector reconstructed a dictionary key differently from `shlex.join`. The failed broad `find /tmp` also returned nonzero on protected paths; those private path strings were redacted from `commands.txt`. The expected binary was present at the exact path in the prior receipt. No runner, service, or external request ran in this failed collection attempt.

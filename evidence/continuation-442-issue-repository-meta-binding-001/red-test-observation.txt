@@ -1,0 +1,6 @@
+Test-first observation, 28 October 2026:
+
+Command:
+cargo test --locked --offline --bin forgejo-mission-local issue_snapshot_rejects_repository_meta_that_contradicts_the_configured_scope -- --nocapture
+
+Exit code: 101. The new assertion expected Err(InvalidResponse), but parse_issue_snapshot returned Ok(IssueSnapshotV1 { number: 17, html_url: "http://127.0.0.1:3130/forge-admin/agent-forge-core/issues/17", state: Open, work_item_content: None }) for repository.full_name="other/agent-forge-core". The parser was then updated and the targeted test passed.

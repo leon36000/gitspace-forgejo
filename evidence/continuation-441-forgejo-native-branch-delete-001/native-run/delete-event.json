@@ -1,0 +1,8 @@
+{
+  "branch": "agent/cont440-delete-check",
+  "delivery_id": "28c59be3-e690-4512-97a7-1bd5dd0c91cd",
+  "event": "delete",
+  "ref": "agent/cont440-delete-check",
+  "ref_type": "branch",
+  "sequence": 1
+}

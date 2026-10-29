@@ -1,0 +1,10 @@
+date=2026-10-28
+worktree=/home/pc6/Documents/Codex/2026-10-21-mission-construire-une-forge-con-ue/.runtime/webhook-005-workspace
+branch=local/WEBHOOK-005-canonical-links
+git_head=f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0
+rustc=rustc 1.95.0 (59807616e 2026-04-14)
+cargo=cargo 1.95.0 (f2d3ce0bd 2026-03-21)
+bubblewrap=bubblewrap 0.9.0
+platform=Linux-7.0.0-1019-nvidia-aarch64-with-glibc2.39
+process_runner_source_tree_sha256=6a90488bf61b2cec61a912a9ba7ba5bb1ec8eaeaf73fe532ab787100f6340c09
+forgejo_source_reference=official Forgejo v17.0.0 commit 0d791421f85ca13a63b665053d81ea765fbbc571 (static targeted source audit only)
