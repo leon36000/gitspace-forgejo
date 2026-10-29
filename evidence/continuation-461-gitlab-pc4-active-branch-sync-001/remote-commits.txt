@@ -1,0 +1,16 @@
+Initial work branch head: 9ac877767e9b458a9cd911e67a10f87aeeaefbdb
+
+Transferred commits (oldest to newest):
+d6f13d33f1f75d92155502852e53002f4456ed8e  sync: update audited architecture [skip ci]
+3b8785bfaa4e73f907cce3c9a2b6d6bb990795b8  sync: transfer audited snapshot batch 01 [skip ci]
+48a10c0227c85dbdae9c0e09415110ef69dae71a  sync: transfer audited snapshot batch 02 [skip ci]
+e105c21357490a01d90b3306f88afecd8bbeb790  sync: transfer audited snapshot batch 03 [skip ci]
+0c35838e32006111657ea72911c7be38d887cad3  sync: transfer audited snapshot batch 04 [skip ci]
+8ac2d2e71244ec85863e9e406ae72c58c71f92b5  sync: transfer audited snapshot batch 05 [skip ci]
+84469820d2bd5fd1a834a92f21f51e5e3ce8ea4d  sync: transfer audited snapshot batch 06 [skip ci]
+0ca995fe6afa63f9b481c32a2ad816d7a5011324  sync: transfer audited snapshot batch 07 [skip ci]
+5f98f9b62773a35d52671d591e0554172da26c1f  sync: transfer audited snapshot batch 08 [skip ci]
+adee6b932b69542f5fb29e904cefe684564a4753  sync: update checkpoint from audited local snapshot [skip ci]
+58f0ea3550887a8dc125a857f2815afc9834ec0a  sync: refresh append-only evidence index [skip ci]
+
+Readback showed the last commit above as branch head before the evidence package itself is added.

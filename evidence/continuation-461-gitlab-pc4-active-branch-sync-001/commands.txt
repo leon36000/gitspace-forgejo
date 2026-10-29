@@ -1,0 +1,20 @@
+Local audit:
+python3 evidence/continuation-425-gitlab-connector-preflight-001/audit_transfer_candidates.py
+
+Read-only GitLab connector calls:
+get_project(root/gitspace-forgejo)
+list_branches(root/gitspace-forgejo)
+list_commits(root/gitspace-forgejo, codex/pc6-transfer-work-2026-10-28)
+list_repository_tree(root/gitspace-forgejo, recursive=true, ref=codex/pc6-transfer-work-2026-10-28)
+get_commit(root/gitspace-forgejo, codex/pc6-transfer-work-2026-10-28)
+
+Write calls, all against codex/pc6-transfer-work-2026-10-28, all with encoding=text and [skip ci]:
+add_commit: architecture update; batches 01 through 08; checkpoint refresh; append-only index refresh
+
+Readback:
+list_repository_tree paginated recursively; compare local Git blob SHA and mode for each selected changed text path.
+No email contents were read. No shell git remote operation, branch merge, MR, CI run, or PC4 host shell execution was performed.
+
+Append-only index verification:
+python3 evidence/continuation-461-gitlab-pc4-active-branch-sync-001/append_manifests.py
+The first verification exposed three stale latest records from CONT-460; the helper appended current hashes and the subsequent verification passed for both indexes.

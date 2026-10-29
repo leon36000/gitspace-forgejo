@@ -1,0 +1,91 @@
+{
+  "claims": {
+    "binary_fidelity_established": false,
+    "email_credentials_reused": false,
+    "gitlab_ci_success": false,
+    "local_git_history_mirrored": false,
+    "merge_request_or_merge": false,
+    "pc4_host_execution": false,
+    "production_change": false
+  },
+  "date": "2026-10-29",
+  "delta": {
+    "already_exact_on_remote": 108,
+    "bytes_created_or_updated": 12546569,
+    "candidate_paths": 783,
+    "created_or_updated": 588,
+    "exportable_text_candidates": 696,
+    "readback_divergent": 0,
+    "readback_exact": 588,
+    "readback_missing": 0
+  },
+  "gitlab": {
+    "connector_version": "19.5.1",
+    "default_branch": "codex/pc6-transfer-2026-10-28",
+    "initial_head": "9ac877767e9b458a9cd911e67a10f87aeeaefbdb",
+    "pre_receipt_head": "58f0ea3550887a8dc125a857f2815afc9834ec0a",
+    "project_id": 4,
+    "project_path": "root/gitspace-forgejo",
+    "visibility": "private",
+    "working_branch": "codex/pc6-transfer-work-2026-10-28",
+    "working_branch_can_push": true,
+    "working_branch_is_default": false,
+    "working_branch_protected": false
+  },
+  "local": {
+    "branch": "local/WEBHOOK-005-canonical-links",
+    "git_worktree_committed": false,
+    "head": "f3e2bb3a9f9b0cb3dbcd1e03f658f0b6a05119a0"
+  },
+  "local_audit": {
+    "archive_errors": 0,
+    "high_confidence_secret_matches": 0,
+    "indexed_or_untracked_nonignored_paths": 16084,
+    "regular_files": 15943,
+    "scanned_bytes": 204991787,
+    "scope_is_heuristic": true,
+    "zip_members": 2712
+  },
+  "manifest_verification": {
+    "project": {
+      "blank_lines_ignored": 2,
+      "legacy_unhashed_records": 0,
+      "mismatched": 0,
+      "missing": 0,
+      "passed": true,
+      "unhashed": 0,
+      "unique_paths": 9368,
+      "unsafe": 0,
+      "verified_paths": 9368
+    },
+    "worktree": {
+      "blank_lines_ignored": 6,
+      "legacy_unhashed_records": 1,
+      "mismatched": 0,
+      "missing": 0,
+      "passed": true,
+      "unhashed": 0,
+      "unique_paths": 14199,
+      "unsafe": 0,
+      "verified_paths": 14199
+    }
+  },
+  "remote_tree_readback": {
+    "blobs": 15733,
+    "entries": 16799,
+    "pages": 168
+  },
+  "transfer_commits": [
+    "d6f13d33f1f75d92155502852e53002f4456ed8e",
+    "3b8785bfaa4e73f907cce3c9a2b6d6bb990795b8",
+    "48a10c0227c85dbdae9c0e09415110ef69dae71a",
+    "e105c21357490a01d90b3306f88afecd8bbeb790",
+    "0c35838e32006111657ea72911c7be38d887cad3",
+    "8ac2d2e71244ec85863e9e406ae72c58c71f92b5",
+    "84469820d2bd5fd1a834a92f21f51e5e3ce8ea4d",
+    "0ca995fe6afa63f9b481c32a2ad816d7a5011324",
+    "5f98f9b62773a35d52671d591e0554172da26c1f",
+    "adee6b932b69542f5fb29e904cefe684564a4753",
+    "58f0ea3550887a8dc125a857f2815afc9834ec0a"
+  ]
+}
